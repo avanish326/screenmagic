@@ -1,0 +1,92 @@
+{
+  "modifiedOn": "2024-07-02T09:58:32.394Z",
+  "name": "Send message using sms after hand off $agent $basicinfo",
+  "id": "58007",
+  "type": 3,
+  "createdOn": "2024-07-02T09:58:09.150Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Send message using sms after hand off $agent $basicinfo",
+    "parameters": [
+      {
+        "parameterId": "agent_",
+        "entityTypeId": "agent",
+        "suffix": ""
+      },
+      {
+        "parameterId": "basicinfo_",
+        "entityTypeId": "basicinfo",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "POST"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "$incomingSMSURLIntelli"
+          }
+        ],
+        "stepType": "REST",
+        "isRawScript": true,
+        "rawScript": "var $request_lZmkcyUXuW \u003d new RESTRequest();\r\n$request_lZmkcyUXuW.setURL($incomingSMSURLIntelli);\r\n$request_lZmkcyUXuW.addToQueryString(\"Message\", $agent.visitorMessage);\r\n$request_lZmkcyUXuW.addToQueryString(\"OriginatorAddress\", $basicinfo.source);\r\n$request_lZmkcyUXuW.addToQueryString(\"DestinationAddress\", $SenderIDSMS);\r\nvar $response_lZmkcyUXuW \u003d $request_lZmkcyUXuW.submit(\"POST\");\r\nvar responseBody \u003d JSON.parse($response_lZmkcyUXuW.getBodyAsString());\r\n\t var $responseBodyObj_lZmkcyUXuW \u003d $response_lZmkcyUXuW.getBodyAsString();\r\n\tvar responseType \u003d $response_lZmkcyUXuW.getHeader(\"Content-Type\");\r\n\tif (responseType.indexOf(\"json\")!\u003d-1) {\r\n\t\t$responseBodyObj_lZmkcyUXuW \u003d JSON.parse($responseBodyObj_lZmkcyUXuW);\r\n\t}\r\n\telse if (responseType.indexOf(\"xml\")!\u003d-1) {\r\n\t\t$responseBodyObj_lZmkcyUXuW \u003d $responseBodyObj_lZmkcyUXuW.replace(/\u003c\\xml.*?\u003e/g, \u0027\u0027).replace(/\\n/g, \u0027\u0027).replace(/\\r/g, \u0027\u0027);\r\n\t\t$responseBodyObj_lZmkcyUXuW \u003d new XML(undefined);\r\n\t}\r\n\r\n\t//assertions\r\n\r\n",
+        "state": {
+          "contentType": "json",
+          "request": {
+            "method": "POST",
+            "url": "$incomingSMSURLIntelli",
+            "parameters": [
+              [
+                "Message",
+                "$agent.visitorMessage"
+              ],
+              [
+                "OriginatorAddress",
+                "$basicinfo.source"
+              ],
+              [
+                "DestinationAddress",
+                "$SenderIDSMS"
+              ]
+            ],
+            "headers": [],
+            "authType": "none",
+            "body": "",
+            "bodyParams": [],
+            "isParametrizedBody": false,
+            "resetCookies": false
+          },
+          "assertions": {
+            "status": [],
+            "header": [],
+            "body": []
+          },
+          "variables": {
+            "status": [],
+            "header": [],
+            "body": []
+          },
+          "authInfo": {}
+        }
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "5000"
+          }
+        ],
+        "stepType": "Action"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

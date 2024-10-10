@@ -1,0 +1,60 @@
+{
+  "modifiedOn": "2024-04-10T04:49:38.958Z",
+  "name": "Verify CSV is visible in the Contact List Page",
+  "id": "44975",
+  "type": 3,
+  "createdOn": "2024-04-10T04:49:21.328Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Verify CSV is visible in the Contact List Page",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_isVisible",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_cell(0, _near(_tableHeader(\"Name\")))"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Is_True"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_cell(0, _near(_tableHeader(\"Name\")))"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"template_Camp\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_cell(1, _near(_tableHeader(\"Total Contacts\")))"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"3\""
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

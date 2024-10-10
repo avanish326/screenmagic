@@ -1,0 +1,64 @@
+{
+  "modifiedOn": "2024-07-10T09:04:33.248Z",
+  "name": "Verify the error messages on ui",
+  "id": "58103",
+  "type": 3,
+  "createdOn": "2024-07-04T12:17:21.803Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Verify the error messages on ui",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"Please add the field\", _near(_div(\"Select field\")))"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"Please add the field\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"Please add the operator\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"Please add the operator\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"Please enter the value\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"Please enter the value\""
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

@@ -1,0 +1,117 @@
+{
+  "modifiedOn": "2024-07-04T13:21:49.702Z",
+  "name": "Verify the newly created segment showing in list $segmentui",
+  "id": "58100",
+  "type": 3,
+  "createdOn": "2024-07-04T09:47:14.848Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Verify the newly created segment showing in list $segmentui",
+    "parameters": [
+      {
+        "parameterId": "segmentui_",
+        "entityTypeId": "segmentui",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(\"/Showing .* segments/\")"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$numberOfSegmentsUI"
+        }
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "$searchCountSegmentNew \u003d _extract($numberOfSegmentsUI, \"/Showing (.*) segments/\",true);\n\n\n_assertEqual($searchCountSegmentNew, $searchCountSegment+1)"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_cell(0, _under(_tableHeader(\"Segment Name\")))"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "parameterId": "segmentui_",
+          "attributeId": "attr_01720068607783"
+        },
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_call",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_sahi.blurEnabled\u003dfalse"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {}
+      },
+      {
+        "commented": false,
+        "action": "_mouseOver",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_cell(0, _under(_tableHeader(\"Segment Name\")))"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_isVisible",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_submit(\"refreshIcon\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Is_True"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_submit(\"refreshIcon\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_call",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_sahi.blurEnabled\u003dtrue"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {}
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

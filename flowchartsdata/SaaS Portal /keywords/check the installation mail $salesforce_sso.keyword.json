@@ -1,0 +1,123 @@
+{
+  "modifiedOn": "2024-04-12T10:56:44.918Z",
+  "name": "check the installation mail $salesforce_sso",
+  "id": "45049",
+  "type": 3,
+  "createdOn": "2024-04-12T06:11:58.234Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "check the installation mail $salesforce_sso",
+    "parameters": [
+      {
+        "parameterId": "salesforce_sso_",
+        "entityTypeId": "salesforce_sso",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_getRecentWindow",
+        "stepParameters": [],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$recentWindow"
+        }
+      },
+      {
+        "commented": false,
+        "action": "_selectWindow",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "$recentWindow.windowName"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "5000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_textbox(\"Search in mail\")"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "$sandboxUsername"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "_click(_submit(0, _near(_div(\"/Search in mail/\"))));"
+      },
+      {
+        "commented": false,
+        "action": "_selectWindow",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "\"/Search results/\""
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"/SMS-Magic Salesforce Package Installation Confirmation/\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_selectWindow",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "\"/SMS-Magic/\""
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(\"This is to inform you that the SMS-Magic Salesforce package has been successfully installed and configured on your Salesforce account with the details:\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Contains",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"successfully installed and configured on your Salesforce account\""
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

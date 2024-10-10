@@ -1,0 +1,109 @@
+{
+  "modifiedOn": "2024-04-30T08:32:04.151Z",
+  "name": "Add $Batch and $Sec",
+  "id": "45482",
+  "type": 3,
+  "createdOn": "2024-04-26T15:07:21.707Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Add $Batch and $Sec",
+    "parameters": [
+      {
+        "parameterId": "batch_",
+        "entityTypeId": "batch",
+        "suffix": ""
+      },
+      {
+        "parameterId": "sec_",
+        "entityTypeId": "sec",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_textbox(\"bulk_delivery_batch_size\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "isRawScript": true,
+        "rawScript": "var $batch\u003d$batch\nvar $sec\u003d$sec"
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_textbox(\"bulk_delivery_batch_size\")"
+          },
+          {
+            "parameterId": "batch_",
+            "attributeId": "attr_01714400672494"
+          }
+        ],
+        "stepType": "Action",
+        "visibleCheck": false
+      },
+      {
+        "commented": true,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_textbox(\"dlr_bulk_threshold\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_textbox(\"dlr_bulk_threshold\")"
+          },
+          {
+            "parameterId": "sec_",
+            "attributeId": "attr_01714400994938"
+          }
+        ],
+        "stepType": "Action",
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"saveBulkification_time_size\")"
+          },
+          {}
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_sahi.blurEnabled\u003dfalse"
+          }
+        ],
+        "stepType": "Action"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

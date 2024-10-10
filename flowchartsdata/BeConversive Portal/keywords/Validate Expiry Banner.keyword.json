@@ -1,0 +1,141 @@
+{
+  "modifiedOn": "2024-06-11T13:28:29.376Z",
+  "name": "Validate Expiry Banner",
+  "id": "52783",
+  "type": 3,
+  "createdOn": "2024-06-11T08:55:45.969Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Validate Expiry Banner",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "$expiryDate \u003d _getText(_paragraph(0,_in(_div(\"/Expiry Date/\"))));\nvar $today\u003dnew Date();\n$form \u003d new java.text.SimpleDateFormat(\"dd-MMM-YYYY\");\n$todayDate \u003d $form.format(new Date());\n_assertNotEqual($todayDate,$expiryDate);\n\n\nfunction parseDate($dateStr) {\n    var [$day, $month, $year] \u003d $dateStr.split(\u0027-\u0027);\n   \n    // Map month abbreviations to their numeric values\n    var $monthMap \u003d {\n        \u0027Jan\u0027: \u002701\u0027,\n        \u0027Feb\u0027: \u002702\u0027,\n        \u0027Mar\u0027: \u002703\u0027,\n        \u0027Apr\u0027: \u002704\u0027,\n        \u0027May\u0027: \u002705\u0027,\n        \u0027Jun\u0027: \u002706\u0027,\n        \u0027Jul\u0027: \u002707\u0027,\n        \u0027Aug\u0027: \u002708\u0027,\n        \u0027Sep\u0027: \u002709\u0027,\n        \u0027Oct\u0027: \u002710\u0027,\n        \u0027Nov\u0027: \u002711\u0027,\n        \u0027Dec\u0027: \u002712\u0027\n    };\n\n    // Create the date string in \"YYYY-MM-DD\" format\n    var $monthNumeric \u003d $monthMap[$month];\n    var $formattedDate \u003d `${$year}-${$monthNumeric}-${$day.padStart(2, \u00270\u0027)}`;\n\n    // Return the Date object\n    return new Date($formattedDate);\n}\nvar $expiredate \u003d_getText(_paragraph(0,_in(_div(\"/Expiry Date/\"))));\nvar $expiryDate \u003d parseDate($expiredate).getDate();\nvar $currentDate \u003d new Date().getDate();\nvar  $daysDifference \u003d $expiryDate - $currentDate\n_log($daysDifference);\n\nvar $days\u003d $daysDifference+1;\n\nif(_getText(_paragraph(0, _near(_label(\"Account Status\")))) \u003d\u003d \"trial\"){\n\nif($days \u003c\u003d 5){\n_assertEqual(\"Your free trial is about to end soon in \"+$days+\" days! Please upgrade to enjoy Conversive\", _getText(_span(\"banner_title\"))); \n}\n"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"Select Plan\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_heading5(\"Discover the exclusive benefits awaiting you with our premium plans\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"Discover the exclusive benefits awaiting you with our premium plans\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"close-btn absolute z-10 ltr:right-6 rtl:left-6\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"header-action-item header-action-item-hoverable\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"Campaigns\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "\nif($days \u003c\u003d 5){\n_assertEqual(\"Your free trial is about to end soon in \"+$days+\" days! Please upgrade to enjoy Conversive\", _getText(_span(\"banner_title\"))); \n}\n"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"Converse desk\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "\nif($days \u003c\u003d 5){\n_assertEqual(\"Your free trial is about to end soon in \"+$days+\" days! Please upgrade to enjoy Conversive\", _getText(_span(\"banner_title\"))); \n}\n"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(0, _near(_span(\"Select Plan\")))"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"Message Templates\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_isVisible",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"Your free trial is about to end soon in 4 days! Please upgrade to enjoy Conversive\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Is_False"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "}"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

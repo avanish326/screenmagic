@@ -1,0 +1,75 @@
+{
+  "modifiedOn": "2024-03-06T05:34:50.024Z",
+  "name": "Validate Number Credit",
+  "id": "43577",
+  "type": 3,
+  "createdOn": "2024-02-28T12:08:08.685Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Validate Number Credit",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_selectWindow",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "\"SMS Magic\""
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "\n$country \u003d _collectAttributes(\"_cell\",\"/.*/\",\"sahiText\",_under(_cell(\"/Country/\",_in(_row(\"/Credits/\")))),_leftOf(_cell(\"Long Code\")))\n$remainingCredit \u003d _collectAttributes(\"_cell\",\"/.*/\",\"sahiText\",_under(_cell(\"/Remaining/\")),_rightOf(_cell(\"Long Code\")))"
+      },
+      {
+        "commented": false,
+        "action": "_selectWindow",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "\"/Conversive/\""
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(11, _near(_span(\"avatar-icon avatar-icon-32\")))"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "\n\n$country1 \u003d _collectAttributes(\"_cell\",\"/.*/\",\"sahiText\",_under(_tableHeader(\"Country\")))\n$remainingCredit1 \u003d _collectAttributes(\"_cell\",\"/.*/\",\"sahiText\",_under(_tableHeader(\"Credit\")))\nvar $credit \u003d 0;\nfor(var $i \u003d 0;$i\u003c$country.length;$i++){\n_assertEqual($country[$i],$country1[$i]);\n_assertEqual($remainingCredit[$i],$remainingCredit1[$i]);\n$credit  \u003d$credit +parseInt($remainingCredit1[$i])\n}\n"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_heading3(0, _near(_div(\"Available Number Credit\")))"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$credit"
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

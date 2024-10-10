@@ -1,0 +1,82 @@
+{
+  "modifiedOn": "2024-02-08T06:49:50.696Z",
+  "name": "Assert message on converse desk $smsguidedauto",
+  "id": "28357",
+  "type": 3,
+  "createdOn": "2024-02-08T06:49:50.696Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Assert message on converse desk $smsguidedauto",
+    "parameters": [
+      {
+        "parameterId": "smsguidedauto_",
+        "entityTypeId": "smsguidedauto",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"name-txt\", _near(_listItem(\"All My Messages\")))"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_heading1(0)"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "parameterId": "smsguidedauto_",
+          "attributeId": "attr_41701925515656"
+        },
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(\"sm-msg-wrap\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "parameterId": "smsguidedauto_",
+          "attributeId": "attr_21701846028757"
+        },
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_italic(\"close\")"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "\"close\""
+          }
+        ],
+        "stepType": "Action"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

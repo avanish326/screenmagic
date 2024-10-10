@@ -1,0 +1,70 @@
+{
+  "modifiedOn": "2024-06-10T13:35:59.248Z",
+  "name": "Assert the Welcome Message $agentname",
+  "id": "28082",
+  "type": 3,
+  "createdOn": "2024-02-08T06:49:46.722Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Assert the Welcome Message $agentname",
+    "parameters": [
+      {
+        "parameterId": "agentname_",
+        "entityTypeId": "agentname",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"chatbot_name\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$agentnameCheck"
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"message-text\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$welcomeMessage"
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"message-text[1]\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"You are now connected with \"+$agentnameCheck+\". Please continue the conversation.\""
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

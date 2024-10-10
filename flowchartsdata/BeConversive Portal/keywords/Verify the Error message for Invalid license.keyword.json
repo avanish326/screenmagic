@@ -1,0 +1,75 @@
+{
+  "modifiedOn": "2024-08-20T07:32:46.725Z",
+  "name": "Verify the Error message for Invalid license",
+  "id": "58812",
+  "type": 3,
+  "createdOn": "2024-08-14T10:22:47.237Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Verify the Error message for Invalid license",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "10000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_image(\"plan_expired-48836d40.png\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_heading4(\"Your current plan is Invalid\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"Your current plan is Invalid\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_submit(\"Log Out\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"Log Out\""
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

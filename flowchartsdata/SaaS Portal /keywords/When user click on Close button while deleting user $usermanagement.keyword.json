@@ -1,0 +1,45 @@
+{
+  "modifiedOn": "2024-03-14T05:00:59.925Z",
+  "name": "When user click on Close button while deleting user $usermanagement",
+  "id": "44620",
+  "type": 3,
+  "createdOn": "2024-03-14T05:00:33.359Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "When user click on Close button while deleting user $usermanagement",
+    "parameters": [
+      {
+        "parameterId": "usermanagement_",
+        "entityTypeId": "usermanagement",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_button(\"Close[2]\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_isVisible",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_cell($usermanagement.email)"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Is_True"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

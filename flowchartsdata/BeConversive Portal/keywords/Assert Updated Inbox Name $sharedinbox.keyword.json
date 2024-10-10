@@ -1,0 +1,44 @@
+{
+  "modifiedOn": "2024-02-08T06:49:52.076Z",
+  "name": "Assert Updated Inbox Name $sharedinbox",
+  "id": "28456",
+  "type": 3,
+  "createdOn": "2024-02-08T06:49:52.076Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Assert Updated Inbox Name $sharedinbox",
+    "parameters": [
+      {
+        "parameterId": "sharedinbox_",
+        "entityTypeId": "sharedinbox",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "var $newInboxName\u003d$sharedinbox.newInboxName;"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"\"+$newInboxName+\"\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "parameterId": "sharedinbox_",
+          "attributeId": "attr_31702465631217"
+        },
+        "visibleCheck": false
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

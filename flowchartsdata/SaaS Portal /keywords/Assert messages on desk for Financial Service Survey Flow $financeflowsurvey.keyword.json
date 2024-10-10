@@ -1,0 +1,115 @@
+{
+  "modifiedOn": "2024-02-16T09:11:52.308Z",
+  "name": "Assert messages on desk for Financial Service Survey Flow $financeflowsurvey",
+  "id": "33749",
+  "type": 3,
+  "createdOn": "2024-02-16T07:49:16.924Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Assert messages on desk for Financial Service Survey Flow $financeflowsurvey",
+    "parameters": [
+      {
+        "parameterId": "financeflowsurvey_",
+        "entityTypeId": "financeflowsurvey",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(\"wmOWYENZHMHm\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"wmOWYENZHMHm\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(\"chatbot_triggered\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"Hi {insert customer first name here}! We\u0027d love to get some feedback on your experience with us. How satisfied were you with the services proivded? Please choose one of the following options: Type 1 for Very Satisfied Type 2 for Somewhat satisfied Type 3 for Neutral Type 4 for Somewhat unsatisfied Type 5 for Very unsatisfied\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph($financeflowsurvey.ctaType)"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "parameterId": "financeflowsurvey_",
+          "attributeId": "attr_11708069317563"
+        },
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph($financeflowsurvey.responseRating)"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "parameterId": "financeflowsurvey_",
+          "attributeId": "attr_11708069461040"
+        },
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(\"Thank you for your feedback.\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"Thank you for your feedback.\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_italic(\"close\")"
+          }
+        ],
+        "stepType": "Action"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

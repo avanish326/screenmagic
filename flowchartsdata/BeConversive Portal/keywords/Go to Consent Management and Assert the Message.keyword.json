@@ -1,0 +1,42 @@
+{
+  "modifiedOn": "2024-02-08T06:49:44.672Z",
+  "name": "Go to Consent Management and Assert the Message",
+  "id": "27937",
+  "type": 3,
+  "createdOn": "2024-02-08T06:49:44.672Z",
+  "content": {
+    "title": "Go to Consent Management and Assert the Message",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"Consent Management\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"/error_outline Consent Management feature/\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"error_outline Consent Management feature is not supported because the HIPAA Compliance setting is enabled.\""
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

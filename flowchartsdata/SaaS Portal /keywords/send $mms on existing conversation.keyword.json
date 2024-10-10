@@ -1,0 +1,87 @@
+{
+  "modifiedOn": "2024-03-05T04:47:01.121Z",
+  "name": "send $mms on existing conversation",
+  "id": "43378",
+  "type": 3,
+  "createdOn": "2024-02-27T11:32:53.890Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "send $mms on existing conversation",
+    "parameters": [
+      {
+        "parameterId": "mms_",
+        "entityTypeId": "mms",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_italic(\"/attach_file/\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_setFile3",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_file(\"file-input-video\")"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "\"scripts/sample.mp4\""
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "parameterId": "mms_",
+            "attributeId": "attr_01709613234443",
+            "accessorId": "acc0"
+          },
+          {
+            "parameterId": "mms_",
+            "attributeId": "attr_01709613234443"
+          }
+        ],
+        "stepType": "Action",
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "4000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_button(\"Send\")"
+          }
+        ],
+        "stepType": "Action"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

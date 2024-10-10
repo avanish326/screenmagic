@@ -1,0 +1,247 @@
+{
+  "modifiedOn": "2024-02-06T13:05:26.142Z",
+  "name": "Converse Desk",
+  "id": "22777",
+  "type": 0,
+  "createdOn": "2024-01-23T08:02:21.175Z",
+  "content": {
+    "settings": {
+      "maxProceedDepth": 100,
+      "maxProceedsForFirstDepth": 1,
+      "maxProceedsPerDepth": 1,
+      "maxPathRepititionsPerComboPath": 1,
+      "maxProceedsPerPath": 10000,
+      "maxToggles": 2,
+      "maxMatchingPaths": 3
+    },
+    "nodesMap": {
+      "fcn_start_0": {
+        "dataSetId": -1,
+        "id": "fcn_start_0",
+        "nodeType": "start",
+        "branches": [
+          "fcn_conversedesk_0"
+        ],
+        "content": "Start"
+      },
+      "fcn_conversedesk_0": {
+        "dataSetId": -1,
+        "id": "fcn_conversedesk_0",
+        "nodeType": "pathlabel",
+        "branches": [
+          "fcn_logintosaasportal_1705997030585_0"
+        ],
+        "content": "Converse Desk"
+      },
+      "fcn_assignconversationtouser_1705996952839_0": {
+        "dataSetId": -1,
+        "id": "fcn_assignconversationtouser_1705996952839_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_standarduserinboxvalidationsms_1705996952839_0",
+          "fcn_savecontactnew_1705996952839_0"
+        ],
+        "content": "Assign Conversation to user"
+      },
+      "fcn_standarduserinboxvalidationsms_1705996952839_0": {
+        "dataSetId": -1,
+        "id": "fcn_standarduserinboxvalidationsms_1705996952839_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_sendincomingmessagetousersms_1705996952839_0"
+        ],
+        "content": "Standard User Inbox Validation $sms"
+      },
+      "fcn_sendincomingmessagetousersms_1705996952839_0": {
+        "dataSetId": -1,
+        "id": "fcn_sendincomingmessagetousersms_1705996952839_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checkthemessageinstandarduserinbox_1705996952839_0"
+        ],
+        "content": "Send Incoming message to user $sms"
+      },
+      "fcn_checkthemessageinstandarduserinbox_1705996952839_0": {
+        "dataSetId": -1,
+        "id": "fcn_checkthemessageinstandarduserinbox_1705996952839_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Check the message in Standard user Inbox"
+      },
+      "fcn_savecontactnew_1705996952839_0": {
+        "dataSetId": -1,
+        "id": "fcn_savecontactnew_1705996952839_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Save Contact $new"
+      },
+      "fcn_sendincomingmessagetousersms_1705996952839_2": {
+        "dataSetId": -1,
+        "id": "fcn_sendincomingmessagetousersms_1705996952839_2",
+        "nodeType": "action",
+        "branches": [
+          "fcn_validateunreadconversation_1705996952839_0"
+        ],
+        "content": "Send Incoming message to user $sms"
+      },
+      "fcn_validateunreadconversation_1705996952839_0": {
+        "dataSetId": -1,
+        "id": "fcn_validateunreadconversation_1705996952839_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Validate Unread Conversation"
+      },
+      "fcn_searchcontactnewcontact_1705996952839_0": {
+        "dataSetId": -1,
+        "id": "fcn_searchcontactnewcontact_1705996952839_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Search Contact $newcontact"
+      },
+      "fcn_validatethecountofmessage_1705996952839_0": {
+        "dataSetId": -1,
+        "id": "fcn_validatethecountofmessage_1705996952839_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Validate the count of message"
+      },
+      "fcn_logintosaasportal_1705997030585_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintosaasportal_1705997030585_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_sendincomingmessagetousersms_1706161170093_0"
+        ],
+        "content": "login to $saasportal"
+      },
+      "fcn_logintosaasportal_1706076975000_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintosaasportal_1706076975000_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "login to $saasportal"
+      },
+      "fcn_sendincomingmessagetousersms_1706161170093_0": {
+        "dataSetId": -1,
+        "id": "fcn_sendincomingmessagetousersms_1706161170093_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_validatereadconversation_1706161170093_0"
+        ],
+        "content": "Send Incoming message to user $sms"
+      },
+      "fcn_validatereadconversation_1706161170093_0": {
+        "dataSetId": -1,
+        "id": "fcn_validatereadconversation_1706161170093_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_sendincomingmessagetousersms_1706161186229_0"
+        ],
+        "content": "Validate Read Conversation"
+      },
+      "fcn_sendincomingmessagetousersms_1706161186229_0": {
+        "dataSetId": -1,
+        "id": "fcn_sendincomingmessagetousersms_1706161186229_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_validateunreadconversation_1706161186229_0"
+        ],
+        "content": "Send Incoming message to user $sms"
+      },
+      "fcn_validateunreadconversation_1706161186229_0": {
+        "dataSetId": -1,
+        "id": "fcn_validateunreadconversation_1706161186229_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assignconversationtouser_1706161215299_0"
+        ],
+        "content": "Validate Unread Conversation"
+      },
+      "fcn_assignconversationtouser_1706161215299_0": {
+        "dataSetId": -1,
+        "id": "fcn_assignconversationtouser_1706161215299_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_standarduserinboxvalidationsms_1706161215299_0"
+        ],
+        "content": "Assign Conversation to user"
+      },
+      "fcn_standarduserinboxvalidationsms_1706161215299_0": {
+        "dataSetId": -1,
+        "id": "fcn_standarduserinboxvalidationsms_1706161215299_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_sendincomingmessagetousersms_1706161215299_0"
+        ],
+        "content": "Standard User Inbox Validation $sms"
+      },
+      "fcn_sendincomingmessagetousersms_1706161215299_0": {
+        "dataSetId": -1,
+        "id": "fcn_sendincomingmessagetousersms_1706161215299_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checkthemessageinstandarduserinbox_1706161215299_0"
+        ],
+        "content": "Send Incoming message to user $sms"
+      },
+      "fcn_checkthemessageinstandarduserinbox_1706161215299_0": {
+        "dataSetId": -1,
+        "id": "fcn_checkthemessageinstandarduserinbox_1706161215299_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Check the message in Standard user Inbox"
+      }
+    },
+    "pathNames": {},
+    "isPrimary": false,
+    "positions": {
+      "fcn_start_0": {
+        "top": 153.0,
+        "left": 107.0
+      },
+      "fcn_conversedesk_0": {
+        "top": 215.0,
+        "left": 179.0
+      },
+      "fcn_logintosaasportal_1705997030585_0": {
+        "top": 294.0,
+        "left": 185.0
+      },
+      "fcn_sendincomingmessagetousersms_1706161170093_0": {
+        "top": 359.140625,
+        "left": 185.0
+      },
+      "fcn_validatereadconversation_1706161170093_0": {
+        "top": 432.296875,
+        "left": 187.0
+      },
+      "fcn_sendincomingmessagetousersms_1706161186229_0": {
+        "top": 491.296875,
+        "left": 187.0
+      },
+      "fcn_validateunreadconversation_1706161186229_0": {
+        "top": 567.4375,
+        "left": 187.0
+      },
+      "fcn_assignconversationtouser_1706161215299_0": {
+        "top": 626.4375,
+        "left": 187.0
+      },
+      "fcn_standarduserinboxvalidationsms_1706161215299_0": {
+        "top": 689.4375,
+        "left": 178.0
+      },
+      "fcn_sendincomingmessagetousersms_1706161215299_0": {
+        "top": 752.4375,
+        "left": 189.0
+      },
+      "fcn_checkthemessageinstandarduserinbox_1706161215299_0": {
+        "top": 823.578125,
+        "left": 187.0
+      }
+    },
+    "tags": ""
+  },
+  "enabled": true,
+  "parentId": ""
+}

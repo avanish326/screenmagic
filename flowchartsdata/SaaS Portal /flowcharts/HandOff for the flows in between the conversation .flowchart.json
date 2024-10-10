@@ -1,0 +1,1189 @@
+{
+  "modifiedOn": "2024-07-31T07:04:02.976Z",
+  "name": "HandOff for the flows in between the conversation ",
+  "id": "46049",
+  "type": 0,
+  "createdOn": "2024-05-13T09:56:08.175Z",
+  "content": {
+    "settings": {
+      "maxProceedDepth": 100,
+      "maxProceedsForFirstDepth": 1,
+      "maxProceedsPerDepth": 1,
+      "maxPathRepititionsPerComboPath": 1,
+      "maxProceedsPerPath": 10000,
+      "maxToggles": 2,
+      "maxMatchingPaths": 3
+    },
+    "flowChartUID": "fcUID_1715594168112",
+    "nodesMap": {
+      "fcn_start_0": {
+        "dataSetId": -1,
+        "id": "fcn_start_0",
+        "nodeType": "start",
+        "branches": [
+          "fcn_handoffinbetweentheconversation_0"
+        ],
+        "content": "Start"
+      },
+      "fcn_handoffinbetweentheconversation_0": {
+        "dataSetId": -1,
+        "id": "fcn_handoffinbetweentheconversation_0",
+        "nodeType": "pathlabel",
+        "branches": [
+          "fcn_logintosaasconversive_1715594300735_0",
+          "fcn_logintosaas_guided_1718961213262_0",
+          "fcn_createzohologin_guided_1718962999447_0",
+          "fcn_createsflogin_guided_1718963764012_0"
+        ],
+        "content": "Hand Off in between the conversation - SaaS"
+      },
+      "fcn_logintosaasconversive_1715594300735_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintosaasconversive_1715594300735_0",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_navigatetoconversivebuttonsettingspage_1715599034655_0",
+          "fcn_handoffinbetweentheconversationsms_1715599109538_0"
+        ],
+        "content": "login to $saasconversive"
+      },
+      "fcn_getagentname_1715594300735_0": {
+        "dataSetId": -1,
+        "id": "fcn_getagentname_1715594300735_0",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_startconversationwithbotthroughsms_1715594300735_0",
+          "fcn_handoffinbetweentheconversationwhatsapp_0"
+        ],
+        "content": "get $agentname"
+      },
+      "fcn_startconversationwithbotthroughsms_1715594300735_0": {
+        "dataSetId": -1,
+        "id": "fcn_startconversationwithbotthroughsms_1715594300735_0",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_gotomyinboxandverifythemessagesandstarttheconversationwithagentagentsms_0"
+        ],
+        "content": "start conversation with bot through $sms and ask for conversation with $agent in between the conversation"
+      },
+      "fcn_gotomyinboxandverifythemessagesandstarttheconversationwithagentagentsms_0": {
+        "dataSetId": -1,
+        "id": "fcn_gotomyinboxandverifythemessagesandstarttheconversationwithagentagentsms_0",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_verifymessagehistoryforbotandagentconversationwhenvisitoraskforagentoffinbetweentheconversationsms_0"
+        ],
+        "content": "Go to My Inbox and Verify the messages and start the conversation with agent $agent $sms"
+      },
+      "fcn_verifymessagehistoryforbotandagentconversationwhenvisitoraskforagentoffinbetweentheconversationsms_0": {
+        "dataSetId": -1,
+        "id": "fcn_verifymessagehistoryforbotandagentconversationwhenvisitoraskforagentoffinbetweentheconversationsms_0",
+        "nodeType": "skip",
+        "branches": [],
+        "content": "Verify message history for bot and $agent conversation when visitor ask for agent off in between the conversation $sms"
+      },
+      "fcn_handoffinbetweentheconversationwhatsapp_0": {
+        "dataSetId": -1,
+        "id": "fcn_handoffinbetweentheconversationwhatsapp_0",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_startconversationwithbotthroughsmsandaskforconversationwithagentinbetweentheconversation_1715598700158_0"
+        ],
+        "content": "Hand Off in between the conversation - Whats App"
+      },
+      "fcn_startconversationwithbotthroughsmsandaskforconversationwithagentinbetweentheconversation_1715598700158_0": {
+        "dataSetId": -1,
+        "id": "fcn_startconversationwithbotthroughsmsandaskforconversationwithagentinbetweentheconversation_1715598700158_0",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_gotomyinboxandverifythemessagesandstarttheconversationwithagentagentsms_1715598788789_0"
+        ],
+        "content": "start conversation with bot through $whatsapp and ask for conversation with $agent in between the conversation"
+      },
+      "fcn_gotomyinboxandverifythemessagesandstarttheconversationwithagentagentsms_1715598788789_0": {
+        "dataSetId": -1,
+        "id": "fcn_gotomyinboxandverifythemessagesandstarttheconversationwithagentagentsms_1715598788789_0",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_verifymessagehistoryforbotandagentconversationwhenvisitoraskforagentoffinbetweentheconversationsms_1715598812805_0"
+        ],
+        "content": "Go to My Inbox and Verify the messages and start the conversation with agent $agent $whatsapp"
+      },
+      "fcn_verifymessagehistoryforbotandagentconversationwhenvisitoraskforagentoffinbetweentheconversationsms_1715598812805_0": {
+        "dataSetId": -1,
+        "id": "fcn_verifymessagehistoryforbotandagentconversationwhenvisitoraskforagentoffinbetweentheconversationsms_1715598812805_0",
+        "nodeType": "skip",
+        "branches": [],
+        "content": "Verify message history for bot and $agent conversation when visitor ask for agent off in between the conversation $whatsapp"
+      },
+      "fcn_navigatetoconversivebuttonsettingspage_1715599034655_0": {
+        "dataSetId": -1,
+        "id": "fcn_navigatetoconversivebuttonsettingspage_1715599034655_0",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_isconversivebuttonexist_1715599034655_0"
+        ],
+        "content": "navigate to conversive button settings page"
+      },
+      "fcn_isconversivebuttonexist_1715599034655_0": {
+        "dataSetId": -1,
+        "id": "fcn_isconversivebuttonexist_1715599034655_0",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_createnewconversivebuttonwithwebformdisabled_1715599063488_0",
+          "fcn_useexistingconversivebutton_1715599057438_0"
+        ],
+        "content": "Is Conversive Button Exist ?"
+      },
+      "fcn_useexistingconversivebutton_1715599057438_0": {
+        "dataSetId": -1,
+        "id": "fcn_useexistingconversivebutton_1715599057438_0",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_getscript_1715599073338_0"
+        ],
+        "content": "use $existingconversivebutton"
+      },
+      "fcn_createnewconversivebuttonwithwebformdisabled_1715599063488_0": {
+        "dataSetId": -1,
+        "id": "fcn_createnewconversivebuttonwithwebformdisabled_1715599063488_0",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_getscript_1715599073338_0"
+        ],
+        "content": "Create Conversive Button with channel as Web with form disabled $newconversivebutton"
+      },
+      "fcn_getscript_1715599073338_0": {
+        "dataSetId": -1,
+        "id": "fcn_getscript_1715599073338_0",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_getconversivebuttonidandbotname_1715599084354_0"
+        ],
+        "content": "get $script"
+      },
+      "fcn_getconversivebuttonidandbotname_1715599084354_0": {
+        "dataSetId": -1,
+        "id": "fcn_getconversivebuttonidandbotname_1715599084354_0",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_conversedeskvalidation_1715599084354_0"
+        ],
+        "content": "Get Conversive Button ID and Bot Name"
+      },
+      "fcn_conversedeskvalidation_1715599084354_0": {
+        "dataSetId": -1,
+        "id": "fcn_conversedeskvalidation_1715599084354_0",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_getagentname_1715599084354_0"
+        ],
+        "content": "Converse Desk Validation"
+      },
+      "fcn_getagentname_1715599084354_0": {
+        "dataSetId": -1,
+        "id": "fcn_getagentname_1715599084354_0",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_embedthescriptintomathhuntdomainandnavigatetowebsite_1715599084354_0"
+        ],
+        "content": "get $agentname"
+      },
+      "fcn_embedthescriptintomathhuntdomainandnavigatetowebsite_1715599084354_0": {
+        "dataSetId": -1,
+        "id": "fcn_embedthescriptintomathhuntdomainandnavigatetowebsite_1715599084354_0",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_starttheconversationwithbotandaskforagentinbetweentheconversation_1715599084354_0"
+        ],
+        "content": "Embed the script into mathhunt domain and navigate to website"
+      },
+      "fcn_starttheconversationwithbotandaskforagentinbetweentheconversation_1715599084354_0": {
+        "dataSetId": -1,
+        "id": "fcn_starttheconversationwithbotandaskforagentinbetweentheconversation_1715599084354_0",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_gotomyinboxandstarttheconversationafterhandoffagent_1715599084354_0"
+        ],
+        "content": "start the conversation with $bot and ask for $agent in between the conversation"
+      },
+      "fcn_gotomyinboxandstarttheconversationafterhandoffagent_1715599084354_0": {
+        "dataSetId": -1,
+        "id": "fcn_gotomyinboxandstarttheconversationafterhandoffagent_1715599084354_0",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_verifymessagehistoryforbotandagentconversationbotagentwhenvisitoraskforagentoffinbetweentheconversation_1715599084354_0"
+        ],
+        "content": "Go to my inbox and start the conversation after handoff $agent"
+      },
+      "fcn_verifymessagehistoryforbotandagentconversationbotagentwhenvisitoraskforagentoffinbetweentheconversation_1715599084354_0": {
+        "dataSetId": -1,
+        "id": "fcn_verifymessagehistoryforbotandagentconversationbotagentwhenvisitoraskforagentoffinbetweentheconversation_1715599084354_0",
+        "nodeType": "skip",
+        "branches": [],
+        "content": "Verify message history for bot and agent conversation $bot $agent when visitor ask for agent off in between the conversation"
+      },
+      "fcn_handoffinbetweentheconversationsms_1715599109538_0": {
+        "dataSetId": -1,
+        "id": "fcn_handoffinbetweentheconversationsms_1715599109538_0",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_getagentname_1715594300735_0"
+        ],
+        "content": "Hand Off in between the conversation - SMS"
+      },
+      "fcn_logintosaas_guided_1718961213262_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintosaas_guided_1718961213262_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_handoffinbetweentheconversationsms_0"
+        ],
+        "content": "login to $saas_guided"
+      },
+      "fcn_handoffinbetweentheconversationsms_0": {
+        "dataSetId": -1,
+        "id": "fcn_handoffinbetweentheconversationsms_0",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_getagentname_1718961238879_0"
+        ],
+        "content": "Hand Off in between the conversation - SMS"
+      },
+      "fcn_getagentname_1718961238879_0": {
+        "dataSetId": -1,
+        "id": "fcn_getagentname_1718961238879_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_starttheconversationforstudentinquiryflowsmsandprovideonlybasicinformationstudentnonwebbasicinfo_0",
+          "fcn_handoffinbetweentheconversationsms_1718962301142_0"
+        ],
+        "content": "get $agentname"
+      },
+      "fcn_starttheconversationforstudentinquiryflowsmsandprovideonlybasicinformationstudentnonwebbasicinfo_0": {
+        "dataSetId": -1,
+        "id": "fcn_starttheconversationforstudentinquiryflowsmsandprovideonlybasicinformationstudentnonwebbasicinfo_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_askforconversationwithagentinbetweentheguidedflow_0"
+        ],
+        "content": "Start the conversation for Student Inquiry flow SMS and provide only basic information $studentnonweb $basicinfo"
+      },
+      "fcn_askforconversationwithagentinbetweentheguidedflow_0": {
+        "dataSetId": -1,
+        "id": "fcn_askforconversationwithagentinbetweentheguidedflow_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_verifythehandoffkeywordandmessageindeskagentbasicinfo_1718961417626_0"
+        ],
+        "content": "Ask for conversation with agent in between the guided flow $agent $basicinfo"
+      },
+      "fcn_verifythehandoffkeywordandmessageindeskagentbasicinfo_1718961417626_0": {
+        "dataSetId": -1,
+        "id": "fcn_verifythehandoffkeywordandmessageindeskagentbasicinfo_1718961417626_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_sendmessagefromusingsmsonceguidedflowendsbasicinfo_1718961535833_0"
+        ],
+        "content": "Verify the hand off keyword and message in desk when guided flow is enabled $agent $basicinfo"
+      },
+      "fcn_verifythethehandoffrequestedflagandcountintheconversationlistviewinconversedesk_1718961426876_0": {
+        "dataSetId": -1,
+        "id": "fcn_verifythethehandoffrequestedflagandcountintheconversationlistviewinconversedesk_1718961426876_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_acceptthehandofffromdesk_1718961426876_0"
+        ],
+        "content": "Verify the the hand off requested flag and count in the conversation list view in Converse Desk"
+      },
+      "fcn_acceptthehandofffromdesk_1718961426876_0": {
+        "dataSetId": -1,
+        "id": "fcn_acceptthehandofffromdesk_1718961426876_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_starttheconversationwithagentforsmsagentforguidedbasicinfo_1718961499715_0"
+        ],
+        "content": "Accept the Hand Off from desk"
+      },
+      "fcn_starttheconversationwithagentforsmsagentforguidedbasicinfo_1718961499715_0": {
+        "dataSetId": -1,
+        "id": "fcn_starttheconversationwithagentforsmsagentforguidedbasicinfo_1718961499715_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_verifysmshistoryforagentconversationforagentbasicinfo_1718961499715_0"
+        ],
+        "content": "start the conversation with agent for sms $agent for guided $basicinfo"
+      },
+      "fcn_verifysmshistoryforagentconversationforagentbasicinfo_1718961499715_0": {
+        "dataSetId": -1,
+        "id": "fcn_verifysmshistoryforagentconversationforagentbasicinfo_1718961499715_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Verify SMS History for agent and bot conversation when accept the hand off in between $agent $basicinfo"
+      },
+      "fcn_sendmessagefromusingsmsonceguidedflowendsbasicinfo_1718961535833_0": {
+        "dataSetId": -1,
+        "id": "fcn_sendmessagefromusingsmsonceguidedflowendsbasicinfo_1718961535833_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_verifythethehandoffrequestedflagandcountintheconversationlistviewinconversedesk_1718961426876_0"
+        ],
+        "content": "Send Message from using SMS once guided flow ends $basicinfo"
+      },
+      "fcn_handoffinbetweentheconversationsms_1718962301142_0": {
+        "dataSetId": -1,
+        "id": "fcn_handoffinbetweentheconversationsms_1718962301142_0",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_starttheconversationforstudentinquiryflowsmsandprovideonlybasicinformationstudentnonwebbasicinfo_1718962312273_0"
+        ],
+        "content": "Hand Off in between the conversation - Whats App"
+      },
+      "fcn_starttheconversationforstudentinquiryflowsmsandprovideonlybasicinformationstudentnonwebbasicinfo_1718962312273_0": {
+        "dataSetId": -1,
+        "id": "fcn_starttheconversationforstudentinquiryflowsmsandprovideonlybasicinformationstudentnonwebbasicinfo_1718962312273_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_askforconversationwithagentforwaagentbasicinfo_1718962394688_0"
+        ],
+        "content": "Start the conversation for Student Inquiry flow SMS and provide only basic information $studentnonweb $basicinfo for Whats App"
+      },
+      "fcn_askforconversationwithagentforwaagentbasicinfo_1718962394688_0": {
+        "dataSetId": -1,
+        "id": "fcn_askforconversationwithagentforwaagentbasicinfo_1718962394688_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_verifythehandoffkeywordandmessageindeskwhenguidedflowisenabledagentbasicinfo_1718962404135_0"
+        ],
+        "content": "Ask for conversation with agent for WA $agent $basicinfo"
+      },
+      "fcn_verifythehandoffkeywordandmessageindeskwhenguidedflowisenabledagentbasicinfo_1718962404135_0": {
+        "dataSetId": -1,
+        "id": "fcn_verifythehandoffkeywordandmessageindeskwhenguidedflowisenabledagentbasicinfo_1718962404135_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_sendmessagefromusingwhatsapponceguidedflowendsbasicinfo_1718962414058_0"
+        ],
+        "content": "Verify the hand off keyword and message in desk when guided flow is enabled $agent $basicinfo"
+      },
+      "fcn_sendmessagefromusingwhatsapponceguidedflowendsbasicinfo_1718962414058_0": {
+        "dataSetId": -1,
+        "id": "fcn_sendmessagefromusingwhatsapponceguidedflowendsbasicinfo_1718962414058_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_verifythethehandoffrequestedflagandcountintheconversationlistviewinconversedesk_1718962423304_0"
+        ],
+        "content": "Send Message from using Whats App once guided flow ends $basicinfo"
+      },
+      "fcn_verifythethehandoffrequestedflagandcountintheconversationlistviewinconversedesk_1718962423304_0": {
+        "dataSetId": -1,
+        "id": "fcn_verifythethehandoffrequestedflagandcountintheconversationlistviewinconversedesk_1718962423304_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_acceptthehandofffromdesk_1718962423304_0"
+        ],
+        "content": "Verify the the hand off requested flag and count in the conversation list view in Converse Desk"
+      },
+      "fcn_acceptthehandofffromdesk_1718962423304_0": {
+        "dataSetId": -1,
+        "id": "fcn_acceptthehandofffromdesk_1718962423304_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_starttheconversationwithagentforwaagentforguidedbasicinfo_1718962525832_0"
+        ],
+        "content": "Accept the Hand Off from desk"
+      },
+      "fcn_starttheconversationwithagentforwaagentforguidedbasicinfo_1718962525832_0": {
+        "dataSetId": -1,
+        "id": "fcn_starttheconversationwithagentforwaagentforguidedbasicinfo_1718962525832_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_verifysmshistoryforagentandbotconversationwhenacceptthehandoffinbetweenagentbasicinfo_1718962529115_0"
+        ],
+        "content": "start the conversation with agent for WA $agent for guided $basicinfo"
+      },
+      "fcn_verifysmshistoryforagentandbotconversationwhenacceptthehandoffinbetweenagentbasicinfo_1718962529115_0": {
+        "dataSetId": -1,
+        "id": "fcn_verifysmshistoryforagentandbotconversationwhenacceptthehandoffinbetweenagentbasicinfo_1718962529115_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Verify SMS History for agent and bot conversation when accept the hand off in between $agent $basicinfo"
+      },
+      "fcn_createzohologin_guided_1718962999447_0": {
+        "dataSetId": -1,
+        "id": "fcn_createzohologin_guided_1718962999447_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_handoffinbetweentheconversationsms_1718963006111_0"
+        ],
+        "content": "create $zohologin_guided"
+      },
+      "fcn_handoffinbetweentheconversationsms_1718963006111_0": {
+        "dataSetId": -1,
+        "id": "fcn_handoffinbetweentheconversationsms_1718963006111_0",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_getagentname_1718963011378_0"
+        ],
+        "content": "Hand Off in between the conversation ZOHO - SMS"
+      },
+      "fcn_getagentname_1718963011378_0": {
+        "dataSetId": -1,
+        "id": "fcn_getagentname_1718963011378_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_starttheconversationforstudentinquiryflowsmsandprovideonlybasicinformationstudentnonwebbasicinfo_1718963017911_0",
+          "fcn_handoffinbetweentheconversationwhatsapp_1718963376135_0"
+        ],
+        "content": "get $agentname"
+      },
+      "fcn_starttheconversationforstudentinquiryflowsmsandprovideonlybasicinformationstudentnonwebbasicinfo_1718963017911_0": {
+        "dataSetId": -1,
+        "id": "fcn_starttheconversationforstudentinquiryflowsmsandprovideonlybasicinformationstudentnonwebbasicinfo_1718963017911_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_askforconversationwithagentinbetweentheguidedflowagentbasicinfo_1718963059780_0"
+        ],
+        "content": "Start the conversation for Student Inquiry flow SMS and provide only basic information $studentnonweb $basicinfo for ZOHO"
+      },
+      "fcn_askforconversationwithagentinbetweentheguidedflowagentbasicinfo_1718963059780_0": {
+        "dataSetId": -1,
+        "id": "fcn_askforconversationwithagentinbetweentheguidedflowagentbasicinfo_1718963059780_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_verifythehandoffkeywordandmessageindeskwhenguidedflowisenabledagentbasicinfo_1718963114165_0"
+        ],
+        "content": "Ask for conversation with agent in between the guided flow $agent $basicinfo for ZOHO"
+      },
+      "fcn_verifythehandoffkeywordandmessageindeskwhenguidedflowisenabledagentbasicinfo_1718963114165_0": {
+        "dataSetId": -1,
+        "id": "fcn_verifythehandoffkeywordandmessageindeskwhenguidedflowisenabledagentbasicinfo_1718963114165_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_sendmessagefromusingsmsonceguidedflowendsbasicinfoforzoho_1718963128634_0"
+        ],
+        "content": "Verify the hand off keyword and message in desk when guided flow is enabled $agent $basicinfo"
+      },
+      "fcn_sendmessagefromusingsmsonceguidedflowendsbasicinfoforzoho_1718963128634_0": {
+        "dataSetId": -1,
+        "id": "fcn_sendmessagefromusingsmsonceguidedflowendsbasicinfoforzoho_1718963128634_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_verifythethehandoffrequestedflagandcountintheconversationlistviewinconversedesk_1718963135416_0"
+        ],
+        "content": "Send Message from using SMS once guided flow ends $basicinfo for ZOHO"
+      },
+      "fcn_verifythethehandoffrequestedflagandcountintheconversationlistviewinconversedesk_1718963135416_0": {
+        "dataSetId": -1,
+        "id": "fcn_verifythethehandoffrequestedflagandcountintheconversationlistviewinconversedesk_1718963135416_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_acceptthehandofffromdesk_1718963135416_0"
+        ],
+        "content": "Verify the the hand off requested flag and count in the conversation list view in Converse Desk"
+      },
+      "fcn_acceptthehandofffromdesk_1718963135416_0": {
+        "dataSetId": -1,
+        "id": "fcn_acceptthehandofffromdesk_1718963135416_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_starttheconversationwithagentforsmsagentforguidedbasicinfoforzoho_1718963148816_0"
+        ],
+        "content": "Accept the Hand Off from desk"
+      },
+      "fcn_starttheconversationwithagentforsmsagentforguidedbasicinfoforzoho_1718963148816_0": {
+        "dataSetId": -1,
+        "id": "fcn_starttheconversationwithagentforsmsagentforguidedbasicinfoforzoho_1718963148816_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_verifysmshistoryforagentconversationforagentbasicinfo_1718963148816_0"
+        ],
+        "content": "start the conversation with agent for sms $agent for guided $basicinfo for ZOHO"
+      },
+      "fcn_verifysmshistoryforagentconversationforagentbasicinfo_1718963148816_0": {
+        "dataSetId": -1,
+        "id": "fcn_verifysmshistoryforagentconversationforagentbasicinfo_1718963148816_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_verifyhistoryinzohoforguidedstudentnonwebagentbasicinfo_1718963148816_0"
+        ],
+        "content": "Verify SMS History for agent conversation for $agent $basicinfo"
+      },
+      "fcn_verifyhistoryinzohoforguidedstudentnonwebagentbasicinfo_1718963148816_0": {
+        "dataSetId": -1,
+        "id": "fcn_verifyhistoryinzohoforguidedstudentnonwebagentbasicinfo_1718963148816_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Verify SMS History in ZOHO for agent and bot conversation when accept the hand off in between $agent $basicinfo $studentnonweb"
+      },
+      "fcn_handoffinbetweentheconversationwhatsapp_1718963376135_0": {
+        "dataSetId": -1,
+        "id": "fcn_handoffinbetweentheconversationwhatsapp_1718963376135_0",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_starttheconversationforstudentinquiryflowsmsandprovideonlybasicinformationstudentnonwebbasicinfoforwhatsapp_1718963402561_0"
+        ],
+        "content": "Hand Off in between the conversation ZOHO - Whats App"
+      },
+      "fcn_starttheconversationforstudentinquiryflowsmsandprovideonlybasicinformationstudentnonwebbasicinfoforwhatsapp_1718963402561_0": {
+        "dataSetId": -1,
+        "id": "fcn_starttheconversationforstudentinquiryflowsmsandprovideonlybasicinformationstudentnonwebbasicinfoforwhatsapp_1718963402561_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_askforconversationwithagentforwaagentbasicinfo_1718963411528_0"
+        ],
+        "content": "Start the conversation for Student Inquiry flow SMS and provide only basic information $studentnonweb $basicinfo for Whats App for ZOHO"
+      },
+      "fcn_askforconversationwithagentforwaagentbasicinfo_1718963411528_0": {
+        "dataSetId": -1,
+        "id": "fcn_askforconversationwithagentforwaagentbasicinfo_1718963411528_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_verifythehandoffkeywordandmessageindeskwhenguidedflowisenabledagentbasicinfo_1718963421377_0"
+        ],
+        "content": "Ask for conversation with agent for WA $agent $basicinfo"
+      },
+      "fcn_verifythehandoffkeywordandmessageindeskwhenguidedflowisenabledagentbasicinfo_1718963421377_0": {
+        "dataSetId": -1,
+        "id": "fcn_verifythehandoffkeywordandmessageindeskwhenguidedflowisenabledagentbasicinfo_1718963421377_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_sendmessagefromusingwhatsapponceguidedflowendsbasicinfo_1718963421377_0"
+        ],
+        "content": "Verify the hand off keyword and message in desk when guided flow is enabled $agent $basicinfo"
+      },
+      "fcn_sendmessagefromusingwhatsapponceguidedflowendsbasicinfo_1718963421377_0": {
+        "dataSetId": -1,
+        "id": "fcn_sendmessagefromusingwhatsapponceguidedflowendsbasicinfo_1718963421377_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_verifythethehandoffrequestedflagandcountintheconversationlistviewinconversedesk_1718963421377_0"
+        ],
+        "content": "Send Message from using Whats App once guided flow ends $basicinfo"
+      },
+      "fcn_verifythethehandoffrequestedflagandcountintheconversationlistviewinconversedesk_1718963421377_0": {
+        "dataSetId": -1,
+        "id": "fcn_verifythethehandoffrequestedflagandcountintheconversationlistviewinconversedesk_1718963421377_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_acceptthehandofffromdesk_1718963421377_0"
+        ],
+        "content": "Verify the the hand off requested flag and count in the conversation list view in Converse Desk"
+      },
+      "fcn_acceptthehandofffromdesk_1718963421377_0": {
+        "dataSetId": -1,
+        "id": "fcn_acceptthehandofffromdesk_1718963421377_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_starttheconversationwithagentforwaagentforguidedbasicinfo_1718963421377_0"
+        ],
+        "content": "Accept the Hand Off from desk"
+      },
+      "fcn_starttheconversationwithagentforwaagentforguidedbasicinfo_1718963421377_0": {
+        "dataSetId": -1,
+        "id": "fcn_starttheconversationwithagentforwaagentforguidedbasicinfo_1718963421377_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_verifysmshistoryforagentandbotconversationwhenacceptthehandoffinbetweenagentbasicinfo_1718963421377_0"
+        ],
+        "content": "start the conversation with agent for WA $agent for guided $basicinfo"
+      },
+      "fcn_verifysmshistoryforagentandbotconversationwhenacceptthehandoffinbetweenagentbasicinfo_1718963421377_0": {
+        "dataSetId": -1,
+        "id": "fcn_verifysmshistoryforagentandbotconversationwhenacceptthehandoffinbetweenagentbasicinfo_1718963421377_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_verifysmshistoryinzohoforagentandbotconversationwhenacceptthehandoffinbetweenagentbasicinfostudentnonweb_1718963424811_0"
+        ],
+        "content": "Verify SMS History for agent and bot conversation when accept the hand off in between $agent $basicinfo"
+      },
+      "fcn_verifysmshistoryinzohoforagentandbotconversationwhenacceptthehandoffinbetweenagentbasicinfostudentnonweb_1718963424811_0": {
+        "dataSetId": -1,
+        "id": "fcn_verifysmshistoryinzohoforagentandbotconversationwhenacceptthehandoffinbetweenagentbasicinfostudentnonweb_1718963424811_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Verify SMS History in ZOHO for agent and bot conversation when accept the hand off in between $agent $basicinfo $studentnonweb"
+      },
+      "fcn_handoffinbetweentheconversationzohosms_1718963678707_0": {
+        "dataSetId": -1,
+        "id": "fcn_handoffinbetweentheconversationzohosms_1718963678707_0",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_navigatetosmsmagicconverse_1718963794396_0"
+        ],
+        "content": "Hand Off in between the conversation SF - SMS"
+      },
+      "fcn_createsflogin_guided_1718963764012_0": {
+        "dataSetId": -1,
+        "id": "fcn_createsflogin_guided_1718963764012_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_handoffinbetweentheconversationzohosms_1718963678707_0"
+        ],
+        "content": "create $sflogin_guided"
+      },
+      "fcn_navigatetosmsmagicconverse_1718963794396_0": {
+        "dataSetId": -1,
+        "id": "fcn_navigatetosmsmagicconverse_1718963794396_0",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_switchtosalesforceclassic_1718963794396_0"
+        ],
+        "content": "Navigate to SMS Magic Converse"
+      },
+      "fcn_switchtosalesforceclassic_1718963794396_0": {
+        "dataSetId": -1,
+        "id": "fcn_switchtosalesforceclassic_1718963794396_0",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_logintoportalusingsalesforce_credforguided_1718963803230_0"
+        ],
+        "content": "Switch to salesforce classic "
+      },
+      "fcn_logintoportalusingsalesforce_credforguided_1718963803230_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintoportalusingsalesforce_credforguided_1718963803230_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_getagentnamesf_1718963803230_0"
+        ],
+        "content": "login to portal using $salesforce_cred for guided "
+      },
+      "fcn_getagentnamesf_1718963803230_0": {
+        "dataSetId": -1,
+        "id": "fcn_getagentnamesf_1718963803230_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_gotoconversedeskofsalesforce_1718963803230_0"
+        ],
+        "content": "get $agentnamesf"
+      },
+      "fcn_gotoconversedeskofsalesforce_1718963803230_0": {
+        "dataSetId": -1,
+        "id": "fcn_gotoconversedeskofsalesforce_1718963803230_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_starttheconversationforstudentinquiryflowsmsandprovideonlybasicinformationstudentnonwebbasicinfo_1718963810765_0",
+          "fcn_handoffinbetweentheconversationsfsms_1718966114849_0"
+        ],
+        "content": "go to converse desk of salesforce"
+      },
+      "fcn_starttheconversationforstudentinquiryflowsmsandprovideonlybasicinformationstudentnonwebbasicinfo_1718963810765_0": {
+        "dataSetId": -1,
+        "id": "fcn_starttheconversationforstudentinquiryflowsmsandprovideonlybasicinformationstudentnonwebbasicinfo_1718963810765_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_askforconversationwithagentinbetweentheguidedflowagentbasicinfoforzoho_1718963877034_0"
+        ],
+        "content": "Start the conversation for Student Inquiry flow SMS and provide only basic information $studentnonweb $basicinfo for SF"
+      },
+      "fcn_askforconversationwithagentinbetweentheguidedflowagentbasicinfoforzoho_1718963877034_0": {
+        "dataSetId": -1,
+        "id": "fcn_askforconversationwithagentinbetweentheguidedflowagentbasicinfoforzoho_1718963877034_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_sendmessagefromusingsmsonceguidedflowendsbasicinfoforsf_1718964052495_0"
+        ],
+        "content": "Ask for conversation with agent in between the guided flow $agent $basicinfo for SF"
+      },
+      "fcn_verifythethehandoffrequestedflagandcountintheconversationlistviewinsfconversedesk_1718964024941_0": {
+        "dataSetId": -1,
+        "id": "fcn_verifythethehandoffrequestedflagandcountintheconversationlistviewinsfconversedesk_1718964024941_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_acceptthehandofffromsfconversedesk_1718964024941_0"
+        ],
+        "content": "Verify the the hand off requested flag and count in the conversation list view in SF Converse Desk"
+      },
+      "fcn_acceptthehandofffromsfconversedesk_1718964024941_0": {
+        "dataSetId": -1,
+        "id": "fcn_acceptthehandofffromsfconversedesk_1718964024941_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_starttheconversationwithagentforsmsinsfafterguidedflowdonebasicinfoagent_1718964062230_0"
+        ],
+        "content": "Accept the Hand Off from SF Converse Desk"
+      },
+      "fcn_sendmessagefromusingsmsonceguidedflowendsbasicinfoforsf_1718964052495_0": {
+        "dataSetId": -1,
+        "id": "fcn_sendmessagefromusingsmsonceguidedflowendsbasicinfoforsf_1718964052495_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_verifythethehandoffrequestedflagandcountintheconversationlistviewinsfconversedesk_1718964024941_0"
+        ],
+        "content": "Send Message from using SMS once guided flow ends $basicinfo for SF"
+      },
+      "fcn_starttheconversationwithagentforsmsinsfafterguidedflowdonebasicinfoagent_1718964062230_0": {
+        "dataSetId": -1,
+        "id": "fcn_starttheconversationwithagentforsmsinsfafterguidedflowdonebasicinfoagent_1718964062230_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_verifysfsmshistoryforagentmessagesfornonweb_1718964066896_0"
+        ],
+        "content": "Start the conversation with agent for SMS in sf after guided flow done $basicinfo $agent"
+      },
+      "fcn_verifysfsmshistoryforagentmessagesfornonweb_1718964066896_0": {
+        "dataSetId": -1,
+        "id": "fcn_verifysfsmshistoryforagentmessagesfornonweb_1718964066896_0",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_assertsfsmshistoryforagentmessagesinportalforguidedfornonweb_1718964072846_0"
+        ],
+        "content": "Verify SF SMS History for $agent messages for non web when hand off happned in between the conversation"
+      },
+      "fcn_assertsfsmshistoryforagentmessagesinportalforguidedfornonweb_1718964072846_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertsfsmshistoryforagentmessagesinportalforguidedfornonweb_1718964072846_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Assert SF SMS History for $agent messages in portal for guided for non web when hand off happend in between the conversation $basicinfo"
+      },
+      "fcn_handoffinbetweentheconversationsfsms_1718966114849_0": {
+        "dataSetId": -1,
+        "id": "fcn_handoffinbetweentheconversationsfsms_1718966114849_0",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_starttheconversationforstudentinquiryflowsmsandprovideonlybasicinformationstudentnonwebbasicinfoforwhatsapp_1718966132529_0"
+        ],
+        "content": "Hand Off in between the conversation SF - Whats App"
+      },
+      "fcn_starttheconversationforstudentinquiryflowsmsandprovideonlybasicinformationstudentnonwebbasicinfoforwhatsapp_1718966132529_0": {
+        "dataSetId": -1,
+        "id": "fcn_starttheconversationforstudentinquiryflowsmsandprovideonlybasicinformationstudentnonwebbasicinfoforwhatsapp_1718966132529_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_askforconversationwithagentforsfwabasicinfoagent_1718966200670_0"
+        ],
+        "content": "Start the conversation for Student Inquiry flow SMS and provide only basic information $studentnonweb $basicinfo for Whats App SF"
+      },
+      "fcn_askforconversationwithagentforsfwabasicinfoagent_1718966200670_0": {
+        "dataSetId": -1,
+        "id": "fcn_askforconversationwithagentforsfwabasicinfoagent_1718966200670_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_sendmessagefromusingwhatsapponceguidedflowendsbasicinfoforsf_1718966200670_0"
+        ],
+        "content": "Ask for conversation with agent for sf WA $basicinfo $agent "
+      },
+      "fcn_sendmessagefromusingwhatsapponceguidedflowendsbasicinfoforsf_1718966200670_0": {
+        "dataSetId": -1,
+        "id": "fcn_sendmessagefromusingwhatsapponceguidedflowendsbasicinfoforsf_1718966200670_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_verifythethehandoffrequestedflagandcountintheconversationlistviewinsfconversedesk_1718966200670_0"
+        ],
+        "content": "Send Message from using WhatsApp once guided flow ends $basicinfo for SF"
+      },
+      "fcn_verifythethehandoffrequestedflagandcountintheconversationlistviewinsfconversedesk_1718966200670_0": {
+        "dataSetId": -1,
+        "id": "fcn_verifythethehandoffrequestedflagandcountintheconversationlistviewinsfconversedesk_1718966200670_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_acceptthehandofffromsfconversedesk_1718966200670_0"
+        ],
+        "content": "Verify the the hand off requested flag and count in the conversation list view in SF Converse Desk"
+      },
+      "fcn_acceptthehandofffromsfconversedesk_1718966200670_0": {
+        "dataSetId": -1,
+        "id": "fcn_acceptthehandofffromsfconversedesk_1718966200670_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_starttheconversationwithagentforsmsinsfafterguidedflowdoneforwhatsappbasicinfoagent_1718966240752_0"
+        ],
+        "content": "Accept the Hand Off from SF Converse Desk"
+      },
+      "fcn_starttheconversationwithagentforsmsinsfafterguidedflowdoneforwhatsappbasicinfoagent_1718966240752_0": {
+        "dataSetId": -1,
+        "id": "fcn_starttheconversationwithagentforsmsinsfafterguidedflowdoneforwhatsappbasicinfoagent_1718966240752_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_verifysfsmshistoryforagentmessagesfornonwebwhenhandoffhappnedinbetweentheconversation_1718966243952_0"
+        ],
+        "content": "Start the conversation with agent for SMS in sf after guided flow done for Whats App $basicinfo $agent"
+      },
+      "fcn_verifysfsmshistoryforagentmessagesfornonwebwhenhandoffhappnedinbetweentheconversation_1718966243952_0": {
+        "dataSetId": -1,
+        "id": "fcn_verifysfsmshistoryforagentmessagesfornonwebwhenhandoffhappnedinbetweentheconversation_1718966243952_0",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_assertsfsmshistoryforagentmessagesinportalforguidedfornonwebwhenhandoffhappendinbetweentheconversationbasicinfo_1718966248368_0"
+        ],
+        "content": "Verify SF SMS History for $agent messages for non web when hand off happned in between the conversation"
+      },
+      "fcn_assertsfsmshistoryforagentmessagesinportalforguidedfornonwebwhenhandoffhappendinbetweentheconversationbasicinfo_1718966248368_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertsfsmshistoryforagentmessagesinportalforguidedfornonwebwhenhandoffhappendinbetweentheconversationbasicinfo_1718966248368_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Assert SF SMS History for $agent messages in portal for guided for non web when hand off happend in between the conversation $basicinfo"
+      }
+    },
+    "pathNames": {},
+    "isPrimary": false,
+    "positions": {
+      "fcn_start_0": {
+        "top": 150.0,
+        "left": 500.0
+      },
+      "fcn_handoffinbetweentheconversation_0": {
+        "top": 211.0,
+        "left": 484.0
+      },
+      "fcn_logintosaasconversive_1715594300735_0": {
+        "top": 284.0,
+        "left": 481.0
+      },
+      "fcn_navigatetoconversivebuttonsettingspage_1715599034655_0": {
+        "top": 354.0,
+        "left": 483.0
+      },
+      "fcn_isconversivebuttonexist_1715599034655_0": {
+        "top": 425.0,
+        "left": 486.0
+      },
+      "fcn_createnewconversivebuttonwithwebformdisabled_1715599063488_0": {
+        "top": 473.0,
+        "left": 668.0
+      },
+      "fcn_getscript_1715599073338_0": {
+        "top": 557.1484375,
+        "left": 478.0
+      },
+      "fcn_getconversivebuttonidandbotname_1715599084354_0": {
+        "top": 622.296875,
+        "left": 478.0
+      },
+      "fcn_conversedeskvalidation_1715599084354_0": {
+        "top": 681.296875,
+        "left": 478.0
+      },
+      "fcn_getagentname_1715599084354_0": {
+        "top": 740.296875,
+        "left": 478.0
+      },
+      "fcn_embedthescriptintomathhuntdomainandnavigatetowebsite_1715599084354_0": {
+        "top": 805.4453125,
+        "left": 478.0
+      },
+      "fcn_starttheconversationwithbotandaskforagentinbetweentheconversation_1715599084354_0": {
+        "top": 878.4453125,
+        "left": 478.0
+      },
+      "fcn_gotomyinboxandstarttheconversationafterhandoffagent_1715599084354_0": {
+        "top": 963.7578125,
+        "left": 478.0
+      },
+      "fcn_verifymessagehistoryforbotandagentconversationbotagentwhenvisitoraskforagentoffinbetweentheconversation_1715599084354_0": {
+        "top": 1042.921875,
+        "left": 478.0
+      },
+      "fcn_useexistingconversivebutton_1715599057438_0": {
+        "top": 483.0,
+        "left": 286.0
+      },
+      "fcn_handoffinbetweentheconversationsms_1715599109538_0": {
+        "top": 344.1484375,
+        "left": 1042.0
+      },
+      "fcn_getagentname_1715594300735_0": {
+        "top": 411.1484375,
+        "left": 1043.0
+      },
+      "fcn_startconversationwithbotthroughsms_1715594300735_0": {
+        "top": 478.1484375,
+        "left": 1043.0
+      },
+      "fcn_gotomyinboxandverifythemessagesandstarttheconversationwithagentagentsms_0": {
+        "top": 578.4609375,
+        "left": 1043.0
+      },
+      "fcn_verifymessagehistoryforbotandagentconversationwhenvisitoraskforagentoffinbetweentheconversationsms_0": {
+        "top": 671.609375,
+        "left": 1044.0
+      },
+      "fcn_handoffinbetweentheconversationwhatsapp_0": {
+        "top": 477.1484375,
+        "left": 1370.0
+      },
+      "fcn_startconversationwithbotthroughsmsandaskforconversationwithagentinbetweentheconversation_1715598700158_0": {
+        "top": 550.1484375,
+        "left": 1370.0
+      },
+      "fcn_gotomyinboxandverifythemessagesandstarttheconversationwithagentagentsms_1715598788789_0": {
+        "top": 651.4609375,
+        "left": 1370.0
+      },
+      "fcn_verifymessagehistoryforbotandagentconversationwhenvisitoraskforagentoffinbetweentheconversationsms_1715598812805_0": {
+        "top": 742.609375,
+        "left": 1370.0
+      },
+      "fcn_logintosaas_guided_1718961213262_0": {
+        "top": 392.0,
+        "left": 1895.0
+      },
+      "fcn_handoffinbetweentheconversationsms_0": {
+        "top": 457.1484375,
+        "left": 1895.0
+      },
+      "fcn_getagentname_1718961238879_0": {
+        "top": 530.1484375,
+        "left": 1895.0
+      },
+      "fcn_starttheconversationforstudentinquiryflowsmsandprovideonlybasicinformationstudentnonwebbasicinfo_0": {
+        "top": 595.296875,
+        "left": 1895.0
+      },
+      "fcn_askforconversationwithagentinbetweentheguidedflow_0": {
+        "top": 688.4453125,
+        "left": 1895.0
+      },
+      "fcn_verifythehandoffkeywordandmessageindeskagentbasicinfo_1718961417626_0": {
+        "top": 781.7578125,
+        "left": 1895.0
+      },
+      "fcn_sendmessagefromusingsmsonceguidedflowendsbasicinfo_1718961535833_0": {
+        "top": 866.90625,
+        "left": 1895.0
+      },
+      "fcn_verifythethehandoffrequestedflagandcountintheconversationlistviewinconversedesk_1718961426876_0": {
+        "top": 944.21875,
+        "left": 1895.0
+      },
+      "fcn_acceptthehandofffromdesk_1718961426876_0": {
+        "top": 1032.375,
+        "left": 1895.0
+      },
+      "fcn_starttheconversationwithagentforsmsagentforguidedbasicinfo_1718961499715_0": {
+        "top": 1091.3828125,
+        "left": 1895.0
+      },
+      "fcn_verifysmshistoryforagentconversationforagentbasicinfo_1718961499715_0": {
+        "top": 1168.53125,
+        "left": 1895.0
+      },
+      "fcn_handoffinbetweentheconversationsms_1718962301142_0": {
+        "top": 594.296875,
+        "left": 2271.0
+      },
+      "fcn_starttheconversationforstudentinquiryflowsmsandprovideonlybasicinformationstudentnonwebbasicinfo_1718962312273_0": {
+        "top": 667.296875,
+        "left": 2271.0
+      },
+      "fcn_askforconversationwithagentforwaagentbasicinfo_1718962394688_0": {
+        "top": 774.4453125,
+        "left": 2271.0
+      },
+      "fcn_verifythehandoffkeywordandmessageindeskwhenguidedflowisenabledagentbasicinfo_1718962404135_0": {
+        "top": 853.59375,
+        "left": 2271.0
+      },
+      "fcn_sendmessagefromusingwhatsapponceguidedflowendsbasicinfo_1718962414058_0": {
+        "top": 946.7421875,
+        "left": 2271.0
+      },
+      "fcn_verifythethehandoffrequestedflagandcountintheconversationlistviewinconversedesk_1718962423304_0": {
+        "top": 1025.8984375,
+        "left": 2271.0
+      },
+      "fcn_acceptthehandofffromdesk_1718962423304_0": {
+        "top": 1114.0546875,
+        "left": 2271.0
+      },
+      "fcn_starttheconversationwithagentforwaagentforguidedbasicinfo_1718962525832_0": {
+        "top": 1173.0546875,
+        "left": 2271.0
+      },
+      "fcn_verifysmshistoryforagentandbotconversationwhenacceptthehandoffinbetweenagentbasicinfo_1718962529115_0": {
+        "top": 1252.2109375,
+        "left": 2271.0
+      },
+      "fcn_createzohologin_guided_1718962999447_0": {
+        "top": 383.0,
+        "left": 2860.0
+      },
+      "fcn_handoffinbetweentheconversationsms_1718963006111_0": {
+        "top": 448.1484375,
+        "left": 2860.0
+      },
+      "fcn_getagentname_1718963011378_0": {
+        "top": 521.1484375,
+        "left": 2860.0
+      },
+      "fcn_starttheconversationforstudentinquiryflowsmsandprovideonlybasicinformationstudentnonwebbasicinfo_1718963017911_0": {
+        "top": 586.296875,
+        "left": 2860.0
+      },
+      "fcn_askforconversationwithagentinbetweentheguidedflowagentbasicinfo_1718963059780_0": {
+        "top": 693.4453125,
+        "left": 2860.0
+      },
+      "fcn_verifythehandoffkeywordandmessageindeskwhenguidedflowisenabledagentbasicinfo_1718963114165_0": {
+        "top": 792.7578125,
+        "left": 2860.0
+      },
+      "fcn_sendmessagefromusingsmsonceguidedflowendsbasicinfoforzoho_1718963128634_0": {
+        "top": 885.90625,
+        "left": 2860.0
+      },
+      "fcn_verifythethehandoffrequestedflagandcountintheconversationlistviewinconversedesk_1718963135416_0": {
+        "top": 965.0546875,
+        "left": 2860.0
+      },
+      "fcn_acceptthehandofffromdesk_1718963135416_0": {
+        "top": 1053.21875,
+        "left": 2860.0
+      },
+      "fcn_starttheconversationwithagentforsmsagentforguidedbasicinfoforzoho_1718963148816_0": {
+        "top": 1112.21875,
+        "left": 2860.0
+      },
+      "fcn_verifysmshistoryforagentconversationforagentbasicinfo_1718963148816_0": {
+        "top": 1194.3671875,
+        "left": 2860.0
+      },
+      "fcn_verifyhistoryinzohoforguidedstudentnonwebagentbasicinfo_1718963148816_0": {
+        "top": 1273.5234375,
+        "left": 2860.0
+      },
+      "fcn_handoffinbetweentheconversationwhatsapp_1718963376135_0": {
+        "top": 584.296875,
+        "left": 3220.0
+      },
+      "fcn_starttheconversationforstudentinquiryflowsmsandprovideonlybasicinformationstudentnonwebbasicinfoforwhatsapp_1718963402561_0": {
+        "top": 657.296875,
+        "left": 3220.0
+      },
+      "fcn_askforconversationwithagentforwaagentbasicinfo_1718963411528_0": {
+        "top": 764.4453125,
+        "left": 3220.0
+      },
+      "fcn_verifythehandoffkeywordandmessageindeskwhenguidedflowisenabledagentbasicinfo_1718963421377_0": {
+        "top": 843.59375,
+        "left": 3220.0
+      },
+      "fcn_sendmessagefromusingwhatsapponceguidedflowendsbasicinfo_1718963421377_0": {
+        "top": 936.7421875,
+        "left": 3220.0
+      },
+      "fcn_verifythethehandoffrequestedflagandcountintheconversationlistviewinconversedesk_1718963421377_0": {
+        "top": 1015.8984375,
+        "left": 3220.0
+      },
+      "fcn_acceptthehandofffromdesk_1718963421377_0": {
+        "top": 1104.0625,
+        "left": 3220.0
+      },
+      "fcn_starttheconversationwithagentforwaagentforguidedbasicinfo_1718963421377_0": {
+        "top": 1163.0625,
+        "left": 3220.0
+      },
+      "fcn_verifysmshistoryforagentandbotconversationwhenacceptthehandoffinbetweenagentbasicinfo_1718963421377_0": {
+        "top": 1242.21875,
+        "left": 3220.0
+      },
+      "fcn_verifysmshistoryinzohoforagentandbotconversationwhenacceptthehandoffinbetweenagentbasicinfostudentnonweb_1718963424811_0": {
+        "top": 1335.375,
+        "left": 3220.0
+      },
+      "fcn_createsflogin_guided_1718963764012_0": {
+        "top": 418.1484375,
+        "left": 3823.0
+      },
+      "fcn_handoffinbetweentheconversationzohosms_1718963678707_0": {
+        "top": 485.1484375,
+        "left": 3823.0
+      },
+      "fcn_navigatetosmsmagicconverse_1718963794396_0": {
+        "top": 558.1484375,
+        "left": 3823.0
+      },
+      "fcn_switchtosalesforceclassic_1718963794396_0": {
+        "top": 615.1484375,
+        "left": 3823.0
+      },
+      "fcn_logintoportalusingsalesforce_credforguided_1718963803230_0": {
+        "top": 674.1484375,
+        "left": 3823.0
+      },
+      "fcn_getagentnamesf_1718963803230_0": {
+        "top": 753.1484375,
+        "left": 3823.0
+      },
+      "fcn_gotoconversedeskofsalesforce_1718963803230_0": {
+        "top": 817.1484375,
+        "left": 3823.0
+      },
+      "fcn_starttheconversationforstudentinquiryflowsmsandprovideonlybasicinformationstudentnonwebbasicinfo_1718963810765_0": {
+        "top": 876.1484375,
+        "left": 3823.0
+      },
+      "fcn_askforconversationwithagentinbetweentheguidedflowagentbasicinfoforzoho_1718963877034_0": {
+        "top": 983.296875,
+        "left": 3823.0
+      },
+      "fcn_sendmessagefromusingsmsonceguidedflowendsbasicinfoforsf_1718964052495_0": {
+        "top": 1082.609375,
+        "left": 3823.0
+      },
+      "fcn_verifythethehandoffrequestedflagandcountintheconversationlistviewinsfconversedesk_1718964024941_0": {
+        "top": 1164.0703125,
+        "left": 3823.0
+      },
+      "fcn_acceptthehandofffromsfconversedesk_1718964024941_0": {
+        "top": 1251.0703125,
+        "left": 3823.0
+      },
+      "fcn_starttheconversationwithagentforsmsinsfafterguidedflowdonebasicinfoagent_1718964062230_0": {
+        "top": 1324.0703125,
+        "left": 3823.0
+      },
+      "fcn_verifysfsmshistoryforagentmessagesfornonweb_1718964066896_0": {
+        "top": 1423.3828125,
+        "left": 3823.0
+      },
+      "fcn_assertsfsmshistoryforagentmessagesinportalforguidedfornonweb_1718964072846_0": {
+        "top": 1509.5390625,
+        "left": 3823.0
+      },
+      "fcn_handoffinbetweentheconversationsfsms_1718966114849_0": {
+        "top": 876.1484375,
+        "left": 4213.0
+      },
+      "fcn_starttheconversationforstudentinquiryflowsmsandprovideonlybasicinformationstudentnonwebbasicinfoforwhatsapp_1718966132529_0": {
+        "top": 949.1484375,
+        "left": 4213.0
+      },
+      "fcn_askforconversationwithagentforsfwabasicinfoagent_1718966200670_0": {
+        "top": 1056.3046375,
+        "left": 4213.0
+      },
+      "fcn_sendmessagefromusingwhatsapponceguidedflowendsbasicinfoforsf_1718966200670_0": {
+        "top": 1135.4608875,
+        "left": 4213.0
+      },
+      "fcn_verifythethehandoffrequestedflagandcountintheconversationlistviewinsfconversedesk_1718966200670_0": {
+        "top": 1214.6171375,
+        "left": 4213.0
+      },
+      "fcn_acceptthehandofffromsfconversedesk_1718966200670_0": {
+        "top": 1301.6171375,
+        "left": 4213.0
+      },
+      "fcn_starttheconversationwithagentforsmsinsfafterguidedflowdoneforwhatsappbasicinfoagent_1718966240752_0": {
+        "top": 1374.6171875,
+        "left": 4213.0
+      },
+      "fcn_verifysfsmshistoryforagentmessagesfornonwebwhenhandoffhappnedinbetweentheconversation_1718966243952_0": {
+        "top": 1467.7733875,
+        "left": 4213.0
+      },
+      "fcn_assertsfsmshistoryforagentmessagesinportalforguidedfornonwebwhenhandoffhappendinbetweentheconversationbasicinfo_1718966248368_0": {
+        "top": 1560.9296375,
+        "left": 4213.0
+      }
+    },
+    "tags": ""
+  },
+  "enabled": true,
+  "parentId": ""
+}

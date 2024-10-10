@@ -1,0 +1,61 @@
+{
+  "modifiedOn": "2024-02-08T06:49:38.639Z",
+  "name": "Validate the template created $smstemplate",
+  "id": "27504",
+  "type": 3,
+  "createdOn": "2024-02-08T06:49:38.639Z",
+  "content": {
+    "title": "Validate the template created $smstemplate",
+    "parameters": [
+      {
+        "parameterId": "smstemplate_",
+        "entityTypeId": "smstemplate",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"Campaign\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"Message Templates\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "parameterId": "smstemplate_",
+            "attributeId": "attr_01693299313505",
+            "accessorId": "acc0"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "parameterId": "smstemplate_",
+          "attributeId": "attr_01693299313505"
+        },
+        "visibleCheck": false
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

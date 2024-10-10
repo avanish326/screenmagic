@@ -1,0 +1,133 @@
+{
+  "modifiedOn": "2024-05-20T07:21:30.109Z",
+  "name": "Navigate to Contacts and validate sync out $hubspot CRM",
+  "id": "23028",
+  "type": 3,
+  "createdOn": "2024-02-01T07:59:09.330Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Navigate to Contacts and validate sync out $hubspot CRM",
+    "parameters": [
+      {
+        "parameterId": "hubspot_",
+        "entityTypeId": "hubspot",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "var id \u003d 46162104;"
+      },
+      {
+        "commented": false,
+        "action": "_navigateTo",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "$ContactLink"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_searchbox(\"form-control private-form__control private-search-control__input private-form__control--on-dark\")"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "$HubspotContact"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"private-link uiLinkWithoutUnderline uiLinkDark\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"Activities\")"
+          },
+          {}
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"UIIcon__IconContent-sc-17euwbc-0 dQVzJp\", _near(_span(\"Filter by:\")))"
+          },
+          {}
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_svg_path(1, _near(_span(\"Select all\")))"
+          },
+          {}
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_containsText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(1, _near(_bold(\"Message -\", _in(_div(\"p-top-4 p-x-4\")))))"
+          },
+          {
+            "parameterId": "hubspot_",
+            "attributeId": "attr_11714637899246"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Is_True",
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_containsText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(1, _near(_bold(\"Message -\", _in(_div(\"p-top-4 p-x-4\")))))"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "$DlrStatus"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Is_True"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

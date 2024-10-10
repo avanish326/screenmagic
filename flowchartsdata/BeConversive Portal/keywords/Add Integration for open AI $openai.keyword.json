@@ -1,0 +1,158 @@
+{
+  "modifiedOn": "2024-07-05T12:44:12.900Z",
+  "name": "Add Integration for open AI $openai",
+  "id": "58126",
+  "type": 3,
+  "createdOn": "2024-07-05T10:49:24.934Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Add Integration for open AI $openai",
+    "parameters": [
+      {
+        "parameterId": "openai_",
+        "entityTypeId": "openai",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(\"OpenAI\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_isVisible",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_label(\"Name\")"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$checkOpenAiConfi"
+        }
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "if($checkOpenAiConfi\u003d\u003dtrue)\n{\n"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_submit(\"Modify configuration\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "}\nelse\n{\n"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_submit(\"Connect\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "}"
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "parameterId": "openai_",
+            "attributeId": "attr_01720155810525",
+            "accessorId": "acc0"
+          },
+          {
+            "parameterId": "openai_",
+            "attributeId": "attr_01720155810525"
+          }
+        ],
+        "stepType": "Action",
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "parameterId": "openai_",
+            "attributeId": "attr_11720155832408",
+            "accessorId": "acc0"
+          },
+          {
+            "parameterId": "openai_",
+            "attributeId": "attr_11720155832408"
+          }
+        ],
+        "stepType": "Action",
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "parameterId": "openai_",
+            "attributeId": "attr_21720155890589",
+            "accessorId": "acc0"
+          },
+          {
+            "parameterId": "openai_",
+            "attributeId": "attr_21720155890589"
+          }
+        ],
+        "stepType": "Action",
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_submit(\"fill-blue-btn\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "3000"
+          }
+        ],
+        "stepType": "Action"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

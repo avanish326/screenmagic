@@ -1,0 +1,81 @@
+{
+  "modifiedOn": "2024-01-12T12:25:46.057Z",
+  "name": "Assert the status of Alpha Sender ID $senderid",
+  "id": "16782",
+  "type": 3,
+  "createdOn": "2023-10-05T04:12:57.019Z",
+  "content": {
+    "title": "Assert the status of Alpha Sender ID $senderid",
+    "parameters": [
+      {
+        "parameterId": "senderid_",
+        "entityTypeId": "senderid",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_selectBrowser",
+        "stepParameters": [],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"Settings\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"SMS Services\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"India\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "var $alphaSenderIDTest\u003d$senderid.alphaSenderID\n\n_log($alphaSenderIDTest)\n"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_cell(\"Approved\", _near(_cell(\"\"+$alphaSenderIDTest+\"\")))"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"Approved\""
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

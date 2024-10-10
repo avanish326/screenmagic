@@ -1,0 +1,177 @@
+{
+  "modifiedOn": "2024-02-06T13:06:10.804Z",
+  "name": "Contact",
+  "id": "22749",
+  "type": 0,
+  "createdOn": "2024-01-22T07:18:48.449Z",
+  "content": {
+    "settings": {
+      "maxProceedDepth": 100,
+      "maxProceedsForFirstDepth": 1,
+      "maxProceedsPerDepth": 1,
+      "maxPathRepititionsPerComboPath": 1,
+      "maxProceedsPerPath": 10000,
+      "maxToggles": 2,
+      "maxMatchingPaths": 3
+    },
+    "nodesMap": {
+      "fcn_start_0": {
+        "dataSetId": -1,
+        "id": "fcn_start_0",
+        "nodeType": "start",
+        "branches": [
+          "fcn_contactmoduleflows_0"
+        ],
+        "content": "Start"
+      },
+      "fcn_contactmoduleflows_0": {
+        "dataSetId": -1,
+        "id": "fcn_contactmoduleflows_0",
+        "nodeType": "pathlabel",
+        "branches": [
+          "fcn_logintosaasportal_1705907986764_0"
+        ],
+        "content": "Contact Module Flows"
+      },
+      "fcn_logintosaasportal_1705907986764_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintosaasportal_1705907986764_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_contactmanager_1705908005052_0"
+        ],
+        "content": "login to $saasportal"
+      },
+      "fcn_contactmanager_1705908005052_0": {
+        "dataSetId": -1,
+        "id": "fcn_contactmanager_1705908005052_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_createnewcontact_1705908010562_0",
+          "fcn_editnewcontact_1705908022545_0",
+          "fcn_deletecontact_1705908052650_0",
+          "fcn_importcsvnewcontact_1705908058844_0",
+          "fcn_creategroupnewcontact_0"
+        ],
+        "content": "Contact Manager"
+      },
+      "fcn_createnewcontact_1705908010562_0": {
+        "dataSetId": -1,
+        "id": "fcn_createnewcontact_1705908010562_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_createnewcontact_0"
+        ],
+        "content": "Create $newcontact"
+      },
+      "fcn_editnewcontact_1705908022545_0": {
+        "dataSetId": -1,
+        "id": "fcn_editnewcontact_1705908022545_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Edit $newcontact"
+      },
+      "fcn_deletecontact_1705908052650_0": {
+        "dataSetId": -1,
+        "id": "fcn_deletecontact_1705908052650_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Delete Contact"
+      },
+      "fcn_importcsvnewcontact_1705908058844_0": {
+        "dataSetId": -1,
+        "id": "fcn_importcsvnewcontact_1705908058844_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Import CSV $newcontact"
+      },
+      "fcn_createnewcontact_0": {
+        "dataSetId": -1,
+        "id": "fcn_createnewcontact_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_createnewcontact_1706856802330_0"
+        ],
+        "content": "Create second contact $newcontact"
+      },
+      "fcn_createnewcontact_1706856802330_0": {
+        "dataSetId": -1,
+        "id": "fcn_createnewcontact_1706856802330_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Create third contact $newcontact"
+      },
+      "fcn_creategroupnewcontact_0": {
+        "dataSetId": -1,
+        "id": "fcn_creategroupnewcontact_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_savegroup_0"
+        ],
+        "content": "Create group $newcontact"
+      },
+      "fcn_savegroup_0": {
+        "dataSetId": -1,
+        "id": "fcn_savegroup_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "save group"
+      }
+    },
+    "pathNames": {},
+    "isPrimary": false,
+    "positions": {
+      "fcn_start_0": {
+        "top": 150.0,
+        "left": 500.0
+      },
+      "fcn_contactmoduleflows_0": {
+        "top": 211.0,
+        "left": 500.0
+      },
+      "fcn_logintosaasportal_1705907986764_0": {
+        "top": 270.0,
+        "left": 500.0
+      },
+      "fcn_contactmanager_1705908005052_0": {
+        "top": 335.1484375,
+        "left": 500.0
+      },
+      "fcn_createnewcontact_1705908010562_0": {
+        "top": 413.1484375,
+        "left": 214.0
+      },
+      "fcn_createnewcontact_0": {
+        "top": 478.296875,
+        "left": 214.0
+      },
+      "fcn_createnewcontact_1706856802330_0": {
+        "top": 543.4453125,
+        "left": 214.0
+      },
+      "fcn_editnewcontact_1705908022545_0": {
+        "top": 413.1484375,
+        "left": 536.0
+      },
+      "fcn_deletecontact_1705908052650_0": {
+        "top": 412.1484375,
+        "left": 880.0
+      },
+      "fcn_importcsvnewcontact_1705908058844_0": {
+        "top": 412.1484375,
+        "left": 1177.0
+      },
+      "fcn_creategroupnewcontact_0": {
+        "top": 607.59375,
+        "left": 506.0
+      },
+      "fcn_savegroup_0": {
+        "top": 673.7421875,
+        "left": 214.0
+      }
+    },
+    "tags": ""
+  },
+  "enabled": true,
+  "parentId": ""
+}

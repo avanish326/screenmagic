@@ -1,0 +1,94 @@
+{
+  "modifiedOn": "2024-04-15T05:02:25.968Z",
+  "name": "Verify the card is removed $creditcard",
+  "id": "45089",
+  "type": 3,
+  "createdOn": "2024-04-15T05:01:39.538Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Verify the card is removed $creditcard",
+    "parameters": [
+      {
+        "parameterId": "creditcard_",
+        "entityTypeId": "creditcard",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_isVisible",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_cell($creditcard.cardHolderName)"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Is_False"
+      },
+      {
+        "commented": false,
+        "action": "_isVisible",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_cell(0, _rightOf(_cell($creditcard.cardHolderName)))"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Is_False"
+      },
+      {
+        "commented": false,
+        "action": "_isVisible",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_image(0, _rightOf(_cell($creditcard.cardHolderName)))"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Is_False"
+      },
+      {
+        "commented": false,
+        "action": "_isVisible",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(0, _rightOf(_cell($creditcard.cardHolderName)))"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Is_False"
+      },
+      {
+        "commented": false,
+        "action": "_isVisible",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_italic(\"cancel\", _near(_cell($creditcard.cardHolderName)))"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Is_False"
+      },
+      {
+        "commented": false,
+        "action": "_isVisible",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_italic(\"cancel\", _near(_cell($creditcard.cardHolderName)))"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Is_False"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

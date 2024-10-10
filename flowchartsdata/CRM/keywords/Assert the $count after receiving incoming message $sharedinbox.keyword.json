@@ -1,0 +1,89 @@
+{
+  "modifiedOn": "2024-01-12T12:26:23.111Z",
+  "name": "Assert the $count after receiving incoming message $sharedinbox",
+  "id": "21497",
+  "type": 3,
+  "createdOn": "2023-12-14T04:23:15.556Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Assert the $count after receiving incoming message $sharedinbox",
+    "parameters": [
+      {
+        "parameterId": "count_",
+        "entityTypeId": "count",
+        "suffix": ""
+      },
+      {
+        "parameterId": "sharedinbox_",
+        "entityTypeId": "sharedinbox",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "_call(window.location.reload())"
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "2000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "var $inboxName\u003d$sharedinbox.inboxName1;"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"mail-count\", _near(_link(\"\"+$inboxName+\"\")))"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$countSharedInbox"
+        }
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "var $countAfterIncoming \u003d $countSharedInbox.split(\" \")[0];\n_log($countAfterIncoming)"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "var $count2\u003d$count+1;\n\n_assertEqual($count2, $countAfterIncoming)"
+      },
+      {
+        "commented": true,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"mail-count\", _near(_link(\"\"+$inboxName+\"\")))"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$count+1"
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

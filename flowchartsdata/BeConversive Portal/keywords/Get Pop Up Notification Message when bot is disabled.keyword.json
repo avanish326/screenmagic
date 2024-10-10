@@ -1,0 +1,53 @@
+{
+  "modifiedOn": "2024-06-10T14:25:49.367Z",
+  "name": "Get Pop Up Notification Message when bot is disabled",
+  "id": "52761",
+  "type": 3,
+  "createdOn": "2024-06-10T14:24:53.289Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Get Pop Up Notification Message when bot is disabled",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"accordion-header[4]\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_textarea(\"the-textarea[3]\")"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$popUpMessage"
+        }
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"accordion-header[4]\")"
+          }
+        ],
+        "stepType": "Action"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

@@ -1,0 +1,53 @@
+{
+  "modifiedOn": "2024-06-28T07:08:52.540Z",
+  "name": "Validate Trial Account",
+  "id": "57939",
+  "type": 3,
+  "createdOn": "2024-06-28T06:47:51.875Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Validate Trial Account",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"Get Started\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_call",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_isVisbile(_span(\"Trial\"))"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$accountType"
+        }
+      },
+      {
+        "commented": false,
+        "action": "return",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "$accountType"
+          }
+        ],
+        "stepType": "Action"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

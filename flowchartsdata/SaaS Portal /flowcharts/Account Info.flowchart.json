@@ -1,0 +1,438 @@
+{
+  "modifiedOn": "2024-07-31T07:01:43.620Z",
+  "name": "Account Info",
+  "id": "37946",
+  "type": 0,
+  "createdOn": "2024-02-19T06:48:42.279Z",
+  "content": {
+    "settings": {
+      "maxProceedDepth": 100,
+      "maxProceedsForFirstDepth": 1,
+      "maxProceedsPerDepth": 1,
+      "maxPathRepititionsPerComboPath": 1,
+      "maxProceedsPerPath": 10000,
+      "maxToggles": 2,
+      "maxMatchingPaths": 3
+    },
+    "flowChartUID": "fcUID_1708325322586",
+    "nodesMap": {
+      "fcn_start_0": {
+        "dataSetId": -1,
+        "id": "fcn_start_0",
+        "nodeType": "start",
+        "branches": [
+          "fcn_usermanagement_0"
+        ],
+        "content": "Start"
+      },
+      "fcn_usermanagement_0": {
+        "dataSetId": -1,
+        "id": "fcn_usermanagement_0",
+        "nodeType": "pathlabel",
+        "branches": [
+          "fcn_logintosaasportal_1708325641049_0"
+        ],
+        "content": "Account Info"
+      },
+      "fcn_logintosaasportal_1708325641049_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintosaasportal_1708325641049_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_tovalidateaccountdetails_0",
+          "fcn_tovalidatetheaccountdetailstextfields_1708342553479_0"
+        ],
+        "content": "login to $saasportal"
+      },
+      "fcn_tovalidateaccountdetails_0": {
+        "dataSetId": -1,
+        "id": "fcn_tovalidateaccountdetails_0",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_clickonuserprofileandassertthetabs_0"
+        ],
+        "content": "To validate account details"
+      },
+      "fcn_clickonuserprofileandassertthetabs_0": {
+        "dataSetId": -1,
+        "id": "fcn_clickonuserprofileandassertthetabs_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_navigatetoaccountsettings_0"
+        ],
+        "content": "Click on User Profile and assert the tabs"
+      },
+      "fcn_navigatetoaccountsettings_0": {
+        "dataSetId": -1,
+        "id": "fcn_navigatetoaccountsettings_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_tovalidatethelabelsareappearingontheaccountsdetailspage_0",
+          "fcn_tovalidateuserabletoedithisdetailsbyclickingeditoption_0",
+          "fcn_toverifythedataiscomingfromopsportaliscorrectlymappedoncustomerportal_0"
+        ],
+        "content": "Navigate to Account Settings"
+      },
+      "fcn_tovalidatethelabelsareappearingontheaccountsdetailspage_0": {
+        "dataSetId": -1,
+        "id": "fcn_tovalidatethelabelsareappearingontheaccountsdetailspage_0",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_validatethelabelsareappearingontheaccountsdetailspage_0"
+        ],
+        "content": "To validate the labels are appearing on the Accounts Details Page "
+      },
+      "fcn_validatethelabelsareappearingontheaccountsdetailspage_0": {
+        "dataSetId": -1,
+        "id": "fcn_validatethelabelsareappearingontheaccountsdetailspage_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_associatedaccountssectionlabels_0"
+        ],
+        "content": "Validate the labels are appearing on the Accounts Details Page"
+      },
+      "fcn_tovalidateuserabletoedithisdetailsbyclickingeditoption_0": {
+        "dataSetId": -1,
+        "id": "fcn_tovalidateuserabletoedithisdetailsbyclickingeditoption_0",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_clickoneditintheaccountdetails_0"
+        ],
+        "content": "To validate user able to edit his details by clicking edit option "
+      },
+      "fcn_edittheaccountdetailsaccountdetails_0": {
+        "dataSetId": -1,
+        "id": "fcn_edittheaccountdetailsaccountdetails_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_asserttheeditedphonenumberaccountdetails_0"
+        ],
+        "content": "Edit the Phone Number and Industry in Account details $accountdetails"
+      },
+      "fcn_clickoneditintheaccountdetails_0": {
+        "dataSetId": -1,
+        "id": "fcn_clickoneditintheaccountdetails_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_edittheaccountdetailsaccountdetails_0",
+          "fcn_tovalidateifusereditthetextfieldandclickoncancelbutton_1708340713095_0"
+        ],
+        "content": "Click on Edit in the Account Details"
+      },
+      "fcn_asserttheeditedphonenumberaccountdetails_0": {
+        "dataSetId": -1,
+        "id": "fcn_asserttheeditedphonenumberaccountdetails_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Assert the edited phone number and industry $accountdetails"
+      },
+      "fcn_tovalidateifusereditthetextfieldandclickoncancelbutton_1708340713095_0": {
+        "dataSetId": -1,
+        "id": "fcn_tovalidateifusereditthetextfieldandclickoncancelbutton_1708340713095_0",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_editthecontactnamephonenumberandindustryaccountdetails_0"
+        ],
+        "content": "To validate if user edit the text field and click on cancel button "
+      },
+      "fcn_editthecontactnamephonenumberandindustryaccountdetails_0": {
+        "dataSetId": -1,
+        "id": "fcn_editthecontactnamephonenumberandindustryaccountdetails_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_clickoncancelbutton_0"
+        ],
+        "content": "Edit the Contact Name Phone Number and Industry $accountdetails"
+      },
+      "fcn_clickoncancelbutton_0": {
+        "dataSetId": -1,
+        "id": "fcn_clickoncancelbutton_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_verifyediteddatashouldnotbesaved_0"
+        ],
+        "content": "Click on Cancel button"
+      },
+      "fcn_verifyediteddatashouldnotbesaved_0": {
+        "dataSetId": -1,
+        "id": "fcn_verifyediteddatashouldnotbesaved_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Verify edited data should not be saved $accountdetails"
+      },
+      "fcn_tovalidatetheaccountdetailstextfields_1708342553479_0": {
+        "dataSetId": -1,
+        "id": "fcn_tovalidatetheaccountdetailstextfields_1708342553479_0",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_getaccountid_1708403794793_0"
+        ],
+        "content": "To validate the Account details text fields "
+      },
+      "fcn_verifyaccountdetailstextfields_0": {
+        "dataSetId": -1,
+        "id": "fcn_verifyaccountdetailstextfields_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Verify Account Details text fields $accountdetails"
+      },
+      "fcn_getaccountid_1708403794793_0": {
+        "dataSetId": -1,
+        "id": "fcn_getaccountid_1708403794793_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logintotheopsportallogintrial_signupaccountid_1708403835558_0"
+        ],
+        "content": "Get $accountid"
+      },
+      "fcn_logintotheopsportallogintrial_signupaccountid_1708403835558_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintotheopsportallogintrial_signupaccountid_1708403835558_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_getaccountdetailsfromopsportal_0"
+        ],
+        "content": "Login to the Ops Portal and Search the Account"
+      },
+      "fcn_getaccountdetailsfromopsportal_0": {
+        "dataSetId": -1,
+        "id": "fcn_getaccountdetailsfromopsportal_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_verifyaccountdetailstextfields_0"
+        ],
+        "content": "Get Account Details from ops portal"
+      },
+      "fcn_associatedaccountssectionlabels_0": {
+        "dataSetId": -1,
+        "id": "fcn_associatedaccountssectionlabels_0",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_validatethelabelsareappearingontheassociatedaccounts_0"
+        ],
+        "content": "Associated Accounts section Labels"
+      },
+      "fcn_validatethelabelsareappearingontheassociatedaccounts_0": {
+        "dataSetId": -1,
+        "id": "fcn_validatethelabelsareappearingontheassociatedaccounts_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Validate the labels are appearing on the Associated Accounts"
+      },
+      "fcn_toverifythedataiscomingfromopsportaliscorrectlymappedoncustomerportal_0": {
+        "dataSetId": -1,
+        "id": "fcn_toverifythedataiscomingfromopsportaliscorrectlymappedoncustomerportal_0",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_getnumberofusersandmessagecreditsfromportal_0"
+        ],
+        "content": "To verify the data is coming from ops portal is correctly mapped on customer portal"
+      },
+      "fcn_getnumberofusersandmessagecreditsfromportal_0": {
+        "dataSetId": -1,
+        "id": "fcn_getnumberofusersandmessagecreditsfromportal_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_getaccountid_1708415277612_0"
+        ],
+        "content": "Get Number of Users"
+      },
+      "fcn_getaccountid_1708415277612_0": {
+        "dataSetId": -1,
+        "id": "fcn_getaccountid_1708415277612_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logintotheopsportallogintrial_signupaccountid_1708415281645_0"
+        ],
+        "content": "Get $accountid"
+      },
+      "fcn_logintotheopsportallogintrial_signupaccountid_1708415281645_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintotheopsportallogintrial_signupaccountid_1708415281645_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_addmessagecreditsfromopsaccountdetails_0"
+        ],
+        "content": "Login to the Ops Portal and Search the Account"
+      },
+      "fcn_addmessagecreditsfromopsaccountdetails_0": {
+        "dataSetId": -1,
+        "id": "fcn_addmessagecreditsfromopsaccountdetails_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_navigatetouserandlicenses_0"
+        ],
+        "content": "Add Message Credits from ops $accountdetails"
+      },
+      "fcn_adduserfromopsportalaccountdetails_0": {
+        "dataSetId": -1,
+        "id": "fcn_adduserfromopsportalaccountdetails_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_verifyupatedmessagescreditsandnumberofusersinportal_0"
+        ],
+        "content": "Add user from ops portal $accountdetails"
+      },
+      "fcn_navigatetouserandlicenses_0": {
+        "dataSetId": -1,
+        "id": "fcn_navigatetouserandlicenses_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_adduserfromopsportalaccountdetails_0"
+        ],
+        "content": "Navigate to User and Licenses"
+      },
+      "fcn_verifyupatedmessagescreditsandnumberofusersinportal_0": {
+        "dataSetId": -1,
+        "id": "fcn_verifyupatedmessagescreditsandnumberofusersinportal_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_deletethecreateduserfromopsportal_0"
+        ],
+        "content": "Verify Upated Messages Credits and Number of Users in Portal"
+      },
+      "fcn_deletethecreateduserfromopsportal_0": {
+        "dataSetId": -1,
+        "id": "fcn_deletethecreateduserfromopsportal_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Delete the created user from ops portal"
+      }
+    },
+    "pathNames": {},
+    "isPrimary": false,
+    "positions": {
+      "fcn_start_0": {
+        "top": 150.0,
+        "left": 500.0
+      },
+      "fcn_usermanagement_0": {
+        "top": 211.0,
+        "left": 500.0
+      },
+      "fcn_logintosaasportal_1708325641049_0": {
+        "top": 270.0,
+        "left": 500.0
+      },
+      "fcn_tovalidateaccountdetails_0": {
+        "top": 335.1484375,
+        "left": 500.0
+      },
+      "fcn_clickonuserprofileandassertthetabs_0": {
+        "top": 394.1484375,
+        "left": 500.0
+      },
+      "fcn_navigatetoaccountsettings_0": {
+        "top": 453.1484375,
+        "left": 500.0
+      },
+      "fcn_tovalidatethelabelsareappearingontheaccountsdetailspage_0": {
+        "top": 512.1484375,
+        "left": 500.0
+      },
+      "fcn_validatethelabelsareappearingontheaccountsdetailspage_0": {
+        "top": 585.1484375,
+        "left": 500.0
+      },
+      "fcn_associatedaccountssectionlabels_0": {
+        "top": 660.1484375,
+        "left": 500.0
+      },
+      "fcn_validatethelabelsareappearingontheassociatedaccounts_0": {
+        "top": 721.1484375,
+        "left": 500.0
+      },
+      "fcn_tovalidateuserabletoedithisdetailsbyclickingeditoption_0": {
+        "top": 491.1484375,
+        "left": 838.0
+      },
+      "fcn_clickoneditintheaccountdetails_0": {
+        "top": 564.1484375,
+        "left": 840.0
+      },
+      "fcn_edittheaccountdetailsaccountdetails_0": {
+        "top": 618.1484375,
+        "left": 836.0
+      },
+      "fcn_asserttheeditedphonenumberaccountdetails_0": {
+        "top": 697.296875,
+        "left": 836.0
+      },
+      "fcn_tovalidateifusereditthetextfieldandclickoncancelbutton_1708340713095_0": {
+        "top": 618.1484375,
+        "left": 1161.0
+      },
+      "fcn_editthecontactnamephonenumberandindustryaccountdetails_0": {
+        "top": 691.1484375,
+        "left": 1161.0
+      },
+      "fcn_clickoncancelbutton_0": {
+        "top": 771.296875,
+        "left": 1161.0
+      },
+      "fcn_verifyediteddatashouldnotbesaved_0": {
+        "top": 830.296875,
+        "left": 1161.0
+      },
+      "fcn_toverifythedataiscomingfromopsportaliscorrectlymappedoncustomerportal_0": {
+        "top": 508.1484375,
+        "left": 1615.0
+      },
+      "fcn_getnumberofusersandmessagecreditsfromportal_0": {
+        "top": 595.1484375,
+        "left": 1615.0
+      },
+      "fcn_getaccountid_1708415277612_0": {
+        "top": 669.1484375,
+        "left": 1615.0
+      },
+      "fcn_logintotheopsportallogintrial_signupaccountid_1708415281645_0": {
+        "top": 733.296875,
+        "left": 1615.0
+      },
+      "fcn_addmessagecreditsfromopsaccountdetails_0": {
+        "top": 818.609375,
+        "left": 1615.0
+      },
+      "fcn_navigatetouserandlicenses_0": {
+        "top": 895.7578125,
+        "left": 1615.0
+      },
+      "fcn_adduserfromopsportalaccountdetails_0": {
+        "top": 950.7578125,
+        "left": 1615.0
+      },
+      "fcn_verifyupatedmessagescreditsandnumberofusersinportal_0": {
+        "top": 1015.90625,
+        "left": 1615.0
+      },
+      "fcn_deletethecreateduserfromopsportal_0": {
+        "top": 1088.90625,
+        "left": 1615.0
+      },
+      "fcn_tovalidatetheaccountdetailstextfields_1708342553479_0": {
+        "top": 329.1484375,
+        "left": 2028.0
+      },
+      "fcn_getaccountid_1708403794793_0": {
+        "top": 394.1484375,
+        "left": 2028.0
+      },
+      "fcn_logintotheopsportallogintrial_signupaccountid_1708403835558_0": {
+        "top": 463.296875,
+        "left": 2028.0
+      },
+      "fcn_getaccountdetailsfromopsportal_0": {
+        "top": 550.609375,
+        "left": 2028.0
+      },
+      "fcn_verifyaccountdetailstextfields_0": {
+        "top": 612.1484375,
+        "left": 2028.0
+      }
+    },
+    "tags": ""
+  },
+  "enabled": true,
+  "parentId": ""
+}

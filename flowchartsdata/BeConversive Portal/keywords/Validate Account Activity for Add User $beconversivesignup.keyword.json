@@ -1,0 +1,60 @@
+{
+  "modifiedOn": "2024-05-17T12:50:57.702Z",
+  "name": "Validate Account Activity for Add User $beconversivesignup",
+  "id": "46110",
+  "type": 3,
+  "createdOn": "2024-05-15T04:46:39.029Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Validate Account Activity for Add User $beconversivesignup",
+    "parameters": [
+      {
+        "parameterId": "beconversivesignup_",
+        "entityTypeId": "beconversivesignup",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": true,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"avatar-icon avatar-icon-32\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"Activity Log\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_containsText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"break-words content-sec w-[90%]\", _near(_heading3(\"Activity Log\")))"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "\"User \"+$beconversivesignup.inviteUserOne+ \" was added to your Account.\""
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Is_True"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

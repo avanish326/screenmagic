@@ -1,0 +1,58 @@
+{
+  "modifiedOn": "2024-01-12T12:25:45.613Z",
+  "name": "Go to Number Management and Remove Provisioned $senderid",
+  "id": "16712",
+  "type": 3,
+  "createdOn": "2023-10-03T12:47:17.206Z",
+  "content": {
+    "title": "Go to Number Management and Remove Provisioned $senderid",
+    "parameters": [
+      {
+        "parameterId": "senderid_",
+        "entityTypeId": "senderid",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"Number Management\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_expectConfirm",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "\"Are you sure, you want to delete this incoming number?\""
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "true"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"ui-icon ui-icon-trash  ui-corner-all ui-widget-header\", _near(_cell(\"\"+$senderID+\"\")))"
+          }
+        ],
+        "stepType": "Action"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

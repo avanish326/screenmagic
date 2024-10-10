@@ -1,0 +1,581 @@
+{
+  "modifiedOn": "2024-08-16T11:39:15.446Z",
+  "name": "Plan Expiry Banners",
+  "id": "58520",
+  "type": 0,
+  "createdOn": "2024-07-23T10:22:50.698Z",
+  "content": {
+    "settings": {
+      "maxProceedDepth": 100,
+      "maxProceedsForFirstDepth": 1,
+      "maxProceedsPerDepth": 1,
+      "maxPathRepititionsPerComboPath": 1,
+      "maxProceedsPerPath": 10000,
+      "maxToggles": 2,
+      "maxMatchingPaths": 3
+    },
+    "flowChartUID": "fcUID_1721730171902",
+    "nodesMap": {
+      "fcn_start_0": {
+        "dataSetId": -1,
+        "id": "fcn_start_0",
+        "nodeType": "start",
+        "branches": [
+          "fcn_planexpirybanners_0"
+        ],
+        "content": "Start"
+      },
+      "fcn_planexpirybanners_0": {
+        "dataSetId": -1,
+        "id": "fcn_planexpirybanners_0",
+        "nodeType": "pathlabel",
+        "branches": [
+          "fcn_logintobeconversive_1721729194856_0"
+        ],
+        "content": "Plan Expiry Banners"
+      },
+      "fcn_logintobeconversive_1721729194856_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintobeconversive_1721729194856_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_notemakesuretheplansareexpired_0",
+          "fcn_sendingmessageswhentheplansareexpired_0"
+        ],
+        "content": "login to $beconversive"
+      },
+      "fcn_notemakesuretheplansareexpired_0": {
+        "dataSetId": -1,
+        "id": "fcn_notemakesuretheplansareexpired_0",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_multipleplansexpired_0",
+          "fcn_singleplanexpired_0"
+        ],
+        "content": "Note : Make sure the plans are expired"
+      },
+      "fcn_multipleplansexpired_0": {
+        "dataSetId": -1,
+        "id": "fcn_multipleplansexpired_0",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_gotoaccountsettingsbeconversive_1721729292049_0"
+        ],
+        "content": "multiple plans expired"
+      },
+      "fcn_singleplanexpired_0": {
+        "dataSetId": -1,
+        "id": "fcn_singleplanexpired_0",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_gotoaccountsettingsbeconversive_1721744682222_0"
+        ],
+        "content": "single plan expired"
+      },
+      "fcn_gotoaccountsettingsbeconversive_1721729292049_0": {
+        "dataSetId": -1,
+        "id": "fcn_gotoaccountsettingsbeconversive_1721729292049_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checkbothplansareexpired_0"
+        ],
+        "content": "go to account settings $beconversive"
+      },
+      "fcn_checkbothplansareexpired_0": {
+        "dataSetId": -1,
+        "id": "fcn_checkbothplansareexpired_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checkthebanner_0"
+        ],
+        "content": "check both plans are expired"
+      },
+      "fcn_checkthebanner_0": {
+        "dataSetId": -1,
+        "id": "fcn_checkthebanner_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checkoutgoingrestrictionconversedesk_1721734259823_0"
+        ],
+        "content": "check the banner"
+      },
+      "fcn_validateconversedeskrestrictionformpbasicconversedesk_1721730145616_0": {
+        "dataSetId": -1,
+        "id": "fcn_validateconversedeskrestrictionformpbasicconversedesk_1721730145616_0",
+        "nodeType": "skip",
+        "branches": [],
+        "content": "validate converse desk restriction for MP Basic $conversedesk"
+      },
+      "fcn_logintoopsportallogin_1721732882561_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintoopsportallogin_1721732882561_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_searchtheaccountbeconversive_1721732888256_0"
+        ],
+        "content": "Login to $opsportallogin"
+      },
+      "fcn_searchtheaccountbeconversive_1721732888256_0": {
+        "dataSetId": -1,
+        "id": "fcn_searchtheaccountbeconversive_1721732888256_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_verifytheplansonthebanner_0"
+        ],
+        "content": "search the account $beconversive"
+      },
+      "fcn_verifytheplansonthebanner_0": {
+        "dataSetId": -1,
+        "id": "fcn_verifytheplansonthebanner_0",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_changetheexpiryoftheplans_0"
+        ],
+        "content": "verify the plans on the banner"
+      },
+      "fcn_checkoutgoingrestrictionconversedesk_1721734259823_0": {
+        "dataSetId": -1,
+        "id": "fcn_checkoutgoingrestrictionconversedesk_1721734259823_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logintoopsportallogin_1721732882561_0"
+        ],
+        "content": "check outgoing restriction $conversedesk"
+      },
+      "fcn_changetheexpiryoftheplans_0": {
+        "dataSetId": -1,
+        "id": "fcn_changetheexpiryoftheplans_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checkthebannerisnotvisible_0"
+        ],
+        "content": "change the expiry of the plans"
+      },
+      "fcn_checkthebannerisnotvisible_0": {
+        "dataSetId": -1,
+        "id": "fcn_checkthebannerisnotvisible_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_validateconversedeskrestrictionformpbasicconversedesk_1721730145616_0"
+        ],
+        "content": "check the banner is not visible"
+      },
+      "fcn_gotoaccountsettingsbeconversive_1721744682222_0": {
+        "dataSetId": -1,
+        "id": "fcn_gotoaccountsettingsbeconversive_1721744682222_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checkbothplansareexpired_1721744691691_0"
+        ],
+        "content": "go to account settings $beconversive"
+      },
+      "fcn_checkbothplansareexpired_1721744691691_0": {
+        "dataSetId": -1,
+        "id": "fcn_checkbothplansareexpired_1721744691691_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checkthesingleplan_0"
+        ],
+        "content": "check both plans are expired"
+      },
+      "fcn_checkthesingleplan_0": {
+        "dataSetId": -1,
+        "id": "fcn_checkthesingleplan_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checksingleplanbanner_0"
+        ],
+        "content": "check the single plan"
+      },
+      "fcn_checkoutgoingrestrictionconversedesk_1721744722380_0": {
+        "dataSetId": -1,
+        "id": "fcn_checkoutgoingrestrictionconversedesk_1721744722380_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logintoopsportallogin_1721744726140_0"
+        ],
+        "content": "check outgoing restriction $conversedesk"
+      },
+      "fcn_logintoopsportallogin_1721744726140_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintoopsportallogin_1721744726140_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_searchtheaccountbeconversive_1721744731020_0"
+        ],
+        "content": "Login to $opsportallogin"
+      },
+      "fcn_searchtheaccountbeconversive_1721744731020_0": {
+        "dataSetId": -1,
+        "id": "fcn_searchtheaccountbeconversive_1721744731020_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_changetheexpiryofaplan_0"
+        ],
+        "content": "search the account $beconversive"
+      },
+      "fcn_checkthebannerisnotvisible_1721744765652_0": {
+        "dataSetId": -1,
+        "id": "fcn_checkthebannerisnotvisible_1721744765652_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "check the banner is not visible"
+      },
+      "fcn_checksingleplanbanner_0": {
+        "dataSetId": -1,
+        "id": "fcn_checksingleplanbanner_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checkoutgoingrestrictionconversedesk_1721744722380_0"
+        ],
+        "content": "check single plan banner"
+      },
+      "fcn_changetheexpiryofaplan_0": {
+        "dataSetId": -1,
+        "id": "fcn_changetheexpiryofaplan_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checkthebannerisnotvisible_1721744765652_0"
+        ],
+        "content": "change the expiry of a plan"
+      },
+      "fcn_sendingmessageswhentheplansareexpired_0": {
+        "dataSetId": -1,
+        "id": "fcn_sendingmessageswhentheplansareexpired_0",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_conversedesk_0",
+          "fcn_campaign_0",
+          "fcn_automation_0"
+        ],
+        "content": "sending messages when the plans are expired"
+      },
+      "fcn_conversedesk_0": {
+        "dataSetId": -1,
+        "id": "fcn_conversedesk_0",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_checkifplanisexpired_1723638809868_0"
+        ],
+        "content": "Converse Desk"
+      },
+      "fcn_campaign_0": {
+        "dataSetId": -1,
+        "id": "fcn_campaign_0",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_entercampaignnamecampaign_1723638960491_0"
+        ],
+        "content": "Campaign"
+      },
+      "fcn_automation_0": {
+        "dataSetId": -1,
+        "id": "fcn_automation_0",
+        "nodeType": "pathsublabel",
+        "branches": [],
+        "content": "Automation"
+      },
+      "fcn_checkifplanisexpired_1723638809868_0": {
+        "dataSetId": -1,
+        "id": "fcn_checkifplanisexpired_1723638809868_0",
+        "nodeType": "dynamic-decision",
+        "branches": [
+          "fcn_sendsmsfromconversedeskconversedesk_1723638848835_0",
+          "fcn_sendsmsfromdeskconversedesk_1723638830299_0"
+        ],
+        "content": "Check if plan is expired "
+      },
+      "fcn_sendsmsfromdeskconversedesk_1723638830299_0": {
+        "dataSetId": -1,
+        "id": "fcn_sendsmsfromdeskconversedesk_1723638830299_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_verifytheplanupgradepopup_1723638842019_0"
+        ],
+        "content": "Send SMS from Desk $conversedesk"
+      },
+      "fcn_verifytheplanupgradepopup_1723638842019_0": {
+        "dataSetId": -1,
+        "id": "fcn_verifytheplanupgradepopup_1723638842019_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Verify the Plan upgrade Popup"
+      },
+      "fcn_sendsmsfromconversedeskconversedesk_1723638848835_0": {
+        "dataSetId": -1,
+        "id": "fcn_sendsmsfromconversedeskconversedesk_1723638848835_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_validatesmshistory_1723638858523_0"
+        ],
+        "content": "Send SMS from Converse Desk $conversedesk"
+      },
+      "fcn_validatesmshistory_1723638858523_0": {
+        "dataSetId": -1,
+        "id": "fcn_validatesmshistory_1723638858523_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Validate SMS History"
+      },
+      "fcn_entercampaignnamecampaign_1723638960491_0": {
+        "dataSetId": -1,
+        "id": "fcn_entercampaignnamecampaign_1723638960491_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_selectsmschannelandsenderidcampaign_1723638960491_0"
+        ],
+        "content": "Enter campaign name  $campaign"
+      },
+      "fcn_selectsmschannelandsenderidcampaign_1723638960491_0": {
+        "dataSetId": -1,
+        "id": "fcn_selectsmschannelandsenderidcampaign_1723638960491_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_uploadacsvfiletoexecuteacampaigncampaign_1723638960491_0"
+        ],
+        "content": "Select SMS channel and sender ID $campaign"
+      },
+      "fcn_uploadacsvfiletoexecuteacampaigncampaign_1723638960491_0": {
+        "dataSetId": -1,
+        "id": "fcn_uploadacsvfiletoexecuteacampaigncampaign_1723638960491_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_isfileuploaded_1723638960491_0"
+        ],
+        "content": "Upload a csv file to execute a campaign $campaign"
+      },
+      "fcn_isfileuploaded_1723638960491_0": {
+        "dataSetId": -1,
+        "id": "fcn_isfileuploaded_1723638960491_0",
+        "nodeType": "dynamic-decision",
+        "branches": [
+          "fcn_selectfilefromdropdown_1723638960491_0",
+          "fcn_selectphonefieldcampaign_1723638960491_0"
+        ],
+        "content": "is file uploaded ?"
+      },
+      "fcn_selectfilefromdropdown_1723638960491_0": {
+        "dataSetId": -1,
+        "id": "fcn_selectfilefromdropdown_1723638960491_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_selectphonefieldcampaign_1723638960491_0",
+          "fcn_selecttemplateforcampaigncampaign_1723638960491_0"
+        ],
+        "content": "Select File from Dropdown"
+      },
+      "fcn_selectphonefieldcampaign_1723638960491_0": {
+        "dataSetId": -1,
+        "id": "fcn_selectphonefieldcampaign_1723638960491_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_selecttemplateforcampaigncampaign_1723638960491_0"
+        ],
+        "content": "Select phone field $campaign"
+      },
+      "fcn_selecttemplateforcampaigncampaign_1723638960491_0": {
+        "dataSetId": -1,
+        "id": "fcn_selecttemplateforcampaigncampaign_1723638960491_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_shootacampaign_1723638960491_0"
+        ],
+        "content": "Select template for campaign $campaign"
+      },
+      "fcn_shootacampaign_1723638960491_0": {
+        "dataSetId": -1,
+        "id": "fcn_shootacampaign_1723638960491_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checkmessagehistoryexpiry_0"
+        ],
+        "content": "Shoot a campaign"
+      },
+      "fcn_checkmessagehistoryexpiry_0": {
+        "dataSetId": -1,
+        "id": "fcn_checkmessagehistoryexpiry_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "check message history $expiry"
+      }
+    },
+    "pathNames": {},
+    "isPrimary": false,
+    "positions": {
+      "fcn_start_0": {
+        "top": 149.9000015258789,
+        "left": 500.0000305175781
+      },
+      "fcn_planexpirybanners_0": {
+        "top": 267.7750015258789,
+        "left": 608.0000305175781
+      },
+      "fcn_logintobeconversive_1721729194856_0": {
+        "top": 326.4000015258789,
+        "left": 608.0000305175781
+      },
+      "fcn_notemakesuretheplansareexpired_0": {
+        "top": 391.5375061035156,
+        "left": 608.0000305175781
+      },
+      "fcn_multipleplansexpired_0": {
+        "top": 454.15000915527344,
+        "left": 284.0
+      },
+      "fcn_gotoaccountsettingsbeconversive_1721729292049_0": {
+        "top": 512.75,
+        "left": 284.0
+      },
+      "fcn_checkbothplansareexpired_0": {
+        "top": 578.8999938964844,
+        "left": 284.0
+      },
+      "fcn_checkthebanner_0": {
+        "top": 643.5,
+        "left": 282.0
+      },
+      "fcn_checkoutgoingrestrictionconversedesk_1721734259823_0": {
+        "top": 706.5,
+        "left": 285.0
+      },
+      "fcn_logintoopsportallogin_1721732882561_0": {
+        "top": 792.5,
+        "left": 282.0
+      },
+      "fcn_searchtheaccountbeconversive_1721732888256_0": {
+        "top": 857.6500244140625,
+        "left": 283.0
+      },
+      "fcn_verifytheplansonthebanner_0": {
+        "top": 988.1000366210938,
+        "left": 284.0
+      },
+      "fcn_changetheexpiryoftheplans_0": {
+        "top": 1051.8500366210938,
+        "left": 436.0
+      },
+      "fcn_checkthebannerisnotvisible_0": {
+        "top": 1111.4500122070312,
+        "left": 436.0
+      },
+      "fcn_validateconversedeskrestrictionformpbasicconversedesk_1721730145616_0": {
+        "top": 1183.8500366210938,
+        "left": 290.0
+      },
+      "fcn_singleplanexpired_0": {
+        "top": 459.15000915527344,
+        "left": 924.0000228881836
+      },
+      "fcn_gotoaccountsettingsbeconversive_1721744682222_0": {
+        "top": 517.75,
+        "left": 924.0000228881836
+      },
+      "fcn_checkbothplansareexpired_1721744691691_0": {
+        "top": 582.8999938964844,
+        "left": 924.0000228881836
+      },
+      "fcn_checkthesingleplan_0": {
+        "top": 641.5,
+        "left": 924.0000228881836
+      },
+      "fcn_checksingleplanbanner_0": {
+        "top": 700.1000061035156,
+        "left": 926.0000228881836
+      },
+      "fcn_checkoutgoingrestrictionconversedesk_1721744722380_0": {
+        "top": 758.7000122070312,
+        "left": 924.0000228881836
+      },
+      "fcn_logintoopsportallogin_1721744726140_0": {
+        "top": 837.4500122070312,
+        "left": 924.0000228881836
+      },
+      "fcn_searchtheaccountbeconversive_1721744731020_0": {
+        "top": 902.6000366210938,
+        "left": 924.0000228881836
+      },
+      "fcn_changetheexpiryofaplan_0": {
+        "top": 966.75,
+        "left": 924.0000228881836
+      },
+      "fcn_checkthebannerisnotvisible_1721744765652_0": {
+        "top": 1026.3500366210938,
+        "left": 924.0000228881836
+      },
+      "fcn_sendingmessageswhentheplansareexpired_0": {
+        "top": 347.5375061035156,
+        "left": 1752.0000610351562
+      },
+      "fcn_conversedesk_0": {
+        "top": 424.75,
+        "left": 1438.0000305175781
+      },
+      "fcn_checkifplanisexpired_1723638809868_0": {
+        "top": 483.3500061035156,
+        "left": 1438.0000305175781
+      },
+      "fcn_sendsmsfromconversedeskconversedesk_1723638848835_0": {
+        "top": 537.9500122070312,
+        "left": 1575.0000610351562
+      },
+      "fcn_validatesmshistory_1723638858523_0": {
+        "top": 617.7000122070312,
+        "left": 1575.0000610351562
+      },
+      "fcn_sendsmsfromdeskconversedesk_1723638830299_0": {
+        "top": 542.9500122070312,
+        "left": 1295.0000305175781
+      },
+      "fcn_verifytheplanupgradepopup_1723638842019_0": {
+        "top": 608.1000061035156,
+        "left": 1295.0000305175781
+      },
+      "fcn_campaign_0": {
+        "top": 422.75,
+        "left": 2025.0000610351562
+      },
+      "fcn_entercampaignnamecampaign_1723638960491_0": {
+        "top": 481.3500061035156,
+        "left": 2025.0000610351562
+      },
+      "fcn_selectsmschannelandsenderidcampaign_1723638960491_0": {
+        "top": 549.5,
+        "left": 2026.0000610351562
+      },
+      "fcn_uploadacsvfiletoexecuteacampaigncampaign_1723638960491_0": {
+        "top": 633.5,
+        "left": 2025.0000610351562
+      },
+      "fcn_isfileuploaded_1723638960491_0": {
+        "top": 726.5,
+        "left": 2026.0000610351562
+      },
+      "fcn_selectfilefromdropdown_1723638960491_0": {
+        "top": 782.3375244140625,
+        "left": 1808.0625610351562
+      },
+      "fcn_selectphonefieldcampaign_1723638960491_0": {
+        "top": 782.3375244140625,
+        "left": 2244.0
+      },
+      "fcn_selecttemplateforcampaigncampaign_1723638960491_0": {
+        "top": 838.3500366210938,
+        "left": 2026.0000610351562
+      },
+      "fcn_shootacampaign_1723638960491_0": {
+        "top": 928.3500366210938,
+        "left": 2027.0000610351562
+      },
+      "fcn_checkmessagehistoryexpiry_0": {
+        "top": 997.1000366210938,
+        "left": 2029.0000610351562
+      },
+      "fcn_automation_0": {
+        "top": 418.75,
+        "left": 2555.0
+      }
+    }
+  },
+  "enabled": true,
+  "parentId": ""
+}

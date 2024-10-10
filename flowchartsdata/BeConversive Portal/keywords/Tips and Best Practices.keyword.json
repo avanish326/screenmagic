@@ -1,0 +1,273 @@
+{
+  "modifiedOn": "2024-02-08T06:49:51.704Z",
+  "name": "Tips and Best Practices",
+  "id": "28432",
+  "type": 3,
+  "createdOn": "2024-02-08T06:49:51.704Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Tips and Best Practices",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "var $key1 \u003d _cookie(\"mAgIC_pAnDa\", \"https://qa-app.beconversive.com\");\nvar $key2 \u003d _cookie(\"mAgIC_r_pAnDa\", \"https://qa-app.beconversive.com\");\nvar $key3 \u003d _cookie(\"session_cookie\", \"https://qa-app.beconversive.com\");\n\n$key\u003d\"session_cookie \u003d\"+$key3+\";\"+\"mAgIC_pAnDa\u003d\"+ $key1+\";mAgIC_r_pAnDa\u003d\"+$key2;\n\n_log($key)"
+      },
+      {
+        "commented": false,
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "GET"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "https://qa-app.beconversive.com/api/v1/beconversive/workspace/card"
+          }
+        ],
+        "stepType": "REST",
+        "isRawScript": true,
+        "rawScript": "var $request_ngOzXPVgXO \u003d new RESTRequest();\r\n$request_ngOzXPVgXO.setURL(\"https://qa-app.beconversive.com/api/v1/beconversive/workspace/card\");\r\n$request_ngOzXPVgXO.addToQueryString(\"section\", \"tips_and_best_practices\");\r\n$request_ngOzXPVgXO.setHeader(\"referer\", \"https://qa-app.beconversive.com/app/\");\r\n$request_ngOzXPVgXO.setHeader(\"cookie\", $key);\r\nvar $response_ngOzXPVgXO \u003d $request_ngOzXPVgXO.submit(\"GET\");\r\n$responseBody \u003d $response_ngOzXPVgXO.getBodyAsString();\r\nvar responseBody \u003d JSON.parse($response_ngOzXPVgXO.getBodyAsString());\r\n\t\t_tfcLog(\"\u003ctable class\u003d\u0027tfc_step_table\u0027\u003e\u003ctr\u003e\u003ctd\u003eStore:\u003c/td\u003e \u003ctd\u003eBody: response\u003c/td\u003e\u003ctd\u003e$responseBody\u003c/td\u003e\u003c/tr\u003e\u003c/table\u003e\", \"GROUP_START\");\r\n$responseBody \u003d responseBody[\u0027response\u0027];\r\n\t_tfcLog(\"\", \"GROUP_END\");\r\n\r\n\t\t_tfcLog(\"\u003ctable class\u003d\u0027tfc_step_table\u0027\u003e\u003ctr\u003e\u003ctd\u003eStore:\u003c/td\u003e \u003ctd\u003eBody: response\u003c/td\u003e\u003ctd\u003e$body_response\u003c/td\u003e\u003c/tr\u003e\u003c/table\u003e\", \"GROUP_START\");\r\n$body_response \u003d responseBody[\u0027response\u0027];\r\n\t_tfcLog(\"\", \"GROUP_END\");\r\n\r\n\t\t_tfcLog(\"\u003ctable class\u003d\u0027tfc_step_table\u0027\u003e\u003ctr\u003e\u003ctd\u003eStore:\u003c/td\u003e \u003ctd\u003eBody: response¬status\u003c/td\u003e\u003ctd\u003e$body_response_status\u003c/td\u003e\u003c/tr\u003e\u003c/table\u003e\", \"GROUP_START\");\r\n$body_response_status \u003d responseBody[\u0027response\u0027][\u0027status\u0027];\r\n\t_tfcLog(\"\", \"GROUP_END\");\r\n\r\n\t\t_tfcLog(\"\u003ctable class\u003d\u0027tfc_step_table\u0027\u003e\u003ctr\u003e\u003ctd\u003eStore:\u003c/td\u003e \u003ctd\u003eBody: response¬message\u003c/td\u003e\u003ctd\u003e$body_response_message\u003c/td\u003e\u003c/tr\u003e\u003c/table\u003e\", \"GROUP_START\");\r\n$body_response_message \u003d responseBody[\u0027response\u0027][\u0027message\u0027];\r\n\t_tfcLog(\"\", \"GROUP_END\");\r\n\r\n\t\t_tfcLog(\"\u003ctable class\u003d\u0027tfc_step_table\u0027\u003e\u003ctr\u003e\u003ctd\u003eStore:\u003c/td\u003e \u003ctd\u003eBody: response.data\u003c/td\u003e\u003ctd\u003e$body_response_data\u003c/td\u003e\u003c/tr\u003e\u003c/table\u003e\", \"GROUP_START\");\r\n$body_response_data \u003d responseBody[\u0027response.data\u0027];\r\n\t_tfcLog(\"\", \"GROUP_END\");\r\n\r\n\t\t_tfcLog(\"\u003ctable class\u003d\u0027tfc_step_table\u0027\u003e\u003ctr\u003e\u003ctd\u003eStore:\u003c/td\u003e \u003ctd\u003eBody: response.data.tips_and_best_practices\u003c/td\u003e\u003ctd\u003e$body_response_data_tips_and_best_practices\u003c/td\u003e\u003c/tr\u003e\u003c/table\u003e\", \"GROUP_START\");\r\n$body_response_data_tips_and_best_practices \u003d responseBody[\u0027response.data.tips_and_best_practices\u0027];\r\n\t_tfcLog(\"\", \"GROUP_END\");\r\n\r\n\t\t_tfcLog(\"\u003ctable class\u003d\u0027tfc_step_table\u0027\u003e\u003ctr\u003e\u003ctd\u003eStore:\u003c/td\u003e \u003ctd\u003eBody: response¬data¬tips_and_best_practices[0]\u003c/td\u003e\u003ctd\u003e$body_response_data_tips_and_best_practices_0\u003c/td\u003e\u003c/tr\u003e\u003c/table\u003e\", \"GROUP_START\");\r\n$body_response_data_tips_and_best_practices_0 \u003d responseBody[\u0027response\u0027][\u0027data\u0027][\u0027tips_and_best_practices\u0027][\u00270\u0027];\r\n\t_tfcLog(\"\", \"GROUP_END\");\r\n\r\n\t\t_tfcLog(\"\u003ctable class\u003d\u0027tfc_step_table\u0027\u003e\u003ctr\u003e\u003ctd\u003eStore:\u003c/td\u003e \u003ctd\u003eBody: response¬data¬tips_and_best_practices[1]\u003c/td\u003e\u003ctd\u003e$body_response_data_tips_and_best_practices_1\u003c/td\u003e\u003c/tr\u003e\u003c/table\u003e\", \"GROUP_START\");\r\n$body_response_data_tips_and_best_practices_1 \u003d responseBody[\u0027response\u0027][\u0027data\u0027][\u0027tips_and_best_practices\u0027][\u00271\u0027];\r\n\t_tfcLog(\"\", \"GROUP_END\");\r\n\r\n\t\t_tfcLog(\"\u003ctable class\u003d\u0027tfc_step_table\u0027\u003e\u003ctr\u003e\u003ctd\u003eStore:\u003c/td\u003e \u003ctd\u003eBody: response¬data¬tips_and_best_practices[2]\u003c/td\u003e\u003ctd\u003e$body_response_data_tips_and_best_practices_2\u003c/td\u003e\u003c/tr\u003e\u003c/table\u003e\", \"GROUP_START\");\r\n$body_response_data_tips_and_best_practices_2 \u003d responseBody[\u0027response\u0027][\u0027data\u0027][\u0027tips_and_best_practices\u0027][\u00272\u0027];\r\n\t_tfcLog(\"\", \"GROUP_END\");\r\n\r\n\t\t_tfcLog(\"\u003ctable class\u003d\u0027tfc_step_table\u0027\u003e\u003ctr\u003e\u003ctd\u003eStore:\u003c/td\u003e \u003ctd\u003eBody: response¬data¬tips_and_best_practices[3]\u003c/td\u003e\u003ctd\u003e$body_response_data_tips_and_best_practices_3\u003c/td\u003e\u003c/tr\u003e\u003c/table\u003e\", \"GROUP_START\");\r\n$body_response_data_tips_and_best_practices_3 \u003d responseBody[\u0027response\u0027][\u0027data\u0027][\u0027tips_and_best_practices\u0027][\u00273\u0027];\r\n\t_tfcLog(\"\", \"GROUP_END\");\r\n\r\n\t\t_tfcLog(\"\u003ctable class\u003d\u0027tfc_step_table\u0027\u003e\u003ctr\u003e\u003ctd\u003eStore:\u003c/td\u003e \u003ctd\u003eBody: response¬data¬tips_and_best_practices[4]\u003c/td\u003e\u003ctd\u003e$body_response_data_tips_and_best_practices_4\u003c/td\u003e\u003c/tr\u003e\u003c/table\u003e\", \"GROUP_START\");\r\n$body_response_data_tips_and_best_practices_4 \u003d responseBody[\u0027response\u0027][\u0027data\u0027][\u0027tips_and_best_practices\u0027][\u00274\u0027];\r\n\t_tfcLog(\"\", \"GROUP_END\");\r\n\r\n\t\t_tfcLog(\"\u003ctable class\u003d\u0027tfc_step_table\u0027\u003e\u003ctr\u003e\u003ctd\u003eStore:\u003c/td\u003e \u003ctd\u003eBody: response¬data¬tips_and_best_practices[5]\u003c/td\u003e\u003ctd\u003e$body_response_data_tips_and_best_practices_5\u003c/td\u003e\u003c/tr\u003e\u003c/table\u003e\", \"GROUP_START\");\r\n$body_response_data_tips_and_best_practices_5 \u003d responseBody[\u0027response\u0027][\u0027data\u0027][\u0027tips_and_best_practices\u0027][\u00275\u0027];\r\n\t_tfcLog(\"\", \"GROUP_END\");\r\n\r\n\t var $responseBodyObj_ngOzXPVgXO \u003d $response_ngOzXPVgXO.getBodyAsString();\r\n\tvar responseType \u003d $response_ngOzXPVgXO.getHeader(\"Content-Type\");\r\n\tif (responseType.indexOf(\"json\")!\u003d-1) {\r\n\t\t$responseBodyObj_ngOzXPVgXO \u003d JSON.parse($responseBodyObj_ngOzXPVgXO);\r\n\t}\r\n\telse if (responseType.indexOf(\"xml\")!\u003d-1) {\r\n\t\t$responseBodyObj_ngOzXPVgXO \u003d $responseBodyObj_ngOzXPVgXO.replace(/\u003c\\xml.*?\u003e/g, \u0027\u0027).replace(/\\n/g, \u0027\u0027).replace(/\\r/g, \u0027\u0027);\r\n\t\t$responseBodyObj_ngOzXPVgXO \u003d new XML(undefined);\r\n\t}\r\n\r\n\t//assertions\r\n\t\t_tfcLog(\"\u003ctable class\u003d\u0027tfc_step_table\u0027\u003e\u003ctr\u003e\u003ctd\u003eAssert Equals\u003c/td\u003e \u003ctd\u003eHTTP Response Status\u003c/td\u003e \u003ctd\u003e200\u003c/td\u003e\u003c/tr\u003e\u003c/table\u003e\", \"GROUP_START\");\r\n_assertEqual(\"200\", $response_ngOzXPVgXO.getResponseCode());\r\n\t_tfcLog(\"\", \"GROUP_END\");\r\n\r\n",
+        "state": {
+          "contentType": "json",
+          "request": {
+            "method": "GET",
+            "url": "https://qa-app.beconversive.com/api/v1/beconversive/workspace/card",
+            "parameters": [
+              [
+                "section",
+                "tips_and_best_practices"
+              ]
+            ],
+            "headers": [
+              [
+                "referer",
+                "https://qa-app.beconversive.com/app/"
+              ],
+              [
+                "cookie",
+                "$key"
+              ]
+            ],
+            "authType": "none",
+            "body": "",
+            "bodyParams": [],
+            "isParametrizedBody": false,
+            "resetCookies": false
+          },
+          "assertions": {
+            "status": [
+              {
+                "value": "200",
+                "assertType": "equals",
+                "key": "HTTP Status Code",
+                "id": "1702386863511.536",
+                "isCommented": false
+              }
+            ],
+            "header": [],
+            "body": []
+          },
+          "variables": {
+            "status": [],
+            "header": [],
+            "body": [
+              {
+                "key": "response",
+                "varname": "$responseBody",
+                "id": "1702398671825.430"
+              },
+              {
+                "key": "response",
+                "varname": "$body_response",
+                "id": "1702398704621.228"
+              },
+              {
+                "key": "response¬status",
+                "varname": "$body_response_status",
+                "id": "1702398704622.64"
+              },
+              {
+                "key": "response¬message",
+                "varname": "$body_response_message",
+                "id": "1702398704623.172"
+              },
+              {
+                "key": "response.data",
+                "varname": "$body_response_data",
+                "id": "1702398704624.482"
+              },
+              {
+                "key": "response.data.tips_and_best_practices",
+                "varname": "$body_response_data_tips_and_best_practices",
+                "id": "1702398704625.545"
+              },
+              {
+                "key": "response¬data¬tips_and_best_practices[0]",
+                "varname": "$body_response_data_tips_and_best_practices_0",
+                "id": "1702398704626.275"
+              },
+              {
+                "key": "response¬data¬tips_and_best_practices[1]",
+                "varname": "$body_response_data_tips_and_best_practices_1",
+                "id": "1702398704627.25"
+              },
+              {
+                "key": "response¬data¬tips_and_best_practices[2]",
+                "varname": "$body_response_data_tips_and_best_practices_2",
+                "id": "1702398704628.467"
+              },
+              {
+                "key": "response¬data¬tips_and_best_practices[3]",
+                "varname": "$body_response_data_tips_and_best_practices_3",
+                "id": "1702398704630.246"
+              },
+              {
+                "key": "response¬data¬tips_and_best_practices[4]",
+                "varname": "$body_response_data_tips_and_best_practices_4",
+                "id": "1702398704631.718"
+              },
+              {
+                "key": "response¬data¬tips_and_best_practices[5]",
+                "varname": "$body_response_data_tips_and_best_practices_5",
+                "id": "1702398704632.216"
+              }
+            ]
+          },
+          "authInfo": {},
+          "rawResponseVar": "$responseBody"
+        }
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "var $a \u003d JSON.stringify($responseBody)\nvar $responseBodyObj \u003d JSON.parse($a);\n\nvar $tips_and_best_practices \u003d $responseBodyObj.data.tips_and_best_practices\nfor(var $i\u003d0; $i\u003c$tips_and_best_practices.length; $i++){\n_log($tips_and_best_practices[$i].contentful_id)\n}\n"
+      },
+      {
+        "commented": false,
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "POST"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "https://graphql.contentful.com/content/v1/spaces/ws6v5ox5yo68"
+          }
+        ],
+        "stepType": "REST",
+        "isRawScript": true,
+        "rawScript": "var $request_oKluYcPjRG \u003d new RESTRequest();\r\n$request_oKluYcPjRG.setURL(\"https://graphql.contentful.com/content/v1/spaces/ws6v5ox5yo68\");\r\n$request_oKluYcPjRG.setHeader(\"authority\", \"graphql.contentful.com\");\r\n$request_oKluYcPjRG.setHeader(\"accept\", \"application/json, text/plain, */*\");\r\n$request_oKluYcPjRG.setHeader(\"accept-language\", \"en-US,en;q\u003d0.9\");\r\n$request_oKluYcPjRG.setHeader(\"authorization\", \"Bearer nrajxM_MtFUhMxkxBNkuhirEdOmLetQHbNfQJlB_0_0\");\r\n$request_oKluYcPjRG.setHeader(\"content-type\", \"application/json\");\r\n$request_oKluYcPjRG.setHeader(\"origin\", \"https://qa-app.beconversive.com\");\r\n$request_oKluYcPjRG.setHeader(\"referer\", \"https://qa-app.beconversive.com/\");\r\n$request_oKluYcPjRG.setHeader(\"sec-ch-ua\", \"\\\"Google Chrome\\\";v\u003d\\\"119\\\", \\\"Chromium\\\";v\u003d\\\"119\\\", \\\"Not?A_Brand\\\";v\u003d\\\"24\\\"\");\r\n$request_oKluYcPjRG.setHeader(\"sec-ch-ua-mobile\", \"?0\");\r\n$request_oKluYcPjRG.setHeader(\"sec-ch-ua-platform\", \"\\\"Windows\\\"\");\r\n$request_oKluYcPjRG.setHeader(\"sec-fetch-dest\", \"empty\");\r\n$request_oKluYcPjRG.setHeader(\"sec-fetch-mode\", \"cors\");\r\n$request_oKluYcPjRG.setHeader(\"sec-fetch-site\", \"cross-site\");\r\n$request_oKluYcPjRG.setHeader(\"user-agent\", \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36\");\r\nvar sanitizedBody \u003d eval(\"(\"+\"{\" + \"    \\\"query\\\": \\\"{\\\\n  workspaceUpdatesCollection {\\\\n      items{\\\\n          id,\\\\n          title,\\\\n          image{\\\\n              fileName,\\\\n              url,         \\\\n          },\\\\n          description,\\\\n          docCenterLink,\\\\n          videoUrl,\\\\n          action,\\\\n          buttonName,\\\\n          imageTitle,\\\\n          docCenterImage{\\\\n              fileName,\\\\n              url,\\\\n          },\\\\n          contentfulMetadata {\\\\n              tags {\\\\n                  id\\\\n                  name\\\\n              }\\\\n          }\\\\n      }\\\\n  },\\\\n  setupAccountCardsCollection {\\\\n      items{\\\\n          id,\\\\n            title,\\\\n            image{\\\\n                fileName,\\\\n                url,\\\\n                description\\\\n            },\\\\n            buttonName,\\\\n            description,\\\\n            action,\\\\n            contentfulMetadata {\\\\n              tags {\\\\n                  id\\\\n                  name\\\\n              }\\\\n          }\\\\n      }\\\\n  },\\\\n  tipsAndBestPracticesCollection {\\\\n        items{\\\\n            id\\\\n            videoUrl\\\\n            title\\\\n            subTitle\\\\n            tutorialImage{\\\\n                fileName\\\\n                url \\\\n            }\\\\n        }\\\\n    },\\\\n    tutorialsCollection {\\\\n        items{\\\\n            id\\\\n            videoUrl\\\\n            tutorialImage{\\\\n                fileName\\\\n                url \\\\n            }\\\\n        }\\\\n    }\\\\n}\\\"\" + \"}\"+\")\");\n$request_oKluYcPjRG.setBody(JSON.stringify(sanitizedBody));\r\nvar $response_oKluYcPjRG \u003d $request_oKluYcPjRG.submit(\"POST\");\r\n$response \u003d $response_oKluYcPjRG.getBodyAsString();\r\nvar responseBody \u003d JSON.parse($response_oKluYcPjRG.getBodyAsString());\r\n\t var $responseBodyObj_oKluYcPjRG \u003d $response_oKluYcPjRG.getBodyAsString();\r\n\tvar responseType \u003d $response_oKluYcPjRG.getHeader(\"Content-Type\");\r\n\tif (responseType.indexOf(\"json\")!\u003d-1) {\r\n\t\t$responseBodyObj_oKluYcPjRG \u003d JSON.parse($responseBodyObj_oKluYcPjRG);\r\n\t}\r\n\telse if (responseType.indexOf(\"xml\")!\u003d-1) {\r\n\t\t$responseBodyObj_oKluYcPjRG \u003d $responseBodyObj_oKluYcPjRG.replace(/\u003c\\xml.*?\u003e/g, \u0027\u0027).replace(/\\n/g, \u0027\u0027).replace(/\\r/g, \u0027\u0027);\r\n\t\t$responseBodyObj_oKluYcPjRG \u003d new XML(undefined);\r\n\t}\r\n\r\n\t//assertions\r\n\t\t_tfcLog(\"\u003ctable class\u003d\u0027tfc_step_table\u0027\u003e\u003ctr\u003e\u003ctd\u003eAssert Equals\u003c/td\u003e \u003ctd\u003eHTTP Response Status\u003c/td\u003e \u003ctd\u003e200\u003c/td\u003e\u003c/tr\u003e\u003c/table\u003e\", \"GROUP_START\");\r\n_assertEqual(\"200\", $response_oKluYcPjRG.getResponseCode());\r\n\t_tfcLog(\"\", \"GROUP_END\");\r\n\r\n",
+        "state": {
+          "contentType": "json",
+          "request": {
+            "method": "POST",
+            "url": "https://graphql.contentful.com/content/v1/spaces/ws6v5ox5yo68",
+            "parameters": [],
+            "headers": [
+              [
+                "authority",
+                "graphql.contentful.com"
+              ],
+              [
+                "accept",
+                "application/json, text/plain, */*"
+              ],
+              [
+                "accept-language",
+                "en-US,en;q\u003d0.9"
+              ],
+              [
+                "authorization",
+                "Bearer nrajxM_MtFUhMxkxBNkuhirEdOmLetQHbNfQJlB_0_0"
+              ],
+              [
+                "content-type",
+                "application/json"
+              ],
+              [
+                "origin",
+                "https://qa-app.beconversive.com"
+              ],
+              [
+                "referer",
+                "https://qa-app.beconversive.com/"
+              ],
+              [
+                "sec-ch-ua",
+                "\"Google Chrome\";v\u003d\"119\", \"Chromium\";v\u003d\"119\", \"Not?A_Brand\";v\u003d\"24\""
+              ],
+              [
+                "sec-ch-ua-mobile",
+                "?0"
+              ],
+              [
+                "sec-ch-ua-platform",
+                "\"Windows\""
+              ],
+              [
+                "sec-fetch-dest",
+                "empty"
+              ],
+              [
+                "sec-fetch-mode",
+                "cors"
+              ],
+              [
+                "sec-fetch-site",
+                "cross-site"
+              ],
+              [
+                "user-agent",
+                "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"
+              ]
+            ],
+            "authType": "none",
+            "body": "{\n    \"query\": \"{\\n  workspaceUpdatesCollection {\\n      items{\\n          id,\\n          title,\\n          image{\\n              fileName,\\n              url,         \\n          },\\n          description,\\n          docCenterLink,\\n          videoUrl,\\n          action,\\n          buttonName,\\n          imageTitle,\\n          docCenterImage{\\n              fileName,\\n              url,\\n          },\\n          contentfulMetadata {\\n              tags {\\n                  id\\n                  name\\n              }\\n          }\\n      }\\n  },\\n  setupAccountCardsCollection {\\n      items{\\n          id,\\n            title,\\n            image{\\n                fileName,\\n                url,\\n                description\\n            },\\n            buttonName,\\n            description,\\n            action,\\n            contentfulMetadata {\\n              tags {\\n                  id\\n                  name\\n              }\\n          }\\n      }\\n  },\\n  tipsAndBestPracticesCollection {\\n        items{\\n            id\\n            videoUrl\\n            title\\n            subTitle\\n            tutorialImage{\\n                fileName\\n                url \\n            }\\n        }\\n    },\\n    tutorialsCollection {\\n        items{\\n            id\\n            videoUrl\\n            tutorialImage{\\n                fileName\\n                url \\n            }\\n        }\\n    }\\n}\"\n}",
+            "bodyParams": [],
+            "isParametrizedBody": false,
+            "resetCookies": false
+          },
+          "assertions": {
+            "status": [
+              {
+                "value": "200",
+                "assertType": "equals",
+                "key": "HTTP Status Code",
+                "id": "1702446888640.142",
+                "isCommented": false
+              }
+            ],
+            "header": [],
+            "body": []
+          },
+          "variables": {
+            "status": [],
+            "header": [],
+            "body": []
+          },
+          "authInfo": {},
+          "rawResponseVar": "$response"
+        }
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "var $responseBodyObj \u003d JSON.parse($response);\nvar $restTitle \u003d[];\nvar $items \u003d $responseBodyObj.data.tipsAndBestPracticesCollection.items\nfor(var $i\u003d0; $i\u003c$items.length ; $i++){\nfor(var $j\u003d0; $j\u003c$tips_and_best_practices.length; $j++){\nif($items[$i].id \u003d\u003d $tips_and_best_practices[$j].contentful_id){\n$restTitle.push($items[$i].title);\n_log($items[$i].title)\n}\n}\n}\n\nvar $itemsUI \u003d _collectAttributes(\"_heading2\",\"/.*/\",\"sahiText\",_under(_heading4(\"Tips and Best Practices\")))\nfor(var $i\u003d0; $i\u003c$itemsUI.length ; $i++){\nfor(var $j\u003d0; $j\u003c$restTitle.length; $j++){\nif($itemsUI[$i]\u003d\u003d$restTitle[$j]){\n_assertEqual($itemsUI[$i],$restTitle[$j])\n}\n}\n}"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "var $responseBodyObj \u003d JSON.parse($response);\nvar $restsubTitle \u003d[];\nvar $items \u003d $responseBodyObj.data.tipsAndBestPracticesCollection.items\nfor(var $i\u003d0; $i\u003c$items.length ; $i++){\nfor(var $j\u003d0; $j\u003c$tips_and_best_practices.length; $j++){\nif($items[$i].id \u003d\u003d $tips_and_best_practices[$j].contentful_id){\n$restsubTitle.push($items[$i].subTitle);\n_log($items[$i].subTitle)\n}\n}\n}\n\nvar $itemsUI \u003d _collectAttributes(\"_paragraph\",\"/text-sm font-medium/\",\"sahiText\",_under(_heading4(\"Tips and Best Practices\")))\nfor(var $i\u003d0; $i\u003c$itemsUI.length ; $i++){\nfor(var $j\u003d0; $j\u003c$restsubTitle.length; $j++){\nif(_trim($itemsUI[$i])\u003d\u003d_trim($restsubTitle[$j])){\n_assertEqual($itemsUI[$i],$restsubTitle[$j])\n}\n}\n}"
+      },
+      {
+        "commented": true,
+        "isRawScript": true,
+        "rawScript": "var $responseBodyObj \u003d JSON.parse($response);\nvar $restTipsURL \u003d[];\nvar $items \u003d $responseBodyObj.data.tipsAndBestPracticesCollection.items\nfor(var $i\u003d0; $i\u003c$items.length ; $i++){\nfor(var $j\u003d0; $j\u003c$tips_and_best_practices.length; $j++){\nif($items[$i].id \u003d\u003d $tips_and_best_practices[$j]){\n$restTipsURL.push($items[$i].tipsURL);\n_log($items[$i].tipsURL)\n}\n}\n}\n\nvar $itemsUI \u003d _collectAttributes(\"_paragraph\",\"/.*/\",\"sahiText\",_in(_div(\"slick-list\")))\nfor(var $i\u003d0; $i\u003c$itemsUI.length ; $i++){\nfor(var $j\u003d0; $j\u003c$restTipsURL.length; $j++){\nif($itemsUI[$i]\u003d\u003d$restTipsURL[$j]){\n_assertEqual($itemsUI[$i],$restTipsURL[$j])\n}\n}\n}\n\n\n\n//_click(_div(\"WhatsApp MessagingGetting Started with WhatsApp Messaging\"))\n_click(_div($restTitle+$restDescription))\n_wait(5000)\nvar $window \u003d _getRecentWindow();\nvar $tips \u003d $window.windowURL\n_log($tips);"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

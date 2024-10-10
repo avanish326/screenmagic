@@ -1,0 +1,356 @@
+{
+  "modifiedOn": "2024-09-11T11:42:25.914Z",
+  "name": "Edit the Template for Nurture $template",
+  "id": "58176",
+  "type": 3,
+  "createdOn": "2024-07-09T09:26:48.076Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Edit the Template for Nurture $template",
+    "parameters": [
+      {
+        "parameterId": "template_",
+        "entityTypeId": "template",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": true,
+        "action": "_selectWindow",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "\"Conversive[1]\""
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "15000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_fltPlaceholder(\"/Enable/\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "2000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "isRawScript": true,
+        "rawScript": "if($machine \u003d\u003d \"macOS\"){\n_wait(1000)\nvar $robot \u003d new java.awt.Robot();\n$robot.keyPress(java.awt.event.KeyEvent.VK_META);\n$robot.keyPress(java.awt.event.KeyEvent.VK_CONTROL);\n$robot.keyPress(java.awt.event.KeyEvent.VK_F);\n$robot.delay(50);\n$robot.keyRelease(java.awt.event.KeyEvent.VK_F);\n$robot.keyRelease(java.awt.event.KeyEvent.VK_CONTROL);\n$robot.keyRelease(java.awt.event.KeyEvent.VK_META);\n}\nif($machine \u003d\u003d \"windows\" || $machine \u003d\u003d \"chromeOS\"){\n_typeKeyCodeNative(java.awt.event.KeyEvent.VK_F11);\n}"
+      },
+      {
+        "commented": true,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "500"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_position",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_iframe(0)"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$pos1"
+        }
+      },
+      {
+        "commented": true,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "500"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_fltSemantics(\"Select Integration\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "500"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_position",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_fltSemantics(\"Conversive\")"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "true"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$pos2"
+        }
+      },
+      {
+        "commented": true,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "1000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_clickNativeXY",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "$pos1[0]  + $pos2[0] + 5"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "$pos1[1] + $pos2[1] + 5"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "500"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_fltSemantics(\"Select an Object\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "500"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_position",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_fltSemantics(\"Contacts\")"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "true"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$posObject"
+        }
+      },
+      {
+        "commented": true,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "1000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_clickNativeXY",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "$pos1[0]  + $posObject[0] + 5"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "$pos1[1] + $posObject[1] + 5"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "isRawScript": true,
+        "rawScript": "if($machine \u003d\u003d \"macOS\"){\nvar $robot \u003d new java.awt.Robot();\n$robot.keyPress(java.awt.event.KeyEvent.VK_META);\n$robot.keyPress(java.awt.event.KeyEvent.VK_CONTROL);\n$robot.keyPress(java.awt.event.KeyEvent.VK_F);\n$robot.delay(50);\n$robot.keyRelease(java.awt.event.KeyEvent.VK_F);\n$robot.keyRelease(java.awt.event.KeyEvent.VK_CONTROL);\n$robot.keyRelease(java.awt.event.KeyEvent.VK_META);\n}\nif($machine \u003d\u003d \"windows\" || $machine \u003d\u003d \"chromeOS\"){\n_typeKeyCodeNative(java.awt.event.KeyEvent.VK_F11);\n}"
+      },
+      {
+        "commented": true,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "4000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_fltSemantics(\"SMS\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "2000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "isRawScript": true,
+        "rawScript": "_focus(_textarea(0))"
+      },
+      {
+        "commented": true,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "3000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_textarea(0)"
+          },
+          {
+            "parameterId": "template_",
+            "attributeId": "attr_21695961090879"
+          }
+        ],
+        "stepType": "Action",
+        "visibleCheck": false
+      },
+      {
+        "commented": true,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_fltSemantics(\"Save\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_selectWindow",
+        "stepParameters": [],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "\t\n$template.templateText\u003d\"This is the testing temp message for nurure\";"
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "20000"
+          }
+        ],
+        "stepType": "Action"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

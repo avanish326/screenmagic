@@ -1,0 +1,74 @@
+{
+  "modifiedOn": "2024-04-08T03:34:52.893Z",
+  "name": "Incoming SMS to portal $phone",
+  "id": "44184",
+  "type": 3,
+  "createdOn": "2024-03-11T04:56:32.636Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Incoming SMS to portal $phone",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "POST"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "https://qa-api.txtbox.in/v1/sms/incoming/twilio"
+          }
+        ],
+        "stepType": "REST",
+        "isRawScript": true,
+        "rawScript": "var $request_D7bx7VIxWY \u003d new RESTRequest();\r\n$request_D7bx7VIxWY.setURL(\"https://qa-api.txtbox.in/v1/sms/incoming/twilio\");\r\n$request_D7bx7VIxWY.addToQueryString(\"From\", $PhoneNumber);\r\n$request_D7bx7VIxWY.addToQueryString(\"To\", \"17863057562\");\r\n$request_D7bx7VIxWY.addToQueryString(\"Body\", \"ShradSMS offer offer 50%off and Congratulations! Your credit score 15% entitles you to a no-interest Visa credit card. Click here to claim: https://qa-smam.com checking 1\");\r\n$request_D7bx7VIxWY.addToQueryString(\"SmsSid\", \"test incoming MMS message 😂😃jb\");\r\nvar $response_D7bx7VIxWY \u003d $request_D7bx7VIxWY.submit(\"POST\");\r\n\t var $responseBodyObj_D7bx7VIxWY \u003d $response_D7bx7VIxWY.getBodyAsString();\r\n\tvar responseType \u003d $response_D7bx7VIxWY.getHeader(\"Content-Type\");\r\n\tif (responseType.indexOf(\"json\")!\u003d-1) {\r\n\t\t$responseBodyObj_D7bx7VIxWY \u003d JSON.parse($responseBodyObj_D7bx7VIxWY);\r\n\t}\r\n\telse if (responseType.indexOf(\"xml\")!\u003d-1) {\r\n\t\t$responseBodyObj_D7bx7VIxWY \u003d $responseBodyObj_D7bx7VIxWY.replace(/\u003c\\xml.*?\u003e/g, \u0027\u0027).replace(/\\n/g, \u0027\u0027).replace(/\\r/g, \u0027\u0027);\r\n\t\t$responseBodyObj_D7bx7VIxWY \u003d new XML(undefined);\r\n\t}\r\n\r\n\t//assertions\r\n\r\n",
+        "state": {
+          "contentType": "html",
+          "request": {
+            "method": "POST",
+            "url": "https://qa-api.txtbox.in/v1/sms/incoming/twilio",
+            "parameters": [
+              [
+                "From",
+                "$PhoneNumber"
+              ],
+              [
+                "To",
+                "17863057562"
+              ],
+              [
+                "Body",
+                "ShradSMS offer offer 50%off and Congratulations! Your credit score 15% entitles you to a no-interest Visa credit card. Click here to claim: https://qa-smam.com checking 1"
+              ],
+              [
+                "SmsSid",
+                "test incoming MMS message 😂😃jb"
+              ]
+            ],
+            "headers": [],
+            "authType": "none",
+            "body": "",
+            "bodyParams": [],
+            "isParametrizedBody": false,
+            "resetCookies": false
+          },
+          "assertions": {
+            "status": [],
+            "header": [],
+            "body": []
+          },
+          "variables": {
+            "status": [],
+            "header": [],
+            "body": []
+          },
+          "authInfo": {}
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

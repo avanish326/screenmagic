@@ -1,0 +1,43 @@
+{
+  "modifiedOn": "2024-08-28T09:24:15.913Z",
+  "name": "Assert channel as sms in the conversation",
+  "id": "45445",
+  "type": 3,
+  "createdOn": "2024-04-26T12:46:55.478Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Assert channel as sms in the conversation",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "1000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(0, _under(_paragraph(\"known-username\")))"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"SMS\""
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

@@ -1,0 +1,98 @@
+{
+  "modifiedOn": "2024-05-22T12:29:36.201Z",
+  "name": "Verify Send Message in Converse Desk $text $senderidbeconv",
+  "id": "45945",
+  "type": 3,
+  "createdOn": "2024-05-09T12:26:49.434Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Verify Send Message in Converse Desk $text $senderidbeconv",
+    "parameters": [
+      {
+        "parameterId": "text_",
+        "entityTypeId": "text",
+        "suffix": ""
+      },
+      {
+        "parameterId": "senderidbeconv_",
+        "entityTypeId": "senderidbeconv",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": true,
+        "isRawScript": true,
+        "rawScript": "$Name \u003d $firstname+\" \"+$lastname+\" (\"+$phoneNumber+\")\" \n\nif($Name.includes(\"-\")){\n$Name \u003d $Name.replace(\"- \",\"\")\n}\n\n_log($Name)\n\n"
+      },
+      {
+        "commented": true,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_heading1(0)"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$Name"
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(0, _under(_heading1(0)))"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"contacts\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_label($senderidbeconv.senderID)"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "parameterId": "senderidbeconv_",
+          "attributeId": "attr_01715257073383"
+        },
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph($text.message)"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "parameterId": "text_",
+          "attributeId": "attr_01715257224625"
+        },
+        "visibleCheck": false
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

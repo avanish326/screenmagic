@@ -1,0 +1,108 @@
+{
+  "modifiedOn": "2024-01-12T12:25:23.152Z",
+  "name": "incomingSms $message $numbermanagment",
+  "id": "14079",
+  "type": 3,
+  "createdOn": "2023-09-11T12:43:48.850Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "incomingSms $message $numbermanagment",
+    "parameters": [
+      {
+        "parameterId": "message_",
+        "entityTypeId": "message",
+        "suffix": ""
+      },
+      {
+        "parameterId": "numbermanagment_",
+        "entityTypeId": "numbermanagment",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_navigateTo",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "\"https://qa-app.txtbox.in/app/#/converse-desk\""
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "var $GUID\u003dMath.random();\nvar $senderid \u003d $numbermanagment.senderID;\nvar $source\u003dMath.random();\n_log($destination);\n$request \u003d new RESTRequest();\n$request.setURL(\"https://qa-api.txtbox.in/v1/sms/incoming/aerial\");\n$request.setHeader(\"Content-Type\", \"multipart/form-data; boundary\u003d\u003ccalculated when request is sent\u003e\");\n$request.setHeader(\"Content-Length\", \"\u003ccalculated when request is sent\u003e\");\n$request.setHeader(\"Host\", \"\u003ccalculated when request is sent\u003e\");\n$request.setHeader(\"User-Agent\", \"PostmanRuntime/7.32.3\");\n$request.setHeader(\"Accept\", \"*/*\");\n$request.setHeader(\"Accept-Encoding\", \"gzip, deflate, br\");\n$request.setHeader(\"Connection\", \"keep-alive\");\n$request.addToBody(\"source\", $source);\n$request.addToBody(\"messageText\", \"hey\");\n$request.addToBody(\"destination\", $senderid);\n$request.addToBody(\"connectionGUID\", $GUID);\n$request.addToBody(\"transactionGUID\", $GUID);\n$response \u003d $request.submit(\"POST\");\nvar $responseBody \u003d $response.getBodyAsString();\n_log($responseBody);"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"hey\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"hey\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"Campaign\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"Message History\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(41)"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"sms-text\")[1]"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"hey\""
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

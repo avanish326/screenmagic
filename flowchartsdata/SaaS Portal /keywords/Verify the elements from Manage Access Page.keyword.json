@@ -1,0 +1,80 @@
+{
+  "modifiedOn": "2024-04-15T06:12:53.922Z",
+  "name": "Verify the elements from Manage Access Page",
+  "id": "45108",
+  "type": 3,
+  "createdOn": "2024-04-15T06:12:53.922Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Verify the elements from Manage Access Page",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"Enable Login Access for SMS-Magic support team Default access period is 7 days. After 7 days this access gets disabled automatically.\", _near(_heading3(\"ac-company-name\")))"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"Enable Login Access for SMS-Magic support team Default access period is 7 days. After 7 days this access gets disabled automatically.\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"Show Sample Data If you disable this option, the sample data will be removed from your account.\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"Show Sample Data If you disable this option, the sample data will be removed from your account.\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"Disabled\", _near(_span(\"control\")))"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"Disabled\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"Enabled\", _near(_span(\"control[1]\")))"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"Enabled\""
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

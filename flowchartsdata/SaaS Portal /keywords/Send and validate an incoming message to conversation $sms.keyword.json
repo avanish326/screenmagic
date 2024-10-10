@@ -1,0 +1,157 @@
+{
+  "modifiedOn": "2024-08-28T12:12:57.123Z",
+  "name": "Send and validate an incoming message to conversation $sms",
+  "id": "58795",
+  "type": 3,
+  "createdOn": "2024-08-12T12:44:33.835Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Send and validate an incoming message to conversation $sms",
+    "parameters": [
+      {
+        "parameterId": "sms_",
+        "entityTypeId": "sms",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "$mNumberWithCCode\u003d\"1\"+$sms.mobileSMS;"
+      },
+      {
+        "commented": false,
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "POST"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "$incomingSMSURLTwilio"
+          }
+        ],
+        "stepType": "REST",
+        "isRawScript": true,
+        "rawScript": "var $request_zn2C20Qb4C \u003d new RESTRequest();\r\n$request_zn2C20Qb4C.setURL($incomingSMSURLTwilio);\r\n$request_zn2C20Qb4C.addToQueryString(\"From\", $mNumberWithCCode);\r\n$request_zn2C20Qb4C.addToQueryString(\"To\", $SenderID);\r\n$request_zn2C20Qb4C.addToQueryString(\"Body\", \"Hello, this is an incoming message.\");\r\n$request_zn2C20Qb4C.addToQueryString(\"SmsSid\", \"182989801289\");\r\nvar $response_zn2C20Qb4C \u003d $request_zn2C20Qb4C.submit(\"POST\");\r\n\t var $responseBodyObj_zn2C20Qb4C \u003d $response_zn2C20Qb4C.getBodyAsString();\r\n\tvar responseType \u003d $response_zn2C20Qb4C.getHeader(\"Content-Type\");\r\n\tif (responseType.indexOf(\"json\")!\u003d-1) {\r\n\t\t$responseBodyObj_zn2C20Qb4C \u003d JSON.parse($responseBodyObj_zn2C20Qb4C);\r\n\t}\r\n\telse if (responseType.indexOf(\"xml\")!\u003d-1) {\r\n\t\t$responseBodyObj_zn2C20Qb4C \u003d $responseBodyObj_zn2C20Qb4C.replace(/\u003c\\xml.*?\u003e/g, \u0027\u0027).replace(/\\n/g, \u0027\u0027).replace(/\\r/g, \u0027\u0027);\r\n\t\t$responseBodyObj_zn2C20Qb4C \u003d new XML(undefined);\r\n\t}\r\n\r\n\t//assertions\r\n\r\n",
+        "state": {
+          "contentType": "html",
+          "request": {
+            "method": "POST",
+            "url": "$incomingSMSURLTwilio",
+            "parameters": [
+              [
+                "From",
+                "$mNumberWithCCode"
+              ],
+              [
+                "To",
+                "$SenderID"
+              ],
+              [
+                "Body",
+                "Hello, this is an incoming message."
+              ],
+              [
+                "SmsSid",
+                "182989801289"
+              ]
+            ],
+            "headers": [],
+            "authType": "none",
+            "body": "",
+            "bodyParams": [],
+            "isParametrizedBody": false,
+            "resetCookies": false
+          },
+          "assertions": {
+            "status": [],
+            "header": [],
+            "body": []
+          },
+          "variables": {
+            "status": [],
+            "header": [],
+            "body": []
+          },
+          "authInfo": {}
+        }
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_italic(\"close\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "5000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span($mNumberWithCCode)"
+          },
+          {}
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(\"Hello, this is an incoming message.\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"Hello, this is an incoming message.\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_italic(\"close\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "3000"
+          }
+        ],
+        "stepType": "Action"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

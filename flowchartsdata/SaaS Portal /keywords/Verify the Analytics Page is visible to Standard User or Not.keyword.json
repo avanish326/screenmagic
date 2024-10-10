@@ -1,0 +1,60 @@
+{
+  "modifiedOn": "2024-03-15T14:35:17.588Z",
+  "name": "Verify the Analytics Page is visible to Standard User or Not",
+  "id": "44677",
+  "type": 3,
+  "createdOn": "2024-03-15T14:34:19.021Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Verify the Analytics Page is visible to Standard User or Not",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "//Refresh the Page\n_call(window.location.reload())"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "if($statusAnalytics\u003d\u003dtrue)\n{"
+      },
+      {
+        "commented": false,
+        "action": "_isVisible",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"Analytics\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Is_True"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "}\nelse\n{"
+      },
+      {
+        "commented": false,
+        "action": "_isVisible",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"Analytics\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Is_False"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "}"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

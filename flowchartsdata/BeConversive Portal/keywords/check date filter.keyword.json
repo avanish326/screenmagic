@@ -1,0 +1,114 @@
+{
+  "modifiedOn": "2024-07-02T12:19:11.616Z",
+  "name": "check date filter",
+  "id": "57846",
+  "type": 3,
+  "createdOn": "2024-06-19T08:32:23.135Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "check date filter",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "5000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_isVisible",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_textbox(\"input input-sm h-9 focus:ring-blue-600 focus-within:ring-blue-600 focus-within:border-blue-600 focus:border-blue-600\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Is_True"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_textbox(\"input input-sm h-9 focus:ring-blue-600 focus-within:ring-blue-600 focus-within:border-blue-600 focus:border-blue-600\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_button(4)"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_button(38)"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_textbox(\"input input-sm h-9 focus:ring-blue-600 focus-within:ring-blue-600 focus-within:border-blue-600 focus:border-blue-600\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "4000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_textbox(\"input input-sm h-9 focus:ring-blue-600 focus-within:ring-blue-600 focus-within:border-blue-600 focus:border-blue-600\")"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$dateRange"
+        }
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "$ranges \u003d $dateRange.split(\"~\");\n\n$firstDate \u003d $ranges[0];\n$secondDate \u003d $ranges[1];\n\n$ranges;"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

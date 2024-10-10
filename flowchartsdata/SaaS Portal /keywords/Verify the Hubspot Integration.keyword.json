@@ -1,0 +1,78 @@
+{
+  "modifiedOn": "2024-05-15T13:49:03.973Z",
+  "name": "Verify the Hubspot Integration",
+  "id": "46121",
+  "type": 3,
+  "createdOn": "2024-05-15T13:42:05.954Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Verify the Hubspot Integration",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "5000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_isVisible",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"Converse Desk\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Is_True"
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "5000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"Integration*\")"
+          },
+          {}
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"HubSpotIntegrate HubSpot CRM with SMS Magic\u0027s messaging platformConnected\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"HubSpotIntegrate HubSpot CRM with SMS Magic\u0027s messaging platformConnected\""
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

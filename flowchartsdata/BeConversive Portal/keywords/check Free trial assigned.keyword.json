@@ -1,0 +1,32 @@
+{
+  "modifiedOn": "2024-05-29T10:43:26.470Z",
+  "name": "check Free trial assigned",
+  "id": "52589",
+  "type": 3,
+  "createdOn": "2024-05-29T10:43:26.470Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "check Free trial assigned",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(0, _near(_label(\"Subscription Plan\")))"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"Free Trial\""
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

@@ -1,0 +1,75 @@
+{
+  "modifiedOn": "2024-08-16T13:59:47.233Z",
+  "name": "transfer some credits to child $createchild",
+  "id": "58862",
+  "type": 3,
+  "createdOn": "2024-08-16T12:01:57.660Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "transfer some credits to child $createchild",
+    "parameters": [
+      {
+        "parameterId": "createchild_",
+        "entityTypeId": "createchild",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": true,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_emailbox(\"Email\")"
+          },
+          {
+            "parameterId": "createchild_",
+            "attributeId": "attr_11720536515729"
+          }
+        ],
+        "stepType": "Action",
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "10000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_numberbox(0, _near(_cell($childAccount)))"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "\"2\""
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(\"14\")"
+          }
+        ],
+        "stepType": "Action"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

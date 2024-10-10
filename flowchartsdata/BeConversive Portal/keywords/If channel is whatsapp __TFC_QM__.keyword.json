@@ -1,0 +1,41 @@
+{
+  "modifiedOn": "2024-02-08T06:49:44.111Z",
+  "name": "If channel is whatsapp ?",
+  "id": "27894",
+  "type": 3,
+  "createdOn": "2024-02-08T06:49:44.111Z",
+  "content": {
+    "title": "If channel is whatsapp ?",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_isVisible",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_radioGroup(\"jss102\", _in(_listItem(\"WhatsApp\")))"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$whatsappChannel"
+        }
+      },
+      {
+        "commented": false,
+        "action": "return",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "$whatsappChannel"
+          }
+        ],
+        "stepType": "Action"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

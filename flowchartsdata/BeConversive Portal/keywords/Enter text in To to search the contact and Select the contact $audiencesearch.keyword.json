@@ -1,0 +1,97 @@
+{
+  "modifiedOn": "2024-05-09T13:05:47.245Z",
+  "name": "Enter text in To to search the contact and Select the contact $audiencesearch",
+  "id": "45926",
+  "type": 3,
+  "createdOn": "2024-05-09T10:51:06.792Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Enter text in To to search the contact and Select the contact $audiencesearch",
+    "parameters": [
+      {
+        "parameterId": "audiencesearch_",
+        "entityTypeId": "audiencesearch",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "_call(_sahi.blurEnabled\u003dfalse)"
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "1000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_textbox(0,_in(_div(\"To​\")))"
+          },
+          {
+            "parameterId": "audiencesearch_",
+            "attributeId": "attr_51714458694742"
+          },
+          {}
+        ],
+        "stepType": "Action",
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "var $detailsNew \u003d _collectAttributes(\"_listItem\",\"/.*/\",\"sahiText\",_in(_list(\"MuiAutocomplete-listbox\")))\n_log($detailsNew)\n$detailsNew \u003d $detailsNew.sort()\n_assertEqual($details,$detailsNew)"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_listItem($detailsNew[0])"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "_call(_sahi.blurEnabled\u003dtrue)"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "$phoneNumber \u003d $detailsNew[0].split(\"(\")[1].split(\")\")[0]\n\n_log($phoneNumber);"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_textbox(0,_in(_div(\"/Phone Number/\")))"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$phoneNumber"
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

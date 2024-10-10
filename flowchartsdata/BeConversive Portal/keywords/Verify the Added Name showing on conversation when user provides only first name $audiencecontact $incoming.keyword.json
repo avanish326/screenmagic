@@ -1,0 +1,44 @@
+{
+  "modifiedOn": "2024-08-16T04:20:33.708Z",
+  "name": "Verify the Added Name showing on conversation when user provides only first name $audiencecontact $incoming",
+  "id": "58833",
+  "type": 3,
+  "createdOn": "2024-08-16T04:20:11.682Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Verify the Added Name showing on conversation when user provides only first name $audiencecontact $incoming",
+    "parameters": [
+      {
+        "parameterId": "audiencecontact_",
+        "entityTypeId": "audiencecontact",
+        "suffix": ""
+      },
+      {
+        "parameterId": "incoming_",
+        "entityTypeId": "incoming",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span($audiencecontact.firstName)"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "parameterId": "audiencecontact_",
+          "attributeId": "attr_01723631398505"
+        },
+        "visibleCheck": false
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

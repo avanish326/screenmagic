@@ -1,0 +1,44 @@
+{
+  "modifiedOn": "2024-04-12T04:15:51.347Z",
+  "name": "assert the countries $beconversive",
+  "id": "45034",
+  "type": 3,
+  "createdOn": "2024-04-11T12:46:44.618Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "assert the countries $beconversive",
+    "parameters": [
+      {
+        "parameterId": "beconversive_",
+        "entityTypeId": "beconversive",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "var $table \u003d _table(\"table table-bordered\", _near(_div(\"Number Credits\")));\n\n// Retrieve data from the second column of the table\nvar $secondColumnData \u003d _getTableContents($table, [1]);\n\n// Assert that the first column data is contained in the second column data in any order\n//_assertContainsInAnyOrder($firstColumnData, $secondColumnData);\n"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_getTableContents($table, [1])"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Contains",
+        "secondaryParam": {
+          "parameterId": "beconversive_",
+          "attributeId": "attr_251712895238814"
+        },
+        "visibleCheck": false
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

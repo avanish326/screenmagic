@@ -1,0 +1,43 @@
+{
+  "modifiedOn": "2024-08-07T08:31:30.918Z",
+  "name": "view compliance",
+  "id": "58762",
+  "type": 3,
+  "createdOn": "2024-08-06T13:40:11.964Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "view compliance",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "4000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "if(_isVisible(_paragraph(0, _near(_heading3(\"Your Brand\"))))){\n_wait(2000);\n_click(_paragraph(0, _near(_heading3(\"Your Brand\"))));\n}"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(\"View Declaration Details\")"
+          }
+        ],
+        "stepType": "Action"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

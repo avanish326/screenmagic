@@ -1,0 +1,38 @@
+{
+  "modifiedOn": "2024-06-26T12:13:45.259Z",
+  "name": "check the status of brand $dlc",
+  "id": "45965",
+  "type": 3,
+  "createdOn": "2024-05-10T04:04:34.865Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "check the status of brand $dlc",
+    "parameters": [
+      {
+        "parameterId": "dlc_",
+        "entityTypeId": "dlc",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": true,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"brand-count[1]\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$brandCount"
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

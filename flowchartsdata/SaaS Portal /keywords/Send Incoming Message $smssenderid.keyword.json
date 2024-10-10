@@ -1,0 +1,156 @@
+{
+  "modifiedOn": "2024-08-12T11:35:09.404Z",
+  "name": "Send Incoming Message $smssenderid",
+  "id": "21324",
+  "type": 3,
+  "createdOn": "2023-12-13T05:06:14.076Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Send Incoming Message $smssenderid",
+    "parameters": [
+      {
+        "parameterId": "smssenderid_",
+        "entityTypeId": "smssenderid",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": true,
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "POST"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "$incomingSMSURLIntelli"
+          }
+        ],
+        "stepType": "REST",
+        "isRawScript": true,
+        "rawScript": "var $request_jK7yjxHntu \u003d new RESTRequest();\r\n$request_jK7yjxHntu.setURL($incomingSMSURLIntelli);\r\n$request_jK7yjxHntu.addToQueryString(\"Message\", $smssenderid.text);\r\n$request_jK7yjxHntu.addToQueryString(\"OriginatorAddress\", $smssenderid.source);\r\n$request_jK7yjxHntu.addToQueryString(\"DestinationAddress\", $senderIDSharedInbox);\r\nvar $response_jK7yjxHntu \u003d $request_jK7yjxHntu.submit(\"POST\");\r\nvar responseBody \u003d JSON.parse($response_jK7yjxHntu.getBodyAsString());\r\n\t var $responseBodyObj_jK7yjxHntu \u003d $response_jK7yjxHntu.getBodyAsString();\r\n\tvar responseType \u003d $response_jK7yjxHntu.getHeader(\"Content-Type\");\r\n\tif (responseType.indexOf(\"json\")!\u003d-1) {\r\n\t\t$responseBodyObj_jK7yjxHntu \u003d JSON.parse($responseBodyObj_jK7yjxHntu);\r\n\t}\r\n\telse if (responseType.indexOf(\"xml\")!\u003d-1) {\r\n\t\t$responseBodyObj_jK7yjxHntu \u003d $responseBodyObj_jK7yjxHntu.replace(/\u003c\\xml.*?\u003e/g, \u0027\u0027).replace(/\\n/g, \u0027\u0027).replace(/\\r/g, \u0027\u0027);\r\n\t\t$responseBodyObj_jK7yjxHntu \u003d new XML(undefined);\r\n\t}\r\n\r\n\t//assertions\r\n\r\n",
+        "state": {
+          "contentType": "json",
+          "request": {
+            "method": "POST",
+            "url": "$incomingSMSURLIntelli",
+            "parameters": [
+              [
+                "Message",
+                "$smssenderid.text"
+              ],
+              [
+                "OriginatorAddress",
+                "$smssenderid.source"
+              ],
+              [
+                "DestinationAddress",
+                "$senderIDSharedInbox"
+              ]
+            ],
+            "headers": [],
+            "authType": "none",
+            "body": "",
+            "bodyParams": [],
+            "isParametrizedBody": false,
+            "resetCookies": false
+          },
+          "assertions": {
+            "status": [],
+            "header": [],
+            "body": []
+          },
+          "variables": {
+            "status": [],
+            "header": [],
+            "body": []
+          },
+          "authInfo": {}
+        }
+      },
+      {
+        "commented": true,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "3000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "POST"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "$incomingSMSURLTwilio"
+          }
+        ],
+        "stepType": "REST",
+        "isRawScript": true,
+        "rawScript": "var $request_nZ6JwtOx3W \u003d new RESTRequest();\r\n$request_nZ6JwtOx3W.setURL($incomingSMSURLTwilio);\r\n$request_nZ6JwtOx3W.addToQueryString(\"From\", $smssenderid.source);\r\n$request_nZ6JwtOx3W.addToQueryString(\"To\", $senderIDSharedInbox);\r\n$request_nZ6JwtOx3W.addToQueryString(\"Body\", $smssenderid.text);\r\n$request_nZ6JwtOx3W.addToQueryString(\"SmsSid\", \"23981829810290122129092\");\r\nvar $response_nZ6JwtOx3W \u003d $request_nZ6JwtOx3W.submit(\"POST\");\r\n\t var $responseBodyObj_nZ6JwtOx3W \u003d $response_nZ6JwtOx3W.getBodyAsString();\r\n\tvar responseType \u003d $response_nZ6JwtOx3W.getHeader(\"Content-Type\");\r\n\tif (responseType.indexOf(\"json\")!\u003d-1) {\r\n\t\t$responseBodyObj_nZ6JwtOx3W \u003d JSON.parse($responseBodyObj_nZ6JwtOx3W);\r\n\t}\r\n\telse if (responseType.indexOf(\"xml\")!\u003d-1) {\r\n\t\t$responseBodyObj_nZ6JwtOx3W \u003d $responseBodyObj_nZ6JwtOx3W.replace(/\u003c\\xml.*?\u003e/g, \u0027\u0027).replace(/\\n/g, \u0027\u0027).replace(/\\r/g, \u0027\u0027);\r\n\t\t$responseBodyObj_nZ6JwtOx3W \u003d new XML(undefined);\r\n\t}\r\n\r\n\t//assertions\r\n\r\n",
+        "state": {
+          "contentType": "html",
+          "request": {
+            "method": "POST",
+            "url": "$incomingSMSURLTwilio",
+            "parameters": [
+              [
+                "From",
+                "$smssenderid.source"
+              ],
+              [
+                "To",
+                "$senderIDSharedInbox"
+              ],
+              [
+                "Body",
+                "$smssenderid.text"
+              ],
+              [
+                "SmsSid",
+                "23981829810290122129092"
+              ]
+            ],
+            "headers": [],
+            "authType": "none",
+            "body": "",
+            "bodyParams": [],
+            "isParametrizedBody": false,
+            "resetCookies": false
+          },
+          "assertions": {
+            "status": [],
+            "header": [],
+            "body": []
+          },
+          "variables": {
+            "status": [],
+            "header": [],
+            "body": []
+          },
+          "authInfo": {}
+        }
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "5000"
+          }
+        ],
+        "stepType": "Action"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

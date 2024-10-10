@@ -1,0 +1,146 @@
+{
+  "modifiedOn": "2024-01-12T12:25:06.147Z",
+  "name": "Create $saas_portal_login",
+  "id": "10752",
+  "type": 3,
+  "createdOn": "2023-08-01T15:26:30.252Z",
+  "content": {
+    "title": "Create $saas_portal_login",
+    "parameters": [
+      {
+        "parameterId": "saas_portal_login_",
+        "entityTypeId": "saas_portal_login",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "_setXHRReadyStatesToWaitFor(\"2,3\")\n\n\n\n\n\n\n\n\n"
+      },
+      {
+        "commented": false,
+        "action": "_launchNewBrowser",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "\"https://qa-app.txtbox.in\""
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "\"chrome\""
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$browser1"
+        }
+      },
+      {
+        "commented": false,
+        "action": "_selectBrowser",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "$browser1"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_navigateTo",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "\"https://qa-app.txtbox.in\""
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"Sign In with Email\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_textbox(\"username\")"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "$username"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_password(\"password\")"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "$password"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "19000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_submit(\"Sign In\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "isRawScript": true,
+        "rawScript": "var $username\u003d \"shweta.m@screen-magic.com\"\n$request \u003d new RESTRequest();\n$request.setURL(\"http://localhost:5007/api/v2/automation/login\");\n$request.setHeader(\"Content-Type\", \"application/json\");\n$request.setHeader(\"Content-Length\", \"84\");\n$request.setBody(\"{\" +\n\t\t\t\t \"\\\"username\\\":\\\"\"+$username+\"\\\",\" +\n\t\t\t\t \"\\\"password\\\":\\\"Test@2430\\\"\" +\n\t\t\t\t \"}\");\n$response \u003d $request.submit(\"POST\");\nvar $responseBody \u003d $response.getBodyAsString();\n\n\n\nvar $Cookie \u003d $response.getHeader(\u0027Set-Cookie\u0027);\nvar $string \u003d $Cookie;\nvar $cookie \u003d $string.substring($string.indexOf(\"mAgIC_pAnDa\"), $string.length);\nvar $cookie \u003d$cookie.split(\";\")[0]\nvar $accssToken \u003d $cookie.split(\"\u003d\")[1];\n\nvar $string \u003d $Cookie;\nvar $cookie \u003d $string.substring($string.indexOf(\"mAgIC_r_pAnDa\"), $string.length);\nvar $cookie \u003d$cookie.split(\";\")[0]\nvar $requestToken \u003d $cookie.split(\"\u003d\")[1];\n\n\n_createCookie(\"mAgIC_pAnDa\",$accssToken,100);\n_createCookie(\"mAgIC_r_pAnDa\",$requestToken,100);\n_call(location.reload(true));\n"
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "3000"
+          }
+        ],
+        "stepType": "Action"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

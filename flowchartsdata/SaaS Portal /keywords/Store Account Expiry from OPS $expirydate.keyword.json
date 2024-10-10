@@ -1,0 +1,147 @@
+{
+  "modifiedOn": "2024-07-31T05:56:10.405Z",
+  "name": "Store Account Expiry from OPS $expirydate",
+  "id": "58583",
+  "type": 3,
+  "createdOn": "2024-07-30T14:14:10.894Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Store Account Expiry from OPS $expirydate",
+    "parameters": [
+      {
+        "parameterId": "expirydate_",
+        "entityTypeId": "expirydate",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_selectWindow",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "\"/https://qa-ops.txtbox.in/\""
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_textbox(\"accountToSearch\")"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "$accountId"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"fa fa-search menu ms-2\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"Product Plan Details\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_cell(1, _near(_tableHeader(\"Expiry\")))"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$sfSandboxExpiry"
+        }
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "\n$dateTime \u003d new Date($sfSandboxExpiry.replace(\u0027 \u0027, \u0027T\u0027));\n\n$sfSandboxExpiryDate \u003d $dateTime.toISOString().split(\u0027T\u0027)[0];\n\n_log($sfSandboxExpiryDate);"
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_textbox(\"query\")"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "$ProdAccountId"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"fa fa-search menu ms-2\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"Product Plan Details\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_cell(1, _near(_tableHeader(\"Expiry\")))"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$sfProductionExpiry"
+        }
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "$dateTime \u003d new Date($sfProductionExpiry.replace(\u0027 \u0027, \u0027T\u0027));\n\n$sfProductionExpiryDate \u003d $dateTime.toISOString().split(\u0027T\u0027)[0];\n\n_log($sfProductionExpiryDate);"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

@@ -1,0 +1,63 @@
+{
+  "modifiedOn": "2024-02-26T06:48:01.814Z",
+  "name": "send $smstext on existing conversation",
+  "id": "43284",
+  "type": 3,
+  "createdOn": "2024-02-26T06:47:28.555Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "send $smstext on existing conversation",
+    "parameters": [
+      {
+        "parameterId": "smstext_",
+        "entityTypeId": "smstext",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "parameterId": "smstext_",
+            "attributeId": "attr_01708927639306",
+            "accessorId": "acc0"
+          }
+        ],
+        "stepType": "Action",
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "parameterId": "smstext_",
+            "attributeId": "attr_01708927639306",
+            "accessorId": "acc0"
+          },
+          {
+            "parameterId": "smstext_",
+            "attributeId": "attr_01708927639306"
+          }
+        ],
+        "stepType": "Action",
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_button(\"Send\")"
+          }
+        ],
+        "stepType": "Action"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

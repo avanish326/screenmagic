@@ -1,0 +1,91 @@
+{
+  "modifiedOn": "2024-01-12T12:25:31.297Z",
+  "name": "Edit $businesshours",
+  "id": "15026",
+  "type": 3,
+  "createdOn": "2023-09-27T08:02:42.070Z",
+  "content": {
+    "title": "Edit $businesshours",
+    "parameters": [
+      {
+        "parameterId": "businesshours_",
+        "entityTypeId": "businesshours",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"mode_edit Edit Business Hours\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_textbox(\"form-control text-center[4]\")"
+          },
+          {
+            "parameterId": "businesshours_",
+            "attributeId": "attr_41695802140628"
+          }
+        ],
+        "stepType": "Action",
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_textbox(\"form-control text-center[6]\")"
+          },
+          {
+            "parameterId": "businesshours_",
+            "attributeId": "attr_51695802181927"
+          }
+        ],
+        "stepType": "Action",
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_submit(\"Update\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"Office Hours updated successfully\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"Office Hours updated successfully\""
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

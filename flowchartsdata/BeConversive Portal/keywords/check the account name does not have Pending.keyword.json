@@ -1,0 +1,42 @@
+{
+  "modifiedOn": "2024-08-02T12:32:10.894Z",
+  "name": "check the account name does not have Pending",
+  "id": "58633",
+  "type": 3,
+  "createdOn": "2024-08-02T08:28:56.084Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "check the account name does not have Pending",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": true,
+        "isRawScript": true,
+        "rawScript": "$pages \u003d _collectAttributes(\"_listItem\", \"/.*/\", \"sahiText\", _in(_list(0)));\n$page \u003d $pages[$pages.length-1];\n_log($page);\n"
+      },
+      {
+        "commented": true,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_listItem($page)"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "$cells \u003d _collectAttributes(\"_cell\", \"/.*/\", \"sahiText\", _under(_tableHeader(\"Account Name\")), _in(_div(\"overflow-x-auto\")));\n\n$no \u003d $cells.length;\n$lastCell \u003d $cells[$no-1];"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "$isPending \u003d !_containsText(_cell($lastCell), \"Pending\");\n\n$isPending;\n\nif($isPending){\n_log(\"After registering the child, the Pending status is gone!\");\n}else{\n_log(\"The pending status is there!\");\n_click(_submit(\"fail\"));\n}"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

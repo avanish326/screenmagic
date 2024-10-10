@@ -1,0 +1,43 @@
+{
+  "modifiedOn": "2024-02-23T12:22:06.081Z",
+  "name": "Invite the user",
+  "id": "42969",
+  "type": 3,
+  "createdOn": "2024-02-23T12:21:37.293Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Invite the user",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_button(\"Invite\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"Invitation sent successfully\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"Invitation sent successfully\""
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

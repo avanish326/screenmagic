@@ -1,0 +1,75 @@
+{
+  "modifiedOn": "2024-02-26T05:58:57.110Z",
+  "name": "Delete Shorten URL",
+  "id": "43276",
+  "type": 3,
+  "createdOn": "2024-02-26T05:48:00.393Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Delete Shorten URL",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "var $visibleTable\u003d _isVisible(_tableHeader(\"Long URL\"))\n\nif($visibleTable \u003d\u003d true){"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"dropdown-toggle\", _in(_cell(9)))"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_listItem(\"Delete\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_submit(\"Delete\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"URL deleted successfully\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"URL deleted successfully\""
+        }
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "}else{}"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

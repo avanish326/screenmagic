@@ -1,0 +1,37 @@
+{
+  "modifiedOn": "2024-03-14T06:17:31.745Z",
+  "name": "Verify the license count after inviting user",
+  "id": "42972",
+  "type": 3,
+  "createdOn": "2024-02-23T12:34:33.560Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Verify the license count after inviting user",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "var $inc\u003d1;\n$updatedAvailableLicense\u003dNumber($availableLicense) - $inc ;\n_log($updatedAvailableLicense);"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"num-txt[1]\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$updatedAvailableLicense"
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

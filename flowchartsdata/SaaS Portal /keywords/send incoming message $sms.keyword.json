@@ -1,0 +1,156 @@
+{
+  "modifiedOn": "2024-08-13T10:29:45.472Z",
+  "name": "send incoming message $sms",
+  "id": "15138",
+  "type": 3,
+  "createdOn": "2023-09-28T07:57:37.641Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "send incoming message $sms",
+    "parameters": [
+      {
+        "parameterId": "sms_",
+        "entityTypeId": "sms",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": true,
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "POST"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "$incomingSMSURLIntelli"
+          }
+        ],
+        "stepType": "REST",
+        "isRawScript": true,
+        "rawScript": "var $request_1XyBT0suJ0 \u003d new RESTRequest();\r\n$request_1XyBT0suJ0.setURL($incomingSMSURLIntelli);\r\n$request_1XyBT0suJ0.addToQueryString(\"Message\", \"Hello, Incoming message for Bussiness hours testing\");\r\n$request_1XyBT0suJ0.addToQueryString(\"OriginatorAddress\", $sms.mobileSMS);\r\n$request_1XyBT0suJ0.addToQueryString(\"DestinationAddress\", $smsSenderId);\r\nvar $response_1XyBT0suJ0 \u003d $request_1XyBT0suJ0.submit(\"POST\");\r\n\t var $responseBodyObj_1XyBT0suJ0 \u003d $response_1XyBT0suJ0.getBodyAsString();\r\n\tvar responseType \u003d $response_1XyBT0suJ0.getHeader(\"Content-Type\");\r\n\tif (responseType.indexOf(\"json\")!\u003d-1) {\r\n\t\t$responseBodyObj_1XyBT0suJ0 \u003d JSON.parse($responseBodyObj_1XyBT0suJ0);\r\n\t}\r\n\telse if (responseType.indexOf(\"xml\")!\u003d-1) {\r\n\t\t$responseBodyObj_1XyBT0suJ0 \u003d $responseBodyObj_1XyBT0suJ0.replace(/\u003c\\xml.*?\u003e/g, \u0027\u0027).replace(/\\n/g, \u0027\u0027).replace(/\\r/g, \u0027\u0027);\r\n\t\t$responseBodyObj_1XyBT0suJ0 \u003d new XML(undefined);\r\n\t}\r\n\r\n\t//assertions\r\n\r\n",
+        "state": {
+          "contentType": "html",
+          "request": {
+            "method": "POST",
+            "url": "$incomingSMSURLIntelli",
+            "parameters": [
+              [
+                "Message",
+                "Hello, Incoming message for Bussiness hours testing"
+              ],
+              [
+                "OriginatorAddress",
+                "$sms.mobileSMS"
+              ],
+              [
+                "DestinationAddress",
+                "$smsSenderId"
+              ]
+            ],
+            "headers": [],
+            "authType": "none",
+            "body": "",
+            "bodyParams": [],
+            "isParametrizedBody": false,
+            "resetCookies": false
+          },
+          "assertions": {
+            "status": [],
+            "header": [],
+            "body": []
+          },
+          "variables": {
+            "status": [],
+            "header": [],
+            "body": []
+          },
+          "authInfo": {}
+        }
+      },
+      {
+        "commented": true,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "5000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "POST"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "$incomingSMSURLTwilio"
+          }
+        ],
+        "stepType": "REST",
+        "isRawScript": true,
+        "rawScript": "var $request_0chjtLHvTk \u003d new RESTRequest();\r\n$request_0chjtLHvTk.setURL($incomingSMSURLTwilio);\r\n$request_0chjtLHvTk.addToQueryString(\"From\", $sms.mobileSMS);\r\n$request_0chjtLHvTk.addToQueryString(\"To\", $SenderID);\r\n$request_0chjtLHvTk.addToQueryString(\"Body\", \"Hello, Incoming message for Bussiness hours testing\");\r\n$request_0chjtLHvTk.addToQueryString(\"SmsSid\", \"128392814444\");\r\nvar $response_0chjtLHvTk \u003d $request_0chjtLHvTk.submit(\"POST\");\r\n\t var $responseBodyObj_0chjtLHvTk \u003d $response_0chjtLHvTk.getBodyAsString();\r\n\tvar responseType \u003d $response_0chjtLHvTk.getHeader(\"Content-Type\");\r\n\tif (responseType.indexOf(\"json\")!\u003d-1) {\r\n\t\t$responseBodyObj_0chjtLHvTk \u003d JSON.parse($responseBodyObj_0chjtLHvTk);\r\n\t}\r\n\telse if (responseType.indexOf(\"xml\")!\u003d-1) {\r\n\t\t$responseBodyObj_0chjtLHvTk \u003d $responseBodyObj_0chjtLHvTk.replace(/\u003c\\xml.*?\u003e/g, \u0027\u0027).replace(/\\n/g, \u0027\u0027).replace(/\\r/g, \u0027\u0027);\r\n\t\t$responseBodyObj_0chjtLHvTk \u003d new XML(undefined);\r\n\t}\r\n\r\n\t//assertions\r\n\r\n",
+        "state": {
+          "contentType": "html",
+          "request": {
+            "method": "POST",
+            "url": "$incomingSMSURLTwilio",
+            "parameters": [
+              [
+                "From",
+                "$sms.mobileSMS"
+              ],
+              [
+                "To",
+                "$SenderID"
+              ],
+              [
+                "Body",
+                "Hello, Incoming message for Bussiness hours testing"
+              ],
+              [
+                "SmsSid",
+                "128392814444"
+              ]
+            ],
+            "headers": [],
+            "authType": "none",
+            "body": "",
+            "bodyParams": [],
+            "isParametrizedBody": false,
+            "resetCookies": false
+          },
+          "assertions": {
+            "status": [],
+            "header": [],
+            "body": []
+          },
+          "variables": {
+            "status": [],
+            "header": [],
+            "body": []
+          },
+          "authInfo": {}
+        }
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "5000"
+          }
+        ],
+        "stepType": "Action"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

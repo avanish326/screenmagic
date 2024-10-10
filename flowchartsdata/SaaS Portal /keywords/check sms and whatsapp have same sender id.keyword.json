@@ -1,0 +1,63 @@
+{
+  "modifiedOn": "2024-03-18T12:20:24.651Z",
+  "name": "check sms and whatsapp have same sender id",
+  "id": "44688",
+  "type": 3,
+  "createdOn": "2024-03-18T10:46:12.210Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "check sms and whatsapp have same sender id",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"senderid-txt\")"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$senderSMS"
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"senderid-txt[1]\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$senderSMS"
+        }
+      },
+      {
+        "commented": true,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "$senderSMS"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$senderWhatsapp"
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

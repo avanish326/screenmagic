@@ -1,0 +1,147 @@
+{
+  "modifiedOn": "2024-07-10T08:31:02.406Z",
+  "name": "Verify Child Acc Section $opsportallogin",
+  "id": "58195",
+  "type": 3,
+  "createdOn": "2024-07-09T12:46:44.861Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Verify Child Acc Section $opsportallogin",
+    "parameters": [
+      {
+        "parameterId": "opsportallogin_",
+        "entityTypeId": "opsportallogin",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_selectWindow",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "\"SMS Magic\""
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"Child Accounts\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "isRawScript": true,
+        "rawScript": "var $consumed \u003d _getText(_span(\"/Total Consumed Accounts:/\"))\nvar $totalConsumedAccount \u003d _extract($consumed, \"/: (.*)/\",true)\nvar $count \u003d (parseInt($totalConsumedAccount)+1).toString()\n_click(_span(\"Change Account Count\"))\n_setValue(_textbox(\"allocatedAccountCount\"),$count)"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(53)"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Contains",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"Total Allocated Accounts\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(54)"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Contains",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"Total Consumed Accounts\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"Change Account Count\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"Change Account Count\""
+        }
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "var $consumed \u003d _getText(_span(\"/Total Consumed Accounts:/\"))\nvar $totalConsumedAccount \u003d _extract($consumed, \"/: (.*)/\",true)\nvar $count \u003d (parseInt($totalConsumedAccount)+1).toString()"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"Change Account Count\")"
+          },
+          {}
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "_setValue(_textbox(\"allocatedAccountCount\"),$count)"
+      },
+      {
+        "commented": true,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "parameterId": "opsportallogin_",
+            "attributeId": "attr_61720528943616",
+            "accessorId": "acc0"
+          },
+          {
+            "parameterId": "opsportallogin_",
+            "attributeId": "attr_61720528943616"
+          }
+        ],
+        "stepType": "Action",
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_button(\"Update\")"
+          }
+        ],
+        "stepType": "Action"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

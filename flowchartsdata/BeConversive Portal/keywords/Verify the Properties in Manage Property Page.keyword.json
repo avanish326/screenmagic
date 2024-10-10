@@ -1,0 +1,49 @@
+{
+  "modifiedOn": "2024-08-30T10:56:46.780Z",
+  "name": "Verify the Properties in Manage Property Page",
+  "id": "58849",
+  "type": 3,
+  "createdOn": "2024-08-16T09:02:46.767Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Verify the Properties in Manage Property Page",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": true,
+        "isRawScript": true,
+        "rawScript": "$p\u003d0;\n$m\u003d0;\n$recordsPerPage\u003d_getText(_div(\"/ page/\", _leftOf(_div(\"select-dropdown-indicator\")))).split(\" \")[0];\n$remiderForPageCount\u003dNumber($header.length) % Number($recordsPerPage);\n$pageCount\u003dNumber($header.length)/Number($recordsPerPage);\nif($remiderForPageCount !\u003d 0)\n{\n     _$pageCount\u003dMath.floor($pageCount)+1;\n}\n_log(\"Page Count :- \"+$pageCount+\"\")\n_log(\"Record per page :- \"+$recordsPerPage+\"\")\n\nfor(var $k \u003d 1; $k \u003cNumber($pageCount)+1; $k++)\n{\n _click(_listItem($k))\n _wait(3000)\n  \n   for(var $i \u003d 1; $i \u003c Number($recordsPerPage)+1; $i++)\n   {\n       if($p\u003d\u003d$header.length)\n       {\n             $m\u003d1;\n             break;\n        }\n       _isVisible(_paragraph($header[$p]))\n       _log($header[$p]);\n       $p++;\n\n    }\n     if($m\u003d\u003d1)\n       {\n             break;\n             _wait(3000)\n        }\n\n}    \n"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "$p \u003d 0;\n$m \u003d 0;\n$recordsPerPage \u003d _getText(_div(\"/ page/\", _leftOf(_div(\"select-dropdown-indicator\")))).split(\" \")[0];\n$remiderForPageCount \u003d Number($header.length) % Number($recordsPerPage);\n$pageCount \u003d Math.ceil(Number($header.length) / Number($recordsPerPage)); // Calculate the page count correctly\n\n_log(\"Page Count :- \" + $pageCount + \"\")\n_log(\"Record per page :- \" + $recordsPerPage + \"\")\n\nfor (var $k \u003d 1; $k \u003c Number($pageCount); $k++) // Loop only up to the page count\n{\n    _click(_listItem($k))\n    _wait(3000)\n\n    for (var $i \u003d 1; $i \u003c\u003d Number($recordsPerPage); $i++) {\n        if ($p \u003d\u003d $header.length) {\n            $m \u003d 1;\n            break;\n        }\n        _isVisible(_paragraph($header[$p]))\n        _log($header[$p]);\n        $p++;\n    }\n    if ($m \u003d\u003d 1) {\n        break;\n        _wait(3000)\n    }\n}\n"
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "1000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_listItem(\"1\", _near(_span(\"/pagination-pager pagination-pager-prev pagination-pager/\")))"
+          },
+          {}
+        ],
+        "stepType": "Action"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

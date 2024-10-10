@@ -1,0 +1,52 @@
+{
+  "modifiedOn": "2023-10-05T13:00:42.465Z",
+  "name": "Disable the License Manager Flag",
+  "id": "16796",
+  "type": 3,
+  "createdOn": "2023-10-05T07:47:38.341Z",
+  "content": {
+    "title": "Disable the License Manager Flag",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"isLicenseRestrictionEdit\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_check",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_radioGroup(\"isLicenseRestrictionNo\")"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "true"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"isLicenseRestrictionSave\")"
+          }
+        ],
+        "stepType": "Action"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

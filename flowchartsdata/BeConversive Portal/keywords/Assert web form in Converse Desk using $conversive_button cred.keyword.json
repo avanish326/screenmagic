@@ -1,0 +1,75 @@
+{
+  "modifiedOn": "2024-02-08T06:49:37.648Z",
+  "name": "Assert web form in Converse Desk using $conversive_button cred",
+  "id": "27433",
+  "type": 3,
+  "createdOn": "2024-02-08T06:49:37.648Z",
+  "content": {
+    "title": "Assert web form in Converse Desk using $conversive_button cred",
+    "parameters": [
+      {
+        "parameterId": "conversive_button_",
+        "entityTypeId": "conversive_button",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_selectBrowser",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "$browser1"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "var $fN\u003d$conversive_button.firstName;\nvar $lN\u003d$conversive_button.lastName;\nvar $em\u003d$conversive_button.email;\nvar $mob\u003d$conversive_button.phoneNumber;"
+      },
+      {
+        "commented": true,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"Contacts\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_svg_path(0)"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"FIRST NAME:\"+$fN+\" LAST NAME:\"+$lN+\" EMAIL:\"+$em+\" PHONE:\"+$mob+\" ZIP CODE:888888 PROGRAM OF INTEREST:PHD Consent:Yes\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"FIRST NAME:\"+$fN+\" LAST NAME:\"+$lN+\" EMAIL:\"+$em+\" PHONE:\"+$mob+\" ZIP CODE:888888 PROGRAM OF INTEREST:PHD Consent:Yes\""
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

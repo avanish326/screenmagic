@@ -1,0 +1,77 @@
+{
+  "modifiedOn": "2024-02-08T06:49:40.106Z",
+  "name": "assert sender id in ops portal for Salesforce $accountid",
+  "id": "27608",
+  "type": 3,
+  "createdOn": "2024-02-08T06:49:40.106Z",
+  "content": {
+    "title": "assert sender id in ops portal for Salesforce $accountid",
+    "parameters": [
+      {
+        "parameterId": "accountid_",
+        "entityTypeId": "accountid",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"Number Management\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "isRawScript": true,
+        "rawScript": "var $account\u003d\"90003254\""
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_cell(108)"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"WEB-DEMO-\"+$account+\"\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"ui-icon ui-icon-pencil ui-corner-all ui-widget-header [1]\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_isChecked",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_checkbox(\"isPushToSFM\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Is_True",
+        "visibleCheck": false
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

@@ -1,0 +1,59 @@
+{
+  "modifiedOn": "2024-08-16T13:13:09.116Z",
+  "name": "Verify the Added Boolean Property on UI $property",
+  "id": "58868",
+  "type": 3,
+  "createdOn": "2024-08-16T13:13:09.116Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Verify the Added Boolean Property on UI $property",
+    "parameters": [
+      {
+        "parameterId": "property_",
+        "entityTypeId": "property",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(\"/Showing .* contact properties/\")"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$newNumberOfProperty"
+        }
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "var $trimmedText \u003d $newNumberOfProperty.trim();\n\n$newNumber \u003d $trimmedText.match(/\\d+/);\n\nvar $inc\u003d1;\nvar $fCount\u003dNumber($number) + $inc ;\n_log($fCount);\n\n_assertEqual($fCount, $newNumber)"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph($property.propertyName)"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "parameterId": "property_",
+          "attributeId": "attr_01723806477739"
+        },
+        "visibleCheck": false
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

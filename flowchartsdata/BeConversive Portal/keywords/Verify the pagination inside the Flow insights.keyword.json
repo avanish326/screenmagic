@@ -1,0 +1,52 @@
+{
+  "modifiedOn": "2024-07-19T13:07:45.595Z",
+  "name": "Verify the pagination inside the Flow insights",
+  "id": "58489",
+  "type": 3,
+  "createdOn": "2024-07-19T13:07:45.595Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Verify the pagination inside the Flow insights",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_isVisible",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"pagination-search\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Is_True"
+      },
+      {
+        "commented": false,
+        "action": "_isVisible",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(0, _in(_div(\"pagination-search\")))"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Is_True"
+      },
+      {
+        "commented": false,
+        "action": "_isVisible",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(1, _in(_div(\"pagination-search\")))"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Is_True"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

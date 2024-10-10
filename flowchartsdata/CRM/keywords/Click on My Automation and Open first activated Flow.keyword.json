@@ -1,0 +1,50 @@
+{
+  "modifiedOn": "2023-12-06T08:32:48.583Z",
+  "name": "Click on My Automation and Open first activated Flow",
+  "id": "21068",
+  "type": 3,
+  "createdOn": "2023-12-06T08:17:31.055Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Click on My Automation and Open first activated Flow",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_submit(\"My Automations\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"active-button\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_isEnabled",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_submit(\"Deactivate\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Is_True"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

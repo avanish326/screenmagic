@@ -1,0 +1,55 @@
+{
+  "modifiedOn": "2024-02-08T06:49:40.514Z",
+  "name": "Message Templates",
+  "id": "27638",
+  "type": 3,
+  "createdOn": "2024-02-08T06:49:40.514Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Message Templates",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"Campaign\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"Message Templates\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "isRawScript": true,
+        "rawScript": "_selectDomain(\"qa-app.txtbox.in\");\n_click(_fltPlaceholder(\"/Enable/\"))"
+      },
+      {
+        "commented": true,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_fltSemantics(\"Template Name *\")"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {}
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

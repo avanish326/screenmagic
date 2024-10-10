@@ -1,0 +1,70 @@
+{
+  "modifiedOn": "2024-08-15T08:49:11.206Z",
+  "name": "Logout from portal",
+  "id": "58814",
+  "type": 3,
+  "createdOn": "2024-08-14T10:25:51.985Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Logout from portal",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_submit(\"Log Out\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "10000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_heading3(\"Sign in\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"Sign in\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"https://qa-app.beconversive.com/app/#/forgot-password\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"Forgot?\""
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

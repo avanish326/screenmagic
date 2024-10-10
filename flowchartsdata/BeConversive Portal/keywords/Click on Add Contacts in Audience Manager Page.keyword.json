@@ -1,0 +1,51 @@
+{
+  "modifiedOn": "2024-08-23T11:30:26.548Z",
+  "name": "Click on Add Contacts in Audience Manager Page",
+  "id": "46098",
+  "type": 3,
+  "createdOn": "2024-05-14T09:25:38.909Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Click on Add Contacts in Audience Manager Page",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_submit(\"Add Contact\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_listItem(\"Upload CSV\")"
+          },
+          {}
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_isVisible",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"Upload CSV\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Is_True"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

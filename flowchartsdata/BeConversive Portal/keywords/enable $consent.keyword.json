@@ -1,0 +1,48 @@
+{
+  "modifiedOn": "2024-02-08T06:49:43.843Z",
+  "name": "enable $consent",
+  "id": "27876",
+  "type": 3,
+  "createdOn": "2024-02-08T06:49:43.843Z",
+  "content": {
+    "title": "enable $consent",
+    "parameters": [
+      {
+        "parameterId": "consent_",
+        "entityTypeId": "consent",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"flipswitch-switch\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(\"es-status\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"Enabled\""
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

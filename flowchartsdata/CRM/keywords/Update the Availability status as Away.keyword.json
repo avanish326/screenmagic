@@ -1,0 +1,42 @@
+{
+  "modifiedOn": "2024-01-18T11:45:08.099Z",
+  "name": "Update the Availability status as Away",
+  "id": "21695",
+  "type": 3,
+  "createdOn": "2023-12-21T09:19:34.320Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Update the Availability status as Away",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "var $availabilityOfUser\u003d _isChecked(_checkbox(0,_near(_span(\"labels\"))))\n_log($availabilityOfUser)"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "if ($availabilityOfUser){"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"slider\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "}"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

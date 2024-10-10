@@ -1,0 +1,375 @@
+{
+  "modifiedOn": "2024-08-01T12:19:07.005Z",
+  "name": "Conversive URL SNT",
+  "id": "42928",
+  "type": 0,
+  "createdOn": "2024-02-23T06:14:26.426Z",
+  "content": {
+    "settings": {
+      "maxProceedDepth": 100,
+      "maxProceedsForFirstDepth": 1,
+      "maxProceedsPerDepth": 1,
+      "maxPathRepititionsPerComboPath": 1,
+      "maxProceedsPerPath": 10000,
+      "maxToggles": 2,
+      "maxMatchingPaths": 3
+    },
+    "flowChartUID": "fcUID_1708668889093",
+    "nodesMap": {
+      "fcn_start_0": {
+        "dataSetId": -1,
+        "id": "fcn_start_0",
+        "nodeType": "start",
+        "branches": [
+          "fcn_urlsnt_0"
+        ],
+        "content": "Start"
+      },
+      "fcn_urlsnt_0": {
+        "dataSetId": -1,
+        "id": "fcn_urlsnt_0",
+        "nodeType": "pathlabel",
+        "branches": [
+          "fcn_linkconfiguration_0",
+          "fcn_shortenlink_0"
+        ],
+        "content": "URL SNT"
+      },
+      "fcn_linkconfiguration_0": {
+        "dataSetId": -1,
+        "id": "fcn_linkconfiguration_0",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_logintobeconversive_1708669095382_0"
+        ],
+        "content": "Link Configuration"
+      },
+      "fcn_shortenlink_0": {
+        "dataSetId": -1,
+        "id": "fcn_shortenlink_0",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_logintobeconversive_1708702634780_0"
+        ],
+        "content": "Shorten Link"
+      },
+      "fcn_logintobeconversive_1708669095382_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintobeconversive_1708669095382_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_navigatetourlsnt_0"
+        ],
+        "content": "login to $beconversive"
+      },
+      "fcn_navigatetourlsnt_0": {
+        "dataSetId": -1,
+        "id": "fcn_navigatetourlsnt_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_savelinkconfigurations_0",
+          "fcn_cancelconfiguration_0"
+        ],
+        "content": "Navigate to Link Configuration"
+      },
+      "fcn_configureurlsnt_0": {
+        "dataSetId": -1,
+        "id": "fcn_configureurlsnt_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Configure URL SNT $urlsnt"
+      },
+      "fcn_cancelurlsntconfigurlsnt_0": {
+        "dataSetId": -1,
+        "id": "fcn_cancelurlsntconfigurlsnt_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Cancel URL SNT Config $urlsnt"
+      },
+      "fcn_logintobeconversive_1708702634780_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintobeconversive_1708702634780_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_navigatetoshortenurl_0"
+        ],
+        "content": "login to $beconversive"
+      },
+      "fcn_navigatetoshortenurl_0": {
+        "dataSetId": -1,
+        "id": "fcn_navigatetoshortenurl_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_defaultshortenlinks_0",
+          "fcn_shortenlinks_0",
+          "fcn_deleteshortenurl_1"
+        ],
+        "content": "Navigate to Shorten URL"
+      },
+      "fcn_noshortenlink_0": {
+        "dataSetId": -1,
+        "id": "fcn_noshortenlink_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "No Shorten Link"
+      },
+      "fcn_defaultshortenlinks_0": {
+        "dataSetId": -1,
+        "id": "fcn_defaultshortenlinks_0",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_noshortenlink_0"
+        ],
+        "content": "Default Shorten Links"
+      },
+      "fcn_shortenlinks_0": {
+        "dataSetId": -1,
+        "id": "fcn_shortenlinks_0",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_shortenlinkfromconversedesk_0",
+          "fcn_shortenlinkfromtemplate_0",
+          "fcn_shortenlinkfromcampaign_0"
+        ],
+        "content": "Shorten Links"
+      },
+      "fcn_savelinkconfigurations_0": {
+        "dataSetId": -1,
+        "id": "fcn_savelinkconfigurations_0",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_configureurlsnt_0"
+        ],
+        "content": "Save Link Configurations"
+      },
+      "fcn_cancelconfiguration_0": {
+        "dataSetId": -1,
+        "id": "fcn_cancelconfiguration_0",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_cancelurlsntconfigurlsnt_0"
+        ],
+        "content": "Cancel Configuration"
+      },
+      "fcn_shortenlinkfromconversedesk_0": {
+        "dataSetId": -1,
+        "id": "fcn_shortenlinkfromconversedesk_0",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_navigatetoconversiveconversedesk_0"
+        ],
+        "content": "Shorten Link from Converse Desk"
+      },
+      "fcn_shortenlinkfromtemplate_0": {
+        "dataSetId": -1,
+        "id": "fcn_shortenlinkfromtemplate_0",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_navigatetotemplate_0"
+        ],
+        "content": "Shorten Link from Template"
+      },
+      "fcn_shortenlinkfromcampaign_0": {
+        "dataSetId": -1,
+        "id": "fcn_shortenlinkfromcampaign_0",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_navigatetoconversivecampaign_0"
+        ],
+        "content": "Shorten Link from Campaign"
+      },
+      "fcn_navigatetotemplate_0": {
+        "dataSetId": -1,
+        "id": "fcn_navigatetotemplate_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_addnewtemplatewithshortenurl_0"
+        ],
+        "content": "Navigate to Conversive Message Template"
+      },
+      "fcn_addnewtemplatewithshortenurl_0": {
+        "dataSetId": -1,
+        "id": "fcn_addnewtemplatewithshortenurl_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_verifyshortenurl_0"
+        ],
+        "content": "Add New Template with Shorten URL1 $urlsnt"
+      },
+      "fcn_verifyshortenurl_0": {
+        "dataSetId": -1,
+        "id": "fcn_verifyshortenurl_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Verify Shorten URL"
+      },
+      "fcn_navigatetoconversiveconversedesk_0": {
+        "dataSetId": -1,
+        "id": "fcn_navigatetoconversiveconversedesk_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_sendsmswithshortenlinkfromdesk_0"
+        ],
+        "content": "Navigate to Conversive Converse Desk"
+      },
+      "fcn_navigatetoconversivecampaign_0": {
+        "dataSetId": -1,
+        "id": "fcn_navigatetoconversivecampaign_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_sendsmsfromcovnersivecampaignwithurlsnt_0"
+        ],
+        "content": "Navigate to Conversive Campaign"
+      },
+      "fcn_sendsmswithshortenlinkfromdesk_0": {
+        "dataSetId": -1,
+        "id": "fcn_sendsmswithshortenlinkfromdesk_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_verifyshortenurl_0"
+        ],
+        "content": "Send SMS with Shorten Link from Desk $urlsnt"
+      },
+      "fcn_sendsmsfromcovnersivecampaignwithurlsnt_0": {
+        "dataSetId": -1,
+        "id": "fcn_sendsmsfromcovnersivecampaignwithurlsnt_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_verifyshortenurl_0"
+        ],
+        "content": "Send SMS from Covnersive Campaign with URL SNT $urlsnt"
+      },
+      "fcn_deleteshortenurl_0": {
+        "dataSetId": -1,
+        "id": "fcn_deleteshortenurl_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Delete Shorten URL"
+      },
+      "fcn_deleteshortenurl_1": {
+        "dataSetId": -1,
+        "id": "fcn_deleteshortenurl_1",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_deleteshortenurl_0"
+        ],
+        "content": "Delete Shorten URL"
+      }
+    },
+    "pathNames": {},
+    "isPrimary": false,
+    "positions": {
+      "fcn_start_0": {
+        "top": 150.0,
+        "left": 500.0
+      },
+      "fcn_urlsnt_0": {
+        "top": 223.09375,
+        "left": 401.9921875
+      },
+      "fcn_linkconfiguration_0": {
+        "top": 273.53125,
+        "left": 109.984375
+      },
+      "fcn_logintobeconversive_1708669095382_0": {
+        "top": 332.96875,
+        "left": 109.984375
+      },
+      "fcn_navigatetourlsnt_0": {
+        "top": 398.109375,
+        "left": 109.984375
+      },
+      "fcn_savelinkconfigurations_0": {
+        "top": 469.546875,
+        "left": -29.0
+      },
+      "fcn_configureurlsnt_0": {
+        "top": 550.546875,
+        "left": -49.0
+      },
+      "fcn_cancelconfiguration_0": {
+        "top": 475.546875,
+        "left": 255.984375
+      },
+      "fcn_cancelurlsntconfigurlsnt_0": {
+        "top": 549.6953125,
+        "left": 265.9765625
+      },
+      "fcn_shortenlink_0": {
+        "top": 282.53125,
+        "left": 955.984375
+      },
+      "fcn_logintobeconversive_1708702634780_0": {
+        "top": 342.953125,
+        "left": 956.984375
+      },
+      "fcn_navigatetoshortenurl_0": {
+        "top": 410.109375,
+        "left": 944.984375
+      },
+      "fcn_defaultshortenlinks_0": {
+        "top": 481.53125,
+        "left": 635.9765625
+      },
+      "fcn_noshortenlink_0": {
+        "top": 549.53125,
+        "left": 627.984375
+      },
+      "fcn_shortenlinks_0": {
+        "top": 480.53125,
+        "left": 1154.9765625
+      },
+      "fcn_shortenlinkfromconversedesk_0": {
+        "top": 550.96875,
+        "left": 1177.96875
+      },
+      "fcn_navigatetoconversiveconversedesk_0": {
+        "top": 610.4140625,
+        "left": 1177.96875
+      },
+      "fcn_sendsmswithshortenlinkfromdesk_0": {
+        "top": 735.859375,
+        "left": 1186.9609375
+      },
+      "fcn_verifyshortenurl_0": {
+        "top": 822.28125,
+        "left": 1168.9453125
+      },
+      "fcn_shortenlinkfromtemplate_0": {
+        "top": 549.9609375,
+        "left": 911.96875
+      },
+      "fcn_navigatetotemplate_0": {
+        "top": 609.3984375,
+        "left": 911.96875
+      },
+      "fcn_addnewtemplatewithshortenurl_0": {
+        "top": 700.8359375,
+        "left": 911.96875
+      },
+      "fcn_shortenlinkfromcampaign_0": {
+        "top": 550.953125,
+        "left": 1445.9609375
+      },
+      "fcn_navigatetoconversivecampaign_0": {
+        "top": 610.3984375,
+        "left": 1445.9609375
+      },
+      "fcn_sendsmsfromcovnersivecampaignwithurlsnt_0": {
+        "top": 669.3984375,
+        "left": 1445.9609375
+      },
+      "fcn_deleteshortenurl_1": {
+        "top": 475.53125,
+        "left": 1735.9765625
+      },
+      "fcn_deleteshortenurl_0": {
+        "top": 549.53125,
+        "left": 1737.9765625
+      }
+    },
+    "tags": ""
+  },
+  "enabled": true,
+  "parentId": ""
+}

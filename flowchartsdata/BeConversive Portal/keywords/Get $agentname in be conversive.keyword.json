@@ -1,0 +1,53 @@
+{
+  "modifiedOn": "2024-02-08T06:49:48.185Z",
+  "name": "Get $agentname in be conversive",
+  "id": "28183",
+  "type": 3,
+  "createdOn": "2024-02-08T06:49:48.185Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Get $agentname in be conversive",
+    "parameters": [
+      {
+        "parameterId": "agentname_",
+        "entityTypeId": "agentname",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"header-action-item flex items-center gap-2\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(6, _near(_div(\"dropdown-toggle\")))"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$agentnameCheck"
+        }
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "_log($agentname)"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

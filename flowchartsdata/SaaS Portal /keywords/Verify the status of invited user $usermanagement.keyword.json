@@ -1,0 +1,71 @@
+{
+  "modifiedOn": "2024-02-23T12:47:24.086Z",
+  "name": "Verify the status of invited user $usermanagement",
+  "id": "42973",
+  "type": 3,
+  "createdOn": "2024-02-23T12:46:57.761Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Verify the status of invited user $usermanagement",
+    "parameters": [
+      {
+        "parameterId": "usermanagement_",
+        "entityTypeId": "usermanagement",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_cell($usermanagement.email)"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "parameterId": "usermanagement_",
+          "attributeId": "attr_01708690324521"
+        },
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_cell(\"User\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"User\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_cell(\"Invited\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"Invited\""
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

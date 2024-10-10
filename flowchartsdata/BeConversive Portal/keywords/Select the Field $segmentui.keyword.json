@@ -1,0 +1,61 @@
+{
+  "modifiedOn": "2024-07-10T07:38:04.803Z",
+  "name": "Select the Field $segmentui",
+  "id": "58229",
+  "type": 3,
+  "createdOn": "2024-07-10T06:48:51.254Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Select the Field $segmentui",
+    "parameters": [
+      {
+        "parameterId": "segmentui_",
+        "entityTypeId": "segmentui",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"Select field\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div($segmentui.field, _near(_div(\"Select field\")))"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div($segmentui.field)"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "parameterId": "segmentui_",
+          "attributeId": "attr_61720593989940"
+        },
+        "visibleCheck": false
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

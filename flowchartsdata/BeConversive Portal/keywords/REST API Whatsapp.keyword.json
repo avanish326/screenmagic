@@ -1,0 +1,58 @@
+{
+  "modifiedOn": "2024-02-08T06:49:43.495Z",
+  "name": "REST API Whatsapp",
+  "id": "27848",
+  "type": 3,
+  "createdOn": "2024-02-08T06:49:43.495Z",
+  "content": {
+    "title": "REST API Whatsapp",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": true,
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "POST"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "https://qa-api.txtbox.in/messages/incoming/whatsapp/twilio"
+          }
+        ],
+        "stepType": "REST",
+        "isRawScript": true,
+        "rawScript": "var $request_ApctwZZkxq \u003d new RESTRequest();\r\n$request_ApctwZZkxq.setURL(\"https://qa-api.txtbox.in/messages/incoming/whatsapp/twilio\");\r\n$request_ApctwZZkxq.setHeader(\"Content-Type\", \"application/json\");\r\n$request.setBody(\"{\" +\n\"   \\\"SmsMessageSid\\\":\\\"SM91805a30f08ed4a44c8fe7b1264deb14\\\",\" +\n\"   \\\"ProfileName\\\":\\\"abc\\\",\" +\n\"   \\\"SmsSid\\\":\\\"SM91805a30f08ed4a44c8fe7b1264deb14\\\",\" +\n\"   \\\"WaId\\\":\\\"91750878289\\\",\" +\n\"   \\\"SmsStatus\\\":\\\"received\\\",\" +\n\"   \\\"Body\\\":\\\"Pranita\\\",\" +\n\"   \\\"To\\\":\\\"whatsapp:+14155238886\\\",\" +\n\"   \\\"NumSegments\\\":\\\"1\\\",\" +\n\"   \\\"ReferralNumMedia\\\":\\\"0\\\",\" +\n\"   \\\"MessageSid\\\":\\\"SM91805a30f08ed4a44c8fe7b1264deb14\\\",\" +\n\"   \\\"AccountSid\\\":\\\"AC00a7b3b1c35de688eb9696b3119e0388\\\",\" +\n\"   \\\"From\\\":\\\"whatsapp:+919077222223\\\",\" +\n\"   \\\"ApiVersion\\\":\\\"2010-04-01\\\",   \" +\n\"   \\\"message_uuid\\\":\\\"SM91805a30f08ed4a44c8fe7b1264deb14\\\",       \" +\n\"   \\\"num_media\\\":\\\"1\\\",\" +\n\"   \\\"MediaUrl0\\\": \\\"https://api.twilio.com/2010-04-01/Accounts/AC00a7b3b1c35de688eb9696b3119e0388/Messages/MM001aae2836283c1949df0b1ad273670a/Media/ME5cf3d8cca2e49c3bf4cf58de8284c6af\\\"\" +\n\"}\");\r\nvar $response_ApctwZZkxq \u003d $request_ApctwZZkxq.submit(\"POST\");\r\nvar $responseBody \u003d $response_ApctwZZkxq.getBodyAsString();\r\n\r\n\t//assertions\r\n\r\n",
+        "state": {
+          "contentType": "html",
+          "request": {
+            "method": "POST",
+            "url": "https://qa-api.txtbox.in/messages/incoming/whatsapp/twilio",
+            "parameters": {},
+            "headers": {
+              "Content-Type": "application/json"
+            },
+            "authType": "none",
+            "body": "{\n   \"SmsMessageSid\":\"SM91805a30f08ed4a44c8fe7b1264deb14\",\n   \"ProfileName\":\"abc\",\n   \"SmsSid\":\"SM91805a30f08ed4a44c8fe7b1264deb14\",\n   \"WaId\":\"91750878289\",\n   \"SmsStatus\":\"received\",\n   \"Body\":\"Pranita\",\n   \"To\":\"whatsapp:+14155238886\",\n   \"NumSegments\":\"1\",\n   \"ReferralNumMedia\":\"0\",\n   \"MessageSid\":\"SM91805a30f08ed4a44c8fe7b1264deb14\",\n   \"AccountSid\":\"AC00a7b3b1c35de688eb9696b3119e0388\",\n   \"From\":\"whatsapp:+919077222223\",\n   \"ApiVersion\":\"2010-04-01\",   \n   \"message_uuid\":\"SM91805a30f08ed4a44c8fe7b1264deb14\",       \n   \"num_media\":\"1\",\n   \"MediaUrl0\": \"https://api.twilio.com/2010-04-01/Accounts/AC00a7b3b1c35de688eb9696b3119e0388/Messages/MM001aae2836283c1949df0b1ad273670a/Media/ME5cf3d8cca2e49c3bf4cf58de8284c6af\"\n}",
+            "bodyParams": {},
+            "isParametrizedBody": false,
+            "resetCookies": false
+          },
+          "assertions": {
+            "status": [],
+            "header": [],
+            "body": []
+          },
+          "variables": {
+            "status": [],
+            "header": [],
+            "body": []
+          },
+          "authInfo": {}
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

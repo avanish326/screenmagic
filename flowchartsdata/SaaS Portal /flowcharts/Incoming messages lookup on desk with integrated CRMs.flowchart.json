@@ -1,0 +1,423 @@
+{
+  "modifiedOn": "2024-07-31T07:06:04.448Z",
+  "name": "Incoming messages lookup on desk with integrated CRMs",
+  "id": "58316",
+  "type": 0,
+  "createdOn": "2024-07-15T08:10:29.657Z",
+  "content": {
+    "settings": {
+      "maxProceedDepth": 100,
+      "maxProceedsForFirstDepth": 1,
+      "maxProceedsPerDepth": 1,
+      "maxPathRepititionsPerComboPath": 1,
+      "maxProceedsPerPath": 10000,
+      "maxToggles": 2,
+      "maxMatchingPaths": 3
+    },
+    "flowChartUID": "fcUID_1721031029909",
+    "nodesMap": {
+      "fcn_start_0": {
+        "dataSetId": -1,
+        "id": "fcn_start_0",
+        "nodeType": "start",
+        "branches": [
+          "fcn_incomingmessageslookupondekforintegartedcrms_0"
+        ],
+        "content": "Start"
+      },
+      "fcn_incomingmessageslookupondekforintegartedcrms_0": {
+        "dataSetId": -1,
+        "id": "fcn_incomingmessageslookupondekforintegartedcrms_0",
+        "nodeType": "pathlabel",
+        "branches": [
+          "fcn_logintosaasportal_1721031085233_0",
+          "fcn_syncallthemessagestothecrm_1721117203139_0"
+        ],
+        "content": "Incoming messages lookup on desk for integarted CRMs"
+      },
+      "fcn_logintosaasportal_1721031085233_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintosaasportal_1721031085233_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_incomingsmsshouldshownondeskwithmodulenameforsf_0",
+          "fcn_incomingsmsshouldshownondeskwithmodulenameforsf_1721041793822_0",
+          "fcn_incomingsmsshouldshownondeskwithmodulenameforsf_1721041978172_0",
+          "fcn_incomingmmsshouldshownondeskwithmodulenameforsf_1721041993456_0",
+          "fcn_replyfromthread_0",
+          "fcn_modulenameshouldnotshowforunknowconversation_0"
+        ],
+        "content": "login to $saasportal"
+      },
+      "fcn_incomingsmsshouldshownondeskwithmodulenameforsf_0": {
+        "dataSetId": -1,
+        "id": "fcn_incomingsmsshouldshownondeskwithmodulenameforsf_0",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_sendincomingusingtwilioapi_0"
+        ],
+        "content": "incoming SMS should shown on desk with module name for SF"
+      },
+      "fcn_sendincomingusingtwilioapi_0": {
+        "dataSetId": -1,
+        "id": "fcn_sendincomingusingtwilioapi_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_conversedeskvalidationinsaas_1721040208800_0"
+        ],
+        "content": "Send incoming using twilio api $smssenderid"
+      },
+      "fcn_conversedeskvalidationinsaas_1721040208800_0": {
+        "dataSetId": -1,
+        "id": "fcn_conversedeskvalidationinsaas_1721040208800_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_validateincominginmyinbox_0"
+        ],
+        "content": "Converse Desk Validation in SaaS"
+      },
+      "fcn_validateincominginmyinbox_0": {
+        "dataSetId": -1,
+        "id": "fcn_validateincominginmyinbox_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Validate incoming in myinbox $smssenderid and module"
+      },
+      "fcn_incomingsmsshouldshownondeskwithmodulenameforsf_1721041793822_0": {
+        "dataSetId": -1,
+        "id": "fcn_incomingsmsshouldshownondeskwithmodulenameforsf_1721041793822_0",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_sendincomingusingtwilioapismssenderid_1721041793822_0"
+        ],
+        "content": "incoming MMS should shown on desk with module name for SF"
+      },
+      "fcn_sendincomingusingtwilioapismssenderid_1721041793822_0": {
+        "dataSetId": -1,
+        "id": "fcn_sendincomingusingtwilioapismssenderid_1721041793822_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_conversedeskvalidationinsaas_1721041793822_0"
+        ],
+        "content": "Send incoming MMS using twilio api $smssenderid"
+      },
+      "fcn_conversedeskvalidationinsaas_1721041793822_0": {
+        "dataSetId": -1,
+        "id": "fcn_conversedeskvalidationinsaas_1721041793822_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_validateincominginmyinboxsmssenderid_1721041793822_0"
+        ],
+        "content": "Converse Desk Validation in SaaS"
+      },
+      "fcn_validateincominginmyinboxsmssenderid_1721041793822_0": {
+        "dataSetId": -1,
+        "id": "fcn_validateincominginmyinboxsmssenderid_1721041793822_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Validate incoming in myinbox $smssenderid and module"
+      },
+      "fcn_incomingsmsshouldshownondeskwithmodulenameforsf_1721041978172_0": {
+        "dataSetId": -1,
+        "id": "fcn_incomingsmsshouldshownondeskwithmodulenameforsf_1721041978172_0",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_sendincomingusingtwilioapismssenderid_1721041978172_0"
+        ],
+        "content": "incoming SMS should shown on desk with module name for Zoho"
+      },
+      "fcn_sendincomingusingtwilioapismssenderid_1721041978172_0": {
+        "dataSetId": -1,
+        "id": "fcn_sendincomingusingtwilioapismssenderid_1721041978172_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_conversedeskvalidationinsaas_1721041978172_0"
+        ],
+        "content": "Send incoming using twilio api $smssenderid"
+      },
+      "fcn_conversedeskvalidationinsaas_1721041978172_0": {
+        "dataSetId": -1,
+        "id": "fcn_conversedeskvalidationinsaas_1721041978172_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_validateincominginmyinboxsmssenderid_1721041978172_0"
+        ],
+        "content": "Converse Desk Validation in SaaS"
+      },
+      "fcn_validateincominginmyinboxsmssenderid_1721041978172_0": {
+        "dataSetId": -1,
+        "id": "fcn_validateincominginmyinboxsmssenderid_1721041978172_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Validate incoming in myinbox $smssenderid and module"
+      },
+      "fcn_incomingmmsshouldshownondeskwithmodulenameforsf_1721041993456_0": {
+        "dataSetId": -1,
+        "id": "fcn_incomingmmsshouldshownondeskwithmodulenameforsf_1721041993456_0",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_sendincomingmmsusingtwilioapismssenderid_1721041993456_0"
+        ],
+        "content": "incoming MMS should shown on desk with module name for Zoho"
+      },
+      "fcn_sendincomingmmsusingtwilioapismssenderid_1721041993456_0": {
+        "dataSetId": -1,
+        "id": "fcn_sendincomingmmsusingtwilioapismssenderid_1721041993456_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_conversedeskvalidationinsaas_1721041993456_0"
+        ],
+        "content": "Send incoming MMS using twilio api $smssenderid"
+      },
+      "fcn_conversedeskvalidationinsaas_1721041993456_0": {
+        "dataSetId": -1,
+        "id": "fcn_conversedeskvalidationinsaas_1721041993456_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_validateincominginmyinboxsmssenderid_1721041993456_0"
+        ],
+        "content": "Converse Desk Validation in SaaS"
+      },
+      "fcn_validateincominginmyinboxsmssenderid_1721041993456_0": {
+        "dataSetId": -1,
+        "id": "fcn_validateincominginmyinboxsmssenderid_1721041993456_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Validate incoming in myinbox $smssenderid and module"
+      },
+      "fcn_replyfromthread_0": {
+        "dataSetId": -1,
+        "id": "fcn_replyfromthread_0",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_sendincomingmmsusingtwilioapismssenderid_1721042804117_0"
+        ],
+        "content": "Reply from thread"
+      },
+      "fcn_sendincomingmmsusingtwilioapismssenderid_1721042804117_0": {
+        "dataSetId": -1,
+        "id": "fcn_sendincomingmmsusingtwilioapismssenderid_1721042804117_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_conversedeskvalidationinsaas_1721042804117_0"
+        ],
+        "content": "Send incoming using twilio api $smssenderid"
+      },
+      "fcn_conversedeskvalidationinsaas_1721042804117_0": {
+        "dataSetId": -1,
+        "id": "fcn_conversedeskvalidationinsaas_1721042804117_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_validateincominginmyinboxsmssenderid_1721042804117_0"
+        ],
+        "content": "Converse Desk Validation in SaaS"
+      },
+      "fcn_validateincominginmyinboxsmssenderid_1721042804117_0": {
+        "dataSetId": -1,
+        "id": "fcn_validateincominginmyinboxsmssenderid_1721042804117_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Send message from thread"
+      },
+      "fcn_modulenameshouldnotshowforunknowconversation_0": {
+        "dataSetId": -1,
+        "id": "fcn_modulenameshouldnotshowforunknowconversation_0",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_sendincomingusingtwilioapismssenderid_1721043249921_0"
+        ],
+        "content": "Module name should not show for unknow conversation"
+      },
+      "fcn_sendincomingusingtwilioapismssenderid_1721043249921_0": {
+        "dataSetId": -1,
+        "id": "fcn_sendincomingusingtwilioapismssenderid_1721043249921_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_conversedeskvalidationinsaas_1721043253889_0"
+        ],
+        "content": "Send incoming using twilio api $smssenderid"
+      },
+      "fcn_conversedeskvalidationinsaas_1721043253889_0": {
+        "dataSetId": -1,
+        "id": "fcn_conversedeskvalidationinsaas_1721043253889_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_validateincominginmyinboxsmssenderid_1721043258588_0"
+        ],
+        "content": "Converse Desk Validation in SaaS"
+      },
+      "fcn_validateincominginmyinboxsmssenderid_1721043258588_0": {
+        "dataSetId": -1,
+        "id": "fcn_validateincominginmyinboxsmssenderid_1721043258588_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Validate incoming in myinbox $smssenderid and module should not shown"
+      },
+      "fcn_syncallthemessagestothecrm_1721117203139_0": {
+        "dataSetId": -1,
+        "id": "fcn_syncallthemessagestothecrm_1721117203139_0",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_sendincomingusingtwilioapismssenderid_1721117203139_0"
+        ],
+        "content": "Sync all the messages to the CRM"
+      },
+      "fcn_sendincomingusingtwilioapismssenderid_1721117203139_0": {
+        "dataSetId": -1,
+        "id": "fcn_sendincomingusingtwilioapismssenderid_1721117203139_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logintosalesforcelogin_1721117203139_0"
+        ],
+        "content": "Send incoming using twilio api $smssenderid"
+      },
+      "fcn_logintosalesforcelogin_1721117203139_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintosalesforcelogin_1721117203139_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_navigatetocontactandverifythemessagesmssenderid_0"
+        ],
+        "content": "Login to $salesforcelogin"
+      },
+      "fcn_navigatetocontactandverifythemessagesmssenderid_0": {
+        "dataSetId": -1,
+        "id": "fcn_navigatetocontactandverifythemessagesmssenderid_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Navigate to contact and verify the message $smssenderid"
+      }
+    },
+    "pathNames": {},
+    "isPrimary": false,
+    "positions": {
+      "fcn_start_0": {
+        "top": 150.0,
+        "left": 500.0
+      },
+      "fcn_incomingmessageslookupondekforintegartedcrms_0": {
+        "top": 214.0,
+        "left": 418.0
+      },
+      "fcn_logintosaasportal_1721031085233_0": {
+        "top": 287.0,
+        "left": 418.0
+      },
+      "fcn_incomingsmsshouldshownondeskwithmodulenameforsf_0": {
+        "top": 350.1484375,
+        "left": 155.0
+      },
+      "fcn_sendincomingusingtwilioapi_0": {
+        "top": 423.1484375,
+        "left": 155.0
+      },
+      "fcn_conversedeskvalidationinsaas_1721040208800_0": {
+        "top": 502.296875,
+        "left": 155.0
+      },
+      "fcn_validateincominginmyinbox_0": {
+        "top": 561.296875,
+        "left": 155.0
+      },
+      "fcn_incomingsmsshouldshownondeskwithmodulenameforsf_1721041793822_0": {
+        "top": 350.1484375,
+        "left": 435.0
+      },
+      "fcn_sendincomingusingtwilioapismssenderid_1721041793822_0": {
+        "top": 423.1484375,
+        "left": 435.0
+      },
+      "fcn_conversedeskvalidationinsaas_1721041793822_0": {
+        "top": 502.296875,
+        "left": 435.0
+      },
+      "fcn_validateincominginmyinboxsmssenderid_1721041793822_0": {
+        "top": 561.296875,
+        "left": 435.0
+      },
+      "fcn_incomingsmsshouldshownondeskwithmodulenameforsf_1721041978172_0": {
+        "top": 350.1484375,
+        "left": 715.0
+      },
+      "fcn_sendincomingusingtwilioapismssenderid_1721041978172_0": {
+        "top": 423.1484375,
+        "left": 715.0
+      },
+      "fcn_conversedeskvalidationinsaas_1721041978172_0": {
+        "top": 502.296875,
+        "left": 715.0
+      },
+      "fcn_validateincominginmyinboxsmssenderid_1721041978172_0": {
+        "top": 561.296875,
+        "left": 715.0
+      },
+      "fcn_incomingmmsshouldshownondeskwithmodulenameforsf_1721041993456_0": {
+        "top": 350.1484375,
+        "left": 995.0
+      },
+      "fcn_sendincomingmmsusingtwilioapismssenderid_1721041993456_0": {
+        "top": 423.1484375,
+        "left": 995.0
+      },
+      "fcn_conversedeskvalidationinsaas_1721041993456_0": {
+        "top": 502.296875,
+        "left": 995.0
+      },
+      "fcn_validateincominginmyinboxsmssenderid_1721041993456_0": {
+        "top": 561.296875,
+        "left": 995.0
+      },
+      "fcn_replyfromthread_0": {
+        "top": 350.1484375,
+        "left": 1275.0
+      },
+      "fcn_sendincomingmmsusingtwilioapismssenderid_1721042804117_0": {
+        "top": 409.1484375,
+        "left": 1275.0
+      },
+      "fcn_conversedeskvalidationinsaas_1721042804117_0": {
+        "top": 488.296875,
+        "left": 1275.0
+      },
+      "fcn_validateincominginmyinboxsmssenderid_1721042804117_0": {
+        "top": 556.296875,
+        "left": 1275.0
+      },
+      "fcn_modulenameshouldnotshowforunknowconversation_0": {
+        "top": 350.1484375,
+        "left": 1555.0
+      },
+      "fcn_sendincomingusingtwilioapismssenderid_1721043249921_0": {
+        "top": 423.1484375,
+        "left": 1555.0
+      },
+      "fcn_conversedeskvalidationinsaas_1721043253889_0": {
+        "top": 502.296875,
+        "left": 1555.0
+      },
+      "fcn_validateincominginmyinboxsmssenderid_1721043258588_0": {
+        "top": 561.296875,
+        "left": 1555.0
+      },
+      "fcn_syncallthemessagestothecrm_1721117203139_0": {
+        "top": 354.0,
+        "left": 1863.0
+      },
+      "fcn_sendincomingusingtwilioapismssenderid_1721117203139_0": {
+        "top": 422.0,
+        "left": 1866.0
+      },
+      "fcn_logintosalesforcelogin_1721117203139_0": {
+        "top": 501.1484375,
+        "left": 1863.0
+      },
+      "fcn_navigatetocontactandverifythemessagesmssenderid_0": {
+        "top": 565.296875,
+        "left": 1863.0
+      }
+    },
+    "tags": ""
+  },
+  "enabled": true,
+  "parentId": ""
+}

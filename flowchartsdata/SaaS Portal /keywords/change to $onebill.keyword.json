@@ -1,0 +1,108 @@
+{
+  "modifiedOn": "2024-01-12T12:26:23.905Z",
+  "name": "change to $onebill",
+  "id": "21582",
+  "type": 3,
+  "createdOn": "2023-12-15T08:06:57.800Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "change to $onebill",
+    "parameters": [
+      {
+        "parameterId": "onebill_",
+        "entityTypeId": "onebill",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"Billing\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "1000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_button(\"Attach onebill account\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_textbox(\"onebillAccountId\")"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "$onebillId"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_button(\"Create\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_lastAlert",
+        "stepParameters": [],
+        "stepType": "Assert",
+        "assertType": "Contains",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"Account Updated Successfully\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(0, _near(_tableHeader(\"Billing Account ID:\")))"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$onebillId"
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

@@ -1,0 +1,69 @@
+{
+  "modifiedOn": "2024-05-13T09:28:06.039Z",
+  "name": "Validate Lookup for contact object",
+  "id": "46046",
+  "type": 3,
+  "createdOn": "2024-05-13T09:24:57.808Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Validate Lookup for contact object",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"Converse Desk\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"Sent Messages\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_textbox(1)"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "$HubspotContact"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"contacts\", _in(_div(\"msg-list read-list\")))"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Contains",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"contacts\""
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

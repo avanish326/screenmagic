@@ -1,0 +1,64 @@
+{
+  "modifiedOn": "2024-01-12T12:25:53.379Z",
+  "name": "get $script After Editing Button",
+  "id": "17826",
+  "type": 3,
+  "createdOn": "2023-11-21T14:51:00.986Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "get $script After Editing Button",
+    "parameters": [
+      {
+        "parameterId": "script_",
+        "entityTypeId": "script",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "2000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_textarea(\"textarea-widget-code\")"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$scriptConversiveButtonTest"
+        }
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "_log($scriptConversiveButtonTest)"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"Back to Conversive buttons\")"
+          }
+        ],
+        "stepType": "Action"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

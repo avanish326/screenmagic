@@ -1,0 +1,100 @@
+{
+  "modifiedOn": "2024-06-11T12:23:41.684Z",
+  "name": "Keep the Greeting Message Welcome Message and Pop up notification field as blank and Verify the Error message",
+  "id": "52796",
+  "type": 3,
+  "createdOn": "2024-06-11T10:29:53.909Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Keep the Greeting Message Welcome Message and Pop up notification field as blank and Verify the Error message",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "8000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_textarea(\"the-textarea[1]\")"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "\"\""
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_textarea(\"the-textarea[2]\")"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "\"\""
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_submit(\"Save[2]\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"Greeting message can not be blank\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"Greeting message can not be blank\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"Pop message can not be blank\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"Pop message can not be blank\""
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

@@ -1,0 +1,102 @@
+{
+  "modifiedOn": "2024-02-08T06:49:43.297Z",
+  "name": "select date range which does not have data $incomingreport",
+  "id": "27834",
+  "type": 3,
+  "createdOn": "2024-02-08T06:49:43.297Z",
+  "content": {
+    "title": "select date range which does not have data $incomingreport",
+    "parameters": [
+      {
+        "parameterId": "incomingreport_",
+        "entityTypeId": "incomingreport",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_button(\"Download Incoming Report\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"Generate New Report\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_datebox(\"From Date\")"
+          },
+          {
+            "parameterId": "incomingreport_",
+            "attributeId": "attr_41695383460221"
+          }
+        ],
+        "stepType": "Action",
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_datebox(\"To Date\")"
+          },
+          {
+            "parameterId": "incomingreport_",
+            "attributeId": "attr_51695383467058"
+          }
+        ],
+        "stepType": "Action",
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_submit(\"Generate Report\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"No record found for the specified period. Please try again.\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"No record found for the specified period. Please try again.\""
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

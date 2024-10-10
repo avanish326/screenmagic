@@ -1,0 +1,293 @@
+{
+  "modifiedOn": "2024-08-22T12:27:03.861Z",
+  "name": "Show only CRMs while sending messages",
+  "id": "58694",
+  "type": 0,
+  "createdOn": "2024-08-05T06:34:12.355Z",
+  "content": {
+    "settings": {
+      "maxProceedDepth": 100,
+      "maxProceedsForFirstDepth": 1,
+      "maxProceedsPerDepth": 1,
+      "maxPathRepititionsPerComboPath": 1,
+      "maxProceedsPerPath": 10000,
+      "maxToggles": 2,
+      "maxMatchingPaths": 3
+    },
+    "flowChartUID": "fcUID_1722839652235",
+    "nodesMap": {
+      "fcn_start_0": {
+        "dataSetId": -1,
+        "id": "fcn_start_0",
+        "nodeType": "start",
+        "branches": [
+          "fcn_initiatinganewconversationinconversedeskwithintegrationcrm_1722839626707_0"
+        ],
+        "content": "Start"
+      },
+      "fcn_initiatinganewconversationinconversedeskwithintegrationcrm_1722839626707_0": {
+        "dataSetId": -1,
+        "id": "fcn_initiatinganewconversationinconversedeskwithintegrationcrm_1722839626707_0",
+        "nodeType": "pathlabel",
+        "branches": [
+          "fcn_logintobeconversive_1722839626707_0"
+        ],
+        "content": "Show only CRMs while sending messages"
+      },
+      "fcn_logintobeconversive_1722839626707_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintobeconversive_1722839626707_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_sendmessageforsfcontactobjectfromdesk_1722839688859_0",
+          "fcn_sendnewmessage_0",
+          "fcn_verifycrmtypesoncampaign_0",
+          "fcn_verifycrmtypesoncampaign_1724224714607_0",
+          "fcn_validateconversationsummaryonmyinbox_1724227938290_0"
+        ],
+        "content": "login to $beconversive"
+      },
+      "fcn_sendmessageforsfcontactobjectfromdesk_1722839688859_0": {
+        "dataSetId": -1,
+        "id": "fcn_sendmessageforsfcontactobjectfromdesk_1722839688859_0",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_navigatetobeconversiveconversedesk_1722839688859_0"
+        ],
+        "content": " Verify CRM types on desk while sending new messages"
+      },
+      "fcn_navigatetobeconversiveconversedesk_1722839688859_0": {
+        "dataSetId": -1,
+        "id": "fcn_navigatetobeconversiveconversedesk_1722839688859_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_sendmessageforsfcontactobject_1722839764072_0"
+        ],
+        "content": "Navigate to Beconversive Converse Desk "
+      },
+      "fcn_sendmessageforsfcontactobject_1722839764072_0": {
+        "dataSetId": -1,
+        "id": "fcn_sendmessageforsfcontactobject_1722839764072_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Verify CRMs"
+      },
+      "fcn_sendnewmessage_0": {
+        "dataSetId": -1,
+        "id": "fcn_sendnewmessage_0",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_navigatetobeconversiveconversedesk_1722850804636_0"
+        ],
+        "content": "Send new message"
+      },
+      "fcn_navigatetobeconversiveconversedesk_1722850804636_0": {
+        "dataSetId": -1,
+        "id": "fcn_navigatetobeconversiveconversedesk_1722850804636_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_sendmessagetohubspotcrm_0"
+        ],
+        "content": "Navigate to Beconversive Converse Desk "
+      },
+      "fcn_sendmessagetohubspotcrm_0": {
+        "dataSetId": -1,
+        "id": "fcn_sendmessagetohubspotcrm_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Send message to hubspot crm"
+      },
+      "fcn_verifycrmtypesoncampaign_0": {
+        "dataSetId": -1,
+        "id": "fcn_verifycrmtypesoncampaign_0",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_navigatetocampaign_0"
+        ],
+        "content": "Verify CRM types on campaign "
+      },
+      "fcn_navigatetocampaign_0": {
+        "dataSetId": -1,
+        "id": "fcn_navigatetocampaign_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_entercampaignnamecampaign_1722856485305_0"
+        ],
+        "content": "Navigate to campaign"
+      },
+      "fcn_entercampaignnamecampaign_1722856485305_0": {
+        "dataSetId": -1,
+        "id": "fcn_entercampaignnamecampaign_1722856485305_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_selectsmschannelandsenderidcampaign_1722856485305_0"
+        ],
+        "content": "Verify CRM in $becampaign"
+      },
+      "fcn_selectsmschannelandsenderidcampaign_1722856485305_0": {
+        "dataSetId": -1,
+        "id": "fcn_selectsmschannelandsenderidcampaign_1722856485305_0",
+        "nodeType": "skip",
+        "branches": [],
+        "content": "Select SMS channel and sender ID $campaign"
+      },
+      "fcn_verifycrmtypesoncampaign_1724224714607_0": {
+        "dataSetId": -1,
+        "id": "fcn_verifycrmtypesoncampaign_1724224714607_0",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_navigatetobeconversiveconversedesk_1724224770755_0"
+        ],
+        "content": "Validate Conversation Summary on my inbox"
+      },
+      "fcn_navigatetobeconversiveconversedesk_1724224770755_0": {
+        "dataSetId": -1,
+        "id": "fcn_navigatetobeconversiveconversedesk_1724224770755_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_verifysummary_0"
+        ],
+        "content": "Navigate to Beconversive Converse Desk "
+      },
+      "fcn_verifysummary_0": {
+        "dataSetId": -1,
+        "id": "fcn_verifysummary_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Verify summary "
+      },
+      "fcn_validateconversationsummaryonmyinbox_1724227938290_0": {
+        "dataSetId": -1,
+        "id": "fcn_validateconversationsummaryonmyinbox_1724227938290_0",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_navigatetobeconversiveconversedesk_1724227938290_0"
+        ],
+        "content": "Validate Conversation Summary on send"
+      },
+      "fcn_navigatetobeconversiveconversedesk_1724227938290_0": {
+        "dataSetId": -1,
+        "id": "fcn_navigatetobeconversiveconversedesk_1724227938290_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_gotosend_0"
+        ],
+        "content": "Navigate to Beconversive Converse Desk "
+      },
+      "fcn_gotosend_0": {
+        "dataSetId": -1,
+        "id": "fcn_gotosend_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_verifysummary_1724326566913_0",
+          "fcn_verifysummary_1724329614661_0"
+        ],
+        "content": "Go to Send "
+      },
+      "fcn_verifysummary_1724326566913_0": {
+        "dataSetId": -1,
+        "id": "fcn_verifysummary_1724326566913_0",
+        "nodeType": "skip",
+        "branches": [],
+        "content": "Verify summary in send"
+      },
+      "fcn_verifysummary_1724329614661_0": {
+        "dataSetId": -1,
+        "id": "fcn_verifysummary_1724329614661_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Verify summary "
+      }
+    },
+    "pathNames": {},
+    "isPrimary": true,
+    "positions": {
+      "fcn_start_0": {
+        "top": 150.0,
+        "left": 500.0
+      },
+      "fcn_initiatinganewconversationinconversedeskwithintegrationcrm_1722839626707_0": {
+        "top": 209.25,
+        "left": 420.9765625
+      },
+      "fcn_logintobeconversive_1722839626707_0": {
+        "top": 282.4296875,
+        "left": 419.9921875
+      },
+      "fcn_sendmessageforsfcontactobjectfromdesk_1722839688859_0": {
+        "top": 351.578125,
+        "left": 109.9921875
+      },
+      "fcn_navigatetobeconversiveconversedesk_1722839688859_0": {
+        "top": 436.6875,
+        "left": 110.9921875
+      },
+      "fcn_sendmessageforsfcontactobject_1722839764072_0": {
+        "top": 495.6875,
+        "left": 110.9921875
+      },
+      "fcn_sendnewmessage_0": {
+        "top": 351.578125,
+        "left": 389.9921875
+      },
+      "fcn_navigatetobeconversiveconversedesk_1722850804636_0": {
+        "top": 430.578125,
+        "left": 394.9921875
+      },
+      "fcn_sendmessagetohubspotcrm_0": {
+        "top": 489.578125,
+        "left": 399.9921875
+      },
+      "fcn_verifycrmtypesoncampaign_0": {
+        "top": 351.578125,
+        "left": 669.9921875
+      },
+      "fcn_navigatetocampaign_0": {
+        "top": 429.578125,
+        "left": 669.9921875
+      },
+      "fcn_entercampaignnamecampaign_1722856485305_0": {
+        "top": 488.578125,
+        "left": 669.9921875
+      },
+      "fcn_selectsmschannelandsenderidcampaign_1722856485305_0": {
+        "top": 570.7265625,
+        "left": 669.9921875
+      },
+      "fcn_verifycrmtypesoncampaign_1724224714607_0": {
+        "top": 351.578125,
+        "left": 949.9921875
+      },
+      "fcn_navigatetobeconversiveconversedesk_1724224770755_0": {
+        "top": 427.578125,
+        "left": 949.9921875
+      },
+      "fcn_verifysummary_0": {
+        "top": 485.578125,
+        "left": 948.9921875
+      },
+      "fcn_validateconversationsummaryonmyinbox_1724227938290_0": {
+        "top": 351.578125,
+        "left": 1229.9921875
+      },
+      "fcn_navigatetobeconversiveconversedesk_1724227938290_0": {
+        "top": 427.578125,
+        "left": 1229.9921875
+      },
+      "fcn_gotosend_0": {
+        "top": 484.578125,
+        "left": 1231.9921875
+      },
+      "fcn_verifysummary_1724326566913_0": {
+        "top": 551.578125,
+        "left": 1084.9921875
+      },
+      "fcn_verifysummary_1724329614661_0": {
+        "top": 551.578125,
+        "left": 1390.9921875
+      }
+    }
+  },
+  "enabled": true,
+  "parentId": ""
+}

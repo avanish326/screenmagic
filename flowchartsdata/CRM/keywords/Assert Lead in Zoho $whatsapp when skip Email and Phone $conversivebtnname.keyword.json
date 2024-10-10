@@ -1,0 +1,173 @@
+{
+  "modifiedOn": "2024-01-12T12:25:28.804Z",
+  "name": "Assert Lead in Zoho $whatsapp when skip Email and Phone $conversivebtnname",
+  "id": "14746",
+  "type": 3,
+  "createdOn": "2023-09-18T04:33:54.031Z",
+  "content": {
+    "title": "Assert Lead in Zoho $whatsapp when skip Email and Phone $conversivebtnname",
+    "parameters": [
+      {
+        "parameterId": "whatsapp_",
+        "entityTypeId": "whatsapp",
+        "suffix": ""
+      },
+      {
+        "parameterId": "conversivebtnname_",
+        "entityTypeId": "conversivebtnname",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_openWindow",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "\"https://crm.zoho.in/\""
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "\"zohoCrmTab\""
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_selectWindow",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "\"zohoCrmTab\""
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"Leads[1]\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_selectWindow",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "\"zohoCrmTab\""
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"link\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Contains",
+        "secondaryParam": {
+          "parameterId": "whatsapp_",
+          "attributeId": "attr_11694420036226"
+        },
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_selectWindow",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "\"zohoCrmTab\""
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_lyte_exptable_td(\"sort lv_data_email cellWrap  undefined\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_selectWindow",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "\"zohoCrmTab\""
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"phoneRtl cxPhoneViewZPBEnabled cruxPreventClick\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "parameterId": "whatsapp_",
+          "attributeId": "attr_71694672593970"
+        },
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_selectWindow",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "\"zohoCrmTab\""
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_lyte_text(\"\"+$conversivebuttonname+\"-whatsapp\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"\"+$conversivebuttonname+\"-whatsapp\""
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

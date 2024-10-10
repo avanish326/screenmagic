@@ -1,0 +1,101 @@
+{
+  "modifiedOn": "2024-09-03T13:41:03.963Z",
+  "name": "Select Channel \u0026 SenderID $hubspotcampaignalltype",
+  "id": "46321",
+  "type": 3,
+  "createdOn": "2024-05-27T08:06:21.134Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Select Channel \u0026 SenderID $hubspotcampaignalltype",
+    "parameters": [
+      {
+        "parameterId": "hubspotcampaignalltype_",
+        "entityTypeId": "hubspotcampaignalltype",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": true,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"select__single-value css-yr46hd-singleValue\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div($hubspotcampaignalltype.hubChannelType)"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_radioGroup(0, _in(_listItem(\"SMS/MMS\")))"
+          },
+          {}
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "2000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"Select Sender ID\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div($hubspotcampaignalltype.hubSenderID)"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_submit(\"Next\")"
+          },
+          {}
+        ],
+        "stepType": "Action"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

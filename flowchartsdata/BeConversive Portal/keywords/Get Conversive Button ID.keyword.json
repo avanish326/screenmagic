@@ -1,0 +1,47 @@
+{
+  "modifiedOn": "2024-06-07T10:44:13.709Z",
+  "name": "Get Conversive Button ID",
+  "id": "52611",
+  "type": 3,
+  "createdOn": "2024-06-03T06:37:18.294Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Get Conversive Button ID",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(\"script-desc\")"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$script"
+        }
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "const $regex \u003d /\"([0-9a-fA-F-]{36})\"/;\nconst $match \u003d $script.match($regex);\n\nif ($match \u0026\u0026 $match.length \u003e 1) \n{\n  $buttonID \u003d $match[1];\n _log($buttonID); \n\n} \nelse \n{\n _log(\u0027Value not found.\u0027);\n}\n"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"Back\")"
+          }
+        ],
+        "stepType": "Action"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

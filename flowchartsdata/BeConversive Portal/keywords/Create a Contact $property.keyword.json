@@ -1,0 +1,82 @@
+{
+  "modifiedOn": "2024-08-27T06:57:35.608Z",
+  "name": "Create a Contact $property",
+  "id": "58864",
+  "type": 3,
+  "createdOn": "2024-08-16T12:07:38.220Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Create a Contact $property",
+    "parameters": [
+      {
+        "parameterId": "property_",
+        "entityTypeId": "property",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "$propertyType\u003d$property.type;\n\nif($propertyType\u003d\u003d\u0027String\u0027)\n{\n   $value\u003d$property.valueString;\n}\n\nelse if($propertyType\u003d\u003d\u0027Integer\u0027)\n{\n    $value\u003d$property.valueInteger;\n}\nelse\n{\n   $value\u003d$property.valueDate;\n}\n$value\u003d$value;"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "var $number\u003d$property.mobileNumber;"
+      },
+      {
+        "commented": false,
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "POST"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "$contactAPI"
+          }
+        ],
+        "stepType": "REST",
+        "isRawScript": true,
+        "rawScript": "var $request_HuhtxVWPhg \u003d new RESTRequest();\r\n$request_HuhtxVWPhg.setURL($contactAPI);\r\n$request_HuhtxVWPhg.setHeader(\"Authorization\", $key);\r\n$request_HuhtxVWPhg.setHeader(\"Content-Type\", \"application/json\");\r\nvar sanitizedBody \u003d eval(\"(\"+\"{\" + \"    \\\"first_name\\\": \\\"Pranita\\\",\" + \"    \\\"last_name\\\": \\\"Kolekar\\\",\" + \"    \\\"mobile_number\\\": \\\"\" + escapeString($number) + \"\\\",\" + \"    \\\"\" + escapeString($propertyID) + \"\\\":\\\"\" + escapeString($value) + \"\\\"\" + \"}\"+\")\");\n$request_HuhtxVWPhg.setBody(JSON.stringify(sanitizedBody));\r\nvar $response_HuhtxVWPhg \u003d $request_HuhtxVWPhg.submit(\"POST\");\r\nvar responseBody \u003d JSON.parse($response_HuhtxVWPhg.getBodyAsString());\r\n\t var $responseBodyObj_HuhtxVWPhg \u003d $response_HuhtxVWPhg.getBodyAsString();\r\n\tvar responseType \u003d $response_HuhtxVWPhg.getHeader(\"Content-Type\");\r\n\tif (responseType.indexOf(\"json\")!\u003d-1) {\r\n\t\t$responseBodyObj_HuhtxVWPhg \u003d JSON.parse($responseBodyObj_HuhtxVWPhg);\r\n\t}\r\n\telse if (responseType.indexOf(\"xml\")!\u003d-1) {\r\n\t\t$responseBodyObj_HuhtxVWPhg \u003d $responseBodyObj_HuhtxVWPhg.replace(/\u003c\\xml.*?\u003e/g, \u0027\u0027).replace(/\\n/g, \u0027\u0027).replace(/\\r/g, \u0027\u0027);\r\n\t\t$responseBodyObj_HuhtxVWPhg \u003d new XML(undefined);\r\n\t}\r\n\r\n\t//assertions\r\n\r\n",
+        "state": {
+          "contentType": "json",
+          "request": {
+            "method": "POST",
+            "url": "$contactAPI",
+            "parameters": [],
+            "headers": [
+              [
+                "Authorization",
+                "$key"
+              ],
+              [
+                "Content-Type",
+                "application/json"
+              ]
+            ],
+            "authType": "none",
+            "body": "{\n    \"first_name\": \"Pranita\",\n    \"last_name\": \"Kolekar\",\n    \"mobile_number\": $number,\n    $propertyID:$value\n}",
+            "bodyParams": [],
+            "isParametrizedBody": false,
+            "resetCookies": false
+          },
+          "assertions": {
+            "status": [],
+            "header": [],
+            "body": []
+          },
+          "variables": {
+            "status": [],
+            "header": [],
+            "body": []
+          },
+          "authInfo": {}
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

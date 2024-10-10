@@ -1,0 +1,146 @@
+{
+  "modifiedOn": "2024-02-02T10:06:35.677Z",
+  "name": "Navigate to ZOHO SMS History and assert triggered messages $contact $conversationfields",
+  "id": "23061",
+  "type": 3,
+  "createdOn": "2024-02-02T10:05:01.245Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Navigate to ZOHO SMS History and assert triggered messages $contact $conversationfields",
+    "parameters": [
+      {
+        "parameterId": "contact_",
+        "entityTypeId": "contact",
+        "suffix": ""
+      },
+      {
+        "parameterId": "conversationfields_",
+        "entityTypeId": "conversationfields",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_selectBrowser",
+        "stepParameters": [],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_openWindow",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "\"https://crm.zoho.in/\""
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "\"zohoCrmTab\""
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_selectWindow",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "\"zohoCrmTab\""
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"SMS History\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "2000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"/Records Per Page/\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_lyte_drop_item(\"50 Records Per Page\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_preformatted(\"Hi there! Thank you for contacting The BrightCare Hospital secure chat. If this is an emergency, Please call 911 immediately.\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"Hi there! Thank you for contacting The BrightCare Hospital secure chat. If this is an emergency, Please call 911 immediately.\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_preformatted(\"What can we help you with? Please choose one of the following options: Type 1 for Find doctor Type 2 for Book Appointment Type 3 for Health packages Type 4 for Location\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"What can we help you with? Please choose one of the following options: Type 1 for Find doctor Type 2 for Book Appointment Type 3 for Health packages Type 4 for Location\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_closeWindow",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "\"zohoCrmTab\""
+          }
+        ],
+        "stepType": "Action"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

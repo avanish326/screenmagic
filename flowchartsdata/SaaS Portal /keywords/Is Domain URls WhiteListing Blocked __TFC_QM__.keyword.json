@@ -1,0 +1,46 @@
+{
+  "modifiedOn": "2023-10-06T05:27:45.587Z",
+  "name": "Is Domain URls WhiteListing Blocked ?",
+  "id": "16833",
+  "type": 3,
+  "createdOn": "2023-10-06T05:13:28.645Z",
+  "content": {
+    "title": "Is Domain URls WhiteListing Blocked ?",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_isVisible",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"Block\", _near(_cell(\"Check for Domain URls WhiteListing:\")))"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$statusDomainURL"
+        }
+      },
+      {
+        "commented": false,
+        "action": "return",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "$statusDomainURL"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "_log($statusDomainURL)"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

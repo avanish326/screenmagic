@@ -1,0 +1,101 @@
+{
+  "modifiedOn": "2023-10-12T11:12:38.974Z",
+  "name": "Change the Brand Color and Assert the Preview",
+  "id": "16848",
+  "type": 3,
+  "createdOn": "2023-10-06T12:30:51.424Z",
+  "content": {
+    "title": "Change the Brand Color and Assert the Preview",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"accordion-header\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_textbox(\"Brand Color\")"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "\"#93a2c8\""
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getValue",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_textbox(\"btn-color-txt\")"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$BGColorInHex"
+        }
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "_log($BGColorInHex)"
+      },
+      {
+        "commented": false,
+        "action": "_style",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"header-container\")"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "\"background-color\""
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$BGColorInRGB"
+        }
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "\n\n$BGColor \u003d _extract($BGColorInRGB,\"/rgb[(](.*),(.*),(.*)[)]/\",true);\n_log(\" RGB Color array \"+ $BGColor);\n\n$HexColor\u003d\"#\"+(1\u003c\u003c24 |  $BGColor[0] \u003c\u003c 16 | $BGColor[1] \u003c\u003c8 |$BGColor[2]).toString(16).slice(1); \n_log(\" HexColor Color array \"+ $HexColor);\n$HexColor"
+      },
+      {
+        "commented": false,
+        "action": "_areEqual",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "$HexColor"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "$BGColorInHex"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Is_True"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

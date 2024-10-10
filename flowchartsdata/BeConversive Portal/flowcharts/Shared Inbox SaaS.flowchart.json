@@ -1,0 +1,2534 @@
+{
+  "modifiedOn": "2024-08-27T11:24:09.365Z",
+  "name": "Shared Inbox SaaS",
+  "id": "27360",
+  "type": 0,
+  "createdOn": "2024-02-08T06:49:36.449Z",
+  "content": {
+    "settings": {
+      "maxProceedDepth": 100,
+      "maxProceedsForFirstDepth": 1,
+      "maxProceedsPerDepth": 1,
+      "maxPathRepititionsPerComboPath": 1,
+      "maxProceedsPerPath": 10000,
+      "maxToggles": 2,
+      "maxMatchingPaths": 3
+    },
+    "flowChartUID": "fcUID_1724747636711",
+    "nodesMap": {
+      "fcn_start_0": {
+        "dataSetId": -1,
+        "id": "fcn_start_0",
+        "nodeType": "start",
+        "branches": [
+          "fcn_sharedinbox_0"
+        ],
+        "content": "Start"
+      },
+      "fcn_sharedinbox_0": {
+        "dataSetId": -1,
+        "id": "fcn_sharedinbox_0",
+        "nodeType": "pathlabel",
+        "branches": [
+          "fcn_createautoreplaytemplate_0",
+          "fcn_logintobeconversive_1724756686304_0"
+        ],
+        "content": "Shared Inbox"
+      },
+      "fcn_logintosaas_sharedinbox_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintosaas_sharedinbox_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_conversedeskvalidationinsaas_0",
+          "fcn_createsharedinbox_0",
+          "fcn_editcreatedsharedinboxandaddwhatsappandwebsenderid_0",
+          "fcn_editcreatedsharedinboxandaddonemoreteammemberandcheckandeditthename_0",
+          "fcn_editthecreatedsharedinboxandremovethewhatsappsenderidandsendincomingmessageandcheck_0",
+          "fcn_autoreplay_0",
+          "fcn_validateiftheuserclicksonthecancelbuttontheyshouldbenavigatedtotheconversedeskpage_0",
+          "fcn_validateiftheuserclicksonthecancelbuttontheyshouldbenavigatedtotheconversedeskpage_1",
+          "fcn_count_0",
+          "fcn_checkstduserisnotabletoeditanddeletesharedinbox_0",
+          "fcn_createonemoresharedinbox_0",
+          "fcn_deletethecreatedsharedinbox_0",
+          "fcn_deletethecreatedsharedinbox_1",
+          "fcn_deletethecreatedsharedinbox_2"
+        ],
+        "content": "login to $saas_sharedinbox"
+      },
+      "fcn_conversedeskvalidationinsaas_0": {
+        "dataSetId": -1,
+        "id": "fcn_conversedeskvalidationinsaas_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_navigatetotemplatecreation_1702442083260_0"
+        ],
+        "content": "Converse Desk Validation in SaaS"
+      },
+      "fcn_createautoreplaytemplate_0": {
+        "dataSetId": -1,
+        "id": "fcn_createautoreplaytemplate_0",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_logintosaas_sharedinbox_0"
+        ],
+        "content": "Create auto replay template"
+      },
+      "fcn_navigatetotemplatecreation_1702442083260_0": {
+        "dataSetId": -1,
+        "id": "fcn_navigatetotemplatecreation_1702442083260_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_enterdetailstocreatetemplateforsharedinbox_0"
+        ],
+        "content": "Navigate to Template creation"
+      },
+      "fcn_validatedtemplateiscreatedtemplate_1702442112822_0": {
+        "dataSetId": -1,
+        "id": "fcn_validatedtemplateiscreatedtemplate_1702442112822_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Validated template is created $template"
+      },
+      "fcn_createsharedinbox_0": {
+        "dataSetId": -1,
+        "id": "fcn_createsharedinbox_0",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_conversedeskvalidationinsaas_1702442439553_0"
+        ],
+        "content": "Create Shared Inbox"
+      },
+      "fcn_conversedeskvalidationinsaas_1702442439553_0": {
+        "dataSetId": -1,
+        "id": "fcn_conversedeskvalidationinsaas_1702442439553_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_clickoncreatesharedinbox_0"
+        ],
+        "content": "Converse Desk Validation in SaaS"
+      },
+      "fcn_clickoncreatesharedinbox_0": {
+        "dataSetId": -1,
+        "id": "fcn_clickoncreatesharedinbox_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_clickoncreatebuttonwithoutfillinganyinformationandasserterrormessages_0"
+        ],
+        "content": "Click on Create Shared Inbox"
+      },
+      "fcn_clickoncreatebuttonwithoutfillinganyinformationandasserterrormessages_0": {
+        "dataSetId": -1,
+        "id": "fcn_clickoncreatebuttonwithoutfillinganyinformationandasserterrormessages_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_enterdetailstocreatesharedinboxandcreate_0"
+        ],
+        "content": "Click on Create Button with out filling any information and Assert error messages"
+      },
+      "fcn_enterdetailstocreatesharedinboxandcreate_0": {
+        "dataSetId": -1,
+        "id": "fcn_enterdetailstocreatesharedinboxandcreate_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertcreatedinboxsharedinbox_0"
+        ],
+        "content": "Enter Details to Create $sharedinbox and Create"
+      },
+      "fcn_assertcreatedinboxsharedinbox_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertcreatedinboxsharedinbox_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_loginsaas_stduser_0"
+        ],
+        "content": "Assert Created Inbox $sharedinbox"
+      },
+      "fcn_loginsaas_stduser_0": {
+        "dataSetId": -1,
+        "id": "fcn_loginsaas_stduser_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_conversedeskvalidationinsaas_1"
+        ],
+        "content": "login $saas_stduser"
+      },
+      "fcn_conversedeskvalidationinsaas_1": {
+        "dataSetId": -1,
+        "id": "fcn_conversedeskvalidationinsaas_1",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertcreatedinboxsharedinbox_1"
+        ],
+        "content": "Converse Desk Validation in SaaS"
+      },
+      "fcn_assertcreatedinboxsharedinbox_1": {
+        "dataSetId": -1,
+        "id": "fcn_assertcreatedinboxsharedinbox_1",
+        "nodeType": "action",
+        "branches": [
+          "fcn_isuserisinactivestate_0"
+        ],
+        "content": "Assert Created Inbox $sharedinbox "
+      },
+      "fcn_isuserisinactivestate_0": {
+        "dataSetId": -1,
+        "id": "fcn_isuserisinactivestate_0",
+        "nodeType": "dynamic-decision",
+        "branches": [
+          "fcn_updatetheavailabilitystatusasactive_0",
+          "fcn_sendincomingmessagesmssenderid_0"
+        ],
+        "content": "Is User is in Active state ?"
+      },
+      "fcn_sendincomingmessagesmssenderid_0": {
+        "dataSetId": -1,
+        "id": "fcn_sendincomingmessagesmssenderid_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertincomingmessageinsharedinboxsmssenderidsharedinbox_0"
+        ],
+        "content": "Send Incoming Message $smssenderid"
+      },
+      "fcn_updatetheavailabilitystatusasactive_0": {
+        "dataSetId": -1,
+        "id": "fcn_updatetheavailabilitystatusasactive_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_sendincomingmessagesmssenderid_0"
+        ],
+        "content": "Update the Availability status as Active"
+      },
+      "fcn_assertincomingmessageinsharedinboxsmssenderidsharedinbox_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertincomingmessageinsharedinboxsmssenderidsharedinbox_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertincomingmessageinsharedinboxinadminusersmssenderidsharedinbox_0"
+        ],
+        "content": "Assert incoming message in shared inbox $smssenderid $sharedinbox"
+      },
+      "fcn_assertincomingmessageinsharedinboxinadminusersmssenderidsharedinbox_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertincomingmessageinsharedinboxinadminusersmssenderidsharedinbox_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Assert message in shared inbox in admin user $smssenderid $sharedinbox"
+      },
+      "fcn_editcreatedsharedinboxandaddwhatsappandwebsenderid_0": {
+        "dataSetId": -1,
+        "id": "fcn_editcreatedsharedinboxandaddwhatsappandwebsenderid_0",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_conversedeskvalidationinsaas_1702449478771_0"
+        ],
+        "content": "Edit Created Shared Inbox and Add Whats app and Web Sender ID and Send Incoming Messages and check"
+      },
+      "fcn_conversedeskvalidationinsaas_1702449478771_0": {
+        "dataSetId": -1,
+        "id": "fcn_conversedeskvalidationinsaas_1702449478771_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_editsharedinboxandselectwhatsappandwebsenderidwappsenderidwebsenderid_0"
+        ],
+        "content": "Converse Desk Validation in SaaS"
+      },
+      "fcn_editsharedinboxandselectwhatsappandwebsenderidwappsenderidwebsenderid_0": {
+        "dataSetId": -1,
+        "id": "fcn_editsharedinboxandselectwhatsappandwebsenderidwappsenderidwebsenderid_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_sendincomingmessageusingwasenderid_1702450925583_0"
+        ],
+        "content": "Edit $sharedinbox select WhatsApp and Web sender id $wasenderid $websenderid"
+      },
+      "fcn_sendincomingmessageusingwasenderid_1702450925583_0": {
+        "dataSetId": -1,
+        "id": "fcn_sendincomingmessageusingwasenderid_1702450925583_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertmessageinsharedinboxinadminuserwasenderidsharedinbox_0"
+        ],
+        "content": "Send Incoming Message using $wasenderid"
+      },
+      "fcn_assertmessageinsharedinboxinadminuserwasenderidsharedinbox_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertmessageinsharedinboxinadminuserwasenderidsharedinbox_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_loginsaas_stduser_1702451641995_0"
+        ],
+        "content": "Assert message in shared inbox in admin user $wasenderid $sharedinbox"
+      },
+      "fcn_loginsaas_stduser_1702451641995_0": {
+        "dataSetId": -1,
+        "id": "fcn_loginsaas_stduser_1702451641995_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_conversedeskvalidationinsaas_1702456594360_0"
+        ],
+        "content": "login $saas_stduser"
+      },
+      "fcn_assertmessageinsharedinboxinstduserwasenderidsharedinbox_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertmessageinsharedinboxinstduserwasenderidsharedinbox_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_gotoadminuseraccount_0"
+        ],
+        "content": "Assert message in shared inbox in std user $wasenderid $sharedinbox"
+      },
+      "fcn_gotoadminuseraccount_0": {
+        "dataSetId": -1,
+        "id": "fcn_gotoadminuseraccount_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_navigatetoconversivebuttonsettingspage_1702451869067_0"
+        ],
+        "content": "Go to Admin user account"
+      },
+      "fcn_navigatetoconversivebuttonsettingspage_1702451869067_0": {
+        "dataSetId": -1,
+        "id": "fcn_navigatetoconversivebuttonsettingspage_1702451869067_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_createnewconversivebuttonwithchannelaswebchat_1702451942347_0"
+        ],
+        "content": "Navigate to Conversive Button Page"
+      },
+      "fcn_createnewconversivebuttonwithchannelaswebchat_1702451942347_0": {
+        "dataSetId": -1,
+        "id": "fcn_createnewconversivebuttonwithchannelaswebchat_1702451942347_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_getscript_1702451955663_0"
+        ],
+        "content": "create $newconversivebutton with channel as Web Chat"
+      },
+      "fcn_getscript_1702451955663_0": {
+        "dataSetId": -1,
+        "id": "fcn_getscript_1702451955663_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_embedscriptintowebsiteandnavigatetowebsite_1702451955663_0"
+        ],
+        "content": "get $script"
+      },
+      "fcn_embedscriptintowebsiteandnavigatetowebsite_1702451955663_0": {
+        "dataSetId": -1,
+        "id": "fcn_embedscriptintowebsiteandnavigatetowebsite_1702451955663_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_starttheconversationwithbot_1702454888963_0"
+        ],
+        "content": "embed script into $website and navigate to website"
+      },
+      "fcn_starttheconversationwithbot_1702454888963_0": {
+        "dataSetId": -1,
+        "id": "fcn_starttheconversationwithbot_1702454888963_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_askforconversationwithagent_1702454922089_0"
+        ],
+        "content": "start the conversation with $bot"
+      },
+      "fcn_askforconversationwithagent_1702454922089_0": {
+        "dataSetId": -1,
+        "id": "fcn_askforconversationwithagent_1702454922089_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_gotoconversedesk_1702456581268_0"
+        ],
+        "content": "ask for conversation with agent"
+      },
+      "fcn_assertmessageinsharedinboxinadminuserwebsenderidsharedinbox_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertmessageinsharedinboxinadminuserwebsenderidsharedinbox_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertmessageinsharedinboxinstduserbot_0"
+        ],
+        "content": "Assert message in shared inbox in admin user $websenderid $sharedinbox $bot"
+      },
+      "fcn_assertmessageinsharedinboxinstduserbot_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertmessageinsharedinboxinstduserbot_0",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_sendincomingmessagefromwidgetandcheckinsharedinboxagent_0"
+        ],
+        "content": "Assert message in shared inbox in std user $bot"
+      },
+      "fcn_sendincomingmessagefromwidgetandcheckinsharedinboxagent_0": {
+        "dataSetId": -1,
+        "id": "fcn_sendincomingmessagefromwidgetandcheckinsharedinboxagent_0",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_assertthemessageinadminsharedinboxagent_0"
+        ],
+        "content": "Send Incoming Message from widget and close the browser $agent"
+      },
+      "fcn_assertthemessageinadminsharedinboxagent_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertthemessageinadminsharedinboxagent_0",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_assertthemessageinstdusersharedinboxagent_0"
+        ],
+        "content": "Assert the message in admin shared inbox $agent"
+      },
+      "fcn_assertthemessageinstdusersharedinboxagent_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertthemessageinstdusersharedinboxagent_0",
+        "nodeType": "skip",
+        "branches": [],
+        "content": "Assert the message in Std user shared inbox $agent"
+      },
+      "fcn_gotoconversedesk_1702456581268_0": {
+        "dataSetId": -1,
+        "id": "fcn_gotoconversedesk_1702456581268_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertmessageinsharedinboxinadminuserwebsenderidsharedinbox_0"
+        ],
+        "content": "Go to converse desk"
+      },
+      "fcn_conversedeskvalidationinsaas_1702456594360_0": {
+        "dataSetId": -1,
+        "id": "fcn_conversedeskvalidationinsaas_1702456594360_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertmessageinsharedinboxinstduserwasenderidsharedinbox_0"
+        ],
+        "content": "Converse Desk Validation in SaaS"
+      },
+      "fcn_editcreatedsharedinboxandaddonemoreteammemberandcheckandeditthename_0": {
+        "dataSetId": -1,
+        "id": "fcn_editcreatedsharedinboxandaddonemoreteammemberandcheckandeditthename_0",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_conversedeskvalidationinsaas_1702460215044_0"
+        ],
+        "content": "Edit created shared inbox and add one more team member and check and edited the name "
+      },
+      "fcn_conversedeskvalidationinsaas_1702460215044_0": {
+        "dataSetId": -1,
+        "id": "fcn_conversedeskvalidationinsaas_1702460215044_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_editsharedinboxselectonemoreteammemberandeditthename_0"
+        ],
+        "content": "Converse Desk Validation in SaaS"
+      },
+      "fcn_editsharedinboxselectonemoreteammemberandeditthename_0": {
+        "dataSetId": -1,
+        "id": "fcn_editsharedinboxselectonemoreteammemberandeditthename_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertupdatedinboxnamesharedinbox_0"
+        ],
+        "content": "Edit $sharedinbox select one more team member and edit the shared inbox name "
+      },
+      "fcn_assertupdatedinboxnamesharedinbox_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertupdatedinboxnamesharedinbox_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_loginsaas_stduser_1702466225443_0"
+        ],
+        "content": "Assert Updated Inbox Name $sharedinbox"
+      },
+      "fcn_loginsaas_stduser_1702466225443_0": {
+        "dataSetId": -1,
+        "id": "fcn_loginsaas_stduser_1702466225443_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_conversedeskvalidationinsaas_1702466225443_0"
+        ],
+        "content": "login $saas_stduser"
+      },
+      "fcn_conversedeskvalidationinsaas_1702466225443_0": {
+        "dataSetId": -1,
+        "id": "fcn_conversedeskvalidationinsaas_1702466225443_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertupdatedinboxnamesharedinbox_1702466489047_0"
+        ],
+        "content": "Converse Desk Validation in SaaS"
+      },
+      "fcn_logintodifferentsaas_stduser_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintodifferentsaas_stduser_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_conversedeskvalidationinsaas_1702466464713_0"
+        ],
+        "content": "login to different $saas_stduser"
+      },
+      "fcn_conversedeskvalidationinsaas_1702466464713_0": {
+        "dataSetId": -1,
+        "id": "fcn_conversedeskvalidationinsaas_1702466464713_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertupdatedinboxnamesharedinbox_1702466507651_0"
+        ],
+        "content": "Converse Desk Validation in SaaS"
+      },
+      "fcn_assertupdatedinboxnamesharedinbox_1702466489047_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertupdatedinboxnamesharedinbox_1702466489047_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logintodifferentsaas_stduser_0"
+        ],
+        "content": "Assert Updated Inbox Name $sharedinbox"
+      },
+      "fcn_assertupdatedinboxnamesharedinbox_1702466507651_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertupdatedinboxnamesharedinbox_1702466507651_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_sendincomingmessagesmssenderid_1702466537980_0"
+        ],
+        "content": "Assert Updated Inbox Name $sharedinbox"
+      },
+      "fcn_sendincomingmessagesmssenderid_1702466537980_0": {
+        "dataSetId": -1,
+        "id": "fcn_sendincomingmessagesmssenderid_1702466537980_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertincomingmessageinsharedinboxsmssenderidsharedinboxafterediting_0"
+        ],
+        "content": "Send Incoming Message $smssenderid"
+      },
+      "fcn_assertincomingmessageinsharedinboxsmssenderidsharedinboxafterediting_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertincomingmessageinsharedinboxsmssenderidsharedinboxafterediting_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertincomingmessageinstduserssharedinboxsmssenderidsharedinboxafterediting_0"
+        ],
+        "content": "Assert incoming message in shared inbox $smssenderid $sharedinbox after editing"
+      },
+      "fcn_assertincomingmessageinstduserssharedinboxsmssenderidsharedinboxafterediting_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertincomingmessageinstduserssharedinboxsmssenderidsharedinboxafterediting_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertmessageinsharedinboxinadminusersmssenderidsharedinboxafterediting_0"
+        ],
+        "content": "Assert message in std users sharedInbox $smssenderid $sharedinbox after editing"
+      },
+      "fcn_assertmessageinsharedinboxinadminusersmssenderidsharedinboxafterediting_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertmessageinsharedinboxinadminusersmssenderidsharedinboxafterediting_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_editsharedinboxeditthesharedinboxname_0"
+        ],
+        "content": "Assert message in admin user sharedInbox $smssenderid $sharedinbox after editing"
+      },
+      "fcn_editthecreatedsharedinboxandremovethewhatsappsenderidandsendincomingmessageandcheck_0": {
+        "dataSetId": -1,
+        "id": "fcn_editthecreatedsharedinboxandremovethewhatsappsenderidandsendincomingmessageandcheck_0",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_conversedeskvalidationinsaas_1702471057366_0"
+        ],
+        "content": "Edit the Created Shared Inbox and Remove the whats app sender id and send incoming message and check"
+      },
+      "fcn_conversedeskvalidationinsaas_1702471057366_0": {
+        "dataSetId": -1,
+        "id": "fcn_conversedeskvalidationinsaas_1702471057366_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_editsharedinboxandremovewhatsappsenderid_0"
+        ],
+        "content": "Converse Desk Validation in SaaS"
+      },
+      "fcn_editsharedinboxandremovewhatsappsenderid_0": {
+        "dataSetId": -1,
+        "id": "fcn_editsharedinboxandremovewhatsappsenderid_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_sendincomingmessageusingwasenderid_1702471421600_0"
+        ],
+        "content": "Edit $sharedinbox and remove $wasenderid"
+      },
+      "fcn_sendincomingmessageusingwasenderid_1702471421600_0": {
+        "dataSetId": -1,
+        "id": "fcn_sendincomingmessageusingwasenderid_1702471421600_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertmessageisvisibleinmyinboxwasenderid_0"
+        ],
+        "content": "Send Incoming Message using $wasenderid"
+      },
+      "fcn_assertmessageisvisibleinmyinboxwasenderid_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertmessageisvisibleinmyinboxwasenderid_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertmessageisnotvisibleinsharedinboxofadminuser_0"
+        ],
+        "content": "Assert Message is visible in my inbox $wasenderid"
+      },
+      "fcn_assertmessageisnotvisibleinsharedinboxofadminuser_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertmessageisnotvisibleinsharedinboxofadminuser_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_loginsaas_stduser_1702471705704_0"
+        ],
+        "content": "Assert Message is not visible in $sharedinbox $wasenderid"
+      },
+      "fcn_loginsaas_stduser_1702471705704_0": {
+        "dataSetId": -1,
+        "id": "fcn_loginsaas_stduser_1702471705704_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_conversedeskvalidationinsaas_1702471705704_0"
+        ],
+        "content": "login $saas_stduser"
+      },
+      "fcn_conversedeskvalidationinsaas_1702471705704_0": {
+        "dataSetId": -1,
+        "id": "fcn_conversedeskvalidationinsaas_1702471705704_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertmessageisnotvisibleinsharedinbox_1702471708625_0"
+        ],
+        "content": "Converse Desk Validation in SaaS"
+      },
+      "fcn_assertmessageisnotvisibleinsharedinbox_1702471708625_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertmessageisnotvisibleinsharedinbox_1702471708625_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logintodifferentsaas_stduser_1702471712408_0"
+        ],
+        "content": "Assert Message is not visible in $sharedinbox $wasenderid"
+      },
+      "fcn_logintodifferentsaas_stduser_1702471712408_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintodifferentsaas_stduser_1702471712408_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_conversedeskvalidationinsaas_1702471717553_0"
+        ],
+        "content": "login to different $saas_stduser"
+      },
+      "fcn_conversedeskvalidationinsaas_1702471717553_0": {
+        "dataSetId": -1,
+        "id": "fcn_conversedeskvalidationinsaas_1702471717553_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertmessageisnotvisibleinsharedinbox_1702471720687_0"
+        ],
+        "content": "Converse Desk Validation in SaaS"
+      },
+      "fcn_assertmessageisnotvisibleinsharedinbox_1702471720687_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertmessageisnotvisibleinsharedinbox_1702471720687_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Assert Message is not visible in $sharedinbox $wasenderid"
+      },
+      "fcn_autoreplay_0": {
+        "dataSetId": -1,
+        "id": "fcn_autoreplay_0",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_conversedeskvalidationinsaas_1702472182705_0"
+        ],
+        "content": "Auto Replay should trigger when all selected user are away for unknown user"
+      },
+      "fcn_validateiftheuserclicksonthecancelbuttontheyshouldbenavigatedtotheconversedeskpage_0": {
+        "dataSetId": -1,
+        "id": "fcn_validateiftheuserclicksonthecancelbuttontheyshouldbenavigatedtotheconversedeskpage_0",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_navigatetocontacts_1705578680047_0"
+        ],
+        "content": "Auto Replay should trigger when all selected user are away for known user"
+      },
+      "fcn_conversedeskvalidationinsaas_1702472182705_0": {
+        "dataSetId": -1,
+        "id": "fcn_conversedeskvalidationinsaas_1702472182705_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_editsharedinboxandselectautoreplaytemplate_0"
+        ],
+        "content": "Converse Desk Validation in SaaS"
+      },
+      "fcn_validateiftheuserclicksonthecancelbuttontheyshouldbenavigatedtotheconversedeskpage_1": {
+        "dataSetId": -1,
+        "id": "fcn_validateiftheuserclicksonthecancelbuttontheyshouldbenavigatedtotheconversedeskpage_1",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_conversedeskvalidationinsaas_1705638622088_0"
+        ],
+        "content": "Validate Auto reply is should be sent when Any Incoming MMS is Recived."
+      },
+      "fcn_count_0": {
+        "dataSetId": -1,
+        "id": "fcn_count_0",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_conversedeskvalidationinsaas_1705651735172_0"
+        ],
+        "content": "Auto Replay should not trigger when any one of user from selected is active"
+      },
+      "fcn_checkstduserisnotabletoeditanddeletesharedinbox_0": {
+        "dataSetId": -1,
+        "id": "fcn_checkstduserisnotabletoeditanddeletesharedinbox_0",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_conversedeskvalidationinsaas_1705651578086_0"
+        ],
+        "content": "Validate if the user clicks on the cancel button they should be navigated to the Converse desk page."
+      },
+      "fcn_createonemoresharedinbox_0": {
+        "dataSetId": -1,
+        "id": "fcn_createonemoresharedinbox_0",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_conversedeskvalidationinsaas_1705651539068_0"
+        ],
+        "content": "Count"
+      },
+      "fcn_deletethecreatedsharedinbox_0": {
+        "dataSetId": -1,
+        "id": "fcn_deletethecreatedsharedinbox_0",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_conversedeskvalidationinsaas_1705651518301_0"
+        ],
+        "content": "Check Std user is not able to edit and delete shared inbox"
+      },
+      "fcn_enterdetailstocreatetemplateforsharedinbox_0": {
+        "dataSetId": -1,
+        "id": "fcn_enterdetailstocreatetemplateforsharedinbox_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_validatedtemplateiscreatedtemplate_1702442112822_0"
+        ],
+        "content": "Enter Details to create $template for shared inbox"
+      },
+      "fcn_editsharedinboxeditthesharedinboxname_0": {
+        "dataSetId": -1,
+        "id": "fcn_editsharedinboxeditthesharedinboxname_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Edit $sharedinbox edit the shared inbox name"
+      },
+      "fcn_editsharedinboxandselectautoreplaytemplate_0": {
+        "dataSetId": -1,
+        "id": "fcn_editsharedinboxandselectautoreplaytemplate_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checkifuserisinactivestatusthenupdatethestatusasaway_1705638926226_0"
+        ],
+        "content": "Edit $sharedinbox and select auto replay template $wasenderid"
+      },
+      "fcn_loginsaas_stduser_1703150851988_0": {
+        "dataSetId": -1,
+        "id": "fcn_loginsaas_stduser_1703150851988_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_conversedeskvalidationinsaas_1703150851988_0"
+        ],
+        "content": "login $saas_stduser"
+      },
+      "fcn_conversedeskvalidationinsaas_1703150851988_0": {
+        "dataSetId": -1,
+        "id": "fcn_conversedeskvalidationinsaas_1703150851988_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checkifuserisinactivestatusthenupdatethestatusasaway_1705638950708_0"
+        ],
+        "content": "Converse Desk Validation in SaaS"
+      },
+      "fcn_logintodifferentsaas_stduser_1703150884704_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintodifferentsaas_stduser_1703150884704_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_conversedeskvalidationinsaas_1703150884704_0"
+        ],
+        "content": "login to different $saas_stduser"
+      },
+      "fcn_conversedeskvalidationinsaas_1703150884704_0": {
+        "dataSetId": -1,
+        "id": "fcn_conversedeskvalidationinsaas_1703150884704_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checkifuserisinactivestatusthenupdatethestatusasaway_1705638971327_0"
+        ],
+        "content": "Converse Desk Validation in SaaS"
+      },
+      "fcn_sendincomingmessagesmssenderid_1705563038060_0": {
+        "dataSetId": -1,
+        "id": "fcn_sendincomingmessagesmssenderid_1705563038060_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertautoreplayistriggeredinstandardusersharedinboxsmssenderid_0"
+        ],
+        "content": "Send Incoming Message $smssenderid"
+      },
+      "fcn_assertautoreplayistriggeredinstandardusersharedinboxsmssenderid_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertautoreplayistriggeredinstandardusersharedinboxsmssenderid_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_selectanotherstandarduserbrowser_0"
+        ],
+        "content": "Assert Auto Replay is Triggered in Standard user account $sharedinbox $smssenderid"
+      },
+      "fcn_selectanotherstandarduserbrowser_0": {
+        "dataSetId": -1,
+        "id": "fcn_selectanotherstandarduserbrowser_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertautoreplayistriggeredinstandarduseraccountsharedinboxsmssenderid_1705564127412_0"
+        ],
+        "content": "Select Another Standard User Browser"
+      },
+      "fcn_assertautoreplayistriggeredinstandarduseraccountsharedinboxsmssenderid_1705564127412_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertautoreplayistriggeredinstandarduseraccountsharedinboxsmssenderid_1705564127412_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertautoreplayistriggeredinadminuseraccountsharedinboxsmssenderid_0"
+        ],
+        "content": "Assert Auto Replay is Triggered in Standard user account $sharedinbox $smssenderid"
+      },
+      "fcn_assertautoreplayistriggeredinadminuseraccountsharedinboxsmssenderid_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertautoreplayistriggeredinadminuseraccountsharedinboxsmssenderid_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_sendincomingmessageusingwasenderid_1705575946719_0"
+        ],
+        "content": "Assert Auto Replay is Triggered in Admin user account $sharedinbox $smssenderid"
+      },
+      "fcn_sendincomingmessageusingwasenderid_1705575946719_0": {
+        "dataSetId": -1,
+        "id": "fcn_sendincomingmessageusingwasenderid_1705575946719_0",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_assertautoreplayistriggeredinadminuseraccountsharedinboxwasenderid_0"
+        ],
+        "content": "Send Incoming Message using $wasenderid"
+      },
+      "fcn_assertautoreplayistriggeredinadminuseraccountsharedinboxwasenderid_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertautoreplayistriggeredinadminuseraccountsharedinboxwasenderid_0",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_selectstandarduserbrowser_0"
+        ],
+        "content": "Assert Auto Replay is Triggered in Admin user account $sharedinbox $wasenderid"
+      },
+      "fcn_selectstandarduserbrowser_0": {
+        "dataSetId": -1,
+        "id": "fcn_selectstandarduserbrowser_0",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_assertautoreplayistriggeredinstduseraccountsharedinboxwasenderid_0"
+        ],
+        "content": "Select Standard User Browser"
+      },
+      "fcn_assertautoreplayistriggeredinstduseraccountsharedinboxwasenderid_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertautoreplayistriggeredinstduseraccountsharedinboxwasenderid_0",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_selectanotherstandarduserbrowser_1705576331853_0"
+        ],
+        "content": "Assert Auto Replay is Triggered in Std user account $sharedinbox $wasenderid"
+      },
+      "fcn_selectanotherstandarduserbrowser_1705576331853_0": {
+        "dataSetId": -1,
+        "id": "fcn_selectanotherstandarduserbrowser_1705576331853_0",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_assertautoreplayistriggeredinstduseraccountsharedinboxwasenderid_1705576336206_0"
+        ],
+        "content": "Select Another Standard User Browser"
+      },
+      "fcn_assertautoreplayistriggeredinstduseraccountsharedinboxwasenderid_1705576336206_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertautoreplayistriggeredinstduseraccountsharedinboxwasenderid_1705576336206_0",
+        "nodeType": "skip",
+        "branches": [],
+        "content": "Assert Auto Replay is Triggered in Std user account $sharedinbox $wasenderid"
+      },
+      "fcn_checkifuserisinactivestatusthenupdatethestatusasaway_0": {
+        "dataSetId": -1,
+        "id": "fcn_checkifuserisinactivestatusthenupdatethestatusasaway_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_loginsaas_stduser_1705578441734_0"
+        ],
+        "content": "Check If user is in active status then update the status as away"
+      },
+      "fcn_loginsaas_stduser_1705578441734_0": {
+        "dataSetId": -1,
+        "id": "fcn_loginsaas_stduser_1705578441734_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_conversedeskvalidationinsaas_1705578446849_0"
+        ],
+        "content": "login $saas_stduser"
+      },
+      "fcn_conversedeskvalidationinsaas_1705578446849_0": {
+        "dataSetId": -1,
+        "id": "fcn_conversedeskvalidationinsaas_1705578446849_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checkifuserisinactivestatusthenupdatethestatusasaway_1705578451150_0"
+        ],
+        "content": "Converse Desk Validation in SaaS"
+      },
+      "fcn_checkifuserisinactivestatusthenupdatethestatusasaway_1705578451150_0": {
+        "dataSetId": -1,
+        "id": "fcn_checkifuserisinactivestatusthenupdatethestatusasaway_1705578451150_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logintodifferentsaas_stduser_1705578474274_0"
+        ],
+        "content": "Check If user is in active status then update the status as away"
+      },
+      "fcn_logintodifferentsaas_stduser_1705578474274_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintodifferentsaas_stduser_1705578474274_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_conversedeskvalidationinsaas_1705578474274_0"
+        ],
+        "content": "login to different $saas_stduser"
+      },
+      "fcn_conversedeskvalidationinsaas_1705578474274_0": {
+        "dataSetId": -1,
+        "id": "fcn_conversedeskvalidationinsaas_1705578474274_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checkifuserisinactivestatusthenupdatethestatusasaway_1705578483117_0"
+        ],
+        "content": "Converse Desk Validation in SaaS"
+      },
+      "fcn_checkifuserisinactivestatusthenupdatethestatusasaway_1705578483117_0": {
+        "dataSetId": -1,
+        "id": "fcn_checkifuserisinactivestatusthenupdatethestatusasaway_1705578483117_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_sendincomingmessagesmssenderidfromknownuser_0"
+        ],
+        "content": "Check If user is in active status then update the status as away"
+      },
+      "fcn_navigatetocontacts_1705578680047_0": {
+        "dataSetId": -1,
+        "id": "fcn_navigatetocontacts_1705578680047_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_createnewcontact_1705578680047_0"
+        ],
+        "content": "Navigate to Contacts"
+      },
+      "fcn_createnewcontact_1705578680047_0": {
+        "dataSetId": -1,
+        "id": "fcn_createnewcontact_1705578680047_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_conversedeskvalidation_1705583077712_0"
+        ],
+        "content": "Create $newcontact"
+      },
+      "fcn_sendincomingmessagesmssenderidfromknownuser_0": {
+        "dataSetId": -1,
+        "id": "fcn_sendincomingmessagesmssenderidfromknownuser_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertautoreplayistriggeredinstandarduseraccountforknownusersharedinboxsmssenderid_0"
+        ],
+        "content": "Send Incoming Message $smssenderid from known user $newcontact"
+      },
+      "fcn_assertautoreplayistriggeredinstandarduseraccountforknownusersharedinboxsmssenderid_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertautoreplayistriggeredinstandarduseraccountforknownusersharedinboxsmssenderid_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_selectanotherstandarduserbrowser_1705579654725_0"
+        ],
+        "content": "Assert Auto Replay is Triggered in Standard user account for known user $sharedinbox $smssenderid"
+      },
+      "fcn_selectanotherstandarduserbrowser_1705579654725_0": {
+        "dataSetId": -1,
+        "id": "fcn_selectanotherstandarduserbrowser_1705579654725_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertautoreplayistriggeredinstandarduseraccountforknownusersharedinboxsmssenderid_1705579657809_0"
+        ],
+        "content": "Select Another Standard User Browser"
+      },
+      "fcn_assertautoreplayistriggeredinstandarduseraccountforknownusersharedinboxsmssenderid_1705579657809_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertautoreplayistriggeredinstandarduseraccountforknownusersharedinboxsmssenderid_1705579657809_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertautoreplayistriggeredinadminuseraccountforknownusersharedinboxsmssenderid_0"
+        ],
+        "content": "Assert Auto Replay is Triggered in Standard user account for known user $sharedinbox $smssenderid"
+      },
+      "fcn_assertautoreplayistriggeredinadminuseraccountforknownusersharedinboxsmssenderid_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertautoreplayistriggeredinadminuseraccountforknownusersharedinboxsmssenderid_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_sendincomingmessageusingwasenderidforknownuser_0"
+        ],
+        "content": "Assert Auto Replay is Triggered in Admin user account for known user $sharedinbox $smssenderid"
+      },
+      "fcn_conversedeskvalidation_1705583077712_0": {
+        "dataSetId": -1,
+        "id": "fcn_conversedeskvalidation_1705583077712_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checkifuserisinactivestatusthenupdatethestatusasaway_0"
+        ],
+        "content": "Converse Desk Validation"
+      },
+      "fcn_sendincomingmessageusingwasenderidforknownuser_0": {
+        "dataSetId": -1,
+        "id": "fcn_sendincomingmessageusingwasenderidforknownuser_0",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_assertautoreplayistriggeredinadminuseraccountforknownusersharedinboxwasenderid_0"
+        ],
+        "content": "Send Incoming Message $wasenderid from known user"
+      },
+      "fcn_assertautoreplayistriggeredinadminuseraccountforknownusersharedinboxwasenderid_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertautoreplayistriggeredinadminuseraccountforknownusersharedinboxwasenderid_0",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_selectstandarduserbrowser_1705583385146_0"
+        ],
+        "content": "Assert Auto Replay is Triggered in Admin user account for known user $sharedinbox $wasenderid"
+      },
+      "fcn_selectstandarduserbrowser_1705583385146_0": {
+        "dataSetId": -1,
+        "id": "fcn_selectstandarduserbrowser_1705583385146_0",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_assertautoreplayistriggeredinstduseraccountforknownusersharedinboxwasenderid_0"
+        ],
+        "content": "Select Standard User Browser"
+      },
+      "fcn_assertautoreplayistriggeredinstduseraccountforknownusersharedinboxwasenderid_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertautoreplayistriggeredinstduseraccountforknownusersharedinboxwasenderid_0",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_selectanotherstandarduserbrowser_1705583405189_0"
+        ],
+        "content": "Assert Auto Replay is Triggered in Std user account for known user $sharedinbox $wasenderid"
+      },
+      "fcn_selectanotherstandarduserbrowser_1705583405189_0": {
+        "dataSetId": -1,
+        "id": "fcn_selectanotherstandarduserbrowser_1705583405189_0",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_assertautoreplayistriggeredinstduseraccountforknownusersharedinboxwasenderid_1705583408587_0"
+        ],
+        "content": "Select Another Standard User Browser"
+      },
+      "fcn_assertautoreplayistriggeredinstduseraccountforknownusersharedinboxwasenderid_1705583408587_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertautoreplayistriggeredinstduseraccountforknownusersharedinboxwasenderid_1705583408587_0",
+        "nodeType": "skip",
+        "branches": [],
+        "content": "Assert Auto Replay is Triggered in Std user account for known user $sharedinbox $wasenderid"
+      },
+      "fcn_deletethecreatedsharedinbox_1": {
+        "dataSetId": -1,
+        "id": "fcn_deletethecreatedsharedinbox_1",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_conversedeskvalidationinsaas_1705651494068_0"
+        ],
+        "content": "Create One More Shared Inbox"
+      },
+      "fcn_conversedeskvalidationinsaas_1705638622088_0": {
+        "dataSetId": -1,
+        "id": "fcn_conversedeskvalidationinsaas_1705638622088_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checkifuserisinactivestatusthenupdatethestatusasaway_1705639915055_0"
+        ],
+        "content": "Converse Desk Validation in SaaS"
+      },
+      "fcn_checkifuserisinactivestatusthenupdatethestatusasaway_1705638926226_0": {
+        "dataSetId": -1,
+        "id": "fcn_checkifuserisinactivestatusthenupdatethestatusasaway_1705638926226_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_loginsaas_stduser_1703150851988_0"
+        ],
+        "content": "Check If user is in active status then update the status as away"
+      },
+      "fcn_checkifuserisinactivestatusthenupdatethestatusasaway_1705638950708_0": {
+        "dataSetId": -1,
+        "id": "fcn_checkifuserisinactivestatusthenupdatethestatusasaway_1705638950708_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logintodifferentsaas_stduser_1703150884704_0"
+        ],
+        "content": "Check If user is in active status then update the status as away"
+      },
+      "fcn_checkifuserisinactivestatusthenupdatethestatusasaway_1705638971327_0": {
+        "dataSetId": -1,
+        "id": "fcn_checkifuserisinactivestatusthenupdatethestatusasaway_1705638971327_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_sendincomingmessagesmssenderid_1705563038060_0"
+        ],
+        "content": "Check If user is in active status then update the status as away"
+      },
+      "fcn_checkifuserisinactivestatusthenupdatethestatusasaway_1705639915055_0": {
+        "dataSetId": -1,
+        "id": "fcn_checkifuserisinactivestatusthenupdatethestatusasaway_1705639915055_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_loginsaas_stduser_1705639915055_0"
+        ],
+        "content": "Check If user is in active status then update the status as away"
+      },
+      "fcn_loginsaas_stduser_1705639915055_0": {
+        "dataSetId": -1,
+        "id": "fcn_loginsaas_stduser_1705639915055_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_conversedeskvalidationinsaas_1705639915055_0"
+        ],
+        "content": "login $saas_stduser"
+      },
+      "fcn_conversedeskvalidationinsaas_1705639915055_0": {
+        "dataSetId": -1,
+        "id": "fcn_conversedeskvalidationinsaas_1705639915055_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checkifuserisinactivestatusthenupdatethestatusasaway_1705639915055_1"
+        ],
+        "content": "Converse Desk Validation in SaaS"
+      },
+      "fcn_checkifuserisinactivestatusthenupdatethestatusasaway_1705639915055_1": {
+        "dataSetId": -1,
+        "id": "fcn_checkifuserisinactivestatusthenupdatethestatusasaway_1705639915055_1",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logintodifferentsaas_stduser_1705639915055_0"
+        ],
+        "content": "Check If user is in active status then update the status as away"
+      },
+      "fcn_logintodifferentsaas_stduser_1705639915055_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintodifferentsaas_stduser_1705639915055_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_conversedeskvalidationinsaas_1705639915055_1"
+        ],
+        "content": "login to different $saas_stduser"
+      },
+      "fcn_conversedeskvalidationinsaas_1705639915055_1": {
+        "dataSetId": -1,
+        "id": "fcn_conversedeskvalidationinsaas_1705639915055_1",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checkifuserisinactivestatusthenupdatethestatusasaway_1705639915055_2"
+        ],
+        "content": "Converse Desk Validation in SaaS"
+      },
+      "fcn_checkifuserisinactivestatusthenupdatethestatusasaway_1705639915055_2": {
+        "dataSetId": -1,
+        "id": "fcn_checkifuserisinactivestatusthenupdatethestatusasaway_1705639915055_2",
+        "nodeType": "action",
+        "branches": [
+          "fcn_sendincomingmmssmssenderid_0"
+        ],
+        "content": "Check If user is in active status then update the status as away"
+      },
+      "fcn_sendincomingmmssmssenderid_0": {
+        "dataSetId": -1,
+        "id": "fcn_sendincomingmmssmssenderid_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertautoreplayistriggeredinstduseraccountwhenmmsisreceivedsharedinboxsmssenderid_0"
+        ],
+        "content": "Send Incoming MMS $smssenderid"
+      },
+      "fcn_assertautoreplayistriggeredinstduseraccountwhenmmsisreceivedsharedinboxsmssenderid_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertautoreplayistriggeredinstduseraccountwhenmmsisreceivedsharedinboxsmssenderid_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_selectanotherstandarduserbrowser_1705640820256_0"
+        ],
+        "content": "Assert Auto Replay is Triggered in Std user account when MMS is received $sharedinbox $smssenderid"
+      },
+      "fcn_selectanotherstandarduserbrowser_1705640820256_0": {
+        "dataSetId": -1,
+        "id": "fcn_selectanotherstandarduserbrowser_1705640820256_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertautoreplayistriggeredinstduseraccountwhenmmsisreceivedsharedinboxsmssenderid_1705640830872_0"
+        ],
+        "content": "Select Another Standard User Browser"
+      },
+      "fcn_assertautoreplayistriggeredinstduseraccountwhenmmsisreceivedsharedinboxsmssenderid_1705640830872_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertautoreplayistriggeredinstduseraccountwhenmmsisreceivedsharedinboxsmssenderid_1705640830872_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertautoreplayistriggeredinadminuseraccountwhenmmsisreceivedsharedinboxsmssenderid_0"
+        ],
+        "content": "Assert Auto Replay is Triggered in Std user account when MMS is received $sharedinbox $smssenderid"
+      },
+      "fcn_assertautoreplayistriggeredinadminuseraccountwhenmmsisreceivedsharedinboxsmssenderid_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertautoreplayistriggeredinadminuseraccountwhenmmsisreceivedsharedinboxsmssenderid_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Assert Auto Replay is Triggered in Admin user account when MMS is received $sharedinbox $smssenderid"
+      },
+      "fcn_deletethecreatedsharedinbox_2": {
+        "dataSetId": -1,
+        "id": "fcn_deletethecreatedsharedinbox_2",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_conversedeskvalidationinsaas_1705651457892_0"
+        ],
+        "content": "Delete the created shared inbox"
+      },
+      "fcn_conversedeskvalidationinsaas_1705651457892_0": {
+        "dataSetId": -1,
+        "id": "fcn_conversedeskvalidationinsaas_1705651457892_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_deletethesharedinbox_1705651457892_0"
+        ],
+        "content": "Converse Desk Validation in SaaS"
+      },
+      "fcn_deletethesharedinbox_1705651457892_0": {
+        "dataSetId": -1,
+        "id": "fcn_deletethesharedinbox_1705651457892_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertdeletedsharedinboxisnotvisibleonconversedesk_1705651457892_0"
+        ],
+        "content": "Delete the $sharedinbox"
+      },
+      "fcn_assertdeletedsharedinboxisnotvisibleonconversedesk_1705651457892_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertdeletedsharedinboxisnotvisibleonconversedesk_1705651457892_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_loginsaas_stduser_1705651457892_0"
+        ],
+        "content": "Assert deleted $sharedinbox is not visible on converse desk"
+      },
+      "fcn_loginsaas_stduser_1705651457892_0": {
+        "dataSetId": -1,
+        "id": "fcn_loginsaas_stduser_1705651457892_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_conversedeskvalidationinsaas_1705651457892_1"
+        ],
+        "content": "login $saas_stduser"
+      },
+      "fcn_conversedeskvalidationinsaas_1705651457892_1": {
+        "dataSetId": -1,
+        "id": "fcn_conversedeskvalidationinsaas_1705651457892_1",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertdeletedsharedinboxisnotvisibleonconversedesk_1705651457892_1"
+        ],
+        "content": "Converse Desk Validation in SaaS"
+      },
+      "fcn_assertdeletedsharedinboxisnotvisibleonconversedesk_1705651457892_1": {
+        "dataSetId": -1,
+        "id": "fcn_assertdeletedsharedinboxisnotvisibleonconversedesk_1705651457892_1",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Assert deleted $sharedinbox is not visible on converse desk"
+      },
+      "fcn_conversedeskvalidationinsaas_1705651494068_0": {
+        "dataSetId": -1,
+        "id": "fcn_conversedeskvalidationinsaas_1705651494068_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_clickoncreatesharedinbox_1705651494068_0"
+        ],
+        "content": "Converse Desk Validation in SaaS"
+      },
+      "fcn_clickoncreatesharedinbox_1705651494068_0": {
+        "dataSetId": -1,
+        "id": "fcn_clickoncreatesharedinbox_1705651494068_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_enterdetailstocreateonemoresharedinboxandcreate_1705651494068_0"
+        ],
+        "content": "Click on Create Shared Inbox"
+      },
+      "fcn_enterdetailstocreateonemoresharedinboxandcreate_1705651494068_0": {
+        "dataSetId": -1,
+        "id": "fcn_enterdetailstocreateonemoresharedinboxandcreate_1705651494068_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertcreatedinboxsharedinbox_1705651494068_0"
+        ],
+        "content": "Enter Details to Create one more $sharedinbox and Create"
+      },
+      "fcn_assertcreatedinboxsharedinbox_1705651494068_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertcreatedinboxsharedinbox_1705651494068_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_loginsaas_stduser_1705651494068_0"
+        ],
+        "content": "Assert Created Inbox $sharedinbox"
+      },
+      "fcn_loginsaas_stduser_1705651494068_0": {
+        "dataSetId": -1,
+        "id": "fcn_loginsaas_stduser_1705651494068_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_conversedeskvalidationinsaas_1705651494068_1"
+        ],
+        "content": "login $saas_stduser"
+      },
+      "fcn_conversedeskvalidationinsaas_1705651494068_1": {
+        "dataSetId": -1,
+        "id": "fcn_conversedeskvalidationinsaas_1705651494068_1",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertcreatedinboxsharedinbox_1705651494068_1"
+        ],
+        "content": "Converse Desk Validation in SaaS"
+      },
+      "fcn_assertcreatedinboxsharedinbox_1705651494068_1": {
+        "dataSetId": -1,
+        "id": "fcn_assertcreatedinboxsharedinbox_1705651494068_1",
+        "nodeType": "action",
+        "branches": [
+          "fcn_gotoadminuserandtrytocreateinboxwithsamedetailssharedinbox_1705651494068_0"
+        ],
+        "content": "Assert Created Inbox $sharedinbox "
+      },
+      "fcn_gotoadminuserandtrytocreateinboxwithsamedetailssharedinbox_1705651494068_0": {
+        "dataSetId": -1,
+        "id": "fcn_gotoadminuserandtrytocreateinboxwithsamedetailssharedinbox_1705651494068_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_asserttheerrormessage_1705651494068_0"
+        ],
+        "content": "Go to Admin user and try to create inbox with same details $sharedinbox"
+      },
+      "fcn_asserttheerrormessage_1705651494068_0": {
+        "dataSetId": -1,
+        "id": "fcn_asserttheerrormessage_1705651494068_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_editcreatedsharedinboxandentersamedetailsasalreadycreatedsharedinboxwasenderidwebsenderid_1705651494068_0"
+        ],
+        "content": "Assert the error message"
+      },
+      "fcn_editcreatedsharedinboxandentersamedetailsasalreadycreatedsharedinboxwasenderidwebsenderid_1705651494068_0": {
+        "dataSetId": -1,
+        "id": "fcn_editcreatedsharedinboxandentersamedetailsasalreadycreatedsharedinboxwasenderidwebsenderid_1705651494068_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_asserttheerrormessage_1705651494068_1"
+        ],
+        "content": "Edit created $sharedinbox and enter same details as already created shared inbox $wasenderid $websenderid"
+      },
+      "fcn_asserttheerrormessage_1705651494068_1": {
+        "dataSetId": -1,
+        "id": "fcn_asserttheerrormessage_1705651494068_1",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_deletethecreatedsharedinbox_1705651494068_0"
+        ],
+        "content": "Assert the error message"
+      },
+      "fcn_deletethecreatedsharedinbox_1705651494068_0": {
+        "dataSetId": -1,
+        "id": "fcn_deletethecreatedsharedinbox_1705651494068_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Delete the created $sharedinbox"
+      },
+      "fcn_conversedeskvalidationinsaas_1705651518301_0": {
+        "dataSetId": -1,
+        "id": "fcn_conversedeskvalidationinsaas_1705651518301_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertadminuserhasaccesstoeditanddeletethesharedinbox_1705651518301_0"
+        ],
+        "content": "Converse Desk Validation in SaaS"
+      },
+      "fcn_assertadminuserhasaccesstoeditanddeletethesharedinbox_1705651518301_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertadminuserhasaccesstoeditanddeletethesharedinbox_1705651518301_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_loginsaas_stduser_1705651518301_0"
+        ],
+        "content": "Assert Admin user has access to edit and delete the shared inbox"
+      },
+      "fcn_loginsaas_stduser_1705651518301_0": {
+        "dataSetId": -1,
+        "id": "fcn_loginsaas_stduser_1705651518301_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_conversedeskvalidationinsaas_1705651518301_1"
+        ],
+        "content": "login $saas_stduser"
+      },
+      "fcn_conversedeskvalidationinsaas_1705651518301_1": {
+        "dataSetId": -1,
+        "id": "fcn_conversedeskvalidationinsaas_1705651518301_1",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertstandarduserisnotabletoeditanddeletesharedinbox_1705651518301_0"
+        ],
+        "content": "Converse Desk Validation in SaaS"
+      },
+      "fcn_assertstandarduserisnotabletoeditanddeletesharedinbox_1705651518301_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertstandarduserisnotabletoeditanddeletesharedinbox_1705651518301_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logintodifferentsaas_stduser_1705651518301_0"
+        ],
+        "content": "Assert standard user is not able to edit and delete shared inbox"
+      },
+      "fcn_logintodifferentsaas_stduser_1705651518301_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintodifferentsaas_stduser_1705651518301_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_conversedeskvalidationinsaas_1705651518301_2"
+        ],
+        "content": "login to different $saas_stduser"
+      },
+      "fcn_conversedeskvalidationinsaas_1705651518301_2": {
+        "dataSetId": -1,
+        "id": "fcn_conversedeskvalidationinsaas_1705651518301_2",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertstandarduserisnotabletoeditanddeletesharedinbox_1705651518301_1"
+        ],
+        "content": "Converse Desk Validation in SaaS"
+      },
+      "fcn_assertstandarduserisnotabletoeditanddeletesharedinbox_1705651518301_1": {
+        "dataSetId": -1,
+        "id": "fcn_assertstandarduserisnotabletoeditanddeletesharedinbox_1705651518301_1",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Assert standard user is not able to edit and delete shared inbox"
+      },
+      "fcn_conversedeskvalidationinsaas_1705651539068_0": {
+        "dataSetId": -1,
+        "id": "fcn_conversedeskvalidationinsaas_1705651539068_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_editsharedinboxselectwhatsappwasenderid_1705651539068_0"
+        ],
+        "content": "Converse Desk Validation in SaaS"
+      },
+      "fcn_editsharedinboxselectwhatsappwasenderid_1705651539068_0": {
+        "dataSetId": -1,
+        "id": "fcn_editsharedinboxselectwhatsappwasenderid_1705651539068_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertcountafterreceivingincomingmessagesmssenderidsharedinbox_1705651539068_0"
+        ],
+        "content": "Edit $sharedinbox select WhatsApp $wasenderid"
+      },
+      "fcn_assertcountafterreceivingincomingmessagesmssenderidsharedinbox_1705651539068_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertcountafterreceivingincomingmessagesmssenderidsharedinbox_1705651539068_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_loginsaas_stduser_1705651539068_0"
+        ],
+        "content": "Assert count after receiving incoming message $smssenderid $sharedinbox"
+      },
+      "fcn_loginsaas_stduser_1705651539068_0": {
+        "dataSetId": -1,
+        "id": "fcn_loginsaas_stduser_1705651539068_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_conversedeskvalidationinsaas_1705651539068_1"
+        ],
+        "content": "login $saas_stduser"
+      },
+      "fcn_conversedeskvalidationinsaas_1705651539068_1": {
+        "dataSetId": -1,
+        "id": "fcn_conversedeskvalidationinsaas_1705651539068_1",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertcountafterreceivingincomingmessagesmssenderidsharedinbox_1705651539068_1"
+        ],
+        "content": "Converse Desk Validation in SaaS"
+      },
+      "fcn_assertcountafterreceivingincomingmessagesmssenderidsharedinbox_1705651539068_1": {
+        "dataSetId": -1,
+        "id": "fcn_assertcountafterreceivingincomingmessagesmssenderidsharedinbox_1705651539068_1",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertcountafterreceivingincomingmessagefromwasenderidsharedinbox_1705651539068_0"
+        ],
+        "content": "Assert count after receiving incoming message $smssenderid $sharedinbox"
+      },
+      "fcn_assertcountafterreceivingincomingmessagefromwasenderidsharedinbox_1705651539068_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertcountafterreceivingincomingmessagefromwasenderidsharedinbox_1705651539068_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Assert count after receiving incoming message from $wasenderid $sharedinbox"
+      },
+      "fcn_conversedeskvalidationinsaas_1705651578086_0": {
+        "dataSetId": -1,
+        "id": "fcn_conversedeskvalidationinsaas_1705651578086_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_clickoncreatesharedinbox_1705651578086_0"
+        ],
+        "content": "Converse Desk Validation in SaaS"
+      },
+      "fcn_clickoncreatesharedinbox_1705651578086_0": {
+        "dataSetId": -1,
+        "id": "fcn_clickoncreatesharedinbox_1705651578086_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_clickoncancelandassert_1705651578086_0"
+        ],
+        "content": "Click on Create Shared Inbox"
+      },
+      "fcn_clickoncancelandassert_1705651578086_0": {
+        "dataSetId": -1,
+        "id": "fcn_clickoncancelandassert_1705651578086_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_editthecreatedsharedinbox_1705651578086_0"
+        ],
+        "content": "Click on cancel and assert"
+      },
+      "fcn_editthecreatedsharedinbox_1705651578086_0": {
+        "dataSetId": -1,
+        "id": "fcn_editthecreatedsharedinbox_1705651578086_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_clickoncancelandassert_1705651578086_1"
+        ],
+        "content": "Edit the created shared inbox"
+      },
+      "fcn_clickoncancelandassert_1705651578086_1": {
+        "dataSetId": -1,
+        "id": "fcn_clickoncancelandassert_1705651578086_1",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Click on cancel and assert"
+      },
+      "fcn_conversedeskvalidationinsaas_1705651735172_0": {
+        "dataSetId": -1,
+        "id": "fcn_conversedeskvalidationinsaas_1705651735172_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checkifuserisinactivestatusthenupdatethestatusasaway_1705651739989_0"
+        ],
+        "content": "Converse Desk Validation in SaaS"
+      },
+      "fcn_checkifuserisinactivestatusthenupdatethestatusasaway_1705651739989_0": {
+        "dataSetId": -1,
+        "id": "fcn_checkifuserisinactivestatusthenupdatethestatusasaway_1705651739989_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_loginsaas_stduser_1705651748023_0"
+        ],
+        "content": "Check If user is in active status then update the status as away"
+      },
+      "fcn_loginsaas_stduser_1705651748023_0": {
+        "dataSetId": -1,
+        "id": "fcn_loginsaas_stduser_1705651748023_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_conversedeskvalidationinsaas_1705651748023_0"
+        ],
+        "content": "login $saas_stduser"
+      },
+      "fcn_conversedeskvalidationinsaas_1705651748023_0": {
+        "dataSetId": -1,
+        "id": "fcn_conversedeskvalidationinsaas_1705651748023_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checkifuserisinactivestatusifnothenupdatethestatusasactive_0"
+        ],
+        "content": "Converse Desk Validation in SaaS"
+      },
+      "fcn_checkifuserisinactivestatusifnothenupdatethestatusasactive_0": {
+        "dataSetId": -1,
+        "id": "fcn_checkifuserisinactivestatusifnothenupdatethestatusasactive_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logintodifferentsaas_stduser_1705658221373_0"
+        ],
+        "content": "Check If user is in active status If no then update the status as active"
+      },
+      "fcn_logintodifferentsaas_stduser_1705658221373_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintodifferentsaas_stduser_1705658221373_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_conversedeskvalidationinsaas_1705658221373_0"
+        ],
+        "content": "login to different $saas_stduser"
+      },
+      "fcn_conversedeskvalidationinsaas_1705658221373_0": {
+        "dataSetId": -1,
+        "id": "fcn_conversedeskvalidationinsaas_1705658221373_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checkifuserisinactivestatusthenupdatethestatusasaway_1705658221373_0"
+        ],
+        "content": "Converse Desk Validation in SaaS"
+      },
+      "fcn_checkifuserisinactivestatusthenupdatethestatusasaway_1705658221373_0": {
+        "dataSetId": -1,
+        "id": "fcn_checkifuserisinactivestatusthenupdatethestatusasaway_1705658221373_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_sendincomingmessagesmssenderid_1705658364354_0"
+        ],
+        "content": "Check If user is in active status then update the status as away"
+      },
+      "fcn_assertincomingmessageinsharedinboxandassertautoreplayisnottriggeredsmssenderidsharedinbox_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertincomingmessageinsharedinboxandassertautoreplayisnottriggeredsmssenderidsharedinbox_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_selectanotherstandarduserbrowser_1705658436575_0"
+        ],
+        "content": "Assert incoming message in shared inbox and assert auto replay is not triggered $smssenderid $sharedinbox"
+      },
+      "fcn_sendincomingmessagesmssenderid_1705658364354_0": {
+        "dataSetId": -1,
+        "id": "fcn_sendincomingmessagesmssenderid_1705658364354_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertincomingmessageinsharedinboxandassertautoreplayisnottriggeredsmssenderidsharedinbox_0"
+        ],
+        "content": "Send Incoming Message $smssenderid"
+      },
+      "fcn_selectanotherstandarduserbrowser_1705658436575_0": {
+        "dataSetId": -1,
+        "id": "fcn_selectanotherstandarduserbrowser_1705658436575_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertincomingmessageinsharedinboxandassertautoreplayisnottriggeredsmssenderidsharedinbox_1705658439537_0"
+        ],
+        "content": "Select Another Standard User Browser"
+      },
+      "fcn_assertincomingmessageinsharedinboxandassertautoreplayisnottriggeredsmssenderidsharedinbox_1705658439537_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertincomingmessageinsharedinboxandassertautoreplayisnottriggeredsmssenderidsharedinbox_1705658439537_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_selectadminuserbrowser_0"
+        ],
+        "content": "Assert incoming message in shared inbox and assert auto replay is not triggered $smssenderid $sharedinbox"
+      },
+      "fcn_selectadminuserbrowser_0": {
+        "dataSetId": -1,
+        "id": "fcn_selectadminuserbrowser_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertincomingmessageinsharedinboxandassertautoreplayisnottriggeredsmssenderidsharedinbox_1705658482720_0"
+        ],
+        "content": "Select Admin User Browser"
+      },
+      "fcn_assertincomingmessageinsharedinboxandassertautoreplayisnottriggeredsmssenderidsharedinbox_1705658482720_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertincomingmessageinsharedinboxandassertautoreplayisnottriggeredsmssenderidsharedinbox_1705658482720_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Assert incoming message in shared inbox and assert auto replay is not triggered $smssenderid $sharedinbox"
+      },
+      "fcn_logintobeconversive_1724756686304_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintobeconversive_1724756686304_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_markavailabilitystatusinactivewhenusergetloggedout_1724756990206_0"
+        ],
+        "content": "login to $beconversive"
+      },
+      "fcn_markavailabilitystatusinactivewhenusergetloggedout_1724756990206_0": {
+        "dataSetId": -1,
+        "id": "fcn_markavailabilitystatusinactivewhenusergetloggedout_1724756990206_0",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_verifysystembehaviorwhenauserismarkedasavailableandisloggedoutimmediatelyduetoinactivity_1724756990206_0"
+        ],
+        "content": "mark availability status inactive when user get logged out"
+      },
+      "fcn_verifysystembehaviorwhenauserismarkedasavailableandisloggedoutimmediatelyduetoinactivity_1724756990206_0": {
+        "dataSetId": -1,
+        "id": "fcn_verifysystembehaviorwhenauserismarkedasavailableandisloggedoutimmediatelyduetoinactivity_1724756990206_0",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_conversedeskvalidationinsaas_1724756990206_0"
+        ],
+        "content": "Verify system behavior when a user is marked as available and is logged out immediately due to inactivity."
+      },
+      "fcn_conversedeskvalidationinsaas_1724756990206_0": {
+        "dataSetId": -1,
+        "id": "fcn_conversedeskvalidationinsaas_1724756990206_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_setuserasactive_1724756990206_0"
+        ],
+        "content": "Navigate to Beconversive Converse Desk "
+      },
+      "fcn_setuserasactive_1724756990206_0": {
+        "dataSetId": -1,
+        "id": "fcn_setuserasactive_1724756990206_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logoutuser_1724756990206_0"
+        ],
+        "content": "Set user as active"
+      },
+      "fcn_logoutuser_1724756990206_0": {
+        "dataSetId": -1,
+        "id": "fcn_logoutuser_1724756990206_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logintobeconversive_1724757017488_0"
+        ],
+        "content": "Logout user"
+      },
+      "fcn_logintobeconversive_1724757017488_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintobeconversive_1724757017488_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_navigatetobeconversiveconversedesk_1724757841401_0"
+        ],
+        "content": "login to $beconversive"
+      },
+      "fcn_navigatetobeconversiveconversedesk_1724757841401_0": {
+        "dataSetId": -1,
+        "id": "fcn_navigatetobeconversiveconversedesk_1724757841401_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_verifyavailabilitystatus_1724757847231_0"
+        ],
+        "content": "Navigate to Beconversive Converse Desk "
+      },
+      "fcn_verifyavailabilitystatus_1724757847231_0": {
+        "dataSetId": -1,
+        "id": "fcn_verifyavailabilitystatus_1724757847231_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Verify availability status"
+      }
+    },
+    "pathNames": {},
+    "isPrimary": false,
+    "positions": {
+      "fcn_start_0": {
+        "top": 150.0,
+        "left": 500.0
+      },
+      "fcn_sharedinbox_0": {
+        "top": 211.0,
+        "left": 500.0
+      },
+      "fcn_createautoreplaytemplate_0": {
+        "top": 266.0,
+        "left": 500.0
+      },
+      "fcn_logintosaas_sharedinbox_0": {
+        "top": 322.0,
+        "left": 500.0
+      },
+      "fcn_conversedeskvalidationinsaas_0": {
+        "top": 393.1484375,
+        "left": 499.0
+      },
+      "fcn_navigatetotemplatecreation_1702442083260_0": {
+        "top": 452.1484375,
+        "left": 499.0
+      },
+      "fcn_enterdetailstocreatetemplateforsharedinbox_0": {
+        "top": 519.1484375,
+        "left": 500.0
+      },
+      "fcn_validatedtemplateiscreatedtemplate_1702442112822_0": {
+        "top": 600.4453125,
+        "left": 500.0
+      },
+      "fcn_createsharedinbox_0": {
+        "top": 367.1484375,
+        "left": 847.0
+      },
+      "fcn_conversedeskvalidationinsaas_1702442439553_0": {
+        "top": 419.1484375,
+        "left": 847.0
+      },
+      "fcn_clickoncreatesharedinbox_0": {
+        "top": 478.1484375,
+        "left": 847.0
+      },
+      "fcn_clickoncreatebuttonwithoutfillinganyinformationandasserterrormessages_0": {
+        "top": 537.1484375,
+        "left": 847.0
+      },
+      "fcn_enterdetailstocreatesharedinboxandcreate_0": {
+        "top": 610.1484375,
+        "left": 847.0
+      },
+      "fcn_assertcreatedinboxsharedinbox_0": {
+        "top": 689.296875,
+        "left": 847.0
+      },
+      "fcn_loginsaas_stduser_0": {
+        "top": 754.4453125,
+        "left": 847.0
+      },
+      "fcn_conversedeskvalidationinsaas_1": {
+        "top": 819.59375,
+        "left": 847.0
+      },
+      "fcn_assertcreatedinboxsharedinbox_1": {
+        "top": 878.59375,
+        "left": 847.0
+      },
+      "fcn_isuserisinactivestate_0": {
+        "top": 943.7421875,
+        "left": 847.0
+      },
+      "fcn_updatetheavailabilitystatusasactive_0": {
+        "top": 1001.7421875,
+        "left": 1065.0
+      },
+      "fcn_sendincomingmessagesmssenderid_0": {
+        "top": 1059.7421875,
+        "left": 847.0
+      },
+      "fcn_assertincomingmessageinsharedinboxsmssenderidsharedinbox_0": {
+        "top": 1124.8984375,
+        "left": 847.0
+      },
+      "fcn_assertincomingmessageinsharedinboxinadminusersmssenderidsharedinbox_0": {
+        "top": 1204.0546875,
+        "left": 847.0
+      },
+      "fcn_editcreatedsharedinboxandaddwhatsappandwebsenderid_0": {
+        "top": 369.1484375,
+        "left": 1377.0
+      },
+      "fcn_conversedeskvalidationinsaas_1702449478771_0": {
+        "top": 459.1484375,
+        "left": 1377.0
+      },
+      "fcn_editsharedinboxandselectwhatsappandwebsenderidwappsenderidwebsenderid_0": {
+        "top": 517.1484375,
+        "left": 1377.0
+      },
+      "fcn_sendincomingmessageusingwasenderid_1702450925583_0": {
+        "top": 625.6171875,
+        "left": 1377.0
+      },
+      "fcn_assertmessageinsharedinboxinadminuserwasenderidsharedinbox_0": {
+        "top": 706.765625,
+        "left": 1377.0
+      },
+      "fcn_loginsaas_stduser_1702451641995_0": {
+        "top": 790.9140625,
+        "left": 1377.0
+      },
+      "fcn_conversedeskvalidationinsaas_1702456594360_0": {
+        "top": 849.0625,
+        "left": 1380.0
+      },
+      "fcn_assertmessageinsharedinboxinstduserwasenderidsharedinbox_0": {
+        "top": 909.0625,
+        "left": 1377.0
+      },
+      "fcn_gotoadminuseraccount_0": {
+        "top": 986.2109375,
+        "left": 1378.0
+      },
+      "fcn_navigatetoconversivebuttonsettingspage_1702451869067_0": {
+        "top": 1045.2109375,
+        "left": 1376.0
+      },
+      "fcn_createnewconversivebuttonwithchannelaswebchat_1702451942347_0": {
+        "top": 1119.2109375,
+        "left": 1377.0
+      },
+      "fcn_getscript_1702451955663_0": {
+        "top": 1199.3671875,
+        "left": 1375.0
+      },
+      "fcn_embedscriptintowebsiteandnavigatetowebsite_1702451955663_0": {
+        "top": 1265.5078125,
+        "left": 1377.0
+      },
+      "fcn_starttheconversationwithbot_1702454888963_0": {
+        "top": 1344.6640625,
+        "left": 1377.0
+      },
+      "fcn_askforconversationwithagent_1702454922089_0": {
+        "top": 1405.8203125,
+        "left": 1377.0
+      },
+      "fcn_gotoconversedesk_1702456581268_0": {
+        "top": 1462.8203125,
+        "left": 1377.0
+      },
+      "fcn_assertmessageinsharedinboxinadminuserwebsenderidsharedinbox_0": {
+        "top": 1523.8203125,
+        "left": 1378.0
+      },
+      "fcn_assertmessageinsharedinboxinstduserbot_0": {
+        "top": 1598.9765625,
+        "left": 1375.0
+      },
+      "fcn_sendincomingmessagefromwidgetandcheckinsharedinboxagent_0": {
+        "top": 1672.1328125,
+        "left": 1374.0
+      },
+      "fcn_assertthemessageinadminsharedinboxagent_0": {
+        "top": 1743.2890625,
+        "left": 1373.0
+      },
+      "fcn_assertthemessageinstdusersharedinboxagent_0": {
+        "top": 1818.4453125,
+        "left": 1373.0
+      },
+      "fcn_editcreatedsharedinboxandaddonemoreteammemberandcheckandeditthename_0": {
+        "top": 359.1484375,
+        "left": 1791.0
+      },
+      "fcn_conversedeskvalidationinsaas_1702460215044_0": {
+        "top": 440.1484375,
+        "left": 1791.0
+      },
+      "fcn_editsharedinboxselectonemoreteammemberandeditthename_0": {
+        "top": 499.1484375,
+        "left": 1791.0
+      },
+      "fcn_assertupdatedinboxnamesharedinbox_0": {
+        "top": 578.296875,
+        "left": 1791.0
+      },
+      "fcn_loginsaas_stduser_1702466225443_0": {
+        "top": 657.4453125,
+        "left": 1791.0
+      },
+      "fcn_conversedeskvalidationinsaas_1702466225443_0": {
+        "top": 722.59375,
+        "left": 1791.0
+      },
+      "fcn_assertupdatedinboxnamesharedinbox_1702466489047_0": {
+        "top": 787.7421875,
+        "left": 1791.0
+      },
+      "fcn_logintodifferentsaas_stduser_0": {
+        "top": 866.7421875,
+        "left": 1791.0
+      },
+      "fcn_conversedeskvalidationinsaas_1702466464713_0": {
+        "top": 931.890625,
+        "left": 1791.0
+      },
+      "fcn_assertupdatedinboxnamesharedinbox_1702466507651_0": {
+        "top": 990.890625,
+        "left": 1791.0
+      },
+      "fcn_sendincomingmessagesmssenderid_1702466537980_0": {
+        "top": 1070.046875,
+        "left": 1791.0
+      },
+      "fcn_assertincomingmessageinsharedinboxsmssenderidsharedinboxafterediting_0": {
+        "top": 1138.203125,
+        "left": 1793.0
+      },
+      "fcn_assertincomingmessageinstduserssharedinboxsmssenderidsharedinboxafterediting_0": {
+        "top": 1234.359375,
+        "left": 1793.0
+      },
+      "fcn_assertmessageinsharedinboxinadminusersmssenderidsharedinboxafterediting_0": {
+        "top": 1311.515625,
+        "left": 1793.0
+      },
+      "fcn_editsharedinboxeditthesharedinboxname_0": {
+        "top": 1404.671875,
+        "left": 1793.0
+      },
+      "fcn_editthecreatedsharedinboxandremovethewhatsappsenderidandsendincomingmessageandcheck_0": {
+        "top": 360.1484375,
+        "left": 2210.0
+      },
+      "fcn_conversedeskvalidationinsaas_1702471057366_0": {
+        "top": 447.1484375,
+        "left": 2210.0
+      },
+      "fcn_editsharedinboxandremovewhatsappsenderid_0": {
+        "top": 505.1484375,
+        "left": 2210.0
+      },
+      "fcn_sendincomingmessageusingwasenderid_1702471421600_0": {
+        "top": 590.4609375,
+        "left": 2210.0
+      },
+      "fcn_assertmessageisvisibleinmyinboxwasenderid_0": {
+        "top": 669.609375,
+        "left": 2210.0
+      },
+      "fcn_assertmessageisnotvisibleinsharedinboxofadminuser_0": {
+        "top": 748.7578125,
+        "left": 2211.0
+      },
+      "fcn_loginsaas_stduser_1702471705704_0": {
+        "top": 827.90625,
+        "left": 2211.0
+      },
+      "fcn_conversedeskvalidationinsaas_1702471705704_0": {
+        "top": 893.0546875,
+        "left": 2211.0
+      },
+      "fcn_assertmessageisnotvisibleinsharedinbox_1702471708625_0": {
+        "top": 952.0546875,
+        "left": 2211.0
+      },
+      "fcn_logintodifferentsaas_stduser_1702471712408_0": {
+        "top": 1031.2109375,
+        "left": 2211.0
+      },
+      "fcn_conversedeskvalidationinsaas_1702471717553_0": {
+        "top": 1096.3671875,
+        "left": 2211.0
+      },
+      "fcn_assertmessageisnotvisibleinsharedinbox_1702471720687_0": {
+        "top": 1155.3671875,
+        "left": 2211.0
+      },
+      "fcn_autoreplay_0": {
+        "top": 367.1484375,
+        "left": 2693.0
+      },
+      "fcn_conversedeskvalidationinsaas_1702472182705_0": {
+        "top": 440.1484375,
+        "left": 2693.0
+      },
+      "fcn_editsharedinboxandselectautoreplaytemplate_0": {
+        "top": 499.1484375,
+        "left": 2693.0
+      },
+      "fcn_checkifuserisinactivestatusthenupdatethestatusasaway_1705638926226_0": {
+        "top": 586.4609375,
+        "left": 2693.0
+      },
+      "fcn_loginsaas_stduser_1703150851988_0": {
+        "top": 657.4609375,
+        "left": 2693.0
+      },
+      "fcn_conversedeskvalidationinsaas_1703150851988_0": {
+        "top": 722.609375,
+        "left": 2693.0
+      },
+      "fcn_checkifuserisinactivestatusthenupdatethestatusasaway_1705638950708_0": {
+        "top": 787.609375,
+        "left": 2693.0
+      },
+      "fcn_logintodifferentsaas_stduser_1703150884704_0": {
+        "top": 856.609375,
+        "left": 2693.0
+      },
+      "fcn_conversedeskvalidationinsaas_1703150884704_0": {
+        "top": 920.765625,
+        "left": 2693.0
+      },
+      "fcn_checkifuserisinactivestatusthenupdatethestatusasaway_1705638971327_0": {
+        "top": 981.765625,
+        "left": 2693.0
+      },
+      "fcn_sendincomingmessagesmssenderid_1705563038060_0": {
+        "top": 1058.765625,
+        "left": 2693.0
+      },
+      "fcn_assertautoreplayistriggeredinstandardusersharedinboxsmssenderid_0": {
+        "top": 1128.921875,
+        "left": 2693.0
+      },
+      "fcn_selectanotherstandarduserbrowser_0": {
+        "top": 1227.265625,
+        "left": 2693.0
+      },
+      "fcn_assertautoreplayistriggeredinstandarduseraccountsharedinboxsmssenderid_1705564127412_0": {
+        "top": 1297.265625,
+        "left": 2693.0
+      },
+      "fcn_assertautoreplayistriggeredinadminuseraccountsharedinboxsmssenderid_0": {
+        "top": 1401.546875,
+        "left": 2693.0
+      },
+      "fcn_sendincomingmessageusingwasenderid_1705575946719_0": {
+        "top": 1486.703125,
+        "left": 2693.0
+      },
+      "fcn_assertautoreplayistriggeredinadminuseraccountsharedinboxwasenderid_0": {
+        "top": 1561.859375,
+        "left": 2693.0
+      },
+      "fcn_selectstandarduserbrowser_0": {
+        "top": 1639.015625,
+        "left": 2693.0
+      },
+      "fcn_assertautoreplayistriggeredinstduseraccountsharedinboxwasenderid_0": {
+        "top": 1694.015625,
+        "left": 2693.0
+      },
+      "fcn_selectanotherstandarduserbrowser_1705576331853_0": {
+        "top": 1768.171875,
+        "left": 2693.0
+      },
+      "fcn_assertautoreplayistriggeredinstduseraccountsharedinboxwasenderid_1705576336206_0": {
+        "top": 1821.171875,
+        "left": 2693.0
+      },
+      "fcn_validateiftheuserclicksonthecancelbuttontheyshouldbenavigatedtotheconversedeskpage_0": {
+        "top": 365.1484375,
+        "left": 3174.0
+      },
+      "fcn_navigatetocontacts_1705578680047_0": {
+        "top": 435.1484375,
+        "left": 3174.0
+      },
+      "fcn_createnewcontact_1705578680047_0": {
+        "top": 490.1484375,
+        "left": 3174.0
+      },
+      "fcn_conversedeskvalidation_1705583077712_0": {
+        "top": 549.1484375,
+        "left": 3171.0
+      },
+      "fcn_checkifuserisinactivestatusthenupdatethestatusasaway_0": {
+        "top": 610.1484375,
+        "left": 3174.0
+      },
+      "fcn_loginsaas_stduser_1705578441734_0": {
+        "top": 680.1484375,
+        "left": 3174.0
+      },
+      "fcn_conversedeskvalidationinsaas_1705578446849_0": {
+        "top": 747.296875,
+        "left": 3174.0
+      },
+      "fcn_checkifuserisinactivestatusthenupdatethestatusasaway_1705578451150_0": {
+        "top": 808.296875,
+        "left": 3174.0
+      },
+      "fcn_logintodifferentsaas_stduser_1705578474274_0": {
+        "top": 891.296875,
+        "left": 3174.0
+      },
+      "fcn_conversedeskvalidationinsaas_1705578474274_0": {
+        "top": 962.453125,
+        "left": 3174.0
+      },
+      "fcn_checkifuserisinactivestatusthenupdatethestatusasaway_1705578483117_0": {
+        "top": 1017.453125,
+        "left": 3174.0
+      },
+      "fcn_sendincomingmessagesmssenderidfromknownuser_0": {
+        "top": 1090.453125,
+        "left": 3174.0
+      },
+      "fcn_assertautoreplayistriggeredinstandarduseraccountforknownusersharedinboxsmssenderid_0": {
+        "top": 1175.765625,
+        "left": 3174.0
+      },
+      "fcn_selectanotherstandarduserbrowser_1705579654725_0": {
+        "top": 1268.921875,
+        "left": 3174.0
+      },
+      "fcn_assertautoreplayistriggeredinstandarduseraccountforknownusersharedinboxsmssenderid_1705579657809_0": {
+        "top": 1327.921875,
+        "left": 3174.0
+      },
+      "fcn_assertautoreplayistriggeredinadminuseraccountforknownusersharedinboxsmssenderid_0": {
+        "top": 1421.078125,
+        "left": 3174.0
+      },
+      "fcn_sendincomingmessageusingwasenderidforknownuser_0": {
+        "top": 1514.265625,
+        "left": 3174.0
+      },
+      "fcn_assertautoreplayistriggeredinadminuseraccountforknownusersharedinboxwasenderid_0": {
+        "top": 1593.390625,
+        "left": 3174.0
+      },
+      "fcn_selectstandarduserbrowser_1705583385146_0": {
+        "top": 1686.546875,
+        "left": 3174.0
+      },
+      "fcn_assertautoreplayistriggeredinstduseraccountforknownusersharedinboxwasenderid_0": {
+        "top": 1745.546875,
+        "left": 3174.0
+      },
+      "fcn_selectanotherstandarduserbrowser_1705583405189_0": {
+        "top": 1838.703125,
+        "left": 3174.0
+      },
+      "fcn_assertautoreplayistriggeredinstduseraccountforknownusersharedinboxwasenderid_1705583408587_0": {
+        "top": 1897.703125,
+        "left": 3174.0
+      },
+      "fcn_validateiftheuserclicksonthecancelbuttontheyshouldbenavigatedtotheconversedeskpage_1": {
+        "top": 371.1484375,
+        "left": 3615.0
+      },
+      "fcn_conversedeskvalidationinsaas_1705638622088_0": {
+        "top": 444.1484375,
+        "left": 3615.0
+      },
+      "fcn_checkifuserisinactivestatusthenupdatethestatusasaway_1705639915055_0": {
+        "top": 503.1484375,
+        "left": 3615.0
+      },
+      "fcn_loginsaas_stduser_1705639915055_0": {
+        "top": 573.1484375,
+        "left": 3615.0
+      },
+      "fcn_conversedeskvalidationinsaas_1705639915055_0": {
+        "top": 640.296875,
+        "left": 3615.0
+      },
+      "fcn_checkifuserisinactivestatusthenupdatethestatusasaway_1705639915055_1": {
+        "top": 701.296875,
+        "left": 3615.0
+      },
+      "fcn_logintodifferentsaas_stduser_1705639915055_0": {
+        "top": 784.296875,
+        "left": 3615.0
+      },
+      "fcn_conversedeskvalidationinsaas_1705639915055_1": {
+        "top": 855.453125,
+        "left": 3615.0
+      },
+      "fcn_checkifuserisinactivestatusthenupdatethestatusasaway_1705639915055_2": {
+        "top": 910.453125,
+        "left": 3615.0
+      },
+      "fcn_sendincomingmmssmssenderid_0": {
+        "top": 983.453125,
+        "left": 3615.0
+      },
+      "fcn_assertautoreplayistriggeredinstduseraccountwhenmmsisreceivedsharedinboxsmssenderid_0": {
+        "top": 1048.609375,
+        "left": 3615.0
+      },
+      "fcn_selectanotherstandarduserbrowser_1705640820256_0": {
+        "top": 1141.765625,
+        "left": 3615.0
+      },
+      "fcn_assertautoreplayistriggeredinstduseraccountwhenmmsisreceivedsharedinboxsmssenderid_1705640830872_0": {
+        "top": 1200.765625,
+        "left": 3615.0
+      },
+      "fcn_assertautoreplayistriggeredinadminuseraccountwhenmmsisreceivedsharedinboxsmssenderid_0": {
+        "top": 1293.921875,
+        "left": 3615.0
+      },
+      "fcn_count_0": {
+        "top": 364.1484375,
+        "left": 4011.0
+      },
+      "fcn_conversedeskvalidationinsaas_1705651735172_0": {
+        "top": 436.1484375,
+        "left": 4011.0
+      },
+      "fcn_checkifuserisinactivestatusthenupdatethestatusasaway_1705651739989_0": {
+        "top": 496.1484375,
+        "left": 4011.0
+      },
+      "fcn_loginsaas_stduser_1705651748023_0": {
+        "top": 569.1484375,
+        "left": 4011.0
+      },
+      "fcn_conversedeskvalidationinsaas_1705651748023_0": {
+        "top": 636.296875,
+        "left": 4011.0
+      },
+      "fcn_checkifuserisinactivestatusifnothenupdatethestatusasactive_0": {
+        "top": 695.296875,
+        "left": 4011.0
+      },
+      "fcn_logintodifferentsaas_stduser_1705658221373_0": {
+        "top": 768.296875,
+        "left": 4011.0
+      },
+      "fcn_conversedeskvalidationinsaas_1705658221373_0": {
+        "top": 839.453125,
+        "left": 4011.0
+      },
+      "fcn_checkifuserisinactivestatusthenupdatethestatusasaway_1705658221373_0": {
+        "top": 894.453125,
+        "left": 4011.0
+      },
+      "fcn_sendincomingmessagesmssenderid_1705658364354_0": {
+        "top": 965.609375,
+        "left": 4011.0
+      },
+      "fcn_assertincomingmessageinsharedinboxandassertautoreplayisnottriggeredsmssenderidsharedinbox_0": {
+        "top": 1032.609375,
+        "left": 4011.0
+      },
+      "fcn_selectanotherstandarduserbrowser_1705658436575_0": {
+        "top": 1125.765625,
+        "left": 4011.0
+      },
+      "fcn_assertincomingmessageinsharedinboxandassertautoreplayisnottriggeredsmssenderidsharedinbox_1705658439537_0": {
+        "top": 1184.765625,
+        "left": 4011.0
+      },
+      "fcn_selectadminuserbrowser_0": {
+        "top": 1277.921875,
+        "left": 4011.0
+      },
+      "fcn_assertincomingmessageinsharedinboxandassertautoreplayisnottriggeredsmssenderidsharedinbox_1705658482720_0": {
+        "top": 1336.921875,
+        "left": 4011.0
+      },
+      "fcn_checkstduserisnotabletoeditanddeletesharedinbox_0": {
+        "top": 363.1484375,
+        "left": 4398.0
+      },
+      "fcn_conversedeskvalidationinsaas_1705651578086_0": {
+        "top": 446.1484375,
+        "left": 4398.0
+      },
+      "fcn_clickoncreatesharedinbox_1705651578086_0": {
+        "top": 508.1484375,
+        "left": 4398.0
+      },
+      "fcn_clickoncancelandassert_1705651578086_0": {
+        "top": 580.1484375,
+        "left": 4398.0
+      },
+      "fcn_editthecreatedsharedinbox_1705651578086_0": {
+        "top": 639.1484375,
+        "left": 4398.0
+      },
+      "fcn_clickoncancelandassert_1705651578086_1": {
+        "top": 698.1484375,
+        "left": 4398.0
+      },
+      "fcn_createonemoresharedinbox_0": {
+        "top": 367.1484375,
+        "left": 4758.0
+      },
+      "fcn_conversedeskvalidationinsaas_1705651539068_0": {
+        "top": 426.1484375,
+        "left": 4758.0
+      },
+      "fcn_editsharedinboxselectwhatsappwasenderid_1705651539068_0": {
+        "top": 487.1484375,
+        "left": 4758.0
+      },
+      "fcn_assertcountafterreceivingincomingmessagesmssenderidsharedinbox_1705651539068_0": {
+        "top": 573.1484375,
+        "left": 4758.0
+      },
+      "fcn_loginsaas_stduser_1705651539068_0": {
+        "top": 652.296875,
+        "left": 4758.0
+      },
+      "fcn_conversedeskvalidationinsaas_1705651539068_1": {
+        "top": 717.4453125,
+        "left": 4758.0
+      },
+      "fcn_assertcountafterreceivingincomingmessagesmssenderidsharedinbox_1705651539068_1": {
+        "top": 776.4453125,
+        "left": 4758.0
+      },
+      "fcn_assertcountafterreceivingincomingmessagefromwasenderidsharedinbox_1705651539068_0": {
+        "top": 855.59375,
+        "left": 4758.0
+      },
+      "fcn_deletethecreatedsharedinbox_0": {
+        "top": 362.1484375,
+        "left": 5108.0
+      },
+      "fcn_conversedeskvalidationinsaas_1705651518301_0": {
+        "top": 444.1484375,
+        "left": 5108.0
+      },
+      "fcn_assertadminuserhasaccesstoeditanddeletethesharedinbox_1705651518301_0": {
+        "top": 503.1484375,
+        "left": 5108.0
+      },
+      "fcn_loginsaas_stduser_1705651518301_0": {
+        "top": 584.1484375,
+        "left": 5108.0
+      },
+      "fcn_conversedeskvalidationinsaas_1705651518301_1": {
+        "top": 649.296875,
+        "left": 5108.0
+      },
+      "fcn_assertstandarduserisnotabletoeditanddeletesharedinbox_1705651518301_0": {
+        "top": 714.296875,
+        "left": 5108.0
+      },
+      "fcn_logintodifferentsaas_stduser_1705651518301_0": {
+        "top": 783.296875,
+        "left": 5108.0
+      },
+      "fcn_conversedeskvalidationinsaas_1705651518301_2": {
+        "top": 846.453125,
+        "left": 5108.0
+      },
+      "fcn_assertstandarduserisnotabletoeditanddeletesharedinbox_1705651518301_1": {
+        "top": 902.453125,
+        "left": 5108.0
+      },
+      "fcn_deletethecreatedsharedinbox_1": {
+        "top": 370.1484375,
+        "left": 5444.0
+      },
+      "fcn_conversedeskvalidationinsaas_1705651494068_0": {
+        "top": 440.1484375,
+        "left": 5444.0
+      },
+      "fcn_clickoncreatesharedinbox_1705651494068_0": {
+        "top": 499.1484375,
+        "left": 5444.0
+      },
+      "fcn_enterdetailstocreateonemoresharedinboxandcreate_1705651494068_0": {
+        "top": 558.1484375,
+        "left": 5444.0
+      },
+      "fcn_assertcreatedinboxsharedinbox_1705651494068_0": {
+        "top": 637.296875,
+        "left": 5444.0
+      },
+      "fcn_loginsaas_stduser_1705651494068_0": {
+        "top": 702.4453125,
+        "left": 5444.0
+      },
+      "fcn_conversedeskvalidationinsaas_1705651494068_1": {
+        "top": 767.59375,
+        "left": 5444.0
+      },
+      "fcn_assertcreatedinboxsharedinbox_1705651494068_1": {
+        "top": 826.59375,
+        "left": 5444.0
+      },
+      "fcn_gotoadminuserandtrytocreateinboxwithsamedetailssharedinbox_1705651494068_0": {
+        "top": 891.7421875,
+        "left": 5444.0
+      },
+      "fcn_asserttheerrormessage_1705651494068_0": {
+        "top": 970.890625,
+        "left": 5444.0
+      },
+      "fcn_editcreatedsharedinboxandentersamedetailsasalreadycreatedsharedinboxwasenderidwebsenderid_1705651494068_0": {
+        "top": 1029.890625,
+        "left": 5444.0
+      },
+      "fcn_asserttheerrormessage_1705651494068_1": {
+        "top": 1129.203125,
+        "left": 5444.0
+      },
+      "fcn_deletethecreatedsharedinbox_1705651494068_0": {
+        "top": 1188.203125,
+        "left": 5444.0
+      },
+      "fcn_deletethecreatedsharedinbox_2": {
+        "top": 377.1484375,
+        "left": 5776.0
+      },
+      "fcn_conversedeskvalidationinsaas_1705651457892_0": {
+        "top": 443.1484375,
+        "left": 5776.0
+      },
+      "fcn_deletethesharedinbox_1705651457892_0": {
+        "top": 502.1484375,
+        "left": 5776.0
+      },
+      "fcn_assertdeletedsharedinboxisnotvisibleonconversedesk_1705651457892_0": {
+        "top": 567.296875,
+        "left": 5776.0
+      },
+      "fcn_loginsaas_stduser_1705651457892_0": {
+        "top": 646.4453125,
+        "left": 5776.0
+      },
+      "fcn_conversedeskvalidationinsaas_1705651457892_1": {
+        "top": 711.59375,
+        "left": 5776.0
+      },
+      "fcn_assertdeletedsharedinboxisnotvisibleonconversedesk_1705651457892_1": {
+        "top": 770.59375,
+        "left": 5776.0
+      },
+      "fcn_logintobeconversive_1724756686304_0": {
+        "top": 257.0,
+        "left": 6181.0
+      },
+      "fcn_markavailabilitystatusinactivewhenusergetloggedout_1724756990206_0": {
+        "top": 333.1484375,
+        "left": 6178.0
+      },
+      "fcn_verifysystembehaviorwhenauserismarkedasavailableandisloggedoutimmediatelyduetoinactivity_1724756990206_0": {
+        "top": 418.1484375,
+        "left": 6179.0
+      },
+      "fcn_conversedeskvalidationinsaas_1724756990206_0": {
+        "top": 512.1484375,
+        "left": 6180.0
+      },
+      "fcn_setuserasactive_1724756990206_0": {
+        "top": 577.1484375,
+        "left": 6179.0
+      },
+      "fcn_logoutuser_1724756990206_0": {
+        "top": 643.1484375,
+        "left": 6177.0
+      },
+      "fcn_logintobeconversive_1724757017488_0": {
+        "top": 703.1484375,
+        "left": 6177.0
+      },
+      "fcn_navigatetobeconversiveconversedesk_1724757841401_0": {
+        "top": 773.296875,
+        "left": 6177.0
+      },
+      "fcn_verifyavailabilitystatus_1724757847231_0": {
+        "top": 832.296875,
+        "left": 6177.0
+      }
+    }
+  },
+  "enabled": true,
+  "parentId": ""
+}

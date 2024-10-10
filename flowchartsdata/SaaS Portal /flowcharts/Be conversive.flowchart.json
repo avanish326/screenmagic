@@ -1,0 +1,2047 @@
+{
+  "modifiedOn": "2024-02-26T14:19:03.550Z",
+  "name": "Be conversive",
+  "id": "17161",
+  "type": 0,
+  "createdOn": "2023-10-23T12:03:53.034Z",
+  "content": {
+    "settings": {
+      "maxProceedDepth": 100,
+      "maxProceedsForFirstDepth": 1,
+      "maxProceedsPerDepth": 1,
+      "maxPathRepititionsPerComboPath": 1,
+      "maxProceedsPerPath": 10000,
+      "maxToggles": 2,
+      "maxMatchingPaths": 3
+    },
+    "flowChartUID": "fcUID_1708084444209",
+    "nodesMap": {
+      "fcn_start_0": {
+        "dataSetId": -1,
+        "id": "fcn_start_0",
+        "nodeType": "start",
+        "branches": [
+          "fcn_createsaas_portal_login_1698062658123_0",
+          "fcn_createbeconversiveaccount_0"
+        ],
+        "content": "Start"
+      },
+      "fcn_createsaas_portal_login_1698062658123_0": {
+        "dataSetId": -1,
+        "id": "fcn_createsaas_portal_login_1698062658123_0",
+        "nodeType": "pathlabel",
+        "branches": [
+          "fcn_logintosaasportal_1698062658123_0",
+          "fcn_navigatetointegrationpage_0",
+          "fcn_navigatetousecasepage_0",
+          "fcn_getaccountidinbeconversive_0",
+          "fcn_logintobeconversive_3"
+        ],
+        "content": "Create be_conversive_login"
+      },
+      "fcn_logintosaasportal_1698062658123_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintosaasportal_1698062658123_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertwelcomecard_0",
+          "fcn_explorerecipeprospectivestudent_0",
+          "fcn_verifyyoutubelink_0",
+          "fcn_runapiforcards_0",
+          "fcn_connector_0",
+          "fcn_entercampaignnamecampaign_1707284129049_0"
+        ],
+        "content": "login to $beconversive"
+      },
+      "fcn_createbeconversiveaccount_0": {
+        "dataSetId": -1,
+        "id": "fcn_createbeconversiveaccount_0",
+        "nodeType": "pathlabel",
+        "branches": [
+          "fcn_beconversive_signup_0",
+          "fcn_resetthepassword_0",
+          "fcn_logintobeconversive_2",
+          "fcn_logintothebeconversive_0"
+        ],
+        "content": "Create beConversive Account"
+      },
+      "fcn_beconversive_signup_0": {
+        "dataSetId": -1,
+        "id": "fcn_beconversive_signup_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_selectplgforbeconversivesignup_0",
+          "fcn_newbeconversivesignup_1"
+        ],
+        "content": "@beconversive_signup"
+      },
+      "fcn_selectplgforbeconversivesignup_0": {
+        "dataSetId": -1,
+        "id": "fcn_selectplgforbeconversivesignup_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logintoopsportallogintrial_signup_0",
+          "fcn_logintohubspot_0",
+          "fcn_logintogmailemaillogin_1699345192074_0"
+        ],
+        "content": "select plg for $beconversivesignup"
+      },
+      "fcn_logintogmailemaillogin_1699345192074_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintogmailemaillogin_1699345192074_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_confirmaccountforbeconversivesignup_0"
+        ],
+        "content": "Login to gmail $emaillogin"
+      },
+      "fcn_confirmaccountforbeconversivesignup_0": {
+        "dataSetId": -1,
+        "id": "fcn_confirmaccountforbeconversivesignup_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_setthepassword_1699614497310_0"
+        ],
+        "content": "confirm account for $beconversivesignup"
+      },
+      "fcn_selectslgsetupforbeconversivesignup_0": {
+        "dataSetId": -1,
+        "id": "fcn_selectslgsetupforbeconversivesignup_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logintosandboxandcreateaccount_0"
+        ],
+        "content": "select slg setup for $beconversivesignup"
+      },
+      "fcn_setthepassword_1699614497310_0": {
+        "dataSetId": -1,
+        "id": "fcn_setthepassword_1699614497310_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertautologinbeconversivesignup_0"
+        ],
+        "content": "Set the password for $beconversivesignup"
+      },
+      "fcn_navigatetointegrationpage_0": {
+        "dataSetId": -1,
+        "id": "fcn_navigatetointegrationpage_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertallcrmsaretheironintegrationpage_0"
+        ],
+        "content": "navigate to integration page"
+      },
+      "fcn_assertallcrmsaretheironintegrationpage_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertallcrmsaretheironintegrationpage_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_isconsentenabled_1700050229049_0"
+        ],
+        "content": "assert all crms are their on integration page"
+      },
+      "fcn_exampleforbeconversivexamplekt_1700050163048_0": {
+        "dataSetId": -1,
+        "id": "fcn_exampleforbeconversivexamplekt_1700050163048_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "example for $beconversivexample KT"
+      },
+      "fcn_isconsentenabled_1700050229049_0": {
+        "dataSetId": -1,
+        "id": "fcn_isconsentenabled_1700050229049_0",
+        "nodeType": "dynamic-decision",
+        "branches": [
+          "fcn_checktheintegratedconnected_0",
+          "fcn_enabletheintegartion_0"
+        ],
+        "content": "is integration disabled?"
+      },
+      "fcn_enabletheintegartion_0": {
+        "dataSetId": -1,
+        "id": "fcn_enabletheintegartion_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_searchthecrm_0"
+        ],
+        "content": "enable the integartion "
+      },
+      "fcn_checktheintegratedconnected_0": {
+        "dataSetId": -1,
+        "id": "fcn_checktheintegratedconnected_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_searchthecrm_0"
+        ],
+        "content": "check the integrated connected"
+      },
+      "fcn_searchthecrm_0": {
+        "dataSetId": -1,
+        "id": "fcn_searchthecrm_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "search the $integartion "
+      },
+      "fcn_navigatetousecasepage_0": {
+        "dataSetId": -1,
+        "id": "fcn_navigatetousecasepage_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_validatehelpbuttononusecasepage_0"
+        ],
+        "content": "navigate to usecase page"
+      },
+      "fcn_validatehelpbuttononusecasepage_0": {
+        "dataSetId": -1,
+        "id": "fcn_validatehelpbuttononusecasepage_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_selectwelcomeusecase_0",
+          "fcn_selectstudentinformationusecase_0"
+        ],
+        "content": "validate help button on usecase page"
+      },
+      "fcn_selectwelcomeusecase_0": {
+        "dataSetId": -1,
+        "id": "fcn_selectwelcomeusecase_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "select welcome usecase"
+      },
+      "fcn_selectstudentinformationusecase_0": {
+        "dataSetId": -1,
+        "id": "fcn_selectstudentinformationusecase_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "select student information usecase"
+      },
+      "fcn_assertwelcomecard_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertwelcomecard_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertsetupyouraccountcontactcard_0"
+        ],
+        "content": "Assert Welcome Card: Explore Integration"
+      },
+      "fcn_assertsetupyouraccountcontactcard_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertsetupyouraccountcontactcard_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertsertupyouraccountexploreintegration_0"
+        ],
+        "content": "Assert Setup Your Account-Contact Card"
+      },
+      "fcn_assertsertupyouraccountexploreintegration_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertsertupyouraccountexploreintegration_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertsetupyouraccountinviteteammates_0"
+        ],
+        "content": "Assert Sertup Your Account-Explore integration"
+      },
+      "fcn_assertsetupyouraccountinviteteammates_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertsetupyouraccountinviteteammates_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertsetupyouraccountsetupchannels_0"
+        ],
+        "content": "Assert Setup Your Account-Invite Team-mates"
+      },
+      "fcn_assertsetupyouraccountsetupchannels_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertsetupyouraccountsetupchannels_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertsetupyouraccountgrowyourcontact_0"
+        ],
+        "content": "Assert Setup Your Account-Setup Channels"
+      },
+      "fcn_assertsetupyouraccountgrowyourcontact_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertsetupyouraccountgrowyourcontact_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Assert Setup Your Account- Grow Your Contact"
+      },
+      "fcn_getaccountidinbeconversive_0": {
+        "dataSetId": -1,
+        "id": "fcn_getaccountidinbeconversive_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_asserttheembeddedmessagingflag_0"
+        ],
+        "content": "get $accountid in be conversive"
+      },
+      "fcn_asserttheembeddedmessagingflag_0": {
+        "dataSetId": -1,
+        "id": "fcn_asserttheembeddedmessagingflag_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertconversivebuttoniscreatedwithdefaultvaluesinbeconversiveaccountid_0"
+        ],
+        "content": "Assert the Embedded Messaging flag "
+      },
+      "fcn_assertconversivebuttoniscreatedwithdefaultvaluesinbeconversiveaccountid_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertconversivebuttoniscreatedwithdefaultvaluesinbeconversiveaccountid_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Assert Conversive Button is created with default values in be conversive $accountid"
+      },
+      "fcn_explorerecipeprospectivestudent_0": {
+        "dataSetId": -1,
+        "id": "fcn_explorerecipeprospectivestudent_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_explorerecipeenrollmentnotification_0"
+        ],
+        "content": "Explore Recipe: Prospective Student"
+      },
+      "fcn_explorerecipeenrollmentnotification_0": {
+        "dataSetId": -1,
+        "id": "fcn_explorerecipeenrollmentnotification_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_explorerecipetestingonqa_0"
+        ],
+        "content": "Explore Recipe: Enrollment Notification"
+      },
+      "fcn_explorerecipetestingonqa_0": {
+        "dataSetId": -1,
+        "id": "fcn_explorerecipetestingonqa_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Explore Recipe: Testing on QA"
+      },
+      "fcn_verifyyoutubelink_0": {
+        "dataSetId": -1,
+        "id": "fcn_verifyyoutubelink_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "verify youtube link"
+      },
+      "fcn_logintoopsportallogintrial_signup_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintoopsportallogintrial_signup_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checkthestatus_0",
+          "fcn_checkthestatus_1"
+        ],
+        "content": "Login to $opsportallogin"
+      },
+      "fcn_checkthestatus_0": {
+        "dataSetId": -1,
+        "id": "fcn_checkthestatus_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "OPS Industry $beconversivesignup"
+      },
+      "fcn_checkthestatusafterverification_0": {
+        "dataSetId": -1,
+        "id": "fcn_checkthestatusafterverification_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "check the status after verification"
+      },
+      "fcn_logintosandboxandcreateaccount_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintosandboxandcreateaccount_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logintoopsportallogin_1701331663490_0"
+        ],
+        "content": "login to sandbox and create account $beconversivesignup"
+      },
+      "fcn_logintoopsportallogin_1701331663490_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintoopsportallogin_1701331663490_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logintogmailemaillogin_1701431555324_0"
+        ],
+        "content": "Login to $opsportallogin"
+      },
+      "fcn_runapiforcards_0": {
+        "dataSetId": -1,
+        "id": "fcn_runapiforcards_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_welcomecards_0"
+        ],
+        "content": "Setup Your Account $beconversive"
+      },
+      "fcn_logintohubspot_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintohubspot_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "login to hubspot"
+      },
+      "fcn_logintogmailemaillogin_1701431555324_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintogmailemaillogin_1701431555324_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_confirmaccountforbeconversivesignup_1701431555324_0"
+        ],
+        "content": "Login to gmail $emaillogin"
+      },
+      "fcn_confirmaccountforbeconversivesignup_1701431555324_0": {
+        "dataSetId": -1,
+        "id": "fcn_confirmaccountforbeconversivesignup_1701431555324_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_setthepasswordforbeconversivesignup_1701431555324_0"
+        ],
+        "content": "confirm account for $beconversivesignup"
+      },
+      "fcn_setthepasswordforbeconversivesignup_1701431555324_0": {
+        "dataSetId": -1,
+        "id": "fcn_setthepasswordforbeconversivesignup_1701431555324_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checkthestatusafterverification_0"
+        ],
+        "content": "Set the password for $beconversivesignup"
+      },
+      "fcn_asserttutorialcard1_0": {
+        "dataSetId": -1,
+        "id": "fcn_asserttutorialcard1_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_asserttipsandbestpracticescards_0"
+        ],
+        "content": "Assert Tutorial: Card1"
+      },
+      "fcn_connector_0": {
+        "dataSetId": -1,
+        "id": "fcn_connector_0",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_asserttutorialcard1_0"
+        ],
+        "content": "Connector"
+      },
+      "fcn_resetthepassword_0": {
+        "dataSetId": -1,
+        "id": "fcn_resetthepassword_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logintogmailemaillogin_1702542888355_0"
+        ],
+        "content": "go to forgot $beconversive"
+      },
+      "fcn_gotoresetpassword_0": {
+        "dataSetId": -1,
+        "id": "fcn_gotoresetpassword_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_resetthepassword_1"
+        ],
+        "content": "go to reset $password"
+      },
+      "fcn_asserttipsandbestpracticescards_0": {
+        "dataSetId": -1,
+        "id": "fcn_asserttipsandbestpracticescards_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Assert Tips and Best Practices Cards"
+      },
+      "fcn_checkthedisposablemail_0": {
+        "dataSetId": -1,
+        "id": "fcn_checkthedisposablemail_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "check the disposable mail"
+      },
+      "fcn_checkthestatus_1": {
+        "dataSetId": -1,
+        "id": "fcn_checkthestatus_1",
+        "nodeType": "action",
+        "branches": [],
+        "content": "check the status"
+      },
+      "fcn_welcomecards_0": {
+        "dataSetId": -1,
+        "id": "fcn_welcomecards_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_tutorial_0"
+        ],
+        "content": "Welcome Cards"
+      },
+      "fcn_tutorial_0": {
+        "dataSetId": -1,
+        "id": "fcn_tutorial_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_tipsandbestpractices_0"
+        ],
+        "content": "Tutorial"
+      },
+      "fcn_tipsandbestpractices_0": {
+        "dataSetId": -1,
+        "id": "fcn_tipsandbestpractices_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_explorerecipe_0"
+        ],
+        "content": "Tips and Best Practices"
+      },
+      "fcn_explorerecipe_0": {
+        "dataSetId": -1,
+        "id": "fcn_explorerecipe_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Explore Recipe"
+      },
+      "fcn_assertautologinbeconversivesignup_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertautologinbeconversivesignup_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checkthesidebar_0"
+        ],
+        "content": "assert auto-login $beconversivesignup"
+      },
+      "fcn_checkthesidebar_0": {
+        "dataSetId": -1,
+        "id": "fcn_checkthesidebar_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checkthesidebarafterexpanding_0"
+        ],
+        "content": "check the side bar"
+      },
+      "fcn_checkthesidebarafterexpanding_0": {
+        "dataSetId": -1,
+        "id": "fcn_checkthesidebarafterexpanding_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_asserttheiconsontopbar_0"
+        ],
+        "content": "check the side bar after expanding "
+      },
+      "fcn_resetthepassword_1": {
+        "dataSetId": -1,
+        "id": "fcn_resetthepassword_1",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertresetpasswordautologinbeconversivesignup_0",
+          "fcn_reattemptforgotpasswordlink_0"
+        ],
+        "content": "Reset the $password"
+      },
+      "fcn_assertresetpasswordautologinbeconversivesignup_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertresetpasswordautologinbeconversivesignup_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_gotoforgotbeconversive_1706622613552_0"
+        ],
+        "content": "assert reset password auto-login $beconversivesignup"
+      },
+      "fcn_asserttheiconsontopbar_0": {
+        "dataSetId": -1,
+        "id": "fcn_asserttheiconsontopbar_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "assert the icons on top bar"
+      },
+      "fcn_assertthecontentisaccountsettingbeconversivesignup_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertthecontentisaccountsettingbeconversivesignup_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logintoopsportallogin_0"
+        ],
+        "content": "assert the content is account setting $beconversivesignup"
+      },
+      "fcn_logintogmailemaillogin_1702542888355_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintogmailemaillogin_1702542888355_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_gotoresetpassword_0"
+        ],
+        "content": "Login to gmail $emaillogin"
+      },
+      "fcn_gotoaccountsettings_0": {
+        "dataSetId": -1,
+        "id": "fcn_gotoaccountsettings_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_usermanagementtabbeconversivesignup_0"
+        ],
+        "content": "overview tab $beconversivesignup"
+      },
+      "fcn_usermanagementtabbeconversivesignup_0": {
+        "dataSetId": -1,
+        "id": "fcn_usermanagementtabbeconversivesignup_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_inviteuserbeconversivesignup_0"
+        ],
+        "content": "user management tab $beconversivesignup"
+      },
+      "fcn_logintoopsportallogin_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintoopsportallogin_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_takethevaluesfromopsbeconversivesignup_0"
+        ],
+        "content": "Login to $opsportallogin"
+      },
+      "fcn_takethevaluesfromopsbeconversivesignup_0": {
+        "dataSetId": -1,
+        "id": "fcn_takethevaluesfromopsbeconversivesignup_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_gobacktobeconversive_0"
+        ],
+        "content": "take the values from ops $beconversivesignup"
+      },
+      "fcn_gobacktobeconversive_0": {
+        "dataSetId": -1,
+        "id": "fcn_gobacktobeconversive_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_gotoaccountsettings_0"
+        ],
+        "content": "go back to beconversive"
+      },
+      "fcn_changeuserdetailsbeconversivesignup_0": {
+        "dataSetId": -1,
+        "id": "fcn_changeuserdetailsbeconversivesignup_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_unassignlicensebeconversivesignup_0"
+        ],
+        "content": "change user details $beconversivesignup"
+      },
+      "fcn_inviteuserbeconversivesignup_0": {
+        "dataSetId": -1,
+        "id": "fcn_inviteuserbeconversivesignup_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_changeuserdetailsbeconversivesignup_0"
+        ],
+        "content": "invite user $beconversivesignup"
+      },
+      "fcn_unassignlicensebeconversivesignup_0": {
+        "dataSetId": -1,
+        "id": "fcn_unassignlicensebeconversivesignup_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_deleteuserbeconversivesignup_0"
+        ],
+        "content": "unassign license $beconversivesignup"
+      },
+      "fcn_deleteuserbeconversivesignup_0": {
+        "dataSetId": -1,
+        "id": "fcn_deleteuserbeconversivesignup_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_accountstabbeconversivesignup_0"
+        ],
+        "content": "delete user $beconversivesignup"
+      },
+      "fcn_accountstabbeconversivesignup_0": {
+        "dataSetId": -1,
+        "id": "fcn_accountstabbeconversivesignup_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logintoopsportallogin_1"
+        ],
+        "content": "Accounts tab $beconversivesignup"
+      },
+      "fcn_logintoopsportallogin_1": {
+        "dataSetId": -1,
+        "id": "fcn_logintoopsportallogin_1",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertaccountvaluesbeconversivesignup_0"
+        ],
+        "content": "Login to $opsportallogin"
+      },
+      "fcn_assertaccountvaluesbeconversivesignup_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertaccountvaluesbeconversivesignup_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Assert account values $beconversivesignup"
+      },
+      "fcn_logintobeconversive_2": {
+        "dataSetId": -1,
+        "id": "fcn_logintobeconversive_2",
+        "nodeType": "action",
+        "branches": [
+          "fcn_gotoaccountsettingsbeconversive_0",
+          "fcn_removegoalsandmilestone_0",
+          "fcn_navigatetousermanagmentforvalidation_1706710569427_0",
+          "fcn_closecardnewui_0"
+        ],
+        "content": "login to $beconversive"
+      },
+      "fcn_gotoaccountsettingsbeconversive_0": {
+        "dataSetId": -1,
+        "id": "fcn_gotoaccountsettingsbeconversive_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_gotobillingandcards_1",
+          "fcn_gotopasswordsection_0",
+          "fcn_gotocompanyprofile_0",
+          "fcn_gotoemailnotification_0"
+        ],
+        "content": "go to account settings $beconversive"
+      },
+      "fcn_gotobillingandcards_1": {
+        "dataSetId": -1,
+        "id": "fcn_gotobillingandcards_1",
+        "nodeType": "action",
+        "branches": [
+          "fcn_billinginformation_1"
+        ],
+        "content": "go to billing and cards"
+      },
+      "fcn_billinginformation_1": {
+        "dataSetId": -1,
+        "id": "fcn_billinginformation_1",
+        "nodeType": "action",
+        "branches": [
+          "fcn_editthebillinginformationbeconversive_0"
+        ],
+        "content": "Billing information"
+      },
+      "fcn_editthebillinginformationbeconversive_0": {
+        "dataSetId": -1,
+        "id": "fcn_editthebillinginformationbeconversive_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_carddetailsbeconversive_1"
+        ],
+        "content": "Edit the billing information $beconversive"
+      },
+      "fcn_carddetailsbeconversive_1": {
+        "dataSetId": -1,
+        "id": "fcn_carddetailsbeconversive_1",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logintoopsportallogin_3"
+        ],
+        "content": "card details $beconversive"
+      },
+      "fcn_logintoopsportallogin_3": {
+        "dataSetId": -1,
+        "id": "fcn_logintoopsportallogin_3",
+        "nodeType": "action",
+        "branches": [
+          "fcn_searchtheaccountbeconversive_0"
+        ],
+        "content": "Login to $opsportallogin"
+      },
+      "fcn_searchtheaccountbeconversive_0": {
+        "dataSetId": -1,
+        "id": "fcn_searchtheaccountbeconversive_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_verifythecardbeconversive_1"
+        ],
+        "content": "search the account $beconversive"
+      },
+      "fcn_verifythecardbeconversive_1": {
+        "dataSetId": -1,
+        "id": "fcn_verifythecardbeconversive_1",
+        "nodeType": "action",
+        "branches": [
+          "fcn_gobacktobeconversive_1705069358887_0"
+        ],
+        "content": "verify the card $beconversive"
+      },
+      "fcn_gobacktobeconversive_1705069358887_0": {
+        "dataSetId": -1,
+        "id": "fcn_gobacktobeconversive_1705069358887_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_verifyprimary_1705069367155_0"
+        ],
+        "content": "go back to beconversive"
+      },
+      "fcn_verifyprimary_1705069367155_0": {
+        "dataSetId": -1,
+        "id": "fcn_verifyprimary_1705069367155_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_addanothercardbeconversive_1"
+        ],
+        "content": "verify primary"
+      },
+      "fcn_addanothercardbeconversive_1": {
+        "dataSetId": -1,
+        "id": "fcn_addanothercardbeconversive_1",
+        "nodeType": "action",
+        "branches": [
+          "fcn_gobacktoopsopsportallogin_1"
+        ],
+        "content": "add another card $beconversive"
+      },
+      "fcn_gobacktoopsopsportallogin_1": {
+        "dataSetId": -1,
+        "id": "fcn_gobacktoopsopsportallogin_1",
+        "nodeType": "action",
+        "branches": [
+          "fcn_verifythecardtwobeconversive_1"
+        ],
+        "content": "go back to ops $opsportallogin"
+      },
+      "fcn_verifythecardtwobeconversive_1": {
+        "dataSetId": -1,
+        "id": "fcn_verifythecardtwobeconversive_1",
+        "nodeType": "action",
+        "branches": [
+          "fcn_gobacktobeconversive_1705069448017_0"
+        ],
+        "content": "verify the card two $beconversive"
+      },
+      "fcn_gobacktobeconversive_1705069448017_0": {
+        "dataSetId": -1,
+        "id": "fcn_gobacktobeconversive_1705069448017_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_verifyactive_1705069453465_0"
+        ],
+        "content": "go back to beconversive"
+      },
+      "fcn_verifyactive_1705069453465_0": {
+        "dataSetId": -1,
+        "id": "fcn_verifyactive_1705069453465_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_gobacktoopsopsportallogin_2"
+        ],
+        "content": "verify active"
+      },
+      "fcn_removecard_1705069463817_0": {
+        "dataSetId": -1,
+        "id": "fcn_removecard_1705069463817_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "remove card"
+      },
+      "fcn_gotopasswordsection_0": {
+        "dataSetId": -1,
+        "id": "fcn_gotopasswordsection_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_wrongpasswordbeconversive_0"
+        ],
+        "content": "go to password section"
+      },
+      "fcn_wrongpasswordbeconversive_0": {
+        "dataSetId": -1,
+        "id": "fcn_wrongpasswordbeconversive_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_correctpasswordbeconversive_0"
+        ],
+        "content": "wrong password $beconversive"
+      },
+      "fcn_correctpasswordbeconversive_0": {
+        "dataSetId": -1,
+        "id": "fcn_correctpasswordbeconversive_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_changethepasswordlbeconversive_0"
+        ],
+        "content": "Correct password $beconversive"
+      },
+      "fcn_changethepasswordlbeconversive_0": {
+        "dataSetId": -1,
+        "id": "fcn_changethepasswordlbeconversive_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "change the passwordl $beconversive"
+      },
+      "fcn_gobacktoopsopsportallogin_2": {
+        "dataSetId": -1,
+        "id": "fcn_gobacktoopsopsportallogin_2",
+        "nodeType": "action",
+        "branches": [
+          "fcn_blockthecard_0"
+        ],
+        "content": "go back to ops $opsportallogin"
+      },
+      "fcn_blockthecard_0": {
+        "dataSetId": -1,
+        "id": "fcn_blockthecard_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_gobacktobeconversive_1705310103669_0"
+        ],
+        "content": "Block the card"
+      },
+      "fcn_gobacktobeconversive_1705310103669_0": {
+        "dataSetId": -1,
+        "id": "fcn_gobacktobeconversive_1705310103669_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_removecard_1705069463817_0"
+        ],
+        "content": "go back to beconversive"
+      },
+      "fcn_newbeconversivesignup_1": {
+        "dataSetId": -1,
+        "id": "fcn_newbeconversivesignup_1",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checkthedisposablemail_0",
+          "fcn_selectplgforbeconversivesignup_0",
+          "fcn_selectslgsetupforbeconversivesignup_0"
+        ],
+        "content": "new $beconversivesignup"
+      },
+      "fcn_inviteuserfromusermanagementbeconversivesignup_0": {
+        "dataSetId": -1,
+        "id": "fcn_inviteuserfromusermanagementbeconversivesignup_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logintogmailemaillogin_0",
+          "fcn_checkthenumberofusersonaccount_0"
+        ],
+        "content": "invite user from user management $beconversivesignup"
+      },
+      "fcn_assertthecontentisaccountsettingbeconversivesignup_1": {
+        "dataSetId": -1,
+        "id": "fcn_assertthecontentisaccountsettingbeconversivesignup_1",
+        "nodeType": "action",
+        "branches": [
+          "fcn_usermanagementtabbeconversivesignup_1"
+        ],
+        "content": "assert the content is account setting $beconversivesignup"
+      },
+      "fcn_usermanagementtabbeconversivesignup_1": {
+        "dataSetId": -1,
+        "id": "fcn_usermanagementtabbeconversivesignup_1",
+        "nodeType": "action",
+        "branches": [
+          "fcn_inviteuserfromusermanagementbeconversivesignup_0"
+        ],
+        "content": "user management tab $beconversivesignup"
+      },
+      "fcn_logintobeconversive_3": {
+        "dataSetId": -1,
+        "id": "fcn_logintobeconversive_3",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checkthestatusafterverification_0",
+          "fcn_checkthesidebar_0",
+          "fcn_assertthecontentisaccountsettingbeconversivesignup_0",
+          "fcn_getaccountidinbeconversive_0",
+          "fcn_assertthecontentisaccountsettingbeconversivesignup_1"
+        ],
+        "content": "login to $beconversive"
+      },
+      "fcn_logintogmailemaillogin_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintogmailemaillogin_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_confirmtheinviteduserbeconversivesignup_0"
+        ],
+        "content": "Login to gmail $emaillogin"
+      },
+      "fcn_loginagaintobeconversivesingup_0": {
+        "dataSetId": -1,
+        "id": "fcn_loginagaintobeconversivesingup_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "login again to $beconversivesingup"
+      },
+      "fcn_asserttheinviteautologinbeconversivesignup_0": {
+        "dataSetId": -1,
+        "id": "fcn_asserttheinviteautologinbeconversivesignup_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_loginagaintobeconversivesingup_0",
+          "fcn_gotocompanyprofilebeconversive_0"
+        ],
+        "content": "assert the invite auto login $beconversivesignup"
+      },
+      "fcn_confirmtheinviteduserbeconversivesignup_0": {
+        "dataSetId": -1,
+        "id": "fcn_confirmtheinviteduserbeconversivesignup_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_registerinviteuserbeconversivesignup_0"
+        ],
+        "content": "confirm the invited user $beconversivesignup"
+      },
+      "fcn_registerinviteuserbeconversivesignup_0": {
+        "dataSetId": -1,
+        "id": "fcn_registerinviteuserbeconversivesignup_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_asserttheinviteautologinbeconversivesignup_0"
+        ],
+        "content": "register invite user $beconversivesignup"
+      },
+      "fcn_gotocompanyprofile_0": {
+        "dataSetId": -1,
+        "id": "fcn_gotocompanyprofile_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_gotouserpermission_0",
+          "fcn_checkforlogooption_0"
+        ],
+        "content": "go to company profile $beconversive"
+      },
+      "fcn_gotouserpermission_0": {
+        "dataSetId": -1,
+        "id": "fcn_gotouserpermission_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checktheboxesanduncheck_0"
+        ],
+        "content": "go to user permission "
+      },
+      "fcn_checktheboxesanduncheck_0": {
+        "dataSetId": -1,
+        "id": "fcn_checktheboxesanduncheck_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_gotomanageaccess_0"
+        ],
+        "content": "check the boxes and uncheck"
+      },
+      "fcn_gotomanageaccess_0": {
+        "dataSetId": -1,
+        "id": "fcn_gotomanageaccess_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "go to manage access"
+      },
+      "fcn_gotocompanyprofilebeconversive_0": {
+        "dataSetId": -1,
+        "id": "fcn_gotocompanyprofilebeconversive_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "go to company profile $beconversive"
+      },
+      "fcn_checkforlogooption_0": {
+        "dataSetId": -1,
+        "id": "fcn_checkforlogooption_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_importalogobeconversive_0"
+        ],
+        "content": "check for logo option $beconversive"
+      },
+      "fcn_importalogobeconversive_0": {
+        "dataSetId": -1,
+        "id": "fcn_importalogobeconversive_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checkthesuccessmessage_0"
+        ],
+        "content": "import a logo $beconversive"
+      },
+      "fcn_checkthesuccessmessage_0": {
+        "dataSetId": -1,
+        "id": "fcn_checkthesuccessmessage_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_inviteuserfromusermanagementbeconversivesignup_1",
+          "fcn_convertadmintostdbeconversive_0"
+        ],
+        "content": "check the success message"
+      },
+      "fcn_reattemptforgotpasswordlink_0": {
+        "dataSetId": -1,
+        "id": "fcn_reattemptforgotpasswordlink_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_resetthepassword_1706177948526_0"
+        ],
+        "content": "Re-attempt Forgot Password Link"
+      },
+      "fcn_resetthepassword_1706177948526_0": {
+        "dataSetId": -1,
+        "id": "fcn_resetthepassword_1706177948526_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_asserterrormessage_0"
+        ],
+        "content": "Reset the $password"
+      },
+      "fcn_asserterrormessage_0": {
+        "dataSetId": -1,
+        "id": "fcn_asserterrormessage_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Assert Error Message"
+      },
+      "fcn_removegoalsandmilestone_0": {
+        "dataSetId": -1,
+        "id": "fcn_removegoalsandmilestone_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_closeallcardsandverify_0"
+        ],
+        "content": "remove goals and milestone"
+      },
+      "fcn_closeallcardsandverify_0": {
+        "dataSetId": -1,
+        "id": "fcn_closeallcardsandverify_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checkthesections_0"
+        ],
+        "content": "close all cards and verify"
+      },
+      "fcn_gotoforgotbeconversive_1706622613552_0": {
+        "dataSetId": -1,
+        "id": "fcn_gotoforgotbeconversive_1706622613552_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_navigatetoemail_0"
+        ],
+        "content": "go to forgot $beconversive"
+      },
+      "fcn_navigatetoemail_0": {
+        "dataSetId": -1,
+        "id": "fcn_navigatetoemail_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_gotoresetpassword_1706629718663_0"
+        ],
+        "content": "Navigate to Email"
+      },
+      "fcn_gotoresetpassword_1706629718663_0": {
+        "dataSetId": -1,
+        "id": "fcn_gotoresetpassword_1706629718663_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_resetpasswordwitholdpassword_0"
+        ],
+        "content": "go to reset $password"
+      },
+      "fcn_resetpasswordwitholdpassword_0": {
+        "dataSetId": -1,
+        "id": "fcn_resetpasswordwitholdpassword_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Reset Password with Old password"
+      },
+      "fcn_navigatetousermanagmentforvalidation_1706710569427_0": {
+        "dataSetId": -1,
+        "id": "fcn_navigatetousermanagmentforvalidation_1706710569427_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_editinusermanagment_1706710569427_0"
+        ],
+        "content": "navigate to $usermanagment for validation"
+      },
+      "fcn_editinusermanagment_1706710569427_0": {
+        "dataSetId": -1,
+        "id": "fcn_editinusermanagment_1706710569427_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_validatetextfieldinusermanagment_1706710569427_0"
+        ],
+        "content": "edit in $usermanagment "
+      },
+      "fcn_validatetextfieldinusermanagment_1706710569427_0": {
+        "dataSetId": -1,
+        "id": "fcn_validatetextfieldinusermanagment_1706710569427_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_getaccountid_1706710569427_0"
+        ],
+        "content": "validate text field in $usermanagment"
+      },
+      "fcn_getaccountid_1706710569427_0": {
+        "dataSetId": -1,
+        "id": "fcn_getaccountid_1706710569427_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Get $accountid"
+      },
+      "fcn_entercampaignnamecampaign_1707284129049_0": {
+        "dataSetId": -1,
+        "id": "fcn_entercampaignnamecampaign_1707284129049_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Enter campaign name  $campaign"
+      },
+      "fcn_closecardnewui_0": {
+        "dataSetId": -1,
+        "id": "fcn_closecardnewui_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "closeCardNewUI"
+      },
+      "fcn_checkthesections_0": {
+        "dataSetId": -1,
+        "id": "fcn_checkthesections_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "check the sections"
+      },
+      "fcn_checkcompanyprofileonstandarduser_0": {
+        "dataSetId": -1,
+        "id": "fcn_checkcompanyprofileonstandarduser_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logoutbeconversive_1"
+        ],
+        "content": "check company profile after conversion $beconversive"
+      },
+      "fcn_inviteuserfromusermanagementbeconversivesignup_1": {
+        "dataSetId": -1,
+        "id": "fcn_inviteuserfromusermanagementbeconversivesignup_1",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logintogmailemaillogin_1"
+        ],
+        "content": "invite user from user management $beconversivesignup"
+      },
+      "fcn_logintogmailemaillogin_1": {
+        "dataSetId": -1,
+        "id": "fcn_logintogmailemaillogin_1",
+        "nodeType": "action",
+        "branches": [
+          "fcn_confirmtheinviteduserbeconversivesignup_1"
+        ],
+        "content": "Login to gmail $emaillogin"
+      },
+      "fcn_confirmtheinviteduserbeconversivesignup_1": {
+        "dataSetId": -1,
+        "id": "fcn_confirmtheinviteduserbeconversivesignup_1",
+        "nodeType": "action",
+        "branches": [
+          "fcn_registerinviteuserbeconversivesignup_1"
+        ],
+        "content": "confirm the invited user $beconversivesignup"
+      },
+      "fcn_registerinviteuserbeconversivesignup_1": {
+        "dataSetId": -1,
+        "id": "fcn_registerinviteuserbeconversivesignup_1",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checkcompanyprofileonstandarduser_0"
+        ],
+        "content": "register invite user $beconversivesignup"
+      },
+      "fcn_logoutbeconversive_1": {
+        "dataSetId": -1,
+        "id": "fcn_logoutbeconversive_1",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logintobeconversive_0"
+        ],
+        "content": "logout $beconversive"
+      },
+      "fcn_convertstdusertoadmin_0": {
+        "dataSetId": -1,
+        "id": "fcn_convertstdusertoadmin_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logoutbeconversive_2"
+        ],
+        "content": "convert std user to Admin $beconversivesignup"
+      },
+      "fcn_logintobeconversive_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintobeconversive_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_convertstdusertoadmin_0"
+        ],
+        "content": "login to $beconversive"
+      },
+      "fcn_logoutbeconversive_2": {
+        "dataSetId": -1,
+        "id": "fcn_logoutbeconversive_2",
+        "nodeType": "action",
+        "branches": [
+          "fcn_loginstduserbeconversivesignup_0"
+        ],
+        "content": "logout $beconversive"
+      },
+      "fcn_loginstduserbeconversivesignup_0": {
+        "dataSetId": -1,
+        "id": "fcn_loginstduserbeconversivesignup_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_gotoaccountsettingsbeconversive_1"
+        ],
+        "content": "login std user $beconversivesignup"
+      },
+      "fcn_gotoaccountsettingsbeconversive_1": {
+        "dataSetId": -1,
+        "id": "fcn_gotoaccountsettingsbeconversive_1",
+        "nodeType": "action",
+        "branches": [
+          "fcn_gotostdcompanyprofilebeconversive_0"
+        ],
+        "content": "go to account settings $beconversive"
+      },
+      "fcn_gotostdcompanyprofilebeconversive_0": {
+        "dataSetId": -1,
+        "id": "fcn_gotostdcompanyprofilebeconversive_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "go to std company profile $beconversive"
+      },
+      "fcn_convertadmintostdbeconversive_0": {
+        "dataSetId": -1,
+        "id": "fcn_convertadmintostdbeconversive_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checkcompanyprofileafterconversionbeconversive_0"
+        ],
+        "content": "convert admin to std $beconversive"
+      },
+      "fcn_checkcompanyprofileafterconversionbeconversive_0": {
+        "dataSetId": -1,
+        "id": "fcn_checkcompanyprofileafterconversionbeconversive_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "check company profile after conversion $beconversive"
+      },
+      "fcn_enterwrongpasswordsbeconversivesignup_0": {
+        "dataSetId": -1,
+        "id": "fcn_enterwrongpasswordsbeconversivesignup_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_gotoforgotbeconversive_0"
+        ],
+        "content": "Enter wrong passwords $beconversive"
+      },
+      "fcn_gotoforgotbeconversive_0": {
+        "dataSetId": -1,
+        "id": "fcn_gotoforgotbeconversive_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checktheerror_0"
+        ],
+        "content": "go to forgot $beconversive"
+      },
+      "fcn_checktheerror_0": {
+        "dataSetId": -1,
+        "id": "fcn_checktheerror_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "check the error"
+      },
+      "fcn_logintothebeconversive_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintothebeconversive_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_enterwrongpasswordsbeconversivesignup_0"
+        ],
+        "content": "go to login $beconversive"
+      },
+      "fcn_gotoemailnotification_0": {
+        "dataSetId": -1,
+        "id": "fcn_gotoemailnotification_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checkthetoggle_0"
+        ],
+        "content": "go to email notification"
+      },
+      "fcn_checkthetoggle_0": {
+        "dataSetId": -1,
+        "id": "fcn_checkthetoggle_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checkthepreferences_0"
+        ],
+        "content": "check the toggle"
+      },
+      "fcn_checkthepreferences_0": {
+        "dataSetId": -1,
+        "id": "fcn_checkthepreferences_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_editpreferences_0"
+        ],
+        "content": "check the preferences"
+      },
+      "fcn_editpreferences_0": {
+        "dataSetId": -1,
+        "id": "fcn_editpreferences_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "edit preferences"
+      },
+      "fcn_checkthenumberofusersonaccount_0": {
+        "dataSetId": -1,
+        "id": "fcn_checkthenumberofusersonaccount_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_changetheuserstrength_0"
+        ],
+        "content": "check the number of users on Account"
+      },
+      "fcn_changetheuserstrength_0": {
+        "dataSetId": -1,
+        "id": "fcn_changetheuserstrength_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checkthenumberofusersonaccount_1708957140771_0"
+        ],
+        "content": "change the user strength"
+      },
+      "fcn_checkthenumberofusersonaccount_1708957140771_0": {
+        "dataSetId": -1,
+        "id": "fcn_checkthenumberofusersonaccount_1708957140771_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "check the number of users on Account"
+      }
+    },
+    "pathNames": {},
+    "isPrimary": false,
+    "positions": {
+      "fcn_start_0": {
+        "top": 127.79998779296875,
+        "left": 1351.9125061035156
+      },
+      "fcn_createsaas_portal_login_1698062658123_0": {
+        "top": 187.75,
+        "left": 740.9125061035156
+      },
+      "fcn_logintosaasportal_1698062658123_0": {
+        "top": 347.7499694824219,
+        "left": 2009.8750610351562
+      },
+      "fcn_assertwelcomecard_0": {
+        "top": 406.0124816894531,
+        "left": 2009.8750610351562
+      },
+      "fcn_assertsetupyouraccountcontactcard_0": {
+        "top": 469.0249786376953,
+        "left": 2007.9375610351562
+      },
+      "fcn_assertsertupyouraccountexploreintegration_0": {
+        "top": 528.0874786376953,
+        "left": 2007.9375610351562
+      },
+      "fcn_assertsetupyouraccountinviteteammates_0": {
+        "top": 601.0249862670898,
+        "left": 2007.9375610351562
+      },
+      "fcn_assertsetupyouraccountsetupchannels_0": {
+        "top": 674.0249862670898,
+        "left": 2007.9375610351562
+      },
+      "fcn_assertsetupyouraccountgrowyourcontact_0": {
+        "top": 747.0374870300293,
+        "left": 2007.9375610351562
+      },
+      "fcn_explorerecipeprospectivestudent_0": {
+        "top": 410.0124816894531,
+        "left": 2287.9375610351562
+      },
+      "fcn_explorerecipeenrollmentnotification_0": {
+        "top": 469.0249786376953,
+        "left": 2287.9375610351562
+      },
+      "fcn_explorerecipetestingonqa_0": {
+        "top": 528.0874786376953,
+        "left": 2287.9375610351562
+      },
+      "fcn_verifyyoutubelink_0": {
+        "top": 410.0124816894531,
+        "left": 2567.9500122070312
+      },
+      "fcn_runapiforcards_0": {
+        "top": 410.0124816894531,
+        "left": 2847.9500122070312
+      },
+      "fcn_welcomecards_0": {
+        "top": 469.0249786376953,
+        "left": 2847.9500122070312
+      },
+      "fcn_tutorial_0": {
+        "top": 528.0874786376953,
+        "left": 2847.9500122070312
+      },
+      "fcn_tipsandbestpractices_0": {
+        "top": 587.0249862670898,
+        "left": 2847.9500122070312
+      },
+      "fcn_explorerecipe_0": {
+        "top": 646.0249862670898,
+        "left": 2847.9500122070312
+      },
+      "fcn_connector_0": {
+        "top": 409.8124694824219,
+        "left": 3143.9500122070312
+      },
+      "fcn_asserttutorialcard1_0": {
+        "top": 460.0249786376953,
+        "left": 3143.9500122070312
+      },
+      "fcn_asserttipsandbestpracticescards_0": {
+        "top": 515.0249786376953,
+        "left": 3143.9500122070312
+      },
+      "fcn_entercampaignnamecampaign_1707284129049_0": {
+        "top": 409.8124694824219,
+        "left": 3421.9751586914062
+      },
+      "fcn_navigatetointegrationpage_0": {
+        "top": 248.87496948242188,
+        "left": 639.9125061035156
+      },
+      "fcn_assertallcrmsaretheironintegrationpage_0": {
+        "top": 316.8124694824219,
+        "left": 634.9125061035156
+      },
+      "fcn_isconsentenabled_1700050229049_0": {
+        "top": 390.1249694824219,
+        "left": 639.9125061035156
+      },
+      "fcn_checktheintegratedconnected_0": {
+        "top": 463.1499786376953,
+        "left": 791.9125137329102
+      },
+      "fcn_searchthecrm_0": {
+        "top": 513.1499786376953,
+        "left": 614.9125061035156
+      },
+      "fcn_enabletheintegartion_0": {
+        "top": 442.2124938964844,
+        "left": 497.9125061035156
+      },
+      "fcn_navigatetousecasepage_0": {
+        "top": 249.87496948242188,
+        "left": 325.9124755859375
+      },
+      "fcn_validatehelpbuttononusecasepage_0": {
+        "top": 308.8124694824219,
+        "left": 325.9124755859375
+      },
+      "fcn_selectwelcomeusecase_0": {
+        "top": 367.9999694824219,
+        "left": 325.9124755859375
+      },
+      "fcn_selectstudentinformationusecase_0": {
+        "top": 367.9999694824219,
+        "left": 39.9375
+      },
+      "fcn_getaccountidinbeconversive_0": {
+        "top": 342.6874694824219,
+        "left": 1103.9125213623047
+      },
+      "fcn_asserttheembeddedmessagingflag_0": {
+        "top": 403.8374938964844,
+        "left": 1106.9125213623047
+      },
+      "fcn_assertconversivebuttoniscreatedwithdefaultvaluesinbeconversiveaccountid_0": {
+        "top": 463.8374786376953,
+        "left": 1105.9125213623047
+      },
+      "fcn_logintobeconversive_3": {
+        "top": 272.8124694824219,
+        "left": 1098.9125213623047
+      },
+      "fcn_checkthestatusafterverification_0": {
+        "top": 409.8374938964844,
+        "left": 3698.9751586914062
+      },
+      "fcn_checkthesidebar_0": {
+        "top": 410.8374938964844,
+        "left": 3979.9751586914062
+      },
+      "fcn_checkthesidebarafterexpanding_0": {
+        "top": 463.86248779296875,
+        "left": 4175.987609863281
+      },
+      "fcn_asserttheiconsontopbar_0": {
+        "top": 514.8374786376953,
+        "left": 4177.975158691406
+      },
+      "fcn_assertthecontentisaccountsettingbeconversivesignup_0": {
+        "top": 343.8124694824219,
+        "left": 1695.9125366210938
+      },
+      "fcn_logintoopsportallogin_0": {
+        "top": 422.5874938964844,
+        "left": 1693.9125366210938
+      },
+      "fcn_takethevaluesfromopsbeconversivesignup_0": {
+        "top": 482.5874786376953,
+        "left": 1694.9125366210938
+      },
+      "fcn_gobacktobeconversive_0": {
+        "top": 559.5874786376953,
+        "left": 1694.9125366210938
+      },
+      "fcn_gotoaccountsettings_0": {
+        "top": 614.5874862670898,
+        "left": 1696.9125366210938
+      },
+      "fcn_usermanagementtabbeconversivesignup_0": {
+        "top": 684.762487411499,
+        "left": 1697.9750366210938
+      },
+      "fcn_inviteuserbeconversivesignup_0": {
+        "top": 766.2624893188477,
+        "left": 1695.9125366210938
+      },
+      "fcn_changeuserdetailsbeconversivesignup_0": {
+        "top": 835.5124893188477,
+        "left": 1696.9125366210938
+      },
+      "fcn_unassignlicensebeconversivesignup_0": {
+        "top": 925.2624969482422,
+        "left": 1697.9750366210938
+      },
+      "fcn_deleteuserbeconversivesignup_0": {
+        "top": 1011.0124816894531,
+        "left": 1696.9125366210938
+      },
+      "fcn_accountstabbeconversivesignup_0": {
+        "top": 1076.1499938964844,
+        "left": 1696.9125366210938
+      },
+      "fcn_logintoopsportallogin_1": {
+        "top": 1141.3125,
+        "left": 1696.9125366210938
+      },
+      "fcn_assertaccountvaluesbeconversivesignup_0": {
+        "top": 1207.4499816894531,
+        "left": 1696.9125366210938
+      },
+      "fcn_assertthecontentisaccountsettingbeconversivesignup_1": {
+        "top": 343.4374694824219,
+        "left": 1398.9125061035156
+      },
+      "fcn_usermanagementtabbeconversivesignup_1": {
+        "top": 422.1999816894531,
+        "left": 1398.9125061035156
+      },
+      "fcn_inviteuserfromusermanagementbeconversivesignup_0": {
+        "top": 505.2624816894531,
+        "left": 1403.9125061035156
+      },
+      "fcn_logintogmailemaillogin_0": {
+        "top": 583.0124893188477,
+        "left": 1399.9125061035156
+      },
+      "fcn_confirmtheinviteduserbeconversivesignup_0": {
+        "top": 637.8999862670898,
+        "left": 1401.9125061035156
+      },
+      "fcn_registerinviteuserbeconversivesignup_0": {
+        "top": 714.6499876976013,
+        "left": 1401.9125061035156
+      },
+      "fcn_asserttheinviteautologinbeconversivesignup_0": {
+        "top": 796.3999862670898,
+        "left": 1401.9125061035156
+      },
+      "fcn_loginagaintobeconversivesingup_0": {
+        "top": 895.4124908447266,
+        "left": 1397.9750061035156
+      },
+      "fcn_gotocompanyprofilebeconversive_0": {
+        "top": 893.5624847412109,
+        "left": 1029.9125137329102
+      },
+      "fcn_checkthenumberofusersonaccount_0": {
+        "top": 1003.0124816894531,
+        "left": 1126.9125213623047
+      },
+      "fcn_createbeconversiveaccount_0": {
+        "top": 240.81246948242188,
+        "left": 4827.975158691406
+      },
+      "fcn_beconversive_signup_0": {
+        "top": 315.8124694824219,
+        "left": 4827.975158691406
+      },
+      "fcn_selectplgforbeconversivesignup_0": {
+        "top": 513.0874786376953,
+        "left": 4716.975158691406
+      },
+      "fcn_logintoopsportallogintrial_signup_0": {
+        "top": 587.1499862670898,
+        "left": 4716.975158691406
+      },
+      "fcn_checkthestatus_0": {
+        "top": 652.1499862670898,
+        "left": 4716.975158691406
+      },
+      "fcn_checkthestatus_1": {
+        "top": 715.187488079071,
+        "left": 4865.975158691406
+      },
+      "fcn_logintohubspot_0": {
+        "top": 721.1624879837036,
+        "left": 4563.975158691406
+      },
+      "fcn_logintogmailemaillogin_1699345192074_0": {
+        "top": 789.1624908447266,
+        "left": 4705.975158691406
+      },
+      "fcn_confirmaccountforbeconversivesignup_0": {
+        "top": 851.3999938964844,
+        "left": 4712.975158691406
+      },
+      "fcn_setthepassword_1699614497310_0": {
+        "top": 927.5374908447266,
+        "left": 4711.975158691406
+      },
+      "fcn_assertautologinbeconversivesignup_0": {
+        "top": 1004.6999816894531,
+        "left": 4710.975158691406
+      },
+      "fcn_newbeconversivesignup_1": {
+        "top": 379.9374694824219,
+        "left": 4833.975158691406
+      },
+      "fcn_checkthedisposablemail_0": {
+        "top": 439.0249938964844,
+        "left": 4539.000061035156
+      },
+      "fcn_selectslgsetupforbeconversivesignup_0": {
+        "top": 503.0249786376953,
+        "left": 5011.974914550781
+      },
+      "fcn_logintosandboxandcreateaccount_0": {
+        "top": 578.1499786376953,
+        "left": 5011.974914550781
+      },
+      "fcn_logintoopsportallogin_1701331663490_0": {
+        "top": 657.1499862670898,
+        "left": 5011.974914550781
+      },
+      "fcn_logintogmailemaillogin_1701431555324_0": {
+        "top": 777.1624908447266,
+        "left": 5011.974914550781
+      },
+      "fcn_confirmaccountforbeconversivesignup_1701431555324_0": {
+        "top": 841.3999938964844,
+        "left": 5011.974914550781
+      },
+      "fcn_setthepasswordforbeconversivesignup_1701431555324_0": {
+        "top": 907.5374908447266,
+        "left": 5011.974914550781
+      },
+      "fcn_resetthepassword_0": {
+        "top": 410.8874816894531,
+        "left": 7170.000305175781
+      },
+      "fcn_logintogmailemaillogin_1702542888355_0": {
+        "top": 473.2749786376953,
+        "left": 7165.974914550781
+      },
+      "fcn_gotoresetpassword_0": {
+        "top": 540.3374786376953,
+        "left": 7168.974914550781
+      },
+      "fcn_resetthepassword_1": {
+        "top": 604.3999862670898,
+        "left": 7168.974914550781
+      },
+      "fcn_assertresetpasswordautologinbeconversivesignup_0": {
+        "top": 670.3374862670898,
+        "left": 7166.974914550781
+      },
+      "fcn_gotoforgotbeconversive_1706622613552_0": {
+        "top": 749.5124893188477,
+        "left": 7166.974914550781
+      },
+      "fcn_navigatetoemail_0": {
+        "top": 813.8124923706055,
+        "left": 7166.974914550781
+      },
+      "fcn_gotoresetpassword_1706629718663_0": {
+        "top": 872.8124847412109,
+        "left": 7166.974914550781
+      },
+      "fcn_resetpasswordwitholdpassword_0": {
+        "top": 937.9499969482422,
+        "left": 7166.974914550781
+      },
+      "fcn_reattemptforgotpasswordlink_0": {
+        "top": 670.3374862670898,
+        "left": 7446.974914550781
+      },
+      "fcn_resetthepassword_1706177948526_0": {
+        "top": 729.3499889373779,
+        "left": 7446.974914550781
+      },
+      "fcn_asserterrormessage_0": {
+        "top": 794.5124893188477,
+        "left": 7446.974914550781
+      },
+      "fcn_logintobeconversive_2": {
+        "top": 300.1874694824219,
+        "left": 5672.974914550781
+      },
+      "fcn_gotoaccountsettingsbeconversive_0": {
+        "top": 364.3749694824219,
+        "left": 5672.974914550781
+      },
+      "fcn_gotobillingandcards_1": {
+        "top": 429.5249938964844,
+        "left": 5672.974914550781
+      },
+      "fcn_billinginformation_1": {
+        "top": 488.1374816894531,
+        "left": 5672.974914550781
+      },
+      "fcn_editthebillinginformationbeconversive_0": {
+        "top": 546.7124786376953,
+        "left": 5672.974914550781
+      },
+      "fcn_carddetailsbeconversive_1": {
+        "top": 625.4624862670898,
+        "left": 5672.974914550781
+      },
+      "fcn_logintoopsportallogin_3": {
+        "top": 690.637487411499,
+        "left": 5672.974914550781
+      },
+      "fcn_searchtheaccountbeconversive_0": {
+        "top": 755.7874870300293,
+        "left": 5672.974914550781
+      },
+      "fcn_verifythecardbeconversive_1": {
+        "top": 820.9374923706055,
+        "left": 5672.974914550781
+      },
+      "fcn_gobacktobeconversive_1705069358887_0": {
+        "top": 886.0749969482422,
+        "left": 5672.974914550781
+      },
+      "fcn_verifyprimary_1705069367155_0": {
+        "top": 944.6874847412109,
+        "left": 5672.974914550781
+      },
+      "fcn_addanothercardbeconversive_1": {
+        "top": 1003.2875061035156,
+        "left": 5672.974914550781
+      },
+      "fcn_gobacktoopsopsportallogin_1": {
+        "top": 1068.4375,
+        "left": 5672.974914550781
+      },
+      "fcn_verifythecardtwobeconversive_1": {
+        "top": 1133.5749816894531,
+        "left": 5672.974914550781
+      },
+      "fcn_gobacktobeconversive_1705069448017_0": {
+        "top": 1198.7250061035156,
+        "left": 5672.974914550781
+      },
+      "fcn_verifyactive_1705069453465_0": {
+        "top": 1257.3250122070312,
+        "left": 5672.974914550781
+      },
+      "fcn_gobacktoopsopsportallogin_2": {
+        "top": 1305.9375,
+        "left": 5673.974914550781
+      },
+      "fcn_blockthecard_0": {
+        "top": 1366.0750122070312,
+        "left": 5672.974914550781
+      },
+      "fcn_gobacktobeconversive_1705310103669_0": {
+        "top": 1420.9375,
+        "left": 5674.974914550781
+      },
+      "fcn_removecard_1705069463817_0": {
+        "top": 1476.9375,
+        "left": 5676.000305175781
+      },
+      "fcn_gotopasswordsection_0": {
+        "top": 429.5249938964844,
+        "left": 5952.974914550781
+      },
+      "fcn_wrongpasswordbeconversive_0": {
+        "top": 488.1374816894531,
+        "left": 5952.974914550781
+      },
+      "fcn_correctpasswordbeconversive_0": {
+        "top": 553.2749786376953,
+        "left": 5952.974914550781
+      },
+      "fcn_changethepasswordlbeconversive_0": {
+        "top": 618.4249877929688,
+        "left": 5952.974914550781
+      },
+      "fcn_gotocompanyprofile_0": {
+        "top": 427.5249938964844,
+        "left": 6538.974914550781
+      },
+      "fcn_gotouserpermission_0": {
+        "top": 492.67498779296875,
+        "left": 6538.974914550781
+      },
+      "fcn_checktheboxesanduncheck_0": {
+        "top": 551.2749786376953,
+        "left": 6538.974914550781
+      },
+      "fcn_gotomanageaccess_0": {
+        "top": 609.8874893188477,
+        "left": 6538.974914550781
+      },
+      "fcn_checkforlogooption_0": {
+        "top": 492.67498779296875,
+        "left": 6822.000305175781
+      },
+      "fcn_importalogobeconversive_0": {
+        "top": 547.2749786376953,
+        "left": 6822.000305175781
+      },
+      "fcn_checkthesuccessmessage_0": {
+        "top": 609.4249877929688,
+        "left": 6821.974914550781
+      },
+      "fcn_inviteuserfromusermanagementbeconversivesignup_1": {
+        "top": 690.0374870300293,
+        "left": 6772.974914550781
+      },
+      "fcn_logintogmailemaillogin_1": {
+        "top": 764.7874870300293,
+        "left": 6772.974914550781
+      },
+      "fcn_confirmtheinviteduserbeconversivesignup_1": {
+        "top": 825.9374923706055,
+        "left": 6771.974914550781
+      },
+      "fcn_registerinviteuserbeconversivesignup_1": {
+        "top": 901.6874847412109,
+        "left": 6773.974914550781
+      },
+      "fcn_checkcompanyprofileonstandarduser_0": {
+        "top": 984.0375061035156,
+        "left": 6774.974914550781
+      },
+      "fcn_logoutbeconversive_1": {
+        "top": 1063.7875061035156,
+        "left": 6774.974914550781
+      },
+      "fcn_logintobeconversive_0": {
+        "top": 1132.9375,
+        "left": 6775.974914550781
+      },
+      "fcn_convertstdusertoadmin_0": {
+        "top": 1195.9375,
+        "left": 6774.974914550781
+      },
+      "fcn_logoutbeconversive_2": {
+        "top": 1277.6875,
+        "left": 6776.974914550781
+      },
+      "fcn_loginstduserbeconversivesignup_0": {
+        "top": 1344.8375244140625,
+        "left": 6777.974914550781
+      },
+      "fcn_gotoaccountsettingsbeconversive_1": {
+        "top": 1410.9874877929688,
+        "left": 6778.974914550781
+      },
+      "fcn_gotostdcompanyprofilebeconversive_0": {
+        "top": 1478.1375122070312,
+        "left": 6779.974914550781
+      },
+      "fcn_convertadmintostdbeconversive_0": {
+        "top": 741.0374870300293,
+        "left": 6489.974914550781
+      },
+      "fcn_checkcompanyprofileafterconversionbeconversive_0": {
+        "top": 806.1874923706055,
+        "left": 6489.974914550781
+      },
+      "fcn_gotoemailnotification_0": {
+        "top": 417.5249938964844,
+        "left": 7747.974914550781
+      },
+      "fcn_checkthetoggle_0": {
+        "top": 476.12498474121094,
+        "left": 7747.974914550781
+      },
+      "fcn_checkthepreferences_0": {
+        "top": 534.7249908447266,
+        "left": 7747.974914550781
+      },
+      "fcn_editpreferences_0": {
+        "top": 593.3249893188477,
+        "left": 7747.974914550781
+      },
+      "fcn_removegoalsandmilestone_0": {
+        "top": 369.3749694824219,
+        "left": 5377.974914550781
+      },
+      "fcn_closeallcardsandverify_0": {
+        "top": 427.9624938964844,
+        "left": 5377.974914550781
+      },
+      "fcn_checkthesections_0": {
+        "top": 481.5749816894531,
+        "left": 5378.974914550781
+      },
+      "fcn_navigatetousermanagmentforvalidation_1706710569427_0": {
+        "top": 427.3749694824219,
+        "left": 6246.974914550781
+      },
+      "fcn_editinusermanagment_1706710569427_0": {
+        "top": 524.5249786376953,
+        "left": 6246.974914550781
+      },
+      "fcn_validatetextfieldinusermanagment_1706710569427_0": {
+        "top": 596.9624862670898,
+        "left": 6246.974914550781
+      },
+      "fcn_getaccountid_1706710569427_0": {
+        "top": 670.1374855041504,
+        "left": 6246.974914550781
+      },
+      "fcn_closecardnewui_0": {
+        "top": 533.3624877929688,
+        "left": 5267.974914550781
+      },
+      "fcn_logintothebeconversive_0": {
+        "top": 664.8874855041504,
+        "left": 5358.000305175781
+      },
+      "fcn_enterwrongpasswordsbeconversivesignup_0": {
+        "top": 731.9874877929688,
+        "left": 5360.974914550781
+      },
+      "fcn_gotoforgotbeconversive_0": {
+        "top": 813.7374877929688,
+        "left": 5360.974914550781
+      },
+      "fcn_checktheerror_0": {
+        "top": 887.8874969482422,
+        "left": 5365.974914550781
+      },
+      "fcn_changetheuserstrength_0": {
+        "top": 1061.6125427246093,
+        "left": 1126.9124755859375
+      },
+      "fcn_checkthenumberofusersonaccount_1708957140771_0": {
+        "top": 1120.212548828125,
+        "left": 1126.9124755859375
+      }
+    }
+  },
+  "enabled": true,
+  "parentId": ""
+}

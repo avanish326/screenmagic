@@ -1,0 +1,123 @@
+{
+  "modifiedOn": "2024-07-24T06:49:53.759Z",
+  "name": "Send Incoming MMSS $smssenderid",
+  "id": "58542",
+  "type": 3,
+  "createdOn": "2024-07-24T06:49:53.759Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Send Incoming MMSS $smssenderid",
+    "parameters": [
+      {
+        "parameterId": "smssenderid_",
+        "entityTypeId": "smssenderid",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "POST"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "https://qa-api.txtbox.in/v1/sms/incoming/aerial"
+          }
+        ],
+        "stepType": "REST",
+        "isRawScript": true,
+        "rawScript": "var $request_npN8nvgvDO \u003d new RESTRequest();\r\n$request_npN8nvgvDO.setURL(\"https://qa-api.txtbox.in/v1/sms/incoming/aerial\");\r\nvar $response_npN8nvgvDO \u003d $request_npN8nvgvDO.submit(\"POST\");\r\nvar responseBody \u003d JSON.parse($response_npN8nvgvDO.getBodyAsString());\r\n\t var $responseBodyObj_npN8nvgvDO \u003d $response_npN8nvgvDO.getBodyAsString();\r\n\tvar responseType \u003d $response_npN8nvgvDO.getHeader(\"Content-Type\");\r\n\tif (responseType.indexOf(\"json\")!\u003d-1) {\r\n\t\t$responseBodyObj_npN8nvgvDO \u003d JSON.parse($responseBodyObj_npN8nvgvDO);\r\n\t}\r\n\telse if (responseType.indexOf(\"xml\")!\u003d-1) {\r\n\t\t$responseBodyObj_npN8nvgvDO \u003d $responseBodyObj_npN8nvgvDO.replace(/\u003c\\xml.*?\u003e/g, \u0027\u0027).replace(/\\n/g, \u0027\u0027).replace(/\\r/g, \u0027\u0027);\r\n\t\t$responseBodyObj_npN8nvgvDO \u003d new XML(undefined);\r\n\t}\r\n\r\n\t//assertions\r\n\r\n",
+        "state": {
+          "contentType": "json",
+          "request": {
+            "method": "POST",
+            "url": "https://qa-api.txtbox.in/v1/sms/incoming/aerial",
+            "parameters": [],
+            "headers": [],
+            "authType": "none",
+            "body": "",
+            "bodyParams": [],
+            "isParametrizedBody": true,
+            "resetCookies": false
+          },
+          "assertions": {
+            "status": [],
+            "header": [],
+            "body": []
+          },
+          "variables": {
+            "status": [],
+            "header": [],
+            "body": []
+          },
+          "authInfo": {}
+        }
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"Message Reports\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "1000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"Message History\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "1000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"/Incoming Messages/\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "$actualValue\u003d _getText(_div(0, _near(_tableHeader(\"Message\"))));\n_log($actualValue);\n\n$expectedValue\u003d $smssenderid.text;\n_log($expectedValue);\n\nif(_assertEqual($expectedValue, $actualValue)){\n\n$syncStatusActual \u003d _getText(_span(1, _near(_tableHeader(\"SYNC Status\"))));\n$syncStatusExpected \u003d \"success\";\n_assertEqual($syncStatusExpected, $syncStatusActual);\n\n}\n"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

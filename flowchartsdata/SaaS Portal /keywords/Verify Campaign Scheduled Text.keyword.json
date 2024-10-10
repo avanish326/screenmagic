@@ -1,0 +1,54 @@
+{
+  "modifiedOn": "2024-04-30T07:47:39.846Z",
+  "name": "Verify Campaign Scheduled Text",
+  "id": "45535",
+  "type": 3,
+  "createdOn": "2024-04-30T07:47:39.846Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Verify Campaign Scheduled Text",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(\"Campaign Scheduled Successfully!\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"Campaign Scheduled Successfully!\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_submit(\"Ok\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "2000"
+          }
+        ],
+        "stepType": "Action"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

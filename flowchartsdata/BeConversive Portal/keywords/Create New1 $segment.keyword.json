@@ -1,0 +1,78 @@
+{
+  "modifiedOn": "2024-06-10T06:54:13.547Z",
+  "name": "Create New1 $segment",
+  "id": "52737",
+  "type": 3,
+  "createdOn": "2024-06-10T06:54:09.895Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Create New1 $segment",
+    "parameters": [
+      {
+        "parameterId": "segment_",
+        "entityTypeId": "segment",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "POST"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "$postURL"
+          }
+        ],
+        "stepType": "REST",
+        "isRawScript": true,
+        "rawScript": "var $request_UvgDKjspqu \u003d new RESTRequest();\r\n$request_UvgDKjspqu.setURL($postURL);\r\n$request_UvgDKjspqu.setHeader(\"Authorization\", $key);\r\n$request_UvgDKjspqu.setHeader(\"Content-Type\", \"application/json\");\r\nvar sanitizedBody \u003d eval(\"(\"+\" {\" + \"     \\\"name\\\":\\\"\" + escapeString($segment.name2) + \"\\\",\" + \"     \\\"rule\\\":[\" + \"{\\\"and\\\": [\\\"userproperty#is_deleted#equal#false\\\"]}\" + \"     \" + \"     ]\" + \" }\" + \"\"+\")\");\n$request_UvgDKjspqu.setBody(JSON.stringify(sanitizedBody));\r\nvar $response_UvgDKjspqu \u003d $request_UvgDKjspqu.submit(\"POST\");\r\n$getresponse \u003d $response_UvgDKjspqu.getBodyAsString();\r\nvar responseBody \u003d JSON.parse($response_UvgDKjspqu.getBodyAsString());\r\n\t var $responseBodyObj_UvgDKjspqu \u003d $response_UvgDKjspqu.getBodyAsString();\r\n\tvar responseType \u003d $response_UvgDKjspqu.getHeader(\"Content-Type\");\r\n\tif (responseType.indexOf(\"json\")!\u003d-1) {\r\n\t\t$responseBodyObj_UvgDKjspqu \u003d JSON.parse($responseBodyObj_UvgDKjspqu);\r\n\t}\r\n\telse if (responseType.indexOf(\"xml\")!\u003d-1) {\r\n\t\t$responseBodyObj_UvgDKjspqu \u003d $responseBodyObj_UvgDKjspqu.replace(/\u003c\\xml.*?\u003e/g, \u0027\u0027).replace(/\\n/g, \u0027\u0027).replace(/\\r/g, \u0027\u0027);\r\n\t\t$responseBodyObj_UvgDKjspqu \u003d new XML(undefined);\r\n\t}\r\n\r\n\t//assertions\r\n\r\n",
+        "state": {
+          "contentType": "json",
+          "request": {
+            "method": "POST",
+            "url": "$postURL",
+            "parameters": [],
+            "headers": [
+              [
+                "Authorization",
+                "$key"
+              ],
+              [
+                "Content-Type",
+                "application/json"
+              ]
+            ],
+            "authType": "none",
+            "body": " {\n     \"name\":$segment.name2,\n     \"rule\":[\n{\"and\": [\"userproperty#is_deleted#equal#false\"]}\n     \n     ]\n }\n",
+            "bodyParams": [],
+            "isParametrizedBody": false,
+            "resetCookies": false
+          },
+          "assertions": {
+            "status": [],
+            "header": [],
+            "body": []
+          },
+          "variables": {
+            "status": [],
+            "header": [],
+            "body": []
+          },
+          "authInfo": {},
+          "rawResponseVar": "$getresponse"
+        }
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "_log($getresponse)\n_log($segment.createSegmentResponse)\n\n//var $jsonObjSegment \u003d JSON.parse($segment.createSegmentResponse);\n\nvar $jsonObj \u003d JSON.parse($getresponse);\n\n//_assertEqual($jsonObj.message,$jsonObjSegment.message);\n\n\n_assertEqual($jsonObj.message,$segment.createSegmentResponse);\n_assertNotNull($jsonObj.segment_id)\n\n$segmentId \u003d $jsonObj.segment_id"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

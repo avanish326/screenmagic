@@ -1,0 +1,54 @@
+{
+  "modifiedOn": "2024-02-08T06:49:48.988Z",
+  "name": "Click on Back And Go to My Automation",
+  "id": "28238",
+  "type": 3,
+  "createdOn": "2024-02-08T06:49:48.988Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Click on Back And Go to My Automation",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"Back\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_submit(\"My Automations\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"My Automations\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_submit(\"My Automations\")"
+          }
+        ],
+        "stepType": "Action"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

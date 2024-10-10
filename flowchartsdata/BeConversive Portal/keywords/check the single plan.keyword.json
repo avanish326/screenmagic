@@ -1,0 +1,26 @@
+{
+  "modifiedOn": "2024-07-23T14:27:24.353Z",
+  "name": "check the single plan",
+  "id": "58533",
+  "type": 3,
+  "createdOn": "2024-07-23T14:27:08.106Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "check the single plan",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "$one \u003d _getText(_paragraph(0, _near(_label(\"Subscription Plan\"))));\n$one_split \u003d $one.split(\" \");\n$planOne \u003d $one_split[0];"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "$onePlan \u003d \"\"\nif($planOne \u003d\u003d \"Professionals\"){\nfor($i\u003d0; $i\u003c$planOne.length-1; $i++){\n$onePlan +\u003d $planOne[$i];\n}\n$planOne \u003d $onePlan;\n}"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

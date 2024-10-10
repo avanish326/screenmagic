@@ -1,0 +1,49 @@
+{
+  "modifiedOn": "2024-06-11T08:35:26.793Z",
+  "name": "Edit the Conversive Button by clicking on conversive button name $newconversivebutton",
+  "id": "46230",
+  "type": 3,
+  "createdOn": "2024-05-22T04:33:01.291Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Edit the Conversive Button by clicking on conversive button name $newconversivebutton",
+    "parameters": [
+      {
+        "parameterId": "newconversivebutton_",
+        "entityTypeId": "newconversivebutton",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span($newconversivebutton.conversiveButtonName)"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"accordion-header \")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"Basic Info Fill the channel specific information and pre filled message\""
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

@@ -1,0 +1,83 @@
+{
+  "modifiedOn": "2024-05-31T14:05:21.936Z",
+  "name": "Select Contact to Send message $rcscontact",
+  "id": "45351",
+  "type": 3,
+  "createdOn": "2024-04-24T11:43:22.614Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Select Contact to Send message $rcscontact",
+    "parameters": [
+      {
+        "parameterId": "rcscontact_",
+        "entityTypeId": "rcscontact",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "_call(_sahi.blurEnabled\u003dfalse)"
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "parameterId": "rcscontact_",
+            "attributeId": "attr_01713959106264",
+            "accessorId": "acc0"
+          },
+          {
+            "parameterId": "rcscontact_",
+            "attributeId": "attr_01713959106264"
+          }
+        ],
+        "stepType": "Action",
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "2000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_listItem(\"Pratiksha SMS (919834047278)\")"
+          }
+        ],
+        "stepType": "Action",
+        "visibleCheck": true
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "_call(_sahi.blurEnabled\u003dtrue)"
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "5000"
+          }
+        ],
+        "stepType": "Action"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

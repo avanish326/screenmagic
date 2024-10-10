@@ -1,0 +1,60 @@
+{
+  "modifiedOn": "2024-01-12T12:25:29.998Z",
+  "name": "logout to standarduser $usermanagment",
+  "id": "14887",
+  "type": 3,
+  "createdOn": "2023-09-22T10:13:00.584Z",
+  "content": {
+    "title": "logout to standarduser $usermanagment",
+    "parameters": [
+      {
+        "parameterId": "usermanagment_",
+        "entityTypeId": "usermanagment",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(18)"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(\"dropdown-item-profile-menu email mb-0\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "parameterId": "usermanagment_",
+          "attributeId": "attr_21694778373166"
+        },
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"Log Out\")"
+          }
+        ],
+        "stepType": "Action"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

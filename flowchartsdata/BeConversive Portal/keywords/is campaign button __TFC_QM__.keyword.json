@@ -1,0 +1,80 @@
+{
+  "modifiedOn": "2024-08-29T07:35:48.626Z",
+  "name": "is campaign button ?",
+  "id": "58984",
+  "type": 3,
+  "createdOn": "2024-08-28T12:33:33.035Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "is campaign button ?",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "5000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_fail()"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "$brands \u003d _collectAttributes(\"_span\", \"/.*/\", \"sahiText\", _in(_div(\"brand_main\")));\n\n\nif($brands.length \u003e 1){\nfor($i\u003d0; $i\u003c$brands.length; $i++){\nif(_isVisible(_paragraph(0, _near(_span($brands[$i]))))){\n_wait(2000);\n_click(_paragraph(0, _near(_span($brands[$i]))));\n}\n}\n}"
+      },
+      {
+        "commented": false,
+        "action": "_isVisible",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_button(\"Register Campaign\")"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$isRegisterButton"
+        }
+      },
+      {
+        "commented": false,
+        "action": "_log",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "$isRegisterButton"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "return",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "$isRegisterButton"
+          }
+        ],
+        "stepType": "Action"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

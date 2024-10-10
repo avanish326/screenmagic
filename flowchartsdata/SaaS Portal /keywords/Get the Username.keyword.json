@@ -1,0 +1,46 @@
+{
+  "modifiedOn": "2024-04-15T06:07:16.509Z",
+  "name": "Get the Username",
+  "id": "45107",
+  "type": 3,
+  "createdOn": "2024-04-15T06:07:16.509Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Get the Username",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"email-span\")"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$userName"
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"email-span\", _near(_heading3(\"ac-company-name\")))"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$userName"
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

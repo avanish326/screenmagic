@@ -1,0 +1,80 @@
+{
+  "modifiedOn": "2024-05-10T15:48:38.649Z",
+  "name": "edit brand $10dlc",
+  "id": "45971",
+  "type": 3,
+  "createdOn": "2024-05-10T04:37:18.889Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "edit brand $10dlc",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_image(\"png[2]\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "2000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_textbox(\"legalCompanyName\")"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "\"Edited\""
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_submit(\"Submit\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_heading3(4, _near(_heading4(\"Brand Details\")))"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Contains",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"Edited\""
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

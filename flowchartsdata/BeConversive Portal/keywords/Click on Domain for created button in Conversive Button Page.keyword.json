@@ -1,0 +1,59 @@
+{
+  "modifiedOn": "2024-05-22T04:33:49.428Z",
+  "name": "Click on Domain for created button in Conversive Button Page",
+  "id": "46233",
+  "type": 3,
+  "createdOn": "2024-05-22T04:33:49.428Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Click on Domain for created button in Conversive Button Page",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "$domain \u003d $testURL.replace(/\\/$/, \"\")\n"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span($domain)"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_selectWindow",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "\"MATH HUNT\""
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_heading1(\"MATH HUNT\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"MATH HUNT\""
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

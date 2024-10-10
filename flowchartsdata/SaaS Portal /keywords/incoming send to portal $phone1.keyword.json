@@ -1,0 +1,80 @@
+{
+  "modifiedOn": "2024-04-08T03:47:57.374Z",
+  "name": "incoming send to portal $phone1",
+  "id": "44832",
+  "type": 3,
+  "createdOn": "2024-04-08T03:41:39.536Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "incoming send to portal $phone1",
+    "parameters": [
+      {
+        "parameterId": "phone_",
+        "entityTypeId": "phone",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "POST"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "https://qa-api.txtbox.in/v1/sms/incoming/twilio"
+          }
+        ],
+        "stepType": "REST",
+        "isRawScript": true,
+        "rawScript": "var $request_ZZmd1nCN60 \u003d new RESTRequest();\r\n$request_ZZmd1nCN60.setURL(\"https://qa-api.txtbox.in/v1/sms/incoming/twilio\");\r\n$request_ZZmd1nCN60.addToQueryString(\"From\", \"919763449196\");\r\n$request_ZZmd1nCN60.addToQueryString(\"To\", $phone);\r\n$request_ZZmd1nCN60.addToQueryString(\"Body\", \"ShradSMS MMS new numbwe new thread\");\r\n$request_ZZmd1nCN60.addToQueryString(\"SmsSid\", \"test incoming MMS message 😂😃jb\");\r\nvar $response_ZZmd1nCN60 \u003d $request_ZZmd1nCN60.submit(\"POST\");\r\n\t var $responseBodyObj_ZZmd1nCN60 \u003d $response_ZZmd1nCN60.getBodyAsString();\r\n\tvar responseType \u003d $response_ZZmd1nCN60.getHeader(\"Content-Type\");\r\n\tif (responseType.indexOf(\"json\")!\u003d-1) {\r\n\t\t$responseBodyObj_ZZmd1nCN60 \u003d JSON.parse($responseBodyObj_ZZmd1nCN60);\r\n\t}\r\n\telse if (responseType.indexOf(\"xml\")!\u003d-1) {\r\n\t\t$responseBodyObj_ZZmd1nCN60 \u003d $responseBodyObj_ZZmd1nCN60.replace(/\u003c\\xml.*?\u003e/g, \u0027\u0027).replace(/\\n/g, \u0027\u0027).replace(/\\r/g, \u0027\u0027);\r\n\t\t$responseBodyObj_ZZmd1nCN60 \u003d new XML(undefined);\r\n\t}\r\n\r\n\t//assertions\r\n\r\n",
+        "state": {
+          "contentType": "html",
+          "request": {
+            "method": "POST",
+            "url": "https://qa-api.txtbox.in/v1/sms/incoming/twilio",
+            "parameters": [
+              [
+                "From",
+                "919763449196"
+              ],
+              [
+                "To",
+                "$phone"
+              ],
+              [
+                "Body",
+                "ShradSMS MMS new numbwe new thread"
+              ],
+              [
+                "SmsSid",
+                "test incoming MMS message 😂😃jb"
+              ]
+            ],
+            "headers": [],
+            "authType": "none",
+            "body": "",
+            "bodyParams": [],
+            "isParametrizedBody": false,
+            "resetCookies": false
+          },
+          "assertions": {
+            "status": [],
+            "header": [],
+            "body": []
+          },
+          "variables": {
+            "status": [],
+            "header": [],
+            "body": []
+          },
+          "authInfo": {}
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

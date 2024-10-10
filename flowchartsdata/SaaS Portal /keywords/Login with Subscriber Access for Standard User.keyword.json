@@ -1,0 +1,39 @@
+{
+  "modifiedOn": "2024-03-21T04:34:41.959Z",
+  "name": "Login with Subscriber Access for Standard User",
+  "id": "44748",
+  "type": 3,
+  "createdOn": "2024-03-21T04:30:32.642Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Login with Subscriber Access for Standard User",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_isVisible",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"fa fa-external-link fw-semibold\", _rightOf(_cell($stdUserEmail)))"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Is_True"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"fa fa-external-link fw-semibold\", _rightOf(_cell($stdUserEmail)))"
+          }
+        ],
+        "stepType": "Action"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

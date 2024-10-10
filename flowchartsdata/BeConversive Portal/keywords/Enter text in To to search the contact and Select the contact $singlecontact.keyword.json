@@ -1,0 +1,127 @@
+{
+  "modifiedOn": "2024-08-28T09:31:10.539Z",
+  "name": "Enter text in To to search the contact and Select the contact $singlecontact",
+  "id": "58957",
+  "type": 3,
+  "createdOn": "2024-08-26T10:51:22.332Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Enter text in To to search the contact and Select the contact $singlecontact",
+    "parameters": [
+      {
+        "parameterId": "singlecontact_",
+        "entityTypeId": "singlecontact",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_call",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_sahi.blurEnabled\u003dfalse"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {}
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "2000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_textbox(0,_in(_div(\"To​\")))"
+          },
+          {
+            "parameterId": "singlecontact_",
+            "attributeId": "attr_01724163498407"
+          },
+          {}
+        ],
+        "stepType": "Action",
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "var $countries \u003d $singlecontact.countryCode;\nvar $countryCode \u003d $countries.match(/\\(\\+\\d+\\)/)[0].replace(/[\\(\\)\\+]/g, \u0027\u0027);\n_log($countryCode)\n\n\n\n$phoneNum\u003d$countryCode+$singlecontact.phoneNumber;\n\n$searchContact\u003d$singlecontact.firstName + \" \"+$singlecontact.lastName +\" \"+\"(\" + $phoneNum + \")\""
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_listItem($searchContact)"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$searchContact"
+        }
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_listItem($searchContact)"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_call",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_sahi.blurEnabled\u003dfalse"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {}
+      },
+      {
+        "commented": true,
+        "isRawScript": true,
+        "rawScript": "$phoneNumber \u003d $detailsNew[0].split(\"(\")[1].split(\")\")[0]\n\n_log($phoneNumber);"
+      },
+      {
+        "commented": true,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_textbox(0,_in(_div(\"/Phone Number/\")))"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$phoneNumber"
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

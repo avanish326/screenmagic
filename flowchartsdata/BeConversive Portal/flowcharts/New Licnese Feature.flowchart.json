@@ -1,0 +1,749 @@
+{
+  "modifiedOn": "2024-08-20T07:18:30.225Z",
+  "name": "New Licnese Feature",
+  "id": "52778",
+  "type": 0,
+  "createdOn": "2024-06-11T07:07:07.575Z",
+  "content": {
+    "settings": {
+      "maxProceedDepth": 100,
+      "maxProceedsForFirstDepth": 1,
+      "maxProceedsPerDepth": 1,
+      "maxPathRepititionsPerComboPath": 1,
+      "maxProceedsPerPath": 10000,
+      "maxToggles": 2,
+      "maxMatchingPaths": 3
+    },
+    "flowChartUID": "fcUID_1718089627572",
+    "nodesMap": {
+      "fcn_start_0": {
+        "dataSetId": -1,
+        "id": "fcn_start_0",
+        "nodeType": "start",
+        "branches": [
+          "fcn_featurelicenserestriction_0"
+        ],
+        "content": "Start"
+      },
+      "fcn_featurelicenserestriction_0": {
+        "dataSetId": -1,
+        "id": "fcn_featurelicenserestriction_0",
+        "nodeType": "pathlabel",
+        "branches": [
+          "fcn_trialplan_0",
+          "fcn_professionalplan_0",
+          "fcn_marketerplan_0",
+          "fcn_contactcenterplan_0",
+          "fcn_messageforinvalidplanlicense_0"
+        ],
+        "content": "Feature License Restriction"
+      },
+      "fcn_trialplan_0": {
+        "dataSetId": -1,
+        "id": "fcn_trialplan_0",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_logintobeconversive_1718089762912_0"
+        ],
+        "content": "Trial Plan"
+      },
+      "fcn_professionalplan_0": {
+        "dataSetId": -1,
+        "id": "fcn_professionalplan_0",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_logintobeconversive_1718101537108_0"
+        ],
+        "content": "Professional Plan"
+      },
+      "fcn_marketerplan_0": {
+        "dataSetId": -1,
+        "id": "fcn_marketerplan_0",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_logintobeconversive_1718101540398_0"
+        ],
+        "content": "Marketer Plan"
+      },
+      "fcn_contactcenterplan_0": {
+        "dataSetId": -1,
+        "id": "fcn_contactcenterplan_0",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_logintobeconversive_1718101543673_0"
+        ],
+        "content": "Contact Center Plan"
+      },
+      "fcn_logintobeconversive_1718089762912_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintobeconversive_1718089762912_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_gotoaccountsettingsbeconversive_1718089789414_0",
+          "fcn_validateconversedeskrestrictionfreetrialconversedesk_0",
+          "fcn_successmessageonselectplan_0",
+          "fcn_failedmessageonselectplan_0"
+        ],
+        "content": "login to $beconversive"
+      },
+      "fcn_gotoaccountsettingsbeconversive_1718089789414_0": {
+        "dataSetId": -1,
+        "id": "fcn_gotoaccountsettingsbeconversive_1718089789414_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_validateupgradepopup_0"
+        ],
+        "content": "go to account settings $beconversive"
+      },
+      "fcn_validateupgradepopup_0": {
+        "dataSetId": -1,
+        "id": "fcn_validateupgradepopup_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_validateexpirybanner_0"
+        ],
+        "content": "Validate upgrade pop up"
+      },
+      "fcn_validateexpirybanner_0": {
+        "dataSetId": -1,
+        "id": "fcn_validateexpirybanner_0",
+        "nodeType": "skip",
+        "branches": [
+          "fcn__0"
+        ],
+        "content": "Validate Expiry Banner"
+      },
+      "fcn_logintobeconversive_1718101537108_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintobeconversive_1718101537108_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_validateconversedeskrestriction_0",
+          "fcn_validateconversedeskrestricitonforppadvacneconversedesk_0",
+          "fcn_validateconversedeskrestrictionforppsuperiorconversedesk_0",
+          "fcn_validateconversedeskrestrictionforpppaygconversedesk_0"
+        ],
+        "content": "login to $beconversive"
+      },
+      "fcn_logintobeconversive_1718101540398_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintobeconversive_1718101540398_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_validateconversedeskrestrictionformpbasicconversedesk_0",
+          "fcn_validateconversedeskrestrictionformpadvanceconversedesk_0"
+        ],
+        "content": "login to $beconversive"
+      },
+      "fcn_logintobeconversive_1718101543673_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintobeconversive_1718101543673_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_validateconversedeskrestrictionforccbasicconversedesk_0",
+          "fcn_validateconversedeskrestrictionforccadvanceconversedesk_0",
+          "fcn_validateconversedeskrestrictionforccpaygconversedesk_0"
+        ],
+        "content": "login to $beconversive"
+      },
+      "fcn_validateconversedeskrestriction_0": {
+        "dataSetId": -1,
+        "id": "fcn_validateconversedeskrestriction_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "validate converse desk restriction for PP Basic $conversedesk"
+      },
+      "fcn_validateconversedeskrestricitonforppadvacneconversedesk_0": {
+        "dataSetId": -1,
+        "id": "fcn_validateconversedeskrestricitonforppadvacneconversedesk_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "validate converse desk restriciton for PP Advacne $conversedesk"
+      },
+      "fcn_validateconversedeskrestrictionforppsuperiorconversedesk_0": {
+        "dataSetId": -1,
+        "id": "fcn_validateconversedeskrestrictionforppsuperiorconversedesk_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "validate converse desk restriction for PP Superior $conversedesk"
+      },
+      "fcn_validateconversedeskrestrictionforpppaygconversedesk_0": {
+        "dataSetId": -1,
+        "id": "fcn_validateconversedeskrestrictionforpppaygconversedesk_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "validate converse desk restriction for PP PAYG $conversedesk"
+      },
+      "fcn_validateconversedeskrestrictionformpbasicconversedesk_0": {
+        "dataSetId": -1,
+        "id": "fcn_validateconversedeskrestrictionformpbasicconversedesk_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "validate converse desk restriction for MP Basic $conversedesk"
+      },
+      "fcn_validateconversedeskrestrictionformpadvanceconversedesk_0": {
+        "dataSetId": -1,
+        "id": "fcn_validateconversedeskrestrictionformpadvanceconversedesk_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "validate converse desk restriction for MP Advance $conversedesk"
+      },
+      "fcn_validateconversedeskrestrictionforccbasicconversedesk_0": {
+        "dataSetId": -1,
+        "id": "fcn_validateconversedeskrestrictionforccbasicconversedesk_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "validate converse desk restriction for CC Basic $conversedesk"
+      },
+      "fcn_validateconversedeskrestrictionforccadvanceconversedesk_0": {
+        "dataSetId": -1,
+        "id": "fcn_validateconversedeskrestrictionforccadvanceconversedesk_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "validate converse desk restriction for CC Advance $conversedesk"
+      },
+      "fcn_validateconversedeskrestrictionforccpaygconversedesk_0": {
+        "dataSetId": -1,
+        "id": "fcn_validateconversedeskrestrictionforccpaygconversedesk_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "validate converse desk restriction for CC PAYG $conversedesk"
+      },
+      "fcn_validateconversedeskrestrictionfreetrialconversedesk_0": {
+        "dataSetId": -1,
+        "id": "fcn_validateconversedeskrestrictionfreetrialconversedesk_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "validate converse desk restriction Free Trial $conversedesk"
+      },
+      "fcn_successmessageonselectplan_0": {
+        "dataSetId": -1,
+        "id": "fcn_successmessageonselectplan_0",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_validatesuccessmessageshownonplansynctohubpsot_0"
+        ],
+        "content": "Success Message on Select Plan"
+      },
+      "fcn_failedmessageonselectplan_0": {
+        "dataSetId": -1,
+        "id": "fcn_failedmessageonselectplan_0",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_validateerrormessageshownwhenplansynctohubpsotfails_0"
+        ],
+        "content": "Failed Message on Select Plan"
+      },
+      "fcn_validatesuccessmessageshownonplansynctohubpsot_0": {
+        "dataSetId": -1,
+        "id": "fcn_validatesuccessmessageshownonplansynctohubpsot_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Validate Success Message shown on Plan Sync to Hubpsot"
+      },
+      "fcn_validateerrormessageshownwhenplansynctohubpsotfails_0": {
+        "dataSetId": -1,
+        "id": "fcn_validateerrormessageshownwhenplansynctohubpsotfails_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Validate Error Message shown when Plan Sync to Hubpsot Fails"
+      },
+      "fcn__0": {
+        "dataSetId": -1,
+        "id": "fcn__0",
+        "nodeType": "skip",
+        "branches": [],
+        "content": ""
+      },
+      "fcn_messageforinvalidplanlicense_0": {
+        "dataSetId": -1,
+        "id": "fcn_messageforinvalidplanlicense_0",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_logintobeconversive_1723630734179_0",
+          "fcn_contentcreator_0",
+          "fcn_agent_0",
+          "fcn_monitoringuser_0",
+          "fcn_validlicensetoinvalidlicense_0"
+        ],
+        "content": "Message for invalid Plan License"
+      },
+      "fcn_logintobeconversive_1723630734179_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintobeconversive_1723630734179_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_verifytheerrormessage_0"
+        ],
+        "content": "login to $beconversive"
+      },
+      "fcn_verifytheerrormessage_0": {
+        "dataSetId": -1,
+        "id": "fcn_verifytheerrormessage_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logoutfromportal_0"
+        ],
+        "content": "Verify the Error message for Invalid license"
+      },
+      "fcn_logoutfromportal_0": {
+        "dataSetId": -1,
+        "id": "fcn_logoutfromportal_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Logout from portal"
+      },
+      "fcn_contentcreator_0": {
+        "dataSetId": -1,
+        "id": "fcn_contentcreator_0",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_logintocreatorbeconversive_1723711855354_0"
+        ],
+        "content": "Content Creator"
+      },
+      "fcn_logintocreatorbeconversive_1723711855354_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintocreatorbeconversive_1723711855354_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_verifytheerrormessageforinvalidlicense_1723711863278_0"
+        ],
+        "content": "login to creator $beconversive"
+      },
+      "fcn_verifytheerrormessageforinvalidlicense_1723711863278_0": {
+        "dataSetId": -1,
+        "id": "fcn_verifytheerrormessageforinvalidlicense_1723711863278_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logoutfromportal_1723711867485_0"
+        ],
+        "content": "Verify the Error message for Invalid license"
+      },
+      "fcn_logoutfromportal_1723711867485_0": {
+        "dataSetId": -1,
+        "id": "fcn_logoutfromportal_1723711867485_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Logout from portal"
+      },
+      "fcn_agent_0": {
+        "dataSetId": -1,
+        "id": "fcn_agent_0",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_logintoagentbeconversive_1723711907751_0"
+        ],
+        "content": "Agent"
+      },
+      "fcn_logintoagentbeconversive_1723711907751_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintoagentbeconversive_1723711907751_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_verifytheerrormessageforinvalidlicense_1723711912247_0"
+        ],
+        "content": "login to agent $beconversive"
+      },
+      "fcn_verifytheerrormessageforinvalidlicense_1723711912247_0": {
+        "dataSetId": -1,
+        "id": "fcn_verifytheerrormessageforinvalidlicense_1723711912247_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logoutfromportal_1723711916327_0"
+        ],
+        "content": "Verify the Error message for Invalid license"
+      },
+      "fcn_logoutfromportal_1723711916327_0": {
+        "dataSetId": -1,
+        "id": "fcn_logoutfromportal_1723711916327_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Logout from portal"
+      },
+      "fcn_monitoringuser_0": {
+        "dataSetId": -1,
+        "id": "fcn_monitoringuser_0",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_logintomonitorbeconversive_1723711946802_0"
+        ],
+        "content": "Monitoring User"
+      },
+      "fcn_logintomonitorbeconversive_1723711946802_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintomonitorbeconversive_1723711946802_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_verifytheerrormessageforinvalidlicense_1723711951173_0"
+        ],
+        "content": "login to monitor $beconversive"
+      },
+      "fcn_verifytheerrormessageforinvalidlicense_1723711951173_0": {
+        "dataSetId": -1,
+        "id": "fcn_verifytheerrormessageforinvalidlicense_1723711951173_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logoutfromportal_1723711955062_0"
+        ],
+        "content": "Verify the Error message for Invalid license"
+      },
+      "fcn_logoutfromportal_1723711955062_0": {
+        "dataSetId": -1,
+        "id": "fcn_logoutfromportal_1723711955062_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Logout from portal"
+      },
+      "fcn_validlicensetoinvalidlicense_0": {
+        "dataSetId": -1,
+        "id": "fcn_validlicensetoinvalidlicense_0",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_logintobeconversive_1723716120492_0"
+        ],
+        "content": "Valid license to Invalid license"
+      },
+      "fcn_logintobeconversive_1723716120492_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintobeconversive_1723716120492_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_gotoaccountsettingsbeconversive_1723716251818_0"
+        ],
+        "content": "login to $beconversive"
+      },
+      "fcn_gotoaccountsettingsbeconversive_1723716251818_0": {
+        "dataSetId": -1,
+        "id": "fcn_gotoaccountsettingsbeconversive_1723716251818_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logintoopsportallogin_1723716285546_0"
+        ],
+        "content": "go to account settings $beconversive"
+      },
+      "fcn_logintoopsportallogin_1723716285546_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintoopsportallogin_1723716285546_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_searchtheaccountbeconversive_1723716285546_0"
+        ],
+        "content": "Login to $opsportallogin"
+      },
+      "fcn_searchtheaccountbeconversive_1723716285546_0": {
+        "dataSetId": -1,
+        "id": "fcn_searchtheaccountbeconversive_1723716285546_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checkconversivelabel_1723716285546_0"
+        ],
+        "content": "search the account $beconversive"
+      },
+      "fcn_checkconversivelabel_1723716285546_0": {
+        "dataSetId": -1,
+        "id": "fcn_checkconversivelabel_1723716285546_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checkproductplansection_1723716285546_0"
+        ],
+        "content": "check conversive label"
+      },
+      "fcn_checkproductplansection_1723716285546_0": {
+        "dataSetId": -1,
+        "id": "fcn_checkproductplansection_1723716285546_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_gotouserslicenses_1723716323483_0"
+        ],
+        "content": "check product plan section"
+      },
+      "fcn_gotouserslicenses_1723716323483_0": {
+        "dataSetId": -1,
+        "id": "fcn_gotouserslicenses_1723716323483_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_deletethelicense_0"
+        ],
+        "content": "go to users \u0026 licenses"
+      },
+      "fcn_deletethelicense_0": {
+        "dataSetId": -1,
+        "id": "fcn_deletethelicense_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_switchtotheconversivewindow_0"
+        ],
+        "content": "Delete the license"
+      },
+      "fcn_switchtotheconversivewindow_0": {
+        "dataSetId": -1,
+        "id": "fcn_switchtotheconversivewindow_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_refreshthepage_1724138306874_0"
+        ],
+        "content": "switch to the Conversive window"
+      },
+      "fcn_verifytheerrormessageforinvalidlicense_1723718180833_0": {
+        "dataSetId": -1,
+        "id": "fcn_verifytheerrormessageforinvalidlicense_1723718180833_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logoutfromportal_1723718189147_0"
+        ],
+        "content": "Verify the Error message for Invalid license"
+      },
+      "fcn_logoutfromportal_1723718189147_0": {
+        "dataSetId": -1,
+        "id": "fcn_logoutfromportal_1723718189147_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Logout from portal"
+      },
+      "fcn_refreshthepage_1724138306874_0": {
+        "dataSetId": -1,
+        "id": "fcn_refreshthepage_1724138306874_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_verifytheerrormessageforinvalidlicense_1723718180833_0"
+        ],
+        "content": "Refresh the Page"
+      }
+    },
+    "pathNames": {},
+    "isPrimary": false,
+    "positions": {
+      "fcn_start_0": {
+        "top": 150.0,
+        "left": 500.0
+      },
+      "fcn_featurelicenserestriction_0": {
+        "top": 211.9921875,
+        "left": 445.0
+      },
+      "fcn_trialplan_0": {
+        "top": 275.0,
+        "left": 81.9921875
+      },
+      "fcn_logintobeconversive_1718089762912_0": {
+        "top": 333.984375,
+        "left": 81.9921875
+      },
+      "fcn_gotoaccountsettingsbeconversive_1718089789414_0": {
+        "top": 400.13671875,
+        "left": 82.96875
+      },
+      "fcn_validateupgradepopup_0": {
+        "top": 464.27734375,
+        "left": 81.9921875
+      },
+      "fcn_validateexpirybanner_0": {
+        "top": 523.28125,
+        "left": 81.9921875
+      },
+      "fcn__0": {
+        "top": 582.28515625,
+        "left": 81.9921875
+      },
+      "fcn_validateconversedeskrestrictionfreetrialconversedesk_0": {
+        "top": 582.28515625,
+        "left": 81.9921875
+      },
+      "fcn_successmessageonselectplan_0": {
+        "top": 703.125,
+        "left": -3.96484375
+      },
+      "fcn_validatesuccessmessageshownonplansynctohubpsot_0": {
+        "top": 762.12890625,
+        "left": -3.96484375
+      },
+      "fcn_failedmessageonselectplan_0": {
+        "top": 704.12109375,
+        "left": 282.96875
+      },
+      "fcn_validateerrormessageshownwhenplansynctohubpsotfails_0": {
+        "top": 763.125,
+        "left": 282.96875
+      },
+      "fcn_professionalplan_0": {
+        "top": 280.9765625,
+        "left": 370.0
+      },
+      "fcn_logintobeconversive_1718101537108_0": {
+        "top": 340.0,
+        "left": 370.0
+      },
+      "fcn_validateconversedeskrestriction_0": {
+        "top": 405.13671875,
+        "left": 370.0
+      },
+      "fcn_validateconversedeskrestricitonforppadvacneconversedesk_0": {
+        "top": 484.12109375,
+        "left": 372.96875
+      },
+      "fcn_validateconversedeskrestrictionforppsuperiorconversedesk_0": {
+        "top": 559.12109375,
+        "left": 370.0
+      },
+      "fcn_validateconversedeskrestrictionforpppaygconversedesk_0": {
+        "top": 636.1328125,
+        "left": 367.96875
+      },
+      "fcn_marketerplan_0": {
+        "top": 280.9765625,
+        "left": 650.0
+      },
+      "fcn_logintobeconversive_1718101540398_0": {
+        "top": 340.0,
+        "left": 650.0
+      },
+      "fcn_validateconversedeskrestrictionformpbasicconversedesk_0": {
+        "top": 405.13671875,
+        "left": 650.0
+      },
+      "fcn_validateconversedeskrestrictionformpadvanceconversedesk_0": {
+        "top": 482.12890625,
+        "left": 660.0
+      },
+      "fcn_contactcenterplan_0": {
+        "top": 280.9765625,
+        "left": 930.0
+      },
+      "fcn_logintobeconversive_1718101543673_0": {
+        "top": 340.0,
+        "left": 930.0
+      },
+      "fcn_validateconversedeskrestrictionforccbasicconversedesk_0": {
+        "top": 405.13671875,
+        "left": 930.0
+      },
+      "fcn_validateconversedeskrestrictionforccadvanceconversedesk_0": {
+        "top": 472.12890625,
+        "left": 938.984375
+      },
+      "fcn_validateconversedeskrestrictionforccpaygconversedesk_0": {
+        "top": 540.13671875,
+        "left": 936.9921875
+      },
+      "fcn_messageforinvalidplanlicense_0": {
+        "top": 280.9765625,
+        "left": 1210.0
+      },
+      "fcn_logintobeconversive_1723630734179_0": {
+        "top": 341.54296875,
+        "left": 1210.0
+      },
+      "fcn_verifytheerrormessage_0": {
+        "top": 406.6796875,
+        "left": 1210.0
+      },
+      "fcn_logoutfromportal_0": {
+        "top": 467.2265625,
+        "left": 1210.0
+      },
+      "fcn_contentcreator_0": {
+        "top": 284.765625,
+        "left": 1505.95703125
+      },
+      "fcn_logintocreatorbeconversive_1723711855354_0": {
+        "top": 344.21875,
+        "left": 1507.96875
+      },
+      "fcn_verifytheerrormessageforinvalidlicense_1723711863278_0": {
+        "top": 404.375,
+        "left": 1512.96875
+      },
+      "fcn_logoutfromportal_1723711867485_0": {
+        "top": 473.4765625,
+        "left": 1515.9765625
+      },
+      "fcn_agent_0": {
+        "top": 288.02734375,
+        "left": 1803.984375
+      },
+      "fcn_logintoagentbeconversive_1723711907751_0": {
+        "top": 343.4765625,
+        "left": 1808.984375
+      },
+      "fcn_verifytheerrormessageforinvalidlicense_1723711912247_0": {
+        "top": 404.609375,
+        "left": 1810.99609375
+      },
+      "fcn_logoutfromportal_1723711916327_0": {
+        "top": 480.72265625,
+        "left": 1809.98046875
+      },
+      "fcn_monitoringuser_0": {
+        "top": 283.28125,
+        "left": 2104.98046875
+      },
+      "fcn_logintomonitorbeconversive_1723711946802_0": {
+        "top": 335.72265625,
+        "left": 2110.9765625
+      },
+      "fcn_verifytheerrormessageforinvalidlicense_1723711951173_0": {
+        "top": 396.875,
+        "left": 2116.9921875
+      },
+      "fcn_logoutfromportal_1723711955062_0": {
+        "top": 473.0078125,
+        "left": 2113.984375
+      },
+      "fcn_validlicensetoinvalidlicense_0": {
+        "top": 283.28125,
+        "left": 2384.98046875
+      },
+      "fcn_logintobeconversive_1723716120492_0": {
+        "top": 343.83686907348635,
+        "left": 2384.9654541015625
+      },
+      "fcn_gotoaccountsettingsbeconversive_1723716251818_0": {
+        "top": 408.99302250976564,
+        "left": 2384.9654541015625
+      },
+      "fcn_logintoopsportallogin_1723716285546_0": {
+        "top": 474.1319080078125,
+        "left": 2384.9654541015625
+      },
+      "fcn_searchtheaccountbeconversive_1723716285546_0": {
+        "top": 545.3124662124634,
+        "left": 2385.9550170898438
+      },
+      "fcn_checkconversivelabel_1723716285546_0": {
+        "top": 612.4478870117188,
+        "left": 2386.9619750976562
+      },
+      "fcn_checkproductplansection_1723716285546_0": {
+        "top": 676.0589938842774,
+        "left": 2388.95849609375
+      },
+      "fcn_gotouserslicenses_1723716323483_0": {
+        "top": 736.5972870117188,
+        "left": 2388.9584350585938
+      },
+      "fcn_deletethelicense_0": {
+        "top": 797.1528595214844,
+        "left": 2388.95849609375
+      },
+      "fcn_switchtotheconversivewindow_0": {
+        "top": 857.7084015136719,
+        "left": 2388.95849609375
+      },
+      "fcn_verifytheerrormessageforinvalidlicense_1723718180833_0": {
+        "top": 978.8195465332032,
+        "left": 2388.9583740234375
+      },
+      "fcn_logoutfromportal_1723718189147_0": {
+        "top": 1054.9306190429688,
+        "left": 2388.9583740234375
+      },
+      "fcn_refreshthepage_1724138306874_0": {
+        "top": 918.2639740234375,
+        "left": 2388.9584350585938
+      }
+    }
+  },
+  "enabled": true,
+  "parentId": ""
+}

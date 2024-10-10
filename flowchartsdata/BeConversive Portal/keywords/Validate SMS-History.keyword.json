@@ -1,0 +1,56 @@
+{
+  "modifiedOn": "2024-07-30T09:12:42.067Z",
+  "name": "Validate SMS-History",
+  "id": "58578",
+  "type": 3,
+  "createdOn": "2024-07-30T09:11:47.719Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Validate SMS-History",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"Campaign\")"
+          },
+          {}
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"Message History\")"
+          },
+          {}
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"/Hello How are You Sent Message/\", _under(_tableHeader(\"Message\")))"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$sfcontact.messageText"
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

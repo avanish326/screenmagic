@@ -1,0 +1,101 @@
+{
+  "modifiedOn": "2024-06-20T07:26:05.232Z",
+  "name": "remove goals and milestone and setup section",
+  "id": "28793",
+  "type": 3,
+  "createdOn": "2024-02-08T06:49:57.113Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "remove goals and milestone and setup section",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": true,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_heading6(\"Converse Desk\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"border border-gray-300 rounded-2xl shadow hover-container group relative duration-800\", _near(_heading4(\"Setup your account\")))"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$firstSetupCard"
+        }
+      },
+      {
+        "commented": false,
+        "action": "_mouseOver",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"hover-container group relative duration-800 shadow grid-cols-1 block col-span-3 w-full mr-3 lg:flex justify-between  bg-blue-50 mt-5 border border-blue-300 rounded-md\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"Skip\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"notification-content no-child\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"The step has been skipped\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"hover-container group relative duration-800 shadow grid-cols-1 block col-span-3 w-full mr-3 lg:flex justify-between  bg-blue-50 mt-5 border border-blue-300 rounded-md\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$firstSetupCard"
+        }
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "while(_isVisible(_span(\"Skip\"))){\n_click(_span(\"Skip\"));\n_wait(\"2000\");\n}"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

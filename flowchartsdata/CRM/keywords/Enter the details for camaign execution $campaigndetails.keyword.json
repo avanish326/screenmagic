@@ -1,0 +1,106 @@
+{
+  "modifiedOn": "2024-01-12T12:26:21.698Z",
+  "name": "Enter the details for camaign execution $campaigndetails",
+  "id": "21258",
+  "type": 3,
+  "createdOn": "2023-12-11T05:50:13.012Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Enter the details for camaign execution $campaigndetails",
+    "parameters": [
+      {
+        "parameterId": "campaigndetails_",
+        "entityTypeId": "campaigndetails",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_selectWindow",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "\"Portal SMS Magic\""
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "30000"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "_isVisible(_textbox(\"campaignName\"))"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "parameterId": "campaigndetails_",
+            "attributeId": "attr_01701786505210",
+            "accessorId": "acc0"
+          },
+          {
+            "parameterId": "campaigndetails_",
+            "attributeId": "attr_01701786505210"
+          }
+        ],
+        "stepType": "Action",
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_setSelected",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_select(\"senderId\")"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "\"14242387010(SMS)\""
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_setSelected",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_select(\"template\")"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "\"Happy Birthday (Sample)\""
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_submit(\"Next\")"
+          }
+        ],
+        "stepType": "Action"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

@@ -1,0 +1,65 @@
+{
+  "modifiedOn": "2024-04-10T03:58:46.215Z",
+  "name": "Spam and block popup is visible",
+  "id": "44247",
+  "type": 3,
+  "createdOn": "2024-03-12T08:03:20.731Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Spam and block popup is visible",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "4000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_exists",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"closeThis sender looks suspicious. Verify the sender details before respondingBlockReportIt\u0027s safe\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Is_True"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"This sender looks suspicious. Verify the sender details before responding\", _in(_div(\"Spam\")))"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$spamPopup"
+        }
+      },
+      {
+        "commented": false,
+        "action": "return",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "$spamPopup"
+          }
+        ],
+        "stepType": "Action"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

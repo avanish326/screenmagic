@@ -1,0 +1,87 @@
+{
+  "modifiedOn": "2024-07-19T12:06:43.647Z",
+  "name": "Verify the deatils in Flow insights $studentinquiry",
+  "id": "58480",
+  "type": 3,
+  "createdOn": "2024-07-19T10:52:50.568Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Verify the deatils in Flow insights $studentinquiry",
+    "parameters": [
+      {
+        "parameterId": "studentinquiry_",
+        "entityTypeId": "studentinquiry",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "_assertEqual($phoneNumberVar,_getAttribute(_span(1,_under(_tableHeader(\"Mobile Number\"))),\"aria-label\"));"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_cell(0, _under(_tableHeader(\"Flow Initiation\")))"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"Start\""
+        }
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "_assertEqual($studentinquiry.firstCTA,_getAttribute(_span(1,_under(_tableHeader(\"Type Of Service\"))),\"aria-label\"));"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_cell(0, _under(_tableHeader(\"Meet An Advisor\")))"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "parameterId": "studentinquiry_",
+          "attributeId": "attr_11721365502036"
+        },
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_cell(0, _under(_tableHeader(\"Further Help Required\")))"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "parameterId": "studentinquiry_",
+          "attributeId": "attr_21721365511198"
+        },
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "_assertEqual($studentinquiry.ctaTalkStartLearn,_getAttribute(_span(1,_under(_tableHeader(\"Type Of Help\"))),\"aria-label\"));"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

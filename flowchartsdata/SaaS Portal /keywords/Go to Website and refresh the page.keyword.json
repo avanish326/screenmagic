@@ -1,0 +1,50 @@
+{
+  "modifiedOn": "2024-07-03T11:48:22.035Z",
+  "name": "Go to Website and refresh the page",
+  "id": "58042",
+  "type": 3,
+  "createdOn": "2024-07-03T11:34:04.917Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Go to Website and refresh the page",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_selectBrowser",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "$browserDomain"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_call",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "location.reload()"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {}
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "1000"
+          }
+        ],
+        "stepType": "Action"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

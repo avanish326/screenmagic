@@ -1,0 +1,458 @@
+{
+  "modifiedOn": "2024-02-05T05:57:22.625Z",
+  "name": "Template Hubspot merge field",
+  "id": "22420",
+  "type": 0,
+  "createdOn": "2024-01-11T10:42:44.650Z",
+  "content": {
+    "settings": {
+      "maxProceedDepth": 100,
+      "maxProceedsForFirstDepth": 1,
+      "maxProceedsPerDepth": 1,
+      "maxPathRepititionsPerComboPath": 1,
+      "maxProceedsPerPath": 10000,
+      "maxToggles": 2,
+      "maxMatchingPaths": 3
+    },
+    "nodesMap": {
+      "fcn_start_0": {
+        "dataSetId": -1,
+        "id": "fcn_start_0",
+        "nodeType": "start",
+        "branches": [
+          "fcn_hubsportmergefieldtemplate_0",
+          "fcn_sendnewmessagefromsaasdesk_0"
+        ],
+        "content": "Start"
+      },
+      "fcn_hubsportmergefieldtemplate_0": {
+        "dataSetId": -1,
+        "id": "fcn_hubsportmergefieldtemplate_0",
+        "nodeType": "pathlabel",
+        "branches": [
+          "fcn_loginonportal_0"
+        ],
+        "content": "Create Template for Hubspot for campaign and conversation type"
+      },
+      "fcn_loginonportal_0": {
+        "dataSetId": -1,
+        "id": "fcn_loginonportal_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_inteagrtionisenable_0"
+        ],
+        "content": "Login SAAS Portal"
+      },
+      "fcn_clickonintegration_0": {
+        "dataSetId": -1,
+        "id": "fcn_clickonintegration_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_ishubspotintegraionenable_0"
+        ],
+        "content": "Click on Integration"
+      },
+      "fcn_ishubspotintegraionenable_0": {
+        "dataSetId": -1,
+        "id": "fcn_ishubspotintegraionenable_0",
+        "nodeType": "dynamic-decision",
+        "branches": [
+          "fcn_connectwithhubspotintegration_0",
+          "fcn_navigatetotemplatecreation_0"
+        ],
+        "content": "Is Hubspot Integraion enable ?"
+      },
+      "fcn_connectwithhubspotintegration_0": {
+        "dataSetId": -1,
+        "id": "fcn_connectwithhubspotintegration_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Connect with Hubspot Integration"
+      },
+      "fcn_navigatetotemplatecreation_0": {
+        "dataSetId": -1,
+        "id": "fcn_navigatetotemplatecreation_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_createatemplate_0"
+        ],
+        "content": "Navigate to template creation"
+      },
+      "fcn_createatemplate_0": {
+        "dataSetId": -1,
+        "id": "fcn_createatemplate_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_createtemplateforcampaign_0",
+          "fcn_createtemplateforconversationtype_0"
+        ],
+        "content": "Create a template"
+      },
+      "fcn_createtemplateforcampaign_0": {
+        "dataSetId": -1,
+        "id": "fcn_createtemplateforcampaign_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_forcontactobject_1706103221908_0",
+          "fcn_fordealsobject_1706103311532_0",
+          "fcn_forcompaniesobject_1706103317124_0",
+          "fcn_forticketsobject_1706103322752_0"
+        ],
+        "content": "Create template for $campaigntype"
+      },
+      "fcn_forcampaignacontactobject_0": {
+        "dataSetId": -1,
+        "id": "fcn_forcampaignacontactobject_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_validatetemplateconversationtype_0"
+        ],
+        "content": "For contact object"
+      },
+      "fcn_forcampaignadealsobject_0": {
+        "dataSetId": -1,
+        "id": "fcn_forcampaignadealsobject_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_validatetemplateconversationtype_0"
+        ],
+        "content": "for Deals object"
+      },
+      "fcn_forcampaignacompaniesobject_0": {
+        "dataSetId": -1,
+        "id": "fcn_forcampaignacompaniesobject_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_validatetemplateconversationtype_0"
+        ],
+        "content": "for Companies object"
+      },
+      "fcn_foracampaignticketsobject_0": {
+        "dataSetId": -1,
+        "id": "fcn_foracampaignticketsobject_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_validatetemplateconversationtype_0"
+        ],
+        "content": "for Tickets object"
+      },
+      "fcn_validatetemplatecampaigntype_0": {
+        "dataSetId": -1,
+        "id": "fcn_validatetemplatecampaigntype_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Validate template $campaigntype"
+      },
+      "fcn_createtemplateforconversationtype_0": {
+        "dataSetId": -1,
+        "id": "fcn_createtemplateforconversationtype_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_forcampaignacontactobject_0",
+          "fcn_forcampaignadealsobject_0",
+          "fcn_forcampaignacompaniesobject_0",
+          "fcn_foracampaignticketsobject_0"
+        ],
+        "content": "Create template for $conversationtype"
+      },
+      "fcn_validatetemplateconversationtype_0": {
+        "dataSetId": -1,
+        "id": "fcn_validatetemplateconversationtype_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Validate template $conversationtype"
+      },
+      "fcn_forcontactobject_1706103221908_0": {
+        "dataSetId": -1,
+        "id": "fcn_forcontactobject_1706103221908_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_validatetemplatecampaigntype_0"
+        ],
+        "content": "For contact object"
+      },
+      "fcn_fordealsobject_1706103311532_0": {
+        "dataSetId": -1,
+        "id": "fcn_fordealsobject_1706103311532_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_validatetemplatecampaigntype_0"
+        ],
+        "content": "for Deals object"
+      },
+      "fcn_forcompaniesobject_1706103317124_0": {
+        "dataSetId": -1,
+        "id": "fcn_forcompaniesobject_1706103317124_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_validatetemplatecampaigntype_0"
+        ],
+        "content": "for Companies object"
+      },
+      "fcn_forticketsobject_1706103322752_0": {
+        "dataSetId": -1,
+        "id": "fcn_forticketsobject_1706103322752_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_validatetemplatecampaigntype_0"
+        ],
+        "content": "for Tickets object"
+      },
+      "fcn_inteagrtionisenable_0": {
+        "dataSetId": -1,
+        "id": "fcn_inteagrtionisenable_0",
+        "nodeType": "dynamic-decision",
+        "branches": [
+          "fcn_enableintegration_0",
+          "fcn_clickonintegration_0"
+        ],
+        "content": "Inteagrtion is enable??"
+      },
+      "fcn_enableintegration_0": {
+        "dataSetId": -1,
+        "id": "fcn_enableintegration_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Enable integration "
+      },
+      "fcn_sendnewmessagefromsaasdesk_0": {
+        "dataSetId": -1,
+        "id": "fcn_sendnewmessagefromsaasdesk_0",
+        "nodeType": "pathlabel",
+        "branches": [
+          "fcn_loginsaasportal_1707110964552_0"
+        ],
+        "content": "Send New Message from SaaS Desk"
+      },
+      "fcn_loginsaasportal_1707110964552_0": {
+        "dataSetId": -1,
+        "id": "fcn_loginsaasportal_1707110964552_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_inteagrtionisenable_1707111028618_0"
+        ],
+        "content": "Login SAAS Portal"
+      },
+      "fcn_navigatetosaasdesk_0": {
+        "dataSetId": -1,
+        "id": "fcn_navigatetosaasdesk_0",
+        "nodeType": "dynamic-decision",
+        "branches": [],
+        "content": "Navigate to SaaS Desk"
+      },
+      "fcn_inteagrtionisenable_1707111028618_0": {
+        "dataSetId": -1,
+        "id": "fcn_inteagrtionisenable_1707111028618_0",
+        "nodeType": "dynamic-decision",
+        "branches": [
+          "fcn_enableintegration_1707111078008_0",
+          "fcn_clickonintegration_1707111034293_0"
+        ],
+        "content": "Inteagrtion is enable??"
+      },
+      "fcn_clickonintegration_1707111034293_0": {
+        "dataSetId": -1,
+        "id": "fcn_clickonintegration_1707111034293_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_ishubspotintegraionenable_1707111084415_0"
+        ],
+        "content": "Click on Integration"
+      },
+      "fcn_enableintegration_1707111078008_0": {
+        "dataSetId": -1,
+        "id": "fcn_enableintegration_1707111078008_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Enable integration "
+      },
+      "fcn_ishubspotintegraionenable_1707111084415_0": {
+        "dataSetId": -1,
+        "id": "fcn_ishubspotintegraionenable_1707111084415_0",
+        "nodeType": "dynamic-decision",
+        "branches": [
+          "fcn_connectwithhubspotintegration_1707111113896_0",
+          "fcn_navigatetoconversedesk_0"
+        ],
+        "content": "Is Hubspot Integraion enable ?"
+      },
+      "fcn_connectwithhubspotintegration_1707111113896_0": {
+        "dataSetId": -1,
+        "id": "fcn_connectwithhubspotintegration_1707111113896_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Connect with Hubspot Integration"
+      },
+      "fcn_navigatetoconversedesk_0": {
+        "dataSetId": -1,
+        "id": "fcn_navigatetoconversedesk_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_sendnewmessageforhubspotfromdesk_0"
+        ],
+        "content": "Navigate to converse desk "
+      },
+      "fcn_sendnewmessageforhubspotfromdesk_0": {
+        "dataSetId": -1,
+        "id": "fcn_sendnewmessageforhubspotfromdesk_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_validatesmshistory_0"
+        ],
+        "content": "Send New Message for Hubspot from Desk "
+      },
+      "fcn_validatesmshistory_0": {
+        "dataSetId": -1,
+        "id": "fcn_validatesmshistory_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Validate SMS-History"
+      },
+      "fcn_navigateconversedesk_0": {
+        "dataSetId": -1,
+        "id": "fcn_navigateconversedesk_0",
+        "nodeType": "dynamic-decision",
+        "branches": [],
+        "content": "Navigate Converse Desk"
+      }
+    },
+    "pathNames": {},
+    "isPrimary": false,
+    "positions": {
+      "fcn_start_0": {
+        "top": 117.35302734375,
+        "left": 1599.3709411621094
+      },
+      "fcn_hubsportmergefieldtemplate_0": {
+        "top": 165.921875,
+        "left": 1522.2056274414062
+      },
+      "fcn_loginonportal_0": {
+        "top": 224.12120056152344,
+        "left": 1520.1233520507812
+      },
+      "fcn_inteagrtionisenable_0": {
+        "top": 277.53131103515625,
+        "left": 1522.3617858886719
+      },
+      "fcn_enableintegration_0": {
+        "top": 327.6271667480469,
+        "left": 1790.349365234375
+      },
+      "fcn_clickonintegration_0": {
+        "top": 330.6464538574219,
+        "left": 1519.3945617675781
+      },
+      "fcn_ishubspotintegraionenable_0": {
+        "top": 388.2384338378906,
+        "left": 1524.3746643066406
+      },
+      "fcn_connectwithhubspotintegration_0": {
+        "top": 435.6446838378906,
+        "left": 1797.2034912109375
+      },
+      "fcn_navigatetotemplatecreation_0": {
+        "top": 461.742431640625,
+        "left": 1246.9648132324219
+      },
+      "fcn_createatemplate_0": {
+        "top": 514.1981811523438,
+        "left": 1245.9930877685547
+      },
+      "fcn_createtemplateforcampaign_0": {
+        "top": 553.6397705078125,
+        "left": 1566.1240844726562
+      },
+      "fcn_forcontactobject_1706103221908_0": {
+        "top": 617.8602905273438,
+        "left": 1569.8721618652344
+      },
+      "fcn_validatetemplatecampaigntype_0": {
+        "top": 877.95263671875,
+        "left": 1799.7716674804688
+      },
+      "fcn_fordealsobject_1706103311532_0": {
+        "top": 722.8411865234375,
+        "left": 1570.8959350585938
+      },
+      "fcn_forcompaniesobject_1706103317124_0": {
+        "top": 670.888671875,
+        "left": 1568.8310241699219
+      },
+      "fcn_forticketsobject_1706103322752_0": {
+        "top": 772.919677734375,
+        "left": 1573.8631591796875
+      },
+      "fcn_createtemplateforconversationtype_0": {
+        "top": 570.506103515625,
+        "left": 961.9546966552734
+      },
+      "fcn_forcampaignacontactobject_0": {
+        "top": 635.6983642578125,
+        "left": 962.0761566162109
+      },
+      "fcn_validatetemplateconversationtype_0": {
+        "top": 869.0682983398438,
+        "left": 732.73193359375
+      },
+      "fcn_forcampaignadealsobject_0": {
+        "top": 788.8316650390625,
+        "left": 959.8550720214844
+      },
+      "fcn_forcampaignacompaniesobject_0": {
+        "top": 684.7704467773438,
+        "left": 959.9765472412109
+      },
+      "fcn_foracampaignticketsobject_0": {
+        "top": 736.879150390625,
+        "left": 961.9026336669922
+      },
+      "fcn_sendnewmessagefromsaasdesk_0": {
+        "top": 170.93666076660156,
+        "left": 2263.1624755859375
+      },
+      "fcn_loginsaasportal_1707110964552_0": {
+        "top": 226.1861114501953,
+        "left": 2269.1490478515625
+      },
+      "fcn_inteagrtionisenable_1707111028618_0": {
+        "top": 278.4856872558594,
+        "left": 2269.1490478515625
+      },
+      "fcn_enableintegration_1707111078008_0": {
+        "top": 323.8096618652344,
+        "left": 2553.1353759765625
+      },
+      "fcn_clickonintegration_1707111034293_0": {
+        "top": 336.8238220214844,
+        "left": 2269.1490478515625
+      },
+      "fcn_ishubspotintegraionenable_1707111084415_0": {
+        "top": 395.0925598144531,
+        "left": 2269.1490478515625
+      },
+      "fcn_connectwithhubspotintegration_1707111113896_0": {
+        "top": 434.39532470703125,
+        "left": 2546.1424560546875
+      },
+      "fcn_navigatetoconversedesk_0": {
+        "top": 464.4146728515625,
+        "left": 2269.07958984375
+      },
+      "fcn_sendnewmessageforhubspotfromdesk_0": {
+        "top": 519.7161865234375,
+        "left": 2269.1143798828125
+      },
+      "fcn_validatesmshistory_0": {
+        "top": 591.3461303710938,
+        "left": 2269.1143798828125
+      },
+      "fcn_navigateconversedesk_0": {
+        "top": 434.39532470703125,
+        "left": 2826.1424560546875
+      }
+    }
+  },
+  "enabled": true,
+  "parentId": ""
+}

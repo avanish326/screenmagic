@@ -1,0 +1,297 @@
+{
+  "modifiedOn": "2024-02-06T13:05:07.467Z",
+  "name": "HIPPA",
+  "id": "22981",
+  "type": 0,
+  "createdOn": "2024-01-30T09:29:29.551Z",
+  "content": {
+    "settings": {
+      "maxProceedDepth": 100,
+      "maxProceedsForFirstDepth": 1,
+      "maxProceedsPerDepth": 1,
+      "maxPathRepititionsPerComboPath": 1,
+      "maxProceedsPerPath": 10000,
+      "maxToggles": 2,
+      "maxMatchingPaths": 3
+    },
+    "nodesMap": {
+      "fcn_start_0": {
+        "dataSetId": -1,
+        "id": "fcn_start_0",
+        "nodeType": "start",
+        "branches": [
+          "fcn_hippacompliancezoho_1706606978674_0",
+          "fcn_hippacompliancesf_1706607002142_0"
+        ],
+        "content": "Start"
+      },
+      "fcn_hippacompliancezoho_1706606978674_0": {
+        "dataSetId": -1,
+        "id": "fcn_hippacompliancezoho_1706606978674_0",
+        "nodeType": "pathlabel",
+        "branches": [
+          "fcn_logintocustomerportalusingzoho_hipaa_1706606987472_0"
+        ],
+        "content": "HIPPA Compliance ZOHO"
+      },
+      "fcn_logintocustomerportalusingzoho_hipaa_1706606987472_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintocustomerportalusingzoho_hipaa_1706606987472_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_navigatetosmsservice_1706606987472_0"
+        ],
+        "content": "login to customer portal using $zoho_hipaa"
+      },
+      "fcn_navigatetosmsservice_1706606987472_0": {
+        "dataSetId": -1,
+        "id": "fcn_navigatetosmsservice_1706606987472_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_gotohipaacomplianceandvalidatetheuiforzoho_1706606987472_0"
+        ],
+        "content": "Navigate to SMS Service"
+      },
+      "fcn_gotohipaacomplianceandvalidatetheuiforzoho_1706606987472_0": {
+        "dataSetId": -1,
+        "id": "fcn_gotohipaacomplianceandvalidatetheuiforzoho_1706606987472_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_gotoconsentmanagementandassertthemessage_1706606987472_0"
+        ],
+        "content": "Go to Hipaa Compliance and Validate the UI for ZOHO"
+      },
+      "fcn_gotoconsentmanagementandassertthemessage_1706606987472_0": {
+        "dataSetId": -1,
+        "id": "fcn_gotoconsentmanagementandassertthemessage_1706606987472_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_gotobusinesshoursandassertthemessage_1706606987472_0"
+        ],
+        "content": "Go to Consent Management and Assert the Message"
+      },
+      "fcn_gotobusinesshoursandassertthemessage_1706606987472_0": {
+        "dataSetId": -1,
+        "id": "fcn_gotobusinesshoursandassertthemessage_1706606987472_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertmessagehistorytabisnotvisible_1706606987472_0"
+        ],
+        "content": "Go to Business Hours and Assert the Message"
+      },
+      "fcn_assertmessagehistorytabisnotvisible_1706606987472_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertmessagehistorytabisnotvisible_1706606987472_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_sendincomingmessagetozohoforhipaasms_1706606987472_0"
+        ],
+        "content": "Assert Message History tab is not visible"
+      },
+      "fcn_sendincomingmessagetozohoforhipaasms_1706606987472_0": {
+        "dataSetId": -1,
+        "id": "fcn_sendincomingmessagetozohoforhipaasms_1706606987472_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertincomingmessageinzohosmshistorysms_1706606987472_0"
+        ],
+        "content": "Send Incoming Message to Zoho for Hipaa $sms"
+      },
+      "fcn_assertincomingmessageinzohosmshistorysms_1706606987472_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertincomingmessageinzohosmshistorysms_1706606987472_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Assert Incoming Message in Zoho SMS History $sms"
+      },
+      "fcn_hippacompliancesf_1706607002142_0": {
+        "dataSetId": -1,
+        "id": "fcn_hippacompliancesf_1706607002142_0",
+        "nodeType": "pathlabel",
+        "branches": [
+          "fcn_logintosalesforce_hipaa_1706607014174_0"
+        ],
+        "content": "HIPPA Compliance SF"
+      },
+      "fcn_logintosalesforce_hipaa_1706607014174_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintosalesforce_hipaa_1706607014174_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logintocustomer_portalusingsfforhippa_1706607014174_0"
+        ],
+        "content": "login to $salesforce_hipaa"
+      },
+      "fcn_logintocustomer_portalusingsfforhippa_1706607014174_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintocustomer_portalusingsfforhippa_1706607014174_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_navigatetosmsservice_1706607014174_0"
+        ],
+        "content": "login to $customer_portal using SF for HIPPA"
+      },
+      "fcn_navigatetosmsservice_1706607014174_0": {
+        "dataSetId": -1,
+        "id": "fcn_navigatetosmsservice_1706607014174_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_gotohipaacomplianceandvalidatetheui_1706607014174_0"
+        ],
+        "content": "Navigate to SMS Service"
+      },
+      "fcn_gotohipaacomplianceandvalidatetheui_1706607014174_0": {
+        "dataSetId": -1,
+        "id": "fcn_gotohipaacomplianceandvalidatetheui_1706607014174_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_gotoconsentmanagementandassertthemessage_1706607014174_0"
+        ],
+        "content": "Go to Hipaa Compliance and Validate the UI "
+      },
+      "fcn_gotoconsentmanagementandassertthemessage_1706607014174_0": {
+        "dataSetId": -1,
+        "id": "fcn_gotoconsentmanagementandassertthemessage_1706607014174_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_gotobusinesshoursandassertthemessage_1706607014174_0"
+        ],
+        "content": "Go to Consent Management and Assert the Message"
+      },
+      "fcn_gotobusinesshoursandassertthemessage_1706607014174_0": {
+        "dataSetId": -1,
+        "id": "fcn_gotobusinesshoursandassertthemessage_1706607014174_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertmessagehistorytabisnotvisible_1706607014174_0"
+        ],
+        "content": "Go to Business Hours and Assert the Message"
+      },
+      "fcn_assertmessagehistorytabisnotvisible_1706607014174_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertmessagehistorytabisnotvisible_1706607014174_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_sendincomingmessagetosfforhipaasms_1706607014174_0"
+        ],
+        "content": "Assert Message History tab is not visible"
+      },
+      "fcn_sendincomingmessagetosfforhipaasms_1706607014174_0": {
+        "dataSetId": -1,
+        "id": "fcn_sendincomingmessagetosfforhipaasms_1706607014174_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertincomingmessageinsfconversedeskandhistorysms_1706607014174_0"
+        ],
+        "content": "Send Incoming Message to SF for Hipaa $sms"
+      },
+      "fcn_assertincomingmessageinsfconversedeskandhistorysms_1706607014174_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertincomingmessageinsfconversedeskandhistorysms_1706607014174_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_sendoutgoingmessageandassertintosfhistorysfagent_1706607014174_0"
+        ],
+        "content": "Assert Incoming Message in SF Converse Desk and History $sms"
+      },
+      "fcn_sendoutgoingmessageandassertintosfhistorysfagent_1706607014174_0": {
+        "dataSetId": -1,
+        "id": "fcn_sendoutgoingmessageandassertintosfhistorysfagent_1706607014174_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Send Outgoing Message and Assert into SF History $sfagent"
+      }
+    },
+    "pathNames": {},
+    "isPrimary": false,
+    "positions": {
+      "fcn_start_0": {
+        "top": 150.0,
+        "left": 500.0
+      },
+      "fcn_hippacompliancezoho_1706606978674_0": {
+        "top": 211.0,
+        "left": 500.0
+      },
+      "fcn_logintocustomerportalusingzoho_hipaa_1706606987472_0": {
+        "top": 270.0,
+        "left": 500.0
+      },
+      "fcn_navigatetosmsservice_1706606987472_0": {
+        "top": 349.1328125,
+        "left": 500.0
+      },
+      "fcn_gotohipaacomplianceandvalidatetheuiforzoho_1706606987472_0": {
+        "top": 411.1328125,
+        "left": 497.0
+      },
+      "fcn_gotoconsentmanagementandassertthemessage_1706606987472_0": {
+        "top": 481.1328125,
+        "left": 500.0
+      },
+      "fcn_gotobusinesshoursandassertthemessage_1706606987472_0": {
+        "top": 554.1328125,
+        "left": 500.0
+      },
+      "fcn_assertmessagehistorytabisnotvisible_1706606987472_0": {
+        "top": 627.1328125,
+        "left": 500.0
+      },
+      "fcn_sendincomingmessagetozohoforhipaasms_1706606987472_0": {
+        "top": 686.1328125,
+        "left": 500.0
+      },
+      "fcn_assertincomingmessageinzohosmshistorysms_1706606987472_0": {
+        "top": 765.28125,
+        "left": 500.0
+      },
+      "fcn_hippacompliancesf_1706607002142_0": {
+        "top": 206.0,
+        "left": 1032.0
+      },
+      "fcn_logintosalesforce_hipaa_1706607014174_0": {
+        "top": 265.0,
+        "left": 1032.0
+      },
+      "fcn_logintocustomer_portalusingsfforhippa_1706607014174_0": {
+        "top": 327.1328125,
+        "left": 1032.0
+      },
+      "fcn_navigatetosmsservice_1706607014174_0": {
+        "top": 406.28125,
+        "left": 1032.0
+      },
+      "fcn_gotohipaacomplianceandvalidatetheui_1706607014174_0": {
+        "top": 461.28125,
+        "left": 1032.0
+      },
+      "fcn_gotoconsentmanagementandassertthemessage_1706607014174_0": {
+        "top": 532.28125,
+        "left": 1031.0
+      },
+      "fcn_gotobusinesshoursandassertthemessage_1706607014174_0": {
+        "top": 602.28125,
+        "left": 1032.0
+      },
+      "fcn_assertmessagehistorytabisnotvisible_1706607014174_0": {
+        "top": 672.28125,
+        "left": 1032.0
+      },
+      "fcn_sendincomingmessagetosfforhipaasms_1706607014174_0": {
+        "top": 728.28125,
+        "left": 1032.0
+      },
+      "fcn_assertincomingmessageinsfconversedeskandhistorysms_1706607014174_0": {
+        "top": 807.4375,
+        "left": 1032.0
+      },
+      "fcn_sendoutgoingmessageandassertintosfhistorysfagent_1706607014174_0": {
+        "top": 885.5859375,
+        "left": 1033.0
+      }
+    },
+    "tags": ""
+  },
+  "enabled": true,
+  "parentId": ""
+}

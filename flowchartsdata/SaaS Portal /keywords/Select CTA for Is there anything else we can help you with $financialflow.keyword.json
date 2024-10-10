@@ -1,0 +1,61 @@
+{
+  "modifiedOn": "2024-02-15T07:29:04.734Z",
+  "name": "Select CTA for Is there anything else we can help you with $financialflow",
+  "id": "29513",
+  "type": 3,
+  "createdOn": "2024-02-15T07:22:23.387Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Select CTA for Is there anything else we can help you with $financialflow",
+    "parameters": [
+      {
+        "parameterId": "financialflow_",
+        "entityTypeId": "financialflow",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_submit($financialflow.ctaYesNo)"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "1500"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div($financialflow.ctaYesNo)"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "parameterId": "financialflow_",
+          "attributeId": "attr_11707981756368"
+        },
+        "visibleCheck": false
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

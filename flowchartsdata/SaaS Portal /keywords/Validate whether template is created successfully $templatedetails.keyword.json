@@ -1,0 +1,65 @@
+{
+  "modifiedOn": "2024-03-18T12:01:19.419Z",
+  "name": "Validate whether template is created successfully $templatedetails",
+  "id": "44697",
+  "type": 3,
+  "createdOn": "2024-03-18T11:56:15.665Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Validate whether template is created successfully $templatedetails",
+    "parameters": [
+      {
+        "parameterId": "templatedetails_",
+        "entityTypeId": "templatedetails",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "2000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(0, _near(_tableHeader(\"TEMPLATE NAME\")))"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$templateName"
+        }
+      },
+      {
+        "commented": false,
+        "action": "_areEqual",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "$templateName"
+          },
+          {
+            "parameterId": "templatedetails_",
+            "attributeId": "attr_01709637010452"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Is_True",
+        "visibleCheck": false
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

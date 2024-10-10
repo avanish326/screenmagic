@@ -1,0 +1,60 @@
+{
+  "modifiedOn": "2024-02-08T06:49:43.818Z",
+  "name": "is consent enabled?",
+  "id": "27874",
+  "type": 3,
+  "createdOn": "2024-02-08T06:49:43.818Z",
+  "content": {
+    "title": "is consent enabled?",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(\"es-status\")"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$Status"
+        }
+      },
+      {
+        "commented": false,
+        "action": "_areEqual",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "\"Enabled\""
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "$Status"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$result"
+        }
+      },
+      {
+        "commented": false,
+        "action": "return",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "$result"
+          }
+        ],
+        "stepType": "Action"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

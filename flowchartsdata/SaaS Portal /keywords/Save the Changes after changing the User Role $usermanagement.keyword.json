@@ -1,0 +1,49 @@
+{
+  "modifiedOn": "2024-02-26T04:58:38.028Z",
+  "name": "Save the Changes after changing the User Role $usermanagement",
+  "id": "43273",
+  "type": 3,
+  "createdOn": "2024-02-26T04:58:18.987Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Save the Changes after changing the User Role $usermanagement",
+    "parameters": [
+      {
+        "parameterId": "usermanagement_",
+        "entityTypeId": "usermanagement",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_button(\"Save changes\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"User details updated successfully\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"User details updated successfully\""
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

@@ -1,0 +1,1060 @@
+{
+  "modifiedOn": "2024-08-06T04:31:05.022Z",
+  "name": "Zoho Campaign",
+  "id": "21017",
+  "type": 0,
+  "createdOn": "2023-12-05T11:34:07.087Z",
+  "content": {
+    "settings": {
+      "maxProceedDepth": 100,
+      "maxProceedsForFirstDepth": 1,
+      "maxProceedsPerDepth": 1,
+      "maxPathRepititionsPerComboPath": 1,
+      "maxProceedsPerPath": 10000,
+      "maxToggles": 2,
+      "maxMatchingPaths": 3
+    },
+    "flowChartUID": "fcUID_1712572647062",
+    "nodesMap": {
+      "fcn_start_0": {
+        "dataSetId": -1,
+        "id": "fcn_start_0",
+        "nodeType": "start",
+        "branches": [
+          "fcn_platformzohomessagescheduling_0"
+        ],
+        "content": "Start"
+      },
+      "fcn_platformzohomessagescheduling_0": {
+        "dataSetId": -1,
+        "id": "fcn_platformzohomessagescheduling_0",
+        "nodeType": "pathlabel",
+        "branches": [
+          "fcn_signintozohocrm_1701776082711_0"
+        ],
+        "content": "Platform Zoho Message Scheduling"
+      },
+      "fcn_signintozohocrm_1701776082711_0": {
+        "dataSetId": -1,
+        "id": "fcn_signintozohocrm_1701776082711_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_prerequsitsforcampaignexecution_0",
+          "fcn_ensurethatuserisabletoschedulethezohocampaignforlistviewfrombulksource3400_1",
+          "fcn_navigatezohocrm_1702291918451_0",
+          "fcn_ensurethatuserisabletoselectanyfuturedateandtime_0",
+          "fcn_verifyuserisabletoselecttimezoneaswell_0",
+          "fcn_ensurethatforscheduledcampaignentrygetscreatedincustomerportalundercampaigns_0",
+          "fcn_verifyuserisabletoabortthecampaignbeforethescheduledtime_0",
+          "fcn_forusereditoptionisavailableforthescheduledcampaignbeforescheduledtime_0",
+          "fcn_ensurethatuserisabletoschedulethezohocampaignforlistviewfrombulksource3400_2",
+          "fcn_ensurethataftertriggeringofscheduledcampaignmessagesaresyncingwithzoho_0",
+          "fcn_ensurethatsenderidcontactsshortenedurltextmediafileanddatetimecanbechangedbeforescheduledtimeforcampaign_0",
+          "fcn_ensureuserisabletoschedulethecampaignforbulkcontactslikefor5000contacts_0",
+          "fcn_verifythatuserisabletoschedulethezohocampaignforselectedcontactsfromsource3100_1712572683899_0"
+        ],
+        "content": "Sign-in to $zohocrm"
+      },
+      "fcn_createabutton_0": {
+        "dataSetId": -1,
+        "id": "fcn_createabutton_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_createabuttonconfigurationlink_1701928643530_0"
+        ],
+        "content": "Navigate ZOHO CRM"
+      },
+      "fcn_addsendbutton_1701928282980_0": {
+        "dataSetId": -1,
+        "id": "fcn_addsendbutton_1701928282980_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "add send button"
+      },
+      "fcn_createabuttonconfigurationlink_1701928643530_0": {
+        "dataSetId": -1,
+        "id": "fcn_createabuttonconfigurationlink_1701928643530_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_addsendbutton_1701928282980_0"
+        ],
+        "content": "Create a $buttonconfiguration link"
+      },
+      "fcn_scheduleacampaigninzohocampaigndetails_0": {
+        "dataSetId": -1,
+        "id": "fcn_scheduleacampaigninzohocampaigndetails_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Schedule a campaign in ZOHO $campaigndetails"
+      },
+      "fcn_navigatezohocrm_0": {
+        "dataSetId": -1,
+        "id": "fcn_navigatezohocrm_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_selecttheleadrecord_0"
+        ],
+        "content": "Navigate ZOHO CRM"
+      },
+      "fcn_selecttheleadrecord_0": {
+        "dataSetId": -1,
+        "id": "fcn_selecttheleadrecord_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_validateuserislogin_0"
+        ],
+        "content": "Select the lead record "
+      },
+      "fcn_enterthedetailsforcamaignexecution_0": {
+        "dataSetId": -1,
+        "id": "fcn_enterthedetailsforcamaignexecution_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_scheduleacampaigninzohocampaigndetails_0",
+          "fcn_sendcampaignnowforzoho_1702358074820_0"
+        ],
+        "content": "Enter the details for camaign execution $campaigndetails"
+      },
+      "fcn_navigatezohocrm_1702291918451_0": {
+        "dataSetId": -1,
+        "id": "fcn_navigatezohocrm_1702291918451_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_selecttheleadrecord_1702291918451_0"
+        ],
+        "content": "Navigate ZOHO CRM"
+      },
+      "fcn_selecttheleadrecord_1702291918451_0": {
+        "dataSetId": -1,
+        "id": "fcn_selecttheleadrecord_1702291918451_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_enterthedetailsforcamaignexecutioncampaigndetails_1702291918451_0"
+        ],
+        "content": "Select the lead record "
+      },
+      "fcn_enterthedetailsforcamaignexecutioncampaigndetails_1702291918451_0": {
+        "dataSetId": -1,
+        "id": "fcn_enterthedetailsforcamaignexecutioncampaigndetails_1702291918451_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_scheduleacampaigninzohocampaigndetails_1702291918451_0"
+        ],
+        "content": "Enter the details for camaign execution $campaigndetails"
+      },
+      "fcn_scheduleacampaigninzohocampaigndetails_1702291918451_0": {
+        "dataSetId": -1,
+        "id": "fcn_scheduleacampaigninzohocampaigndetails_1702291918451_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_validatetheaborteditoption_0"
+        ],
+        "content": "Schedule a campaign in ZOHO $campaigndetails"
+      },
+      "fcn_validatetheaborteditoption_0": {
+        "dataSetId": -1,
+        "id": "fcn_validatetheaborteditoption_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_validateuserisabletoschedulecampaign_0"
+        ],
+        "content": "Validate the abort edit option"
+      },
+      "fcn_validateuserisabletoschedulecampaign_0": {
+        "dataSetId": -1,
+        "id": "fcn_validateuserisabletoschedulecampaign_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Validate user is able to schedule campaign"
+      },
+      "fcn_ensurethatuserisabletoschedulethezohocampaignforlistviewfrombulksource3400_1": {
+        "dataSetId": -1,
+        "id": "fcn_ensurethatuserisabletoschedulethezohocampaignforlistviewfrombulksource3400_1",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_navigatezohocrm_0"
+        ],
+        "content": "Verify that user is able to schedule the Zoho campaign for Selected contacts from source 3100"
+      },
+      "fcn_ensurethatuserisabletoselectanyfuturedateandtime_0": {
+        "dataSetId": -1,
+        "id": "fcn_ensurethatuserisabletoselectanyfuturedateandtime_0",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_navigatezohocrm_1702296955968_0"
+        ],
+        "content": "Ensure that user is able to select any future date and time"
+      },
+      "fcn_navigatezohocrm_1702296955968_0": {
+        "dataSetId": -1,
+        "id": "fcn_navigatezohocrm_1702296955968_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_selecttheleadrecord_1702296955968_0"
+        ],
+        "content": "Navigate ZOHO CRM"
+      },
+      "fcn_selecttheleadrecord_1702296955968_0": {
+        "dataSetId": -1,
+        "id": "fcn_selecttheleadrecord_1702296955968_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_enterthedetailsforcamaignexecutioncampaigndetails_1702296955968_0"
+        ],
+        "content": "Select the lead record "
+      },
+      "fcn_enterthedetailsforcamaignexecutioncampaigndetails_1702296955968_0": {
+        "dataSetId": -1,
+        "id": "fcn_enterthedetailsforcamaignexecutioncampaigndetails_1702296955968_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Enter the details for camaign execution $campaigndetails"
+      },
+      "fcn_verifyuserisabletoselecttimezoneaswell_0": {
+        "dataSetId": -1,
+        "id": "fcn_verifyuserisabletoselecttimezoneaswell_0",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_navigatezohocrm_1702296995636_0"
+        ],
+        "content": "Verify user is able to select Timezone as well"
+      },
+      "fcn_navigatezohocrm_1702296995636_0": {
+        "dataSetId": -1,
+        "id": "fcn_navigatezohocrm_1702296995636_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_selecttheleadrecord_1702296995636_0"
+        ],
+        "content": "Navigate ZOHO CRM"
+      },
+      "fcn_selecttheleadrecord_1702296995636_0": {
+        "dataSetId": -1,
+        "id": "fcn_selecttheleadrecord_1702296995636_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_enterthedetailsforcamaignexecutioncampaigndetails_1702296995636_0"
+        ],
+        "content": "Select the lead record "
+      },
+      "fcn_enterthedetailsforcamaignexecutioncampaigndetails_1702296995636_0": {
+        "dataSetId": -1,
+        "id": "fcn_enterthedetailsforcamaignexecutioncampaigndetails_1702296995636_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Enter the details for camaign execution $campaigndetails"
+      },
+      "fcn_ensurethatforscheduledcampaignentrygetscreatedincustomerportalundercampaigns_0": {
+        "dataSetId": -1,
+        "id": "fcn_ensurethatforscheduledcampaignentrygetscreatedincustomerportalundercampaigns_0",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_navigatezohocrm_1702297042126_0"
+        ],
+        "content": "Ensure that for scheduled campaign entry gets created in Customer portal under campaigns"
+      },
+      "fcn_navigatezohocrm_1702297042126_0": {
+        "dataSetId": -1,
+        "id": "fcn_navigatezohocrm_1702297042126_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_selecttheleadrecord_1702297042126_0"
+        ],
+        "content": "Navigate ZOHO CRM"
+      },
+      "fcn_selecttheleadrecord_1702297042126_0": {
+        "dataSetId": -1,
+        "id": "fcn_selecttheleadrecord_1702297042126_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_enterthedetailsforcamaignexecutioncampaigndetails_1702297042126_0"
+        ],
+        "content": "Select the lead record "
+      },
+      "fcn_enterthedetailsforcamaignexecutioncampaigndetails_1702297042126_0": {
+        "dataSetId": -1,
+        "id": "fcn_enterthedetailsforcamaignexecutioncampaigndetails_1702297042126_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_scheduleacampaigninzohocampaigndetails_1702297042126_0"
+        ],
+        "content": "Enter the details for camaign execution $campaigndetails"
+      },
+      "fcn_scheduleacampaigninzohocampaigndetails_1702297042126_0": {
+        "dataSetId": -1,
+        "id": "fcn_scheduleacampaigninzohocampaigndetails_1702297042126_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_validatecampaignisgettingcreated_0"
+        ],
+        "content": "Schedule a campaign in ZOHO $campaigndetails"
+      },
+      "fcn_validatecampaignisgettingcreated_0": {
+        "dataSetId": -1,
+        "id": "fcn_validatecampaignisgettingcreated_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Validate campaign is getting created"
+      },
+      "fcn_verifyuserisabletoabortthecampaignbeforethescheduledtime_0": {
+        "dataSetId": -1,
+        "id": "fcn_verifyuserisabletoabortthecampaignbeforethescheduledtime_0",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_navigatezohocrm_1702297113651_0"
+        ],
+        "content": "Verify user is able to Abort the Campaign before the scheduled time"
+      },
+      "fcn_navigatezohocrm_1702297113651_0": {
+        "dataSetId": -1,
+        "id": "fcn_navigatezohocrm_1702297113651_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_selecttheleadrecord_1702297113651_0"
+        ],
+        "content": "Navigate ZOHO CRM"
+      },
+      "fcn_selecttheleadrecord_1702297113651_0": {
+        "dataSetId": -1,
+        "id": "fcn_selecttheleadrecord_1702297113651_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_enterthedetailsforcamaignexecutioncampaigndetails_1702297113651_0"
+        ],
+        "content": "Select the lead record "
+      },
+      "fcn_enterthedetailsforcamaignexecutioncampaigndetails_1702297113651_0": {
+        "dataSetId": -1,
+        "id": "fcn_enterthedetailsforcamaignexecutioncampaigndetails_1702297113651_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_scheduleacampaigninzohocampaigndetails_1702297113651_0"
+        ],
+        "content": "Enter the details for camaign execution $campaigndetails"
+      },
+      "fcn_scheduleacampaigninzohocampaigndetails_1702297113651_0": {
+        "dataSetId": -1,
+        "id": "fcn_scheduleacampaigninzohocampaigndetails_1702297113651_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_validatetheaborteditoption_1702297113651_0"
+        ],
+        "content": "Schedule a campaign in ZOHO $campaigndetails"
+      },
+      "fcn_validatetheaborteditoption_1702297113651_0": {
+        "dataSetId": -1,
+        "id": "fcn_validatetheaborteditoption_1702297113651_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Validate the abort edit option"
+      },
+      "fcn_forusereditoptionisavailableforthescheduledcampaignbeforescheduledtime_0": {
+        "dataSetId": -1,
+        "id": "fcn_forusereditoptionisavailableforthescheduledcampaignbeforescheduledtime_0",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_navigatezohocrm_1702297169862_0"
+        ],
+        "content": "For user edit option is available for the Scheduled Campaign before scheduled time"
+      },
+      "fcn_navigatezohocrm_1702297169862_0": {
+        "dataSetId": -1,
+        "id": "fcn_navigatezohocrm_1702297169862_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_selecttheleadrecord_1702297169862_0"
+        ],
+        "content": "Navigate ZOHO CRM"
+      },
+      "fcn_selecttheleadrecord_1702297169862_0": {
+        "dataSetId": -1,
+        "id": "fcn_selecttheleadrecord_1702297169862_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_enterthedetailsforcamaignexecutioncampaigndetails_1702297169862_0"
+        ],
+        "content": "Select the lead record "
+      },
+      "fcn_enterthedetailsforcamaignexecutioncampaigndetails_1702297169862_0": {
+        "dataSetId": -1,
+        "id": "fcn_enterthedetailsforcamaignexecutioncampaigndetails_1702297169862_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_scheduleacampaigninzohocampaigndetails_1702297169862_0"
+        ],
+        "content": "Enter the details for camaign execution $campaigndetails"
+      },
+      "fcn_scheduleacampaigninzohocampaigndetails_1702297169862_0": {
+        "dataSetId": -1,
+        "id": "fcn_scheduleacampaigninzohocampaigndetails_1702297169862_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_validatetheaborteditoption_1702297169862_0"
+        ],
+        "content": "Schedule a campaign in ZOHO $campaigndetails"
+      },
+      "fcn_validatetheaborteditoption_1702297169862_0": {
+        "dataSetId": -1,
+        "id": "fcn_validatetheaborteditoption_1702297169862_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Validate the abort edit option"
+      },
+      "fcn_prerequsitsforcampaignexecution_0": {
+        "dataSetId": -1,
+        "id": "fcn_prerequsitsforcampaignexecution_0",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_createabutton_0"
+        ],
+        "content": "Pre-requsits for Campaign execution"
+      },
+      "fcn_ensurethatuserisabletoschedulethezohocampaignforlistviewfrombulksource3400_2": {
+        "dataSetId": -1,
+        "id": "fcn_ensurethatuserisabletoschedulethezohocampaignforlistviewfrombulksource3400_2",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_navigatezohocrm_1702357430046_0"
+        ],
+        "content": "Ensure that user is able to schedule the Zoho campaign for List view from Bulk source 3400"
+      },
+      "fcn_navigatezohocrm_1702357430046_0": {
+        "dataSetId": -1,
+        "id": "fcn_navigatezohocrm_1702357430046_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_senfmessagefromlistview_0"
+        ],
+        "content": "Navigate ZOHO CRM"
+      },
+      "fcn_senfmessagefromlistview_0": {
+        "dataSetId": -1,
+        "id": "fcn_senfmessagefromlistview_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_enterthedetailsforcamaignexecutioncampaigndetails_1702357957418_0"
+        ],
+        "content": "Send message from list View"
+      },
+      "fcn_enterthedetailsforcamaignexecutioncampaigndetails_1702357957418_0": {
+        "dataSetId": -1,
+        "id": "fcn_enterthedetailsforcamaignexecutioncampaigndetails_1702357957418_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_scheduleacampaigninzohocampaigndetails_1702357972637_0",
+          "fcn_sendcampaignnowforzoho_0"
+        ],
+        "content": "Enter the details for camaign execution $campaigndetails"
+      },
+      "fcn_scheduleacampaigninzohocampaigndetails_1702357972637_0": {
+        "dataSetId": -1,
+        "id": "fcn_scheduleacampaigninzohocampaigndetails_1702357972637_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Schedule a campaign in ZOHO $campaigndetails"
+      },
+      "fcn_sendcampaignnowforzoho_0": {
+        "dataSetId": -1,
+        "id": "fcn_sendcampaignnowforzoho_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Send Campaign now for zoho"
+      },
+      "fcn_sendcampaignnowforzoho_1702358074820_0": {
+        "dataSetId": -1,
+        "id": "fcn_sendcampaignnowforzoho_1702358074820_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Send Campaign now for zoho"
+      },
+      "fcn_ensurethataftertriggeringofscheduledcampaignmessagesaresyncingwithzoho_0": {
+        "dataSetId": -1,
+        "id": "fcn_ensurethataftertriggeringofscheduledcampaignmessagesaresyncingwithzoho_0",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_navigatezohocrm_1702358260159_0"
+        ],
+        "content": "Ensure that after triggering of scheduled campaign messages are syncing with Zoho"
+      },
+      "fcn_navigatezohocrm_1702358260159_0": {
+        "dataSetId": -1,
+        "id": "fcn_navigatezohocrm_1702358260159_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_selecttheleadrecord_1702358260159_0"
+        ],
+        "content": "Navigate ZOHO CRM"
+      },
+      "fcn_selecttheleadrecord_1702358260159_0": {
+        "dataSetId": -1,
+        "id": "fcn_selecttheleadrecord_1702358260159_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_enterthedetailsforcamaignexecutioncampaigndetails_1702358260159_0"
+        ],
+        "content": "Select the lead record "
+      },
+      "fcn_enterthedetailsforcamaignexecutioncampaigndetails_1702358260159_0": {
+        "dataSetId": -1,
+        "id": "fcn_enterthedetailsforcamaignexecutioncampaigndetails_1702358260159_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_scheduleacampaigninzohocampaigndetails_1702358260159_0"
+        ],
+        "content": "Enter the details for camaign execution $campaigndetails"
+      },
+      "fcn_scheduleacampaigninzohocampaigndetails_1702358260159_0": {
+        "dataSetId": -1,
+        "id": "fcn_scheduleacampaigninzohocampaigndetails_1702358260159_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_validateaftercampaignistriggeredmessagearegettingsync_0"
+        ],
+        "content": "Schedule a campaign in ZOHO $campaigndetails"
+      },
+      "fcn_validateaftercampaignistriggeredmessagearegettingsync_0": {
+        "dataSetId": -1,
+        "id": "fcn_validateaftercampaignistriggeredmessagearegettingsync_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Validate after campaign is triggered message are getting sync "
+      },
+      "fcn_ensurethatsenderidcontactsshortenedurltextmediafileanddatetimecanbechangedbeforescheduledtimeforcampaign_0": {
+        "dataSetId": -1,
+        "id": "fcn_ensurethatsenderidcontactsshortenedurltextmediafileanddatetimecanbechangedbeforescheduledtimeforcampaign_0",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_navigatezohocrm_1702379826333_0"
+        ],
+        "content": "Ensure that SenderId, Contacts, Shortened URL,Text, Media file and Date \u0026 Time can be changed before scheduled time for campaign"
+      },
+      "fcn_navigatezohocrm_1702379826333_0": {
+        "dataSetId": -1,
+        "id": "fcn_navigatezohocrm_1702379826333_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_selecttheleadrecord_1702379826333_0"
+        ],
+        "content": "Navigate ZOHO CRM"
+      },
+      "fcn_selecttheleadrecord_1702379826333_0": {
+        "dataSetId": -1,
+        "id": "fcn_selecttheleadrecord_1702379826333_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_enterthedetailsforcamaignexecutioncampaigndetails_1702379826333_0"
+        ],
+        "content": "Select the lead record "
+      },
+      "fcn_enterthedetailsforcamaignexecutioncampaigndetails_1702379826333_0": {
+        "dataSetId": -1,
+        "id": "fcn_enterthedetailsforcamaignexecutioncampaigndetails_1702379826333_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_scheduleacampaigninzohocampaigndetails_1702379826333_0"
+        ],
+        "content": "Enter the details for camaign execution $campaigndetails"
+      },
+      "fcn_scheduleacampaigninzohocampaigndetails_1702379826333_0": {
+        "dataSetId": -1,
+        "id": "fcn_scheduleacampaigninzohocampaigndetails_1702379826333_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_ensurethatsenderidcontactsshortenedurltextmediafileanddatetimecanbechangedbeforescheduledtimeforcampaign_1"
+        ],
+        "content": "Schedule a campaign in ZOHO $campaigndetails"
+      },
+      "fcn_ensurethatsenderidcontactsshortenedurltextmediafileanddatetimecanbechangedbeforescheduledtimeforcampaign_1": {
+        "dataSetId": -1,
+        "id": "fcn_ensurethatsenderidcontactsshortenedurltextmediafileanddatetimecanbechangedbeforescheduledtimeforcampaign_1",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Ensure that SenderId, Contacts, Shortened URL,Text, Media file and Date \u0026 Time can be changed before scheduled time for campaign"
+      },
+      "fcn_ensureuserisabletoschedulethecampaignforbulkcontactslikefor5000contacts_0": {
+        "dataSetId": -1,
+        "id": "fcn_ensureuserisabletoschedulethecampaignforbulkcontactslikefor5000contacts_0",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_navigatezohocrm_1702382723729_0"
+        ],
+        "content": "Ensure user is able to Schedule the campaign for bulk contacts like for 5000 contacts"
+      },
+      "fcn_navigatezohocrm_1702382723729_0": {
+        "dataSetId": -1,
+        "id": "fcn_navigatezohocrm_1702382723729_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_selectthecontactrecord_0"
+        ],
+        "content": "Navigate ZOHO CRM"
+      },
+      "fcn_selectthecontactrecord_0": {
+        "dataSetId": -1,
+        "id": "fcn_selectthecontactrecord_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_enterthedetailsforcamaignexecutioncampaigndetails_1702383823310_0"
+        ],
+        "content": "Select the contact record"
+      },
+      "fcn_enterthedetailsforcamaignexecutioncampaigndetails_1702383823310_0": {
+        "dataSetId": -1,
+        "id": "fcn_enterthedetailsforcamaignexecutioncampaigndetails_1702383823310_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_scheduleacampaigninzohocampaigndetails_1702383823310_0"
+        ],
+        "content": "Enter the details for camaign execution $campaigndetails"
+      },
+      "fcn_scheduleacampaigninzohocampaigndetails_1702383823310_0": {
+        "dataSetId": -1,
+        "id": "fcn_scheduleacampaigninzohocampaigndetails_1702383823310_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Schedule a campaign in ZOHO $campaigndetails"
+      },
+      "fcn_validateuserislogin_0": {
+        "dataSetId": -1,
+        "id": "fcn_validateuserislogin_0",
+        "nodeType": "dynamic-decision",
+        "branches": [
+          "fcn_selecttheleadrecordagain_1",
+          "fcn_loginagaintoportalaccount_0"
+        ],
+        "content": "Validate user is login?"
+      },
+      "fcn_loginagaintoportalaccount_0": {
+        "dataSetId": -1,
+        "id": "fcn_loginagaintoportalaccount_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_selecttheleadrecordagain_1"
+        ],
+        "content": "Login again to portal account"
+      },
+      "fcn_selecttheleadrecordagain_0": {
+        "dataSetId": -1,
+        "id": "fcn_selecttheleadrecordagain_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Select the lead record again"
+      },
+      "fcn_selecttheleadrecordagain_1": {
+        "dataSetId": -1,
+        "id": "fcn_selecttheleadrecordagain_1",
+        "nodeType": "action",
+        "branches": [
+          "fcn_enterthedetailsforcamaignexecution_0"
+        ],
+        "content": "Select the lead record again"
+      },
+      "fcn_verifythatuserisabletoschedulethezohocampaignforselectedcontactsfromsource3100_1712572683899_0": {
+        "dataSetId": -1,
+        "id": "fcn_verifythatuserisabletoschedulethezohocampaignforselectedcontactsfromsource3100_1712572683899_0",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_navigatezohocrm_1712572683899_0"
+        ],
+        "content": "Verify that user is able to send the Zoho campaign with send as campaign button"
+      },
+      "fcn_navigatezohocrm_1712572683899_0": {
+        "dataSetId": -1,
+        "id": "fcn_navigatezohocrm_1712572683899_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_selectthecontact_0"
+        ],
+        "content": "Navigate ZOHO CRM"
+      },
+      "fcn_clickontheaddedbuttonforsendcampaign_0": {
+        "dataSetId": -1,
+        "id": "fcn_clickontheaddedbuttonforsendcampaign_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_validateuserislogin_1712577948462_0"
+        ],
+        "content": "click on the added button for send campaign $zohocrm"
+      },
+      "fcn_selectthecontact_0": {
+        "dataSetId": -1,
+        "id": "fcn_selectthecontact_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_clickontheaddedbuttonforsendcampaign_0"
+        ],
+        "content": "Select the contact"
+      },
+      "fcn_validateuserislogin_1712577948462_0": {
+        "dataSetId": -1,
+        "id": "fcn_validateuserislogin_1712577948462_0",
+        "nodeType": "dynamic-decision",
+        "branches": [
+          "fcn_selecttheleadrecordagain_1712577948462_0",
+          "fcn_loginagaintoportalaccount_1712577948462_0"
+        ],
+        "content": "Validate user is login?"
+      },
+      "fcn_selecttheleadrecordagain_1712577948462_0": {
+        "dataSetId": -1,
+        "id": "fcn_selecttheleadrecordagain_1712577948462_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_enterthedetailsforcamaignexecutioncampaigndetails_1713361201649_0"
+        ],
+        "content": "Select the lead record again"
+      },
+      "fcn_loginagaintoportalaccount_1712577948462_0": {
+        "dataSetId": -1,
+        "id": "fcn_loginagaintoportalaccount_1712577948462_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_selecttheleadrecordagain_1712577948462_0"
+        ],
+        "content": "Login again to portal account"
+      },
+      "fcn_sendthemessageviacampaignzohocrm_0": {
+        "dataSetId": -1,
+        "id": "fcn_sendthemessageviacampaignzohocrm_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "send the message via campaign $zohocrm"
+      },
+      "fcn_enterthedetailsforcamaignexecutioncampaigndetails_1713361201649_0": {
+        "dataSetId": -1,
+        "id": "fcn_enterthedetailsforcamaignexecutioncampaigndetails_1713361201649_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_sendthemessageviacampaignzohocrm_0"
+        ],
+        "content": "Enter the details for camaign execution $campaigndetails"
+      }
+    },
+    "pathNames": {},
+    "isPrimary": false,
+    "positions": {
+      "fcn_start_0": {
+        "top": 162.0,
+        "left": 729.0
+      },
+      "fcn_platformzohomessagescheduling_0": {
+        "top": 247.0,
+        "left": 668.0
+      },
+      "fcn_signintozohocrm_1701776082711_0": {
+        "top": 308.0,
+        "left": 673.0
+      },
+      "fcn_prerequsitsforcampaignexecution_0": {
+        "top": 367.1484375,
+        "left": -183.0
+      },
+      "fcn_createabutton_0": {
+        "top": 440.1484375,
+        "left": -186.0
+      },
+      "fcn_createabuttonconfigurationlink_1701928643530_0": {
+        "top": 519.1484375,
+        "left": -196.0
+      },
+      "fcn_addsendbutton_1701928282980_0": {
+        "top": 618.1484375,
+        "left": -196.0
+      },
+      "fcn_ensurethatuserisabletoschedulethezohocampaignforlistviewfrombulksource3400_1": {
+        "top": 387.1484375,
+        "left": 239.0
+      },
+      "fcn_navigatezohocrm_0": {
+        "top": 470.1484375,
+        "left": 248.0
+      },
+      "fcn_selecttheleadrecord_0": {
+        "top": 524.1484375,
+        "left": 230.0
+      },
+      "fcn_validateuserislogin_0": {
+        "top": 583.1484375,
+        "left": 230.0
+      },
+      "fcn_selecttheleadrecordagain_1": {
+        "top": 656.1484375,
+        "left": 277.0
+      },
+      "fcn_enterthedetailsforcamaignexecution_0": {
+        "top": 761.1484375,
+        "left": 113.0
+      },
+      "fcn_scheduleacampaigninzohocampaigndetails_0": {
+        "top": 860.1484375,
+        "left": -93.0
+      },
+      "fcn_sendcampaignnowforzoho_1702358074820_0": {
+        "top": 899.1484375,
+        "left": 218.0
+      },
+      "fcn_loginagaintoportalaccount_0": {
+        "top": 667.1484375,
+        "left": -78.0
+      },
+      "fcn_navigatezohocrm_1702291918451_0": {
+        "top": 368.1484375,
+        "left": 1673.0
+      },
+      "fcn_selecttheleadrecord_1702291918451_0": {
+        "top": 431.1484375,
+        "left": 1665.0
+      },
+      "fcn_enterthedetailsforcamaignexecutioncampaigndetails_1702291918451_0": {
+        "top": 487.1484375,
+        "left": 1677.0
+      },
+      "fcn_scheduleacampaigninzohocampaigndetails_1702291918451_0": {
+        "top": 576.1484375,
+        "left": 1670.0
+      },
+      "fcn_validatetheaborteditoption_0": {
+        "top": 656.296875,
+        "left": 1671.0
+      },
+      "fcn_validateuserisabletoschedulecampaign_0": {
+        "top": 714.296875,
+        "left": 1671.0
+      },
+      "fcn_ensurethatuserisabletoselectanyfuturedateandtime_0": {
+        "top": 368.1484375,
+        "left": 1956.0
+      },
+      "fcn_navigatezohocrm_1702296955968_0": {
+        "top": 441.1484375,
+        "left": 1956.0
+      },
+      "fcn_selecttheleadrecord_1702296955968_0": {
+        "top": 504.1484375,
+        "left": 1948.0
+      },
+      "fcn_enterthedetailsforcamaignexecutioncampaigndetails_1702296955968_0": {
+        "top": 560.1484375,
+        "left": 1960.0
+      },
+      "fcn_verifyuserisabletoselecttimezoneaswell_0": {
+        "top": 383.1484375,
+        "left": 2304.0
+      },
+      "fcn_navigatezohocrm_1702296995636_0": {
+        "top": 443.1484375,
+        "left": 2286.0
+      },
+      "fcn_selecttheleadrecord_1702296995636_0": {
+        "top": 506.1484375,
+        "left": 2278.0
+      },
+      "fcn_enterthedetailsforcamaignexecutioncampaigndetails_1702296995636_0": {
+        "top": 562.1484375,
+        "left": 2290.0
+      },
+      "fcn_ensurethatforscheduledcampaignentrygetscreatedincustomerportalundercampaigns_0": {
+        "top": 387.1484375,
+        "left": 2624.0
+      },
+      "fcn_navigatezohocrm_1702297042126_0": {
+        "top": 474.1484375,
+        "left": 2624.0
+      },
+      "fcn_selecttheleadrecord_1702297042126_0": {
+        "top": 537.1484375,
+        "left": 2616.0
+      },
+      "fcn_enterthedetailsforcamaignexecutioncampaigndetails_1702297042126_0": {
+        "top": 593.1484375,
+        "left": 2628.0
+      },
+      "fcn_scheduleacampaigninzohocampaigndetails_1702297042126_0": {
+        "top": 682.1484375,
+        "left": 2622.0
+      },
+      "fcn_validatecampaignisgettingcreated_0": {
+        "top": 761.296875,
+        "left": 2622.0
+      },
+      "fcn_verifyuserisabletoabortthecampaignbeforethescheduledtime_0": {
+        "top": 379.1484375,
+        "left": 2917.0
+      },
+      "fcn_navigatezohocrm_1702297113651_0": {
+        "top": 452.1484375,
+        "left": 2917.0
+      },
+      "fcn_selecttheleadrecord_1702297113651_0": {
+        "top": 515.1484375,
+        "left": 2909.0
+      },
+      "fcn_enterthedetailsforcamaignexecutioncampaigndetails_1702297113651_0": {
+        "top": 571.1484375,
+        "left": 2921.0
+      },
+      "fcn_scheduleacampaigninzohocampaigndetails_1702297113651_0": {
+        "top": 660.1484375,
+        "left": 2914.0
+      },
+      "fcn_validatetheaborteditoption_1702297113651_0": {
+        "top": 740.296875,
+        "left": 2915.0
+      },
+      "fcn_forusereditoptionisavailableforthescheduledcampaignbeforescheduledtime_0": {
+        "top": 380.1484375,
+        "left": 3255.0
+      },
+      "fcn_navigatezohocrm_1702297169862_0": {
+        "top": 467.1484375,
+        "left": 3255.0
+      },
+      "fcn_selecttheleadrecord_1702297169862_0": {
+        "top": 530.1484375,
+        "left": 3247.0
+      },
+      "fcn_enterthedetailsforcamaignexecutioncampaigndetails_1702297169862_0": {
+        "top": 586.1484375,
+        "left": 3259.0
+      },
+      "fcn_scheduleacampaigninzohocampaigndetails_1702297169862_0": {
+        "top": 675.1484375,
+        "left": 3252.0
+      },
+      "fcn_validatetheaborteditoption_1702297169862_0": {
+        "top": 755.296875,
+        "left": 3253.0
+      },
+      "fcn_ensurethatuserisabletoschedulethezohocampaignforlistviewfrombulksource3400_2": {
+        "top": 385.1484375,
+        "left": 834.0
+      },
+      "fcn_navigatezohocrm_1702357430046_0": {
+        "top": 472.1484375,
+        "left": 834.0
+      },
+      "fcn_senfmessagefromlistview_0": {
+        "top": 547.1484375,
+        "left": 827.0
+      },
+      "fcn_enterthedetailsforcamaignexecutioncampaigndetails_1702357957418_0": {
+        "top": 606.1484375,
+        "left": 827.0
+      },
+      "fcn_scheduleacampaigninzohocampaigndetails_1702357972637_0": {
+        "top": 721.296875,
+        "left": 716.0
+      },
+      "fcn_sendcampaignnowforzoho_0": {
+        "top": 680.296875,
+        "left": 926.0
+      },
+      "fcn_ensurethataftertriggeringofscheduledcampaignmessagesaresyncingwithzoho_0": {
+        "top": 377.1484375,
+        "left": 1263.0
+      },
+      "fcn_navigatezohocrm_1702358260159_0": {
+        "top": 464.1484375,
+        "left": 1263.0
+      },
+      "fcn_selecttheleadrecord_1702358260159_0": {
+        "top": 519.1484375,
+        "left": 1265.0
+      },
+      "fcn_enterthedetailsforcamaignexecutioncampaigndetails_1702358260159_0": {
+        "top": 575.1484375,
+        "left": 1264.0
+      },
+      "fcn_scheduleacampaigninzohocampaigndetails_1702358260159_0": {
+        "top": 664.1484375,
+        "left": 1262.0
+      },
+      "fcn_validateaftercampaignistriggeredmessagearegettingsync_0": {
+        "top": 744.296875,
+        "left": 1262.0
+      },
+      "fcn_ensurethatsenderidcontactsshortenedurltextmediafileanddatetimecanbechangedbeforescheduledtimeforcampaign_0": {
+        "top": 385.1484375,
+        "left": 3701.0
+      },
+      "fcn_navigatezohocrm_1702379826333_0": {
+        "top": 486.1484375,
+        "left": 3701.0
+      },
+      "fcn_selecttheleadrecord_1702379826333_0": {
+        "top": 549.1484375,
+        "left": 3693.0
+      },
+      "fcn_enterthedetailsforcamaignexecutioncampaigndetails_1702379826333_0": {
+        "top": 605.1484375,
+        "left": 3705.0
+      },
+      "fcn_scheduleacampaigninzohocampaigndetails_1702379826333_0": {
+        "top": 694.1484375,
+        "left": 3698.0
+      },
+      "fcn_ensurethatsenderidcontactsshortenedurltextmediafileanddatetimecanbechangedbeforescheduledtimeforcampaign_1": {
+        "top": 773.296875,
+        "left": 3698.0
+      },
+      "fcn_ensureuserisabletoschedulethecampaignforbulkcontactslikefor5000contacts_0": {
+        "top": 385.1484375,
+        "left": 4143.0
+      },
+      "fcn_navigatezohocrm_1702382723729_0": {
+        "top": 472.1484375,
+        "left": 4143.0
+      },
+      "fcn_selectthecontactrecord_0": {
+        "top": 531.1484375,
+        "left": 4143.0
+      },
+      "fcn_enterthedetailsforcamaignexecutioncampaigndetails_1702383823310_0": {
+        "top": 590.1484375,
+        "left": 4143.0
+      },
+      "fcn_scheduleacampaigninzohocampaigndetails_1702383823310_0": {
+        "top": 679.1484375,
+        "left": 4136.0
+      },
+      "fcn_verifythatuserisabletoschedulethezohocampaignforselectedcontactsfromsource3100_1712572683899_0": {
+        "top": 437.296875,
+        "left": 4805.0
+      },
+      "fcn_navigatezohocrm_1712572683899_0": {
+        "top": 520.296875,
+        "left": 4814.0
+      },
+      "fcn_selectthecontact_0": {
+        "top": 575.296875,
+        "left": 4808.0
+      },
+      "fcn_clickontheaddedbuttonforsendcampaign_0": {
+        "top": 633.296875,
+        "left": 4796.0
+      },
+      "fcn_validateuserislogin_1712577948462_0": {
+        "top": 712.4453125,
+        "left": 4796.0
+      },
+      "fcn_selecttheleadrecordagain_1712577948462_0": {
+        "top": 834.4453125,
+        "left": 4901.0
+      },
+      "fcn_sendthemessageviacampaignzohocrm_0": {
+        "top": 992.4453125,
+        "left": 5171.0
+      },
+      "fcn_enterthedetailsforcamaignexecutioncampaigndetails_1713361201649_0": {
+        "top": 892.4453125,
+        "left": 5181.0
+      },
+      "fcn_loginagaintoportalaccount_1712577948462_0": {
+        "top": 796.4453125,
+        "left": 4488.0
+      }
+    }
+  },
+  "enabled": true,
+  "parentId": ""
+}

@@ -1,0 +1,624 @@
+{
+  "modifiedOn": "2024-09-11T07:29:32.540Z",
+  "name": "All CRMs List View Campaign Flow",
+  "id": "58412",
+  "type": 0,
+  "createdOn": "2024-07-18T08:15:16.687Z",
+  "content": {
+    "settings": {
+      "maxProceedDepth": 100,
+      "maxProceedsForFirstDepth": 1,
+      "maxProceedsPerDepth": 1,
+      "maxPathRepititionsPerComboPath": 1,
+      "maxProceedsPerPath": 10000,
+      "maxToggles": 2,
+      "maxMatchingPaths": 3
+    },
+    "flowChartUID": "fcUID_1721290609889",
+    "nodesMap": {
+      "fcn_start_0": {
+        "dataSetId": -1,
+        "id": "fcn_start_0",
+        "nodeType": "start",
+        "branches": [
+          "fcn_zohocampaignfromsaasportal_0"
+        ],
+        "content": "Start"
+      },
+      "fcn_zohocampaignfromsaasportal_0": {
+        "dataSetId": -1,
+        "id": "fcn_zohocampaignfromsaasportal_0",
+        "nodeType": "pathlabel",
+        "branches": [
+          "fcn_logintosaasportal_1721290641968_0"
+        ],
+        "content": "Zoho Campaign from SaaS Portal"
+      },
+      "fcn_logintosaasportal_1721290641968_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintosaasportal_1721290641968_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_entercampaignnamecampaign_1721290641968_0"
+        ],
+        "content": "login to $saasportal"
+      },
+      "fcn_entercampaignnamecampaign_1721290641968_0": {
+        "dataSetId": -1,
+        "id": "fcn_entercampaignnamecampaign_1721290641968_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_selectcampaigntypehubspotcampaignalltype_1721290641968_0"
+        ],
+        "content": "Enter campaign name  $campaign"
+      },
+      "fcn_selectcampaigntypehubspotcampaignalltype_1721290641968_0": {
+        "dataSetId": -1,
+        "id": "fcn_selectcampaigntypehubspotcampaignalltype_1721290641968_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_selectchannelsenderidhubspotcampaignalltype_1721290641968_0"
+        ],
+        "content": "Select Campaign Type $hubspotcampaignalltype"
+      },
+      "fcn_selectchannelsenderidhubspotcampaignalltype_1721290641968_0": {
+        "dataSetId": -1,
+        "id": "fcn_selectchannelsenderidhubspotcampaignalltype_1721290641968_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_selectsourceaszohohubspotcampaignalltype_0"
+        ],
+        "content": "Select Channel \u0026 SenderID $hubspotcampaignalltype"
+      },
+      "fcn_composemessagehubspotcampaignalltype_1721290641968_0": {
+        "dataSetId": -1,
+        "id": "fcn_composemessagehubspotcampaignalltype_1721290641968_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_testmessagehubspotcampaignalltype_1721290641968_0"
+        ],
+        "content": "Compose Message $hubspotcampaignalltype"
+      },
+      "fcn_testmessagehubspotcampaignalltype_1721290641968_0": {
+        "dataSetId": -1,
+        "id": "fcn_testmessagehubspotcampaignalltype_1721290641968_0",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_recurringcampaignflow_1721290641968_0",
+          "fcn_slowpacecampaignflow_1721290641968_0",
+          "fcn_sendbroadcastcampaign_0"
+        ],
+        "content": "Test Message $hubspotcampaignalltype"
+      },
+      "fcn_recurringcampaignflow_1721290641968_0": {
+        "dataSetId": -1,
+        "id": "fcn_recurringcampaignflow_1721290641968_0",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_schedulehubspotrecurringcampaignforhubspotrecurringcampaign_1721290641968_0"
+        ],
+        "content": "Recurring Campaign Flow"
+      },
+      "fcn_schedulehubspotrecurringcampaignforhubspotrecurringcampaign_1721290641968_0": {
+        "dataSetId": -1,
+        "id": "fcn_schedulehubspotrecurringcampaignforhubspotrecurringcampaign_1721290641968_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_fordailyfreqency_1721290641968_0",
+          "fcn_forweeklyfreqency_1721290641968_0",
+          "fcn_formonthltyfreqencyhubspotrecurringcampaign_1721290641968_0",
+          "fcn_foryearlyfreqencyhubspotrecurringcampaign_1721290641968_0"
+        ],
+        "content": "Schedule Hubspot Recurring Campaign for $hubspotrecurringcampaign"
+      },
+      "fcn_fordailyfreqency_1721290641968_0": {
+        "dataSetId": -1,
+        "id": "fcn_fordailyfreqency_1721290641968_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_verifycampaigndirectsendtext_1721290641968_0"
+        ],
+        "content": "For Daily Freqency"
+      },
+      "fcn_verifycampaigndirectsendtext_1721290641968_0": {
+        "dataSetId": -1,
+        "id": "fcn_verifycampaigndirectsendtext_1721290641968_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_activitylogcheckforslowpacecampaign_1725360226018_0"
+        ],
+        "content": "Verify Campaign Direct Send Text"
+      },
+      "fcn_verifycreatedrecurringcampaign_1721290641968_0": {
+        "dataSetId": -1,
+        "id": "fcn_verifycreatedrecurringcampaign_1721290641968_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_cancelscheduledrecurringcampaign_1721290641968_0"
+        ],
+        "content": "Verify Created Recurring Campaign $hubspotcampaignalltype $hubspotrecurringcampaign"
+      },
+      "fcn_cancelscheduledrecurringcampaign_1721290641968_0": {
+        "dataSetId": -1,
+        "id": "fcn_cancelscheduledrecurringcampaign_1721290641968_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Cancel Scheduled Recurring Campaign "
+      },
+      "fcn_forweeklyfreqency_1721290641968_0": {
+        "dataSetId": -1,
+        "id": "fcn_forweeklyfreqency_1721290641968_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_verifycampaigndirectsendtext_1721290641968_1"
+        ],
+        "content": "For Weekly Freqency"
+      },
+      "fcn_verifycampaigndirectsendtext_1721290641968_1": {
+        "dataSetId": -1,
+        "id": "fcn_verifycampaigndirectsendtext_1721290641968_1",
+        "nodeType": "action",
+        "branches": [
+          "fcn_verifycreatedrecurringcampaignhubspotcampaignalltypehubspotrecurringcampaign_1721735802718_0"
+        ],
+        "content": "Verify Campaign Direct Send Text"
+      },
+      "fcn_formonthltyfreqencyhubspotrecurringcampaign_1721290641968_0": {
+        "dataSetId": -1,
+        "id": "fcn_formonthltyfreqencyhubspotrecurringcampaign_1721290641968_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_verifycampaigndirectsendtext_1721290641968_2"
+        ],
+        "content": "For Monthlty Freqency $hubspotrecurringcampaign"
+      },
+      "fcn_verifycampaigndirectsendtext_1721290641968_2": {
+        "dataSetId": -1,
+        "id": "fcn_verifycampaigndirectsendtext_1721290641968_2",
+        "nodeType": "action",
+        "branches": [
+          "fcn_verifycreatedrecurringcampaignhubspotcampaignalltypehubspotrecurringcampaign_1721735804987_0"
+        ],
+        "content": "Verify Campaign Direct Send Text"
+      },
+      "fcn_foryearlyfreqencyhubspotrecurringcampaign_1721290641968_0": {
+        "dataSetId": -1,
+        "id": "fcn_foryearlyfreqencyhubspotrecurringcampaign_1721290641968_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_verifycampaigndirectsendtext_1721290641968_3"
+        ],
+        "content": "For Yearly Freqency $hubspotrecurringcampaign"
+      },
+      "fcn_verifycampaigndirectsendtext_1721290641968_3": {
+        "dataSetId": -1,
+        "id": "fcn_verifycampaigndirectsendtext_1721290641968_3",
+        "nodeType": "action",
+        "branches": [
+          "fcn_verifycreatedrecurringcampaignhubspotcampaignalltypehubspotrecurringcampaign_1721735806829_0"
+        ],
+        "content": "Verify Campaign Direct Send Text"
+      },
+      "fcn_slowpacecampaignflow_1721290641968_0": {
+        "dataSetId": -1,
+        "id": "fcn_slowpacecampaignflow_1721290641968_0",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_sendhubspotslowpacecampaignshubspotslowpace_1721290641968_0",
+          "fcn_schedulehubspotslowpacecampaignhubspotslowpace_1721290641968_0"
+        ],
+        "content": "Slow Pace Campaign Flow"
+      },
+      "fcn_sendhubspotslowpacecampaignshubspotslowpace_1721290641968_0": {
+        "dataSetId": -1,
+        "id": "fcn_sendhubspotslowpacecampaignshubspotslowpace_1721290641968_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_verifycampaigndirectsendtext_1721290641968_4"
+        ],
+        "content": "Send Hubspot Slow Pace Campaigns $hubspotslowpace"
+      },
+      "fcn_verifycampaigndirectsendtext_1721290641968_4": {
+        "dataSetId": -1,
+        "id": "fcn_verifycampaigndirectsendtext_1721290641968_4",
+        "nodeType": "action",
+        "branches": [
+          "fcn_activitylogcheckforbroadcastcampaign_1725356940209_0"
+        ],
+        "content": "Verify Campaign Direct Send Text"
+      },
+      "fcn_verifycreatedslowpacecampaignhubspotslowpace_1721290641968_0": {
+        "dataSetId": -1,
+        "id": "fcn_verifycreatedslowpacecampaignhubspotslowpace_1721290641968_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Verify Created Slow Pace Campaign $hubspotslowpace $hubspotcampaignalltype"
+      },
+      "fcn_schedulehubspotslowpacecampaignhubspotslowpace_1721290641968_0": {
+        "dataSetId": -1,
+        "id": "fcn_schedulehubspotslowpacecampaignhubspotslowpace_1721290641968_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_verifycampaignscheduledtext_1721290641968_0"
+        ],
+        "content": "Schedule Hubspot Slow Pace Campaign $hubspotslowpace"
+      },
+      "fcn_verifycampaignscheduledtext_1721290641968_0": {
+        "dataSetId": -1,
+        "id": "fcn_verifycampaignscheduledtext_1721290641968_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_verifycreatedslowpacecampaignhubspotslowpacehubspotcampaignalltype_1721735824887_0"
+        ],
+        "content": "Verify Campaign Scheduled Text"
+      },
+      "fcn_shootacampaign_1721290641968_0": {
+        "dataSetId": -1,
+        "id": "fcn_shootacampaign_1721290641968_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_activitycheckforbroadcastcampaign_0"
+        ],
+        "content": "Shoot a campaign"
+      },
+      "fcn_smshistoryvalidationforcampaign_1721290641968_0": {
+        "dataSetId": -1,
+        "id": "fcn_smshistoryvalidationforcampaign_1721290641968_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "SMS history validation for campaign"
+      },
+      "fcn_selectsourceaszohohubspotcampaignalltype_0": {
+        "dataSetId": -1,
+        "id": "fcn_selectsourceaszohohubspotcampaignalltype_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_composemessagehubspotcampaignalltype_1721290641968_0",
+          "fcn_composewhatsappmessage_0",
+          "fcn_createatemplateandcompasemessage_0",
+          "fcn_createawhatsapptemplateandcompasemessagetemplatedetails_0"
+        ],
+        "content": "Select a CRM Source $hubspotcampaignalltype"
+      },
+      "fcn_sendbroadcastcampaign_0": {
+        "dataSetId": -1,
+        "id": "fcn_sendbroadcastcampaign_0",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_shootacampaign_1721290641968_0",
+          "fcn_schedulecampaignhubspotcampaignalltype_0"
+        ],
+        "content": "Send Broadcast Campaign"
+      },
+      "fcn_schedulecampaignhubspotcampaignalltype_0": {
+        "dataSetId": -1,
+        "id": "fcn_schedulecampaignhubspotcampaignalltype_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Schedule campaign $hubspotrecurringcampaign"
+      },
+      "fcn_composewhatsappmessage_0": {
+        "dataSetId": -1,
+        "id": "fcn_composewhatsappmessage_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Compose whatsapp message $hubspotcampaignalltype"
+      },
+      "fcn_verifycreatedrecurringcampaignhubspotcampaignalltypehubspotrecurringcampaign_1721735802718_0": {
+        "dataSetId": -1,
+        "id": "fcn_verifycreatedrecurringcampaignhubspotcampaignalltypehubspotrecurringcampaign_1721735802718_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Verify Created Recurring Campaign $hubspotcampaignalltype $hubspotrecurringcampaign"
+      },
+      "fcn_verifycreatedrecurringcampaignhubspotcampaignalltypehubspotrecurringcampaign_1721735804987_0": {
+        "dataSetId": -1,
+        "id": "fcn_verifycreatedrecurringcampaignhubspotcampaignalltypehubspotrecurringcampaign_1721735804987_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Verify Created Recurring Campaign $hubspotcampaignalltype $hubspotrecurringcampaign"
+      },
+      "fcn_verifycreatedrecurringcampaignhubspotcampaignalltypehubspotrecurringcampaign_1721735806829_0": {
+        "dataSetId": -1,
+        "id": "fcn_verifycreatedrecurringcampaignhubspotcampaignalltypehubspotrecurringcampaign_1721735806829_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Verify Created Recurring Campaign $hubspotcampaignalltype $hubspotrecurringcampaign"
+      },
+      "fcn_verifycreatedslowpacecampaignhubspotslowpacehubspotcampaignalltype_1721735824887_0": {
+        "dataSetId": -1,
+        "id": "fcn_verifycreatedslowpacecampaignhubspotslowpacehubspotcampaignalltype_1721735824887_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Verify Created Slow Pace Campaign $hubspotslowpace $hubspotcampaignalltype"
+      },
+      "fcn_createatemplateandcompasemessage_0": {
+        "dataSetId": -1,
+        "id": "fcn_createatemplateandcompasemessage_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Create a Template and Compase Message $templatedetails"
+      },
+      "fcn_createawhatsapptemplateandcompasemessagetemplatedetails_0": {
+        "dataSetId": -1,
+        "id": "fcn_createawhatsapptemplateandcompasemessagetemplatedetails_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Create a Whatsapp Template and Compase Message $templatedetails"
+      },
+      "fcn_activitycheckforbroadcastcampaign_0": {
+        "dataSetId": -1,
+        "id": "fcn_activitycheckforbroadcastcampaign_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_smshistoryvalidationforcampaign_1721290641968_0"
+        ],
+        "content": "Activity Log Check for Broadcast Campaign "
+      },
+      "fcn_activitylogcheckforbroadcastcampaign_1725356940209_0": {
+        "dataSetId": -1,
+        "id": "fcn_activitylogcheckforbroadcastcampaign_1725356940209_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_verifycreatedslowpacecampaignhubspotslowpace_1721290641968_0"
+        ],
+        "content": "Activity Log Check for Slow Pace Campaign "
+      },
+      "fcn_activitylogcheckforslowpacecampaign_1725360226018_0": {
+        "dataSetId": -1,
+        "id": "fcn_activitylogcheckforslowpacecampaign_1725360226018_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_verifycreatedrecurringcampaign_1721290641968_0"
+        ],
+        "content": "Activity Log Check for Recurring Campaign "
+      }
+    },
+    "pathNames": {
+      "[\"fcn_zohocampaignfromsaasportal_0\",\"fcn_logintosaasportal_1721290641968_0\",\"fcn_entercampaignnamecampaign_1721290641968_0\",\"fcn_selectcampaigntypehubspotcampaignalltype_1721290641968_0\",\"fcn_selectchannelsenderidhubspotcampaignalltype_1721290641968_0\",\"fcn_selectsourceaszohohubspotcampaignalltype_0\",\"fcn_composemessagehubspotcampaignalltype_1721290641968_0\",\"fcn_testmessagehubspotcampaignalltype_1721290641968_0\",\"fcn_slowpacecampaignflow_1721290641968_0\",\"fcn_sendhubspotslowpacecampaignshubspotslowpace_1721290641968_0\",\"fcn_verifycampaigndirectsendtext_1721290641968_4\",\"fcn_activitylogcheckforbroadcastcampaign_1725356940209_0\",\"fcn_verifycreatedslowpacecampaignhubspotslowpace_1721290641968_0\",\"fcn_verifycreatedslowpacecampaignhubspotslowpace_1721290641968_0\"]": {
+        "pathName": "Path 4",
+        "dataSetName": "Hubspot Campaign All Type.csv",
+        "pathDependsOn": "{}"
+      },
+      "[\"fcn_zohocampaignfromsaasportal_0\",\"fcn_logintosaasportal_1721290641968_0\",\"fcn_entercampaignnamecampaign_1721290641968_0\",\"fcn_selectcampaigntypehubspotcampaignalltype_1721290641968_0\",\"fcn_selectchannelsenderidhubspotcampaignalltype_1721290641968_0\",\"fcn_selectsourceaszohohubspotcampaignalltype_0\",\"fcn_testmessagehubspotcampaignalltype_1721290641968_0\",\"fcn_recurringcampaignflow_1721290641968_0\",\"fcn_schedulehubspotrecurringcampaignforhubspotrecurringcampaign_1721290641968_0\",\"fcn_fordailyfreqency_1721290641968_0\",\"fcn_verifycampaigndirectsendtext_1721290641968_0\",\"fcn_activitylogcheckforslowpacecampaign_1725360226018_0\",\"fcn_verifycreatedrecurringcampaign_1721290641968_0\",\"fcn_cancelscheduledrecurringcampaign_1721290641968_0\",\"fcn_verifycreatedrecurringcampaign_1721290641968_0\",\"fcn_cancelscheduledrecurringcampaign_1721290641968_0\"]": {
+        "pathName": "Path 2",
+        "dataSetName": "Hubspot Campaign All Type.csv",
+        "pathDependsOn": "{}"
+      },
+      "[\"fcn_zohocampaignfromsaasportal_0\",\"fcn_logintosaasportal_1721290641968_0\",\"fcn_entercampaignnamecampaign_1721290641968_0\",\"fcn_selectcampaigntypehubspotcampaignalltype_1721290641968_0\",\"fcn_selectchannelsenderidhubspotcampaignalltype_1721290641968_0\",\"fcn_selectsourceaszohohubspotcampaignalltype_0\",\"fcn_composemessagehubspotcampaignalltype_1721290641968_0\",\"fcn_testmessagehubspotcampaignalltype_1721290641968_0\",\"fcn_recurringcampaignflow_1721290641968_0\",\"fcn_schedulehubspotrecurringcampaignforhubspotrecurringcampaign_1721290641968_0\",\"fcn_forweeklyfreqency_1721290641968_0\",\"fcn_verifycampaigndirectsendtext_1721290641968_1\"]": {
+        "pathName": "Path 1",
+        "dataSetName": "Hubspot Campaign All Type.csv",
+        "pathDependsOn": "{}"
+      },
+      "[\"fcn_zohocampaignfromsaasportal_0\",\"fcn_logintosaasportal_1721290641968_0\",\"fcn_entercampaignnamecampaign_1721290641968_0\",\"fcn_selectcampaigntypehubspotcampaignalltype_1721290641968_0\",\"fcn_selectchannelsenderidhubspotcampaignalltype_1721290641968_0\",\"fcn_selectsourceaszohohubspotcampaignalltype_0\",\"fcn_composemessagehubspotcampaignalltype_1721290641968_0\",\"fcn_testmessagehubspotcampaignalltype_1721290641968_0\",\"fcn_shootacampaign_1721290641968_0\",\"fcn_activitycheckforbroadcastcampaign_0\",\"fcn_smshistoryvalidationforcampaign_1721290641968_0\"]": {
+        "pathName": "Path 6",
+        "dataSetName": "Hubspot Campaign All Type.csv",
+        "pathDependsOn": "{}"
+      },
+      "[\"fcn_zohocampaignfromsaasportal_0\",\"fcn_logintosaasportal_1721290641968_0\",\"fcn_entercampaignnamecampaign_1721290641968_0\",\"fcn_selectcampaigntypehubspotcampaignalltype_1721290641968_0\",\"fcn_selectchannelsenderidhubspotcampaignalltype_1721290641968_0\",\"fcn_selectsourceaszohohubspotcampaignalltype_0\",\"fcn_composemessagehubspotcampaignalltype_1721290641968_0\",\"fcn_testmessagehubspotcampaignalltype_1721290641968_0\",\"fcn_sendbroadcastcampaign_0\",\"fcn_shootacampaign_1721290641968_0\",\"fcn_activitycheckforbroadcastcampaign_0\",\"fcn_smshistoryvalidationforcampaign_1721290641968_0\"]": {
+        "pathName": "Path 6",
+        "dataSetName": "Hubspot Campaign All Type.csv",
+        "pathDependsOn": "{}"
+      },
+      "[\"fcn_zohocampaignfromsaasportal_0\",\"fcn_logintosaasportal_1721290641968_0\",\"fcn_entercampaignnamecampaign_1721290641968_0\",\"fcn_selectcampaigntypehubspotcampaignalltype_1721290641968_0\",\"fcn_selectchannelsenderidhubspotcampaignalltype_1721290641968_0\",\"fcn_selectsourceaszohohubspotcampaignalltype_0\",\"fcn_composemessagehubspotcampaignalltype_1721290641968_0\",\"fcn_testmessagehubspotcampaignalltype_1721290641968_0\",\"fcn_slowpacecampaignflow_1721290641968_0\",\"fcn_schedulehubspotslowpacecampaignhubspotslowpace_1721290641968_0\",\"fcn_verifycampaignscheduledtext_1721290641968_0\",\"fcn_verifycreatedslowpacecampaignhubspotslowpacehubspotcampaignalltype_1721735824887_0\"]": {
+        "pathName": "Path 5",
+        "dataSetName": "Hubspot Campaign All Type.csv",
+        "pathDependsOn": "{}"
+      },
+      "[\"fcn_zohocampaignfromsaasportal_0\",\"fcn_logintosaasportal_1721290641968_0\",\"fcn_entercampaignnamecampaign_1721290641968_0\",\"fcn_selectcampaigntypehubspotcampaignalltype_1721290641968_0\",\"fcn_selectchannelsenderidhubspotcampaignalltype_1721290641968_0\",\"fcn_selectsourceaszohohubspotcampaignalltype_0\",\"fcn_composewhatsappmessage_0\",\"fcn_testmessagehubspotcampaignalltype_1721290641968_0\",\"fcn_recurringcampaignflow_1721290641968_0\",\"fcn_schedulehubspotrecurringcampaignforhubspotrecurringcampaign_1721290641968_0\",\"fcn_fordailyfreqency_1721290641968_0\",\"fcn_verifycampaigndirectsendtext_1721290641968_0\",\"fcn_activitylogcheckforslowpacecampaign_1725360226018_0\",\"fcn_verifycreatedrecurringcampaign_1721290641968_0\",\"fcn_cancelscheduledrecurringcampaign_1721290641968_0\",\"fcn_verifycreatedrecurringcampaign_1721290641968_0\",\"fcn_cancelscheduledrecurringcampaign_1721290641968_0\"]": {
+        "pathName": "Path 1",
+        "dataSetName": "Hubspot Campaign All Type.csv",
+        "pathDependsOn": "{}"
+      },
+      "[\"fcn_zohocampaignfromsaasportal_0\",\"fcn_logintosaasportal_1721290641968_0\",\"fcn_entercampaignnamecampaign_1721290641968_0\",\"fcn_selectcampaigntypehubspotcampaignalltype_1721290641968_0\",\"fcn_selectchannelsenderidhubspotcampaignalltype_1721290641968_0\",\"fcn_selectsourceaszohohubspotcampaignalltype_0\",\"fcn_composemessagehubspotcampaignalltype_1721290641968_0\"]": {
+        "pathName": "Path 0",
+        "dataSetName": "Hubspot Campaign All Type.csv",
+        "pathDependsOn": "{}"
+      },
+      "[\"fcn_zohocampaignfromsaasportal_0\",\"fcn_logintosaasportal_1721290641968_0\",\"fcn_entercampaignnamecampaign_1721290641968_0\",\"fcn_selectcampaigntypehubspotcampaignalltype_1721290641968_0\",\"fcn_selectchannelsenderidhubspotcampaignalltype_1721290641968_0\",\"fcn_selectsourceaszohohubspotcampaignalltype_0\",\"fcn_composewhatsappmessage_0\",\"fcn_testmessagehubspotcampaignalltype_1721290641968_0\",\"fcn_sendbroadcastcampaign_0\",\"fcn_schedulecampaignhubspotcampaignalltype_0\"]": {
+        "pathName": "Path 8",
+        "dataSetName": "Hubspot Campaign All Type.csv",
+        "pathDependsOn": "{}"
+      },
+      "[\"fcn_zohocampaignfromsaasportal_0\",\"fcn_logintosaasportal_1721290641968_0\",\"fcn_entercampaignnamecampaign_1721290641968_0\",\"fcn_selectcampaigntypehubspotcampaignalltype_1721290641968_0\",\"fcn_selectchannelsenderidhubspotcampaignalltype_1721290641968_0\",\"fcn_selectsourceaszohohubspotcampaignalltype_0\",\"fcn_createatemplateandcompasemessage_0\",\"fcn_testmessagehubspotcampaignalltype_1721290641968_0\",\"fcn_sendbroadcastcampaign_0\",\"fcn_shootacampaign_1721290641968_0\",\"fcn_activitycheckforbroadcastcampaign_0\",\"fcn_smshistoryvalidationforcampaign_1721290641968_0\"]": {
+        "pathName": "Path 9",
+        "dataSetName": "Hubspot Campaign All Type.csv",
+        "pathDependsOn": "{}"
+      },
+      "[\"fcn_zohocampaignfromsaasportal_0\",\"fcn_logintosaasportal_1721290641968_0\",\"fcn_entercampaignnamecampaign_1721290641968_0\",\"fcn_selectcampaigntypehubspotcampaignalltype_1721290641968_0\",\"fcn_selectchannelsenderidhubspotcampaignalltype_1721290641968_0\",\"fcn_selectsourceaszohohubspotcampaignalltype_0\",\"fcn_composemessagehubspotcampaignalltype_1721290641968_0\",\"fcn_testmessagehubspotcampaignalltype_1721290641968_0\",\"fcn_sendbroadcastcampaign_0\",\"fcn_schedulecampaignhubspotcampaignalltype_0\"]": {
+        "pathName": "Path 7",
+        "dataSetName": "Hubspot Campaign All Type.csv",
+        "pathDependsOn": "{}"
+      },
+      "[\"fcn_zohocampaignfromsaasportal_0\",\"fcn_logintosaasportal_1721290641968_0\",\"fcn_entercampaignnamecampaign_1721290641968_0\",\"fcn_selectcampaigntypehubspotcampaignalltype_1721290641968_0\",\"fcn_selectchannelsenderidhubspotcampaignalltype_1721290641968_0\",\"fcn_selectsourceaszohohubspotcampaignalltype_0\",\"fcn_composemessagehubspotcampaignalltype_1721290641968_0\",\"fcn_testmessagehubspotcampaignalltype_1721290641968_0\",\"fcn_slowpacecampaignflow_1721290641968_0\",\"fcn_sendhubspotslowpacecampaignshubspotslowpace_1721290641968_0\",\"fcn_verifycampaigndirectsendtext_1721290641968_4\",\"fcn_activitylogcheckforbroadcastcampaign_1725356940209_0\",\"fcn_verifycreatedslowpacecampaignhubspotslowpace_1721290641968_0\"]": {
+        "pathName": "Path 4",
+        "dataSetName": "Hubspot Campaign All Type.csv",
+        "pathDependsOn": "{}"
+      },
+      "[\"fcn_zohocampaignfromsaasportal_0\",\"fcn_logintosaasportal_1721290641968_0\",\"fcn_entercampaignnamecampaign_1721290641968_0\",\"fcn_selectcampaigntypehubspotcampaignalltype_1721290641968_0\",\"fcn_selectchannelsenderidhubspotcampaignalltype_1721290641968_0\",\"fcn_selectsourceaszohohubspotcampaignalltype_0\",\"fcn_composewhatsappmessage_0\",\"fcn_testmessagehubspotcampaignalltype_1721290641968_0\",\"fcn_sendbroadcastcampaign_0\",\"fcn_shootacampaign_1721290641968_0\",\"fcn_activitycheckforbroadcastcampaign_0\",\"fcn_smshistoryvalidationforcampaign_1721290641968_0\"]": {
+        "pathName": "Path 7",
+        "dataSetName": "Hubspot Campaign All Type.csv",
+        "pathDependsOn": "{}"
+      },
+      "[\"fcn_zohocampaignfromsaasportal_0\",\"fcn_logintosaasportal_1721290641968_0\",\"fcn_entercampaignnamecampaign_1721290641968_0\",\"fcn_selectcampaigntypehubspotcampaignalltype_1721290641968_0\",\"fcn_selectchannelsenderidhubspotcampaignalltype_1721290641968_0\",\"fcn_selectsourceaszohohubspotcampaignalltype_0\",\"fcn_composemessagehubspotcampaignalltype_1721290641968_0\",\"fcn_testmessagehubspotcampaignalltype_1721290641968_0\",\"fcn_recurringcampaignflow_1721290641968_0\",\"fcn_schedulehubspotrecurringcampaignforhubspotrecurringcampaign_1721290641968_0\",\"fcn_fordailyfreqency_1721290641968_0\",\"fcn_verifycampaigndirectsendtext_1721290641968_0\",\"fcn_activitylogcheckforslowpacecampaign_1725360226018_0\",\"fcn_verifycreatedrecurringcampaign_1721290641968_0\",\"fcn_cancelscheduledrecurringcampaign_1721290641968_0\",\"fcn_verifycreatedrecurringcampaign_1721290641968_0\",\"fcn_cancelscheduledrecurringcampaign_1721290641968_0\"]": {
+        "pathName": "Path 0",
+        "dataSetName": "Hubspot Campaign All Type.csv",
+        "pathDependsOn": "{}"
+      },
+      "[\"fcn_zohocampaignfromsaasportal_0\",\"fcn_logintosaasportal_1721290641968_0\",\"fcn_entercampaignnamecampaign_1721290641968_0\",\"fcn_selectcampaigntypehubspotcampaignalltype_1721290641968_0\",\"fcn_selectchannelsenderidhubspotcampaignalltype_1721290641968_0\",\"fcn_selectsourceaszohohubspotcampaignalltype_0\",\"fcn_composemessagehubspotcampaignalltype_1721290641968_0\",\"fcn_testmessagehubspotcampaignalltype_1721290641968_0\",\"fcn_recurringcampaignflow_1721290641968_0\",\"fcn_schedulehubspotrecurringcampaignforhubspotrecurringcampaign_1721290641968_0\",\"fcn_fordailyfreqency_1721290641968_0\",\"fcn_verifycampaigndirectsendtext_1721290641968_0\",\"fcn_activitylogcheckforslowpacecampaign_1725360226018_0\",\"fcn_verifycreatedrecurringcampaign_1721290641968_0\",\"fcn_cancelscheduledrecurringcampaign_1721290641968_0\"]": {
+        "pathName": "Path 0",
+        "dataSetName": "Hubspot Campaign All Type.csv",
+        "pathDependsOn": "{}"
+      }
+    },
+    "isPrimary": false,
+    "positions": {
+      "fcn_start_0": {
+        "top": 150.0,
+        "left": 499.873046875
+      },
+      "fcn_zohocampaignfromsaasportal_0": {
+        "top": 241.875,
+        "left": 1588.837890625
+      },
+      "fcn_logintosaasportal_1721290641968_0": {
+        "top": 317.841796875,
+        "left": 1588.828125
+      },
+      "fcn_entercampaignnamecampaign_1721290641968_0": {
+        "top": 390.966796875,
+        "left": 1588.828125
+      },
+      "fcn_selectcampaigntypehubspotcampaignalltype_1721290641968_0": {
+        "top": 461.09375,
+        "left": 1588.828125
+      },
+      "fcn_selectchannelsenderidhubspotcampaignalltype_1721290641968_0": {
+        "top": 556.904296875,
+        "left": 1588.828125
+      },
+      "fcn_selectsourceaszohohubspotcampaignalltype_0": {
+        "top": 649.716796875,
+        "left": 1588.828125
+      },
+      "fcn_composemessagehubspotcampaignalltype_1721290641968_0": {
+        "top": 758.447265625,
+        "left": 1271.875
+      },
+      "fcn_testmessagehubspotcampaignalltype_1721290641968_0": {
+        "top": 862.373046875,
+        "left": 1588.828125
+      },
+      "fcn_recurringcampaignflow_1721290641968_0": {
+        "top": 956.494140625,
+        "left": 2218.7890625
+      },
+      "fcn_schedulehubspotrecurringcampaignforhubspotrecurringcampaign_1721290641968_0": {
+        "top": 1034.365234375,
+        "left": 2206.796875
+      },
+      "fcn_fordailyfreqency_1721290641968_0": {
+        "top": 1118.41796875,
+        "left": 2203.671875
+      },
+      "fcn_verifycampaigndirectsendtext_1721290641968_0": {
+        "top": 1178.41796875,
+        "left": 2202.744140625
+      },
+      "fcn_activitylogcheckforslowpacecampaign_1725360226018_0": {
+        "top": 1232.421875,
+        "left": 2203.75
+      },
+      "fcn_verifycreatedrecurringcampaign_1721290641968_0": {
+        "top": 1294.8046875,
+        "left": 2200.6640625
+      },
+      "fcn_cancelscheduledrecurringcampaign_1721290641968_0": {
+        "top": 1399.609375,
+        "left": 2196.62109375
+      },
+      "fcn_forweeklyfreqency_1721290641968_0": {
+        "top": 1117.373046875,
+        "left": 2526.69921875
+      },
+      "fcn_verifycampaigndirectsendtext_1721290641968_1": {
+        "top": 1183.125,
+        "left": 2525.625
+      },
+      "fcn_verifycreatedrecurringcampaignhubspotcampaignalltypehubspotrecurringcampaign_1721735802718_0": {
+        "top": 1243.076171875,
+        "left": 2525.625
+      },
+      "fcn_formonthltyfreqencyhubspotrecurringcampaign_1721290641968_0": {
+        "top": 1114.453125,
+        "left": 2841.69921875
+      },
+      "fcn_verifycampaigndirectsendtext_1721290641968_2": {
+        "top": 1192.32421875,
+        "left": 2835.703125
+      },
+      "fcn_verifycreatedrecurringcampaignhubspotcampaignalltypehubspotrecurringcampaign_1721735804987_0": {
+        "top": 1252.24609375,
+        "left": 2835.703125
+      },
+      "fcn_foryearlyfreqencyhubspotrecurringcampaign_1721290641968_0": {
+        "top": 1111.40625,
+        "left": 3149.775390625
+      },
+      "fcn_verifycampaigndirectsendtext_1721290641968_3": {
+        "top": 1190.37109375,
+        "left": 3147.65625
+      },
+      "fcn_verifycreatedrecurringcampaignhubspotcampaignalltypehubspotrecurringcampaign_1721735806829_0": {
+        "top": 1250.322265625,
+        "left": 3147.65625
+      },
+      "fcn_slowpacecampaignflow_1721290641968_0": {
+        "top": 954.248046875,
+        "left": 3540.7421875
+      },
+      "fcn_sendhubspotslowpacecampaignshubspotslowpace_1721290641968_0": {
+        "top": 1033.28125,
+        "left": 3550.7421875
+      },
+      "fcn_verifycampaigndirectsendtext_1721290641968_4": {
+        "top": 1109.951171875,
+        "left": 3550.7421875
+      },
+      "fcn_activitylogcheckforbroadcastcampaign_1725356940209_0": {
+        "top": 1166.93359375,
+        "left": 3550.7421875
+      },
+      "fcn_verifycreatedslowpacecampaignhubspotslowpace_1721290641968_0": {
+        "top": 1226.6796875,
+        "left": 3546.748046875
+      },
+      "fcn_schedulehubspotslowpacecampaignhubspotslowpace_1721290641968_0": {
+        "top": 1032.32421875,
+        "left": 3880.7421875
+      },
+      "fcn_verifycampaignscheduledtext_1721290641968_0": {
+        "top": 1112.40234375,
+        "left": 3880.7421875
+      },
+      "fcn_verifycreatedslowpacecampaignhubspotslowpacehubspotcampaignalltype_1721735824887_0": {
+        "top": 1172.373046875,
+        "left": 3880.7421875
+      },
+      "fcn_sendbroadcastcampaign_0": {
+        "top": 954.4921875,
+        "left": 1588.828125
+      },
+      "fcn_shootacampaign_1721290641968_0": {
+        "top": 1043.369140625,
+        "left": 1588.828125
+      },
+      "fcn_activitycheckforbroadcastcampaign_0": {
+        "top": 1111.71875,
+        "left": 1588.828125
+      },
+      "fcn_smshistoryvalidationforcampaign_1721290641968_0": {
+        "top": 1193.046875,
+        "left": 1586.826171875
+      },
+      "fcn_schedulecampaignhubspotcampaignalltype_0": {
+        "top": 1041.3671875,
+        "left": 1895.625
+      },
+      "fcn_composewhatsappmessage_0": {
+        "top": 759.4921875,
+        "left": 1900.99609375
+      },
+      "fcn_createatemplateandcompasemessage_0": {
+        "top": 759.4921875,
+        "left": 1588.828125
+      },
+      "fcn_createawhatsapptemplateandcompasemessagetemplatedetails_0": {
+        "top": 758.49609375,
+        "left": 2217.94921875
+      }
+    }
+  },
+  "enabled": true,
+  "parentId": ""
+}

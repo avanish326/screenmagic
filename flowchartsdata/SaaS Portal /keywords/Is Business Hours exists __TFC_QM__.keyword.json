@@ -1,0 +1,42 @@
+{
+  "modifiedOn": "2024-06-06T09:44:10.022Z",
+  "name": "Is Business Hours exists ?",
+  "id": "15029",
+  "type": 3,
+  "createdOn": "2023-09-27T09:05:57.691Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Is Business Hours exists ?",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_isVisible",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_cell(\"India\")"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$countryBH"
+        }
+      },
+      {
+        "commented": false,
+        "action": "return",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "$countryBH"
+          }
+        ],
+        "stepType": "Action"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

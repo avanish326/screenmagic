@@ -1,0 +1,59 @@
+{
+  "modifiedOn": "2024-08-20T14:14:41.651Z",
+  "name": "Click on Add Contact",
+  "id": "58901",
+  "type": 3,
+  "createdOn": "2024-08-20T13:48:50.460Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Click on Add Contact",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_submit(\"Add Contact\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_listItem(\"Upload CSV\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"Upload CSV\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_listItem(\"Create Contact\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"Create Contact\""
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

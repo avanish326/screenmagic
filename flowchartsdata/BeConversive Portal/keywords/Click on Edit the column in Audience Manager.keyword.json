@@ -1,0 +1,133 @@
+{
+  "modifiedOn": "2024-08-23T12:51:30.536Z",
+  "name": "Click on Edit the column in Audience Manager",
+  "id": "45492",
+  "type": 3,
+  "createdOn": "2024-04-29T10:41:04.786Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Click on Edit the column in Audience Manager",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": true,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_submit(1)"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_isVisible",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_list(\"dropdown-menu bottom-end\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Is_True"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_submit(1)"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "3000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_uncheck",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_checkbox(\"/true/\",_in(_label(\"/Atul/\")))"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_uncheck",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_checkbox(\"/true/\",_in(_label(\"/Amol/\")))"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "isRawScript": true,
+        "rawScript": "$headers \u003d _collect(\"_checkbox\",{value:\"true\"},_in(_div(\"check-box\")))\n\n$headersExpected \u003d [];\n\nfor(var $i\u003d0;$i\u003c$headers.length;$i++){\n$headersExpected.push(_getText(_parentNode($headers[$i],\"LABEL\")).replace(\" *\",\"\"))\n}\n\n"
+      },
+      {
+        "commented": true,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_submit(\"Save\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "isRawScript": true,
+        "rawScript": "function capitalizeFirstLetter($str){ \nreturn $str.charAt(0).toUpperCase() + $str.slice(1);\n }\n\n\n\n$TableHeader1 \u003d capitalizeFirstLetter($tableHeader1); \n$TableHeader2 \u003d capitalizeFirstLetter($tableHeader2); "
+      },
+      {
+        "commented": true,
+        "action": "_isVisible",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_tableHeader($TableHeader1)"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Is_False"
+      },
+      {
+        "commented": true,
+        "action": "_isVisible",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_tableHeader(\"Pooja\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Is_False"
+      },
+      {
+        "commented": true,
+        "isRawScript": true,
+        "rawScript": "$tableHeaders\u003d _collectAttributes(\"_tableHeader\",\"/.*/\",\"sahiText\",_in(_table(0)))\n_assertEqual($headersExpected,$tableHeaders)"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

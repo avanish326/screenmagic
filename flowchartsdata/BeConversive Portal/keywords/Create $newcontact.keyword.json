@@ -1,0 +1,159 @@
+{
+  "modifiedOn": "2024-05-28T08:53:20.788Z",
+  "name": "Create $newcontact",
+  "id": "27645",
+  "type": 3,
+  "createdOn": "2024-02-08T06:49:40.600Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Create $newcontact",
+    "parameters": [
+      {
+        "parameterId": "newcontact_",
+        "entityTypeId": "newcontact",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_submit(\"New Contact\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "parameterId": "newcontact_",
+            "attributeId": "attr_01694606031507",
+            "accessorId": "acc0"
+          },
+          {
+            "parameterId": "newcontact_",
+            "attributeId": "attr_01694606031507"
+          }
+        ],
+        "stepType": "Action",
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "parameterId": "newcontact_",
+            "attributeId": "attr_11694606037864",
+            "accessorId": "acc0"
+          },
+          {
+            "parameterId": "newcontact_",
+            "attributeId": "attr_11694606037864"
+          }
+        ],
+        "stepType": "Action",
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "parameterId": "newcontact_",
+            "attributeId": "attr_21694606042842",
+            "accessorId": "acc0"
+          },
+          {
+            "parameterId": "newcontact_",
+            "attributeId": "attr_21694606042842"
+          }
+        ],
+        "stepType": "Action",
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_submit(\"Add\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_isVisible",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"notification-content\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Is_True"
+      },
+      {
+        "commented": true,
+        "isRawScript": true,
+        "rawScript": "$contacts \u003d _collectAttributes(\"_cell\", \"/.*/\", \"sahiText\", _under(_tableHeader(\"Name\")), _in(_div(\"overflow-x-auto\")));\n\n$firstContact \u003d $contacts[0];\n\n$firstContact;"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_cell(1, _near(_tableHeader(\"Name\")))"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "parameterId": "newcontact_",
+          "attributeId": "attr_01694606031507"
+        },
+        "visibleCheck": false
+      },
+      {
+        "commented": true,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_cell(2, _near(_tableHeader(\"Number\")))"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$phoneNumber"
+        }
+      },
+      {
+        "commented": true,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"trancet-txt\")"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$contactName"
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

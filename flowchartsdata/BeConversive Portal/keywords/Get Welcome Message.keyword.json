@@ -1,0 +1,42 @@
+{
+  "modifiedOn": "2024-06-07T10:44:25.761Z",
+  "name": "Get Welcome Message",
+  "id": "52709",
+  "type": 3,
+  "createdOn": "2024-06-07T10:42:49.256Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Get Welcome Message",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"accordion-header[4]\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_textarea(\"the-textarea[2]\")"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$welcomeMessage"
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

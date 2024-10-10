@@ -1,0 +1,41 @@
+{
+  "modifiedOn": "2024-01-12T12:25:27.493Z",
+  "name": "Standard User Inbox Validation $sms",
+  "id": "14599",
+  "type": 3,
+  "createdOn": "2023-09-14T11:53:35.717Z",
+  "content": {
+    "title": "Standard User Inbox Validation $sms",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(\"Standard User\u0027s Inbox\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"name-txt\")"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$PhoneNumber"
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

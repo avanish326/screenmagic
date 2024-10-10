@@ -1,0 +1,61 @@
+{
+  "modifiedOn": "2024-05-09T13:07:36.272Z",
+  "name": "Verify Send Message in SMS History $text $senderidbeconv",
+  "id": "45953",
+  "type": 3,
+  "createdOn": "2024-05-09T13:05:56.019Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Verify Send Message in SMS History $text $senderidbeconv",
+    "parameters": [
+      {
+        "parameterId": "text_",
+        "entityTypeId": "text",
+        "suffix": ""
+      },
+      {
+        "parameterId": "senderidbeconv_",
+        "entityTypeId": "senderidbeconv",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_cell(\"\"+$senderidbeconv.senderID+\"\", _leftOf(_cell($phoneNumber)))"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "parameterId": "senderidbeconv_",
+          "attributeId": "attr_01715257073383"
+        },
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(0, _rightOf(_cell($phoneNumber)))"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "parameterId": "text_",
+          "attributeId": "attr_01715257224625"
+        },
+        "visibleCheck": false
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

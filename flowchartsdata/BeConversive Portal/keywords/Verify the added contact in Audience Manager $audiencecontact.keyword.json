@@ -1,0 +1,93 @@
+{
+  "modifiedOn": "2024-08-20T14:12:20.603Z",
+  "name": "Verify the added contact in Audience Manager $audiencecontact",
+  "id": "58821",
+  "type": 3,
+  "createdOn": "2024-08-14T13:43:23.562Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Verify the added contact in Audience Manager $audiencecontact",
+    "parameters": [
+      {
+        "parameterId": "audiencecontact_",
+        "entityTypeId": "audiencecontact",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "var $inc\u003d1;\n\n$newTotalContacts\u003dNumber($totalContacts)+$inc ;\n\n$newContactsThisMonth1\u003dNumber($newContactThisMonth)+$inc ;"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(0, _under(_span(\"Total Contacts\")))"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$newTotalContacts"
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(0, _under(_span(\"New Contacts this month\")))"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$newContactsThisMonth1"
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_cell($audiencecontact.firstName)"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "parameterId": "audiencecontact_",
+          "attributeId": "attr_01723631398505"
+        },
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_cell($audiencecontact.lastName)"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "parameterId": "audiencecontact_",
+          "attributeId": "attr_11723631747597"
+        },
+        "visibleCheck": false
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

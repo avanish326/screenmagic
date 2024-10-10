@@ -1,0 +1,61 @@
+{
+  "modifiedOn": "2024-02-19T08:04:16.643Z",
+  "name": "Select the CTA for Is there anything else I can help you with today $propertymanagement",
+  "id": "37954",
+  "type": 3,
+  "createdOn": "2024-02-19T08:02:10.094Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Select the CTA for Is there anything else I can help you with today $propertymanagement",
+    "parameters": [
+      {
+        "parameterId": "propertymanagement_",
+        "entityTypeId": "propertymanagement",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_submit($propertymanagement.ctaYesNo)"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "1500"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div($propertymanagement.ctaYesNo)"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "parameterId": "propertymanagement_",
+          "attributeId": "attr_11708328852581"
+        },
+        "visibleCheck": false
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

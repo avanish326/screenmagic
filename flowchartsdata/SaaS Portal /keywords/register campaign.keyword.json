@@ -1,0 +1,75 @@
+{
+  "modifiedOn": "2024-05-10T11:32:04.620Z",
+  "name": "register campaign",
+  "id": "45989",
+  "type": 3,
+  "createdOn": "2024-05-10T11:06:09.615Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "register campaign",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_button(\"+ Add Campaign\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(1, _near(_paragraph(\"step-number\")))"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"Use Cases Selection\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(1, _near(_paragraph(\"step-number[1]\")))"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"Sample Messages \u0026 Multimedia\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(1, _near(_paragraph(\"step-number[2]\")))"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"Campaign \u0026 Content Attributes\""
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

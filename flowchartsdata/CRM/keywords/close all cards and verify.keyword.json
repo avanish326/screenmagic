@@ -1,0 +1,53 @@
+{
+  "modifiedOn": "2024-02-14T08:02:22.757Z",
+  "name": "close all cards and verify",
+  "id": "22979",
+  "type": 3,
+  "createdOn": "2024-01-30T06:21:49.953Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "close all cards and verify",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_isVisible",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"border border-gray-300 rounded-2xl shadow hover-container group relative duration-800\", _near(_heading4(\"Setup your account\")))"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Is_True"
+      },
+      {
+        "commented": true,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"border border-gray-300 rounded-2xl shadow\", _near(_heading4(\"Setup your account\")))"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$nextSetupCard"
+        }
+      },
+      {
+        "commented": true,
+        "isRawScript": true,
+        "rawScript": "\nvar $cards \u003d _collectAttributes(\"_div\",\"/rounded/\",\"sahiText\",_under(_heading4(\"Setup your account\")),_in(_div(\"slick-list\")));\nwhile(_isVisible(_image(\"slick-arrow slick-next\"))){\n_click(_image(\"slick-arrow slick-next\"));\nvar $cardsNext \u003d _collectAttributes(\"_div\",\"/rounded/\",\"sahiText\",_under(_heading4(\"Setup your account\")),_in(_div(\"slick-list\")));\nfor(var $i\u003d0;$i\u003c$cardsNext.length;$i++){\nfor(var $j\u003d0;$j\u003c$cards.length;$j++){\nif($cards[$j]!\u003d$cardsNext[$i]){\n$cards.push($cardsNext[$i]);\n}\n}\n}\n}\n_log($cards.length)\nfor(var $i\u003d0; $i\u003c$cards.length-1; $i++){\n//_mouseOver(_svg_path(0,_under(_heading3(\"/Welcome to Conversive/\"))));\n_click(_svg_path(0,_under(_heading3(\"/Welcome to Conversive/\"))));\n_click(_submit(\"Skip This Step\"));\nvar $frstCard \u003d _getText(_div(\"/text-center/\",_under(_heading3(\"/Welcome to Conversive/\"))));\n_assertEqual($frstCard,$cards[$i])\n}\n_assertNotVisible(_heading4(\"Setup your account\"))\n"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "while(_isVisible(_heading4(\"Setup your account\"))){\nvar $cards \u003d _collectAttributes(\"_div\",\"/rounded/\",\"sahiText\",_under(_heading4(\"Setup your account\")),_in(_div(\"slick-list\")));\n\nfor(var $i\u003d0; $i\u003c$cards.length; $i++){\n//_mouseOver(_svg_path(0,_under(_heading3(\"/Welcome to Conversive/\"))));\n_click(_svg_path(0,_under(_heading3(\"/Welcome to Conversive/\"))));\n_click(_submit(\"Skip This Step\"));\n_wait(2000)\nvar $frstCard \u003d _getText(_div(\"/text-center/\",_under(_heading3(\"/Welcome to Conversive/\"))));\n_assertEqual($frstCard,$cards[$i])\n}\n}\n\n"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

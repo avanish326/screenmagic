@@ -1,0 +1,61 @@
+{
+  "modifiedOn": "2024-07-04T14:22:39.513Z",
+  "name": "Select Operator $segmentui",
+  "id": "58108",
+  "type": 3,
+  "createdOn": "2024-07-04T14:05:39.875Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Select Operator $segmentui",
+    "parameters": [
+      {
+        "parameterId": "segmentui_",
+        "entityTypeId": "segmentui",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"Select operator\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div($segmentui.operator, _near(_div(\"Select operator\")))"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div($segmentui.operator)"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "parameterId": "segmentui_",
+          "attributeId": "attr_41720102831854"
+        },
+        "visibleCheck": false
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

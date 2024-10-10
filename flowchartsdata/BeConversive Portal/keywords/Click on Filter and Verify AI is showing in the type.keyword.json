@@ -1,0 +1,43 @@
+{
+  "modifiedOn": "2024-08-06T08:06:56.647Z",
+  "name": "Click on Filter and Verify AI is showing in the type",
+  "id": "58730",
+  "type": 3,
+  "createdOn": "2024-08-06T08:06:56.647Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Click on Filter and Verify AI is showing in the type",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_submit(\"Filter\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"AI\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"AI\""
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

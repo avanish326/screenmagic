@@ -1,0 +1,54 @@
+{
+  "modifiedOn": "2024-02-08T06:49:42.570Z",
+  "name": "Validate Unread Conversation",
+  "id": "27781",
+  "type": 3,
+  "createdOn": "2024-02-08T06:49:42.570Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Validate Unread Conversation",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"more_vert\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"Mark as unread\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"1 1[1]\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"1 1\""
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

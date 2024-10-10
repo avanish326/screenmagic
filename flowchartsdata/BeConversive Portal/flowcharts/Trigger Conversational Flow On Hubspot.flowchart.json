@@ -1,0 +1,972 @@
+{
+  "modifiedOn": "2024-02-08T06:49:36.673Z",
+  "name": "Trigger Conversational Flow On Hubspot",
+  "id": "27371",
+  "type": 0,
+  "createdOn": "2024-02-08T06:49:36.673Z",
+  "content": {
+    "settings": {
+      "maxProceedDepth": 100,
+      "maxProceedsForFirstDepth": 1,
+      "maxProceedsPerDepth": 1,
+      "maxPathRepititionsPerComboPath": 1,
+      "maxProceedsPerPath": 10000,
+      "maxToggles": 2,
+      "maxMatchingPaths": 3
+    },
+    "nodesMap": {
+      "fcn_start_0": {
+        "dataSetId": -1,
+        "id": "fcn_start_0",
+        "nodeType": "start",
+        "branches": [
+          "fcn_triggerconversationflowusingappidbasedonhubspotcrmevent_0"
+        ],
+        "content": "Start"
+      },
+      "fcn_triggerconversationflowusingappidbasedonhubspotcrmevent_0": {
+        "dataSetId": -1,
+        "id": "fcn_triggerconversationflowusingappidbasedonhubspotcrmevent_0",
+        "nodeType": "pathlabel",
+        "branches": [
+          "fcn_logintosaas_hubspot_0",
+          "fcn_zoho_0",
+          "fcn_zoho_1706872645837_0"
+        ],
+        "content": "Trigger Conversation Flow using App ID based on HubSpot CRM event"
+      },
+      "fcn_logintosaas_hubspot_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintosaas_hubspot_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_getapikey_0"
+        ],
+        "content": "login to saas_hubspot"
+      },
+      "fcn_navigateusecasespage_1706680542803_0": {
+        "dataSetId": -1,
+        "id": "fcn_navigateusecasespage_1706680542803_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_selecthealthcareguidedflowtemplate_1706680621084_0"
+        ],
+        "content": "Navigate Usecases Page"
+      },
+      "fcn_selecthealthcareguidedflowtemplate_1706680621084_0": {
+        "dataSetId": -1,
+        "id": "fcn_selecthealthcareguidedflowtemplate_1706680621084_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_getautomationnameandautomationtype_1706680705186_0"
+        ],
+        "content": "Select Patient Inquiry Assistance Flow"
+      },
+      "fcn_getautomationnameandautomationtype_1706680705186_0": {
+        "dataSetId": -1,
+        "id": "fcn_getautomationnameandautomationtype_1706680705186_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_asserttheaddedworkflowimage_1706680882978_0"
+        ],
+        "content": "Get Automation Name and Automation Type"
+      },
+      "fcn_asserttheaddedworkflowimage_1706680882978_0": {
+        "dataSetId": -1,
+        "id": "fcn_asserttheaddedworkflowimage_1706680882978_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_clickongetthisautomation_1706680949642_0"
+        ],
+        "content": "Assert the Added Workflow Image"
+      },
+      "fcn_clickongetthisautomation_1706680949642_0": {
+        "dataSetId": -1,
+        "id": "fcn_clickongetthisautomation_1706680949642_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_selectintegrationtypecrmobjectphonefieldandsenderid_0"
+        ],
+        "content": "Click on Get this Automation"
+      },
+      "fcn_selectintegrationtypecrmobjectphonefieldandsenderid_0": {
+        "dataSetId": -1,
+        "id": "fcn_selectintegrationtypecrmobjectphonefieldandsenderid_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_saveandactivatetheflow_1706693562608_0"
+        ],
+        "content": "Select Integration Type CRM Object Phone Field and Sender Id $conversationfields"
+      },
+      "fcn_saveandactivatetheflow_1706693562608_0": {
+        "dataSetId": -1,
+        "id": "fcn_saveandactivatetheflow_1706693562608_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_getreferencekey_0"
+        ],
+        "content": "Save and activate the flow "
+      },
+      "fcn_getreferencekey_0": {
+        "dataSetId": -1,
+        "id": "fcn_getreferencekey_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logintothehubspotcrm_0"
+        ],
+        "content": "get reference key"
+      },
+      "fcn_logintothehubspotcrm_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintothehubspotcrm_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_gethubspotuseruserid_0"
+        ],
+        "content": "login to the HubSpot CRM"
+      },
+      "fcn_gethubspotuseruserid_0": {
+        "dataSetId": -1,
+        "id": "fcn_gethubspotuseruserid_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_navigatetoworkflows_0"
+        ],
+        "content": "Get hubspot user userId"
+      },
+      "fcn_navigatetoworkflows_0": {
+        "dataSetId": -1,
+        "id": "fcn_navigatetoworkflows_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_createworkflowinhubsopt_0"
+        ],
+        "content": "Navigate to WorkFlows"
+      },
+      "fcn_createworkflowinhubsopt_0": {
+        "dataSetId": -1,
+        "id": "fcn_createworkflowinhubsopt_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_navigatetocontactsinhubspotcrm_0"
+        ],
+        "content": "create $workflow in HubSopt $conversationfields"
+      },
+      "fcn_navigatetocontactsinhubspotcrm_0": {
+        "dataSetId": -1,
+        "id": "fcn_navigatetocontactsinhubspotcrm_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_createcontactinhubspotcrm_0"
+        ],
+        "content": "Navigate to Contacts in HubSpot CRM"
+      },
+      "fcn_createcontactinhubspotcrm_0": {
+        "dataSetId": -1,
+        "id": "fcn_createcontactinhubspotcrm_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_navigatetoconversedesktocheckflowistriggeredcontactconversationfields_0"
+        ],
+        "content": "create $contact in HubSpot CRM"
+      },
+      "fcn_navigatetoconversedesktocheckflowistriggeredcontactconversationfields_0": {
+        "dataSetId": -1,
+        "id": "fcn_navigatetoconversedesktocheckflowistriggeredcontactconversationfields_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_navigatetosmshistoryandasserttriggeredmessagescontactconversationfields_0"
+        ],
+        "content": "Navigate to Converse Desk to check flow is triggered $contact $conversationfields"
+      },
+      "fcn_navigatetosmshistoryandasserttriggeredmessagescontactconversationfields_0": {
+        "dataSetId": -1,
+        "id": "fcn_navigatetosmshistoryandasserttriggeredmessagescontactconversationfields_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_navigateusecasespage_1706849502201_0"
+        ],
+        "content": "Navigate to SMS History and assert triggered messages $contact $conversationfields"
+      },
+      "fcn_navigateusecasespage_1706849502201_0": {
+        "dataSetId": -1,
+        "id": "fcn_navigateusecasespage_1706849502201_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_gotomyautomationsanddeactivatetheflow_0"
+        ],
+        "content": "Navigate Usecases Page"
+      },
+      "fcn_gotomyautomationsanddeactivatetheflow_0": {
+        "dataSetId": -1,
+        "id": "fcn_gotomyautomationsanddeactivatetheflow_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Go to My Automations and deactivate the flow"
+      },
+      "fcn_getapikey_0": {
+        "dataSetId": -1,
+        "id": "fcn_getapikey_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_navigateusecasespage_1706680542803_0"
+        ],
+        "content": "Get API Key"
+      },
+      "fcn_zoho_0": {
+        "dataSetId": -1,
+        "id": "fcn_zoho_0",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_logintozoho_hubspot_0"
+        ],
+        "content": "ZOHO"
+      },
+      "fcn_logintozoho_hubspot_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintozoho_hubspot_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_getapikey_1706866568049_0"
+        ],
+        "content": "login to zoho_hubspot"
+      },
+      "fcn_getapikey_1706866568049_0": {
+        "dataSetId": -1,
+        "id": "fcn_getapikey_1706866568049_0",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_navigateusecasespage_1706866568049_0"
+        ],
+        "content": "Get API Key"
+      },
+      "fcn_navigateusecasespage_1706866568049_0": {
+        "dataSetId": -1,
+        "id": "fcn_navigateusecasespage_1706866568049_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_selectpatientinquiryassistanceflow_1706866568049_0"
+        ],
+        "content": "Navigate Usecases Page"
+      },
+      "fcn_selectpatientinquiryassistanceflow_1706866568049_0": {
+        "dataSetId": -1,
+        "id": "fcn_selectpatientinquiryassistanceflow_1706866568049_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_getautomationnameandautomationtype_1706866568049_0"
+        ],
+        "content": "Select Patient Inquiry Assistance Flow"
+      },
+      "fcn_getautomationnameandautomationtype_1706866568049_0": {
+        "dataSetId": -1,
+        "id": "fcn_getautomationnameandautomationtype_1706866568049_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_asserttheaddedworkflowimage_1706866568049_0"
+        ],
+        "content": "Get Automation Name and Automation Type"
+      },
+      "fcn_asserttheaddedworkflowimage_1706866568049_0": {
+        "dataSetId": -1,
+        "id": "fcn_asserttheaddedworkflowimage_1706866568049_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_clickongetthisautomation_1706866568049_0"
+        ],
+        "content": "Assert the Added Workflow Image"
+      },
+      "fcn_clickongetthisautomation_1706866568049_0": {
+        "dataSetId": -1,
+        "id": "fcn_clickongetthisautomation_1706866568049_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_selectintegrationtypecrmobjectphonefieldandsenderidconversationfieldsinzohoaccount_0"
+        ],
+        "content": "Click on Get this Automation"
+      },
+      "fcn_selectintegrationtypecrmobjectphonefieldandsenderidconversationfieldsinzohoaccount_0": {
+        "dataSetId": -1,
+        "id": "fcn_selectintegrationtypecrmobjectphonefieldandsenderidconversationfieldsinzohoaccount_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_saveandactivatetheflow_1706866703049_0"
+        ],
+        "content": "Select Integration Type CRM Object Phone Field and Sender Id $conversationfields in zoho account"
+      },
+      "fcn_saveandactivatetheflow_1706866703049_0": {
+        "dataSetId": -1,
+        "id": "fcn_saveandactivatetheflow_1706866703049_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_getreferencekey_1706866703049_0"
+        ],
+        "content": "Save and activate the flow "
+      },
+      "fcn_getreferencekey_1706866703049_0": {
+        "dataSetId": -1,
+        "id": "fcn_getreferencekey_1706866703049_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logintothehubspotcrmwhenintegratedthroughzoho_0"
+        ],
+        "content": "get reference key"
+      },
+      "fcn_logintothehubspotcrmwhenintegratedthroughzoho_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintothehubspotcrmwhenintegratedthroughzoho_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_gethubspotuseruserid_1706866841332_0"
+        ],
+        "content": "login to the HubSpot CRM When integrated through ZOHO account"
+      },
+      "fcn_gethubspotuseruserid_1706866841332_0": {
+        "dataSetId": -1,
+        "id": "fcn_gethubspotuseruserid_1706866841332_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_navigatetoworkflows_1706866841332_0"
+        ],
+        "content": "Get hubspot user userId"
+      },
+      "fcn_navigatetoworkflows_1706866841332_0": {
+        "dataSetId": -1,
+        "id": "fcn_navigatetoworkflows_1706866841332_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_createworkflowinhubsoptconversationfieldswhenintegratedthroughzohoaccount_0"
+        ],
+        "content": "Navigate to WorkFlows"
+      },
+      "fcn_createworkflowinhubsoptconversationfieldswhenintegratedthroughzohoaccount_0": {
+        "dataSetId": -1,
+        "id": "fcn_createworkflowinhubsoptconversationfieldswhenintegratedthroughzohoaccount_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_navigatetocontactsinhubspotcrm_1706867045591_0"
+        ],
+        "content": "create $workflow in HubSopt $conversationfields when integrated through ZOHO account"
+      },
+      "fcn_navigatetocontactsinhubspotcrm_1706867045591_0": {
+        "dataSetId": -1,
+        "id": "fcn_navigatetocontactsinhubspotcrm_1706867045591_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_createcontactinhubspotcrm_1706867045591_0"
+        ],
+        "content": "Navigate to Contacts in HubSpot CRM"
+      },
+      "fcn_createcontactinhubspotcrm_1706867045591_0": {
+        "dataSetId": -1,
+        "id": "fcn_createcontactinhubspotcrm_1706867045591_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_navigatetoconversedesktocheckflowistriggeredcontactconversationfieldsinzohoaccount_0"
+        ],
+        "content": "create $contact in HubSpot CRM"
+      },
+      "fcn_navigatetoconversedesktocheckflowistriggeredcontactconversationfieldsinzohoaccount_0": {
+        "dataSetId": -1,
+        "id": "fcn_navigatetoconversedesktocheckflowistriggeredcontactconversationfieldsinzohoaccount_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_navigatetosmshistoryinsaasandasserttriggeredmessagescontactconversationfields_0"
+        ],
+        "content": "Navigate to Converse Desk to check flow is triggered $contact $conversationfields in zoho"
+      },
+      "fcn_navigatetosmshistoryinsaasandasserttriggeredmessagescontactconversationfields_0": {
+        "dataSetId": -1,
+        "id": "fcn_navigatetosmshistoryinsaasandasserttriggeredmessagescontactconversationfields_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_navigatetozohosmshistoryandasserttriggeredmessagescontactconversationfields_0"
+        ],
+        "content": "Navigate to SMS History in saas and assert triggered messages $contact $conversationfields"
+      },
+      "fcn_navigatetozohosmshistoryandasserttriggeredmessagescontactconversationfields_0": {
+        "dataSetId": -1,
+        "id": "fcn_navigatetozohosmshistoryandasserttriggeredmessagescontactconversationfields_0",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_selectportalbrowser_0"
+        ],
+        "content": "Navigate to ZOHO SMS History and assert triggered messages $contact $conversationfields"
+      },
+      "fcn_selectportalbrowser_0": {
+        "dataSetId": -1,
+        "id": "fcn_selectportalbrowser_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_navigateusecasespage_1706867220129_0"
+        ],
+        "content": "select portal browser"
+      },
+      "fcn_navigateusecasespage_1706867220129_0": {
+        "dataSetId": -1,
+        "id": "fcn_navigateusecasespage_1706867220129_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_gotomyautomationsanddeactivatetheflow_1706867220129_0"
+        ],
+        "content": "Navigate Usecases Page"
+      },
+      "fcn_gotomyautomationsanddeactivatetheflow_1706867220129_0": {
+        "dataSetId": -1,
+        "id": "fcn_gotomyautomationsanddeactivatetheflow_1706867220129_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Go to My Automations and deactivate the flow"
+      },
+      "fcn_zoho_1706872645837_0": {
+        "dataSetId": -1,
+        "id": "fcn_zoho_1706872645837_0",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_logintosalesforece_hubspot_0"
+        ],
+        "content": "Salesforce"
+      },
+      "fcn_logintosalesforece_hubspot_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintosalesforece_hubspot_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_navigatetosmsmagicconverse_1706875494754_0"
+        ],
+        "content": "login to salesforece_hubspot"
+      },
+      "fcn_getapikey_1706873002188_0": {
+        "dataSetId": -1,
+        "id": "fcn_getapikey_1706873002188_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_navigateusecasespage_1706873019957_0"
+        ],
+        "content": "Get API Key"
+      },
+      "fcn_navigateusecasespage_1706873019957_0": {
+        "dataSetId": -1,
+        "id": "fcn_navigateusecasespage_1706873019957_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_selectpatientinquiryassistanceflow_1706873019957_0"
+        ],
+        "content": "Navigate Usecases Page"
+      },
+      "fcn_selectpatientinquiryassistanceflow_1706873019957_0": {
+        "dataSetId": -1,
+        "id": "fcn_selectpatientinquiryassistanceflow_1706873019957_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_getautomationnameandautomationtype_1706873019957_0"
+        ],
+        "content": "Select Patient Inquiry Assistance Flow"
+      },
+      "fcn_getautomationnameandautomationtype_1706873019957_0": {
+        "dataSetId": -1,
+        "id": "fcn_getautomationnameandautomationtype_1706873019957_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_asserttheaddedworkflowimage_1706873019957_0"
+        ],
+        "content": "Get Automation Name and Automation Type"
+      },
+      "fcn_asserttheaddedworkflowimage_1706873019957_0": {
+        "dataSetId": -1,
+        "id": "fcn_asserttheaddedworkflowimage_1706873019957_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_clickongetthisautomation_1706873019957_0"
+        ],
+        "content": "Assert the Added Workflow Image"
+      },
+      "fcn_clickongetthisautomation_1706873019957_0": {
+        "dataSetId": -1,
+        "id": "fcn_clickongetthisautomation_1706873019957_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_selectintegrationtypecrmobjectphonefieldandsenderidconversationfieldsinsfaccount_0"
+        ],
+        "content": "Click on Get this Automation"
+      },
+      "fcn_selectintegrationtypecrmobjectphonefieldandsenderidconversationfieldsinsfaccount_0": {
+        "dataSetId": -1,
+        "id": "fcn_selectintegrationtypecrmobjectphonefieldandsenderidconversationfieldsinsfaccount_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_saveandactivatetheflow_1706873346179_0"
+        ],
+        "content": "Select Integration Type CRM Object Phone Field and Sender Id $conversationfields in sf account"
+      },
+      "fcn_logintoportalusingsalesforce_hubspot_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintoportalusingsalesforce_hubspot_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_getapikey_1706873002188_0"
+        ],
+        "content": "login to portal using salesforce_hubspot"
+      },
+      "fcn_saveandactivatetheflow_1706873346179_0": {
+        "dataSetId": -1,
+        "id": "fcn_saveandactivatetheflow_1706873346179_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_getreferencekey_1706873346179_0"
+        ],
+        "content": "Save and activate the flow "
+      },
+      "fcn_getreferencekey_1706873346179_0": {
+        "dataSetId": -1,
+        "id": "fcn_getreferencekey_1706873346179_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logintothehubspotcrmwhenintegratedthroughsfaccount_0"
+        ],
+        "content": "get reference key"
+      },
+      "fcn_logintothehubspotcrmwhenintegratedthroughsfaccount_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintothehubspotcrmwhenintegratedthroughsfaccount_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_gethubspotuseruserid_1706873465032_0"
+        ],
+        "content": "login to the HubSpot CRM When integrated through SF account"
+      },
+      "fcn_gethubspotuseruserid_1706873465032_0": {
+        "dataSetId": -1,
+        "id": "fcn_gethubspotuseruserid_1706873465032_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_navigatetoworkflows_1706873465032_0"
+        ],
+        "content": "Get hubspot user userId"
+      },
+      "fcn_navigatetoworkflows_1706873465032_0": {
+        "dataSetId": -1,
+        "id": "fcn_navigatetoworkflows_1706873465032_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_createworkflowinhubsoptconversationfieldswhenintegratedthroughsfaccount_0"
+        ],
+        "content": "Navigate to WorkFlows"
+      },
+      "fcn_createworkflowinhubsoptconversationfieldswhenintegratedthroughsfaccount_0": {
+        "dataSetId": -1,
+        "id": "fcn_createworkflowinhubsoptconversationfieldswhenintegratedthroughsfaccount_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_navigatetocontactsinhubspotcrm_1706873539021_0"
+        ],
+        "content": "create $workflow in HubSopt $conversationfields when integrated through sf account"
+      },
+      "fcn_navigatetocontactsinhubspotcrm_1706873539021_0": {
+        "dataSetId": -1,
+        "id": "fcn_navigatetocontactsinhubspotcrm_1706873539021_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_createcontactinhubspotcrm_1706873539021_0"
+        ],
+        "content": "Navigate to Contacts in HubSpot CRM"
+      },
+      "fcn_createcontactinhubspotcrm_1706873539021_0": {
+        "dataSetId": -1,
+        "id": "fcn_createcontactinhubspotcrm_1706873539021_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_gotoconversedeskofsalesforce_1706873631150_0"
+        ],
+        "content": "create $contact in HubSpot CRM"
+      },
+      "fcn_gotoconversedeskofsalesforce_1706873631150_0": {
+        "dataSetId": -1,
+        "id": "fcn_gotoconversedeskofsalesforce_1706873631150_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertflowistriggeredcontactconversationfieldsinzoho_0"
+        ],
+        "content": "go to converse desk of salesforce"
+      },
+      "fcn_assertflowistriggeredcontactconversationfieldsinzoho_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertflowistriggeredcontactconversationfieldsinzoho_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_navigatetosmshistory_1706876854333_0"
+        ],
+        "content": "Assert flow is triggered $contact $conversationfields in SF"
+      },
+      "fcn_navigatetosmsmagicconverse_1706875494754_0": {
+        "dataSetId": -1,
+        "id": "fcn_navigatetosmsmagicconverse_1706875494754_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_switchtosalesforceclassic_1706875494754_0"
+        ],
+        "content": "Navigate to SMS Magic Converse"
+      },
+      "fcn_switchtosalesforceclassic_1706875494754_0": {
+        "dataSetId": -1,
+        "id": "fcn_switchtosalesforceclassic_1706875494754_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logintoportalusingsalesforce_hubspot_0"
+        ],
+        "content": "Switch to salesforce classic "
+      },
+      "fcn_navigatetosmshistory_1706876854333_0": {
+        "dataSetId": -1,
+        "id": "fcn_navigatetosmshistory_1706876854333_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_sortthesmshistorybycreatedon_1706876854333_0"
+        ],
+        "content": "Navigate to SMS History"
+      },
+      "fcn_sortthesmshistorybycreatedon_1706876854333_0": {
+        "dataSetId": -1,
+        "id": "fcn_sortthesmshistorybycreatedon_1706876854333_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertmessagesaretriggeredinsfsmshistorycontactconversationfields_0"
+        ],
+        "content": "Sort the SMS History by Created On"
+      },
+      "fcn_assertmessagesaretriggeredinsfsmshistorycontactconversationfields_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertmessagesaretriggeredinsfsmshistorycontactconversationfields_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertmessagesaretriggeredinsfaccountportalsmshistorycontactconversationfields_0"
+        ],
+        "content": "Assert messages are triggered in sf sms history $contact $conversationfields"
+      },
+      "fcn_assertmessagesaretriggeredinsfaccountportalsmshistorycontactconversationfields_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertmessagesaretriggeredinsfaccountportalsmshistorycontactconversationfields_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_navigateusecasespage_1706878070506_0"
+        ],
+        "content": "Assert messages are triggered in sf account portal sms history $contact $conversationfields "
+      },
+      "fcn_navigateusecasespage_1706878070506_0": {
+        "dataSetId": -1,
+        "id": "fcn_navigateusecasespage_1706878070506_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_gotomyautomationsanddeactivatetheflow_1706878070506_0"
+        ],
+        "content": "Navigate Usecases Page"
+      },
+      "fcn_gotomyautomationsanddeactivatetheflow_1706878070506_0": {
+        "dataSetId": -1,
+        "id": "fcn_gotomyautomationsanddeactivatetheflow_1706878070506_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Go to My Automations and deactivate the flow"
+      }
+    },
+    "pathNames": {},
+    "isPrimary": false,
+    "positions": {
+      "fcn_start_0": {
+        "top": 150.0,
+        "left": 500.0
+      },
+      "fcn_triggerconversationflowusingappidbasedonhubspotcrmevent_0": {
+        "top": 211.0,
+        "left": 500.0
+      },
+      "fcn_logintosaas_hubspot_0": {
+        "top": 284.0,
+        "left": 500.0
+      },
+      "fcn_getapikey_0": {
+        "top": 343.0,
+        "left": 500.0
+      },
+      "fcn_navigateusecasespage_1706680542803_0": {
+        "top": 402.0,
+        "left": 500.0
+      },
+      "fcn_selecthealthcareguidedflowtemplate_1706680621084_0": {
+        "top": 458.0,
+        "left": 500.0
+      },
+      "fcn_getautomationnameandautomationtype_1706680705186_0": {
+        "top": 515.0,
+        "left": 500.0
+      },
+      "fcn_asserttheaddedworkflowimage_1706680882978_0": {
+        "top": 587.0,
+        "left": 500.0
+      },
+      "fcn_clickongetthisautomation_1706680949642_0": {
+        "top": 643.0,
+        "left": 500.0
+      },
+      "fcn_selectintegrationtypecrmobjectphonefieldandsenderid_0": {
+        "top": 702.0,
+        "left": 500.0
+      },
+      "fcn_saveandactivatetheflow_1706693562608_0": {
+        "top": 795.1484375,
+        "left": 500.0
+      },
+      "fcn_getreferencekey_0": {
+        "top": 853.1484375,
+        "left": 500.0
+      },
+      "fcn_logintothehubspotcrm_0": {
+        "top": 918.1484375,
+        "left": 501.0
+      },
+      "fcn_gethubspotuseruserid_0": {
+        "top": 979.1484375,
+        "left": 500.0
+      },
+      "fcn_navigatetoworkflows_0": {
+        "top": 1034.1484375,
+        "left": 500.0
+      },
+      "fcn_createworkflowinhubsopt_0": {
+        "top": 1091.1484375,
+        "left": 500.0
+      },
+      "fcn_navigatetocontactsinhubspotcrm_0": {
+        "top": 1173.4609375,
+        "left": 500.0
+      },
+      "fcn_createcontactinhubspotcrm_0": {
+        "top": 1231.4609375,
+        "left": 500.0
+      },
+      "fcn_navigatetoconversedesktocheckflowistriggeredcontactconversationfields_0": {
+        "top": 1293.6171875,
+        "left": 500.0
+      },
+      "fcn_navigatetosmshistoryandasserttriggeredmessagescontactconversationfields_0": {
+        "top": 1367.7734375,
+        "left": 500.0
+      },
+      "fcn_navigateusecasespage_1706849502201_0": {
+        "top": 1464.0859375,
+        "left": 500.0
+      },
+      "fcn_gotomyautomationsanddeactivatetheflow_0": {
+        "top": 1517.0859375,
+        "left": 500.0
+      },
+      "fcn_zoho_0": {
+        "top": 254.0,
+        "left": 910.0
+      },
+      "fcn_logintozoho_hubspot_0": {
+        "top": 313.0,
+        "left": 910.0
+      },
+      "fcn_getapikey_1706866568049_0": {
+        "top": 372.0,
+        "left": 910.0
+      },
+      "fcn_navigateusecasespage_1706866568049_0": {
+        "top": 431.0,
+        "left": 910.0
+      },
+      "fcn_selectpatientinquiryassistanceflow_1706866568049_0": {
+        "top": 487.0,
+        "left": 910.0
+      },
+      "fcn_getautomationnameandautomationtype_1706866568049_0": {
+        "top": 544.0,
+        "left": 910.0
+      },
+      "fcn_asserttheaddedworkflowimage_1706866568049_0": {
+        "top": 616.0,
+        "left": 910.0
+      },
+      "fcn_clickongetthisautomation_1706866568049_0": {
+        "top": 672.0,
+        "left": 910.0
+      },
+      "fcn_selectintegrationtypecrmobjectphonefieldandsenderidconversationfieldsinzohoaccount_0": {
+        "top": 731.0,
+        "left": 910.0
+      },
+      "fcn_saveandactivatetheflow_1706866703049_0": {
+        "top": 824.1484375,
+        "left": 910.0
+      },
+      "fcn_getreferencekey_1706866703049_0": {
+        "top": 882.1484375,
+        "left": 910.0
+      },
+      "fcn_logintothehubspotcrmwhenintegratedthroughzoho_0": {
+        "top": 941.1484375,
+        "left": 910.0
+      },
+      "fcn_gethubspotuseruserid_1706866841332_0": {
+        "top": 1014.1484375,
+        "left": 910.0
+      },
+      "fcn_navigatetoworkflows_1706866841332_0": {
+        "top": 1069.1484375,
+        "left": 910.0
+      },
+      "fcn_createworkflowinhubsoptconversationfieldswhenintegratedthroughzohoaccount_0": {
+        "top": 1124.1484375,
+        "left": 910.0
+      },
+      "fcn_navigatetocontactsinhubspotcrm_1706867045591_0": {
+        "top": 1223.4609375,
+        "left": 910.0
+      },
+      "fcn_createcontactinhubspotcrm_1706867045591_0": {
+        "top": 1281.4609375,
+        "left": 910.0
+      },
+      "fcn_navigatetoconversedesktocheckflowistriggeredcontactconversationfieldsinzohoaccount_0": {
+        "top": 1346.6171875,
+        "left": 910.0
+      },
+      "fcn_navigatetosmshistoryinsaasandasserttriggeredmessagescontactconversationfields_0": {
+        "top": 1439.7734375,
+        "left": 910.0
+      },
+      "fcn_navigatetozohosmshistoryandasserttriggeredmessagescontactconversationfields_0": {
+        "top": 1539.0859375,
+        "left": 910.0
+      },
+      "fcn_selectportalbrowser_0": {
+        "top": 1638.3984375,
+        "left": 910.0
+      },
+      "fcn_navigateusecasespage_1706867220129_0": {
+        "top": 1697.3984375,
+        "left": 910.0
+      },
+      "fcn_gotomyautomationsanddeactivatetheflow_1706867220129_0": {
+        "top": 1750.3984375,
+        "left": 910.0
+      },
+      "fcn_zoho_1706872645837_0": {
+        "top": 256.0,
+        "left": 1310.0
+      },
+      "fcn_logintosalesforece_hubspot_0": {
+        "top": 313.0,
+        "left": 1310.0
+      },
+      "fcn_navigatetosmsmagicconverse_1706875494754_0": {
+        "top": 368.0,
+        "left": 1310.0
+      },
+      "fcn_switchtosalesforceclassic_1706875494754_0": {
+        "top": 426.0272295,
+        "left": 1310.0
+      },
+      "fcn_logintoportalusingsalesforce_hubspot_0": {
+        "top": 481.0,
+        "left": 1310.0
+      },
+      "fcn_getapikey_1706873002188_0": {
+        "top": 545.0,
+        "left": 1310.0
+      },
+      "fcn_navigateusecasespage_1706873019957_0": {
+        "top": 603.0,
+        "left": 1310.0
+      },
+      "fcn_selectpatientinquiryassistanceflow_1706873019957_0": {
+        "top": 665.0,
+        "left": 1310.0
+      },
+      "fcn_getautomationnameandautomationtype_1706873019957_0": {
+        "top": 727.0,
+        "left": 1310.0
+      },
+      "fcn_asserttheaddedworkflowimage_1706873019957_0": {
+        "top": 796.0,
+        "left": 1310.0
+      },
+      "fcn_clickongetthisautomation_1706873019957_0": {
+        "top": 863.0,
+        "left": 1310.0
+      },
+      "fcn_selectintegrationtypecrmobjectphonefieldandsenderidconversationfieldsinsfaccount_0": {
+        "top": 924.0,
+        "left": 1310.0
+      },
+      "fcn_saveandactivatetheflow_1706873346179_0": {
+        "top": 1019.1484375,
+        "left": 1310.0
+      },
+      "fcn_getreferencekey_1706873346179_0": {
+        "top": 1075.1484375,
+        "left": 1310.0
+      },
+      "fcn_logintothehubspotcrmwhenintegratedthroughsfaccount_0": {
+        "top": 1135.1484375,
+        "left": 1310.0
+      },
+      "fcn_gethubspotuseruserid_1706873465032_0": {
+        "top": 1207.1484375,
+        "left": 1310.0
+      },
+      "fcn_navigatetoworkflows_1706873465032_0": {
+        "top": 1262.1484375,
+        "left": 1310.0
+      },
+      "fcn_createworkflowinhubsoptconversationfieldswhenintegratedthroughsfaccount_0": {
+        "top": 1318.1484375,
+        "left": 1310.0
+      },
+      "fcn_navigatetocontactsinhubspotcrm_1706873539021_0": {
+        "top": 1421.4609375,
+        "left": 1310.0
+      },
+      "fcn_createcontactinhubspotcrm_1706873539021_0": {
+        "top": 1481.4609375,
+        "left": 1310.0
+      },
+      "fcn_gotoconversedeskofsalesforce_1706873631150_0": {
+        "top": 1545.640625,
+        "left": 1310.0
+      },
+      "fcn_assertflowistriggeredcontactconversationfieldsinzoho_0": {
+        "top": 1604.640625,
+        "left": 1310.0
+      },
+      "fcn_navigatetosmshistory_1706876854333_0": {
+        "top": 1689.953125,
+        "left": 1310.0
+      },
+      "fcn_sortthesmshistorybycreatedon_1706876854333_0": {
+        "top": 1745.921875,
+        "left": 1310.0
+      },
+      "fcn_assertmessagesaretriggeredinsfsmshistorycontactconversationfields_0": {
+        "top": 1804.921875,
+        "left": 1310.0
+      },
+      "fcn_assertmessagesaretriggeredinsfaccountportalsmshistorycontactconversationfields_0": {
+        "top": 1884.078075,
+        "left": 1310.0
+      },
+      "fcn_navigateusecasespage_1706878070506_0": {
+        "top": 1983.390625,
+        "left": 1310.0
+      },
+      "fcn_gotomyautomationsanddeactivatetheflow_1706878070506_0": {
+        "top": 2036.390625,
+        "left": 1310.0
+      }
+    },
+    "tags": ""
+  },
+  "enabled": true,
+  "parentId": ""
+}

@@ -1,0 +1,27 @@
+{
+  "modifiedOn": "2024-08-02T12:42:31.545Z",
+  "name": "create child account again $createchild",
+  "id": "58690",
+  "type": 3,
+  "createdOn": "2024-08-02T12:42:31.545Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "create child account again $createchild",
+    "parameters": [
+      {
+        "parameterId": "createchild_",
+        "entityTypeId": "createchild",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "$letterOne\u003d [\"a\", \"b\", \"c\", \"d\", \"e\", \"f\", \"g\"];\n$letterTwo\u003d [\"a\", \"b\", \"c\", \"d\", \"e\", \"f\"];\n$mailOne \u003d \"automaton.user1+child\";\n$mailTwo \u003d \"@screen-magic.com\"\n\n\n$i \u003d _random($letterOne.length-1);\n$j \u003d _random($letterTwo.length-1);\n$childName \u003d $createchild.accountName+$letterOne[$i]+$letterTwo[$j];\n_click(_submit(\"Create Account\"));\n_setValue(_textbox(\"Account Name\"), $childName);\n_setValue(_emailbox(\"Email\"), $mailOne+$letterOne[$i]+$letterTwo[$j]+$mailTwo);\n_click(_submit(\"Create\"));\n_wait(3000);\n"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

@@ -1,0 +1,152 @@
+{
+  "modifiedOn": "2024-02-08T06:49:45.695Z",
+  "name": "send incoming for cancel keyword $consent $sms",
+  "id": "28012",
+  "type": 3,
+  "createdOn": "2024-02-08T06:49:45.695Z",
+  "content": {
+    "title": "send incoming for cancel keyword $consent $sms",
+    "parameters": [
+      {
+        "parameterId": "consent_",
+        "entityTypeId": "consent",
+        "suffix": ""
+      },
+      {
+        "parameterId": "sms_",
+        "entityTypeId": "sms",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "5000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "isRawScript": true,
+        "rawScript": "var $GUID\u003dMath.random();\n\n$request \u003d new RESTRequest();\n$request.setURL(\"https://api.txtbox.in/v1/sms/incoming/aerial\");\n$request.setHeader(\"Content-Type\", \"multipart/form-data; boundary\u003d\u003ccalculated when request is sent\u003e\");\n$request.setHeader(\"Content-Length\", \"\u003ccalculated when request is sent\u003e\");\n$request.setHeader(\"Host\", \"\u003ccalculated when request is sent\u003e\");\n$request.setHeader(\"User-Agent\", \"PostmanRuntime/7.32.3\");\n$request.setHeader(\"Accept\", \"*/*\");\n$request.setHeader(\"Accept-Encoding\", \"gzip, deflate, br\");\n$request.setHeader(\"Connection\", \"keep-alive\");\n$request.addToBody(\"source\", \"9898688775\");\n$request.addToBody(\"messageText\", \"hye tezt\");\n$request.addToBody(\"destination\", \"14988451936\");\n$request.addToBody(\"connectionGUID\", \"8789687576674675476523\");\n$request.addToBody(\"transactionGUID\", \"87578464444478648767866\");\n$response \u003d $request.submit(\"POST\");\nvar $responseBody \u003d $response.getBodyAsString();\n_log($responseBody)\n\n"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "$GUID\u003dMath.random();\n"
+      },
+      {
+        "commented": false,
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "POST"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "https://qa-api.txtbox.in/v1/sms/incoming/aerial"
+          }
+        ],
+        "stepType": "REST",
+        "isRawScript": true,
+        "rawScript": "var $request_62LNLiQyER \u003d new RESTRequest();\r\n$request_62LNLiQyER.setURL(\"https://qa-api.txtbox.in/v1/sms/incoming/aerial\");\r\n$request_62LNLiQyER.setHeader(\"Content-Type\", \"multipart/form-data; boundary\u003d\u003ccalculated when request is sent\u003e\");\r\n$request_62LNLiQyER.setHeader(\"Content-Length\", \"\u003ccalculated when request is sent\u003e\");\r\n$request_62LNLiQyER.setHeader(\"Host\", \"\u003ccalculated when request is sent\u003e\");\r\n$request_62LNLiQyER.setHeader(\"Accept-Encoding\", \"gzip, deflate, br\");\r\n$request_62LNLiQyER.setHeader(\"Accept\", \"*/*\");\r\n$request_62LNLiQyER.setHeader(\"Connection\", \"keep-alive\");\r\n$request_62LNLiQyER.addToBody(\"source\", $sms.stopEnabled); \r\n$request_62LNLiQyER.addToBody(\"messageText\", \"CANCEL\"); \r\n$request_62LNLiQyER.addToBody(\"destination\", $destination); \r\n$request_62LNLiQyER.addToBody(\"connectionGUID\", $GUID); \r\n$request_62LNLiQyER.addToBody(\"transactionGUID\", $GUID); \r\nvar $response_62LNLiQyER \u003d $request_62LNLiQyER.submit(\"POST\");\r\nvar responseBody \u003d JSON.parse($response_62LNLiQyER.getBodyAsString());\r\n\tvar $responseBodyObj_62LNLiQyER \u003d JSON.parse($response_62LNLiQyER.getBodyAsString());\r\n\r\n\t//assertions\r\n\t\t_log(\"\u003ctable class\u003d\u0027tfc_step_table\u0027\u003e\u003ctr\u003e\u003ctd\u003eAssert Equals\u003c/td\u003e \u003ctd\u003eHTTP Response Status\u003c/td\u003e \u003ctd\u003e200\u003c/td\u003e\u003c/tr\u003e\u003c/table\u003e\", \"GROUP_START\");\r\n_assertEqual(\"200\", $response_62LNLiQyER.getResponseCode());\r\n\t_log(\"\", \"GROUP_END\");\r\n\r\n",
+        "state": {
+          "contentType": "json",
+          "request": {
+            "method": "POST",
+            "url": "https://qa-api.txtbox.in/v1/sms/incoming/aerial",
+            "parameters": [],
+            "headers": [
+              [
+                "Content-Type",
+                "multipart/form-data; boundary\u003d\u003ccalculated when request is sent\u003e"
+              ],
+              [
+                "Content-Length",
+                "\u003ccalculated when request is sent\u003e"
+              ],
+              [
+                "Host",
+                "\u003ccalculated when request is sent\u003e"
+              ],
+              [
+                "Accept-Encoding",
+                "gzip, deflate, br"
+              ],
+              [
+                "Accept",
+                "*/*"
+              ],
+              [
+                "Connection",
+                "keep-alive"
+              ]
+            ],
+            "authType": "none",
+            "body": "source\u003d$sms.stopEnabled\u0026messageText\u003dCANCEL\u0026destination\u003d$destination\u0026connectionGUID\u003d$GUID\u0026transactionGUID\u003d$GUID",
+            "bodyParams": [
+              [
+                "source",
+                "$sms.stopEnabled"
+              ],
+              [
+                "messageText",
+                "CANCEL"
+              ],
+              [
+                "destination",
+                "$destination"
+              ],
+              [
+                "connectionGUID",
+                "$GUID"
+              ],
+              [
+                "transactionGUID",
+                "$GUID"
+              ]
+            ],
+            "isParametrizedBody": true,
+            "resetCookies": false
+          },
+          "assertions": {
+            "status": [
+              {
+                "key": "HTTP Status Code",
+                "value": "200",
+                "assertType": "equals",
+                "id": "DA4eJO8jUp"
+              }
+            ],
+            "header": [],
+            "body": []
+          },
+          "variables": {
+            "status": [],
+            "header": [],
+            "body": []
+          },
+          "authInfo": {}
+        }
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "5000"
+          }
+        ],
+        "stepType": "Action"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

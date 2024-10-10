@@ -1,0 +1,2666 @@
+{
+  "modifiedOn": "2024-08-02T04:16:03.513Z",
+  "name": "Master - SAAS Customer Portal",
+  "id": "12920",
+  "type": 0,
+  "createdOn": "2023-08-23T05:56:57.401Z",
+  "content": {
+    "settings": {
+      "maxProceedDepth": 100,
+      "maxProceedsForFirstDepth": 1,
+      "maxProceedsPerDepth": 1,
+      "maxPathRepititionsPerComboPath": 1,
+      "maxProceedsPerPath": 10000,
+      "maxToggles": 2,
+      "maxMatchingPaths": 3
+    },
+    "flowChartUID": "fcUID_1708487252992",
+    "nodesMap": {
+      "fcn_start_0": {
+        "dataSetId": -1,
+        "id": "fcn_start_0",
+        "nodeType": "start",
+        "branches": [
+          "fcn_createsaas_portal_login_0",
+          "fcn_sendnewsmsfromconversedesktounknownnumber_0",
+          "fcn_smshistory_1695360701394_0",
+          "fcn_businesshours_1695963044150_0",
+          "fcn_hippacompliancezoho_1696342614440_0",
+          "fcn_hippacompliancesf_1696342696175_0"
+        ],
+        "content": "Start"
+      },
+      "fcn_createsaas_portal_login_0": {
+        "dataSetId": -1,
+        "id": "fcn_createsaas_portal_login_0",
+        "nodeType": "pathlabel",
+        "branches": [
+          "fcn_logintosaasportal_0",
+          "fcn_forgotpassword_0",
+          "fcn_saaslogin_1696314447079_0",
+          "fcn_wrongpasswordsemaillogin_0"
+        ],
+        "content": "Create saas_portal_login"
+      },
+      "fcn_sendsmsfromportal_1692899726487_0": {
+        "dataSetId": -1,
+        "id": "fcn_sendsmsfromportal_1692899726487_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_smshistorysmshistoryvalidationforsaas_1692899726487_0"
+        ],
+        "content": "Send $sms from portal"
+      },
+      "fcn_smshistorysmshistoryvalidationforsaas_1692899726487_0": {
+        "dataSetId": -1,
+        "id": "fcn_smshistorysmshistoryvalidationforsaas_1692899726487_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "SMS History$sms history validation for saas"
+      },
+      "fcn_zohosendsmsoutsidebusinesshours_0": {
+        "dataSetId": -1,
+        "id": "fcn_zohosendsmsoutsidebusinesshours_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Zoho Send SMS $outsidebusinesshours"
+      },
+      "fcn_sendnewsmsfromconversedeskusingtemplate_1": {
+        "dataSetId": -1,
+        "id": "fcn_sendnewsmsfromconversedeskusingtemplate_1",
+        "nodeType": "action",
+        "branches": [
+          "fcn_smshistorysmshistoryvalidationforsaas_1692899726487_0"
+        ],
+        "content": "Send New $sms from Converse Desk using $template"
+      },
+      "fcn_replytoexistingsmsfromconversedesk_0": {
+        "dataSetId": -1,
+        "id": "fcn_replytoexistingsmsfromconversedesk_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_smshistorysmshistoryvalidationforsaas_1692899726487_0"
+        ],
+        "content": "Reply to $existingsms from Converse Desk"
+      },
+      "fcn_replytoexistingsmsfromconversedeskusingtemplate_0": {
+        "dataSetId": -1,
+        "id": "fcn_replytoexistingsmsfromconversedeskusingtemplate_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_smshistorysmshistoryvalidationforsaas_1692899726487_0"
+        ],
+        "content": "Reply to $existingsms from Converse Desk using $template"
+      },
+      "fcn_sendnewsmsfromconversedesktounknownnumber_0": {
+        "dataSetId": -1,
+        "id": "fcn_sendnewsmsfromconversedesktounknownnumber_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_smshistorysmshistoryvalidationforsaas_1692899726487_0"
+        ],
+        "content": "Send New SMS from Converse Desk to $unknownnumber"
+      },
+      "fcn_sendnewsmsfromconversedesktounknownnumberusingtemplate_0": {
+        "dataSetId": -1,
+        "id": "fcn_sendnewsmsfromconversedesktounknownnumberusingtemplate_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_smshistorysmshistoryvalidationforsaas_1692899726487_0"
+        ],
+        "content": "Send New SMS from Converse Desk to $unknownnumber using $template"
+      },
+      "fcn_getaccountid_1694416825353_0": {
+        "dataSetId": -1,
+        "id": "fcn_getaccountid_1694416825353_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logintoopsportallogintrial_signupaccountid_0"
+        ],
+        "content": "Get $accountid"
+      },
+      "fcn_logintoopsportallogintrial_signupaccountid_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintoopsportallogintrial_signupaccountid_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_addnumbercreditnumbermanagment_0"
+        ],
+        "content": "Login to $opsportallogin $trial_signup $accountid"
+      },
+      "fcn_addnumbercreditnumbermanagment_0": {
+        "dataSetId": -1,
+        "id": "fcn_addnumbercreditnumbermanagment_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_provissionsenderid_0"
+        ],
+        "content": "add Number credits and Sender ID $numbermanagment $accountid"
+      },
+      "fcn_logintosaasportal_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintosaasportal_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_getaccountid_1694416825353_0",
+          "fcn_gethelpvalidation_0",
+          "fcn_resetpassword_0",
+          "fcn_navigatetousermanagmentforvalidation_0",
+          "fcn_contactfunctionalityvalidation_0",
+          "fcn_navigatetosmsserviceforlabel_0",
+          "fcn_navigatetosmsservivceforconsent_0",
+          "fcn_conversedeskuivalidation_0",
+          "fcn_sendsmsfromportal_1692899726487_0",
+          "fcn_sendsmsvalidation_0",
+          "fcn_sendnewsmsfromconversedeskusingtemplate_1",
+          "fcn_replytoexistingsmsfromconversedeskusingtemplate_0",
+          "fcn_smshistorysmshistoryvalidationforsaas_1692899726487_0",
+          "fcn_sendnewsmsfromconversedesktounknownnumberusingtemplate_0",
+          "fcn_sendnewsmsfromconversedesktounknownnumber_0",
+          "fcn_replytoexistingsmsfromconversedesk_0",
+          "fcn_usermanagment_0",
+          "fcn_buynowflows_0",
+          "fcn_sendsmstooptoutnumberconsent_0"
+        ],
+        "content": "login to $saasportal"
+      },
+      "fcn_provissionsenderid_0": {
+        "dataSetId": -1,
+        "id": "fcn_provissionsenderid_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_incomingsmsmessagenumbermanagment_0"
+        ],
+        "content": "provission $senderid "
+      },
+      "fcn_incomingsmsmessagenumbermanagment_0": {
+        "dataSetId": -1,
+        "id": "fcn_incomingsmsmessagenumbermanagment_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "incomingSms $message $numbermanagment"
+      },
+      "fcn_gethelpbutton_0": {
+        "dataSetId": -1,
+        "id": "fcn_gethelpbutton_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_navigatevideotutorial_0",
+          "fcn_navigatedoccenter_0",
+          "fcn_navigatereportproblem_0",
+          "fcn_navigatefeedbackform_0"
+        ],
+        "content": "get $help button"
+      },
+      "fcn_navigatevideotutorial_0": {
+        "dataSetId": -1,
+        "id": "fcn_navigatevideotutorial_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "navigate $videotutorial"
+      },
+      "fcn_navigatedoccenter_0": {
+        "dataSetId": -1,
+        "id": "fcn_navigatedoccenter_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "navigate $doccenter"
+      },
+      "fcn_navigatereportproblem_0": {
+        "dataSetId": -1,
+        "id": "fcn_navigatereportproblem_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "navigate $reportproblem"
+      },
+      "fcn_navigatefeedbackform_0": {
+        "dataSetId": -1,
+        "id": "fcn_navigatefeedbackform_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertthecall_0"
+        ],
+        "content": "navigate $feedbackform"
+      },
+      "fcn_forgotpassword_0": {
+        "dataSetId": -1,
+        "id": "fcn_forgotpassword_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logintogmailemaillogin_1694519952056_0"
+        ],
+        "content": "forgot $password"
+      },
+      "fcn_resetpassword_0": {
+        "dataSetId": -1,
+        "id": "fcn_resetpassword_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "reset $password"
+      },
+      "fcn_logintogmailemaillogin_1694519952056_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintogmailemaillogin_1694519952056_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_clickonresetpasswordlink_0"
+        ],
+        "content": "Login to gmail $emaillogin"
+      },
+      "fcn_clickonresetpasswordlink_0": {
+        "dataSetId": -1,
+        "id": "fcn_clickonresetpasswordlink_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_resetthepassword_0"
+        ],
+        "content": "click on reset $password link"
+      },
+      "fcn_contactmanager_0": {
+        "dataSetId": -1,
+        "id": "fcn_contactmanager_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_createnewcontact_0",
+          "fcn_deletecontact_0",
+          "fcn_editnewcontact_0",
+          "fcn_importcsv_0"
+        ],
+        "content": "Contact Manager"
+      },
+      "fcn_createnewcontact_0": {
+        "dataSetId": -1,
+        "id": "fcn_createnewcontact_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Create $newcontact"
+      },
+      "fcn_deletecontact_0": {
+        "dataSetId": -1,
+        "id": "fcn_deletecontact_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Delete Contact"
+      },
+      "fcn_editnewcontact_0": {
+        "dataSetId": -1,
+        "id": "fcn_editnewcontact_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Edit $newcontact"
+      },
+      "fcn_importcsv_0": {
+        "dataSetId": -1,
+        "id": "fcn_importcsv_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Import CSV $newcontact"
+      },
+      "fcn_conversedesk_0": {
+        "dataSetId": -1,
+        "id": "fcn_conversedesk_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_incommingsms_0",
+          "fcn_assignsenderid_0",
+          "fcn_validatereadconversation_0",
+          "fcn_sendincomingmessagetousersms_1695273113857_0",
+          "fcn_savecontactnewcontact_0",
+          "fcn_searchcontact_0",
+          "fcn_refreshconversation_0",
+          "fcn_validatethecountofmessage_0",
+          "fcn_incomingwhatsappmessage_0"
+        ],
+        "content": "Converse Desk"
+      },
+      "fcn_incommingsms_0": {
+        "dataSetId": -1,
+        "id": "fcn_incommingsms_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_validatetheincomingmessage_0"
+        ],
+        "content": "Incoming SMS to Portal $sms"
+      },
+      "fcn_validatetheincomingmessage_0": {
+        "dataSetId": -1,
+        "id": "fcn_validatetheincomingmessage_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_smshistorysmshistoryvalidationforsaas_0"
+        ],
+        "content": "Validate the Incoming message $sms"
+      },
+      "fcn_smshistorysmshistoryvalidationforsaas_0": {
+        "dataSetId": -1,
+        "id": "fcn_smshistorysmshistoryvalidationforsaas_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "SMS History$sms history validation for saas"
+      },
+      "fcn_assignsenderid_0": {
+        "dataSetId": -1,
+        "id": "fcn_assignsenderid_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_validatethestandarduserinbox_0",
+          "fcn_savecontactnew_0"
+        ],
+        "content": "Assign Conversation to user"
+      },
+      "fcn_validatethestandarduserinbox_0": {
+        "dataSetId": -1,
+        "id": "fcn_validatethestandarduserinbox_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_sendincomingmessagetouser_0"
+        ],
+        "content": "Standard User Inbox Validation $sms"
+      },
+      "fcn_sendincomingmessagetouser_0": {
+        "dataSetId": -1,
+        "id": "fcn_sendincomingmessagetouser_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checkthemessageinstandarduserinbox_0"
+        ],
+        "content": "Send Incoming message to user $sms"
+      },
+      "fcn_checkthemessageinstandarduserinbox_0": {
+        "dataSetId": -1,
+        "id": "fcn_checkthemessageinstandarduserinbox_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Check the message in Standard user Inbox $sms"
+      },
+      "fcn_navigatetousermanagmentforvalidation_0": {
+        "dataSetId": -1,
+        "id": "fcn_navigatetousermanagmentforvalidation_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_editinusermanagment_0",
+          "fcn_userinviteusermanagment_0"
+        ],
+        "content": "navigate to $usermanagment for validation"
+      },
+      "fcn_editinusermanagment_0": {
+        "dataSetId": -1,
+        "id": "fcn_editinusermanagment_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checkcancelbuttoninusermanagment_0",
+          "fcn_validatetextfieldinusermanagment_0"
+        ],
+        "content": "edit in $usermanagment "
+      },
+      "fcn_checkcancelbuttoninusermanagment_0": {
+        "dataSetId": -1,
+        "id": "fcn_checkcancelbuttoninusermanagment_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "check cancel button  in $usermanagment"
+      },
+      "fcn_validatetextfieldinusermanagment_0": {
+        "dataSetId": -1,
+        "id": "fcn_validatetextfieldinusermanagment_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_getaccountid_1694764835277_0"
+        ],
+        "content": "validate text field in $usermanagment"
+      },
+      "fcn_getaccountid_1694764835277_0": {
+        "dataSetId": -1,
+        "id": "fcn_getaccountid_1694764835277_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logintoopsportallogintrial_signupaccountid_1694764845427_0"
+        ],
+        "content": "Get $accountid"
+      },
+      "fcn_logintoopsportallogintrial_signupaccountid_1694764845427_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintoopsportallogintrial_signupaccountid_1694764845427_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_addmessagecreditusermanagment_0"
+        ],
+        "content": "Login to $opsportallogin $trial_signup $accountid"
+      },
+      "fcn_addmessagecreditusermanagment_0": {
+        "dataSetId": -1,
+        "id": "fcn_addmessagecreditusermanagment_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertmessagecreditusermanagment_0"
+        ],
+        "content": "add message credit $usermanagment"
+      },
+      "fcn_assertmessagecreditusermanagment_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertmessagecreditusermanagment_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_userinviteusermangment_0"
+        ],
+        "content": "assert message credit $usermanagment"
+      },
+      "fcn_userinviteusermangment_0": {
+        "dataSetId": -1,
+        "id": "fcn_userinviteusermangment_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_vaptissuemultipleinvitesend_0",
+          "fcn_logintogmailemaillogin_1694778624942_0"
+        ],
+        "content": "user invite $usermanagment"
+      },
+      "fcn_logintogmailemaillogin_1694778624942_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintogmailemaillogin_1694778624942_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_confirmaccountusermanagment_0",
+          "fcn_assertmessagecreditusermanagment_0"
+        ],
+        "content": "Login to gmail $emaillogin"
+      },
+      "fcn_confirmaccountusermanagment_0": {
+        "dataSetId": -1,
+        "id": "fcn_confirmaccountusermanagment_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logintostandarduserusermanagment_0"
+        ],
+        "content": "confirm account $usermanagment"
+      },
+      "fcn_logintostandarduserusermanagment_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintostandarduserusermanagment_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logintosaasportal_1695023585386_0"
+        ],
+        "content": "login to standardUser $usermanagment"
+      },
+      "fcn_logintosaasportal_1695023585386_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintosaasportal_1695023585386_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_unassignanddeleteuserusermanagment_0",
+          "fcn_assignsenderidusermanagment_0"
+        ],
+        "content": "login to $saasportal"
+      },
+      "fcn_unassignanddeleteuserusermanagment_0": {
+        "dataSetId": -1,
+        "id": "fcn_unassignanddeleteuserusermanagment_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_manageaccessusermanagment_0"
+        ],
+        "content": "unassign and delete user $usermanagment"
+      },
+      "fcn_manageaccessusermanagment_0": {
+        "dataSetId": -1,
+        "id": "fcn_manageaccessusermanagment_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "manage Access $usermanagment"
+      },
+      "fcn_assignsenderidusermanagment_0": {
+        "dataSetId": -1,
+        "id": "fcn_assignsenderidusermanagment_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logintostandarduserusermanagment_1695035120865_0"
+        ],
+        "content": "assign sender id $usermanagment"
+      },
+      "fcn_logintostandarduserusermanagment_1695035120865_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintostandarduserusermanagment_1695035120865_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertsenderidusermanagment_0"
+        ],
+        "content": "login to standardUser $usermanagment"
+      },
+      "fcn_assertsenderidusermanagment_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertsenderidusermanagment_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_unassignanddeleteuserusermanagment_1695035278755_0"
+        ],
+        "content": "assert sender id $usermanagment"
+      },
+      "fcn_unassignanddeleteuserusermanagment_1695035278755_0": {
+        "dataSetId": -1,
+        "id": "fcn_unassignanddeleteuserusermanagment_1695035278755_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "unassign and delete user $usermanagment"
+      },
+      "fcn_validatereadconversation_0": {
+        "dataSetId": -1,
+        "id": "fcn_validatereadconversation_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_validatereadconversation_1"
+        ],
+        "content": "Send Incoming message to user $sms"
+      },
+      "fcn_validatereadconversation_1": {
+        "dataSetId": -1,
+        "id": "fcn_validatereadconversation_1",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Validate Read Conversation"
+      },
+      "fcn_sendincomingmessagetousersms_1695273113857_0": {
+        "dataSetId": -1,
+        "id": "fcn_sendincomingmessagetousersms_1695273113857_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_validatereadconversation_1695273113857_0"
+        ],
+        "content": "Send Incoming message to user $sms"
+      },
+      "fcn_validatereadconversation_1695273113857_0": {
+        "dataSetId": -1,
+        "id": "fcn_validatereadconversation_1695273113857_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Validate Unread Conversation"
+      },
+      "fcn_savecontactnew_0": {
+        "dataSetId": -1,
+        "id": "fcn_savecontactnew_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Save Contact $new"
+      },
+      "fcn_savecontactnewcontact_0": {
+        "dataSetId": -1,
+        "id": "fcn_savecontactnewcontact_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Save Contact $newcontact"
+      },
+      "fcn_searchcontact_0": {
+        "dataSetId": -1,
+        "id": "fcn_searchcontact_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Search Contact $newcontact"
+      },
+      "fcn_refreshconversation_0": {
+        "dataSetId": -1,
+        "id": "fcn_refreshconversation_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Refresh conversation"
+      },
+      "fcn_validatethecountofmessage_0": {
+        "dataSetId": -1,
+        "id": "fcn_validatethecountofmessage_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Validate the count of message"
+      },
+      "fcn_navigatetosmsserviceforlabel_0": {
+        "dataSetId": -1,
+        "id": "fcn_navigatetosmsserviceforlabel_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_verifythatlabelcreatesuccessfully_0"
+        ],
+        "content": "navigate to smsService for $label"
+      },
+      "fcn_verifythatlabelcreatesuccessfully_0": {
+        "dataSetId": -1,
+        "id": "fcn_verifythatlabelcreatesuccessfully_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_removelabel_0"
+        ],
+        "content": "verify that $label create successfully"
+      },
+      "fcn_removelabel_0": {
+        "dataSetId": -1,
+        "id": "fcn_removelabel_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "remove $label"
+      },
+      "fcn_smshistory_1695360701394_0": {
+        "dataSetId": -1,
+        "id": "fcn_smshistory_1695360701394_0",
+        "nodeType": "pathlabel",
+        "branches": [
+          "fcn_logintosaasconversive_1695360701394_0"
+        ],
+        "content": "SMS History"
+      },
+      "fcn_logintosaasconversive_1695360701394_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintosaasconversive_1695360701394_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_navigatetomessagehistory_1695360701394_0"
+        ],
+        "content": "login to $saasconversive"
+      },
+      "fcn_navigatetomessagehistory_1695360701394_0": {
+        "dataSetId": -1,
+        "id": "fcn_navigatetomessagehistory_1695360701394_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_asserttabsonhistorypage_1695360701394_0",
+          "fcn_selectfilterasallandincomingmessages_1695360843247_0",
+          "fcn_selectfilterasallandoutgoingmessages_1695360865950_0",
+          "fcn_selectfilterassmsandoutgoingmessages_1695360882931_0",
+          "fcn_selectfilterassmsandincomingmessages_1695360932832_0",
+          "fcn_selectfilteraswhatsappandoutgoingmessages_0",
+          "fcn_selectfilteraswhatsappandincomingmessages_1695387340655_0",
+          "fcn_selectfilterasfbandoutgoingmessages_1695387366528_0",
+          "fcn_selectfilterasfbandincomingmessages_1695387391272_0"
+        ],
+        "content": "Navigate to Message History"
+      },
+      "fcn_asserttabsonhistorypage_1695360701394_0": {
+        "dataSetId": -1,
+        "id": "fcn_asserttabsonhistorypage_1695360701394_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "assert tabs on History Page"
+      },
+      "fcn_selectfilterasallandincomingmessages_1695360843247_0": {
+        "dataSetId": -1,
+        "id": "fcn_selectfilterasallandincomingmessages_1695360843247_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_asserttabsonhistorypage_1695360701394_0",
+          "fcn_downloadincomingreport_1695387968800_0",
+          "fcn_downloadincomingreportformorethat31days_1695388041315_0",
+          "fcn_downloadincomingreport_1695388113760_0",
+          "fcn_selectdaterangewhichdoesnothavedataincomingreport_1695388205813_0"
+        ],
+        "content": "select filter as All and Incoming Messages"
+      },
+      "fcn_selectfilterasallandoutgoingmessages_1695360865950_0": {
+        "dataSetId": -1,
+        "id": "fcn_selectfilterasallandoutgoingmessages_1695360865950_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_asserttabsonhistorypage_1695360701394_0",
+          "fcn_downloadoutgoingreport_1695387740237_0",
+          "fcn_downloadoutgoingreportformorethat31days_1695387770773_0",
+          "fcn_downloadoutgoingreport_1695387797272_0",
+          "fcn_selectdaterangewhichdoesnothavedataoutgoingreport_1695387879496_0"
+        ],
+        "content": "select filter as All and Outgoing Messages"
+      },
+      "fcn_selectfilterassmsandoutgoingmessages_1695360882931_0": {
+        "dataSetId": -1,
+        "id": "fcn_selectfilterassmsandoutgoingmessages_1695360882931_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_asserttabsonhistorypageforchannels_1695360952649_0"
+        ],
+        "content": "select filter as SMS and Outgoing Messages"
+      },
+      "fcn_selectfilterassmsandincomingmessages_1695360932832_0": {
+        "dataSetId": -1,
+        "id": "fcn_selectfilterassmsandincomingmessages_1695360932832_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_asserttabsonhistorypageforchannels_1695360952649_0"
+        ],
+        "content": "select filter as SMS and Incoming Messages"
+      },
+      "fcn_asserttabsonhistorypageforchannels_1695360952649_0": {
+        "dataSetId": -1,
+        "id": "fcn_asserttabsonhistorypageforchannels_1695360952649_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "assert tabs on History Page for Channels"
+      },
+      "fcn_selectfilteraswhatsappandoutgoingmessages_0": {
+        "dataSetId": -1,
+        "id": "fcn_selectfilteraswhatsappandoutgoingmessages_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_asserttabsonhistorypageforchannels_1695360952649_0"
+        ],
+        "content": "select filter as Whats App and Outgoing Messages"
+      },
+      "fcn_selectfilteraswhatsappandincomingmessages_1695387340655_0": {
+        "dataSetId": -1,
+        "id": "fcn_selectfilteraswhatsappandincomingmessages_1695387340655_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_asserttabsonhistorypageforchannels_1695360952649_0"
+        ],
+        "content": "select filter as Whats App and Incoming Messages"
+      },
+      "fcn_selectfilterasfbandoutgoingmessages_1695387366528_0": {
+        "dataSetId": -1,
+        "id": "fcn_selectfilterasfbandoutgoingmessages_1695387366528_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_asserttabsonhistorypageforchannels_1695360952649_0"
+        ],
+        "content": "select filter as FB and Outgoing Messages"
+      },
+      "fcn_selectfilterasfbandincomingmessages_1695387391272_0": {
+        "dataSetId": -1,
+        "id": "fcn_selectfilterasfbandincomingmessages_1695387391272_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_asserttabsonhistorypageforchannels_1695360952649_0"
+        ],
+        "content": "select filter as FB and Incoming Messages"
+      },
+      "fcn_downloadoutgoingreport_1695387740237_0": {
+        "dataSetId": -1,
+        "id": "fcn_downloadoutgoingreport_1695387740237_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_downlaodthegenratedreport_1695387740237_0"
+        ],
+        "content": "Download $outgoingreport"
+      },
+      "fcn_downlaodthegenratedreport_1695387740237_0": {
+        "dataSetId": -1,
+        "id": "fcn_downlaodthegenratedreport_1695387740237_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": " downlaod the genrated report "
+      },
+      "fcn_downloadoutgoingreportformorethat31days_1695387770773_0": {
+        "dataSetId": -1,
+        "id": "fcn_downloadoutgoingreportformorethat31days_1695387770773_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Download $outgoingreport for more that 31 days"
+      },
+      "fcn_downloadoutgoingreport_1695387797272_0": {
+        "dataSetId": -1,
+        "id": "fcn_downloadoutgoingreport_1695387797272_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_canceltheinprogressreport_1695387797272_0"
+        ],
+        "content": "Download $outgoingreport"
+      },
+      "fcn_canceltheinprogressreport_1695387797272_0": {
+        "dataSetId": -1,
+        "id": "fcn_canceltheinprogressreport_1695387797272_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Cancel the Inprogress report "
+      },
+      "fcn_selectdaterangewhichdoesnothavedataoutgoingreport_1695387879496_0": {
+        "dataSetId": -1,
+        "id": "fcn_selectdaterangewhichdoesnothavedataoutgoingreport_1695387879496_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "select date range which does not have data $outgoingreport"
+      },
+      "fcn_downloadincomingreport_1695387968800_0": {
+        "dataSetId": -1,
+        "id": "fcn_downloadincomingreport_1695387968800_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_downlaodthegenratedreport_1695387968800_0"
+        ],
+        "content": "Download $incomingreport"
+      },
+      "fcn_downlaodthegenratedreport_1695387968800_0": {
+        "dataSetId": -1,
+        "id": "fcn_downlaodthegenratedreport_1695387968800_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": " downlaod the genrated report "
+      },
+      "fcn_downloadincomingreportformorethat31days_1695388041315_0": {
+        "dataSetId": -1,
+        "id": "fcn_downloadincomingreportformorethat31days_1695388041315_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Download $incomingreport for more that 31 days"
+      },
+      "fcn_downloadincomingreport_1695388113760_0": {
+        "dataSetId": -1,
+        "id": "fcn_downloadincomingreport_1695388113760_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_canceltheinprogressreport_1695388113760_0"
+        ],
+        "content": "Download $incomingreport"
+      },
+      "fcn_canceltheinprogressreport_1695388113760_0": {
+        "dataSetId": -1,
+        "id": "fcn_canceltheinprogressreport_1695388113760_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Cancel the Inprogress report "
+      },
+      "fcn_selectdaterangewhichdoesnothavedataincomingreport_1695388205813_0": {
+        "dataSetId": -1,
+        "id": "fcn_selectdaterangewhichdoesnothavedataincomingreport_1695388205813_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "select date range which does not have data $incomingreport"
+      },
+      "fcn_incomingwhatsappmessage_0": {
+        "dataSetId": -1,
+        "id": "fcn_incomingwhatsappmessage_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "incoming $whatsapp message"
+      },
+      "fcn_navigatetosmsservivceforconsent_0": {
+        "dataSetId": -1,
+        "id": "fcn_navigatetosmsservivceforconsent_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_isconsentenabled_0",
+          "fcn_navigatetosmsservivceforconsent_0"
+        ],
+        "content": "navigate to sms servivce for $consent"
+      },
+      "fcn_isconsentenabled_0": {
+        "dataSetId": -1,
+        "id": "fcn_isconsentenabled_0",
+        "nodeType": "dynamic-decision",
+        "branches": [
+          "fcn_enableconsent_0",
+          "fcn_addconsent_0"
+        ],
+        "content": "is consent enabled?"
+      },
+      "fcn_addconsent_0": {
+        "dataSetId": -1,
+        "id": "fcn_addconsent_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_editconsent_0"
+        ],
+        "content": "add $consent"
+      },
+      "fcn_enableconsent_0": {
+        "dataSetId": -1,
+        "id": "fcn_enableconsent_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_addconsent_0"
+        ],
+        "content": "enable $consent"
+      },
+      "fcn_editconsent_0": {
+        "dataSetId": -1,
+        "id": "fcn_editconsent_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_addconsentoptout_0"
+        ],
+        "content": "edit $consent"
+      },
+      "fcn_sendsmstooptoutnumberconsent_0": {
+        "dataSetId": -1,
+        "id": "fcn_sendsmstooptoutnumberconsent_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_exmaple_0"
+        ],
+        "content": "send sms to optout number $consent"
+      },
+      "fcn_addconsentoptin_0": {
+        "dataSetId": -1,
+        "id": "fcn_addconsentoptin_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_sendsmstooptinnumberconsent_0"
+        ],
+        "content": "add $consent optin"
+      },
+      "fcn_sendsmstooptinnumberconsent_0": {
+        "dataSetId": -1,
+        "id": "fcn_sendsmstooptinnumberconsent_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_downloadrecordconsent_0"
+        ],
+        "content": "send sms to optin number $consent"
+      },
+      "fcn_searchconsentrecord_0": {
+        "dataSetId": -1,
+        "id": "fcn_searchconsentrecord_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_addconsentoptin_0"
+        ],
+        "content": "search $consent record"
+      },
+      "fcn_downloadrecordconsent_0": {
+        "dataSetId": -1,
+        "id": "fcn_downloadrecordconsent_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_quitkeywordforconesntoptout_0",
+          "fcn_cancelkeywordforconsentoptout_0",
+          "fcn_quitkeywordforconsentoptout_0",
+          "fcn_unsubscribedkeywordforconsentoptout_0",
+          "fcn_endkeywordforconsentoptout_0"
+        ],
+        "content": "download record $consent"
+      },
+      "fcn_quitkeywordforconesntoptout_0": {
+        "dataSetId": -1,
+        "id": "fcn_quitkeywordforconesntoptout_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_sendincomingforstopkeywordconsent_0"
+        ],
+        "content": "stop keyword for $consent optout"
+      },
+      "fcn_sendincomingforstopkeywordconsent_0": {
+        "dataSetId": -1,
+        "id": "fcn_sendincomingforstopkeywordconsent_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_verifyincomingforstopkeywordconsentsms_0"
+        ],
+        "content": "send incoming for stop keyword $consent $sms"
+      },
+      "fcn_verifyincomingforstopkeywordconsentsms_0": {
+        "dataSetId": -1,
+        "id": "fcn_verifyincomingforstopkeywordconsentsms_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_disablestopkeywordandsendincomingsmsconsent_0"
+        ],
+        "content": "verify incoming for stop keyword $consent $sms"
+      },
+      "fcn_disablestopkeywordandsendincomingsmsconsent_0": {
+        "dataSetId": -1,
+        "id": "fcn_disablestopkeywordandsendincomingsmsconsent_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "disable stop keyword and send incoming $sms $consent"
+      },
+      "fcn_addconsentoptout_0": {
+        "dataSetId": -1,
+        "id": "fcn_addconsentoptout_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_searchconsentrecord_0"
+        ],
+        "content": "add $consent optout"
+      },
+      "fcn_conversedeskuivalidation_0": {
+        "dataSetId": -1,
+        "id": "fcn_conversedeskuivalidation_0",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_conversedesk_0"
+        ],
+        "content": "Converse Desk UI Validation"
+      },
+      "fcn_contactfunctionalityvalidation_0": {
+        "dataSetId": -1,
+        "id": "fcn_contactfunctionalityvalidation_0",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_contactmanager_0"
+        ],
+        "content": "Contact Functionality Validation"
+      },
+      "fcn_gethelpvalidation_0": {
+        "dataSetId": -1,
+        "id": "fcn_gethelpvalidation_0",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_gethelpbutton_0"
+        ],
+        "content": "Get Help Validation"
+      },
+      "fcn_sendsmsvalidation_0": {
+        "dataSetId": -1,
+        "id": "fcn_sendsmsvalidation_0",
+        "nodeType": "skip",
+        "branches": [],
+        "content": "Send SMS Validation"
+      },
+      "fcn_usermanagment_0": {
+        "dataSetId": -1,
+        "id": "fcn_usermanagment_0",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_navigatetousermanagmentforvalidation_0"
+        ],
+        "content": "User Managment"
+      },
+      "fcn_buynowflows_0": {
+        "dataSetId": -1,
+        "id": "fcn_buynowflows_0",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_navigatetobyenow_0"
+        ],
+        "content": "Buy Now Flows"
+      },
+      "fcn_navigatetobyenow_0": {
+        "dataSetId": -1,
+        "id": "fcn_navigatetobyenow_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_navigatetobuysms_0"
+        ],
+        "content": "Navigate to Bye Now "
+      },
+      "fcn_navigatetobuysms_0": {
+        "dataSetId": -1,
+        "id": "fcn_navigatetobuysms_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Navigate to Buy SMS"
+      },
+      "fcn_businesshours_1695963044150_0": {
+        "dataSetId": -1,
+        "id": "fcn_businesshours_1695963044150_0",
+        "nodeType": "pathlabel",
+        "branches": [
+          "fcn_logintosaasconversive_1695963083865_0"
+        ],
+        "content": "Business Hours"
+      },
+      "fcn_logintosaasconversive_1695963083865_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintosaasconversive_1695963083865_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_navigatetomessagetemplate_1695963083865_0"
+        ],
+        "content": "login to $saasconversive"
+      },
+      "fcn_navigatetomessagetemplate_1695963083865_0": {
+        "dataSetId": -1,
+        "id": "fcn_navigatetomessagetemplate_1695963083865_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_createtemplateoftypeautomation_1695963083865_0"
+        ],
+        "content": "Navigate to message template"
+      },
+      "fcn_createtemplateoftypeautomation_1695963083865_0": {
+        "dataSetId": -1,
+        "id": "fcn_createtemplateoftypeautomation_1695963083865_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_navigatetosmsservice_1695963083865_0"
+        ],
+        "content": "create $template of type Automation"
+      },
+      "fcn_navigatetosmsservice_1695963083865_0": {
+        "dataSetId": -1,
+        "id": "fcn_navigatetosmsservice_1695963083865_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_navigatetobusinesshours_1695963083865_0"
+        ],
+        "content": "Navigate to SMS Service"
+      },
+      "fcn_navigatetobusinesshours_1695963083865_0": {
+        "dataSetId": -1,
+        "id": "fcn_navigatetobusinesshours_1695963083865_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_isbusinesshoursexists_1695963083865_0"
+        ],
+        "content": "Navigate to Business Hours"
+      },
+      "fcn_isbusinesshoursexists_1695963083865_0": {
+        "dataSetId": -1,
+        "id": "fcn_isbusinesshoursexists_1695963083865_0",
+        "nodeType": "dynamic-decision",
+        "branches": [
+          "fcn_addbusinesshours_1695963136502_0",
+          "fcn_isbusinesshoursenabled_1695963111734_0"
+        ],
+        "content": "Is Business Hours exists ?"
+      },
+      "fcn_isbusinesshoursenabled_1695963111734_0": {
+        "dataSetId": -1,
+        "id": "fcn_isbusinesshoursenabled_1695963111734_0",
+        "nodeType": "dynamic-decision",
+        "branches": [
+          "fcn_enablethebusinesshours_1696393489132_0",
+          "fcn_disableandenablethebh_1695963250889_0"
+        ],
+        "content": "Is Business Hours Enabled ?"
+      },
+      "fcn_addbusinesshours_1695963136502_0": {
+        "dataSetId": -1,
+        "id": "fcn_addbusinesshours_1695963136502_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_disableandenablethebh_1695963250889_0"
+        ],
+        "content": "Add $businesshours"
+      },
+      "fcn_disableandenablethebh_1695963250889_0": {
+        "dataSetId": -1,
+        "id": "fcn_disableandenablethebh_1695963250889_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_editbusinesshours_1695963486096_0"
+        ],
+        "content": "Enable the BH"
+      },
+      "fcn_editbusinesshours_1695963486096_0": {
+        "dataSetId": -1,
+        "id": "fcn_editbusinesshours_1695963486096_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_isautoreplayset_1695963486096_0"
+        ],
+        "content": "Edit $businesshours"
+      },
+      "fcn_isautoreplayset_1695963486096_0": {
+        "dataSetId": -1,
+        "id": "fcn_isautoreplayset_1695963486096_0",
+        "nodeType": "dynamic-decision",
+        "branches": [
+          "fcn_setautoreplay_1695963551364_0",
+          "fcn_isautoreplayenabled_1695963519113_0"
+        ],
+        "content": "Is Auto Replay Set ?"
+      },
+      "fcn_isautoreplayenabled_1695963519113_0": {
+        "dataSetId": -1,
+        "id": "fcn_isautoreplayenabled_1695963519113_0",
+        "nodeType": "dynamic-decision",
+        "branches": [
+          "fcn_enabletheautoreplayandselecttemplate_1695963636517_0",
+          "fcn_disabletheautoreplay_1695963591299_0"
+        ],
+        "content": "Is Auto Replay Enabled ?"
+      },
+      "fcn_setautoreplay_1695963551364_0": {
+        "dataSetId": -1,
+        "id": "fcn_setautoreplay_1695963551364_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_isautoreplayenabled_1695963519113_0"
+        ],
+        "content": "set autoreplay $template"
+      },
+      "fcn_disabletheautoreplay_1695963591299_0": {
+        "dataSetId": -1,
+        "id": "fcn_disabletheautoreplay_1695963591299_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_enabletheautoreplayandselecttemplate_1695963636517_0"
+        ],
+        "content": "Disable the auto replay"
+      },
+      "fcn_enabletheautoreplayandselecttemplate_1695963636517_0": {
+        "dataSetId": -1,
+        "id": "fcn_enabletheautoreplayandselecttemplate_1695963636517_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_sendincomingmessagesms_1695963673837_0"
+        ],
+        "content": "Enable the Auto Replay and Select $template"
+      },
+      "fcn_sendincomingmessagesms_1695963673837_0": {
+        "dataSetId": -1,
+        "id": "fcn_sendincomingmessagesms_1695963673837_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checktriggeredautoreplaytemplate_1695963673837_0"
+        ],
+        "content": "send incoming message $sms"
+      },
+      "fcn_checktriggeredautoreplaytemplate_1695963673837_0": {
+        "dataSetId": -1,
+        "id": "fcn_checktriggeredautoreplaytemplate_1695963673837_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_disablethebusinesshours_1695963673837_0"
+        ],
+        "content": "check triggered auto replay $template"
+      },
+      "fcn_disablethebusinesshours_1695963673837_0": {
+        "dataSetId": -1,
+        "id": "fcn_disablethebusinesshours_1695963673837_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Disable the Business Hours and Auto reply"
+      },
+      "fcn_saaslogin_1696314447079_0": {
+        "dataSetId": -1,
+        "id": "fcn_saaslogin_1696314447079_0",
+        "nodeType": "pathlabel",
+        "branches": [
+          "fcn_portalregistration_1696314447079_0"
+        ],
+        "content": "Saas Login"
+      },
+      "fcn_portalregistration_1696314447079_0": {
+        "dataSetId": -1,
+        "id": "fcn_portalregistration_1696314447079_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertaccountcreated_1696314447079_0"
+        ],
+        "content": "Portal $registration"
+      },
+      "fcn_assertaccountcreated_1696314447079_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertaccountcreated_1696314447079_0",
+        "nodeType": "state",
+        "branches": [
+          "fcn_portalemailvaildation_1696314447079_0"
+        ],
+        "content": "Assert account created"
+      },
+      "fcn_portalemailvaildation_1696314447079_0": {
+        "dataSetId": -1,
+        "id": "fcn_portalemailvaildation_1696314447079_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Portal $email vaildation"
+      },
+      "fcn_hippacompliancezoho_1696342614440_0": {
+        "dataSetId": -1,
+        "id": "fcn_hippacompliancezoho_1696342614440_0",
+        "nodeType": "pathlabel",
+        "branches": [
+          "fcn_logintocustomerportalusingzoho_hipaa_1696342653807_0"
+        ],
+        "content": "HIPPA Compliance ZOHO"
+      },
+      "fcn_logintocustomerportalusingzoho_hipaa_1696342653807_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintocustomerportalusingzoho_hipaa_1696342653807_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_navigatetosmsservice_1696590325305_0"
+        ],
+        "content": "login to customer portal using $zoho_hipaa"
+      },
+      "fcn_hippacompliancesf_1696342696175_0": {
+        "dataSetId": -1,
+        "id": "fcn_hippacompliancesf_1696342696175_0",
+        "nodeType": "pathlabel",
+        "branches": [
+          "fcn_logintosalesforce_hipaa_1696342696175_0"
+        ],
+        "content": "HIPPA Compliance SF"
+      },
+      "fcn_logintosalesforce_hipaa_1696342696175_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintosalesforce_hipaa_1696342696175_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logintocustomer_portalusingsfforhippa_1696342696175_0"
+        ],
+        "content": "login to $salesforce_hipaa"
+      },
+      "fcn_logintocustomer_portalusingsfforhippa_1696342696175_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintocustomer_portalusingsfforhippa_1696342696175_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_navigatetosmsservice_1696342696175_0"
+        ],
+        "content": "login to $customer_portal using SF for HIPPA"
+      },
+      "fcn_navigatetosmsservice_1696342696175_0": {
+        "dataSetId": -1,
+        "id": "fcn_navigatetosmsservice_1696342696175_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_gotohipaacomplianceandvalidatetheui_1696342696175_0"
+        ],
+        "content": "Navigate to SMS Service"
+      },
+      "fcn_gotohipaacomplianceandvalidatetheui_1696342696175_0": {
+        "dataSetId": -1,
+        "id": "fcn_gotohipaacomplianceandvalidatetheui_1696342696175_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_gotoconsentmanagementandassertthemessage_1696342696175_0"
+        ],
+        "content": "Go to Hipaa Compliance and Validate the UI "
+      },
+      "fcn_gotoconsentmanagementandassertthemessage_1696342696175_0": {
+        "dataSetId": -1,
+        "id": "fcn_gotoconsentmanagementandassertthemessage_1696342696175_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_gotobusinesshoursandassertthemessage_1696342696175_0"
+        ],
+        "content": "Go to Consent Management and Assert the Message"
+      },
+      "fcn_gotobusinesshoursandassertthemessage_1696342696175_0": {
+        "dataSetId": -1,
+        "id": "fcn_gotobusinesshoursandassertthemessage_1696342696175_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertmessagehistorytabisnotvisible_1696342696175_0"
+        ],
+        "content": "Go to Business Hours and Assert the Message"
+      },
+      "fcn_assertmessagehistorytabisnotvisible_1696342696175_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertmessagehistorytabisnotvisible_1696342696175_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_sendincomingmessagetosfforhipaasms_1696342696175_0"
+        ],
+        "content": "Assert Message History tab is not visible"
+      },
+      "fcn_sendincomingmessagetosfforhipaasms_1696342696175_0": {
+        "dataSetId": -1,
+        "id": "fcn_sendincomingmessagetosfforhipaasms_1696342696175_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertincomingmessageinsfconversedeskandhistorysms_1696342696175_0"
+        ],
+        "content": "Send Incoming Message to SF for Hipaa $sms"
+      },
+      "fcn_assertincomingmessageinsfconversedeskandhistorysms_1696342696175_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertincomingmessageinsfconversedeskandhistorysms_1696342696175_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_sendoutgoingmessageandassertintosfhistorysfagent_1696342696175_0"
+        ],
+        "content": "Assert Incoming Message in SF Converse Desk and History $sms"
+      },
+      "fcn_sendoutgoingmessageandassertintosfhistorysfagent_1696342696175_0": {
+        "dataSetId": -1,
+        "id": "fcn_sendoutgoingmessageandassertintosfhistorysfagent_1696342696175_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Send Outgoing Message and Assert into SF History $sfagent"
+      },
+      "fcn_enablethebusinesshours_1696393489132_0": {
+        "dataSetId": -1,
+        "id": "fcn_enablethebusinesshours_1696393489132_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_disableandenablethebh_1695963250889_0"
+        ],
+        "content": "Enable the Business Hours"
+      },
+      "fcn_assertthecall_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertthecall_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Assert the call $feedbackform"
+      },
+      "fcn_cancelkeywordforconsentoptout_0": {
+        "dataSetId": -1,
+        "id": "fcn_cancelkeywordforconsentoptout_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_sendincomingforcancelkeywordconsentsms_0"
+        ],
+        "content": "cancel keyword for $consent optout"
+      },
+      "fcn_quitkeywordforconsentoptout_0": {
+        "dataSetId": -1,
+        "id": "fcn_quitkeywordforconsentoptout_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_sendincomingforcancelkeywordconsentsms_1696505147326_0"
+        ],
+        "content": "Quit keyword for $consent optout"
+      },
+      "fcn_unsubscribedkeywordforconsentoptout_0": {
+        "dataSetId": -1,
+        "id": "fcn_unsubscribedkeywordforconsentoptout_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_sendincomingforquitkeywordconsentsms_1696508701424_0"
+        ],
+        "content": "unsubscribed keyword for $consent optout"
+      },
+      "fcn_endkeywordforconsentoptout_0": {
+        "dataSetId": -1,
+        "id": "fcn_endkeywordforconsentoptout_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_sendincomingforquitkeywordconsentsms_1696508705140_0"
+        ],
+        "content": "end keyword for $consent optout"
+      },
+      "fcn_sendincomingforcancelkeywordconsentsms_0": {
+        "dataSetId": -1,
+        "id": "fcn_sendincomingforcancelkeywordconsentsms_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_verifyincomingforcancelkeywordsmsconsent_0"
+        ],
+        "content": "send incoming for cancel keyword $consent $sms"
+      },
+      "fcn_verifyincomingforcancelkeywordsmsconsent_0": {
+        "dataSetId": -1,
+        "id": "fcn_verifyincomingforcancelkeywordsmsconsent_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_disablecancelkeywordandsendincomingconsentsms_0"
+        ],
+        "content": "verify incoming for cancel keyword $sms $consent"
+      },
+      "fcn_disablecancelkeywordandsendincomingconsentsms_0": {
+        "dataSetId": -1,
+        "id": "fcn_disablecancelkeywordandsendincomingconsentsms_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "disable cancel keyword and send incoming $consent $sms"
+      },
+      "fcn_sendincomingforcancelkeywordconsentsms_1696505147326_0": {
+        "dataSetId": -1,
+        "id": "fcn_sendincomingforcancelkeywordconsentsms_1696505147326_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_verifyincomingforcancelkeywordsmsconsent_1696505147326_0"
+        ],
+        "content": "send incoming for quit keyword $consent $sms"
+      },
+      "fcn_verifyincomingforcancelkeywordsmsconsent_1696505147326_0": {
+        "dataSetId": -1,
+        "id": "fcn_verifyincomingforcancelkeywordsmsconsent_1696505147326_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_disablecancelkeywordandsendincomingconsentsms_1696505147326_0"
+        ],
+        "content": "verify incoming for quit keyword $sms $consent"
+      },
+      "fcn_disablecancelkeywordandsendincomingconsentsms_1696505147326_0": {
+        "dataSetId": -1,
+        "id": "fcn_disablecancelkeywordandsendincomingconsentsms_1696505147326_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "disable quit keyword and send incoming $consent $sms"
+      },
+      "fcn_sendincomingforquitkeywordconsentsms_1696508701424_0": {
+        "dataSetId": -1,
+        "id": "fcn_sendincomingforquitkeywordconsentsms_1696508701424_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_verifyincomingforquitkeywordsmsconsent_1696508701424_0"
+        ],
+        "content": "send incoming for unsubscribed keyword $consent $sms"
+      },
+      "fcn_verifyincomingforquitkeywordsmsconsent_1696508701424_0": {
+        "dataSetId": -1,
+        "id": "fcn_verifyincomingforquitkeywordsmsconsent_1696508701424_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_disablequitkeywordandsendincomingconsentsms_1696508701424_0"
+        ],
+        "content": "verify incoming for unsubscribed keyword $sms $consent"
+      },
+      "fcn_disablequitkeywordandsendincomingconsentsms_1696508701424_0": {
+        "dataSetId": -1,
+        "id": "fcn_disablequitkeywordandsendincomingconsentsms_1696508701424_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "disable unsubscribed keyword and send incoming $consent $sms"
+      },
+      "fcn_sendincomingforquitkeywordconsentsms_1696508705140_0": {
+        "dataSetId": -1,
+        "id": "fcn_sendincomingforquitkeywordconsentsms_1696508705140_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_verifyincomingforquitkeywordsmsconsent_1696508705140_0"
+        ],
+        "content": "send incoming for end keyword $consent $sms"
+      },
+      "fcn_verifyincomingforquitkeywordsmsconsent_1696508705140_0": {
+        "dataSetId": -1,
+        "id": "fcn_verifyincomingforquitkeywordsmsconsent_1696508705140_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_disablequitkeywordandsendincomingconsentsms_1696508705140_0"
+        ],
+        "content": "verify incoming for end keyword $sms $consent"
+      },
+      "fcn_disablequitkeywordandsendincomingconsentsms_1696508705140_0": {
+        "dataSetId": -1,
+        "id": "fcn_disablequitkeywordandsendincomingconsentsms_1696508705140_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "disable end keyword and send incoming $consent $sms"
+      },
+      "fcn_navigatetosmsservice_1696590325305_0": {
+        "dataSetId": -1,
+        "id": "fcn_navigatetosmsservice_1696590325305_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_gotohipaacomplianceandvalidatetheuiforzoho_1696590325305_0"
+        ],
+        "content": "Navigate to SMS Service"
+      },
+      "fcn_gotohipaacomplianceandvalidatetheuiforzoho_1696590325305_0": {
+        "dataSetId": -1,
+        "id": "fcn_gotohipaacomplianceandvalidatetheuiforzoho_1696590325305_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_gotoconsentmanagementandassertthemessage_1696590325305_0"
+        ],
+        "content": "Go to Hipaa Compliance and Validate the UI for ZOHO"
+      },
+      "fcn_gotoconsentmanagementandassertthemessage_1696590325305_0": {
+        "dataSetId": -1,
+        "id": "fcn_gotoconsentmanagementandassertthemessage_1696590325305_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_gotobusinesshoursandassertthemessage_1696590325305_0"
+        ],
+        "content": "Go to Consent Management and Assert the Message"
+      },
+      "fcn_gotobusinesshoursandassertthemessage_1696590325305_0": {
+        "dataSetId": -1,
+        "id": "fcn_gotobusinesshoursandassertthemessage_1696590325305_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertmessagehistorytabisnotvisible_1696590325305_0"
+        ],
+        "content": "Go to Business Hours and Assert the Message"
+      },
+      "fcn_assertmessagehistorytabisnotvisible_1696590325305_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertmessagehistorytabisnotvisible_1696590325305_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_sendincomingmessagetozohoforhipaasms_1696590325305_0"
+        ],
+        "content": "Assert Message History tab is not visible"
+      },
+      "fcn_sendincomingmessagetozohoforhipaasms_1696590325305_0": {
+        "dataSetId": -1,
+        "id": "fcn_sendincomingmessagetozohoforhipaasms_1696590325305_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertincomingmessageinzohosmshistorysms_1696590325305_0"
+        ],
+        "content": "Send Incoming Message to Zoho for Hipaa $sms"
+      },
+      "fcn_assertincomingmessageinzohosmshistorysms_1696590325305_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertincomingmessageinzohosmshistorysms_1696590325305_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Assert Incoming Message in Zoho SMS History $sms"
+      },
+      "fcn_resetthepassword_0": {
+        "dataSetId": -1,
+        "id": "fcn_resetthepassword_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_asserttheautologin_0",
+          "fcn_reattemptforgotpassword_0"
+        ],
+        "content": "reset the $password"
+      },
+      "fcn_asserttheautologin_0": {
+        "dataSetId": -1,
+        "id": "fcn_asserttheautologin_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_forgotpassword_1706630411550_0"
+        ],
+        "content": "assert the auto-login $password"
+      },
+      "fcn_reattemptforgotpassword_0": {
+        "dataSetId": -1,
+        "id": "fcn_reattemptforgotpassword_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_resetthepassword_1706187211976_0"
+        ],
+        "content": "Re-attempt forgot password"
+      },
+      "fcn_resetthepassword_1706187211976_0": {
+        "dataSetId": -1,
+        "id": "fcn_resetthepassword_1706187211976_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_asserterrormessageforsmsmagicpasswordresetreattempt_0"
+        ],
+        "content": "reset the $password"
+      },
+      "fcn_asserterrormessageforsmsmagicpasswordresetreattempt_0": {
+        "dataSetId": -1,
+        "id": "fcn_asserterrormessageforsmsmagicpasswordresetreattempt_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Assert error message for SMS-Magic Password Reset Re-attempt"
+      },
+      "fcn_forgotpassword_1706630411550_0": {
+        "dataSetId": -1,
+        "id": "fcn_forgotpassword_1706630411550_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_navigatetogmail_0"
+        ],
+        "content": "forgot $password"
+      },
+      "fcn_navigatetogmail_0": {
+        "dataSetId": -1,
+        "id": "fcn_navigatetogmail_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_clickonresetpasswordlink_1706630456542_0"
+        ],
+        "content": "Navigate to Gmail"
+      },
+      "fcn_clickonresetpasswordlink_1706630456542_0": {
+        "dataSetId": -1,
+        "id": "fcn_clickonresetpasswordlink_1706630456542_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_smsresetpasswordwitholdpassword_0"
+        ],
+        "content": "click on reset $password link"
+      },
+      "fcn_smsresetpasswordwitholdpassword_0": {
+        "dataSetId": -1,
+        "id": "fcn_smsresetpasswordwitholdpassword_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "SMS Reset Password with Old Password"
+      },
+      "fcn_exmaple_0": {
+        "dataSetId": -1,
+        "id": "fcn_exmaple_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "exmaple"
+      },
+      "fcn_vaptissuemultipleinvitesend_0": {
+        "dataSetId": -1,
+        "id": "fcn_vaptissuemultipleinvitesend_0",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_sendmultipleinvite_0"
+        ],
+        "content": "VAPT issue multiple invite send"
+      },
+      "fcn_sendmultipleinvite_0": {
+        "dataSetId": -1,
+        "id": "fcn_sendmultipleinvite_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_asserterrormessage_0"
+        ],
+        "content": "send multiple invite $usermanagment"
+      },
+      "fcn_asserterrormessage_0": {
+        "dataSetId": -1,
+        "id": "fcn_asserterrormessage_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "assert error message for multiple invite"
+      },
+      "fcn_wrongpasswordsemaillogin_0": {
+        "dataSetId": -1,
+        "id": "fcn_wrongpasswordsemaillogin_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_forgotpassword_1"
+        ],
+        "content": "wrong passwords $emaillogin"
+      },
+      "fcn_forgotpassword_1": {
+        "dataSetId": -1,
+        "id": "fcn_forgotpassword_1",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checktheerror_0"
+        ],
+        "content": "forgot $password"
+      },
+      "fcn_checktheerror_0": {
+        "dataSetId": -1,
+        "id": "fcn_checktheerror_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Check saas error"
+      },
+      "fcn_userinviteusermanagment_0": {
+        "dataSetId": -1,
+        "id": "fcn_userinviteusermanagment_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checknoofusersonaccount_0"
+        ],
+        "content": "user invite $usermanagment"
+      },
+      "fcn_checknoofusersonaccount_0": {
+        "dataSetId": -1,
+        "id": "fcn_checknoofusersonaccount_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_changetheuserstrengthonusermanagement_0"
+        ],
+        "content": "check no of users on account"
+      },
+      "fcn_changetheuserstrengthonusermanagement_0": {
+        "dataSetId": -1,
+        "id": "fcn_changetheuserstrengthonusermanagement_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checknoofusersonaccount_1708959879321_0"
+        ],
+        "content": "change the user strength on user management."
+      },
+      "fcn_checknoofusersonaccount_1708959879321_0": {
+        "dataSetId": -1,
+        "id": "fcn_checknoofusersonaccount_1708959879321_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "check no of users on account"
+      }
+    },
+    "pathNames": {
+      "[\"fcn_smshistory_1695360701394_0\",\"fcn_logintosaasconversive_1695360701394_0\",\"fcn_navigatetomessagehistory_1695360701394_0\",\"fcn_selectfilterasallandoutgoingmessages_1695360865950_0\",\"fcn_selectdaterangewhichdoesnothavedataoutgoingreport_1695387879496_0\"]": {
+        "pathTags": "SMSHistory",
+        "pathDependsOn": "{}"
+      },
+      "[\"fcn_smshistory_1695360701394_0\",\"fcn_logintosaasconversive_1695360701394_0\",\"fcn_navigatetomessagehistory_1695360701394_0\",\"fcn_selectfilterasallandoutgoingmessages_1695360865950_0\",\"fcn_downloadoutgoingreport_1695387740237_0\",\"fcn_downlaodthegenratedreport_1695387740237_0\"]": {
+        "pathTags": "SMSHistory",
+        "pathDependsOn": "{}"
+      },
+      "[\"fcn_createsaas_portal_login_0\",\"fcn_logintosaasportal_0\",\"fcn_sendnewsmsfromconversedesktounknownnumber_0\",\"fcn_smshistorysmshistoryvalidationforsaas_1692899726487_0\"]": {
+        "pathTags": "SendSMS",
+        "pathDependsOn": "{}"
+      },
+      "[\"fcn_smshistory_1695360701394_0\",\"fcn_logintosaasconversive_1695360701394_0\",\"fcn_navigatetomessagehistory_1695360701394_0\",\"fcn_selectfilterassmsandoutgoingmessages_1695360882931_0\",\"fcn_asserttabsonhistorypageforchannels_1695360952649_0\"]": {
+        "pathTags": "SMSHistory",
+        "pathDependsOn": "{}"
+      },
+      "[\"fcn_hippacompliancezoho_1696342614440_0\",\"fcn_logintocustomerportalusingzoho_hipaa_1696342653807_0\",\"fcn_navigatetosmsservice_1696590325305_0\",\"fcn_gotohipaacomplianceandvalidatetheuiforzoho_1696590325305_0\",\"fcn_gotoconsentmanagementandassertthemessage_1696590325305_0\",\"fcn_gotobusinesshoursandassertthemessage_1696590325305_0\",\"fcn_assertmessagehistorytabisnotvisible_1696590325305_0\",\"fcn_sendincomingmessagetozohoforhipaasms_1696590325305_0\",\"fcn_assertincomingmessageinzohosmshistorysms_1696590325305_0\"]": {
+        "pathTags": "HIPPA",
+        "pathDependsOn": "{}"
+      },
+      "[\"fcn_smshistory_1695360701394_0\",\"fcn_logintosaasconversive_1695360701394_0\",\"fcn_navigatetomessagehistory_1695360701394_0\",\"fcn_asserttabsonhistorypage_1695360701394_0\"]": {
+        "pathTags": "SMSHistory",
+        "pathDependsOn": "{}"
+      },
+      "[\"fcn_hippacompliancesf_1696342696175_0\",\"fcn_logintosalesforce_hipaa_1696342696175_0\",\"fcn_logintocustomer_portalusingsfforhippa_1696342696175_0\",\"fcn_navigatetosmsservice_1696342696175_0\",\"fcn_gotohipaacomplianceandvalidatetheui_1696342696175_0\",\"fcn_gotoconsentmanagementandassertthemessage_1696342696175_0\",\"fcn_gotobusinesshoursandassertthemessage_1696342696175_0\",\"fcn_assertmessagehistorytabisnotvisible_1696342696175_0\",\"fcn_sendincomingmessagetosfforhipaasms_1696342696175_0\",\"fcn_assertincomingmessageinsfconversedeskandhistorysms_1696342696175_0\",\"fcn_sendoutgoingmessageandassertintosfhistorysfagent_1696342696175_0\"]": {
+        "pathTags": "HIPPA",
+        "pathDependsOn": "{}"
+      },
+      "[\"fcn_smshistory_1695360701394_0\",\"fcn_logintosaasconversive_1695360701394_0\",\"fcn_navigatetomessagehistory_1695360701394_0\",\"fcn_selectfilterasallandincomingmessages_1695360843247_0\",\"fcn_downloadincomingreportformorethat31days_1695388041315_0\"]": {
+        "pathTags": "SMSHistory",
+        "pathDependsOn": "{}"
+      },
+      "[\"fcn_smshistory_1695360701394_0\",\"fcn_logintosaasconversive_1695360701394_0\",\"fcn_navigatetomessagehistory_1695360701394_0\",\"fcn_selectfilteraswhatsappandoutgoingmessages_0\",\"fcn_asserttabsonhistorypageforchannels_1695360952649_0\"]": {
+        "pathTags": "SMSHistory",
+        "pathDependsOn": "{}"
+      },
+      "[\"fcn_smshistory_1695360701394_0\",\"fcn_logintosaasconversive_1695360701394_0\",\"fcn_navigatetomessagehistory_1695360701394_0\",\"fcn_selectfilteraswhatsappandincomingmessages_1695387340655_0\",\"fcn_asserttabsonhistorypageforchannels_1695360952649_0\"]": {
+        "pathTags": "SMSHistory",
+        "pathDependsOn": "{}"
+      },
+      "[\"fcn_businesshours_1695963044150_0\",\"fcn_logintosaasconversive_1695963083865_0\",\"fcn_navigatetomessagetemplate_1695963083865_0\",\"fcn_createtemplateoftypeautomation_1695963083865_0\",\"fcn_navigatetosmsservice_1695963083865_0\",\"fcn_navigatetobusinesshours_1695963083865_0\",\"fcn_isbusinesshoursexists_1695963083865_0\",\"fcn_isbusinesshoursenabled_1695963111734_0\",\"fcn_disableandenablethebh_1695963250889_0\",\"fcn_editbusinesshours_1695963486096_0\",\"fcn_isautoreplayset_1695963486096_0\",\"fcn_isautoreplayenabled_1695963519113_0\",\"fcn_disabletheautoreplay_1695963591299_0\",\"fcn_enabletheautoreplayandselecttemplate_1695963636517_0\",\"fcn_sendincomingmessagesms_1695963673837_0\",\"fcn_checktriggeredautoreplaytemplate_1695963673837_0\",\"fcn_disablethebusinesshours_1695963673837_0\",\"fcn_enabletheautoreplayandselecttemplate_1695963636517_0\",\"fcn_sendincomingmessagesms_1695963673837_0\",\"fcn_checktriggeredautoreplaytemplate_1695963673837_0\",\"fcn_disablethebusinesshours_1695963673837_0\",\"fcn_setautoreplay_1695963551364_0\",\"fcn_isautoreplayenabled_1695963519113_0\",\"fcn_disabletheautoreplay_1695963591299_0\",\"fcn_enabletheautoreplayandselecttemplate_1695963636517_0\",\"fcn_sendincomingmessagesms_1695963673837_0\",\"fcn_checktriggeredautoreplaytemplate_1695963673837_0\",\"fcn_disablethebusinesshours_1695963673837_0\",\"fcn_enabletheautoreplayandselecttemplate_1695963636517_0\",\"fcn_sendincomingmessagesms_1695963673837_0\",\"fcn_checktriggeredautoreplaytemplate_1695963673837_0\",\"fcn_disablethebusinesshours_1695963673837_0\",\"fcn_enablethebusinesshours_1696393489132_0\",\"fcn_disableandenablethebh_1695963250889_0\",\"fcn_editbusinesshours_1695963486096_0\",\"fcn_assertupdatedbusinesshours_1695963486096_0\",\"fcn_addbusinesshoursformultiplecountries_1695963486096_0\",\"fcn_isautoreplayset_1695963486096_0\",\"fcn_isautoreplayenabled_1695963519113_0\",\"fcn_disabletheautoreplay_1695963591299_0\",\"fcn_enabletheautoreplayandselecttemplate_1695963636517_0\",\"fcn_sendincomingmessagesms_1695963673837_0\",\"fcn_checktriggeredautoreplaytemplate_1695963673837_0\",\"fcn_disablethebusinesshours_1695963673837_0\",\"fcn_enabletheautoreplayandselecttemplate_1695963636517_0\",\"fcn_sendincomingmessagesms_1695963673837_0\",\"fcn_checktriggeredautoreplaytemplate_1695963673837_0\",\"fcn_disablethebusinesshours_1695963673837_0\",\"fcn_setautoreplay_1695963551364_0\",\"fcn_isautoreplayenabled_1695963519113_0\",\"fcn_disabletheautoreplay_1695963591299_0\",\"fcn_enabletheautoreplayandselecttemplate_1695963636517_0\",\"fcn_sendincomingmessagesms_1695963673837_0\",\"fcn_checktriggeredautoreplaytemplate_1695963673837_0\",\"fcn_disablethebusinesshours_1695963673837_0\",\"fcn_enabletheautoreplayandselecttemplate_1695963636517_0\",\"fcn_sendincomingmessagesms_1695963673837_0\",\"fcn_checktriggeredautoreplaytemplate_1695963673837_0\",\"fcn_disablethebusinesshours_1695963673837_0\",\"fcn_addbusinesshours_1695963136502_0\",\"fcn_disableandenablethebh_1695963250889_0\",\"fcn_editbusinesshours_1695963486096_0\",\"fcn_assertupdatedbusinesshours_1695963486096_0\",\"fcn_addbusinesshoursformultiplecountries_1695963486096_0\",\"fcn_isautoreplayset_1695963486096_0\",\"fcn_isautoreplayenabled_1695963519113_0\",\"fcn_disabletheautoreplay_1695963591299_0\",\"fcn_enabletheautoreplayandselecttemplate_1695963636517_0\",\"fcn_sendincomingmessagesms_1695963673837_0\",\"fcn_checktriggeredautoreplaytemplate_1695963673837_0\",\"fcn_disablethebusinesshours_1695963673837_0\",\"fcn_enabletheautoreplayandselecttemplate_1695963636517_0\",\"fcn_sendincomingmessagesms_1695963673837_0\",\"fcn_checktriggeredautoreplaytemplate_1695963673837_0\",\"fcn_disablethebusinesshours_1695963673837_0\",\"fcn_setautoreplay_1695963551364_0\",\"fcn_isautoreplayenabled_1695963519113_0\",\"fcn_disabletheautoreplay_1695963591299_0\",\"fcn_enabletheautoreplayandselecttemplate_1695963636517_0\",\"fcn_sendincomingmessagesms_1695963673837_0\",\"fcn_checktriggeredautoreplaytemplate_1695963673837_0\",\"fcn_disablethebusinesshours_1695963673837_0\",\"fcn_enabletheautoreplayandselecttemplate_1695963636517_0\",\"fcn_sendincomingmessagesms_1695963673837_0\",\"fcn_checktriggeredautoreplaytemplate_1695963673837_0\",\"fcn_disablethebusinesshours_1695963673837_0\"]": {
+        "pathTags": "BusinessHours",
+        "pathDependsOn": "{}"
+      },
+      "[\"fcn_createsaas_portal_login_0\",\"fcn_logintosaasportal_0\",\"fcn_sendsmsfromportal_1692899726487_0\",\"fcn_smshistorysmshistoryvalidationforsaas_1692899726487_0\"]": {
+        "pathTags": "SendSMS",
+        "pathDependsOn": "{}"
+      },
+      "[\"fcn_createsaas_portal_login_0\",\"fcn_logintosaasportal_0\",\"fcn_sendnewsmsfromconversedeskusingtemplate_1\",\"fcn_smshistorysmshistoryvalidationforsaas_1692899726487_0\"]": {
+        "pathTags": "SendSMS",
+        "pathDependsOn": "{}"
+      },
+      "[\"fcn_smshistory_1695360701394_0\",\"fcn_logintosaasconversive_1695360701394_0\",\"fcn_navigatetomessagehistory_1695360701394_0\",\"fcn_selectfilterassmsandincomingmessages_1695360932832_0\",\"fcn_asserttabsonhistorypageforchannels_1695360952649_0\"]": {
+        "pathTags": "SMSHistory",
+        "pathDependsOn": "{}"
+      },
+      "[\"fcn_smshistory_1695360701394_0\",\"fcn_logintosaasconversive_1695360701394_0\",\"fcn_navigatetomessagehistory_1695360701394_0\",\"fcn_selectfilterasallandincomingmessages_1695360843247_0\",\"fcn_downloadincomingreport_1695388113760_0\",\"fcn_canceltheinprogressreport_1695388113760_0\"]": {
+        "pathTags": "SMSHistory",
+        "pathDependsOn": "{}"
+      },
+      "[\"fcn_smshistory_1695360701394_0\",\"fcn_logintosaasconversive_1695360701394_0\",\"fcn_navigatetomessagehistory_1695360701394_0\",\"fcn_selectfilterasfbandoutgoingmessages_1695387366528_0\",\"fcn_asserttabsonhistorypageforchannels_1695360952649_0\"]": {
+        "pathTags": "SMSHistory",
+        "pathDependsOn": "{}"
+      },
+      "[\"fcn_smshistory_1695360701394_0\",\"fcn_logintosaasconversive_1695360701394_0\",\"fcn_navigatetomessagehistory_1695360701394_0\",\"fcn_selectfilterasallandincomingmessages_1695360843247_0\",\"fcn_asserttabsonhistorypage_1695360701394_0\"]": {
+        "pathTags": "SMSHistory",
+        "pathDependsOn": "{}"
+      },
+      "[\"fcn_smshistory_1695360701394_0\",\"fcn_logintosaasconversive_1695360701394_0\",\"fcn_navigatetomessagehistory_1695360701394_0\",\"fcn_selectfilterasallandincomingmessages_1695360843247_0\",\"fcn_downloadincomingreport_1695387968800_0\",\"fcn_downlaodthegenratedreport_1695387968800_0\"]": {
+        "pathTags": "SMSHistory",
+        "pathDependsOn": "{}"
+      },
+      "[\"fcn_smshistory_1695360701394_0\",\"fcn_logintosaasconversive_1695360701394_0\",\"fcn_navigatetomessagehistory_1695360701394_0\",\"fcn_selectfilterasfbandincomingmessages_1695387391272_0\",\"fcn_asserttabsonhistorypageforchannels_1695360952649_0\"]": {
+        "pathTags": "SMSHistory",
+        "pathDependsOn": "{}"
+      },
+      "[\"fcn_smshistory_1695360701394_0\",\"fcn_logintosaasconversive_1695360701394_0\",\"fcn_navigatetomessagehistory_1695360701394_0\",\"fcn_selectfilterasallandincomingmessages_1695360843247_0\",\"fcn_selectdaterangewhichdoesnothavedataincomingreport_1695388205813_0\"]": {
+        "pathTags": "SMSHistory",
+        "pathDependsOn": "{}"
+      },
+      "[\"fcn_smshistory_1695360701394_0\",\"fcn_logintosaasconversive_1695360701394_0\",\"fcn_navigatetomessagehistory_1695360701394_0\",\"fcn_selectfilterasallandoutgoingmessages_1695360865950_0\",\"fcn_asserttabsonhistorypage_1695360701394_0\"]": {
+        "pathTags": "SMSHistory",
+        "pathDependsOn": "{}"
+      },
+      "[\"fcn_smshistory_1695360701394_0\",\"fcn_logintosaasconversive_1695360701394_0\",\"fcn_navigatetomessagehistory_1695360701394_0\",\"fcn_selectfilterasallandoutgoingmessages_1695360865950_0\",\"fcn_downloadoutgoingreport_1695387797272_0\",\"fcn_canceltheinprogressreport_1695387797272_0\"]": {
+        "pathTags": "SMSHistory",
+        "pathDependsOn": "{}"
+      }
+    },
+    "isPrimary": false,
+    "positions": {
+      "fcn_start_0": {
+        "top": 105.0,
+        "left": 623.0
+      },
+      "fcn_createsaas_portal_login_0": {
+        "top": 226.0,
+        "left": 127.0
+      },
+      "fcn_logintosaasportal_0": {
+        "top": 267.0,
+        "left": 1698.0
+      },
+      "fcn_getaccountid_1694416825353_0": {
+        "top": 369.25,
+        "left": 1000.0
+      },
+      "fcn_logintoopsportallogintrial_signupaccountid_0": {
+        "top": 452.3984375,
+        "left": 997.0
+      },
+      "fcn_addnumbercreditnumbermanagment_0": {
+        "top": 557.7109375,
+        "left": 1002.0
+      },
+      "fcn_provissionsenderid_0": {
+        "top": 665.0234375,
+        "left": 998.0
+      },
+      "fcn_incomingsmsmessagenumbermanagment_0": {
+        "top": 751.1875,
+        "left": 1002.0
+      },
+      "fcn_gethelpvalidation_0": {
+        "top": 376.25,
+        "left": 1698.0
+      },
+      "fcn_gethelpbutton_0": {
+        "top": 465.25,
+        "left": 1362.0
+      },
+      "fcn_navigatevideotutorial_0": {
+        "top": 466.3984375,
+        "left": 1641.0
+      },
+      "fcn_navigatedoccenter_0": {
+        "top": 467.3984375,
+        "left": 1921.0
+      },
+      "fcn_navigatereportproblem_0": {
+        "top": 541.3984375,
+        "left": 1468.0
+      },
+      "fcn_navigatefeedbackform_0": {
+        "top": 544.3984375,
+        "left": 1774.0
+      },
+      "fcn_assertthecall_0": {
+        "top": 609.5625,
+        "left": 1767.0
+      },
+      "fcn_resetpassword_0": {
+        "top": 720.25,
+        "left": 300.0
+      },
+      "fcn_navigatetousermanagmentforvalidation_0": {
+        "top": 417.25,
+        "left": 4475.0
+      },
+      "fcn_editinusermanagment_0": {
+        "top": 505.3984375,
+        "left": 3995.0
+      },
+      "fcn_checkcancelbuttoninusermanagment_0": {
+        "top": 757.6953125,
+        "left": 4310.0
+      },
+      "fcn_validatetextfieldinusermanagment_0": {
+        "top": 506.84375,
+        "left": 4314.0
+      },
+      "fcn_getaccountid_1694764835277_0": {
+        "top": 509.0,
+        "left": 4611.0
+      },
+      "fcn_logintoopsportallogintrial_signupaccountid_1694764845427_0": {
+        "top": 509.1484375,
+        "left": 4944.0
+      },
+      "fcn_addmessagecreditusermanagment_0": {
+        "top": 584.4609375,
+        "left": 4002.0
+      },
+      "fcn_assertmessagecreditusermanagment_0": {
+        "top": 593.625,
+        "left": 4322.0
+      },
+      "fcn_userinviteusermangment_0": {
+        "top": 587.75,
+        "left": 4603.0
+      },
+      "fcn_vaptissuemultipleinvitesend_0": {
+        "top": 1010.8984375,
+        "left": 5145.0
+      },
+      "fcn_sendmultipleinvite_0": {
+        "top": 1069.8984375,
+        "left": 5145.0
+      },
+      "fcn_asserterrormessage_0": {
+        "top": 1128.8984375,
+        "left": 5145.0
+      },
+      "fcn_logintogmailemaillogin_1694778624942_0": {
+        "top": 599.8984375,
+        "left": 4936.0
+      },
+      "fcn_confirmaccountusermanagment_0": {
+        "top": 670.0625,
+        "left": 4944.0
+      },
+      "fcn_logintostandarduserusermanagment_0": {
+        "top": 681.2109375,
+        "left": 4630.0
+      },
+      "fcn_logintosaasportal_1695023585386_0": {
+        "top": 678.375,
+        "left": 4312.0
+      },
+      "fcn_unassignanddeleteuserusermanagment_0": {
+        "top": 659.5234375,
+        "left": 4003.0
+      },
+      "fcn_manageaccessusermanagment_0": {
+        "top": 756.6875,
+        "left": 4008.0
+      },
+      "fcn_assignsenderidusermanagment_0": {
+        "top": 763.5234375,
+        "left": 4644.0
+      },
+      "fcn_logintostandarduserusermanagment_1695035120865_0": {
+        "top": 765.6875,
+        "left": 4955.0
+      },
+      "fcn_assertsenderidusermanagment_0": {
+        "top": 844.8359375,
+        "left": 4959.0
+      },
+      "fcn_unassignanddeleteuserusermanagment_1695035278755_0": {
+        "top": 840.0,
+        "left": 3981.0
+      },
+      "fcn_userinviteusermanagment_0": {
+        "top": 920.84375,
+        "left": 3733.0
+      },
+      "fcn_checknoofusersonaccount_0": {
+        "top": 986.0,
+        "left": 3733.0
+      },
+      "fcn_changetheuserstrengthonusermanagement_0": {
+        "top": 1044.59375,
+        "left": 3733.0
+      },
+      "fcn_checknoofusersonaccount_1708959879321_0": {
+        "top": 1116.796875,
+        "left": 3733.0
+      },
+      "fcn_contactfunctionalityvalidation_0": {
+        "top": 785.25,
+        "left": 2823.0
+      },
+      "fcn_contactmanager_0": {
+        "top": 852.25,
+        "left": 2830.0
+      },
+      "fcn_createnewcontact_0": {
+        "top": 915.25,
+        "left": 2438.0
+      },
+      "fcn_deletecontact_0": {
+        "top": 923.25,
+        "left": 2734.0
+      },
+      "fcn_editnewcontact_0": {
+        "top": 921.25,
+        "left": 3023.0
+      },
+      "fcn_importcsv_0": {
+        "top": 919.25,
+        "left": 3330.0
+      },
+      "fcn_navigatetosmsserviceforlabel_0": {
+        "top": 324.25,
+        "left": 5526.0
+      },
+      "fcn_verifythatlabelcreatesuccessfully_0": {
+        "top": 389.3984375,
+        "left": 5526.0
+      },
+      "fcn_removelabel_0": {
+        "top": 465.5625,
+        "left": 5522.0
+      },
+      "fcn_navigatetosmsservivceforconsent_0": {
+        "top": 814.25,
+        "left": 5727.0
+      },
+      "fcn_isconsentenabled_0": {
+        "top": 899.3984375,
+        "left": 5658.0
+      },
+      "fcn_enableconsent_0": {
+        "top": 1011.3984375,
+        "left": 6030.0
+      },
+      "fcn_addconsent_0": {
+        "top": 1109.3984375,
+        "left": 5646.0
+      },
+      "fcn_editconsent_0": {
+        "top": 1173.5625,
+        "left": 5646.0
+      },
+      "fcn_addconsentoptout_0": {
+        "top": 1233.7109375,
+        "left": 5643.0
+      },
+      "fcn_searchconsentrecord_0": {
+        "top": 1293.7109375,
+        "left": 5641.0
+      },
+      "fcn_addconsentoptin_0": {
+        "top": 1420.875,
+        "left": 5644.0
+      },
+      "fcn_sendsmstooptinnumberconsent_0": {
+        "top": 1487.0234375,
+        "left": 5644.0
+      },
+      "fcn_downloadrecordconsent_0": {
+        "top": 1552.1875,
+        "left": 5644.0
+      },
+      "fcn_quitkeywordforconesntoptout_0": {
+        "top": 1617.3359375,
+        "left": 5644.0
+      },
+      "fcn_sendincomingforstopkeywordconsent_0": {
+        "top": 1682.5,
+        "left": 5644.0
+      },
+      "fcn_verifyincomingforstopkeywordconsentsms_0": {
+        "top": 1767.8125,
+        "left": 5644.0
+      },
+      "fcn_disablestopkeywordandsendincomingsmsconsent_0": {
+        "top": 1846.9609375,
+        "left": 5644.0
+      },
+      "fcn_cancelkeywordforconsentoptout_0": {
+        "top": 1617.3359375,
+        "left": 5924.0
+      },
+      "fcn_sendincomingforcancelkeywordconsentsms_0": {
+        "top": 1682.5,
+        "left": 5924.0
+      },
+      "fcn_verifyincomingforcancelkeywordsmsconsent_0": {
+        "top": 1761.6484375,
+        "left": 5924.0
+      },
+      "fcn_disablecancelkeywordandsendincomingconsentsms_0": {
+        "top": 1846.9609375,
+        "left": 5924.0
+      },
+      "fcn_quitkeywordforconsentoptout_0": {
+        "top": 1617.3359375,
+        "left": 6204.0
+      },
+      "fcn_sendincomingforcancelkeywordconsentsms_1696505147326_0": {
+        "top": 1681.5,
+        "left": 6204.0
+      },
+      "fcn_verifyincomingforcancelkeywordsmsconsent_1696505147326_0": {
+        "top": 1761.6484375,
+        "left": 6204.0
+      },
+      "fcn_disablecancelkeywordandsendincomingconsentsms_1696505147326_0": {
+        "top": 1845.9609375,
+        "left": 6204.0
+      },
+      "fcn_unsubscribedkeywordforconsentoptout_0": {
+        "top": 1617.3359375,
+        "left": 6484.0
+      },
+      "fcn_sendincomingforquitkeywordconsentsms_1696508701424_0": {
+        "top": 1696.5,
+        "left": 6484.0
+      },
+      "fcn_verifyincomingforquitkeywordsmsconsent_1696508701424_0": {
+        "top": 1775.6484375,
+        "left": 6484.0
+      },
+      "fcn_disablequitkeywordandsendincomingconsentsms_1696508701424_0": {
+        "top": 1859.9609375,
+        "left": 6484.0
+      },
+      "fcn_endkeywordforconsentoptout_0": {
+        "top": 1617.3359375,
+        "left": 6764.0
+      },
+      "fcn_sendincomingforquitkeywordconsentsms_1696508705140_0": {
+        "top": 1682.5,
+        "left": 6764.0
+      },
+      "fcn_verifyincomingforquitkeywordsmsconsent_1696508705140_0": {
+        "top": 1761.6484375,
+        "left": 6764.0
+      },
+      "fcn_disablequitkeywordandsendincomingconsentsms_1696508705140_0": {
+        "top": 1846.9609375,
+        "left": 6763.0
+      },
+      "fcn_conversedeskuivalidation_0": {
+        "top": 362.25,
+        "left": 2835.0
+      },
+      "fcn_conversedesk_0": {
+        "top": 425.25,
+        "left": 2826.0
+      },
+      "fcn_incommingsms_0": {
+        "top": 489.25,
+        "left": 2217.0
+      },
+      "fcn_validatetheincomingmessage_0": {
+        "top": 586.3984375,
+        "left": 2217.0
+      },
+      "fcn_smshistorysmshistoryvalidationforsaas_0": {
+        "top": 677.5625,
+        "left": 2217.0
+      },
+      "fcn_assignsenderid_0": {
+        "top": 490.25,
+        "left": 2547.0
+      },
+      "fcn_validatethestandarduserinbox_0": {
+        "top": 553.25,
+        "left": 2538.0
+      },
+      "fcn_sendincomingmessagetouser_0": {
+        "top": 616.25,
+        "left": 2549.0
+      },
+      "fcn_checkthemessageinstandarduserinbox_0": {
+        "top": 686.3984375,
+        "left": 2540.0
+      },
+      "fcn_savecontactnew_0": {
+        "top": 567.25,
+        "left": 2827.0
+      },
+      "fcn_validatereadconversation_0": {
+        "top": 500.25,
+        "left": 2826.0
+      },
+      "fcn_validatereadconversation_1": {
+        "top": 630.3984375,
+        "left": 2827.0
+      },
+      "fcn_sendincomingmessagetousersms_1695273113857_0": {
+        "top": 496.25,
+        "left": 3109.0
+      },
+      "fcn_validatereadconversation_1695273113857_0": {
+        "top": 572.3984375,
+        "left": 3109.0
+      },
+      "fcn_savecontactnewcontact_0": {
+        "top": 694.25,
+        "left": 3115.0
+      },
+      "fcn_searchcontact_0": {
+        "top": 501.25,
+        "left": 3399.0
+      },
+      "fcn_refreshconversation_0": {
+        "top": 696.25,
+        "left": 3401.0
+      },
+      "fcn_validatethecountofmessage_0": {
+        "top": 629.25,
+        "left": 3110.0
+      },
+      "fcn_incomingwhatsappmessage_0": {
+        "top": 689.25,
+        "left": 2825.0
+      },
+      "fcn_sendsmsfromportal_1692899726487_0": {
+        "top": 819.125,
+        "left": 1308.0
+      },
+      "fcn_smshistorysmshistoryvalidationforsaas_1692899726487_0": {
+        "top": 1017.2578125,
+        "left": 1626.9609375
+      },
+      "fcn_sendsmsvalidation_0": {
+        "top": 740.25,
+        "left": 1631.0
+      },
+      "fcn_sendnewsmsfromconversedeskusingtemplate_1": {
+        "top": 917.25,
+        "left": 1609.0
+      },
+      "fcn_replytoexistingsmsfromconversedeskusingtemplate_0": {
+        "top": 834.25,
+        "left": 1611.0
+      },
+      "fcn_sendnewsmsfromconversedesktounknownnumberusingtemplate_0": {
+        "top": 811.25,
+        "left": 1914.0
+      },
+      "fcn_sendnewsmsfromconversedesktounknownnumber_0": {
+        "top": 908.25,
+        "left": 1923.0
+      },
+      "fcn_replytoexistingsmsfromconversedesk_0": {
+        "top": 908.25,
+        "left": 1305.0
+      },
+      "fcn_usermanagment_0": {
+        "top": 290.25,
+        "left": 4480.0
+      },
+      "fcn_buynowflows_0": {
+        "top": 1102.25,
+        "left": 2830.0
+      },
+      "fcn_navigatetobyenow_0": {
+        "top": 1161.25,
+        "left": 2830.0
+      },
+      "fcn_navigatetobuysms_0": {
+        "top": 1209.25,
+        "left": 2533.0
+      },
+      "fcn_sendsmstooptoutnumberconsent_0": {
+        "top": 1351.7109375,
+        "left": 5286.0
+      },
+      "fcn_exmaple_0": {
+        "top": 1416.875,
+        "left": 5286.0
+      },
+      "fcn_forgotpassword_0": {
+        "top": 339.0,
+        "left": -58.0
+      },
+      "fcn_logintogmailemaillogin_1694519952056_0": {
+        "top": 528.1328125,
+        "left": 24.0
+      },
+      "fcn_clickonresetpasswordlink_0": {
+        "top": 611.3125,
+        "left": 22.0
+      },
+      "fcn_resetthepassword_0": {
+        "top": 676.4453125,
+        "left": 22.0
+      },
+      "fcn_asserttheautologin_0": {
+        "top": 742.59375,
+        "left": 24.0
+      },
+      "fcn_forgotpassword_1706630411550_0": {
+        "top": 807.75,
+        "left": 24.0
+      },
+      "fcn_navigatetogmail_0": {
+        "top": 872.8984375,
+        "left": 24.0
+      },
+      "fcn_clickonresetpasswordlink_1706630456542_0": {
+        "top": 931.8984375,
+        "left": 24.0
+      },
+      "fcn_smsresetpasswordwitholdpassword_0": {
+        "top": 997.046875,
+        "left": 24.0
+      },
+      "fcn_reattemptforgotpassword_0": {
+        "top": 820.59375,
+        "left": 307.0
+      },
+      "fcn_resetthepassword_1706187211976_0": {
+        "top": 879.59375,
+        "left": 307.0
+      },
+      "fcn_asserterrormessageforsmsmagicpasswordresetreattempt_0": {
+        "top": 944.75,
+        "left": 307.0
+      },
+      "fcn_saaslogin_1696314447079_0": {
+        "top": 413.0,
+        "left": 435.0
+      },
+      "fcn_portalregistration_1696314447079_0": {
+        "top": 472.0,
+        "left": 435.0
+      },
+      "fcn_assertaccountcreated_1696314447079_0": {
+        "top": 537.125,
+        "left": 435.0
+      },
+      "fcn_portalemailvaildation_1696314447079_0": {
+        "top": 596.125,
+        "left": 435.0
+      },
+      "fcn_wrongpasswordsemaillogin_0": {
+        "top": 718.1328125,
+        "left": 620.0
+      },
+      "fcn_forgotpassword_1": {
+        "top": 783.28125,
+        "left": 620.0
+      },
+      "fcn_checktheerror_0": {
+        "top": 848.4375,
+        "left": 620.0
+      },
+      "fcn_smshistory_1695360701394_0": {
+        "top": 285.0,
+        "left": 6615.0
+      },
+      "fcn_logintosaasconversive_1695360701394_0": {
+        "top": 362.0,
+        "left": 6617.0
+      },
+      "fcn_navigatetomessagehistory_1695360701394_0": {
+        "top": 475.125,
+        "left": 6182.0
+      },
+      "fcn_asserttabsonhistorypage_1695360701394_0": {
+        "top": 586.125,
+        "left": 6163.0
+      },
+      "fcn_selectfilterasallandincomingmessages_1695360843247_0": {
+        "top": 433.125,
+        "left": 6636.0
+      },
+      "fcn_downloadincomingreport_1695387968800_0": {
+        "top": 551.125,
+        "left": 6991.0
+      },
+      "fcn_downlaodthegenratedreport_1695387968800_0": {
+        "top": 610.2734375,
+        "left": 6999.0
+      },
+      "fcn_downloadincomingreportformorethat31days_1695388041315_0": {
+        "top": 559.125,
+        "left": 6723.0
+      },
+      "fcn_downloadincomingreport_1695388113760_0": {
+        "top": 558.125,
+        "left": 6456.0
+      },
+      "fcn_canceltheinprogressreport_1695388113760_0": {
+        "top": 620.2734375,
+        "left": 6457.0
+      },
+      "fcn_selectdaterangewhichdoesnothavedataincomingreport_1695388205813_0": {
+        "top": 717.125,
+        "left": 6313.0
+      },
+      "fcn_selectfilterasallandoutgoingmessages_1695360865950_0": {
+        "top": 519.125,
+        "left": 7350.0
+      },
+      "fcn_downloadoutgoingreport_1695387740237_0": {
+        "top": 582.125,
+        "left": 7836.0
+      },
+      "fcn_downlaodthegenratedreport_1695387740237_0": {
+        "top": 648.2734375,
+        "left": 7836.0
+      },
+      "fcn_downloadoutgoingreportformorethat31days_1695387770773_0": {
+        "top": 576.125,
+        "left": 7564.0
+      },
+      "fcn_downloadoutgoingreport_1695387797272_0": {
+        "top": 588.125,
+        "left": 7287.0
+      },
+      "fcn_canceltheinprogressreport_1695387797272_0": {
+        "top": 670.2734375,
+        "left": 7288.0
+      },
+      "fcn_selectdaterangewhichdoesnothavedataoutgoingreport_1695387879496_0": {
+        "top": 762.125,
+        "left": 7152.0
+      },
+      "fcn_selectfilterassmsandoutgoingmessages_1695360882931_0": {
+        "top": 737.125,
+        "left": 7525.0
+      },
+      "fcn_asserttabsonhistorypageforchannels_1695360952649_0": {
+        "top": 977.125,
+        "left": 7840.0
+      },
+      "fcn_selectfilterassmsandincomingmessages_1695360932832_0": {
+        "top": 735.125,
+        "left": 7844.0
+      },
+      "fcn_selectfilteraswhatsappandoutgoingmessages_0": {
+        "top": 738.125,
+        "left": 8184.0
+      },
+      "fcn_selectfilteraswhatsappandincomingmessages_1695387340655_0": {
+        "top": 836.125,
+        "left": 7829.0
+      },
+      "fcn_selectfilterasfbandoutgoingmessages_1695387366528_0": {
+        "top": 835.125,
+        "left": 8194.0
+      },
+      "fcn_selectfilterasfbandincomingmessages_1695387391272_0": {
+        "top": 850.125,
+        "left": 7510.0
+      },
+      "fcn_businesshours_1695963044150_0": {
+        "top": 246.0,
+        "left": 9122.0
+      },
+      "fcn_logintosaasconversive_1695963083865_0": {
+        "top": 305.0,
+        "left": 9122.0
+      },
+      "fcn_navigatetomessagetemplate_1695963083865_0": {
+        "top": 368.125,
+        "left": 9122.0
+      },
+      "fcn_createtemplateoftypeautomation_1695963083865_0": {
+        "top": 425.125,
+        "left": 9122.0
+      },
+      "fcn_navigatetosmsservice_1695963083865_0": {
+        "top": 491.125,
+        "left": 9122.0
+      },
+      "fcn_navigatetobusinesshours_1695963083865_0": {
+        "top": 546.125,
+        "left": 9122.0
+      },
+      "fcn_isbusinesshoursexists_1695963083865_0": {
+        "top": 601.125,
+        "left": 9122.0
+      },
+      "fcn_addbusinesshours_1695963136502_0": {
+        "top": 671.125,
+        "left": 9355.0
+      },
+      "fcn_disableandenablethebh_1695963250889_0": {
+        "top": 859.125,
+        "left": 9122.0
+      },
+      "fcn_editbusinesshours_1695963486096_0": {
+        "top": 918.125,
+        "left": 9122.0
+      },
+      "fcn_isautoreplayset_1695963486096_0": {
+        "top": 1134.5703125,
+        "left": 9122.0
+      },
+      "fcn_setautoreplay_1695963551364_0": {
+        "top": 1239.5703125,
+        "left": 9345.0
+      },
+      "fcn_isautoreplayenabled_1695963519113_0": {
+        "top": 1204.5703125,
+        "left": 8945.0
+      },
+      "fcn_enabletheautoreplayandselecttemplate_1695963636517_0": {
+        "top": 1384.5703125,
+        "left": 9135.0
+      },
+      "fcn_sendincomingmessagesms_1695963673837_0": {
+        "top": 1463.75,
+        "left": 9135.0
+      },
+      "fcn_checktriggeredautoreplaytemplate_1695963673837_0": {
+        "top": 1526.8828125,
+        "left": 9135.0
+      },
+      "fcn_disablethebusinesshours_1695963673837_0": {
+        "top": 1592.8828125,
+        "left": 9135.0
+      },
+      "fcn_disabletheautoreplay_1695963591299_0": {
+        "top": 1298.5703125,
+        "left": 8877.0
+      },
+      "fcn_isbusinesshoursenabled_1695963111734_0": {
+        "top": 667.125,
+        "left": 8932.0
+      },
+      "fcn_enablethebusinesshours_1696393489132_0": {
+        "top": 792.125,
+        "left": 8866.0
+      },
+      "fcn_hippacompliancezoho_1696342614440_0": {
+        "top": 221.0,
+        "left": 9921.0
+      },
+      "fcn_logintocustomerportalusingzoho_hipaa_1696342653807_0": {
+        "top": 283.0,
+        "left": 9921.0
+      },
+      "fcn_navigatetosmsservice_1696590325305_0": {
+        "top": 362.125,
+        "left": 9921.0
+      },
+      "fcn_gotohipaacomplianceandvalidatetheuiforzoho_1696590325305_0": {
+        "top": 424.125,
+        "left": 9918.0
+      },
+      "fcn_gotoconsentmanagementandassertthemessage_1696590325305_0": {
+        "top": 494.125,
+        "left": 9921.0
+      },
+      "fcn_gotobusinesshoursandassertthemessage_1696590325305_0": {
+        "top": 567.125,
+        "left": 9921.0
+      },
+      "fcn_assertmessagehistorytabisnotvisible_1696590325305_0": {
+        "top": 640.125,
+        "left": 9921.0
+      },
+      "fcn_sendincomingmessagetozohoforhipaasms_1696590325305_0": {
+        "top": 699.125,
+        "left": 9921.0
+      },
+      "fcn_assertincomingmessageinzohosmshistorysms_1696590325305_0": {
+        "top": 778.2734375,
+        "left": 9921.0
+      },
+      "fcn_hippacompliancesf_1696342696175_0": {
+        "top": 219.0,
+        "left": 10293.0
+      },
+      "fcn_logintosalesforce_hipaa_1696342696175_0": {
+        "top": 284.0,
+        "left": 10293.0
+      },
+      "fcn_logintocustomer_portalusingsfforhippa_1696342696175_0": {
+        "top": 346.125,
+        "left": 10293.0
+      },
+      "fcn_navigatetosmsservice_1696342696175_0": {
+        "top": 434.2734375,
+        "left": 10293.0
+      },
+      "fcn_gotohipaacomplianceandvalidatetheui_1696342696175_0": {
+        "top": 496.2734375,
+        "left": 10293.0
+      },
+      "fcn_gotoconsentmanagementandassertthemessage_1696342696175_0": {
+        "top": 580.2734375,
+        "left": 10293.0
+      },
+      "fcn_gotobusinesshoursandassertthemessage_1696342696175_0": {
+        "top": 659.2734375,
+        "left": 10293.0
+      },
+      "fcn_assertmessagehistorytabisnotvisible_1696342696175_0": {
+        "top": 734.2734375,
+        "left": 10293.0
+      },
+      "fcn_sendincomingmessagetosfforhipaasms_1696342696175_0": {
+        "top": 801.2734375,
+        "left": 10293.0
+      },
+      "fcn_assertincomingmessageinsfconversedeskandhistorysms_1696342696175_0": {
+        "top": 884.4375,
+        "left": 10293.0
+      },
+      "fcn_sendoutgoingmessageandassertintosfhistorysfagent_1696342696175_0": {
+        "top": 967.5703125,
+        "left": 10293.0
+      }
+    }
+  },
+  "enabled": true,
+  "parentId": ""
+}

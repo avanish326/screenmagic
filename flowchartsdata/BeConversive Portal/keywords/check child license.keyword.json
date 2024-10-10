@@ -1,0 +1,32 @@
+{
+  "modifiedOn": "2024-07-10T03:50:03.926Z",
+  "name": "check child license",
+  "id": "58221",
+  "type": 3,
+  "createdOn": "2024-07-10T03:50:03.926Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "check child license",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(0, _near(_label(\"Subscription Plan\")))"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"Centralized License\""
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

@@ -1,0 +1,46 @@
+{
+  "modifiedOn": "2024-08-14T13:09:26.511Z",
+  "name": "Get the Total Contacts and New Contact this month",
+  "id": "46269",
+  "type": 3,
+  "createdOn": "2024-05-23T04:33:33.432Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Get the Total Contacts and New Contact this month",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(0, _under(_span(\"Total Contacts\")))"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$totalContacts"
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(0, _under(_span(\"New Contacts this month\")))"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$newContactThisMonth"
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

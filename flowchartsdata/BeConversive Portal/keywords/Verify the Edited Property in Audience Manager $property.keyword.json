@@ -1,0 +1,39 @@
+{
+  "modifiedOn": "2024-08-19T06:49:25.719Z",
+  "name": "Verify the Edited Property in Audience Manager $property",
+  "id": "58881",
+  "type": 3,
+  "createdOn": "2024-08-19T06:31:43.812Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Verify the Edited Property in Audience Manager $property",
+    "parameters": [
+      {
+        "parameterId": "property_",
+        "entityTypeId": "property",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_tableHeader($property.propertyNameNew)"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "parameterId": "property_",
+          "attributeId": "attr_71724048549717"
+        },
+        "visibleCheck": false
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

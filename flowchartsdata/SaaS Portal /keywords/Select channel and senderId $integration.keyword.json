@@ -1,0 +1,279 @@
+{
+  "modifiedOn": "2024-02-13T06:02:44.733Z",
+  "name": "Select channel and senderId $integration",
+  "id": "29220",
+  "type": 3,
+  "createdOn": "2024-02-09T12:42:37.667Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Select channel and senderId $integration",
+    "parameters": [
+      {
+        "parameterId": "integration_",
+        "entityTypeId": "integration",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_textbox(0,_label(\"Integration Type\"))"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div($integration.type)"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "parameterId": "integration_",
+            "attributeId": "attr_11707481560564",
+            "accessorId": "acc0"
+          }
+        ],
+        "stepType": "Action",
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_call",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_sahi.blurEnabled\u003dfalse"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {}
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "parameterId": "integration_",
+            "attributeId": "attr_11707481560564",
+            "accessorId": "acc0"
+          },
+          {
+            "parameterId": "integration_",
+            "attributeId": "attr_11707481560564"
+          }
+        ],
+        "stepType": "Action",
+        "visibleCheck": false
+      },
+      {
+        "commented": true,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div($integration.crmObject)"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "4000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "isRawScript": true,
+        "rawScript": "_click(_div(\"/indicatorContainer/\",_near(_label(\"Phone Field\"))));\nvar $optionsSize \u003d _collect(\"_div\",\"/react-select-(.*)-option/\",_near(_label(\"Phone Field\"))).length;\nvar $selectedOption \u003d _random ($optionsSize-1);\n_click(_div(\"/react-select-(.*)-option/\"+\"[\"+$selectedOption+\"]\"));"
+      },
+      {
+        "commented": true,
+        "isRawScript": true,
+        "rawScript": "_click(_div(\"/indicatorContainer/\",_near(_label(\"Sender id\"))));\nvar $optionsSize \u003d _collect(\"_div\",\"/react-select-(.*)-option/\",_near(_label(\"Sender id\"))).length;\nvar $selectedOption \u003d _random ($optionsSize-1);\n_click(_div(\"/react-select-(.*)-option/\"+\"[\"+$selectedOption+\"]\"));"
+      },
+      {
+        "commented": false,
+        "action": "_call",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_sahi.blurEnabled\u003dfalse"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {}
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_textbox(0, _near(_label(\"Phone Field\")))"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "parameterId": "integration_",
+            "attributeId": "attr_21707481588685",
+            "accessorId": "acc0"
+          }
+        ],
+        "stepType": "Action",
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "div($integration.phoneField)"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "parameterId": "integration_",
+            "attributeId": "attr_21707481588685",
+            "accessorId": "acc0"
+          },
+          {
+            "parameterId": "integration_",
+            "attributeId": "attr_21707481588685"
+          }
+        ],
+        "stepType": "Action",
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "4000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_call",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_sahi.blurEnabled\u003dfalse"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {}
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "parameterId": "integration_",
+            "attributeId": "attr_31707481596116",
+            "accessorId": "acc0"
+          }
+        ],
+        "stepType": "Action",
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "div($integration.senderId)"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "parameterId": "integration_",
+            "attributeId": "attr_31707481596116",
+            "accessorId": "acc0"
+          },
+          {
+            "parameterId": "integration_",
+            "attributeId": "attr_31707481596116"
+          }
+        ],
+        "stepType": "Action",
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"/react-select/\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"new-welcome-box-design-style\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_textbox(0, _near(_label(\"Sender id\")))"
+          }
+        ],
+        "stepType": "Action"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

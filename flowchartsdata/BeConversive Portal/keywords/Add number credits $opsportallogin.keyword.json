@@ -1,0 +1,196 @@
+{
+  "modifiedOn": "2024-03-07T07:42:49.526Z",
+  "name": "Add number credits $opsportallogin",
+  "id": "44050",
+  "type": 3,
+  "createdOn": "2024-03-07T06:19:03.780Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Add number credits $opsportallogin",
+    "parameters": [
+      {
+        "parameterId": "opsportallogin_",
+        "entityTypeId": "opsportallogin",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_selectWindow",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "\"/SMS Magic/\""
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_textbox(\"query\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_textbox(\"query\")"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "$conversiveAccountId"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"fa fa-search menu ms-2\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "5000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"Number Management\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"Alloted Credits\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_setSelected",
+        "stepParameters": [
+          {
+            "parameterId": "opsportallogin_",
+            "attributeId": "attr_21709291657123",
+            "accessorId": "acc0"
+          },
+          {
+            "parameterId": "opsportallogin_",
+            "attributeId": "attr_51709797331519"
+          }
+        ],
+        "stepType": "Action",
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "5000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_setSelected",
+        "stepParameters": [
+          {
+            "parameterId": "opsportallogin_",
+            "attributeId": "attr_31709291714436",
+            "accessorId": "acc0"
+          },
+          {
+            "parameterId": "opsportallogin_",
+            "attributeId": "attr_31709291714436"
+          }
+        ],
+        "stepType": "Action",
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "parameterId": "opsportallogin_",
+            "attributeId": "attr_41709291874865",
+            "accessorId": "acc0"
+          },
+          {
+            "parameterId": "opsportallogin_",
+            "attributeId": "attr_41709291874865"
+          }
+        ],
+        "stepType": "Action",
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_textbox(\"numbercreditsreason\")"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "\"Test\""
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_submit(\"Save\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "$ops \u003d _collectAttributes(\"_row\",\"/Long Code/\",\"sahiText\",_in(_table(\"diplayCurrentIncoming\")))\n$countryCredit \u003d \"\"\nfor(var $i \u003d 0; $i\u003c$ops.length;$i++){\n$el \u003d $ops[$i].split(\" \")\n$countryCredit \u003d $countryCredit + $el[1]+$el[$el.length-1]\n\n}\n_log($countryCredit)"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

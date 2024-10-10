@@ -1,0 +1,103 @@
+{
+  "modifiedOn": "2024-01-12T12:26:18.577Z",
+  "name": "Go to SMS services and assert sender IDs for $saas_guided",
+  "id": "20907",
+  "type": 3,
+  "createdOn": "2023-12-04T10:19:19.602Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Go to SMS services and assert sender IDs for $saas_guided",
+    "parameters": [
+      {
+        "parameterId": "saas_guided_",
+        "entityTypeId": "saas_guided",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"Settings\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"SMS Services\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"My Sender IDs\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_cell(\"\"+$saas_guided.webSenderId+\"\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$saas_guided.webSenderId"
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_cell(\"\"+$saas_guided.waSenderId+\"\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$saas_guided.waSenderId"
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_cell(\"\"+$saas_guided.smsSenderId+\"\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$saas_guided.smsSenderId"
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

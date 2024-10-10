@@ -1,0 +1,61 @@
+{
+  "modifiedOn": "2024-02-27T05:12:36.559Z",
+  "name": "validate sms-history $smstextexisting",
+  "id": "43303",
+  "type": 3,
+  "createdOn": "2024-02-26T10:59:22.513Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "validate sms-history $smstextexisting",
+    "parameters": [
+      {
+        "parameterId": "smstextexisting_",
+        "entityTypeId": "smstextexisting",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"Campaign\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"Message History\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"/hello/\", _under(_tableHeader(\"Message\")))"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "parameterId": "smstextexisting_",
+          "attributeId": "attr_01708944784587"
+        },
+        "visibleCheck": false
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

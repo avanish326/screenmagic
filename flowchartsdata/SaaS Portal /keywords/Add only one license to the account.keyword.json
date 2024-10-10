@@ -1,0 +1,68 @@
+{
+  "modifiedOn": "2024-09-13T07:55:06.601Z",
+  "name": "Add only one license to the account",
+  "id": "42889",
+  "type": 3,
+  "createdOn": "2024-02-22T09:35:52.901Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Add only one license to the account",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(7, _near(_tableHeader(\"Actions\")))"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_textbox(\"num_of_license\")"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$noOfLicense"
+        }
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_textbox(\"num_of_license\")"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "\"2\""
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_submit(\"Update Licenses\")"
+          }
+        ],
+        "stepType": "Action"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

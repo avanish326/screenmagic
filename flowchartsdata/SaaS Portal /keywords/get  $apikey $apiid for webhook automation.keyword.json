@@ -1,0 +1,100 @@
+{
+  "modifiedOn": "2024-01-12T12:25:30.204Z",
+  "name": "get  $apikey $apiid for webhook automation",
+  "id": "14895",
+  "type": 3,
+  "createdOn": "2023-09-22T11:20:03.577Z",
+  "content": {
+    "title": "get  $apikey $apiid for webhook automation",
+    "parameters": [
+      {
+        "parameterId": "apikey_",
+        "entityTypeId": "apikey",
+        "suffix": ""
+      },
+      {
+        "parameterId": "apiid_",
+        "entityTypeId": "apiid",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"Get Started\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"word-break\")"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$apiKey"
+        }
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"Usecases*\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_submit(\"Details[2]\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_submit(\"Next[5]\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"APP ID : 6145b24e-eff0-47bb-a681-7341efca83ae\")"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$appId"
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

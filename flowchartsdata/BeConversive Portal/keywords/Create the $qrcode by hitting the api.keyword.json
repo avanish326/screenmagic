@@ -1,0 +1,88 @@
+{
+  "modifiedOn": "2024-02-08T06:49:47.619Z",
+  "name": "Create the $qrcode by hitting the api",
+  "id": "28141",
+  "type": 3,
+  "createdOn": "2024-02-08T06:49:47.619Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Create the $qrcode by hitting the api",
+    "parameters": [
+      {
+        "parameterId": "qrcode_",
+        "entityTypeId": "qrcode",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "POST"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "https://qa-app.txtbox.in/api/v2/qrcode/create"
+          }
+        ],
+        "stepType": "REST",
+        "isRawScript": true,
+        "rawScript": "var $request_Mr0rcXerFZ \u003d new RESTRequest();\r\n$request_Mr0rcXerFZ.setURL(\"https://qa-app.txtbox.in/api/v2/qrcode/create\");\r\n$request_Mr0rcXerFZ.setHeader(\"Content-Type\", \"application/json\");\r\n$request_Mr0rcXerFZ.setHeader(\"Authorization\", \"JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2OTk0MjM4MjgsIm5iZiI6MTY5OTQyMzgyOCwianRpIjoiYTYzZDFhNjktNmE5Yy00MGE2LWFkZmItY2U5NDg5YTQxMjQwIiwiZXhwIjoxNjk5NDMxMDI4LCJpZGVudGl0eSI6IntcInVzZXJfaWRcIjogMTEyNDM1MCwgXCJ1c2VyX2RldmljZV9tYXBfaWRcIjogbnVsbH0iLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.PZk9EmNLHVvhxXfcK2EbrDJVJh99jTYcKq0Z6B0iVMo\");\r\n$request_Mr0rcXerFZ.setBody(\"{\" +\n\"    \\\"name\\\": \\\"QR code 9999999991101222233444433\\\",\" +\n\"    \\\"description\\\": \\\"description 2\\\",\" +\n\"    \\\"data\\\": \\\"sms:+918147253033?\u0026body\u003dHi good morning\\\",\" +\n\"    \\\"data_type\\\": \\\"hyperlink\\\",\" +\n\"    \\\"source\\\": \\\"Custom QR Code\\\",\" +\n\"    \\\"metadata\\\": {\" +\n\"        \\\"sender_id\\\": \\\"ABCd1234\\\",\" +\n\"        \\\"message\\\": \\\"hello ruturaj\\\",\" +\n\"        \\\"channel\\\": \\\"sms\\\"\" +\n\"    }\" +\n\"}\" +\n\"\");\r\nvar $response_Mr0rcXerFZ \u003d $request_Mr0rcXerFZ.submit(\"POST\");\r\n$responseBody \u003d $response_Mr0rcXerFZ.getBodyAsString();\r\nvar responseBody \u003d JSON.parse($response_Mr0rcXerFZ.getBodyAsString());\r\n\t var $responseBodyObj_Mr0rcXerFZ \u003d $response_Mr0rcXerFZ.getBodyAsString();\r\n\tvar responseType \u003d $response_Mr0rcXerFZ.getHeader(\"Content-Type\");\r\n\tif (responseType.indexOf(\"json\")!\u003d-1) {\r\n\t\t$responseBodyObj_Mr0rcXerFZ \u003d JSON.parse($responseBodyObj_Mr0rcXerFZ);\r\n\t}\r\n\telse if (responseType.indexOf(\"xml\")!\u003d-1) {\r\n\t\t$responseBodyObj_Mr0rcXerFZ \u003d $responseBodyObj_Mr0rcXerFZ.replace(/\u003c\\xml.*?\u003e/g, \u0027\u0027).replace(/\\n/g, \u0027\u0027).replace(/\\r/g, \u0027\u0027);\r\n\t\t$responseBodyObj_Mr0rcXerFZ \u003d new XML(undefined);\r\n\t}\r\n\r\n\t//assertions\r\n\t\t_tfcLog(\"\u003ctable class\u003d\u0027tfc_step_table\u0027\u003e\u003ctr\u003e\u003ctd\u003eAssert Equals\u003c/td\u003e \u003ctd\u003eHTTP Response Status\u003c/td\u003e \u003ctd\u003e201\u003c/td\u003e\u003c/tr\u003e\u003c/table\u003e\", \"GROUP_START\");\r\n_assertEqual(\"201\", $response_Mr0rcXerFZ.getResponseCode());\r\n\t_tfcLog(\"\", \"GROUP_END\");\r\n\t\t_tfcLog(\"\u003ctable class\u003d\u0027tfc_step_table\u0027\u003e\u003ctr\u003e\u003ctd\u003eAssert Contains\u003c/td\u003e \u003ctd\u003eBody: $responseBody\u003c/td\u003e \u003ctd\u003eQR code created successfully.\u003c/td\u003e\u003c/tr\u003e\u003c/table\u003e\", \"GROUP_START\");\r\n_assertTrue((\"\"+$responseBodyObj_Mr0rcXerFZ[\u0027$responseBody\u0027]).includes(\"QR code created successfully.\"));\r\n\t_tfcLog(\"\", \"GROUP_END\");\r\n\r\n",
+        "state": {
+          "contentType": "json",
+          "request": {
+            "method": "POST",
+            "url": "https://qa-app.txtbox.in/api/v2/qrcode/create",
+            "parameters": [],
+            "headers": [
+              [
+                "Content-Type",
+                "application/json"
+              ],
+              [
+                "Authorization",
+                "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2OTk0MjM4MjgsIm5iZiI6MTY5OTQyMzgyOCwianRpIjoiYTYzZDFhNjktNmE5Yy00MGE2LWFkZmItY2U5NDg5YTQxMjQwIiwiZXhwIjoxNjk5NDMxMDI4LCJpZGVudGl0eSI6IntcInVzZXJfaWRcIjogMTEyNDM1MCwgXCJ1c2VyX2RldmljZV9tYXBfaWRcIjogbnVsbH0iLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.PZk9EmNLHVvhxXfcK2EbrDJVJh99jTYcKq0Z6B0iVMo"
+              ]
+            ],
+            "authType": "none",
+            "body": "{\n    \"name\": \"QR code 9999999991101222233444433\",\n    \"description\": \"description 2\",\n    \"data\": \"sms:+918147253033?\u0026body\u003dHi good morning\",\n    \"data_type\": \"hyperlink\",\n    \"source\": \"Custom QR Code\",\n    \"metadata\": {\n        \"sender_id\": \"ABCd1234\",\n        \"message\": \"hello ruturaj\",\n        \"channel\": \"sms\"\n    }\n}\n",
+            "bodyParams": [],
+            "isParametrizedBody": false,
+            "resetCookies": false
+          },
+          "assertions": {
+            "status": [
+              {
+                "key": "HTTP Status Code",
+                "value": "201",
+                "assertType": "equals",
+                "id": "1699426887114.441"
+              }
+            ],
+            "header": [],
+            "body": [
+              {
+                "value": "QR code created successfully.",
+                "assertType": "contains",
+                "key": "$responseBody",
+                "id": "1699428271658.737",
+                "isCommented": false
+              }
+            ]
+          },
+          "variables": {
+            "status": [],
+            "header": [],
+            "body": []
+          },
+          "authInfo": {},
+          "rawResponseVar": "$responseBody"
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

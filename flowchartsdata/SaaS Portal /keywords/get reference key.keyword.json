@@ -1,0 +1,36 @@
+{
+  "modifiedOn": "2024-02-01T07:22:45.372Z",
+  "name": "get reference key",
+  "id": "23020",
+  "type": 3,
+  "createdOn": "2024-01-31T09:34:36.760Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "get reference key",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(1, _near(_submit(\"Copy\")))"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$referenceKey1"
+        }
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "var $inputString \u003d$referenceKey1;\nvar $parts \u003d $inputString.split(\u0027:\u0027);\n$referenceKey \u003d $parts[1].trim();\n_log($referenceKey)"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

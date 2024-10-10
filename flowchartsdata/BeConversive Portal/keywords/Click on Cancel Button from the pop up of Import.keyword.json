@@ -1,0 +1,43 @@
+{
+  "modifiedOn": "2024-05-23T04:24:21.284Z",
+  "name": "Click on Cancel Button from the pop up of Import",
+  "id": "46266",
+  "type": 3,
+  "createdOn": "2024-05-23T04:24:07.373Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Click on Cancel Button from the pop up of Import",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_submit(\"Cancel\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"Upload CSV\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"Upload CSV\""
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

@@ -1,0 +1,57 @@
+{
+  "modifiedOn": "2024-07-23T14:28:15.813Z",
+  "name": "Embed the script into mathhunt domain and navigate to website with button key",
+  "id": "58534",
+  "type": 3,
+  "createdOn": "2024-07-23T14:28:15.813Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Embed the script into mathhunt domain and navigate to website with button key",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "12000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_launchNewBrowser",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "\"https://mathhunt2019.blogspot.com/?btn\u003d\"+$buttonID+\"\u0026env\u003d\"+$envName+\"\""
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "\"chrome\""
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$browserDomain"
+        }
+      },
+      {
+        "commented": false,
+        "action": "_selectBrowser",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "$browserDomain"
+          }
+        ],
+        "stepType": "Action"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

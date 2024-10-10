@@ -1,0 +1,49 @@
+{
+  "modifiedOn": "2024-06-11T11:48:54.828Z",
+  "name": "Edit the Conversive Button by clicking on conversive button name $newconversivebutton",
+  "id": "46217",
+  "type": 3,
+  "createdOn": "2024-05-21T12:49:36.243Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Edit the Conversive Button by clicking on conversive button name $newconversivebutton",
+    "parameters": [
+      {
+        "parameterId": "newconversivebutton_",
+        "entityTypeId": "newconversivebutton",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span($newconversivebutton.conversiveButtonName)"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(\"header-text\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"Edit Conversive Button\""
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

@@ -1,0 +1,66 @@
+{
+  "modifiedOn": "2024-02-23T11:49:08.606Z",
+  "name": "To verify the updated License count is updated in User Management section",
+  "id": "42961",
+  "type": 3,
+  "createdOn": "2024-02-23T11:47:24.816Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "To verify the updated License count is updated in User Management section",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_selectBrowser",
+        "stepParameters": [],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "//Refresh the Page\n_call(window.location.reload())"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"User Management\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_isVisible",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_submit(\"Invite User\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Is_True"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"num-txt\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$noOfLicense"
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

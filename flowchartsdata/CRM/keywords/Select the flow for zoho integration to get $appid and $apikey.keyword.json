@@ -1,0 +1,89 @@
+{
+  "modifiedOn": "2024-01-12T12:25:29.741Z",
+  "name": "Select the flow for zoho integration to get $appid and $apikey",
+  "id": "14847",
+  "type": 3,
+  "createdOn": "2023-09-21T07:33:58.063Z",
+  "content": {
+    "title": "Select the flow for zoho integration to get $appid and $apikey",
+    "parameters": [
+      {
+        "parameterId": "appid_",
+        "entityTypeId": "appid",
+        "suffix": ""
+      },
+      {
+        "parameterId": "apikey_",
+        "entityTypeId": "apikey",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_submit(\"Details[3]\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_submit(\"Next[6]\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"APP ID : 9faae536-cf59-4766-af09-0620f1c536db\")"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$appId"
+        }
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"Get Started\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"9582461f880d56e8320f99e21749b68f\")"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$apiKey"
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

@@ -1,0 +1,65 @@
+{
+  "modifiedOn": "2024-02-28T13:36:37.773Z",
+  "name": "Validate SMS History Not Created for Outside Buisness Hour",
+  "id": "43585",
+  "type": 3,
+  "createdOn": "2024-02-28T13:27:07.632Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Validate SMS History Not Created for Outside Buisness Hour",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"Analytics\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"Message History\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "10000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_isVisible",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_cell(3, _near(_tableHeader(\"Message\")))"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "$messageTextEntered"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Is_False"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

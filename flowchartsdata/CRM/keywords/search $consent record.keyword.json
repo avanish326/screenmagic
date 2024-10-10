@@ -1,0 +1,63 @@
+{
+  "modifiedOn": "2024-01-12T12:25:31.072Z",
+  "name": "search $consent record",
+  "id": "14998",
+  "type": 3,
+  "createdOn": "2023-09-26T10:03:10.400Z",
+  "content": {
+    "title": "search $consent record",
+    "parameters": [
+      {
+        "parameterId": "consent_",
+        "entityTypeId": "consent",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_textbox(0)"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "\"917999817809\""
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_button(\"btn btn-default\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_cell(8)"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"917999817809\""
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

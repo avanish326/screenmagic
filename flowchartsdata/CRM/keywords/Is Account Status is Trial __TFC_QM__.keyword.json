@@ -1,0 +1,46 @@
+{
+  "modifiedOn": "2023-10-06T04:57:50.857Z",
+  "name": "Is Account Status is Trial ?",
+  "id": "16829",
+  "type": 3,
+  "createdOn": "2023-10-06T04:57:50.857Z",
+  "content": {
+    "title": "Is Account Status is Trial ?",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_isVisible",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"Trial\", _near(_cell(\"Account Status\")))"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$accountStatus"
+        }
+      },
+      {
+        "commented": false,
+        "action": "return",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "$accountStatus"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "_log($accountStatus)"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

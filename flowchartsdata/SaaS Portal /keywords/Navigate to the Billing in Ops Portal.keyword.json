@@ -1,0 +1,43 @@
+{
+  "modifiedOn": "2024-04-12T10:01:35.730Z",
+  "name": "Navigate to the Billing in Ops Portal",
+  "id": "45060",
+  "type": 3,
+  "createdOn": "2024-04-12T10:01:22.203Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Navigate to the Billing in Ops Portal",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"Billing[1]\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"Credit Balance\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"Credit Balance\""
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

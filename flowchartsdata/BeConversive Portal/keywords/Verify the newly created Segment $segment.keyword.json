@@ -1,0 +1,91 @@
+{
+  "modifiedOn": "2024-06-14T07:15:26.080Z",
+  "name": "Verify the newly created Segment $segment",
+  "id": "52721",
+  "type": 3,
+  "createdOn": "2024-06-07T13:14:19.610Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Verify the newly created Segment $segment",
+    "parameters": [
+      {
+        "parameterId": "segment_",
+        "entityTypeId": "segment",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "5000"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "_isVisible(_heading3(\"Segments\"))"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(0, _under(_tableHeader(\"Segment Name\")))"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "parameterId": "segment_",
+          "attributeId": "attr_11717759623607"
+        },
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "_assertNotNull(_paragraph(0, _under(_div(\"Segment Size\"))))"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(0, _under(_div(\"Segment Size\")))"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$totalCount"
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(0, _under(_tableHeader(\"Last Updated\")))"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$formattedDateTime"
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

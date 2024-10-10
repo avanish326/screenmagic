@@ -1,0 +1,295 @@
+{
+  "modifiedOn": "2024-08-15T08:18:58.402Z",
+  "name": "Conversive Converse Desk",
+  "id": "43363",
+  "type": 0,
+  "createdOn": "2024-02-27T10:18:38.835Z",
+  "content": {
+    "settings": {
+      "maxProceedDepth": 100,
+      "maxProceedsForFirstDepth": 1,
+      "maxProceedsPerDepth": 1,
+      "maxPathRepititionsPerComboPath": 1,
+      "maxProceedsPerPath": 10000,
+      "maxToggles": 2,
+      "maxMatchingPaths": 3
+    },
+    "flowChartUID": "fcUID_1709029119000",
+    "nodesMap": {
+      "fcn_start_0": {
+        "dataSetId": -1,
+        "id": "fcn_start_0",
+        "nodeType": "start",
+        "branches": [
+          "fcn_conversiveconversedesk_0"
+        ],
+        "content": "Start"
+      },
+      "fcn_conversiveconversedesk_0": {
+        "dataSetId": -1,
+        "id": "fcn_conversiveconversedesk_0",
+        "nodeType": "pathlabel",
+        "branches": [
+          "fcn_sendsms_0",
+          "fcn_sendmms_0",
+          "fcn_sendtemplatemessage_0",
+          "fcn_sendshortenurlmessage_0"
+        ],
+        "content": "Conversive Converse Desk"
+      },
+      "fcn_sendsms_0": {
+        "dataSetId": -1,
+        "id": "fcn_sendsms_0",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_logintobeconversive_1709029294022_0"
+        ],
+        "content": "Send SMS"
+      },
+      "fcn_sendmms_0": {
+        "dataSetId": -1,
+        "id": "fcn_sendmms_0",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_logintobeconversive_1709029307095_0"
+        ],
+        "content": "Send MMS"
+      },
+      "fcn_sendtemplatemessage_0": {
+        "dataSetId": -1,
+        "id": "fcn_sendtemplatemessage_0",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_logintobeconversive_1709029302976_0"
+        ],
+        "content": "Send Template Message"
+      },
+      "fcn_sendshortenurlmessage_0": {
+        "dataSetId": -1,
+        "id": "fcn_sendshortenurlmessage_0",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_logintobeconversive_1709029304980_0"
+        ],
+        "content": "Send Shorten URL Message"
+      },
+      "fcn_logintobeconversive_1709029294022_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintobeconversive_1709029294022_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_navigatetoconversiveconversedesk_0"
+        ],
+        "content": "login to $beconversive"
+      },
+      "fcn_logintobeconversive_1709029302976_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintobeconversive_1709029302976_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_navigatetoconversivemessagetemplate_1709039583040_0"
+        ],
+        "content": "login to $beconversive"
+      },
+      "fcn_logintobeconversive_1709029304980_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintobeconversive_1709029304980_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_navigatetoconversiveconversedesk_1709043322416_0"
+        ],
+        "content": "login to $beconversive"
+      },
+      "fcn_logintobeconversive_1709029307095_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintobeconversive_1709029307095_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_sendmmsfromconversedesk_0"
+        ],
+        "content": "login to $beconversive"
+      },
+      "fcn_navigatetoconversiveconversedesk_0": {
+        "dataSetId": -1,
+        "id": "fcn_navigatetoconversiveconversedesk_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_validatesmshistory_0"
+        ],
+        "content": "Send SMS from Converse Desk $conversedesk"
+      },
+      "fcn_validatesmshistory_0": {
+        "dataSetId": -1,
+        "id": "fcn_validatesmshistory_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Validate SMS History"
+      },
+      "fcn_createtemplatewithtypeconversationtemplate_0": {
+        "dataSetId": -1,
+        "id": "fcn_createtemplatewithtypeconversationtemplate_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_sendtemplatesmsfromconversedeskconversedesk_0"
+        ],
+        "content": "Create Template with Type Conversation $urlsnt"
+      },
+      "fcn_navigatetoconversivemessagetemplate_1709039583040_0": {
+        "dataSetId": -1,
+        "id": "fcn_navigatetoconversivemessagetemplate_1709039583040_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_createtemplatewithtypeconversationtemplate_0"
+        ],
+        "content": "Navigate to Conversive Message Template"
+      },
+      "fcn_sendtemplatesmsfromconversedeskconversedesk_0": {
+        "dataSetId": -1,
+        "id": "fcn_sendtemplatesmsfromconversedeskconversedesk_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_validatesmshistory_1709041889370_0"
+        ],
+        "content": "Send Template SMS from Converse Desk $conversedesk"
+      },
+      "fcn_validatesmshistory_1709041889370_0": {
+        "dataSetId": -1,
+        "id": "fcn_validatesmshistory_1709041889370_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Validate SMS History"
+      },
+      "fcn_navigatetoconversiveconversedesk_1709043322416_0": {
+        "dataSetId": -1,
+        "id": "fcn_navigatetoconversiveconversedesk_1709043322416_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_sendsmswithshortenlinkfromdeskurlsnt_1709043329504_0"
+        ],
+        "content": "Navigate to Conversive Converse Desk"
+      },
+      "fcn_sendsmswithshortenlinkfromdeskurlsnt_1709043329504_0": {
+        "dataSetId": -1,
+        "id": "fcn_sendsmswithshortenlinkfromdeskurlsnt_1709043329504_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_validatesmshistoryforshortenurl_0"
+        ],
+        "content": "Send SMS with Shorten Link from Desk $urlsnt"
+      },
+      "fcn_validatesmshistoryforshortenurl_0": {
+        "dataSetId": -1,
+        "id": "fcn_validatesmshistoryforshortenurl_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Validate SMS History for Shorten URL"
+      },
+      "fcn_sendmmsfromconversedesk_0": {
+        "dataSetId": -1,
+        "id": "fcn_sendmmsfromconversedesk_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_validatesmshistoryformms_0"
+        ],
+        "content": "Send MMS from Converse Desk $conversedesk"
+      },
+      "fcn_validatesmshistoryformms_0": {
+        "dataSetId": -1,
+        "id": "fcn_validatesmshistoryformms_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Validate SMS History for MMS"
+      }
+    },
+    "pathNames": {},
+    "isPrimary": false,
+    "positions": {
+      "fcn_start_0": {
+        "top": 150.00000762939453,
+        "left": 500.0000138282776
+      },
+      "fcn_conversiveconversedesk_0": {
+        "top": 223.9930648803711,
+        "left": 500.0000138282776
+      },
+      "fcn_sendsms_0": {
+        "top": 316.9965286254883,
+        "left": 327.9861283302307
+      },
+      "fcn_logintobeconversive_1709029294022_0": {
+        "top": 375.9896011352539,
+        "left": 327.9861283302307
+      },
+      "fcn_navigatetoconversiveconversedesk_0": {
+        "top": 442.0833511352539,
+        "left": 327.93403482437134
+      },
+      "fcn_validatesmshistory_0": {
+        "top": 528.2291946411133,
+        "left": 330.9548783302307
+      },
+      "fcn_sendmms_0": {
+        "top": 313.99308013916016,
+        "left": 46.99653100967407
+      },
+      "fcn_logintobeconversive_1709029307095_0": {
+        "top": 372.98612213134766,
+        "left": 46.99653100967407
+      },
+      "fcn_sendmmsfromconversedesk_0": {
+        "top": 438.14237213134766,
+        "left": 46.99653100967407
+      },
+      "fcn_validatesmshistoryformms_0": {
+        "top": 517.2916946411133,
+        "left": 46.99653100967407
+      },
+      "fcn_sendtemplatemessage_0": {
+        "top": 321.9791946411133,
+        "left": 1116.9965958595276
+      },
+      "fcn_logintobeconversive_1709029302976_0": {
+        "top": 383.97571563720703,
+        "left": 1130.0000138282776
+      },
+      "fcn_navigatetoconversivemessagetemplate_1709039583040_0": {
+        "top": 445.13892364501953,
+        "left": 1127.986219882965
+      },
+      "fcn_createtemplatewithtypeconversationtemplate_0": {
+        "top": 527.1354446411133,
+        "left": 1120.97230386734
+      },
+      "fcn_sendtemplatesmsfromconversedeskconversedesk_0": {
+        "top": 601.2847366333008,
+        "left": 1131.9792618751526
+      },
+      "fcn_validatesmshistory_1709041889370_0": {
+        "top": 676.4236526489258,
+        "left": 1136.9792618751526
+      },
+      "fcn_sendshortenurlmessage_0": {
+        "top": 320.9896011352539,
+        "left": 1400.989637851715
+      },
+      "fcn_logintobeconversive_1709029304980_0": {
+        "top": 380.9722366333008,
+        "left": 1408.97572183609
+      },
+      "fcn_navigatetoconversiveconversedesk_1709043322416_0": {
+        "top": 449.13196563720703,
+        "left": 1408.9931778907776
+      },
+      "fcn_sendsmswithshortenlinkfromdeskurlsnt_1709043329504_0": {
+        "top": 514.131965637207,
+        "left": 1409.9826798439026
+      },
+      "fcn_validatesmshistoryforshortenurl_0": {
+        "top": 603.2812576293945,
+        "left": 1409.9826798439026
+      }
+    }
+  },
+  "enabled": true,
+  "parentId": ""
+}

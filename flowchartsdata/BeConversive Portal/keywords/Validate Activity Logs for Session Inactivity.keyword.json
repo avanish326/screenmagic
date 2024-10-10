@@ -1,0 +1,54 @@
+{
+  "modifiedOn": "2024-05-14T13:43:35.477Z",
+  "name": "Validate Activity Logs for Session Inactivity",
+  "id": "45850",
+  "type": 3,
+  "createdOn": "2024-05-08T13:07:28.196Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Validate Activity Logs for Session Inactivity",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"avatar-icon avatar-icon-32\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"Activity Log\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_containsText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"break-words content-sec w-[90%]\", _near(_heading3(\"Activity Log\")))"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "\"User \" +$beconvUser+\" has updated session time to \"+$conversion+\".\""
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Is_True"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

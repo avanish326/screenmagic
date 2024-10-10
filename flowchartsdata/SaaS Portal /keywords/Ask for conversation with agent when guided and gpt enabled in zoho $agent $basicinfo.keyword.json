@@ -1,0 +1,92 @@
+{
+  "modifiedOn": "2024-07-09T04:30:52.805Z",
+  "name": "Ask for conversation with agent when guided and gpt enabled in zoho $agent $basicinfo",
+  "id": "58160",
+  "type": 3,
+  "createdOn": "2024-07-09T04:30:45.311Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Ask for conversation with agent when guided and gpt enabled in zoho $agent $basicinfo",
+    "parameters": [
+      {
+        "parameterId": "agent_",
+        "entityTypeId": "agent",
+        "suffix": ""
+      },
+      {
+        "parameterId": "basicinfo_",
+        "entityTypeId": "basicinfo",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "POST"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "$incomingSMSURLIntelli"
+          }
+        ],
+        "stepType": "REST",
+        "isRawScript": true,
+        "rawScript": "var $request_rUsqvvzoS6 \u003d new RESTRequest();\r\n$request_rUsqvvzoS6.setURL($incomingSMSURLIntelli);\r\n$request_rUsqvvzoS6.addToQueryString(\"Message\", $agent.handOffKeyword);\r\n$request_rUsqvvzoS6.addToQueryString(\"OriginatorAddress\", $basicinfo.source);\r\n$request_rUsqvvzoS6.addToQueryString(\"DestinationAddress\", $SmsSenderIDGPTGuidedZOHO);\r\nvar $response_rUsqvvzoS6 \u003d $request_rUsqvvzoS6.submit(\"POST\");\r\nvar responseBody \u003d JSON.parse($response_rUsqvvzoS6.getBodyAsString());\r\n\t var $responseBodyObj_rUsqvvzoS6 \u003d $response_rUsqvvzoS6.getBodyAsString();\r\n\tvar responseType \u003d $response_rUsqvvzoS6.getHeader(\"Content-Type\");\r\n\tif (responseType.indexOf(\"json\")!\u003d-1) {\r\n\t\t$responseBodyObj_rUsqvvzoS6 \u003d JSON.parse($responseBodyObj_rUsqvvzoS6);\r\n\t}\r\n\telse if (responseType.indexOf(\"xml\")!\u003d-1) {\r\n\t\t$responseBodyObj_rUsqvvzoS6 \u003d $responseBodyObj_rUsqvvzoS6.replace(/\u003c\\xml.*?\u003e/g, \u0027\u0027).replace(/\\n/g, \u0027\u0027).replace(/\\r/g, \u0027\u0027);\r\n\t\t$responseBodyObj_rUsqvvzoS6 \u003d new XML(undefined);\r\n\t}\r\n\r\n\t//assertions\r\n\r\n",
+        "state": {
+          "contentType": "json",
+          "request": {
+            "method": "POST",
+            "url": "$incomingSMSURLIntelli",
+            "parameters": [
+              [
+                "Message",
+                "$agent.handOffKeyword"
+              ],
+              [
+                "OriginatorAddress",
+                "$basicinfo.source"
+              ],
+              [
+                "DestinationAddress",
+                "$SmsSenderIDGPTGuidedZOHO"
+              ]
+            ],
+            "headers": [],
+            "authType": "none",
+            "body": "",
+            "bodyParams": [],
+            "isParametrizedBody": false,
+            "resetCookies": false
+          },
+          "assertions": {
+            "status": [],
+            "header": [],
+            "body": []
+          },
+          "variables": {
+            "status": [],
+            "header": [],
+            "body": []
+          },
+          "authInfo": {}
+        }
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "12000"
+          }
+        ],
+        "stepType": "Action"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

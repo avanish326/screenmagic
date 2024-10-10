@@ -1,0 +1,136 @@
+{
+  "modifiedOn": "2024-08-06T11:36:57.872Z",
+  "name": "Session Inactivity",
+  "id": "45295",
+  "type": 0,
+  "createdOn": "2024-04-22T14:31:01.475Z",
+  "content": {
+    "settings": {
+      "maxProceedDepth": 100,
+      "maxProceedsForFirstDepth": 1,
+      "maxProceedsPerDepth": 1,
+      "maxPathRepititionsPerComboPath": 1,
+      "maxProceedsPerPath": 10000,
+      "maxToggles": 2,
+      "maxMatchingPaths": 3
+    },
+    "flowChartUID": "fcUID_1713796261566",
+    "nodesMap": {
+      "fcn_start_0": {
+        "dataSetId": -1,
+        "id": "fcn_start_0",
+        "nodeType": "start",
+        "branches": [
+          "fcn_conversivesessioninactivity_0"
+        ],
+        "content": "Start"
+      },
+      "fcn_conversivesessioninactivity_0": {
+        "dataSetId": -1,
+        "id": "fcn_conversivesessioninactivity_0",
+        "nodeType": "pathlabel",
+        "branches": [
+          "fcn_30minsinactivity_0"
+        ],
+        "content": "Conversive Session Inactivity"
+      },
+      "fcn_30minsinactivity_0": {
+        "dataSetId": -1,
+        "id": "fcn_30minsinactivity_0",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_logintobeconversive_1713796337334_0"
+        ],
+        "content": "30 Mins Inactivity"
+      },
+      "fcn_logintobeconversive_1713796337334_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintobeconversive_1713796337334_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_navigatetomanageaccess_0",
+          "fcn_nonadminuser_0"
+        ],
+        "content": "login to $beconversive"
+      },
+      "fcn_navigatetomanageaccess_0": {
+        "dataSetId": -1,
+        "id": "fcn_navigatetomanageaccess_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_configurecustominactivityduration_0",
+          "fcn_sessionapplicabletoallusers_0"
+        ],
+        "content": "Navigate to Manage Access"
+      },
+      "fcn_configurecustominactivityduration_0": {
+        "dataSetId": -1,
+        "id": "fcn_configurecustominactivityduration_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Configure Custom Inactivity Duration"
+      },
+      "fcn_nonadminuser_0": {
+        "dataSetId": -1,
+        "id": "fcn_nonadminuser_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Non Admin User"
+      },
+      "fcn_sessionapplicabletoallusers_0": {
+        "dataSetId": -1,
+        "id": "fcn_sessionapplicabletoallusers_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Session Applicable to all users"
+      }
+    },
+    "pathNames": {
+      "[\"fcn_conversivesessioninactivity_0\",\"fcn_30minsinactivity_0\",\"fcn_logintobeconversive_1713796337334_0\",\"fcn_navigatetomanageaccess_0\",\"fcn_configurecustominactivityduration_0\"]": {
+        "pathTags": "Sanity",
+        "pathDependsOn": "{}"
+      },
+      "[\"fcn_conversivesessioninactivity_0\",\"fcn_30minsinactivity_0\",\"fcn_logintobeconversive_1713796337334_0\",\"fcn_nonadminuser_0\"]": {
+        "pathTags": "Regression",
+        "pathDependsOn": "{}"
+      }
+    },
+    "isPrimary": false,
+    "positions": {
+      "fcn_start_0": {
+        "top": 150.0,
+        "left": 500.0
+      },
+      "fcn_conversivesessioninactivity_0": {
+        "top": 216.0,
+        "left": 440.0
+      },
+      "fcn_30minsinactivity_0": {
+        "top": 275.0,
+        "left": 440.0
+      },
+      "fcn_logintobeconversive_1713796337334_0": {
+        "top": 334.0,
+        "left": 440.0
+      },
+      "fcn_navigatetomanageaccess_0": {
+        "top": 399.1484375,
+        "left": 440.0
+      },
+      "fcn_configurecustominactivityduration_0": {
+        "top": 458.1484375,
+        "left": 440.0
+      },
+      "fcn_sessionapplicabletoallusers_0": {
+        "top": 452.1484375,
+        "left": 165.0
+      },
+      "fcn_nonadminuser_0": {
+        "top": 399.1484375,
+        "left": 720.0
+      }
+    }
+  },
+  "enabled": true,
+  "parentId": ""
+}

@@ -1,0 +1,49 @@
+{
+  "modifiedOn": "2024-02-26T04:54:20.515Z",
+  "name": "When user click on Cancel button $usermanagement",
+  "id": "43270",
+  "type": 3,
+  "createdOn": "2024-02-26T04:53:20.334Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "When user click on Cancel button $usermanagement",
+    "parameters": [
+      {
+        "parameterId": "usermanagement_",
+        "entityTypeId": "usermanagement",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_button(\"Cancel[1]\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_cell(3, _near(_cell($usermanagement.email)))"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$userRole"
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

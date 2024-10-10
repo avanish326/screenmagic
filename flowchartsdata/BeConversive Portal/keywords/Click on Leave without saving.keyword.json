@@ -1,0 +1,43 @@
+{
+  "modifiedOn": "2024-08-05T10:34:27.935Z",
+  "name": "Click on Leave without saving",
+  "id": "58705",
+  "type": 3,
+  "createdOn": "2024-08-05T10:34:18.963Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Click on Leave without saving",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_submit(\"Leave without saving\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_heading3(\"Segments\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"Segments\""
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

@@ -1,0 +1,77 @@
+{
+  "modifiedOn": "2024-08-16T05:48:12.361Z",
+  "name": "is file uploaded ?",
+  "id": "27845",
+  "type": 3,
+  "createdOn": "2024-02-08T06:49:43.457Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "is file uploaded ?",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": true,
+        "action": "_isVisible",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"File already exists, kindly use another name.\")"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$IsFileUploaded"
+        }
+      },
+      {
+        "commented": true,
+        "action": "_areEqual",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "\"File already exists, kindly use another name.\""
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "$IsFileUploaded"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$isUplodedSucess"
+        }
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "//$IsFileUploaded \u003d !_isVisible(_div(\"File already exists, kindly use another name.\"))\n\nif($error){\n$isFileUploaded \u003d false;\n}\nif(!$error){\n$isFileUploaded \u003d true;\n}"
+      },
+      {
+        "commented": false,
+        "action": "_log",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "$isFileUploaded"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "return",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "$isFileUploaded"
+          }
+        ],
+        "stepType": "Action"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

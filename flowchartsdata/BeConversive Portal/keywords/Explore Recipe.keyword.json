@@ -1,0 +1,207 @@
+{
+  "modifiedOn": "2024-02-08T06:49:51.720Z",
+  "name": "Explore Recipe",
+  "id": "28433",
+  "type": 3,
+  "createdOn": "2024-02-08T06:49:51.720Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Explore Recipe",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "var $key1 \u003d _cookie(\"mAgIC_pAnDa\", \"https://qa-app.beconversive.com\");\nvar $key2 \u003d _cookie(\"mAgIC_r_pAnDa\", \"https://qa-app.beconversive.com\");\nvar $key3 \u003d _cookie(\"session_cookie\", \"https://qa-app.beconversive.com\");\n\n$key\u003d\"session_cookie \u003d\"+$key3+\";\"+\"mAgIC_pAnDa\u003d\"+ $key1+\";mAgIC_r_pAnDa\u003d\"+$key2;\n\n_log($key)"
+      },
+      {
+        "commented": false,
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "GET"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "https://qa-app.beconversive.com/api/v1/beconversive/workspace/card"
+          }
+        ],
+        "stepType": "REST",
+        "isRawScript": true,
+        "rawScript": "var $request_ty2TqSuUsB \u003d new RESTRequest();\r\n$request_ty2TqSuUsB.setURL(\"https://qa-app.beconversive.com/api/v1/beconversive/workspace/card\");\r\n$request_ty2TqSuUsB.addToQueryString(\"section\", \"recipes\");\r\n$request_ty2TqSuUsB.setHeader(\"referer\", \"https://qa-app.beconversive.com/app/\");\r\n$request_ty2TqSuUsB.setHeader(\"cookie\", $key);\r\nvar $response_ty2TqSuUsB \u003d $request_ty2TqSuUsB.submit(\"GET\");\r\n$responseBody \u003d $response_ty2TqSuUsB.getBodyAsString();\r\nvar responseBody \u003d JSON.parse($response_ty2TqSuUsB.getBodyAsString());\r\n\t var $responseBodyObj_ty2TqSuUsB \u003d $response_ty2TqSuUsB.getBodyAsString();\r\n\tvar responseType \u003d $response_ty2TqSuUsB.getHeader(\"Content-Type\");\r\n\tif (responseType.indexOf(\"json\")!\u003d-1) {\r\n\t\t$responseBodyObj_ty2TqSuUsB \u003d JSON.parse($responseBodyObj_ty2TqSuUsB);\r\n\t}\r\n\telse if (responseType.indexOf(\"xml\")!\u003d-1) {\r\n\t\t$responseBodyObj_ty2TqSuUsB \u003d $responseBodyObj_ty2TqSuUsB.replace(/\u003c\\xml.*?\u003e/g, \u0027\u0027).replace(/\\n/g, \u0027\u0027).replace(/\\r/g, \u0027\u0027);\r\n\t\t$responseBodyObj_ty2TqSuUsB \u003d new XML(undefined);\r\n\t}\r\n\r\n\t//assertions\r\n\t\t_tfcLog(\"\u003ctable class\u003d\u0027tfc_step_table\u0027\u003e\u003ctr\u003e\u003ctd\u003eAssert Equals\u003c/td\u003e \u003ctd\u003eHTTP Response Status\u003c/td\u003e \u003ctd\u003e200\u003c/td\u003e\u003c/tr\u003e\u003c/table\u003e\", \"GROUP_START\");\r\n_assertEqual(\"200\", $response_ty2TqSuUsB.getResponseCode());\r\n\t_tfcLog(\"\", \"GROUP_END\");\r\n\r\n",
+        "state": {
+          "contentType": "json",
+          "request": {
+            "method": "GET",
+            "url": "https://qa-app.beconversive.com/api/v1/beconversive/workspace/card",
+            "parameters": [
+              [
+                "section",
+                "recipes"
+              ]
+            ],
+            "headers": [
+              [
+                "referer",
+                "https://qa-app.beconversive.com/app/"
+              ],
+              [
+                "cookie",
+                "$key"
+              ]
+            ],
+            "authType": "none",
+            "body": "",
+            "bodyParams": [],
+            "isParametrizedBody": false,
+            "resetCookies": false
+          },
+          "assertions": {
+            "status": [
+              {
+                "value": "200",
+                "assertType": "equals",
+                "key": "HTTP Status Code",
+                "id": "1702387006945.299",
+                "isCommented": false
+              }
+            ],
+            "header": [],
+            "body": []
+          },
+          "variables": {
+            "status": [],
+            "header": [],
+            "body": []
+          },
+          "authInfo": {},
+          "rawResponseVar": "$responseBody"
+        }
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "var $responseBodyObj \u003d JSON.parse($responseBody);\n//_log($responseBody)\n\nvar $recipes \u003d $responseBodyObj.response.data.recipes\nfor(var $i\u003d0; $i\u003c$recipes.length; $i++){\n_log($recipes[$i].contentful_id)\n}"
+      },
+      {
+        "commented": false,
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "POST"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "https://graphql.contentful.com/content/v1/spaces/ws6v5ox5yo68/environments/qa"
+          }
+        ],
+        "stepType": "REST",
+        "isRawScript": true,
+        "rawScript": "var $request_y36Ys3P5ho \u003d new RESTRequest();\r\n$request_y36Ys3P5ho.setURL(\"https://graphql.contentful.com/content/v1/spaces/ws6v5ox5yo68/environments/qa\");\r\n$request_y36Ys3P5ho.setHeader(\"authority\", \"graphql.contentful.com\");\r\n$request_y36Ys3P5ho.setHeader(\"accept\", \"application/json, text/plain, */*\");\r\n$request_y36Ys3P5ho.setHeader(\"accept-language\", \"en-US,en;q\u003d0.9\");\r\n$request_y36Ys3P5ho.setHeader(\"authorization\", \"Bearer 0zXhjWe1gSafi37al4YG1qYRN718kSjd6L3IskG380k\");\r\n$request_y36Ys3P5ho.setHeader(\"content-type\", \"application/json\");\r\n$request_y36Ys3P5ho.setHeader(\"origin\", \"https://qa-app.beconversive.com\");\r\n$request_y36Ys3P5ho.setHeader(\"referer\", \"https://qa-app.beconversive.com/\");\r\n$request_y36Ys3P5ho.setHeader(\"sec-ch-ua\", \"\\\"Google Chrome\\\";v\u003d\\\"119\\\", \\\"Chromium\\\";v\u003d\\\"119\\\", \\\"Not?A_Brand\\\";v\u003d\\\"24\\\"\");\r\n$request_y36Ys3P5ho.setHeader(\"sec-ch-ua-mobile\", \"?0\");\r\n$request_y36Ys3P5ho.setHeader(\"sec-ch-ua-platform\", \"\\\"Windows\\\"\");\r\n$request_y36Ys3P5ho.setHeader(\"sec-fetch-dest\", \"empty\");\r\n$request_y36Ys3P5ho.setHeader(\"sec-fetch-mode\", \"cors\");\r\n$request_y36Ys3P5ho.setHeader(\"sec-fetch-site\", \"cross-site\");\r\n$request_y36Ys3P5ho.setHeader(\"user-agent\", \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36\");\r\nvar sanitizedBody \u003d eval(\"(\"+\"{\\\"query\\\":\\\"\\\\n{\\\\n  usecaseCollection(order: id_ASC) {\\\\n      items{\\\\n          id\\\\n          name\\\\n          title\\\\n          subTitle\\\\n          thumbnail{\\\\n              fileName\\\\n              url \\\\n          },\\\\n          contentfulMetadata {\\\\n              tags {\\\\n                  id\\\\n                  name\\\\n              }\\\\n          }\\\\n      }\\\\n  }\\\\n  }\\\\n\\\"}\"+\")\");\n$request_y36Ys3P5ho.setBody(JSON.stringify(sanitizedBody));\r\nvar $response_y36Ys3P5ho \u003d $request_y36Ys3P5ho.submit(\"POST\");\r\n$response \u003d $response_y36Ys3P5ho.getBodyAsString();\r\nvar responseBody \u003d JSON.parse($response_y36Ys3P5ho.getBodyAsString());\r\n\t var $responseBodyObj_y36Ys3P5ho \u003d $response_y36Ys3P5ho.getBodyAsString();\r\n\tvar responseType \u003d $response_y36Ys3P5ho.getHeader(\"Content-Type\");\r\n\tif (responseType.indexOf(\"json\")!\u003d-1) {\r\n\t\t$responseBodyObj_y36Ys3P5ho \u003d JSON.parse($responseBodyObj_y36Ys3P5ho);\r\n\t}\r\n\telse if (responseType.indexOf(\"xml\")!\u003d-1) {\r\n\t\t$responseBodyObj_y36Ys3P5ho \u003d $responseBodyObj_y36Ys3P5ho.replace(/\u003c\\xml.*?\u003e/g, \u0027\u0027).replace(/\\n/g, \u0027\u0027).replace(/\\r/g, \u0027\u0027);\r\n\t\t$responseBodyObj_y36Ys3P5ho \u003d new XML(undefined);\r\n\t}\r\n\r\n\t//assertions\r\n\t\t_tfcLog(\"\u003ctable class\u003d\u0027tfc_step_table\u0027\u003e\u003ctr\u003e\u003ctd\u003eAssert Equals\u003c/td\u003e \u003ctd\u003eHTTP Response Status\u003c/td\u003e \u003ctd\u003e200\u003c/td\u003e\u003c/tr\u003e\u003c/table\u003e\", \"GROUP_START\");\r\n_assertEqual(\"200\", $response_y36Ys3P5ho.getResponseCode());\r\n\t_tfcLog(\"\", \"GROUP_END\");\r\n\r\n",
+        "state": {
+          "contentType": "json",
+          "request": {
+            "method": "POST",
+            "url": "https://graphql.contentful.com/content/v1/spaces/ws6v5ox5yo68/environments/qa",
+            "parameters": [],
+            "headers": [
+              [
+                "authority",
+                "graphql.contentful.com"
+              ],
+              [
+                "accept",
+                "application/json, text/plain, */*"
+              ],
+              [
+                "accept-language",
+                "en-US,en;q\u003d0.9"
+              ],
+              [
+                "authorization",
+                "Bearer 0zXhjWe1gSafi37al4YG1qYRN718kSjd6L3IskG380k"
+              ],
+              [
+                "content-type",
+                "application/json"
+              ],
+              [
+                "origin",
+                "https://qa-app.beconversive.com"
+              ],
+              [
+                "referer",
+                "https://qa-app.beconversive.com/"
+              ],
+              [
+                "sec-ch-ua",
+                "\"Google Chrome\";v\u003d\"119\", \"Chromium\";v\u003d\"119\", \"Not?A_Brand\";v\u003d\"24\""
+              ],
+              [
+                "sec-ch-ua-mobile",
+                "?0"
+              ],
+              [
+                "sec-ch-ua-platform",
+                "\"Windows\""
+              ],
+              [
+                "sec-fetch-dest",
+                "empty"
+              ],
+              [
+                "sec-fetch-mode",
+                "cors"
+              ],
+              [
+                "sec-fetch-site",
+                "cross-site"
+              ],
+              [
+                "user-agent",
+                "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"
+              ]
+            ],
+            "authType": "none",
+            "body": "{\"query\":\"\\n{\\n  usecaseCollection(order: id_ASC) {\\n      items{\\n          id\\n          name\\n          title\\n          subTitle\\n          thumbnail{\\n              fileName\\n              url \\n          },\\n          contentfulMetadata {\\n              tags {\\n                  id\\n                  name\\n              }\\n          }\\n      }\\n  }\\n  }\\n\"}",
+            "bodyParams": [],
+            "isParametrizedBody": false,
+            "resetCookies": false
+          },
+          "assertions": {
+            "status": [
+              {
+                "value": "200",
+                "assertType": "equals",
+                "key": "HTTP Status Code",
+                "id": "1702446954285.331",
+                "isCommented": false
+              }
+            ],
+            "header": [],
+            "body": []
+          },
+          "variables": {
+            "status": [],
+            "header": [],
+            "body": []
+          },
+          "authInfo": {},
+          "rawResponseVar": "$response"
+        }
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "var $responseBodyObj \u003d JSON.parse($response);\nvar $restTitle \u003d[];\nvar $items \u003d $responseBodyObj.data.usecaseCollection.items\nfor(var $i\u003d0; $i\u003c$items.length ; $i++){\nfor(var $j\u003d0; $j\u003c$recipes.length; $j++){\nif($items[$i].id \u003d\u003d $recipes[$j].contentful_id){\n$restTitle.push($items[$i].title);\n_log($items[$i].title)\n}\n}\n}\n\nvar $itemsUI \u003d _collectAttributes(\"_heading6\",\"/.*/\",\"sahiText\",_in(_div(\"slick-list\")))\nfor(var $i\u003d0; $i\u003c$itemsUI.length ; $i++){\nfor(var $j\u003d0; $j\u003c$restTitle.length; $j++){\nif($itemsUI[$i]\u003d\u003d$restTitle[$j]){\n_assertEqual($itemsUI[$i],$restTitle[$j])\n}\n}\n}"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "var $responseBodyObj \u003d JSON.parse($response);\nvar $restsubTitle \u003d[];\nvar $items \u003d $responseBodyObj.data.usecaseCollection.items\nfor(var $i\u003d0; $i\u003c$items.length ; $i++){\nfor(var $j\u003d0; $j\u003c$recipes.length; $j++){\nif($items[$i].id \u003d\u003d $recipes[$j].contentful_id){\n$restsubTitle.push($items[$i].subTitle);\n_log($items[$i].subTitle)\n}\n}\n}\n\nvar $itemsUI \u003d _collectAttributes(\"_paragraph\",\"/.*/\",\"sahiText\",_in(_div(\"slick-list\")))\nfor(var $i\u003d0; $i\u003c$itemsUI.length ; $i++){\nfor(var $j\u003d0; $j\u003c$restsubTitle.length; $j++){\nif($itemsUI[$i]\u003d\u003d$restsubTitle[$j]){\n_assertEqual($itemsUI[$i],$restsubTitle[$j])\n}\n}\n}"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

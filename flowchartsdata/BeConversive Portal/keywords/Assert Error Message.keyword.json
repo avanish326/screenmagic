@@ -1,0 +1,59 @@
+{
+  "modifiedOn": "2024-02-08T06:49:57.064Z",
+  "name": "Assert Error Message",
+  "id": "28790",
+  "type": 3,
+  "createdOn": "2024-02-08T06:49:57.064Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Assert Error Message",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"Password reset link has already been used. Please request a new password reset here\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"Password reset link has already been used. Please request a new password reset here\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"https://qa-app.beconversive.com/app/#/forgot-password\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_heading3(\"Reset Password\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"Reset Password\""
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

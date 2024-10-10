@@ -1,0 +1,2698 @@
+{
+  "modifiedOn": "2024-08-14T13:14:21.075Z",
+  "name": "Campaign",
+  "id": "27354",
+  "type": 0,
+  "createdOn": "2024-02-08T06:49:36.269Z",
+  "content": {
+    "settings": {
+      "maxProceedDepth": 100,
+      "maxProceedsForFirstDepth": 1,
+      "maxProceedsPerDepth": 1,
+      "maxPathRepititionsPerComboPath": 1,
+      "maxProceedsPerPath": 10000,
+      "maxToggles": 2,
+      "maxMatchingPaths": 3
+    },
+    "flowChartUID": "fcUID_1709026702763",
+    "nodesMap": {
+      "fcn_start_0": {
+        "dataSetId": -1,
+        "id": "fcn_start_0",
+        "nodeType": "start",
+        "branches": [
+          "fcn_createsaas_portal_login_1695797241811_0"
+        ],
+        "content": "Start"
+      },
+      "fcn_createsaas_portal_login_1695797241811_0": {
+        "dataSetId": -1,
+        "id": "fcn_createsaas_portal_login_1695797241811_0",
+        "nodeType": "pathlabel",
+        "branches": [
+          "fcn_logintobeconversive_1707639174700_0"
+        ],
+        "content": "Campaign Execution Customer Portal"
+      },
+      "fcn_campaign_1695797339177_0": {
+        "dataSetId": -1,
+        "id": "fcn_campaign_1695797339177_0",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_sendmessagefromcampaignshootoptionwithtemplatesms_1695797339177_0",
+          "fcn_sendmessagefromcampaignscheduleoption_1695797339177_0",
+          "fcn_sendmessagefromcampaignshootoptionnontemplatesms_1695797339177_0",
+          "fcn_sendmessagefromcampaignscheduleoptionnontemplatesms_1695797339177_0",
+          "fcn_sendmessagefromcampaignshootoptiontempaltemms_1695797339177_0",
+          "fcn_sendmessagefromcampaignscheduleoptiontemplatemms_1695797339177_0",
+          "fcn_sendmessagefromcampaignshootoptionnontemplatemms_1695797339177_0",
+          "fcn_sendmessagefromcampaignshootoptionnontemplatemms_1695797339177_1",
+          "fcn_sendmessagefromcampaignscheduleoptionnontemplatemms_1695797339177_0",
+          "fcn_sendmessagefromcampaignshootinbussinesshourstemplatesms_1695797339177_0",
+          "fcn_sendmessagefromcampaignscheduleinbussinesshourstemplatesms_0",
+          "fcn_sendmessagefromcampaignshootoptioninbusinesshourstemplatenawhatsapp_0",
+          "fcn_sendmessagefromcampaignscheduleoptioninbusinesshourstemplatewhatsapp_0",
+          "fcn_sendmessagefromcampaignshootoptiontemplatewhatsapp_0",
+          "fcn_sendmessagefromcampaignscheduleoptiontemplatewhatsapp_0",
+          "fcn_sendmmsfromcampaignshootwithwhatsappchannel_1",
+          "fcn_filter_0",
+          "fcn_deletecampaign_0",
+          "fcn_searchcampaign_0"
+        ],
+        "content": "Campaign "
+      },
+      "fcn_sendmessagefromcampaignshootoptionwithtemplatesms_1695797339177_0": {
+        "dataSetId": -1,
+        "id": "fcn_sendmessagefromcampaignshootoptionwithtemplatesms_1695797339177_0",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_entercampaignnameandselectsenderidcampaign_1695797339177_0"
+        ],
+        "content": "Send Message from Campaign - Shoot option with template SMS"
+      },
+      "fcn_entercampaignnameandselectsenderidcampaign_1695797339177_0": {
+        "dataSetId": -1,
+        "id": "fcn_entercampaignnameandselectsenderidcampaign_1695797339177_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_selectsmschannelandsenderid_0"
+        ],
+        "content": "Enter campaign name  $campaign"
+      },
+      "fcn_uploadacsvfiletoexecuteacampaigncampaign_1695797339177_0": {
+        "dataSetId": -1,
+        "id": "fcn_uploadacsvfiletoexecuteacampaigncampaign_1695797339177_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_isfileuploaded_1695797339177_0"
+        ],
+        "content": "Upload a csv file to execute a campaign $campaign"
+      },
+      "fcn_isfileuploaded_1695797339177_0": {
+        "dataSetId": -1,
+        "id": "fcn_isfileuploaded_1695797339177_0",
+        "nodeType": "dynamic-decision",
+        "branches": [
+          "fcn_selectfilefromdropdown_1695797339177_0",
+          "fcn_selectphonefieldcampaign_1695797339177_0"
+        ],
+        "content": "is file uploaded ?"
+      },
+      "fcn_selectfilefromdropdown_1695797339177_0": {
+        "dataSetId": -1,
+        "id": "fcn_selectfilefromdropdown_1695797339177_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_selectphonefieldcampaign_1695797339177_0",
+          "fcn_selcetthetemplateforcampaign_1695797339177_0"
+        ],
+        "content": "Select File from Dropdown"
+      },
+      "fcn_selectphonefieldcampaign_1695797339177_0": {
+        "dataSetId": -1,
+        "id": "fcn_selectphonefieldcampaign_1695797339177_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_selcetthetemplateforcampaign_1695797339177_0"
+        ],
+        "content": "Select phone field $campaign"
+      },
+      "fcn_selcetthetemplateforcampaign_1695797339177_0": {
+        "dataSetId": -1,
+        "id": "fcn_selcetthetemplateforcampaign_1695797339177_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_excuteacampaignnow_1695797339177_0"
+        ],
+        "content": "Select template for campaign $campaign"
+      },
+      "fcn_excuteacampaignnow_1695797339177_0": {
+        "dataSetId": -1,
+        "id": "fcn_excuteacampaignnow_1695797339177_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_smshistoryvalidationforcampaign_1695797339177_0"
+        ],
+        "content": "Shoot a campaign"
+      },
+      "fcn_smshistoryvalidationforcampaign_1695797339177_0": {
+        "dataSetId": -1,
+        "id": "fcn_smshistoryvalidationforcampaign_1695797339177_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checkthecontactlistcampaign_3"
+        ],
+        "content": "SMS history validation for campaign"
+      },
+      "fcn_sendmessagefromcampaignscheduleoption_1695797339177_0": {
+        "dataSetId": -1,
+        "id": "fcn_sendmessagefromcampaignscheduleoption_1695797339177_0",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_entercampaignnameandselectsenderidcampaign_1695797339177_1"
+        ],
+        "content": "Send Message from Campaign- Schedule option "
+      },
+      "fcn_entercampaignnameandselectsenderidcampaign_1695797339177_1": {
+        "dataSetId": -1,
+        "id": "fcn_entercampaignnameandselectsenderidcampaign_1695797339177_1",
+        "nodeType": "action",
+        "branches": [
+          "fcn_selectsmschannelandsenderidcampaign_1698819387253_0"
+        ],
+        "content": "Enter campaign name  $campaign"
+      },
+      "fcn_uploadacsvfiletoexecuteacampaigncampaign_1695797339177_1": {
+        "dataSetId": -1,
+        "id": "fcn_uploadacsvfiletoexecuteacampaigncampaign_1695797339177_1",
+        "nodeType": "action",
+        "branches": [
+          "fcn_isfileuploaded_1695797339177_1"
+        ],
+        "content": "Upload a csv file to execute a campaign $campaign"
+      },
+      "fcn_isfileuploaded_1695797339177_1": {
+        "dataSetId": -1,
+        "id": "fcn_isfileuploaded_1695797339177_1",
+        "nodeType": "dynamic-decision",
+        "branches": [
+          "fcn_selectfilefromdropdown_1695797339177_1",
+          "fcn_selectphonefieldcampaign_1695797339177_1"
+        ],
+        "content": "is file uploaded ?"
+      },
+      "fcn_selectfilefromdropdown_1695797339177_1": {
+        "dataSetId": -1,
+        "id": "fcn_selectfilefromdropdown_1695797339177_1",
+        "nodeType": "action",
+        "branches": [
+          "fcn_selectphonefieldcampaign_1695797339177_1",
+          "fcn_enterthemessageforcampaign_1695797339177_0"
+        ],
+        "content": "Select File from Dropdown"
+      },
+      "fcn_selectphonefieldcampaign_1695797339177_1": {
+        "dataSetId": -1,
+        "id": "fcn_selectphonefieldcampaign_1695797339177_1",
+        "nodeType": "action",
+        "branches": [
+          "fcn_enterthemessageforcampaign_1695797339177_0"
+        ],
+        "content": "Select phone field $campaign"
+      },
+      "fcn_enterthemessageforcampaign_1695797339177_0": {
+        "dataSetId": -1,
+        "id": "fcn_enterthemessageforcampaign_1695797339177_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_scheduleafuturecampaign_0"
+        ],
+        "content": "Enter the message for $campaign"
+      },
+      "fcn_smshistoryvalidationforcampaign_1695797339177_1": {
+        "dataSetId": -1,
+        "id": "fcn_smshistoryvalidationforcampaign_1695797339177_1",
+        "nodeType": "skip",
+        "branches": [],
+        "content": "SMS history validation for campaign"
+      },
+      "fcn_sendmessagefromcampaignshootoptionnontemplatesms_1695797339177_0": {
+        "dataSetId": -1,
+        "id": "fcn_sendmessagefromcampaignshootoptionnontemplatesms_1695797339177_0",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_entercampaignnameandselectsenderidcampaign_1695797339177_2"
+        ],
+        "content": "Send Message from Campaign - Shoot option non template sms"
+      },
+      "fcn_entercampaignnameandselectsenderidcampaign_1695797339177_2": {
+        "dataSetId": -1,
+        "id": "fcn_entercampaignnameandselectsenderidcampaign_1695797339177_2",
+        "nodeType": "action",
+        "branches": [
+          "fcn_selectsmschannelandsenderidcampaign_1695799952278_0"
+        ],
+        "content": "Enter campaign name  $campaign"
+      },
+      "fcn_uploadacsvfiletoexecuteacampaigncampaign_1695797339177_2": {
+        "dataSetId": -1,
+        "id": "fcn_uploadacsvfiletoexecuteacampaigncampaign_1695797339177_2",
+        "nodeType": "action",
+        "branches": [
+          "fcn_isfileuploaded_1695797339177_2"
+        ],
+        "content": "Upload a csv file to execute a campaign $campaign"
+      },
+      "fcn_isfileuploaded_1695797339177_2": {
+        "dataSetId": -1,
+        "id": "fcn_isfileuploaded_1695797339177_2",
+        "nodeType": "dynamic-decision",
+        "branches": [
+          "fcn_selectfilefromdropdown_1695797339177_2",
+          "fcn_selectphonefieldcampaign_1695797339177_2"
+        ],
+        "content": "is file uploaded ?"
+      },
+      "fcn_selectfilefromdropdown_1695797339177_2": {
+        "dataSetId": -1,
+        "id": "fcn_selectfilefromdropdown_1695797339177_2",
+        "nodeType": "action",
+        "branches": [
+          "fcn_selectphonefieldcampaign_1695797339177_2",
+          "fcn_enterthemessageforcampaign_1695797339177_1"
+        ],
+        "content": "Select File from Dropdown"
+      },
+      "fcn_selectphonefieldcampaign_1695797339177_2": {
+        "dataSetId": -1,
+        "id": "fcn_selectphonefieldcampaign_1695797339177_2",
+        "nodeType": "action",
+        "branches": [
+          "fcn_enterthemessageforcampaign_1695797339177_1"
+        ],
+        "content": "Select phone field $campaign"
+      },
+      "fcn_enterthemessageforcampaign_1695797339177_1": {
+        "dataSetId": -1,
+        "id": "fcn_enterthemessageforcampaign_1695797339177_1",
+        "nodeType": "action",
+        "branches": [
+          "fcn_excuteacampaignnow_1695797339177_1"
+        ],
+        "content": "Enter the message for $campaign"
+      },
+      "fcn_excuteacampaignnow_1695797339177_1": {
+        "dataSetId": -1,
+        "id": "fcn_excuteacampaignnow_1695797339177_1",
+        "nodeType": "action",
+        "branches": [
+          "fcn_smshistoryvalidationforcampaign_1695797339177_2"
+        ],
+        "content": "Shoot a campaign"
+      },
+      "fcn_smshistoryvalidationforcampaign_1695797339177_2": {
+        "dataSetId": -1,
+        "id": "fcn_smshistoryvalidationforcampaign_1695797339177_2",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checkthecontactlistcampaign_0"
+        ],
+        "content": "SMS history validation for campaign"
+      },
+      "fcn_sendmessagefromcampaignscheduleoptionnontemplatesms_1695797339177_0": {
+        "dataSetId": -1,
+        "id": "fcn_sendmessagefromcampaignscheduleoptionnontemplatesms_1695797339177_0",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_entercampaignnameandselectsenderidcampaign_1695797339177_3"
+        ],
+        "content": "Send Message from Campaign - Schedule option  non template sms"
+      },
+      "fcn_entercampaignnameandselectsenderidcampaign_1695797339177_3": {
+        "dataSetId": -1,
+        "id": "fcn_entercampaignnameandselectsenderidcampaign_1695797339177_3",
+        "nodeType": "action",
+        "branches": [
+          "fcn_selectsmschannelandsenderidcampaign_1698819516438_0"
+        ],
+        "content": "Enter campaign name  $campaign"
+      },
+      "fcn_uploadacsvfiletoexecuteacampaigncampaign_1695797339177_3": {
+        "dataSetId": -1,
+        "id": "fcn_uploadacsvfiletoexecuteacampaigncampaign_1695797339177_3",
+        "nodeType": "action",
+        "branches": [
+          "fcn_isfileuploaded_1695797339177_3"
+        ],
+        "content": "Upload a csv file to execute a campaign $campaign"
+      },
+      "fcn_isfileuploaded_1695797339177_3": {
+        "dataSetId": -1,
+        "id": "fcn_isfileuploaded_1695797339177_3",
+        "nodeType": "dynamic-decision",
+        "branches": [
+          "fcn_selectfilefromdropdown_1695797339177_3",
+          "fcn_selectphonefieldcampaign_1695797339177_3"
+        ],
+        "content": "is file uploaded ?"
+      },
+      "fcn_selectfilefromdropdown_1695797339177_3": {
+        "dataSetId": -1,
+        "id": "fcn_selectfilefromdropdown_1695797339177_3",
+        "nodeType": "action",
+        "branches": [
+          "fcn_selectphonefieldcampaign_1695797339177_3",
+          "fcn_enterthemessageforcampaign_1695797339177_2"
+        ],
+        "content": "Select File from Dropdown"
+      },
+      "fcn_selectphonefieldcampaign_1695797339177_3": {
+        "dataSetId": -1,
+        "id": "fcn_selectphonefieldcampaign_1695797339177_3",
+        "nodeType": "action",
+        "branches": [
+          "fcn_enterthemessageforcampaign_1695797339177_2"
+        ],
+        "content": "Select phone field $campaign"
+      },
+      "fcn_enterthemessageforcampaign_1695797339177_2": {
+        "dataSetId": -1,
+        "id": "fcn_enterthemessageforcampaign_1695797339177_2",
+        "nodeType": "action",
+        "branches": [
+          "fcn_scheduleafuturecampaign_1721107177894_0"
+        ],
+        "content": "Enter the message for $campaign"
+      },
+      "fcn_assertthemessageforcampaignexecution_1695797339177_3": {
+        "dataSetId": -1,
+        "id": "fcn_assertthemessageforcampaignexecution_1695797339177_3",
+        "nodeType": "action",
+        "branches": [
+          "fcn_smshistoryvalidationforcampaign_1695797339177_3"
+        ],
+        "content": "Assert the message for campaign execution"
+      },
+      "fcn_smshistoryvalidationforcampaign_1695797339177_3": {
+        "dataSetId": -1,
+        "id": "fcn_smshistoryvalidationforcampaign_1695797339177_3",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_checkthecontactlistcampaign_5"
+        ],
+        "content": "SMS history validation for campaign"
+      },
+      "fcn_sendmessagefromcampaignshootoptiontempaltemms_1695797339177_0": {
+        "dataSetId": -1,
+        "id": "fcn_sendmessagefromcampaignshootoptiontempaltemms_1695797339177_0",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_entercampaignnameandselectsenderidcampaign_1695797339177_4"
+        ],
+        "content": "Send Message from Campaign - Shoot option tempalte mms"
+      },
+      "fcn_entercampaignnameandselectsenderidcampaign_1695797339177_4": {
+        "dataSetId": -1,
+        "id": "fcn_entercampaignnameandselectsenderidcampaign_1695797339177_4",
+        "nodeType": "action",
+        "branches": [
+          "fcn_selectsmschannelandsenderidcampaign_1695799960148_0"
+        ],
+        "content": "Enter campaign name  $campaign"
+      },
+      "fcn_uploadacsvfiletoexecuteacampaigncampaign_1695797339177_4": {
+        "dataSetId": -1,
+        "id": "fcn_uploadacsvfiletoexecuteacampaigncampaign_1695797339177_4",
+        "nodeType": "action",
+        "branches": [
+          "fcn_isfileuploaded_1695797339177_4"
+        ],
+        "content": "Upload a csv file to execute a campaign $campaign"
+      },
+      "fcn_isfileuploaded_1695797339177_4": {
+        "dataSetId": -1,
+        "id": "fcn_isfileuploaded_1695797339177_4",
+        "nodeType": "dynamic-decision",
+        "branches": [
+          "fcn_selectfilefromdropdown_1695797339177_4",
+          "fcn_selectphonefieldcampaign_1695797339177_4"
+        ],
+        "content": "is file uploaded ?"
+      },
+      "fcn_selectfilefromdropdown_1695797339177_4": {
+        "dataSetId": -1,
+        "id": "fcn_selectfilefromdropdown_1695797339177_4",
+        "nodeType": "action",
+        "branches": [
+          "fcn_selectphonefieldcampaign_1695797339177_4",
+          "fcn_selectthetempalteofmmstype_1695797339177_0"
+        ],
+        "content": "Select File from Dropdown"
+      },
+      "fcn_selectphonefieldcampaign_1695797339177_4": {
+        "dataSetId": -1,
+        "id": "fcn_selectphonefieldcampaign_1695797339177_4",
+        "nodeType": "action",
+        "branches": [
+          "fcn_selectthetempalteofmmstype_1695797339177_0"
+        ],
+        "content": "Select phone field $campaign"
+      },
+      "fcn_selectthetempalteofmmstype_1695797339177_0": {
+        "dataSetId": -1,
+        "id": "fcn_selectthetempalteofmmstype_1695797339177_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_excuteacampaignnow_1695797339177_2"
+        ],
+        "content": "Select the tempalte of MMS type"
+      },
+      "fcn_excuteacampaignnow_1695797339177_2": {
+        "dataSetId": -1,
+        "id": "fcn_excuteacampaignnow_1695797339177_2",
+        "nodeType": "action",
+        "branches": [
+          "fcn_smshistoryvalidationforcampaign_1695797339177_4"
+        ],
+        "content": "Shoot a campaign"
+      },
+      "fcn_smshistoryvalidationforcampaign_1695797339177_4": {
+        "dataSetId": -1,
+        "id": "fcn_smshistoryvalidationforcampaign_1695797339177_4",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checkthecontactlistcampaign_4"
+        ],
+        "content": "SMS history validation for campaign"
+      },
+      "fcn_sendmessagefromcampaignscheduleoptiontemplatemms_1695797339177_0": {
+        "dataSetId": -1,
+        "id": "fcn_sendmessagefromcampaignscheduleoptiontemplatemms_1695797339177_0",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_entercampaignnameandselectsenderidcampaign_1695797339177_5"
+        ],
+        "content": "Send Message from Campaign - Schedule option \tTemplate\tMMS"
+      },
+      "fcn_entercampaignnameandselectsenderidcampaign_1695797339177_5": {
+        "dataSetId": -1,
+        "id": "fcn_entercampaignnameandselectsenderidcampaign_1695797339177_5",
+        "nodeType": "action",
+        "branches": [
+          "fcn_selectsmschannelandsenderidcampaign_1695799964695_0"
+        ],
+        "content": "Enter campaign name  $campaign"
+      },
+      "fcn_uploadacsvfiletoexecuteacampaigncampaign_1695797339177_5": {
+        "dataSetId": -1,
+        "id": "fcn_uploadacsvfiletoexecuteacampaigncampaign_1695797339177_5",
+        "nodeType": "action",
+        "branches": [
+          "fcn_isfileuploaded_1695797339177_5"
+        ],
+        "content": "Upload a csv file to execute a campaign $campaign"
+      },
+      "fcn_isfileuploaded_1695797339177_5": {
+        "dataSetId": -1,
+        "id": "fcn_isfileuploaded_1695797339177_5",
+        "nodeType": "dynamic-decision",
+        "branches": [
+          "fcn_selectfilefromdropdown_1695797339177_5",
+          "fcn_selectphonefieldcampaign_1695797339177_5"
+        ],
+        "content": "is file uploaded ?"
+      },
+      "fcn_selectfilefromdropdown_1695797339177_5": {
+        "dataSetId": -1,
+        "id": "fcn_selectfilefromdropdown_1695797339177_5",
+        "nodeType": "action",
+        "branches": [
+          "fcn_selectphonefieldcampaign_1695797339177_5",
+          "fcn_selectthetempalteofmmstype_1695797339177_1"
+        ],
+        "content": "Select File from Dropdown"
+      },
+      "fcn_selectphonefieldcampaign_1695797339177_5": {
+        "dataSetId": -1,
+        "id": "fcn_selectphonefieldcampaign_1695797339177_5",
+        "nodeType": "action",
+        "branches": [
+          "fcn_selectthetempalteofmmstype_1695797339177_1"
+        ],
+        "content": "Select phone field $campaign"
+      },
+      "fcn_selectthetempalteofmmstype_1695797339177_1": {
+        "dataSetId": -1,
+        "id": "fcn_selectthetempalteofmmstype_1695797339177_1",
+        "nodeType": "action",
+        "branches": [
+          "fcn_scheduleafuturecampaign_1721108941749_0"
+        ],
+        "content": "Select the tempalte of MMS type"
+      },
+      "fcn_sendmessagefromcampaignshootoptionnontemplatemms_1695797339177_0": {
+        "dataSetId": -1,
+        "id": "fcn_sendmessagefromcampaignshootoptionnontemplatemms_1695797339177_0",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_entercampaignnameandselectsenderidcampaign_1695797339177_6"
+        ],
+        "content": "Send Message from Campaign- Shoot option \tNon Template\tMMS"
+      },
+      "fcn_entercampaignnameandselectsenderidcampaign_1695797339177_6": {
+        "dataSetId": -1,
+        "id": "fcn_entercampaignnameandselectsenderidcampaign_1695797339177_6",
+        "nodeType": "action",
+        "branches": [
+          "fcn_selectsmschannelandsenderidcampaign_1698819561298_0"
+        ],
+        "content": "Enter campaign name  $campaign"
+      },
+      "fcn_uploadacsvfiletoexecuteacampaigncampaign_1695797339177_6": {
+        "dataSetId": -1,
+        "id": "fcn_uploadacsvfiletoexecuteacampaigncampaign_1695797339177_6",
+        "nodeType": "action",
+        "branches": [
+          "fcn_isfileuploaded_1695797339177_6"
+        ],
+        "content": "Upload a csv file to execute a campaign $campaign"
+      },
+      "fcn_isfileuploaded_1695797339177_6": {
+        "dataSetId": -1,
+        "id": "fcn_isfileuploaded_1695797339177_6",
+        "nodeType": "dynamic-decision",
+        "branches": [
+          "fcn_selectfilefromdropdown_1695797339177_6",
+          "fcn_selectphonefieldcampaign_1695797339177_6"
+        ],
+        "content": "is file uploaded ?"
+      },
+      "fcn_selectfilefromdropdown_1695797339177_6": {
+        "dataSetId": -1,
+        "id": "fcn_selectfilefromdropdown_1695797339177_6",
+        "nodeType": "action",
+        "branches": [
+          "fcn_selectphonefieldcampaign_1695797339177_6",
+          "fcn_selectthetempalteofmmstype_1695797339177_2"
+        ],
+        "content": "Select File from Dropdown"
+      },
+      "fcn_selectphonefieldcampaign_1695797339177_6": {
+        "dataSetId": -1,
+        "id": "fcn_selectphonefieldcampaign_1695797339177_6",
+        "nodeType": "action",
+        "branches": [
+          "fcn_selectthetempalteofmmstype_1695797339177_2"
+        ],
+        "content": "Select phone field $campaign"
+      },
+      "fcn_selectthetempalteofmmstype_1695797339177_2": {
+        "dataSetId": -1,
+        "id": "fcn_selectthetempalteofmmstype_1695797339177_2",
+        "nodeType": "action",
+        "branches": [
+          "fcn_scheduleacampaign_1695797339177_3"
+        ],
+        "content": "Select the tempalte of MMS type"
+      },
+      "fcn_scheduleacampaign_1695797339177_3": {
+        "dataSetId": -1,
+        "id": "fcn_scheduleacampaign_1695797339177_3",
+        "nodeType": "action",
+        "branches": [
+          "fcn_smshistoryvalidationforcampaign_0"
+        ],
+        "content": "Shoot a campaign"
+      },
+      "fcn_sendmessagefromcampaignshootoptionnontemplatemms_1695797339177_1": {
+        "dataSetId": -1,
+        "id": "fcn_sendmessagefromcampaignshootoptionnontemplatemms_1695797339177_1",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_entercampaignnameandselectsenderidcampaign_1695797339177_7"
+        ],
+        "content": "Send Message from Campaign- Shoot option \tNon Template\tMMS"
+      },
+      "fcn_entercampaignnameandselectsenderidcampaign_1695797339177_7": {
+        "dataSetId": -1,
+        "id": "fcn_entercampaignnameandselectsenderidcampaign_1695797339177_7",
+        "nodeType": "action",
+        "branches": [
+          "fcn_selectsmschannelandsenderidcampaign_1695799969825_0"
+        ],
+        "content": "Enter campaign name  $campaign"
+      },
+      "fcn_uploadacsvfiletoexecuteacampaigncampaign_1695797339177_7": {
+        "dataSetId": -1,
+        "id": "fcn_uploadacsvfiletoexecuteacampaigncampaign_1695797339177_7",
+        "nodeType": "action",
+        "branches": [
+          "fcn_isfileuploaded_1695797339177_7"
+        ],
+        "content": "Upload a csv file to execute a campaign $campaign"
+      },
+      "fcn_isfileuploaded_1695797339177_7": {
+        "dataSetId": -1,
+        "id": "fcn_isfileuploaded_1695797339177_7",
+        "nodeType": "dynamic-decision",
+        "branches": [
+          "fcn_selectfilefromdropdown_1695797339177_7",
+          "fcn_selectphonefieldcampaign_1695797339177_7"
+        ],
+        "content": "is file uploaded ?"
+      },
+      "fcn_selectfilefromdropdown_1695797339177_7": {
+        "dataSetId": -1,
+        "id": "fcn_selectfilefromdropdown_1695797339177_7",
+        "nodeType": "action",
+        "branches": [
+          "fcn_selectphonefieldcampaign_1695797339177_7",
+          "fcn_enterthemessageandselectmmsmediacampaign_1695797339177_0"
+        ],
+        "content": "Select File from Dropdown"
+      },
+      "fcn_selectphonefieldcampaign_1695797339177_7": {
+        "dataSetId": -1,
+        "id": "fcn_selectphonefieldcampaign_1695797339177_7",
+        "nodeType": "action",
+        "branches": [
+          "fcn_enterthemessageandselectmmsmediacampaign_1695797339177_0"
+        ],
+        "content": "Select phone field $campaign"
+      },
+      "fcn_enterthemessageandselectmmsmediacampaign_1695797339177_0": {
+        "dataSetId": -1,
+        "id": "fcn_enterthemessageandselectmmsmediacampaign_1695797339177_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_excuteacampaignnow_1695797339177_3"
+        ],
+        "content": "Enter the message and select  mms media $campaign"
+      },
+      "fcn_excuteacampaignnow_1695797339177_3": {
+        "dataSetId": -1,
+        "id": "fcn_excuteacampaignnow_1695797339177_3",
+        "nodeType": "action",
+        "branches": [
+          "fcn_smshistoryvalidationforcampaign_1695797339177_7"
+        ],
+        "content": "Shoot a campaign"
+      },
+      "fcn_smshistoryvalidationforcampaign_1695797339177_7": {
+        "dataSetId": -1,
+        "id": "fcn_smshistoryvalidationforcampaign_1695797339177_7",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checkthecontactlistcampaign_2"
+        ],
+        "content": "SMS history validation for campaign"
+      },
+      "fcn_sendmessagefromcampaignscheduleoptionnontemplatemms_1695797339177_0": {
+        "dataSetId": -1,
+        "id": "fcn_sendmessagefromcampaignscheduleoptionnontemplatemms_1695797339177_0",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_entercampaignnameandselectsenderidcampaign_1695797339177_8"
+        ],
+        "content": "Send Message from Campaign- Schedule option \tNon Template\tMMS"
+      },
+      "fcn_entercampaignnameandselectsenderidcampaign_1695797339177_8": {
+        "dataSetId": -1,
+        "id": "fcn_entercampaignnameandselectsenderidcampaign_1695797339177_8",
+        "nodeType": "action",
+        "branches": [
+          "fcn_selectsmschannelandsenderidcampaign_1695799974515_0"
+        ],
+        "content": "Enter campaign name  $campaign"
+      },
+      "fcn_uploadacsvfiletoexecuteacampaigncampaign_1695797339177_8": {
+        "dataSetId": -1,
+        "id": "fcn_uploadacsvfiletoexecuteacampaigncampaign_1695797339177_8",
+        "nodeType": "action",
+        "branches": [
+          "fcn_isfileuploaded_1695797339177_8"
+        ],
+        "content": "Upload a csv file to execute a campaign $campaign"
+      },
+      "fcn_isfileuploaded_1695797339177_8": {
+        "dataSetId": -1,
+        "id": "fcn_isfileuploaded_1695797339177_8",
+        "nodeType": "dynamic-decision",
+        "branches": [
+          "fcn_selectfilefromdropdown_1695797339177_8",
+          "fcn_selectphonefieldcampaign_1695797339177_8"
+        ],
+        "content": "is file uploaded ?"
+      },
+      "fcn_selectfilefromdropdown_1695797339177_8": {
+        "dataSetId": -1,
+        "id": "fcn_selectfilefromdropdown_1695797339177_8",
+        "nodeType": "action",
+        "branches": [
+          "fcn_selectphonefieldcampaign_1695797339177_8",
+          "fcn_enterthemessageandselectmmsmediacampaign_1695797339177_1"
+        ],
+        "content": "Select File from Dropdown"
+      },
+      "fcn_selectphonefieldcampaign_1695797339177_8": {
+        "dataSetId": -1,
+        "id": "fcn_selectphonefieldcampaign_1695797339177_8",
+        "nodeType": "action",
+        "branches": [
+          "fcn_enterthemessageandselectmmsmediacampaign_1695797339177_1"
+        ],
+        "content": "Select phone field $campaign"
+      },
+      "fcn_enterthemessageandselectmmsmediacampaign_1695797339177_1": {
+        "dataSetId": -1,
+        "id": "fcn_enterthemessageandselectmmsmediacampaign_1695797339177_1",
+        "nodeType": "action",
+        "branches": [
+          "fcn_scheduleafuturecampaign_1721108562013_0"
+        ],
+        "content": "Enter the message and select  mms media $campaign"
+      },
+      "fcn_sendmessagefromcampaignshootinbussinesshourstemplatesms_1695797339177_0": {
+        "dataSetId": -1,
+        "id": "fcn_sendmessagefromcampaignshootinbussinesshourstemplatesms_1695797339177_0",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_addinsidebusinesshourforindiacountry_1720165245264_0"
+        ],
+        "content": "Send Message from Campaign-Shoot-In bussiness Hours\tTemplate\tSMS"
+      },
+      "fcn_entercampaignnameandselectsenderidcampaign_1695798642422_0": {
+        "dataSetId": -1,
+        "id": "fcn_entercampaignnameandselectsenderidcampaign_1695798642422_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_selectsmschannelandsenderidcampaign_1695799980938_0"
+        ],
+        "content": "Enter campaign name  $campaign"
+      },
+      "fcn_uploadacsvfiletoexecuteacampaigncampaign_1695798642422_0": {
+        "dataSetId": -1,
+        "id": "fcn_uploadacsvfiletoexecuteacampaigncampaign_1695798642422_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_isfileuploaded_1695798642422_0"
+        ],
+        "content": "Upload a csv file to execute a campaign $campaign"
+      },
+      "fcn_isfileuploaded_1695798642422_0": {
+        "dataSetId": -1,
+        "id": "fcn_isfileuploaded_1695798642422_0",
+        "nodeType": "dynamic-decision",
+        "branches": [
+          "fcn_selectfilefromdropdown_1695798642422_0",
+          "fcn_selectphonefieldcampaign_1695798642422_0"
+        ],
+        "content": "is file uploaded ?"
+      },
+      "fcn_selectfilefromdropdown_1695798642422_0": {
+        "dataSetId": -1,
+        "id": "fcn_selectfilefromdropdown_1695798642422_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_selectphonefieldcampaign_1695798642422_0",
+          "fcn_selecttemplateforcampaign_1695798642422_0"
+        ],
+        "content": "Select File from Dropdown"
+      },
+      "fcn_selectphonefieldcampaign_1695798642422_0": {
+        "dataSetId": -1,
+        "id": "fcn_selectphonefieldcampaign_1695798642422_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_selecttemplateforcampaign_1695798642422_0"
+        ],
+        "content": "Select phone field $campaign"
+      },
+      "fcn_selecttemplateforcampaign_1695798642422_0": {
+        "dataSetId": -1,
+        "id": "fcn_selecttemplateforcampaign_1695798642422_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_sendacampaign_0"
+        ],
+        "content": "Select template for campaign $campaign"
+      },
+      "fcn_smshistoryvalidationforcampaign_1695798642422_0": {
+        "dataSetId": -1,
+        "id": "fcn_smshistoryvalidationforcampaign_1695798642422_0",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_checkthecontactlistcampaign_1"
+        ],
+        "content": "SMS history validation for campaign"
+      },
+      "fcn_sendmessagefromcampaignscheduleinbussinesshourstemplatesms_0": {
+        "dataSetId": -1,
+        "id": "fcn_sendmessagefromcampaignscheduleinbussinesshourstemplatesms_0",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_addinsidebusinesshourforindiacountry_1720683284247_0"
+        ],
+        "content": "Send Message from Campaign-Schedule-In bussiness Hours \tTemplate\t\tSMS"
+      },
+      "fcn_entercampaignnameandselectsenderidcampaign_1695798719845_0": {
+        "dataSetId": -1,
+        "id": "fcn_entercampaignnameandselectsenderidcampaign_1695798719845_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_selectsmschannelandsenderidcampaign_1695800000293_0"
+        ],
+        "content": "Enter campaign name  $campaign"
+      },
+      "fcn_uploadacsvfiletoexecuteacampaigncampaign_1695798719845_0": {
+        "dataSetId": -1,
+        "id": "fcn_uploadacsvfiletoexecuteacampaigncampaign_1695798719845_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_isfileuploaded_1695798719845_0"
+        ],
+        "content": "Upload a csv file to execute a campaign $campaign"
+      },
+      "fcn_isfileuploaded_1695798719845_0": {
+        "dataSetId": -1,
+        "id": "fcn_isfileuploaded_1695798719845_0",
+        "nodeType": "dynamic-decision",
+        "branches": [
+          "fcn_selectfilefromdropdown_1695798719845_0",
+          "fcn_selectphonefieldcampaign_1695798719845_0"
+        ],
+        "content": "is file uploaded ?"
+      },
+      "fcn_selectfilefromdropdown_1695798719845_0": {
+        "dataSetId": -1,
+        "id": "fcn_selectfilefromdropdown_1695798719845_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_selectphonefieldcampaign_1695798719845_0",
+          "fcn_selecttemplateforcampaign_1695798719845_0"
+        ],
+        "content": "Select File from Dropdown"
+      },
+      "fcn_selectphonefieldcampaign_1695798719845_0": {
+        "dataSetId": -1,
+        "id": "fcn_selectphonefieldcampaign_1695798719845_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_selecttemplateforcampaign_1695798719845_0"
+        ],
+        "content": "Select phone field $campaign"
+      },
+      "fcn_selecttemplateforcampaign_1695798719845_0": {
+        "dataSetId": -1,
+        "id": "fcn_selecttemplateforcampaign_1695798719845_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_scheduleafuturecampaign_1721108154466_0"
+        ],
+        "content": "Select template for campaign $campaign"
+      },
+      "fcn_sendmessagefromcampaignshootoptioninbusinesshourstemplatenawhatsapp_0": {
+        "dataSetId": -1,
+        "id": "fcn_sendmessagefromcampaignshootoptioninbusinesshourstemplatenawhatsapp_0",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_addinsidebusinesshourforindiacountry_1720701156969_0"
+        ],
+        "content": "Send Message from Campaign- Shoot option-In business hours\tTemplate\tNA\tWhat\u0027s App"
+      },
+      "fcn_sendmessagefromcampaignscheduleoptioninbusinesshourstemplatewhatsapp_0": {
+        "dataSetId": -1,
+        "id": "fcn_sendmessagefromcampaignscheduleoptioninbusinesshourstemplatewhatsapp_0",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_addinsidebusinesshourforindiacountry_1720701148144_0"
+        ],
+        "content": "Send Message from Campaign- Schedule option-In business hours\tTemplate\tWhat\u0027s App"
+      },
+      "fcn_sendmessagefromcampaignshootoptiontemplatewhatsapp_0": {
+        "dataSetId": -1,
+        "id": "fcn_sendmessagefromcampaignshootoptiontemplatewhatsapp_0",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_entercampaignnameandselectsenderidcampaign_1695798878281_0"
+        ],
+        "content": "Send Message from Campaign- Shoot option \tTemplate\t\tWhat\u0027s App"
+      },
+      "fcn_sendmessagefromcampaignscheduleoptiontemplatewhatsapp_0": {
+        "dataSetId": -1,
+        "id": "fcn_sendmessagefromcampaignscheduleoptiontemplatewhatsapp_0",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_entercampaignnameandselectsenderidcampaign_1695798882847_0"
+        ],
+        "content": "Send Message from Campaign- Schedule option \tTemplate\t\tWhat\u0027s App"
+      },
+      "fcn_entercampaignnameandselectsenderidcampaign_1695798858375_0": {
+        "dataSetId": -1,
+        "id": "fcn_entercampaignnameandselectsenderidcampaign_1695798858375_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_selectwhatsappchannelandsenderidcampaign_1695800032500_0"
+        ],
+        "content": "Enter campaign name  $campaign"
+      },
+      "fcn_uploadacsvfiletoexecuteacampaigncampaign_1695798858375_0": {
+        "dataSetId": -1,
+        "id": "fcn_uploadacsvfiletoexecuteacampaigncampaign_1695798858375_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_isfileuploaded_1695798858375_0"
+        ],
+        "content": "Upload a csv file to execute a campaign $campaign"
+      },
+      "fcn_isfileuploaded_1695798858375_0": {
+        "dataSetId": -1,
+        "id": "fcn_isfileuploaded_1695798858375_0",
+        "nodeType": "dynamic-decision",
+        "branches": [
+          "fcn_selectfilefromdropdown_1695798858375_0",
+          "fcn_selectphonefieldcampaign_1695798858375_0"
+        ],
+        "content": "is file uploaded ?"
+      },
+      "fcn_selectfilefromdropdown_1695798858375_0": {
+        "dataSetId": -1,
+        "id": "fcn_selectfilefromdropdown_1695798858375_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_selectphonefieldcampaign_1695798858375_0",
+          "fcn_selecttemplateforcampaign_1695798858375_0"
+        ],
+        "content": "Select File from Dropdown"
+      },
+      "fcn_selectphonefieldcampaign_1695798858375_0": {
+        "dataSetId": -1,
+        "id": "fcn_selectphonefieldcampaign_1695798858375_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_selecttemplateforcampaign_1695798858375_0"
+        ],
+        "content": "Select phone field $campaign"
+      },
+      "fcn_selecttemplateforcampaign_1695798858375_0": {
+        "dataSetId": -1,
+        "id": "fcn_selecttemplateforcampaign_1695798858375_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_scheduleafuturecampaign_1721109092565_0"
+        ],
+        "content": "Select template for campaign $campaign"
+      },
+      "fcn_entercampaignnameandselectsenderidcampaign_1695798866053_0": {
+        "dataSetId": -1,
+        "id": "fcn_entercampaignnameandselectsenderidcampaign_1695798866053_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_selectwhatsappchannelandsenderidcampaign_1695800025844_0"
+        ],
+        "content": "Enter campaign name  $campaign"
+      },
+      "fcn_uploadacsvfiletoexecuteacampaigncampaign_1695798866053_0": {
+        "dataSetId": -1,
+        "id": "fcn_uploadacsvfiletoexecuteacampaigncampaign_1695798866053_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_isfileuploaded_1695798866053_0"
+        ],
+        "content": "Upload a csv file to execute a campaign $campaign"
+      },
+      "fcn_isfileuploaded_1695798866053_0": {
+        "dataSetId": -1,
+        "id": "fcn_isfileuploaded_1695798866053_0",
+        "nodeType": "dynamic-decision",
+        "branches": [
+          "fcn_selectfilefromdropdown_1695798866053_0",
+          "fcn_selectphonefieldcampaign_1695798866053_0"
+        ],
+        "content": "is file uploaded ?"
+      },
+      "fcn_selectfilefromdropdown_1695798866053_0": {
+        "dataSetId": -1,
+        "id": "fcn_selectfilefromdropdown_1695798866053_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_selectphonefieldcampaign_1695798866053_0",
+          "fcn_selecttemplateforcampaign_1695798866053_0"
+        ],
+        "content": "Select File from Dropdown"
+      },
+      "fcn_selectphonefieldcampaign_1695798866053_0": {
+        "dataSetId": -1,
+        "id": "fcn_selectphonefieldcampaign_1695798866053_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_selecttemplateforcampaign_1695798866053_0"
+        ],
+        "content": "Select phone field $campaign"
+      },
+      "fcn_selecttemplateforcampaign_1695798866053_0": {
+        "dataSetId": -1,
+        "id": "fcn_selecttemplateforcampaign_1695798866053_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_scheduleafuturecampaign_1721109559219_0"
+        ],
+        "content": "Select template for campaign $campaign"
+      },
+      "fcn_entercampaignnameandselectsenderidcampaign_1695798878281_0": {
+        "dataSetId": -1,
+        "id": "fcn_entercampaignnameandselectsenderidcampaign_1695798878281_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_selectwhatsappchannelandsenderidcampaign_1695800014878_0"
+        ],
+        "content": "Enter campaign name  $campaign"
+      },
+      "fcn_isfileuploaded_1695798878281_0": {
+        "dataSetId": -1,
+        "id": "fcn_isfileuploaded_1695798878281_0",
+        "nodeType": "dynamic-decision",
+        "branches": [
+          "fcn_selectfilefromdropdown_1695798878281_0",
+          "fcn_selectphonefieldcampaign_1695798878281_0"
+        ],
+        "content": "is file uploaded ?"
+      },
+      "fcn_selectfilefromdropdown_1695798878281_0": {
+        "dataSetId": -1,
+        "id": "fcn_selectfilefromdropdown_1695798878281_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_selectphonefieldcampaign_1695798878281_0",
+          "fcn_selecttemplateforcampaign_1695798878281_0"
+        ],
+        "content": "Select File from Dropdown"
+      },
+      "fcn_selectphonefieldcampaign_1695798878281_0": {
+        "dataSetId": -1,
+        "id": "fcn_selectphonefieldcampaign_1695798878281_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_selecttemplateforcampaign_1695798878281_0"
+        ],
+        "content": "Select phone field $campaign"
+      },
+      "fcn_selecttemplateforcampaign_1695798878281_0": {
+        "dataSetId": -1,
+        "id": "fcn_selecttemplateforcampaign_1695798878281_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_shootacampaign_0"
+        ],
+        "content": "Selct a whatsapp template $campaign"
+      },
+      "fcn_entercampaignnameandselectsenderidcampaign_1695798882847_0": {
+        "dataSetId": -1,
+        "id": "fcn_entercampaignnameandselectsenderidcampaign_1695798882847_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_selectwhatsappchannelandsenderidcampaign_1695800019449_0"
+        ],
+        "content": "Enter campaign name  $campaign"
+      },
+      "fcn_isfileuploaded_1695798882847_0": {
+        "dataSetId": -1,
+        "id": "fcn_isfileuploaded_1695798882847_0",
+        "nodeType": "dynamic-decision",
+        "branches": [
+          "fcn_selectfilefromdropdown_1695798882847_0",
+          "fcn_selectphonefieldcampaign_1695798882847_0"
+        ],
+        "content": "is file uploaded ?"
+      },
+      "fcn_selectfilefromdropdown_1695798882847_0": {
+        "dataSetId": -1,
+        "id": "fcn_selectfilefromdropdown_1695798882847_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_selectphonefieldcampaign_1695798882847_0",
+          "fcn_selecttemplateforcampaign_1695798882847_0"
+        ],
+        "content": "Select File from Dropdown"
+      },
+      "fcn_selectphonefieldcampaign_1695798882847_0": {
+        "dataSetId": -1,
+        "id": "fcn_selectphonefieldcampaign_1695798882847_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_selecttemplateforcampaign_1695798882847_0"
+        ],
+        "content": "Select phone field $campaign"
+      },
+      "fcn_selecttemplateforcampaign_1695798882847_0": {
+        "dataSetId": -1,
+        "id": "fcn_selecttemplateforcampaign_1695798882847_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_scheduleafuturecampaign_1721109215211_0"
+        ],
+        "content": "Selct a whatsapp template $campaign"
+      },
+      "fcn_selectsmschannelandsenderid_0": {
+        "dataSetId": -1,
+        "id": "fcn_selectsmschannelandsenderid_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_uploadacsvfiletoexecuteacampaigncampaign_1695797339177_0"
+        ],
+        "content": "Select SMS channel and sender ID $campaign"
+      },
+      "fcn_selectsmschannelandsenderidcampaign_1695799952278_0": {
+        "dataSetId": -1,
+        "id": "fcn_selectsmschannelandsenderidcampaign_1695799952278_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_uploadacsvfiletoexecuteacampaigncampaign_1695797339177_2"
+        ],
+        "content": "Select SMS channel and sender ID $campaign"
+      },
+      "fcn_selectsmschannelandsenderidcampaign_1695799960148_0": {
+        "dataSetId": -1,
+        "id": "fcn_selectsmschannelandsenderidcampaign_1695799960148_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_uploadacsvfiletoexecuteacampaigncampaign_1695797339177_4"
+        ],
+        "content": "Select SMS channel and sender ID $campaign"
+      },
+      "fcn_selectsmschannelandsenderidcampaign_1695799964695_0": {
+        "dataSetId": -1,
+        "id": "fcn_selectsmschannelandsenderidcampaign_1695799964695_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_uploadacsvfiletoexecuteacampaigncampaign_1695797339177_5"
+        ],
+        "content": "Select SMS channel and sender ID $campaign"
+      },
+      "fcn_selectsmschannelandsenderidcampaign_1695799969825_0": {
+        "dataSetId": -1,
+        "id": "fcn_selectsmschannelandsenderidcampaign_1695799969825_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_uploadacsvfiletoexecuteacampaigncampaign_1695797339177_7"
+        ],
+        "content": "Select SMS channel and sender ID $campaign"
+      },
+      "fcn_selectsmschannelandsenderidcampaign_1695799974515_0": {
+        "dataSetId": -1,
+        "id": "fcn_selectsmschannelandsenderidcampaign_1695799974515_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_uploadacsvfiletoexecuteacampaigncampaign_1695797339177_8"
+        ],
+        "content": "Select SMS channel and sender ID $campaign"
+      },
+      "fcn_selectsmschannelandsenderidcampaign_1695799980938_0": {
+        "dataSetId": -1,
+        "id": "fcn_selectsmschannelandsenderidcampaign_1695799980938_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_uploadacsvfiletoexecuteacampaigncampaign_1695798642422_0"
+        ],
+        "content": "Select SMS channel and sender ID $campaign"
+      },
+      "fcn_selectsmschannelandsenderidcampaign_1695800000293_0": {
+        "dataSetId": -1,
+        "id": "fcn_selectsmschannelandsenderidcampaign_1695800000293_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_uploadacsvfiletoexecuteacampaigncampaign_1695798719845_0"
+        ],
+        "content": "Select SMS channel and sender ID $campaign"
+      },
+      "fcn_selectwhatsappchannelandsenderidcampaign_1695800014878_0": {
+        "dataSetId": -1,
+        "id": "fcn_selectwhatsappchannelandsenderidcampaign_1695800014878_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_uploadacsvforwhatsappcampaign_1"
+        ],
+        "content": "Select whatsapp channel and sender id $campaign"
+      },
+      "fcn_selectwhatsappchannelandsenderidcampaign_1695800019449_0": {
+        "dataSetId": -1,
+        "id": "fcn_selectwhatsappchannelandsenderidcampaign_1695800019449_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_uploadacsvforwhatsappcampaign_0"
+        ],
+        "content": "Select whatsapp channel and sender id $campaign"
+      },
+      "fcn_selectwhatsappchannelandsenderidcampaign_1695800025844_0": {
+        "dataSetId": -1,
+        "id": "fcn_selectwhatsappchannelandsenderidcampaign_1695800025844_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_uploadacsvfiletoexecuteacampaigncampaign_1695798866053_0"
+        ],
+        "content": "Select whatsapp channel and sender id $campaign"
+      },
+      "fcn_selectwhatsappchannelandsenderidcampaign_1695800032500_0": {
+        "dataSetId": -1,
+        "id": "fcn_selectwhatsappchannelandsenderidcampaign_1695800032500_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_uploadacsvfiletoexecuteacampaigncampaign_1695798858375_0"
+        ],
+        "content": "Select whatsapp channel and sender id $campaign"
+      },
+      "fcn_smshistoryvalidationforcampaign_0": {
+        "dataSetId": -1,
+        "id": "fcn_smshistoryvalidationforcampaign_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "SMS history validation for campaign"
+      },
+      "fcn_prerequsitsforcampaignexecution_0": {
+        "dataSetId": -1,
+        "id": "fcn_prerequsitsforcampaignexecution_0",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_entercampaignnamecampaign_1695973876471_0"
+        ],
+        "content": "Pre-requsits for Campaign execution"
+      },
+      "fcn_entercampaignnamecampaign_1695973876471_0": {
+        "dataSetId": -1,
+        "id": "fcn_entercampaignnamecampaign_1695973876471_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_selectsmschannelandsenderidcampaign_1695973876471_0"
+        ],
+        "content": "Enter campaign name  $campaign"
+      },
+      "fcn_selectsmschannelandsenderidcampaign_1695973876471_0": {
+        "dataSetId": -1,
+        "id": "fcn_selectsmschannelandsenderidcampaign_1695973876471_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_uploadacsvfiletoexecuteacampaigncampaign_1695973876471_0"
+        ],
+        "content": "Select SMS channel and sender ID $campaign"
+      },
+      "fcn_uploadacsvfiletoexecuteacampaigncampaign_1695973876471_0": {
+        "dataSetId": -1,
+        "id": "fcn_uploadacsvfiletoexecuteacampaigncampaign_1695973876471_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_isfileuploaded_1695974225443_0"
+        ],
+        "content": "Upload a csv file to execute a campaign $campaign"
+      },
+      "fcn_isfileuploaded_1695974225443_0": {
+        "dataSetId": -1,
+        "id": "fcn_isfileuploaded_1695974225443_0",
+        "nodeType": "dynamic-decision",
+        "branches": [
+          "fcn_selectfilefromdropdown_1695974225443_0",
+          "fcn_selectphonefieldcampaign_1695974225443_0"
+        ],
+        "content": "is file uploaded ?"
+      },
+      "fcn_selectfilefromdropdown_1695974225443_0": {
+        "dataSetId": -1,
+        "id": "fcn_selectfilefromdropdown_1695974225443_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_selectphonefieldcampaign_1695974225443_0",
+          "fcn_navigatetotemplatecreation_1695974390738_0"
+        ],
+        "content": "Select File from Dropdown"
+      },
+      "fcn_selectphonefieldcampaign_1695974225443_0": {
+        "dataSetId": -1,
+        "id": "fcn_selectphonefieldcampaign_1695974225443_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_navigatetotemplatecreation_1695974390738_0"
+        ],
+        "content": "Select phone field $campaign"
+      },
+      "fcn_navigatetotemplatecreation_1695974390738_0": {
+        "dataSetId": -1,
+        "id": "fcn_navigatetotemplatecreation_1695974390738_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_enterdetailstocreatetempaltetemplate_1695974390738_0",
+          "fcn_tempaltewithsmschanneltypecamaigntemplate_1695974390738_0",
+          "fcn_templatewithwhatsappchanneltypecampaigntemplate_0"
+        ],
+        "content": "Navigate to Template creation"
+      },
+      "fcn_enterdetailstocreatetempaltetemplate_1695974390738_0": {
+        "dataSetId": -1,
+        "id": "fcn_enterdetailstocreatetempaltetemplate_1695974390738_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Enter Details to create tempalte $template"
+      },
+      "fcn_tempaltewithsmschanneltypecamaigntemplate_1695974390738_0": {
+        "dataSetId": -1,
+        "id": "fcn_tempaltewithsmschanneltypecamaigntemplate_1695974390738_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_validatedtemplateiscreatedtemplate_1695974390738_0"
+        ],
+        "content": "Tempalte with sms channel type camaign $template"
+      },
+      "fcn_validatedtemplateiscreatedtemplate_1695974390738_0": {
+        "dataSetId": -1,
+        "id": "fcn_validatedtemplateiscreatedtemplate_1695974390738_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Validated template is created $template"
+      },
+      "fcn_selectsmschannelandsenderidcampaign_1698819387253_0": {
+        "dataSetId": -1,
+        "id": "fcn_selectsmschannelandsenderidcampaign_1698819387253_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_uploadacsvfiletoexecuteacampaigncampaign_1695797339177_1"
+        ],
+        "content": "Select SMS channel and sender ID $campaign"
+      },
+      "fcn_selectsmschannelandsenderidcampaign_1698819516438_0": {
+        "dataSetId": -1,
+        "id": "fcn_selectsmschannelandsenderidcampaign_1698819516438_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_uploadacsvfiletoexecuteacampaigncampaign_1695797339177_3"
+        ],
+        "content": "Select SMS channel and sender ID $campaign"
+      },
+      "fcn_selectsmschannelandsenderidcampaign_1698819561298_0": {
+        "dataSetId": -1,
+        "id": "fcn_selectsmschannelandsenderidcampaign_1698819561298_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_uploadacsvfiletoexecuteacampaigncampaign_1695797339177_6"
+        ],
+        "content": "Select SMS channel and sender ID $campaign"
+      },
+      "fcn_logintobeconversive_1707639174700_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintobeconversive_1707639174700_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_prerequsitsforcampaignexecution_0",
+          "fcn_campaign_1695797339177_0"
+        ],
+        "content": "login to $beconversive"
+      },
+      "fcn_checkthecontactlistcampaign_0": {
+        "dataSetId": -1,
+        "id": "fcn_checkthecontactlistcampaign_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "check the contact list $campaign"
+      },
+      "fcn_checkthecontactlistcampaign_1": {
+        "dataSetId": -1,
+        "id": "fcn_checkthecontactlistcampaign_1",
+        "nodeType": "skip",
+        "branches": [],
+        "content": "check the contact list $campaign"
+      },
+      "fcn_checkthecontactlistcampaign_2": {
+        "dataSetId": -1,
+        "id": "fcn_checkthecontactlistcampaign_2",
+        "nodeType": "action",
+        "branches": [],
+        "content": "check the contact list $campaign"
+      },
+      "fcn_checkthecontactlistcampaign_3": {
+        "dataSetId": -1,
+        "id": "fcn_checkthecontactlistcampaign_3",
+        "nodeType": "action",
+        "branches": [],
+        "content": "check the contact list $campaign"
+      },
+      "fcn_checkthecontactlistcampaign_4": {
+        "dataSetId": -1,
+        "id": "fcn_checkthecontactlistcampaign_4",
+        "nodeType": "action",
+        "branches": [],
+        "content": "check the contact list $campaign"
+      },
+      "fcn_checkthecontactlistcampaign_5": {
+        "dataSetId": -1,
+        "id": "fcn_checkthecontactlistcampaign_5",
+        "nodeType": "action",
+        "branches": [],
+        "content": "check the contact list $campaign"
+      },
+      "fcn_checkthecontactlistcampaign_6": {
+        "dataSetId": -1,
+        "id": "fcn_checkthecontactlistcampaign_6",
+        "nodeType": "action",
+        "branches": [],
+        "content": "check the contact list $campaign"
+      },
+      "fcn_checkthecontactlistcampaign_7": {
+        "dataSetId": -1,
+        "id": "fcn_checkthecontactlistcampaign_7",
+        "nodeType": "action",
+        "branches": [],
+        "content": "check the contact list $campaign"
+      },
+      "fcn_checkthecontactlistcampaign_8": {
+        "dataSetId": -1,
+        "id": "fcn_checkthecontactlistcampaign_8",
+        "nodeType": "action",
+        "branches": [],
+        "content": "check the contact list $campaign"
+      },
+      "fcn_templatewithwhatsappchanneltypecampaigntemplate_0": {
+        "dataSetId": -1,
+        "id": "fcn_templatewithwhatsappchanneltypecampaigntemplate_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_validatedtemplateiscreatedtemplate_1695974390738_0"
+        ],
+        "content": "Template with whatsapp channel type campaign $template"
+      },
+      "fcn_uploadacsvforwhatsappcampaign_0": {
+        "dataSetId": -1,
+        "id": "fcn_uploadacsvforwhatsappcampaign_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_isfileuploaded_1695798882847_0"
+        ],
+        "content": "upload a csv for whatsapp $campaign"
+      },
+      "fcn_shootacampaign_0": {
+        "dataSetId": -1,
+        "id": "fcn_shootacampaign_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_smshistoryvalidationforcampaign_1709095679511_0"
+        ],
+        "content": "shoot a $campaign"
+      },
+      "fcn_smshistoryvalidationforcampaign_1709095679511_0": {
+        "dataSetId": -1,
+        "id": "fcn_smshistoryvalidationforcampaign_1709095679511_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checkthecontactlistcampaign_9"
+        ],
+        "content": "SMS history validation for campaign"
+      },
+      "fcn_checkthecontactlistcampaign_9": {
+        "dataSetId": -1,
+        "id": "fcn_checkthecontactlistcampaign_9",
+        "nodeType": "action",
+        "branches": [],
+        "content": "check the contact list $campaign"
+      },
+      "fcn_uploadacsvforwhatsappcampaign_1": {
+        "dataSetId": -1,
+        "id": "fcn_uploadacsvforwhatsappcampaign_1",
+        "nodeType": "action",
+        "branches": [
+          "fcn_isfileuploaded_1695798878281_0"
+        ],
+        "content": "upload a csv for whatsapp $campaign"
+      },
+      "fcn_sendmmsfromcampaignshootwithwhatsappchannel_1": {
+        "dataSetId": -1,
+        "id": "fcn_sendmmsfromcampaignshootwithwhatsappchannel_1",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_entercampaignnamecampaign_0"
+        ],
+        "content": "send mms from campaign - shoot with whatsapp channel"
+      },
+      "fcn_entercampaignnamecampaign_0": {
+        "dataSetId": -1,
+        "id": "fcn_entercampaignnamecampaign_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_selectwhatsappchannelandsenderidcampaign_0"
+        ],
+        "content": "Enter campaign name $campaign"
+      },
+      "fcn_selectwhatsappchannelandsenderidcampaign_0": {
+        "dataSetId": -1,
+        "id": "fcn_selectwhatsappchannelandsenderidcampaign_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_uploadacsvforwhatsappcampaign_2"
+        ],
+        "content": "Select whatsapp channel and sender id $campaign"
+      },
+      "fcn_uploadacsvforwhatsappcampaign_2": {
+        "dataSetId": -1,
+        "id": "fcn_uploadacsvforwhatsappcampaign_2",
+        "nodeType": "action",
+        "branches": [
+          "fcn_isfileuploaded_1709097917736_0"
+        ],
+        "content": "upload a csv for whatsapp $campaign"
+      },
+      "fcn_isfileuploaded_1709097917736_0": {
+        "dataSetId": -1,
+        "id": "fcn_isfileuploaded_1709097917736_0",
+        "nodeType": "dynamic-decision",
+        "branches": [
+          "fcn_selectfilefromdropdown_1709097981867_0",
+          "fcn_selectphonefieldcampaign_1709097972267_0"
+        ],
+        "content": "is file uploaded ?"
+      },
+      "fcn_selectphonefieldcampaign_1709097972267_0": {
+        "dataSetId": -1,
+        "id": "fcn_selectphonefieldcampaign_1709097972267_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_selectawhatsapptempformmscampaign_0"
+        ],
+        "content": "Select phone field $campaign"
+      },
+      "fcn_selectfilefromdropdown_1709097981867_0": {
+        "dataSetId": -1,
+        "id": "fcn_selectfilefromdropdown_1709097981867_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_selectawhatsapptempformmscampaign_0"
+        ],
+        "content": "Select File from Dropdown"
+      },
+      "fcn_shootacampaign_1": {
+        "dataSetId": -1,
+        "id": "fcn_shootacampaign_1",
+        "nodeType": "action",
+        "branches": [
+          "fcn_smshistoryvalidationforcampaign_1709098061427_0"
+        ],
+        "content": "shoot a $campaign"
+      },
+      "fcn_smshistoryvalidationforcampaign_1709098061427_0": {
+        "dataSetId": -1,
+        "id": "fcn_smshistoryvalidationforcampaign_1709098061427_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checkthecontactlistcampaign_10"
+        ],
+        "content": "SMS history validation for campaign"
+      },
+      "fcn_checkthecontactlistcampaign_10": {
+        "dataSetId": -1,
+        "id": "fcn_checkthecontactlistcampaign_10",
+        "nodeType": "action",
+        "branches": [],
+        "content": "check the contact list $campaign"
+      },
+      "fcn_selectawhatsapptempformmscampaign_0": {
+        "dataSetId": -1,
+        "id": "fcn_selectawhatsapptempformmscampaign_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_shootacampaign_1"
+        ],
+        "content": "select a whatsapp temp for mms $campaign"
+      },
+      "fcn_filter_0": {
+        "dataSetId": -1,
+        "id": "fcn_filter_0",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_openfilter_0"
+        ],
+        "content": "Filter"
+      },
+      "fcn_openfilter_0": {
+        "dataSetId": -1,
+        "id": "fcn_openfilter_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_status_0"
+        ],
+        "content": "open filter"
+      },
+      "fcn_status_0": {
+        "dataSetId": -1,
+        "id": "fcn_status_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_type_0"
+        ],
+        "content": "status"
+      },
+      "fcn_type_0": {
+        "dataSetId": -1,
+        "id": "fcn_type_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_channel_0"
+        ],
+        "content": "Type"
+      },
+      "fcn_channel_0": {
+        "dataSetId": -1,
+        "id": "fcn_channel_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_customdate_0"
+        ],
+        "content": "Channel"
+      },
+      "fcn_customdate_0": {
+        "dataSetId": -1,
+        "id": "fcn_customdate_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_apply_0"
+        ],
+        "content": "Custom Date"
+      },
+      "fcn_apply_0": {
+        "dataSetId": -1,
+        "id": "fcn_apply_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checkthefiltersapplied_0"
+        ],
+        "content": "Apply"
+      },
+      "fcn_checkthefiltersapplied_0": {
+        "dataSetId": -1,
+        "id": "fcn_checkthefiltersapplied_0",
+        "nodeType": "state",
+        "branches": [
+          "fcn_clearfilters_0"
+        ],
+        "content": "check the filters applied"
+      },
+      "fcn_clearfilters_0": {
+        "dataSetId": -1,
+        "id": "fcn_clearfilters_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "clear filters"
+      },
+      "fcn_deletecampaign_0": {
+        "dataSetId": -1,
+        "id": "fcn_deletecampaign_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Delete campaign"
+      },
+      "fcn_searchcampaign_0": {
+        "dataSetId": -1,
+        "id": "fcn_searchcampaign_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Search campaign"
+      },
+      "fcn_addinsidebusinesshourforindiacountry_1720165245264_0": {
+        "dataSetId": -1,
+        "id": "fcn_addinsidebusinesshourforindiacountry_1720165245264_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_entercampaignnameandselectsenderidcampaign_1695798642422_0"
+        ],
+        "content": "Add Inside Business Hour for India Country $businesshours"
+      },
+      "fcn_sendacampaign_0": {
+        "dataSetId": -1,
+        "id": "fcn_sendacampaign_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_smshistoryvalidationforcampaign_1695798642422_0"
+        ],
+        "content": "Send a Campaign"
+      },
+      "fcn_addinsidebusinesshourforindiacountry_1720683284247_0": {
+        "dataSetId": -1,
+        "id": "fcn_addinsidebusinesshourforindiacountry_1720683284247_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_entercampaignnameandselectsenderidcampaign_1695798719845_0"
+        ],
+        "content": "Add Inside Business Hour for India Country"
+      },
+      "fcn_addinsidebusinesshourforindiacountry_1720701148144_0": {
+        "dataSetId": -1,
+        "id": "fcn_addinsidebusinesshourforindiacountry_1720701148144_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_entercampaignnameandselectsenderidcampaign_1695798866053_0"
+        ],
+        "content": "Add Inside Business Hour for India Country"
+      },
+      "fcn_addinsidebusinesshourforindiacountry_1720701156969_0": {
+        "dataSetId": -1,
+        "id": "fcn_addinsidebusinesshourforindiacountry_1720701156969_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_entercampaignnameandselectsenderidcampaign_1695798858375_0"
+        ],
+        "content": "Add Inside Business Hour for India Country"
+      },
+      "fcn_scheduleafuturecampaign_0": {
+        "dataSetId": -1,
+        "id": "fcn_scheduleafuturecampaign_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_smshistoryvalidationforcampaign_1695797339177_1"
+        ],
+        "content": "Schedule a future campaign"
+      },
+      "fcn_scheduleafuturecampaign_1721107177894_0": {
+        "dataSetId": -1,
+        "id": "fcn_scheduleafuturecampaign_1721107177894_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertthemessageforcampaignexecution_1695797339177_3"
+        ],
+        "content": "Schedule a future campaign"
+      },
+      "fcn_scheduleafuturecampaign_1721108154466_0": {
+        "dataSetId": -1,
+        "id": "fcn_scheduleafuturecampaign_1721108154466_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Schedule a future campaign"
+      },
+      "fcn_scheduleafuturecampaign_1721108562013_0": {
+        "dataSetId": -1,
+        "id": "fcn_scheduleafuturecampaign_1721108562013_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checkthecontactlistcampaign_6"
+        ],
+        "content": "Schedule a future campaign"
+      },
+      "fcn_scheduleafuturecampaign_1721108941749_0": {
+        "dataSetId": -1,
+        "id": "fcn_scheduleafuturecampaign_1721108941749_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checkthecontactlistcampaign_7"
+        ],
+        "content": "Schedule a future campaign"
+      },
+      "fcn_scheduleafuturecampaign_1721109092565_0": {
+        "dataSetId": -1,
+        "id": "fcn_scheduleafuturecampaign_1721109092565_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Schedule a future campaign"
+      },
+      "fcn_scheduleafuturecampaign_1721109215211_0": {
+        "dataSetId": -1,
+        "id": "fcn_scheduleafuturecampaign_1721109215211_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checkthecontactlistcampaign_8"
+        ],
+        "content": "Schedule a future campaign"
+      },
+      "fcn_scheduleafuturecampaign_1721109559219_0": {
+        "dataSetId": -1,
+        "id": "fcn_scheduleafuturecampaign_1721109559219_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Schedule a future campaign"
+      }
+    },
+    "pathNames": {
+      "": {
+        "pathTags": "Campaign",
+        "pathDependsOn": "{}"
+      },
+      "[\"fcn_createsaas_portal_login_1695797241811_0\",\"fcn_logintosaasportal_1695797241811_0\",\"fcn_prerequsitsforcampaignexecution_0\",\"fcn_entercampaignnamecampaign_1695973876471_0\",\"fcn_selectsmschannelandsenderidcampaign_1695973876471_0\",\"fcn_uploadacsvfiletoexecuteacampaigncampaign_1695973876471_0\",\"fcn_isfileuploaded_1695974225443_0\",\"fcn_selectphonefieldcampaign_1695974225443_0\",\"fcn_navigatetotemplatecreation_1695974390738_0\",\"fcn_enterdetailstocreatetempaltetemplate_1695974390738_0\",\"fcn_selectfilefromdropdown_1695974225443_0\",\"fcn_selectphonefieldcampaign_1695974225443_0\",\"fcn_navigatetotemplatecreation_1695974390738_0\",\"fcn_tempaltewithsmschanneltypecamaigntemplate_1695974390738_0\",\"fcn_validatedtemplateiscreatedtemplate_1695974390738_0\"]": {
+        "pathTags": "Campaign",
+        "pathDependsOn": "{}"
+      },
+      "[\"fcn_createsaas_portal_login_1695797241811_0\",\"fcn_logintosaasportal_1695797241811_0\",\"fcn_campaign_1695797339177_0\",\"fcn_sendmessagefromcampaignshootinbussinesshourstemplatesms_1695797339177_0\",\"fcn_addbusinesshours_1695797339177_0\",\"fcn_entercampaignnameandselectsenderidcampaign_1695798642422_0\",\"fcn_selectsmschannelandsenderidcampaign_1695799980938_0\",\"fcn_uploadacsvfiletoexecuteacampaigncampaign_1695798642422_0\",\"fcn_isfileuploaded_1695798642422_0\",\"fcn_selectphonefieldcampaign_1695798642422_0\",\"fcn_selecttemplateforcampaign_1695798642422_0\",\"fcn_shootacampaign_1695798642422_0\",\"fcn_smshistoryvalidationforcampaign_1695798642422_0\",\"fcn_selectfilefromdropdown_1695798642422_0\",\"fcn_selectphonefieldcampaign_1695798642422_0\",\"fcn_selecttemplateforcampaign_1695798642422_0\",\"fcn_shootacampaign_1695798642422_0\",\"fcn_smshistoryvalidationforcampaign_1695798642422_0\"]": {
+        "pathTags": "Campaign",
+        "pathDependsOn": "{}"
+      },
+      "[\"fcn_createsaas_portal_login_1695797241811_0\",\"fcn_logintosaasportal_1695797241811_0\",\"fcn_campaign_1695797339177_0\",\"fcn_sendmessagefromcampaignscheduleoptionnontemplatemms_1695797339177_0\",\"fcn_entercampaignnameandselectsenderidcampaign_1695797339177_8\",\"fcn_selectsmschannelandsenderidcampaign_1695799974515_0\",\"fcn_uploadacsvfiletoexecuteacampaigncampaign_1695797339177_8\",\"fcn_isfileuploaded_1695797339177_8\",\"fcn_selectphonefieldcampaign_1695797339177_8\",\"fcn_enterthemessageandselectmmsmediacampaign_1695797339177_1\",\"fcn_scheduleacampaign_1695797339177_4\",\"fcn_selectfilefromdropdown_1695797339177_8\",\"fcn_selectphonefieldcampaign_1695797339177_8\",\"fcn_enterthemessageandselectmmsmediacampaign_1695797339177_1\",\"fcn_scheduleacampaign_1695797339177_4\"]": {
+        "pathTags": "Campaign",
+        "pathDependsOn": "{}"
+      },
+      "[\"fcn_createsaas_portal_login_1695797241811_0\",\"fcn_logintosaasportal_1695797241811_0\",\"fcn_campaign_1695797339177_0\",\"fcn_sendmessagefromcampaignshootoptionwithtemplatesms_1695797339177_0\",\"fcn_entercampaignnameandselectsenderidcampaign_1695797339177_0\",\"fcn_selectsmschannelandsenderid_0\",\"fcn_uploadacsvfiletoexecuteacampaigncampaign_1695797339177_0\",\"fcn_isfileuploaded_1695797339177_0\",\"fcn_selectphonefieldcampaign_1695797339177_0\",\"fcn_selcetthetemplateforcampaign_1695797339177_0\",\"fcn_excuteacampaignnow_1695797339177_0\",\"fcn_smshistoryvalidationforcampaign_1695797339177_0\",\"fcn_selectfilefromdropdown_1695797339177_0\",\"fcn_selectphonefieldcampaign_1695797339177_0\",\"fcn_selcetthetemplateforcampaign_1695797339177_0\",\"fcn_excuteacampaignnow_1695797339177_0\",\"fcn_smshistoryvalidationforcampaign_1695797339177_0\"]": {
+        "pathTags": "Campaign",
+        "pathDependsOn": "{}"
+      },
+      "[\"fcn_createsaas_portal_login_1695797241811_0\",\"fcn_logintosaasportal_1695797241811_0\",\"fcn_campaign_1695797339177_0\",\"fcn_sendmessagefromcampaignshootoptionnontemplatemms_1695797339177_1\",\"fcn_entercampaignnameandselectsenderidcampaign_1695797339177_7\",\"fcn_selectsmschannelandsenderidcampaign_1695799969825_0\",\"fcn_uploadacsvfiletoexecuteacampaigncampaign_1695797339177_7\",\"fcn_isfileuploaded_1695797339177_7\",\"fcn_selectphonefieldcampaign_1695797339177_7\",\"fcn_enterthemessageandselectmmsmediacampaign_1695797339177_0\",\"fcn_excuteacampaignnow_1695797339177_3\",\"fcn_smshistoryvalidationforcampaign_1695797339177_7\",\"fcn_selectfilefromdropdown_1695797339177_7\",\"fcn_selectphonefieldcampaign_1695797339177_7\",\"fcn_enterthemessageandselectmmsmediacampaign_1695797339177_0\",\"fcn_excuteacampaignnow_1695797339177_3\",\"fcn_smshistoryvalidationforcampaign_1695797339177_7\"]": {
+        "pathTags": "Campaign",
+        "pathDependsOn": "{}"
+      },
+      "[\"fcn_createsaas_portal_login_1695797241811_0\",\"fcn_logintosaasportal_1695797241811_0\",\"fcn_campaign_1695797339177_0\",\"fcn_sendmessagefromcampaignscheduleoptiontemplatewhatsapp_0\",\"fcn_entercampaignnameandselectsenderidcampaign_1695798882847_0\",\"fcn_selectwhatsappchannelandsenderidcampaign_1695800019449_0\",\"fcn_uploadacsvfiletoexecuteacampaigncampaign_1695798882847_0\",\"fcn_isfileuploaded_1695798882847_0\",\"fcn_selectphonefieldcampaign_1695798882847_0\",\"fcn_selecttemplateforcampaign_1695798882847_0\",\"fcn_scheduleacampaign_1695798882847_0\",\"fcn_selectfilefromdropdown_1695798882847_0\",\"fcn_selectphonefieldcampaign_1695798882847_0\",\"fcn_selecttemplateforcampaign_1695798882847_0\",\"fcn_scheduleacampaign_1695798882847_0\"]": {
+        "pathTags": "Campaign",
+        "pathDependsOn": "{}"
+      },
+      "[\"fcn_createsaas_portal_login_1695797241811_0\",\"fcn_logintosaasportal_1695797241811_0\",\"fcn_campaign_1695797339177_0\",\"fcn_sendmessagefromcampaignshootoptionnontemplatemms_1695797339177_0\",\"fcn_entercampaignnameandselectsenderidcampaign_1695797339177_6\",\"fcn_uploadacsvfiletoexecuteacampaigncampaign_1695797339177_6\",\"fcn_isfileuploaded_1695797339177_6\",\"fcn_selectphonefieldcampaign_1695797339177_6\",\"fcn_selectthetempalteofmmstype_1695797339177_2\",\"fcn_scheduleacampaign_1695797339177_3\",\"fcn_smshistoryvalidationforcampaign_0\",\"fcn_selectfilefromdropdown_1695797339177_6\",\"fcn_selectphonefieldcampaign_1695797339177_6\",\"fcn_selectthetempalteofmmstype_1695797339177_2\",\"fcn_scheduleacampaign_1695797339177_3\",\"fcn_smshistoryvalidationforcampaign_0\"]": {
+        "pathTags": "Campaign",
+        "pathDependsOn": "{}"
+      },
+      "[\"fcn_createsaas_portal_login_1695797241811_0\",\"fcn_logintobeconversive_1707639174700_0\",\"fcn_campaign_1695797339177_0\",\"fcn_sendmessagefromcampaignshootoptioninbusinesshourstemplatenawhatsapp_0\",\"fcn_addinsidebusinesshourforindiacountry_1720701156969_0\",\"fcn_entercampaignnameandselectsenderidcampaign_1695798858375_0\",\"fcn_selectwhatsappchannelandsenderidcampaign_1695800032500_0\",\"fcn_uploadacsvfiletoexecuteacampaigncampaign_1695798858375_0\",\"fcn_isfileuploaded_1695798858375_0\",\"fcn_selectphonefieldcampaign_1695798858375_0\",\"fcn_selecttemplateforcampaign_1695798858375_0\",\"fcn_scheduleacampaign_1695798858375_0\",\"fcn_selectfilefromdropdown_1695798858375_0\",\"fcn_selectphonefieldcampaign_1695798858375_0\",\"fcn_selecttemplateforcampaign_1695798858375_0\",\"fcn_scheduleacampaign_1695798858375_0\"]": {
+        "pathName": "Path 34",
+        "dataSetName": "Hubspot Campaign All Type.csv",
+        "pathDependsOn": "{}"
+      },
+      "[\"fcn_createsaas_portal_login_1695797241811_0\",\"fcn_logintosaasportal_1695797241811_0\",\"fcn_campaign_1695797339177_0\",\"fcn_sendmessagefromcampaignscheduleoptiontemplatemms_1695797339177_0\",\"fcn_entercampaignnameandselectsenderidcampaign_1695797339177_5\",\"fcn_selectsmschannelandsenderidcampaign_1695799964695_0\",\"fcn_uploadacsvfiletoexecuteacampaigncampaign_1695797339177_5\",\"fcn_isfileuploaded_1695797339177_5\",\"fcn_selectphonefieldcampaign_1695797339177_5\",\"fcn_selectthetempalteofmmstype_1695797339177_1\",\"fcn_scheduleacampaign_1695797339177_2\",\"fcn_selectfilefromdropdown_1695797339177_5\",\"fcn_selectphonefieldcampaign_1695797339177_5\",\"fcn_selectthetempalteofmmstype_1695797339177_1\",\"fcn_scheduleacampaign_1695797339177_2\"]": {
+        "pathTags": "Campaign",
+        "pathDependsOn": "{}"
+      },
+      "[\"fcn_createsaas_portal_login_1695797241811_0\",\"fcn_logintosaasportal_1695797241811_0\",\"fcn_campaign_1695797339177_0\",\"fcn_sendmessagefromcampaignscheduleoption_1695797339177_0\",\"fcn_entercampaignnameandselectsenderidcampaign_1695797339177_1\",\"fcn_uploadacsvfiletoexecuteacampaigncampaign_1695797339177_1\",\"fcn_isfileuploaded_1695797339177_1\",\"fcn_selectphonefieldcampaign_1695797339177_1\",\"fcn_enterthemessageforcampaign_1695797339177_0\",\"fcn_scheduleacampaign_1695797339177_0\",\"fcn_smshistoryvalidationforcampaign_1695797339177_1\",\"fcn_selectfilefromdropdown_1695797339177_1\",\"fcn_selectphonefieldcampaign_1695797339177_1\",\"fcn_enterthemessageforcampaign_1695797339177_0\",\"fcn_scheduleacampaign_1695797339177_0\",\"fcn_smshistoryvalidationforcampaign_1695797339177_1\"]": {
+        "pathTags": "Campaign",
+        "pathDependsOn": "{}"
+      },
+      "[\"fcn_createsaas_portal_login_1695797241811_0\",\"fcn_logintosaasportal_1695797241811_0\",\"fcn_campaign_1695797339177_0\",\"fcn_sendmessagefromcampaignshootoptionwithtemplatesms_1695797339177_0\",\"fcn_entercampaignnameandselectsenderidcampaign_1695797339177_0\",\"fcn_selectsmschannelandsenderid_0\",\"fcn_uploadacsvfiletoexecuteacampaigncampaign_1695797339177_0\",\"fcn_isfileuploaded_1695797339177_0\",\"fcn_selectphonefieldcampaign_1695797339177_0\",\"fcn_selcetthetemplateforcampaign_1695797339177_0\",\"fcn_excuteacampaignnow_1695797339177_0\",\"fcn_smshistoryvalidationforcampaign_1695797339177_0\",\"fcn_selectfilefromdropdown_1695797339177_0\",\"fcn_selcetthetemplateforcampaign_1695797339177_0\",\"fcn_excuteacampaignnow_1695797339177_0\",\"fcn_smshistoryvalidationforcampaign_1695797339177_0\"]": {
+        "pathTags": "Campaign",
+        "pathDependsOn": "{}"
+      },
+      "[\"fcn_createsaas_portal_login_1695797241811_0\",\"fcn_logintobeconversive_1707639174700_0\",\"fcn_campaign_1695797339177_0\",\"fcn_sendmessagefromcampaignscheduleoption_1695797339177_0\",\"fcn_entercampaignnameandselectsenderidcampaign_1695797339177_1\",\"fcn_selectsmschannelandsenderidcampaign_1698819387253_0\",\"fcn_uploadacsvfiletoexecuteacampaigncampaign_1695797339177_1\",\"fcn_isfileuploaded_1695797339177_1\",\"fcn_selectphonefieldcampaign_1695797339177_1\",\"fcn_enterthemessageforcampaign_1695797339177_0\",\"fcn_scheduleacampaign_1695797339177_0\",\"fcn_smshistoryvalidationforcampaign_1695797339177_1\",\"fcn_selectfilefromdropdown_1695797339177_1\",\"fcn_selectphonefieldcampaign_1695797339177_1\",\"fcn_enterthemessageforcampaign_1695797339177_0\",\"fcn_scheduleacampaign_1695797339177_0\",\"fcn_smshistoryvalidationforcampaign_1695797339177_1\"]": {
+        "pathName": "Path 14",
+        "dataSetName": "Hubspot Campaign All Type.csv",
+        "pathDependsOn": "{}"
+      },
+      "[\"fcn_createsaas_portal_login_1695797241811_0\",\"fcn_logintobeconversive_1707639174700_0\",\"fcn_campaign_1695797339177_0\",\"fcn_sendmessagefromcampaignscheduleoption_1695797339177_0\",\"fcn_entercampaignnameandselectsenderidcampaign_1695797339177_1\",\"fcn_selectsmschannelandsenderidcampaign_1698819387253_0\",\"fcn_uploadacsvfiletoexecuteacampaigncampaign_1695797339177_1\",\"fcn_isfileuploaded_1695797339177_1\",\"fcn_selectphonefieldcampaign_1695797339177_1\",\"fcn_enterthemessageforcampaign_1695797339177_0\",\"fcn_scheduleafuturecampaign_0\",\"fcn_smshistoryvalidationforcampaign_1695797339177_1\",\"fcn_selectfilefromdropdown_1695797339177_1\",\"fcn_selectphonefieldcampaign_1695797339177_1\",\"fcn_enterthemessageforcampaign_1695797339177_0\",\"fcn_scheduleafuturecampaign_0\",\"fcn_smshistoryvalidationforcampaign_1695797339177_1\"]": {
+        "pathName": "Path 15",
+        "dataSetName": "Hubspot Campaign All Type.csv",
+        "pathDependsOn": "{}"
+      },
+      "[\"fcn_createsaas_portal_login_1695797241811_0\",\"fcn_logintosaasportal_1695797241811_0\",\"fcn_campaign_1695797339177_0\",\"fcn_sendmessagefromcampaignscheduleinbussinesshourstemplatesms_0\",\"fcn_addbusinesshours_1695798719845_0\",\"fcn_entercampaignnameandselectsenderidcampaign_1695798719845_0\",\"fcn_selectsmschannelandsenderidcampaign_1695800000293_0\",\"fcn_uploadacsvfiletoexecuteacampaigncampaign_1695798719845_0\",\"fcn_isfileuploaded_1695798719845_0\",\"fcn_selectphonefieldcampaign_1695798719845_0\",\"fcn_selecttemplateforcampaign_1695798719845_0\",\"fcn_shootacampaign_1695798719845_0\",\"fcn_selectfilefromdropdown_1695798719845_0\",\"fcn_selectphonefieldcampaign_1695798719845_0\",\"fcn_selecttemplateforcampaign_1695798719845_0\",\"fcn_shootacampaign_1695798719845_0\"]": {
+        "pathTags": "Campaign",
+        "pathDependsOn": "{}"
+      },
+      "[\"fcn_createsaas_portal_login_1695797241811_0\",\"fcn_logintosaasportal_1695797241811_0\",\"fcn_campaign_1695797339177_0\",\"fcn_sendmessagefromcampaignscheduleoptionnontemplatesms_1695797339177_0\",\"fcn_entercampaignnameandselectsenderidcampaign_1695797339177_3\",\"fcn_uploadacsvfiletoexecuteacampaigncampaign_1695797339177_3\",\"fcn_isfileuploaded_1695797339177_3\",\"fcn_selectphonefieldcampaign_1695797339177_3\",\"fcn_enterthemessageforcampaign_1695797339177_2\",\"fcn_scheduleacampaign_1695797339177_1\",\"fcn_assertthemessageforcampaignexecution_1695797339177_3\",\"fcn_smshistoryvalidationforcampaign_1695797339177_3\",\"fcn_selectfilefromdropdown_1695797339177_3\",\"fcn_selectphonefieldcampaign_1695797339177_3\",\"fcn_enterthemessageforcampaign_1695797339177_2\",\"fcn_scheduleacampaign_1695797339177_1\",\"fcn_assertthemessageforcampaignexecution_1695797339177_3\",\"fcn_smshistoryvalidationforcampaign_1695797339177_3\"]": {
+        "pathTags": "Campaign",
+        "pathDependsOn": "{}"
+      },
+      "[\"fcn_createsaas_portal_login_1695797241811_0\",\"fcn_logintosaasportal_1695797241811_0\",\"fcn_campaign_1695797339177_0\",\"fcn_sendmessagefromcampaignshootoptionnontemplatesms_1695797339177_0\",\"fcn_entercampaignnameandselectsenderidcampaign_1695797339177_2\",\"fcn_selectsmschannelandsenderidcampaign_1695799952278_0\",\"fcn_uploadacsvfiletoexecuteacampaigncampaign_1695797339177_2\",\"fcn_isfileuploaded_1695797339177_2\",\"fcn_selectphonefieldcampaign_1695797339177_2\",\"fcn_enterthemessageforcampaign_1695797339177_1\",\"fcn_excuteacampaignnow_1695797339177_1\",\"fcn_smshistoryvalidationforcampaign_1695797339177_2\",\"fcn_selectfilefromdropdown_1695797339177_2\",\"fcn_selectphonefieldcampaign_1695797339177_2\",\"fcn_enterthemessageforcampaign_1695797339177_1\",\"fcn_excuteacampaignnow_1695797339177_1\",\"fcn_smshistoryvalidationforcampaign_1695797339177_2\"]": {
+        "pathTags": "Campaign",
+        "pathDependsOn": "{}"
+      },
+      "[\"fcn_createsaas_portal_login_1695797241811_0\",\"fcn_logintosaasportal_1695797241811_0\",\"fcn_campaign_1695797339177_0\",\"fcn_sendmessagefromcampaignscheduleoptioninbusinesshourstemplatewhatsapp_0\",\"fcn_addbusinesshours_1695798866053_0\",\"fcn_entercampaignnameandselectsenderidcampaign_1695798866053_0\",\"fcn_selectwhatsappchannelandsenderidcampaign_1695800025844_0\",\"fcn_uploadacsvfiletoexecuteacampaigncampaign_1695798866053_0\",\"fcn_isfileuploaded_1695798866053_0\",\"fcn_selectphonefieldcampaign_1695798866053_0\",\"fcn_selecttemplateforcampaign_1695798866053_0\",\"fcn_scheduleacampaign_1695798866053_0\",\"fcn_selectfilefromdropdown_1695798866053_0\",\"fcn_selectphonefieldcampaign_1695798866053_0\",\"fcn_selecttemplateforcampaign_1695798866053_0\",\"fcn_scheduleacampaign_1695798866053_0\"]": {
+        "pathTags": "Campaign",
+        "pathDependsOn": "{}"
+      },
+      "[\"fcn_createsaas_portal_login_1695797241811_0\",\"fcn_logintosaasportal_1695797241811_0\",\"fcn_campaign_1695797339177_0\",\"fcn_sendmessagefromcampaignshootoptiontemplatewhatsapp_0\",\"fcn_entercampaignnameandselectsenderidcampaign_1695798878281_0\",\"fcn_selectwhatsappchannelandsenderidcampaign_1695800014878_0\",\"fcn_uploadacsvfiletoexecuteacampaigncampaign_1695798878281_0\",\"fcn_isfileuploaded_1695798878281_0\",\"fcn_selectphonefieldcampaign_1695798878281_0\",\"fcn_selecttemplateforcampaign_1695798878281_0\",\"fcn_scheduleacampaign_1695798878281_0\",\"fcn_selectfilefromdropdown_1695798878281_0\",\"fcn_selectphonefieldcampaign_1695798878281_0\",\"fcn_selecttemplateforcampaign_1695798878281_0\",\"fcn_scheduleacampaign_1695798878281_0\"]": {
+        "pathTags": "Campaign",
+        "pathDependsOn": "{}"
+      },
+      "[\"fcn_createsaas_portal_login_1695797241811_0\",\"fcn_logintosaasportal_1695797241811_0\",\"fcn_campaign_1695797339177_0\",\"fcn_sendmessagefromcampaignshootoptioninbusinesshourstemplatenawhatsapp_0\",\"fcn_addbusinesshours_1695798858375_0\",\"fcn_entercampaignnameandselectsenderidcampaign_1695798858375_0\",\"fcn_selectwhatsappchannelandsenderidcampaign_1695800032500_0\",\"fcn_uploadacsvfiletoexecuteacampaigncampaign_1695798858375_0\",\"fcn_isfileuploaded_1695798858375_0\",\"fcn_selectphonefieldcampaign_1695798858375_0\",\"fcn_selecttemplateforcampaign_1695798858375_0\",\"fcn_scheduleacampaign_1695798858375_0\",\"fcn_selectfilefromdropdown_1695798858375_0\",\"fcn_selectphonefieldcampaign_1695798858375_0\",\"fcn_selecttemplateforcampaign_1695798858375_0\",\"fcn_scheduleacampaign_1695798858375_0\"]": {
+        "pathTags": "Campaign",
+        "pathDependsOn": "{}"
+      },
+      "[\"fcn_createsaas_portal_login_1695797241811_0\",\"fcn_logintosaasportal_1695797241811_0\",\"fcn_campaign_1695797339177_0\",\"fcn_sendmessagefromcampaignshootoptiontempaltemms_1695797339177_0\",\"fcn_entercampaignnameandselectsenderidcampaign_1695797339177_4\",\"fcn_selectsmschannelandsenderidcampaign_1695799960148_0\",\"fcn_uploadacsvfiletoexecuteacampaigncampaign_1695797339177_4\",\"fcn_isfileuploaded_1695797339177_4\",\"fcn_selectphonefieldcampaign_1695797339177_4\",\"fcn_selectthetempalteofmmstype_1695797339177_0\",\"fcn_excuteacampaignnow_1695797339177_2\",\"fcn_smshistoryvalidationforcampaign_1695797339177_4\",\"fcn_selectfilefromdropdown_1695797339177_4\",\"fcn_selectphonefieldcampaign_1695797339177_4\",\"fcn_selectthetempalteofmmstype_1695797339177_0\",\"fcn_excuteacampaignnow_1695797339177_2\",\"fcn_smshistoryvalidationforcampaign_1695797339177_4\"]": {
+        "pathTags": "Campaign",
+        "pathDependsOn": "{}"
+      },
+      "[\"fcn_createsaas_portal_login_1695797241811_0\",\"fcn_logintobeconversive_1707639174700_0\",\"fcn_campaign_1695797339177_0\",\"fcn_sendmessagefromcampaignshootoptionwithtemplatesms_1695797339177_0\",\"fcn_entercampaignnameandselectsenderidcampaign_1695797339177_0\",\"fcn_selectsmschannelandsenderid_0\",\"fcn_uploadacsvfiletoexecuteacampaigncampaign_1695797339177_0\",\"fcn_isfileuploaded_1695797339177_0\",\"fcn_selectphonefieldcampaign_1695797339177_0\",\"fcn_selcetthetemplateforcampaign_1695797339177_0\",\"fcn_excuteacampaignnow_1695797339177_0\",\"fcn_smshistoryvalidationforcampaign_1695797339177_0\",\"fcn_checkthecontactlistcampaign_3\",\"fcn_selectfilefromdropdown_1695797339177_0\",\"fcn_selectphonefieldcampaign_1695797339177_0\",\"fcn_selcetthetemplateforcampaign_1695797339177_0\",\"fcn_excuteacampaignnow_1695797339177_0\",\"fcn_smshistoryvalidationforcampaign_1695797339177_0\",\"fcn_checkthecontactlistcampaign_3\"]": {
+        "pathName": "Path 12",
+        "dataSetName": "Hubspot Campaign All Type.csv",
+        "pathDependsOn": "{}"
+      },
+      "[\"fcn_createsaas_portal_login_1695797241811_0\",\"fcn_logintobeconversive_1707639174700_0\",\"fcn_campaign_1695797339177_0\",\"fcn_sendmessagefromcampaignscheduleoptionnontemplatesms_1695797339177_0\",\"fcn_entercampaignnameandselectsenderidcampaign_1695797339177_3\",\"fcn_selectsmschannelandsenderidcampaign_1698819516438_0\",\"fcn_uploadacsvfiletoexecuteacampaigncampaign_1695797339177_3\",\"fcn_isfileuploaded_1695797339177_3\",\"fcn_selectphonefieldcampaign_1695797339177_3\",\"fcn_enterthemessageforcampaign_1695797339177_2\",\"fcn_scheduleacampaign_1695797339177_1\",\"fcn_assertthemessageforcampaignexecution_1695797339177_3\",\"fcn_smshistoryvalidationforcampaign_1695797339177_3\",\"fcn_checkthecontactlistcampaign_5\",\"fcn_selectfilefromdropdown_1695797339177_3\",\"fcn_selectphonefieldcampaign_1695797339177_3\",\"fcn_enterthemessageforcampaign_1695797339177_2\",\"fcn_scheduleacampaign_1695797339177_1\",\"fcn_assertthemessageforcampaignexecution_1695797339177_3\",\"fcn_smshistoryvalidationforcampaign_1695797339177_3\",\"fcn_checkthecontactlistcampaign_5\"]": {
+        "pathName": "Path 18",
+        "dataSetName": "Hubspot Campaign All Type.csv",
+        "pathDependsOn": "{}"
+      }
+    },
+    "isPrimary": false,
+    "positions": {
+      "fcn_start_0": {
+        "top": 126.92709350585938,
+        "left": 1180.9375
+      },
+      "fcn_createsaas_portal_login_1695797241811_0": {
+        "top": 187.96876525878906,
+        "left": 1113.90625
+      },
+      "fcn_logintobeconversive_1707639174700_0": {
+        "top": 271.9618225097656,
+        "left": 1141.875
+      },
+      "fcn_prerequsitsforcampaignexecution_0": {
+        "top": 385.1215534210205,
+        "left": 198.90625
+      },
+      "fcn_entercampaignnamecampaign_1695973876471_0": {
+        "top": 450.12155532836914,
+        "left": 198.90625
+      },
+      "fcn_selectsmschannelandsenderidcampaign_1695973876471_0": {
+        "top": 532.2743377685547,
+        "left": 198.90625
+      },
+      "fcn_uploadacsvfiletoexecuteacampaigncampaign_1695973876471_0": {
+        "top": 608.2812805175781,
+        "left": 201.875
+      },
+      "fcn_isfileuploaded_1695974225443_0": {
+        "top": 687.4306030273438,
+        "left": 201.875
+      },
+      "fcn_selectfilefromdropdown_1695974225443_0": {
+        "top": 801.2847595214844,
+        "left": -47.96875
+      },
+      "fcn_selectphonefieldcampaign_1695974225443_0": {
+        "top": 733.2812805175781,
+        "left": 371.92724609375
+      },
+      "fcn_navigatetotemplatecreation_1695974390738_0": {
+        "top": 880.43408203125,
+        "left": 166.875
+      },
+      "fcn_enterdetailstocreatetempaltetemplate_1695974390738_0": {
+        "top": 934.4271240234375,
+        "left": 171.875
+      },
+      "fcn_tempaltewithsmschanneltypecamaigntemplate_1695974390738_0": {
+        "top": 1011.4236450195312,
+        "left": 10.9375
+      },
+      "fcn_validatedtemplateiscreatedtemplate_1695974390738_0": {
+        "top": 1183.5764770507812,
+        "left": 183.90625
+      },
+      "fcn_templatewithwhatsappchanneltypecampaigntemplate_0": {
+        "top": 1008.4375610351562,
+        "left": 395.0
+      },
+      "fcn_campaign_1695797339177_0": {
+        "top": 332.13543701171875,
+        "left": 1682.8994140625
+      },
+      "fcn_sendmessagefromcampaignshootoptionwithtemplatesms_1695797339177_0": {
+        "top": 397.13544368743896,
+        "left": 706.875
+      },
+      "fcn_entercampaignnameandselectsenderidcampaign_1695797339177_0": {
+        "top": 491.12850189208984,
+        "left": 706.875
+      },
+      "fcn_selectsmschannelandsenderid_0": {
+        "top": 579.2708740234375,
+        "left": 706.875
+      },
+      "fcn_uploadacsvfiletoexecuteacampaigncampaign_1695797339177_0": {
+        "top": 654.2708740234375,
+        "left": 709.84375
+      },
+      "fcn_isfileuploaded_1695797339177_0": {
+        "top": 748.2812805175781,
+        "left": 705.9375
+      },
+      "fcn_selectfilefromdropdown_1695797339177_0": {
+        "top": 795.12158203125,
+        "left": 548.90625
+      },
+      "fcn_selectphonefieldcampaign_1695797339177_0": {
+        "top": 799.1319885253906,
+        "left": 885.9375
+      },
+      "fcn_selcetthetemplateforcampaign_1695797339177_0": {
+        "top": 848.1250610351562,
+        "left": 705.9375
+      },
+      "fcn_excuteacampaignnow_1695797339177_0": {
+        "top": 913.1250610351562,
+        "left": 707.8818359375
+      },
+      "fcn_smshistoryvalidationforcampaign_1695797339177_0": {
+        "top": 1003.1250610351562,
+        "left": 703.90625
+      },
+      "fcn_checkthecontactlistcampaign_3": {
+        "top": 1061.7361450195312,
+        "left": 703.90625
+      },
+      "fcn_sendmessagefromcampaignscheduleoption_1695797339177_0": {
+        "top": 412.13544392585754,
+        "left": 2525.8681640625
+      },
+      "fcn_entercampaignnameandselectsenderidcampaign_1695797339177_1": {
+        "top": 483.14239501953125,
+        "left": 2530.8681640625
+      },
+      "fcn_selectsmschannelandsenderidcampaign_1698819387253_0": {
+        "top": 533.2639236450195,
+        "left": 2843.87158203125
+      },
+      "fcn_uploadacsvfiletoexecuteacampaigncampaign_1695797339177_1": {
+        "top": 559.2882232666016,
+        "left": 2528.87158203125
+      },
+      "fcn_isfileuploaded_1695797339177_1": {
+        "top": 636.2847595214844,
+        "left": 2521.875
+      },
+      "fcn_selectfilefromdropdown_1695797339177_1": {
+        "top": 792.1181030273438,
+        "left": 2748.87158203125
+      },
+      "fcn_selectphonefieldcampaign_1695797339177_1": {
+        "top": 786.1458740234375,
+        "left": 2320.8681640625
+      },
+      "fcn_enterthemessageforcampaign_1695797339177_0": {
+        "top": 872.1354675292969,
+        "left": 2533.87158203125
+      },
+      "fcn_scheduleafuturecampaign_0": {
+        "top": 940.138916015625,
+        "left": 2523.8369140625
+      },
+      "fcn_smshistoryvalidationforcampaign_1695797339177_1": {
+        "top": 1016.1285400390625,
+        "left": 2531.875
+      },
+      "fcn_sendmessagefromcampaignshootoptionnontemplatesms_1695797339177_0": {
+        "top": 397.13544368743896,
+        "left": 1348.90625
+      },
+      "fcn_entercampaignnameandselectsenderidcampaign_1695797339177_2": {
+        "top": 480.1215591430664,
+        "left": 1348.90625
+      },
+      "fcn_selectsmschannelandsenderidcampaign_1695799952278_0": {
+        "top": 559.2708740234375,
+        "left": 1348.90625
+      },
+      "fcn_uploadacsvfiletoexecuteacampaigncampaign_1695797339177_2": {
+        "top": 635.4340667724609,
+        "left": 1348.90625
+      },
+      "fcn_isfileuploaded_1695797339177_2": {
+        "top": 712.4306030273438,
+        "left": 1348.90625
+      },
+      "fcn_selectfilefromdropdown_1695797339177_2": {
+        "top": 796.2847595214844,
+        "left": 1187.93408203125
+      },
+      "fcn_selectphonefieldcampaign_1695797339177_2": {
+        "top": 827.2743530273438,
+        "left": 1446.875
+      },
+      "fcn_enterthemessageforcampaign_1695797339177_1": {
+        "top": 898.2813110351562,
+        "left": 1346.875
+      },
+      "fcn_excuteacampaignnow_1695797339177_1": {
+        "top": 959.2708740234375,
+        "left": 1348.90625
+      },
+      "fcn_smshistoryvalidationforcampaign_1695797339177_2": {
+        "top": 1023.2986450195312,
+        "left": 1344.9306640625
+      },
+      "fcn_checkthecontactlistcampaign_0": {
+        "top": 1081.9097900390625,
+        "left": 1344.9306640625
+      },
+      "fcn_sendmessagefromcampaignscheduleoptionnontemplatesms_1695797339177_0": {
+        "top": 418.14238834381104,
+        "left": 3171.875
+      },
+      "fcn_entercampaignnameandselectsenderidcampaign_1695797339177_3": {
+        "top": 491.14586639404297,
+        "left": 3171.875
+      },
+      "fcn_selectsmschannelandsenderidcampaign_1698819516438_0": {
+        "top": 566.2847595214844,
+        "left": 3449.91357421875
+      },
+      "fcn_uploadacsvfiletoexecuteacampaigncampaign_1695797339177_3": {
+        "top": 566.2847595214844,
+        "left": 3169.89599609375
+      },
+      "fcn_isfileuploaded_1695797339177_3": {
+        "top": 643.2986450195312,
+        "left": 3162.8994140625
+      },
+      "fcn_selectfilefromdropdown_1695797339177_3": {
+        "top": 840.1389465332031,
+        "left": 3462.88232421875
+      },
+      "fcn_selectphonefieldcampaign_1695797339177_3": {
+        "top": 839.1319885253906,
+        "left": 2930.90283203125
+      },
+      "fcn_enterthemessageforcampaign_1695797339177_2": {
+        "top": 783.1423950195312,
+        "left": 3191.875
+      },
+      "fcn_scheduleafuturecampaign_1721107177894_0": {
+        "top": 885.12158203125,
+        "left": 3175.8681640625
+      },
+      "fcn_assertthemessageforcampaignexecution_1695797339177_3": {
+        "top": 949.1493530273438,
+        "left": 3170.90283203125
+      },
+      "fcn_smshistoryvalidationforcampaign_1695797339177_3": {
+        "top": 1026.1458740234375,
+        "left": 3173.90625
+      },
+      "fcn_checkthecontactlistcampaign_5": {
+        "top": 1084.7396240234375,
+        "left": 3173.90625
+      },
+      "fcn_sendmessagefromcampaignshootoptiontempaltemms_1695797339177_0": {
+        "top": 421.1284999847412,
+        "left": 7600.989990234375
+      },
+      "fcn_entercampaignnameandselectsenderidcampaign_1695797339177_4": {
+        "top": 501.12850189208984,
+        "left": 7593.993469238281
+      },
+      "fcn_selectsmschannelandsenderidcampaign_1695799960148_0": {
+        "top": 580.2778167724609,
+        "left": 7593.993469238281
+      },
+      "fcn_uploadacsvfiletoexecuteacampaigncampaign_1695797339177_4": {
+        "top": 656.4236450195312,
+        "left": 7593.993469238281
+      },
+      "fcn_isfileuploaded_1695797339177_4": {
+        "top": 733.4375305175781,
+        "left": 7593.993469238281
+      },
+      "fcn_selectfilefromdropdown_1695797339177_4": {
+        "top": 852.2743530273438,
+        "left": 7800.989990234375
+      },
+      "fcn_selectphonefieldcampaign_1695797339177_4": {
+        "top": 847.2743530273438,
+        "left": 7533.993469238281
+      },
+      "fcn_selectthetempalteofmmstype_1695797339177_0": {
+        "top": 914.2708740234375,
+        "left": 7593.993469238281
+      },
+      "fcn_excuteacampaignnow_1695797339177_2": {
+        "top": 980.27783203125,
+        "left": 7593.993469238281
+      },
+      "fcn_smshistoryvalidationforcampaign_1695797339177_4": {
+        "top": 1039.2882690429688,
+        "left": 7596.9969482421875
+      },
+      "fcn_checkthecontactlistcampaign_4": {
+        "top": 1097.8993530273438,
+        "left": 7596.9969482421875
+      },
+      "fcn_sendmessagefromcampaignscheduleoptiontemplatemms_1695797339177_0": {
+        "top": 422.1354446411133,
+        "left": 6258.958740234375
+      },
+      "fcn_entercampaignnameandselectsenderidcampaign_1695797339177_5": {
+        "top": 509.13197326660156,
+        "left": 6254.965576171875
+      },
+      "fcn_selectsmschannelandsenderidcampaign_1695799964695_0": {
+        "top": 588.2812805175781,
+        "left": 6254.965576171875
+      },
+      "fcn_uploadacsvfiletoexecuteacampaigncampaign_1695797339177_5": {
+        "top": 663.4375457763672,
+        "left": 6251.962158203125
+      },
+      "fcn_isfileuploaded_1695797339177_5": {
+        "top": 740.43408203125,
+        "left": 6244.965576171875
+      },
+      "fcn_selectfilefromdropdown_1695797339177_5": {
+        "top": 851.2847595214844,
+        "left": 6446.962158203125
+      },
+      "fcn_selectphonefieldcampaign_1695797339177_5": {
+        "top": 861.2847595214844,
+        "left": 6035.97265625
+      },
+      "fcn_selectthetempalteofmmstype_1695797339177_1": {
+        "top": 921.2847900390625,
+        "left": 6255.97265625
+      },
+      "fcn_scheduleafuturecampaign_1721108941749_0": {
+        "top": 991.2673950195312,
+        "left": 6263.958740234375
+      },
+      "fcn_checkthecontactlistcampaign_7": {
+        "top": 1045.885498046875,
+        "left": 6255.97265625
+      },
+      "fcn_sendmessagefromcampaignshootoptionnontemplatemms_1695797339177_0": {
+        "top": 438.14238929748535,
+        "left": 6970.989990234375
+      },
+      "fcn_entercampaignnameandselectsenderidcampaign_1695797339177_6": {
+        "top": 536.145866394043,
+        "left": 6980.989990234375
+      },
+      "fcn_selectsmschannelandsenderidcampaign_1698819561298_0": {
+        "top": 612.2917022705078,
+        "left": 7258.993408203125
+      },
+      "fcn_uploadacsvfiletoexecuteacampaigncampaign_1695797339177_6": {
+        "top": 612.2917022705078,
+        "left": 6978.993408203125
+      },
+      "fcn_isfileuploaded_1695797339177_6": {
+        "top": 689.2882385253906,
+        "left": 6971.9969482421875
+      },
+      "fcn_selectfilefromdropdown_1695797339177_6": {
+        "top": 800.1389465332031,
+        "left": 7173.993408203125
+      },
+      "fcn_selectphonefieldcampaign_1695797339177_6": {
+        "top": 810.1389465332031,
+        "left": 6762.9864501953125
+      },
+      "fcn_selectthetempalteofmmstype_1695797339177_2": {
+        "top": 870.1389465332031,
+        "left": 6982.9864501953125
+      },
+      "fcn_scheduleacampaign_1695797339177_3": {
+        "top": 936.1458740234375,
+        "left": 6981.9969482421875
+      },
+      "fcn_smshistoryvalidationforcampaign_0": {
+        "top": 1020.3472900390625,
+        "left": 6995.0003662109375
+      },
+      "fcn_sendmessagefromcampaignshootoptionnontemplatemms_1695797339177_1": {
+        "top": 428.1250286102295,
+        "left": 4751.962158203125
+      },
+      "fcn_entercampaignnameandselectsenderidcampaign_1695797339177_7": {
+        "top": 514.1319732666016,
+        "left": 4749.9482421875
+      },
+      "fcn_selectsmschannelandsenderidcampaign_1695799969825_0": {
+        "top": 593.2812805175781,
+        "left": 4749.9482421875
+      },
+      "fcn_uploadacsvfiletoexecuteacampaigncampaign_1695797339177_7": {
+        "top": 668.4375305175781,
+        "left": 4746.962158203125
+      },
+      "fcn_isfileuploaded_1695797339177_7": {
+        "top": 745.43408203125,
+        "left": 4739.9482421875
+      },
+      "fcn_selectfilefromdropdown_1695797339177_7": {
+        "top": 856.2847595214844,
+        "left": 4941.962158203125
+      },
+      "fcn_selectphonefieldcampaign_1695797339177_7": {
+        "top": 866.2847595214844,
+        "left": 4529.9482421875
+      },
+      "fcn_enterthemessageandselectmmsmediacampaign_1695797339177_0": {
+        "top": 920.27783203125,
+        "left": 4748.95849609375
+      },
+      "fcn_excuteacampaignnow_1695797339177_3": {
+        "top": 991.2847900390625,
+        "left": 4749.9482421875
+      },
+      "fcn_smshistoryvalidationforcampaign_1695797339177_7": {
+        "top": 1051.2847900390625,
+        "left": 4749.9482421875
+      },
+      "fcn_checkthecontactlistcampaign_2": {
+        "top": 1109.8958740234375,
+        "left": 4749.9482421875
+      },
+      "fcn_sendmessagefromcampaignscheduleoptionnontemplatemms_1695797339177_0": {
+        "top": 421.1284999847412,
+        "left": 5523.958740234375
+      },
+      "fcn_entercampaignnameandselectsenderidcampaign_1695797339177_8": {
+        "top": 507.1354522705078,
+        "left": 5513.958740234375
+      },
+      "fcn_selectsmschannelandsenderidcampaign_1695799974515_0": {
+        "top": 586.2847595214844,
+        "left": 5513.958740234375
+      },
+      "fcn_uploadacsvfiletoexecuteacampaigncampaign_1695797339177_8": {
+        "top": 661.4236450195312,
+        "left": 5510.955078125
+      },
+      "fcn_isfileuploaded_1695797339177_8": {
+        "top": 738.4375305175781,
+        "left": 5503.958740234375
+      },
+      "fcn_selectfilefromdropdown_1695797339177_8": {
+        "top": 849.2708740234375,
+        "left": 5705.955078125
+      },
+      "fcn_selectphonefieldcampaign_1695797339177_8": {
+        "top": 808.2813110351562,
+        "left": 5295.955078125
+      },
+      "fcn_enterthemessageandselectmmsmediacampaign_1695797339177_1": {
+        "top": 913.2813110351562,
+        "left": 5522.95166015625
+      },
+      "fcn_scheduleafuturecampaign_1721108562013_0": {
+        "top": 992.2570190429688,
+        "left": 5525.955078125
+      },
+      "fcn_checkthecontactlistcampaign_6": {
+        "top": 1042.8820190429688,
+        "left": 5513.958740234375
+      },
+      "fcn_sendmessagefromcampaignshootinbussinesshourstemplatesms_1695797339177_0": {
+        "top": 404.13197135925293,
+        "left": 1967.8994140625
+      },
+      "fcn_addinsidebusinesshourforindiacountry_1720165245264_0": {
+        "top": 480.2604446411133,
+        "left": 1965.81591796875
+      },
+      "fcn_entercampaignnameandselectsenderidcampaign_1695798642422_0": {
+        "top": 548.2812805175781,
+        "left": 1963.87158203125
+      },
+      "fcn_selectsmschannelandsenderidcampaign_1695799980938_0": {
+        "top": 627.4305877685547,
+        "left": 1963.87158203125
+      },
+      "fcn_uploadacsvfiletoexecuteacampaigncampaign_1695798642422_0": {
+        "top": 714.5833740234375,
+        "left": 1963.87158203125
+      },
+      "fcn_isfileuploaded_1695798642422_0": {
+        "top": 786.5798950195312,
+        "left": 1963.87158203125
+      },
+      "fcn_selectfilefromdropdown_1695798642422_0": {
+        "top": 856.4236450195312,
+        "left": 1845.8681640625
+      },
+      "fcn_selectphonefieldcampaign_1695798642422_0": {
+        "top": 854.4271240234375,
+        "left": 2110.8681640625
+      },
+      "fcn_selecttemplateforcampaign_1695798642422_0": {
+        "top": 935.43408203125,
+        "left": 1963.87158203125
+      },
+      "fcn_sendacampaign_0": {
+        "top": 1005.43408203125,
+        "left": 1962.84716796875
+      },
+      "fcn_smshistoryvalidationforcampaign_1695798642422_0": {
+        "top": 1059.4445190429688,
+        "left": 1964.87841796875
+      },
+      "fcn_checkthecontactlistcampaign_1": {
+        "top": 1118.0382690429688,
+        "left": 1964.87841796875
+      },
+      "fcn_sendmessagefromcampaignscheduleinbussinesshourstemplatesms_0": {
+        "top": 425.12155532836914,
+        "left": 4041.9619140625
+      },
+      "fcn_addinsidebusinesshourforindiacountry_1720683284247_0": {
+        "top": 503.1250305175781,
+        "left": 4038.923828125
+      },
+      "fcn_entercampaignnameandselectsenderidcampaign_1695798719845_0": {
+        "top": 566.2847595214844,
+        "left": 4039.9306640625
+      },
+      "fcn_selectsmschannelandsenderidcampaign_1695800000293_0": {
+        "top": 645.4340667724609,
+        "left": 4039.9306640625
+      },
+      "fcn_uploadacsvfiletoexecuteacampaigncampaign_1695798719845_0": {
+        "top": 732.5868530273438,
+        "left": 4039.9306640625
+      },
+      "fcn_isfileuploaded_1695798719845_0": {
+        "top": 804.5833740234375,
+        "left": 4039.9306640625
+      },
+      "fcn_selectfilefromdropdown_1695798719845_0": {
+        "top": 874.4271240234375,
+        "left": 3921.9619140625
+      },
+      "fcn_selectphonefieldcampaign_1695798719845_0": {
+        "top": 872.4306030273438,
+        "left": 4186.9619140625
+      },
+      "fcn_selecttemplateforcampaign_1695798719845_0": {
+        "top": 953.4375610351562,
+        "left": 4039.9306640625
+      },
+      "fcn_scheduleafuturecampaign_1721108154466_0": {
+        "top": 1031.4236450195312,
+        "left": 4060.92041015625
+      },
+      "fcn_sendmessagefromcampaignshootoptioninbusinesshourstemplatenawhatsapp_0": {
+        "top": 406.1284992694855,
+        "left": 8185.000427246094
+      },
+      "fcn_addinsidebusinesshourforindiacountry_1720701156969_0": {
+        "top": 497.2743377685547,
+        "left": 8184.983062744141
+      },
+      "fcn_entercampaignnameandselectsenderidcampaign_1695798858375_0": {
+        "top": 571.2847595214844,
+        "left": 8185.989990234375
+      },
+      "fcn_selectwhatsappchannelandsenderidcampaign_1695800032500_0": {
+        "top": 650.4340667724609,
+        "left": 8185.989990234375
+      },
+      "fcn_uploadacsvfiletoexecuteacampaigncampaign_1695798858375_0": {
+        "top": 737.5868530273438,
+        "left": 8185.989990234375
+      },
+      "fcn_isfileuploaded_1695798858375_0": {
+        "top": 809.5833740234375,
+        "left": 8185.989990234375
+      },
+      "fcn_selectfilefromdropdown_1695798858375_0": {
+        "top": 879.4444885253906,
+        "left": 8067.986511230469
+      },
+      "fcn_selectphonefieldcampaign_1695798858375_0": {
+        "top": 877.4479675292969,
+        "left": 8332.986541748047
+      },
+      "fcn_selecttemplateforcampaign_1695798858375_0": {
+        "top": 958.4375610351562,
+        "left": 8185.989990234375
+      },
+      "fcn_scheduleafuturecampaign_1721109092565_0": {
+        "top": 1042.4306030273438,
+        "left": 8201.979583740234
+      },
+      "fcn_sendmessagefromcampaignscheduleoptioninbusinesshourstemplatewhatsapp_0": {
+        "top": 383.12502670288086,
+        "left": 9350.990051269531
+      },
+      "fcn_addinsidebusinesshourforindiacountry_1720701148144_0": {
+        "top": 470.26044845581055,
+        "left": 9363.976196289062
+      },
+      "fcn_entercampaignnameandselectsenderidcampaign_1695798866053_0": {
+        "top": 534.270866394043,
+        "left": 9350.990051269531
+      },
+      "fcn_selectwhatsappchannelandsenderidcampaign_1695800025844_0": {
+        "top": 613.4375305175781,
+        "left": 9350.990051269531
+      },
+      "fcn_uploadacsvfiletoexecuteacampaigncampaign_1695798866053_0": {
+        "top": 700.59033203125,
+        "left": 9350.990051269531
+      },
+      "fcn_isfileuploaded_1695798866053_0": {
+        "top": 772.5868530273438,
+        "left": 9350.990051269531
+      },
+      "fcn_selectfilefromdropdown_1695798866053_0": {
+        "top": 842.4479675292969,
+        "left": 9232.986572265625
+      },
+      "fcn_selectphonefieldcampaign_1695798866053_0": {
+        "top": 840.43408203125,
+        "left": 9497.986572265625
+      },
+      "fcn_selecttemplateforcampaign_1695798866053_0": {
+        "top": 921.4410400390625,
+        "left": 9350.990051269531
+      },
+      "fcn_scheduleafuturecampaign_1721109559219_0": {
+        "top": 1015.43408203125,
+        "left": 9369.983093261719
+      },
+      "fcn_sendmessagefromcampaignshootoptiontemplatewhatsapp_0": {
+        "top": 388.12502670288086,
+        "left": 10002.986572265625
+      },
+      "fcn_entercampaignnameandselectsenderidcampaign_1695798878281_0": {
+        "top": 461.12850189208984,
+        "left": 10002.986572265625
+      },
+      "fcn_selectwhatsappchannelandsenderidcampaign_1695800014878_0": {
+        "top": 540.2778167724609,
+        "left": 10002.986572265625
+      },
+      "fcn_uploadacsvforwhatsappcampaign_1": {
+        "top": 627.4132385253906,
+        "left": 9987.986572265625
+      },
+      "fcn_isfileuploaded_1695798878281_0": {
+        "top": 699.4271240234375,
+        "left": 10002.986572265625
+      },
+      "fcn_selectfilefromdropdown_1695798878281_0": {
+        "top": 769.2708740234375,
+        "left": 9885.00048828125
+      },
+      "fcn_selectphonefieldcampaign_1695798878281_0": {
+        "top": 767.2743530273438,
+        "left": 10150.00048828125
+      },
+      "fcn_selecttemplateforcampaign_1695798878281_0": {
+        "top": 848.2813110351562,
+        "left": 10002.986572265625
+      },
+      "fcn_shootacampaign_0": {
+        "top": 904.2708740234375,
+        "left": 10005.990112304688
+      },
+      "fcn_smshistoryvalidationforcampaign_1709095679511_0": {
+        "top": 963.4375610351562,
+        "left": 10003.993530273438
+      },
+      "fcn_checkthecontactlistcampaign_9": {
+        "top": 1015.0347900390625,
+        "left": 10007.986572265625
+      },
+      "fcn_sendmessagefromcampaignscheduleoptiontemplatewhatsapp_0": {
+        "top": 399.13197135925293,
+        "left": 8752.986572265625
+      },
+      "fcn_entercampaignnameandselectsenderidcampaign_1695798882847_0": {
+        "top": 489.13197326660156,
+        "left": 8747.986572265625
+      },
+      "fcn_selectwhatsappchannelandsenderidcampaign_1695800019449_0": {
+        "top": 568.2812805175781,
+        "left": 8747.986572265625
+      },
+      "fcn_uploadacsvforwhatsappcampaign_0": {
+        "top": 647.4132385253906,
+        "left": 8734.983093261719
+      },
+      "fcn_isfileuploaded_1695798882847_0": {
+        "top": 727.4306030273438,
+        "left": 8747.986572265625
+      },
+      "fcn_selectfilefromdropdown_1695798882847_0": {
+        "top": 797.2743530273438,
+        "left": 8630.000442504883
+      },
+      "fcn_selectphonefieldcampaign_1695798882847_0": {
+        "top": 795.27783203125,
+        "left": 8895.000457763672
+      },
+      "fcn_selecttemplateforcampaign_1695798882847_0": {
+        "top": 876.2847595214844,
+        "left": 8747.986572265625
+      },
+      "fcn_scheduleafuturecampaign_1721109215211_0": {
+        "top": 944.2708740234375,
+        "left": 8730.97265625
+      },
+      "fcn_checkthecontactlistcampaign_8": {
+        "top": 1001.8750610351562,
+        "left": 8747.986572265625
+      },
+      "fcn_sendmmsfromcampaignshootwithwhatsappchannel_1": {
+        "top": 377.13544273376465,
+        "left": 10601.9970703125
+      },
+      "fcn_entercampaignnamecampaign_0": {
+        "top": 449.3229446411133,
+        "left": 10601.9970703125
+      },
+      "fcn_selectwhatsappchannelandsenderidcampaign_0": {
+        "top": 514.4792022705078,
+        "left": 10601.9970703125
+      },
+      "fcn_uploadacsvforwhatsappcampaign_2": {
+        "top": 593.2292022705078,
+        "left": 10601.9970703125
+      },
+      "fcn_isfileuploaded_1709097917736_0": {
+        "top": 678.3854675292969,
+        "left": 10602.986572265625
+      },
+      "fcn_selectfilefromdropdown_1709097981867_0": {
+        "top": 733.9757385253906,
+        "left": 10431.9970703125
+      },
+      "fcn_selectawhatsapptempformmscampaign_0": {
+        "top": 794.2708740234375,
+        "left": 10620.990234375
+      },
+      "fcn_shootacampaign_1": {
+        "top": 878.2813110351562,
+        "left": 10635.00048828125
+      },
+      "fcn_smshistoryvalidationforcampaign_1709098061427_0": {
+        "top": 943.4375610351562,
+        "left": 10635.00048828125
+      },
+      "fcn_checkthecontactlistcampaign_10": {
+        "top": 1002.0313110351562,
+        "left": 10635.00048828125
+      },
+      "fcn_selectphonefieldcampaign_1709097972267_0": {
+        "top": 730.9722595214844,
+        "left": 10805.00048828125
+      },
+      "fcn_filter_0": {
+        "top": 369.1319694519043,
+        "left": 11325.00048828125
+      },
+      "fcn_openfilter_0": {
+        "top": 427.72572326660156,
+        "left": 11325.00048828125
+      },
+      "fcn_status_0": {
+        "top": 486.3368377685547,
+        "left": 11325.00048828125
+      },
+      "fcn_type_0": {
+        "top": 544.9305877685547,
+        "left": 11325.00048828125
+      },
+      "fcn_channel_0": {
+        "top": 603.9236450195312,
+        "left": 11322.986572265625
+      },
+      "fcn_customdate_0": {
+        "top": 664.9306030273438,
+        "left": 11325.00048828125
+      },
+      "fcn_apply_0": {
+        "top": 723.5243530273438,
+        "left": 11325.00048828125
+      },
+      "fcn_checkthefiltersapplied_0": {
+        "top": 782.1354675292969,
+        "left": 11325.00048828125
+      },
+      "fcn_clearfilters_0": {
+        "top": 840.7292175292969,
+        "left": 11325.00048828125
+      },
+      "fcn_deletecampaign_0": {
+        "top": 369.1319694519043,
+        "left": 11605.00048828125
+      },
+      "fcn_searchcampaign_0": {
+        "top": 369.1319694519043,
+        "left": 11885.00048828125
+      }
+    }
+  },
+  "enabled": true,
+  "parentId": ""
+}

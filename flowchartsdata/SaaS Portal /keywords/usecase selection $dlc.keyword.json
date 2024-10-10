@@ -1,0 +1,114 @@
+{
+  "modifiedOn": "2024-05-13T14:00:00.991Z",
+  "name": "usecase selection $dlc",
+  "id": "45991",
+  "type": 3,
+  "createdOn": "2024-05-10T11:14:58.909Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "usecase selection $dlc",
+    "parameters": [
+      {
+        "parameterId": "dlc_",
+        "entityTypeId": "dlc",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(\"step-title\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getOptions",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_select(\"form-select\")"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "\"sahiText\""
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$options"
+        }
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "$optionsLen \u003d $options.length-1\n//$selectOption \u003d _random($optionsLen)\n\n\n//$firstHalf \u003d $options[$selectOption].split(\u0027(\u0027)[0].trim()\n\n\n$selectOption \u003d \"BbOjPwQ (DLCB-1840)\""
+      },
+      {
+        "commented": false,
+        "action": "_setSelected",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_select(\"form-select\")"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "$selectOption"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "isRawScript": true,
+        "rawScript": "$splitString \u003d $option.split(\u0027(\u0027);\n\n$firstHalf \u003d $splitString[0].trim();\n\n_log(\"The brand name is :  \"+$firstHalf);"
+      },
+      {
+        "commented": true,
+        "action": "_setSelected",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_select(\"form-select\")"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "$option"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"2FA\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_button(\"Next\")"
+          }
+        ],
+        "stepType": "Action"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

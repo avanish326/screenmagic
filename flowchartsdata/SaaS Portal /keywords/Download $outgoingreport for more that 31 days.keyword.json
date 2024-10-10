@@ -1,0 +1,102 @@
+{
+  "modifiedOn": "2024-01-12T12:25:30.189Z",
+  "name": "Download $outgoingreport for more that 31 days",
+  "id": "14893",
+  "type": 3,
+  "createdOn": "2023-09-22T10:55:08.926Z",
+  "content": {
+    "title": "Download $outgoingreport for more that 31 days",
+    "parameters": [
+      {
+        "parameterId": "outgoingreport_",
+        "entityTypeId": "outgoingreport",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_button(\"Download Outgoing Report\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"Generate New Report\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_datebox(\"From Date\")"
+          },
+          {
+            "parameterId": "outgoingreport_",
+            "attributeId": "attr_21695380395526"
+          }
+        ],
+        "stepType": "Action",
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_datebox(\"To Date\")"
+          },
+          {
+            "parameterId": "outgoingreport_",
+            "attributeId": "attr_31695380400713"
+          }
+        ],
+        "stepType": "Action",
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_submit(\"Generate Report\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"Please select a date range of 31 days or less.\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"Please select a date range of 31 days or less.\""
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

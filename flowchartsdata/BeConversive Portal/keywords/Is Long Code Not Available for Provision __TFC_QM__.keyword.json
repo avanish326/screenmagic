@@ -1,0 +1,46 @@
+{
+  "modifiedOn": "2024-02-08T06:49:45.184Z",
+  "name": "Is Long Code Not Available for Provision ?",
+  "id": "27974",
+  "type": 3,
+  "createdOn": "2024-02-08T06:49:45.184Z",
+  "content": {
+    "title": "Is Long Code Not Available for Provision ?",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_isVisible",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(\"/Currently we have not automated/\")"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$statusSenderIDAvailable"
+        }
+      },
+      {
+        "commented": false,
+        "action": "return",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "$statusSenderIDAvailable"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "_log($statusSenderIDAvailable)"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

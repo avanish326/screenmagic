@@ -1,0 +1,352 @@
+{
+  "modifiedOn": "2024-02-16T04:47:10.468Z",
+  "name": "Start the conversation for Financial Help flow SMS $financialflownonweb $basicinfo",
+  "id": "29534",
+  "type": 3,
+  "createdOn": "2024-02-15T12:30:47.444Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Start the conversation for Financial Help flow SMS $financialflownonweb $basicinfo",
+    "parameters": [
+      {
+        "parameterId": "financialflownonweb_",
+        "entityTypeId": "financialflownonweb",
+        "suffix": ""
+      },
+      {
+        "parameterId": "basicinfo_",
+        "entityTypeId": "basicinfo",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "POST"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "$incomingSMSURLIntelli"
+          }
+        ],
+        "stepType": "REST",
+        "isRawScript": true,
+        "rawScript": "var $request_RsNsWXewVc \u003d new RESTRequest();\r\n$request_RsNsWXewVc.setURL($incomingSMSURLIntelli);\r\n$request_RsNsWXewVc.addToQueryString(\"Message\", \"wmOWYENZHMHm\");\r\n$request_RsNsWXewVc.addToQueryString(\"OriginatorAddress\", $basicinfo.source);\r\n$request_RsNsWXewVc.addToQueryString(\"DestinationAddress\", $smsSenderIDUsecases);\r\nvar $response_RsNsWXewVc \u003d $request_RsNsWXewVc.submit(\"POST\");\r\nvar responseBody \u003d JSON.parse($response_RsNsWXewVc.getBodyAsString());\r\n\t var $responseBodyObj_RsNsWXewVc \u003d $response_RsNsWXewVc.getBodyAsString();\r\n\tvar responseType \u003d $response_RsNsWXewVc.getHeader(\"Content-Type\");\r\n\tif (responseType.indexOf(\"json\")!\u003d-1) {\r\n\t\t$responseBodyObj_RsNsWXewVc \u003d JSON.parse($responseBodyObj_RsNsWXewVc);\r\n\t}\r\n\telse if (responseType.indexOf(\"xml\")!\u003d-1) {\r\n\t\t$responseBodyObj_RsNsWXewVc \u003d $responseBodyObj_RsNsWXewVc.replace(/\u003c\\xml.*?\u003e/g, \u0027\u0027).replace(/\\n/g, \u0027\u0027).replace(/\\r/g, \u0027\u0027);\r\n\t\t$responseBodyObj_RsNsWXewVc \u003d new XML(undefined);\r\n\t}\r\n\r\n\t//assertions\r\n\r\n",
+        "state": {
+          "contentType": "json",
+          "request": {
+            "method": "POST",
+            "url": "$incomingSMSURLIntelli",
+            "parameters": [
+              [
+                "Message",
+                "wmOWYENZHMHm"
+              ],
+              [
+                "OriginatorAddress",
+                "$basicinfo.source"
+              ],
+              [
+                "DestinationAddress",
+                "$smsSenderIDUsecases"
+              ]
+            ],
+            "headers": [],
+            "authType": "none",
+            "body": "",
+            "bodyParams": [],
+            "isParametrizedBody": false,
+            "resetCookies": false
+          },
+          "assertions": {
+            "status": [],
+            "header": [],
+            "body": []
+          },
+          "variables": {
+            "status": [],
+            "header": [],
+            "body": []
+          },
+          "authInfo": {}
+        }
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "5000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "POST"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "$incomingSMSURLIntelli"
+          }
+        ],
+        "stepType": "REST",
+        "isRawScript": true,
+        "rawScript": "var $request_xzj03Eue4L \u003d new RESTRequest();\r\n$request_xzj03Eue4L.setURL($incomingSMSURLIntelli);\r\n$request_xzj03Eue4L.addToQueryString(\"Message\", $basicinfo.firstName);\r\n$request_xzj03Eue4L.addToQueryString(\"OriginatorAddress\", $basicinfo.source);\r\n$request_xzj03Eue4L.addToQueryString(\"DestinationAddress\", $smsSenderIDUsecases);\r\nvar $response_xzj03Eue4L \u003d $request_xzj03Eue4L.submit(\"POST\");\r\nvar responseBody \u003d JSON.parse($response_xzj03Eue4L.getBodyAsString());\r\n\t var $responseBodyObj_xzj03Eue4L \u003d $response_xzj03Eue4L.getBodyAsString();\r\n\tvar responseType \u003d $response_xzj03Eue4L.getHeader(\"Content-Type\");\r\n\tif (responseType.indexOf(\"json\")!\u003d-1) {\r\n\t\t$responseBodyObj_xzj03Eue4L \u003d JSON.parse($responseBodyObj_xzj03Eue4L);\r\n\t}\r\n\telse if (responseType.indexOf(\"xml\")!\u003d-1) {\r\n\t\t$responseBodyObj_xzj03Eue4L \u003d $responseBodyObj_xzj03Eue4L.replace(/\u003c\\xml.*?\u003e/g, \u0027\u0027).replace(/\\n/g, \u0027\u0027).replace(/\\r/g, \u0027\u0027);\r\n\t\t$responseBodyObj_xzj03Eue4L \u003d new XML(undefined);\r\n\t}\r\n\r\n\t//assertions\r\n\r\n",
+        "state": {
+          "contentType": "json",
+          "request": {
+            "method": "POST",
+            "url": "$incomingSMSURLIntelli",
+            "parameters": [
+              [
+                "Message",
+                "$basicinfo.firstName"
+              ],
+              [
+                "OriginatorAddress",
+                "$basicinfo.source"
+              ],
+              [
+                "DestinationAddress",
+                "$smsSenderIDUsecases"
+              ]
+            ],
+            "headers": [],
+            "authType": "none",
+            "body": "",
+            "bodyParams": [],
+            "isParametrizedBody": false,
+            "resetCookies": false
+          },
+          "assertions": {
+            "status": [],
+            "header": [],
+            "body": []
+          },
+          "variables": {
+            "status": [],
+            "header": [],
+            "body": []
+          },
+          "authInfo": {}
+        }
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "5000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "POST"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "$incomingSMSURLIntelli"
+          }
+        ],
+        "stepType": "REST",
+        "isRawScript": true,
+        "rawScript": "var $request_vjm7TeEyl4 \u003d new RESTRequest();\r\n$request_vjm7TeEyl4.setURL($incomingSMSURLIntelli);\r\n$request_vjm7TeEyl4.addToQueryString(\"Message\", $basicinfo.lastName);\r\n$request_vjm7TeEyl4.addToQueryString(\"OriginatorAddress\", $basicinfo.source);\r\n$request_vjm7TeEyl4.addToQueryString(\"DestinationAddress\", $smsSenderIDUsecases);\r\nvar $response_vjm7TeEyl4 \u003d $request_vjm7TeEyl4.submit(\"POST\");\r\nvar responseBody \u003d JSON.parse($response_vjm7TeEyl4.getBodyAsString());\r\n\t var $responseBodyObj_vjm7TeEyl4 \u003d $response_vjm7TeEyl4.getBodyAsString();\r\n\tvar responseType \u003d $response_vjm7TeEyl4.getHeader(\"Content-Type\");\r\n\tif (responseType.indexOf(\"json\")!\u003d-1) {\r\n\t\t$responseBodyObj_vjm7TeEyl4 \u003d JSON.parse($responseBodyObj_vjm7TeEyl4);\r\n\t}\r\n\telse if (responseType.indexOf(\"xml\")!\u003d-1) {\r\n\t\t$responseBodyObj_vjm7TeEyl4 \u003d $responseBodyObj_vjm7TeEyl4.replace(/\u003c\\xml.*?\u003e/g, \u0027\u0027).replace(/\\n/g, \u0027\u0027).replace(/\\r/g, \u0027\u0027);\r\n\t\t$responseBodyObj_vjm7TeEyl4 \u003d new XML(undefined);\r\n\t}\r\n\r\n\t//assertions\r\n\r\n",
+        "state": {
+          "contentType": "json",
+          "request": {
+            "method": "POST",
+            "url": "$incomingSMSURLIntelli",
+            "parameters": [
+              [
+                "Message",
+                "$basicinfo.lastName"
+              ],
+              [
+                "OriginatorAddress",
+                "$basicinfo.source"
+              ],
+              [
+                "DestinationAddress",
+                "$smsSenderIDUsecases"
+              ]
+            ],
+            "headers": [],
+            "authType": "none",
+            "body": "",
+            "bodyParams": [],
+            "isParametrizedBody": false,
+            "resetCookies": false
+          },
+          "assertions": {
+            "status": [],
+            "header": [],
+            "body": []
+          },
+          "variables": {
+            "status": [],
+            "header": [],
+            "body": []
+          },
+          "authInfo": {}
+        }
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "5000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "POST"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "$incomingSMSURLIntelli"
+          }
+        ],
+        "stepType": "REST",
+        "isRawScript": true,
+        "rawScript": "var $request_cctGpEwhB4 \u003d new RESTRequest();\r\n$request_cctGpEwhB4.setURL($incomingSMSURLIntelli);\r\n$request_cctGpEwhB4.addToQueryString(\"Message\", $basicinfo.email);\r\n$request_cctGpEwhB4.addToQueryString(\"OriginatorAddress\", $basicinfo.source);\r\n$request_cctGpEwhB4.addToQueryString(\"DestinationAddress\", $smsSenderIDUsecases);\r\nvar $response_cctGpEwhB4 \u003d $request_cctGpEwhB4.submit(\"POST\");\r\nvar responseBody \u003d JSON.parse($response_cctGpEwhB4.getBodyAsString());\r\n\t var $responseBodyObj_cctGpEwhB4 \u003d $response_cctGpEwhB4.getBodyAsString();\r\n\tvar responseType \u003d $response_cctGpEwhB4.getHeader(\"Content-Type\");\r\n\tif (responseType.indexOf(\"json\")!\u003d-1) {\r\n\t\t$responseBodyObj_cctGpEwhB4 \u003d JSON.parse($responseBodyObj_cctGpEwhB4);\r\n\t}\r\n\telse if (responseType.indexOf(\"xml\")!\u003d-1) {\r\n\t\t$responseBodyObj_cctGpEwhB4 \u003d $responseBodyObj_cctGpEwhB4.replace(/\u003c\\xml.*?\u003e/g, \u0027\u0027).replace(/\\n/g, \u0027\u0027).replace(/\\r/g, \u0027\u0027);\r\n\t\t$responseBodyObj_cctGpEwhB4 \u003d new XML(undefined);\r\n\t}\r\n\r\n\t//assertions\r\n\r\n",
+        "state": {
+          "contentType": "json",
+          "request": {
+            "method": "POST",
+            "url": "$incomingSMSURLIntelli",
+            "parameters": [
+              [
+                "Message",
+                "$basicinfo.email"
+              ],
+              [
+                "OriginatorAddress",
+                "$basicinfo.source"
+              ],
+              [
+                "DestinationAddress",
+                "$smsSenderIDUsecases"
+              ]
+            ],
+            "headers": [],
+            "authType": "none",
+            "body": "",
+            "bodyParams": [],
+            "isParametrizedBody": false,
+            "resetCookies": false
+          },
+          "assertions": {
+            "status": [],
+            "header": [],
+            "body": []
+          },
+          "variables": {
+            "status": [],
+            "header": [],
+            "body": []
+          },
+          "authInfo": {}
+        }
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "5000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "POST"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "$incomingSMSURLIntelli"
+          }
+        ],
+        "stepType": "REST",
+        "isRawScript": true,
+        "rawScript": "var $request_3xtV4IYTgu \u003d new RESTRequest();\r\n$request_3xtV4IYTgu.setURL($incomingSMSURLIntelli);\r\n$request_3xtV4IYTgu.addToQueryString(\"Message\", $financialflownonweb.firstCTA);\r\n$request_3xtV4IYTgu.addToQueryString(\"OriginatorAddress\", $basicinfo.source);\r\n$request_3xtV4IYTgu.addToQueryString(\"DestinationAddress\", $smsSenderIDUsecases);\r\nvar $response_3xtV4IYTgu \u003d $request_3xtV4IYTgu.submit(\"POST\");\r\nvar responseBody \u003d JSON.parse($response_3xtV4IYTgu.getBodyAsString());\r\n\t var $responseBodyObj_3xtV4IYTgu \u003d $response_3xtV4IYTgu.getBodyAsString();\r\n\tvar responseType \u003d $response_3xtV4IYTgu.getHeader(\"Content-Type\");\r\n\tif (responseType.indexOf(\"json\")!\u003d-1) {\r\n\t\t$responseBodyObj_3xtV4IYTgu \u003d JSON.parse($responseBodyObj_3xtV4IYTgu);\r\n\t}\r\n\telse if (responseType.indexOf(\"xml\")!\u003d-1) {\r\n\t\t$responseBodyObj_3xtV4IYTgu \u003d $responseBodyObj_3xtV4IYTgu.replace(/\u003c\\xml.*?\u003e/g, \u0027\u0027).replace(/\\n/g, \u0027\u0027).replace(/\\r/g, \u0027\u0027);\r\n\t\t$responseBodyObj_3xtV4IYTgu \u003d new XML(undefined);\r\n\t}\r\n\r\n\t//assertions\r\n\r\n",
+        "state": {
+          "contentType": "json",
+          "request": {
+            "method": "POST",
+            "url": "$incomingSMSURLIntelli",
+            "parameters": [
+              [
+                "Message",
+                "$financialflownonweb.firstCTA"
+              ],
+              [
+                "OriginatorAddress",
+                "$basicinfo.source"
+              ],
+              [
+                "DestinationAddress",
+                "$smsSenderIDUsecases"
+              ]
+            ],
+            "headers": [],
+            "authType": "none",
+            "body": "",
+            "bodyParams": [],
+            "isParametrizedBody": false,
+            "resetCookies": false
+          },
+          "assertions": {
+            "status": [],
+            "header": [],
+            "body": []
+          },
+          "variables": {
+            "status": [],
+            "header": [],
+            "body": []
+          },
+          "authInfo": {}
+        }
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "5000"
+          }
+        ],
+        "stepType": "Action"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}
