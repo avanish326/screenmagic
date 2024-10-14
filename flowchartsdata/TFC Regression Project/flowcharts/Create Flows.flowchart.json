@@ -1,0 +1,144 @@
+{
+  "modifiedOn": "2024-03-15T06:20:52.785973700Z",
+  "name": "Create Flows",
+  "id": "-1",
+  "type": 0,
+  "createdOn": "2024-01-04T05:23:36Z",
+  "content": {
+    "nodesMap": {
+      "fcn_start_0": {
+        "id": "fcn_start_0",
+        "content": "Start",
+        "nodeType": "start",
+        "branches": [
+          "fcn_createflow_1704445136504_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_createflow_1704445136504_0": {
+        "id": "fcn_createflow_1704445136504_0",
+        "content": "Create flow",
+        "nodeType": "pathlabel",
+        "branches": [
+          "fcn_flows_1704445136504_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_flows_1704445136504_0": {
+        "id": "fcn_flows_1704445136504_0",
+        "content": "@flows",
+        "nodeType": "action",
+        "branches": [
+          "fcn_projectexists_1704445136504_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_projectexists_1704445136504_0": {
+        "id": "fcn_projectexists_1704445136504_0",
+        "content": "$project.exists?",
+        "nodeType": "decision",
+        "branches": [
+          null,
+          "fcn_createflow_1704445136504_1"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_createflow_1704445136504_1": {
+        "id": "fcn_createflow_1704445136504_1",
+        "content": "Create $flow",
+        "nodeType": "action",
+        "branches": [
+          "fcn_verifyflowcreated_1704445136504_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_verifyflowcreated_1704445136504_0": {
+        "id": "fcn_verifyflowcreated_1704445136504_0",
+        "content": "Verify $flow created",
+        "nodeType": "state",
+        "branches": [
+          "fcn_editcreatedflow_1704445136504_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_editcreatedflow_1704445136504_0": {
+        "id": "fcn_editcreatedflow_1704445136504_0",
+        "content": "Edit created $flow",
+        "nodeType": "action",
+        "branches": [
+          "fcn_verifyflowdetails_1704445136504_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_verifyflowdetails_1704445136504_0": {
+        "id": "fcn_verifyflowdetails_1704445136504_0",
+        "content": "Verify $flow details",
+        "nodeType": "state",
+        "branches": [
+          "fcn_flowexiststrue_1704445136504_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_flowexiststrue_1704445136504_0": {
+        "id": "fcn_flowexiststrue_1704445136504_0",
+        "content": "$flow.exists\u003dtrue",
+        "nodeType": "state",
+        "branches": [],
+        "dataSetId": "-1"
+      }
+    },
+    "positions": {
+      "fcn_start_0": {
+        "top": 175,
+        "left": 883
+      },
+      "fcn_createflow_1704445136504_0": {
+        "top": 236,
+        "left": 883
+      },
+      "fcn_flows_1704445136504_0": {
+        "top": 327.765625,
+        "left": 883
+      },
+      "fcn_projectexists_1704445136504_0": {
+        "top": 401.765625,
+        "left": 883
+      },
+      "fcn_createflow_1704445136504_1": {
+        "top": 481.921875,
+        "left": 883
+      },
+      "fcn_verifyflowcreated_1704445136504_0": {
+        "top": 547.0625,
+        "left": 883
+      },
+      "fcn_editcreatedflow_1704445136504_0": {
+        "top": 622.078125,
+        "left": 883
+      },
+      "fcn_verifyflowdetails_1704445136504_0": {
+        "top": 702.234375,
+        "left": 883
+      },
+      "fcn_flowexiststrue_1704445136504_0": {
+        "top": 782.390625,
+        "left": 883
+      }
+    },
+    "settings": {
+      "maxProceedDepth": 100,
+      "maxProceedsForFirstDepth": 1,
+      "maxProceedsPerDepth": 1,
+      "maxPathRepititionsPerComboPath": 1,
+      "maxProceedsPerPath": 10000,
+      "maxToggles": 2,
+      "maxMatchingPaths": 3
+    },
+    "isPrimary": true,
+    "pathNames": [],
+    "flowChartUID": "fcUID_1710483648211",
+    "pathExecutionOrder": []
+  },
+  "enabled": true,
+  "parentId": ""
+}

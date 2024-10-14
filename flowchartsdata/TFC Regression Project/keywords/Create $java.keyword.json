@@ -1,0 +1,113 @@
+{
+  "modifiedOn": "2024-04-23T09:38:14.867442700Z",
+  "name": "Create $java",
+  "id": "0",
+  "type": 3,
+  "createdOn": "2024-04-23T09:38:14.867442700Z",
+  "content": {
+    "title": "Create $java",
+    "parameters": [
+      {
+        "parameterId": "java_",
+        "entityTypeId": "java",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_setMode",
+        "stepParameters": [
+          {
+            "paramMode": "string",
+            "customValue": "JAVA"
+          }
+        ],
+        "stepType": "Action",
+        "secondaryParam": {}
+      },
+      {
+        "commented": false,
+        "action": "_launchJavaApplication",
+        "stepParameters": [
+          {
+            "paramMode": "string",
+            "customValue": "D:/Tyto_Software/Sahi_master/installed/pro/3918/userdata/scripts/sahitests/java/SampleJava.jar"
+          }
+        ],
+        "stepType": "Action",
+        "secondaryParam": {}
+      },
+      {
+        "commented": false,
+        "action": "_setMode",
+        "stepParameters": [
+          {
+            "customValue": "JAVA",
+            "paramMode": "string"
+          }
+        ]
+      },
+      {
+        "commented": false,
+        "action": "_selectWindow",
+        "stepParameters": [
+          {
+            "customValue": "Sample Java Application",
+            "paramMode": "string"
+          }
+        ]
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "customValue": "_button(\"Test Button\")",
+            "paramMode": "code"
+          }
+        ]
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "customValue": "_button(\"Toggle Button\")",
+            "paramMode": "code"
+          }
+        ]
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "customValue": "_button(\"Test Text Area\")",
+            "paramMode": "code"
+          }
+        ]
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_textbox(\"resultTextField\")"
+          }
+        ],
+        "stepType": "Assert",
+        "stepCategory": "inbuilt",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "paramMode": "string",
+          "customValue": "Toggle Button is Selected"
+        }
+      }
+    ],
+    "isSystemKeyword": false
+  },
+  "enabled": false,
+  "parentId": ""
+}

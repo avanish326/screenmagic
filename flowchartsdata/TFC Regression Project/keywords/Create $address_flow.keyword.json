@@ -1,0 +1,59 @@
+{
+  "modifiedOn": "2024-01-22T10:35:31.078758Z",
+  "name": "Create $address_flow",
+  "id": "-1",
+  "type": 3,
+  "createdOn": "2024-01-02T18:38:28Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Create $address_flow",
+    "parameters": [
+      {
+        "parameterId": "address_flow_",
+        "entityTypeId": "address_flow",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"Create New\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_expectPrompt",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "\"Enter a name for this flowchart:\""
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "\"Test List\""
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_submit(\"Save\")"
+          }
+        ],
+        "stepType": "Action"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

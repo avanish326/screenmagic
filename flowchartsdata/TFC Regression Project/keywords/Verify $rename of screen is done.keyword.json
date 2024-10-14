@@ -1,0 +1,64 @@
+{
+  "modifiedOn": "2024-03-29T09:14:41.807005800Z",
+  "name": "Verify $rename of screen is done",
+  "id": "-1",
+  "type": 3,
+  "createdOn": "2024-03-29T03:27:49Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Verify $rename of screen is done",
+    "parameters": [
+      {
+        "parameterId": "rename_",
+        "entityTypeId": "rename",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_link(\"@userdetails\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "paramMode": "string",
+          "customValue": "@userdetails"
+        }
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "customValue": "_div(\"Screens\")",
+            "paramMode": "code"
+          }
+        ]
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_span(\"@userdetails\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "paramMode": "string",
+          "customValue": "@userdetails"
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

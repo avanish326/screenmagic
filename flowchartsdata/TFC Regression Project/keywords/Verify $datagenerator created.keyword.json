@@ -1,0 +1,67 @@
+{
+  "modifiedOn": "2024-04-23T06:51:19.223389500Z",
+  "name": "Verify $datagenerator created",
+  "id": "-1",
+  "type": 3,
+  "createdOn": "2023-12-31T09:01:33Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Verify $datagenerator created",
+    "parameters": [
+      {
+        "parameterId": "datagenerator_",
+        "entityTypeId": "datagenerator",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "_call(location.reload());"
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "5000"
+          },
+          {
+            "paramMode": "code",
+            "customValue": "_isVisible(_div(\"$user.exists\u003dtrue\"))"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_div(\"$user.exists\u003dtrue\")"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_submit(\"Automate\")"
+          }
+        ],
+        "stepType": "Action",
+        "stepCategory": "inbuilt"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

@@ -1,0 +1,434 @@
+{
+  "name": "Verify $quickextract created",
+  "id": "-1",
+  "type": 3,
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Verify $quickextract created",
+    "specific": [],
+    "parameters": [
+      {
+        "parameterId": "quickextract_",
+        "entityTypeId": "quickextract",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "_call(location.reload());"
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "5000"
+          },
+          {
+            "paramMode": "code",
+            "customValue": "_isVisible(_div(\"$user.exists\u003dtrue\"))"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_div(\"$user.exists\u003dtrue\")"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_submit(\"Automate\")"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_span(\"Navigate from @base to @registration\")"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "5000"
+          },
+          {
+            "paramMode": "code",
+            "customValue": "_isVisible(_cell(\"Parameters\"))"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_cell(0, _under(_cell(\"Parameters\")))"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "paramMode": "code",
+          "customValue": "\"Opencart @registration\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_cell(1, _under(_cell(\"Parameters\")))"
+          }
+        ],
+        "stepType": "Assert",
+        "stepCategory": "inbuilt",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "paramMode": "code",
+          "customValue": "\"Link My Account @registration\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_cell(2, _under(_cell(\"Parameters\")))"
+          }
+        ],
+        "stepType": "Assert",
+        "stepCategory": "inbuilt",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "paramMode": "code",
+          "customValue": "\"Link Register @registration\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_span(\"Register $user\")"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "5000"
+          },
+          {
+            "paramMode": "code",
+            "customValue": "_isVisible(_cell(\"Param1\"))"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_cell(0, _under(_cell(\"Parameters\")))"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "paramMode": "code",
+          "customValue": "\"Firstname Input $user\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_cell(1, _under(_cell(\"Parameters\")))"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "paramMode": "code",
+          "customValue": "\"Lastname Input $user\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_cell(2, _under(_cell(\"Parameters\")))"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "paramMode": "code",
+          "customValue": "\"Email Input $user\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_cell(3, _under(_cell(\"Parameters\")))"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "paramMode": "code",
+          "customValue": "\"Telephone Input $user\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_cell(4, _under(_cell(\"Parameters\")))"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "paramMode": "code",
+          "customValue": "\"Password Input $user\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_cell(0, _under(_cell(18)))"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "paramMode": "code",
+          "customValue": "\"$user.firstname\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_cell(1, _under(_cell(18)))"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "paramMode": "code",
+          "customValue": "\"$user.lastname\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_cell(2, _under(_cell(18)))"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "paramMode": "code",
+          "customValue": "\"$user.email\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_cell(3, _under(_cell(18)))"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "paramMode": "code",
+          "customValue": "\"$user.telephone\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_cell(4, _under(_cell(18)))"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "paramMode": "code",
+          "customValue": "\"$user.password\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_span(\"Verify $user registered\")"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "5000"
+          },
+          {
+            "paramMode": "code",
+            "customValue": "_isVisible(_cell(\"Parameters\"))"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_cell(2, _under(_cell(18)))"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "paramMode": "code",
+          "customValue": "\"$user.firstname\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_cell(3, _under(_cell(18)))"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "paramMode": "code",
+          "customValue": "\"$user.lastname\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_cell(4, _under(_cell(18)))"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "paramMode": "code",
+          "customValue": "\"$user.email\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_div(\"x\")"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

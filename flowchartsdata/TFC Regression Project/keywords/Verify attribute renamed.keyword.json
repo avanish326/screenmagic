@@ -1,0 +1,67 @@
+{
+  "modifiedOn": "2024-06-18T06:43:27.795Z",
+  "name": "Verify attribute renamed",
+  "id": "-1",
+  "type": 3,
+  "createdOn": "2024-01-02T06:07:13Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Verify attribute renamed",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_div(\"rename-attribute-div[1]\", _in(_table(1)))"
+          }
+        ],
+        "stepType": "Assert",
+        "stepCategory": "inbuilt",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "paramMode": "code",
+          "customValue": "\"_worngPassword *\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_div(\"rename-attribute-div\", _in(_table(1)))"
+          }
+        ],
+        "stepType": "Assert",
+        "stepCategory": "inbuilt",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "paramMode": "code",
+          "customValue": "\"signed\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_div(\"rename-attribute-div[2]\", _in(_table(1)))"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "paramMode": "code",
+          "customValue": "\"admin_created\""
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

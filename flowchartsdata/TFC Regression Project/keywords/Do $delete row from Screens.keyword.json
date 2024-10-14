@@ -1,0 +1,127 @@
+{
+  "modifiedOn": "2024-01-22T10:35:20.139411300Z",
+  "name": "Do $delete row from Screens",
+  "id": "-1",
+  "type": 3,
+  "createdOn": "2024-01-01T09:29:52Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Do $delete row from Screens",
+    "parameters": [
+      {
+        "parameterId": "delete_",
+        "entityTypeId": "delete",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"Screens\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_count",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "\"_row\""
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "\"/.*/\""
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "_in(_div(\"UI Element NameUI Element\"))"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "3"
+        }
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_submit(\"Add Row[1]\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_count",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "\"_row\""
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "\"/.*/\""
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "_in(_div(\"UI Element NameUI Element\"))"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "4"
+        }
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_submit(\"circleButton[2]\", _in(_table(\"accessorsTable\")))"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_count",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "\"_row\""
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "\"/.*/\""
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "_in(_div(\"UI Element NameUI Element\"))"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "3"
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

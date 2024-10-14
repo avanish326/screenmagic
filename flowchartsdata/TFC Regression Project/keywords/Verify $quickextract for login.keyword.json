@@ -1,0 +1,104 @@
+{
+  "modifiedOn": "2024-06-18T05:45:28.303Z",
+  "name": "Verify $quickextract for login",
+  "id": "-1",
+  "type": 3,
+  "createdOn": "2024-06-17T18:30:29Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Verify $quickextract for login",
+    "parameters": [
+      {
+        "parameterId": "quickextract_",
+        "entityTypeId": "quickextract",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_div(\"Verify $user login successful\")"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_submit(\"Automate\")"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_span(\"Login $user\")"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_cell(1, _under(_cell(18)))"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "paramMode": "code",
+          "customValue": "\"$user.email\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_cell(2, _under(_cell(18)))"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "paramMode": "code",
+          "customValue": "\"$user.password\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_div(\"x\")"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}
