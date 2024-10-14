@@ -1,0 +1,108 @@
+{
+  "name": "Register User",
+  "id": "-1",
+  "type": 0,
+  "content": {
+    "nodesMap": {
+      "fcn_start_0": {
+        "id": "fcn_start_0",
+        "content": "Start",
+        "nodeType": "start",
+        "branches": [
+          "fcn_registeruser_0"
+        ]
+      },
+      "fcn_registeruser_0": {
+        "id": "fcn_registeruser_0",
+        "content": "Register User",
+        "nodeType": "pathlabel",
+        "branches": [
+          "fcn_changeapplanguage_0"
+        ]
+      },
+      "fcn_registration_0": {
+        "id": "fcn_registration_0",
+        "content": "@registration",
+        "nodeType": "action",
+        "branches": [
+          "fcn_registeruser_1"
+        ]
+      },
+      "fcn_changeapplanguage_0": {
+        "id": "fcn_changeapplanguage_0",
+        "content": "Change App Language",
+        "nodeType": "action",
+        "branches": [
+          "fcn_registration_0"
+        ]
+      },
+      "fcn_registeruser_1": {
+        "id": "fcn_registeruser_1",
+        "content": "Register $user",
+        "nodeType": "action",
+        "branches": [
+          "fcn_verifyusercreated_0"
+        ]
+      },
+      "fcn_verifyusercreated_0": {
+        "id": "fcn_verifyusercreated_0",
+        "content": "Verify $user created",
+        "nodeType": "action",
+        "branches": [
+          "fcn_userexiststrue_0"
+        ]
+      },
+      "fcn_userexiststrue_0": {
+        "id": "fcn_userexiststrue_0",
+        "content": "$user.exists\u003dtrue",
+        "nodeType": "state",
+        "branches": []
+      }
+    },
+    "positions": {
+      "fcn_start_0": {
+        "top": 150.0,
+        "left": 500.0
+      },
+      "fcn_registeruser_0": {
+        "top": 211.0,
+        "left": 500.0
+      },
+      "fcn_registration_0": {
+        "top": 393.0,
+        "left": 500.0
+      },
+      "fcn_changeapplanguage_0": {
+        "top": 306.0,
+        "left": 500.0
+      },
+      "fcn_registeruser_1": {
+        "top": 489.0,
+        "left": 500.0
+      },
+      "fcn_verifyusercreated_0": {
+        "top": 579.140625,
+        "left": 500.0
+      },
+      "fcn_userexiststrue_0": {
+        "top": 667.28125,
+        "left": 500.0
+      }
+    },
+    "settings": {
+      "maxProceedDepth": 100,
+      "maxProceedsForFirstDepth": 1,
+      "maxProceedsPerDepth": 1,
+      "maxPathRepititionsPerComboPath": 1,
+      "maxProceedsPerPath": 10000,
+      "maxToggles": 2,
+      "maxMatchingPaths": 3
+    },
+    "isPrimary": true,
+    "pathNames": [],
+    "flowChartUID": "fcUID_1728895611195",
+    "pathExecutionOrder": []
+  },
+  "enabled": true,
+  "parentId": ""
+}
