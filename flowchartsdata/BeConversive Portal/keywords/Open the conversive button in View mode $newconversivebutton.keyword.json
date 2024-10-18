@@ -1,0 +1,51 @@
+{
+  "modifiedOn": "2024-09-18T10:12:34.257939Z",
+  "name": "Open the conversive button in View mode $newconversivebutton",
+  "id": "0",
+  "type": 3,
+  "createdOn": "2024-09-18T10:12:34.257925Z",
+  "content": {
+    "title": "Open the conversive button in View mode $newconversivebutton",
+    "parameters": [
+      {
+        "parameterId": "newconversivebutton_",
+        "entityTypeId": "newconversivebutton",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_span($newconversivebutton.conversiveButtonName)"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_div(\"accordion-header \")"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "paramMode": "code",
+          "customValue": "\"Basic Info Fill the channel specific information and pre filled message\""
+        }
+      }
+    ],
+    "isSystemKeyword": false
+  },
+  "enabled": false,
+  "parentId": ""
+}

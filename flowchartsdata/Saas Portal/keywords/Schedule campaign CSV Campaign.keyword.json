@@ -1,0 +1,125 @@
+{
+  "modifiedOn": "2024-09-05T09:30:37.493Z",
+  "name": "Schedule campaign CSV Campaign",
+  "id": "59023",
+  "type": 3,
+  "createdOn": "2024-09-05T09:30:24.311Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Schedule campaign CSV Campaign",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": true,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(0, _near(_cell(\"Campaign Type\")))"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Contains",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$hubspotcampaignalltype.hubCampaignType"
+        }
+      },
+      {
+        "commented": true,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"Send to all\")"
+          },
+          {}
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"Schedule in future\")"
+          },
+          {}
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_textbox(0)"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "$csvRecurringStartDate"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_textbox(1)"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "$csvRecurringTime"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_submit(\"Schedule\")"
+          },
+          {}
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "3000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(\"Campaign Scheduled Successfully!\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"Campaign Scheduled Successfully!\""
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

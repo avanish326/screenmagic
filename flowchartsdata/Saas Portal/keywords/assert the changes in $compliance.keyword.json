@@ -1,0 +1,52 @@
+{
+  "modifiedOn": "2024-09-30T07:13:13.965469425Z",
+  "name": "assert the changes in $compliance",
+  "id": "-1",
+  "type": 3,
+  "createdOn": "2024-09-29T13:36:34Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "assert the changes in $compliance",
+    "parameters": [
+      {
+        "parameterId": "compliance_",
+        "entityTypeId": "compliance",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "2000"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "visibleCheck": false,
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_textbox(\"About Us Page URL\")"
+          }
+        ],
+        "stepType": "Assert",
+        "stepCategory": "inbuilt",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "parameterId": "compliance_",
+          "attributeId": "attr_01727421830616"
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

@@ -1,0 +1,313 @@
+{
+  "modifiedOn": "2024-02-16T04:40:43.601Z",
+  "name": "Verify messages on desk for Financial Help Flow when select CTA as Yes for SMS $financialflownonweb $basicinfo",
+  "id": "29538",
+  "type": 3,
+  "createdOn": "2024-02-15T13:18:11.757Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Verify messages on desk for Financial Help Flow when select CTA as Yes for SMS $financialflownonweb $basicinfo",
+    "parameters": [
+      {
+        "parameterId": "financialflownonweb_",
+        "entityTypeId": "financialflownonweb",
+        "suffix": ""
+      },
+      {
+        "parameterId": "basicinfo_",
+        "entityTypeId": "basicinfo",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_call",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"css-1bi66gg\").scrollTop\u003d0"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {}
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(\"wmOWYENZHMHm\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"wmOWYENZHMHm\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(\"Hi there! Welcome to [Your FI Name]! My name is {Insert preferred name here}.\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"Hi there! Welcome to [Your FI Name]! My name is {Insert preferred name here}.\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph($basicinfo.firstName)"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "parameterId": "basicinfo_",
+          "attributeId": "attr_01707810506172"
+        },
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(\"What is your last name?\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"What is your last name?\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph($basicinfo.lastName)"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "parameterId": "basicinfo_",
+          "attributeId": "attr_11707810540903"
+        },
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(\"What is the best email address for you?\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"What is the best email address for you?\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph($basicinfo.email)"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "parameterId": "basicinfo_",
+          "attributeId": "attr_21707810570919"
+        },
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(\"What type of appointment would you like to make? Please choose one of the following options: Type 1 for Apply for a loan Type 2 for Apply for new account Type 3 for Discuss current account Type 4 for Services/Accounts\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"What type of appointment would you like to make? Please choose one of the following options: Type 1 for Apply for a loan Type 2 for Apply for new account Type 3 for Discuss current account Type 4 for Services/Accounts\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph($financialflownonweb.firstCTA)"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "parameterId": "financialflownonweb_",
+          "attributeId": "attr_01708000522855"
+        },
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(\"Here\u0027s a link {insert link to appropriate appointment calendar} to our appointment calendar. Please select the date and time that works for you and include any additional details.\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"Here\u0027s a link {insert link to appropriate appointment calendar} to our appointment calendar. Please select the date and time that works for you and include any additional details.\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(\"Thank you, [User\u0027s Name]! Is there anything else we can help you with? Please choose one of the following options: Type 1 for Yes Type 2 for No\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"Thank you, [User\u0027s Name]! Is there anything else we can help you with? Please choose one of the following options: Type 1 for Yes Type 2 for No\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph($financialflownonweb.ctaYesNo)"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "parameterId": "financialflownonweb_",
+          "attributeId": "attr_11708000548290"
+        },
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(\"What else can I help you with today? Please choose one of the following options: Type 1 for Talk with a customer service rep Type 2 for Hours and locations Type 3 for Online banking Type 4 for None of the above\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"What else can I help you with today? Please choose one of the following options: Type 1 for Talk with a customer service rep Type 2 for Hours and locations Type 3 for Online banking Type 4 for None of the above\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph($financialflownonweb.ctaTalkHoursOnlineNone)"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "parameterId": "financialflownonweb_",
+          "attributeId": "attr_21708000585599"
+        },
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph($financialflownonweb.responseLastQuestion)"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "parameterId": "financialflownonweb_",
+          "attributeId": "attr_31708000609218"
+        },
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(\"Thank you and have a great day.\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"Thank you and have a great day.\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_italic(\"close\")"
+          }
+        ],
+        "stepType": "Action"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

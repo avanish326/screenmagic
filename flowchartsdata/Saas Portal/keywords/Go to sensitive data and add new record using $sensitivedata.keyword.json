@@ -1,0 +1,154 @@
+{
+  "modifiedOn": "2024-09-11T11:31:03.680478Z",
+  "name": "Go to sensitive data and add new record using $sensitivedata",
+  "id": "-1",
+  "type": 3,
+  "createdOn": "2024-09-06T02:42:45Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Go to sensitive data and add new record using $sensitivedata",
+    "parameters": [
+      {
+        "parameterId": "sensitivedata_",
+        "entityTypeId": "sensitivedata",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_link(\"Sensitive data handler\")"
+          },
+          {
+            "paramMode": "default"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_submit(\"Add custom data\")"
+          },
+          {
+            "paramMode": "default"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_textbox(\"title\")"
+          },
+          {
+            "paramMode": "code",
+            "customValue": "$sensitivedata.sensitivedata"
+          },
+          {
+            "paramMode": "default"
+          }
+        ],
+        "stepType": "Action",
+        "stepCategory": "inbuilt"
+      },
+      {
+        "commented": false,
+        "action": "_setSelected",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_select(\"mask_relative\")"
+          },
+          {
+            "paramMode": "code",
+            "customValue": "$sensitivedata.startfrom"
+          }
+        ],
+        "stepType": "Action",
+        "stepCategory": "inbuilt"
+      },
+      {
+        "commented": false,
+        "action": "_setSelected",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_select(\"mask_length\")"
+          },
+          {
+            "paramMode": "code",
+            "customValue": "$sensitivedata.charmask"
+          }
+        ],
+        "stepType": "Action",
+        "stepCategory": "inbuilt"
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_textbox(\"pattern\")"
+          },
+          {
+            "paramMode": "code",
+            "customValue": "$sensitivedata.regex"
+          },
+          {
+            "paramMode": "default"
+          }
+        ],
+        "stepType": "Action",
+        "stepCategory": "inbuilt"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_submit(\"Add\")"
+          },
+          {
+            "paramMode": "default"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_div(\"Saved successfully\")"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "paramMode": "string",
+          "customValue": "Saved successfully"
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

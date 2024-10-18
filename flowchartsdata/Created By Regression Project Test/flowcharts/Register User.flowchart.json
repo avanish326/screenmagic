@@ -1,9 +1,7 @@
 {
-  "modifiedOn": "2024-10-14T06:30:52.337097600Z",
   "name": "Register User",
   "id": "-1",
   "type": 0,
-  "createdOn": "2024-10-14T01:00:27Z",
   "content": {
     "nodesMap": {
       "fcn_start_0": {
@@ -14,8 +12,7 @@
           "fcn_registeruser_0",
           "fcn_loginuser_0",
           "fcn_createuser_0"
-        ],
-        "dataSetId": "-1"
+        ]
       },
       "fcn_registeruser_0": {
         "id": "fcn_registeruser_0",
@@ -23,51 +20,45 @@
         "nodeType": "pathlabel",
         "branches": [
           "fcn_registration_0"
-        ],
-        "dataSetId": -1
+        ]
       },
       "fcn_registration_0": {
         "id": "fcn_registration_0",
-        "content": "@registration",
+        "content": "@userdetails",
         "nodeType": "action",
         "branches": [
           "fcn_registeruser_1"
-        ],
-        "dataSetId": -1
+        ]
       },
       "fcn_registeruser_1": {
         "id": "fcn_registeruser_1",
-        "content": "Register $user",
+        "content": "Register $users",
         "nodeType": "action",
         "branches": [
           "fcn_verifyuserregistered_0"
-        ],
-        "dataSetId": -1
+        ]
       },
       "fcn_verifyuserregistered_0": {
         "id": "fcn_verifyuserregistered_0",
-        "content": "Verify $user registered",
+        "content": "Verify $users details",
         "nodeType": "state",
         "branches": [
           "fcn_userexiststrue_0"
-        ],
-        "dataSetId": -1
+        ]
       },
       "fcn_userexiststrue_0": {
         "id": "fcn_userexiststrue_0",
-        "content": "$user.exists\u003dtrue",
+        "content": "$users.exists\u003dtrue",
         "nodeType": "state",
         "branches": [
           "fcn_userloggedintrue_0"
-        ],
-        "dataSetId": -1
+        ]
       },
       "fcn_userloggedintrue_0": {
         "id": "fcn_userloggedintrue_0",
-        "content": "$user.loggedIn\u003dtrue",
+        "content": "$users.signed\u003dtrue",
         "nodeType": "state",
-        "branches": [],
-        "dataSetId": -1
+        "branches": []
       },
       "fcn_loginuser_0": {
         "id": "fcn_loginuser_0",
@@ -75,69 +66,61 @@
         "nodeType": "pathlabel",
         "branches": [
           "fcn_userexists_0"
-        ],
-        "dataSetId": -1
+        ]
       },
       "fcn_userexists_0": {
         "id": "fcn_userexists_0",
-        "content": "$user.exists?",
+        "content": "$users.exists?",
         "nodeType": "decision",
         "branches": [
           null,
           "fcn_user_correctpassword_0"
-        ],
-        "dataSetId": -1
+        ]
       },
       "fcn_user_correctpassword_0": {
         "id": "fcn_user_correctpassword_0",
-        "content": "$user._correctPassword?",
+        "content": "$users._worngPassword?",
         "nodeType": "decision",
         "branches": [
           "fcn_loginuserpasswordwrong_0",
           "fcn_loginuser_1"
-        ],
-        "dataSetId": -1
+        ]
       },
       "fcn_loginuser_1": {
         "id": "fcn_loginuser_1",
-        "content": "Login $user",
+        "content": "Login $users",
         "nodeType": "action",
         "branches": [
           "fcn_verifyuserloginsuccessful_0"
-        ],
-        "dataSetId": -1
+        ]
       },
       "fcn_verifyuserloginsuccessful_0": {
         "id": "fcn_verifyuserloginsuccessful_0",
-        "content": "Verify $user login successful",
+        "content": "Verify $users login successful",
         "nodeType": "state",
         "branches": [
           "fcn_userloggedintrue_1"
-        ],
-        "dataSetId": -1
+        ]
       },
       "fcn_userloggedintrue_1": {
         "id": "fcn_userloggedintrue_1",
-        "content": "$user.loggedIn\u003dtrue",
+        "content": "$users.signed\u003dtrue",
         "nodeType": "state",
-        "branches": [],
-        "dataSetId": -1
+        "branches": []
       },
       "fcn_loginuserpasswordwrong_0": {
         "id": "fcn_loginuserpasswordwrong_0",
-        "content": "Login $user (password\u003d\"wrong\")",
+        "content": "Login $users (password\u003d\"wrong\")",
         "nodeType": "action",
         "branches": [
           "fcn_verifyuserloginfailed_0"
-        ],
-        "dataSetId": -1
+        ]
       },
       "fcn_verifyuserloginfailed_0": {
         "id": "fcn_verifyuserloginfailed_0",
-        "content": "Verify $user login failed",
+        "content": "Verify $users login failed",
         "nodeType": "state",
-        "branches": [],
-        "dataSetId": -1
+        "branches": []
       },
       "fcn_createuser_0": {
         "id": "fcn_createuser_0",
@@ -145,8 +128,7 @@
         "nodeType": "pathlabel",
         "branches": [
           "fcn_login_admin_0"
-        ],
-        "dataSetId": -1
+        ]
       },
       "fcn_login_admin_0": {
         "id": "fcn_login_admin_0",
@@ -154,8 +136,7 @@
         "nodeType": "action",
         "branches": [
           "fcn_users_0"
-        ],
-        "dataSetId": -1
+        ]
       },
       "fcn_users_0": {
         "id": "fcn_users_0",
@@ -163,44 +144,39 @@
         "nodeType": "action",
         "branches": [
           "fcn_createuser_1"
-        ],
-        "dataSetId": -1
+        ]
       },
       "fcn_createuser_1": {
         "id": "fcn_createuser_1",
-        "content": "Create $user",
+        "content": "Create $users",
         "nodeType": "action",
         "branches": [
           "fcn_userexists_1"
-        ],
-        "dataSetId": -1
+        ]
       },
       "fcn_userexists_1": {
         "id": "fcn_userexists_1",
-        "content": "$user.exists?",
+        "content": "$users.exists?",
         "nodeType": "decision",
         "branches": [
           "fcn_userexiststrueusercreated_by_admintrue_0",
           "fcn_usercreated_by_admin_0"
-        ],
-        "dataSetId": -1
+        ]
       },
       "fcn_usercreated_by_admin_0": {
         "id": "fcn_usercreated_by_admin_0",
-        "content": "$user.created_by_admin?",
+        "content": "$users.admin_created?",
         "nodeType": "decision",
         "branches": [
           "fcn_connector_0",
           "fcn_assertuseralreadyexistsmessage_0"
-        ],
-        "dataSetId": -1
+        ]
       },
       "fcn_assertuseralreadyexistsmessage_0": {
         "id": "fcn_assertuseralreadyexistsmessage_0",
-        "content": "Assert $user already exists message",
+        "content": "Assert $users already exists message",
         "nodeType": "state",
-        "branches": [],
-        "dataSetId": -1
+        "branches": []
       },
       "fcn_connector_0": {
         "id": "fcn_connector_0",
@@ -208,153 +184,163 @@
         "nodeType": "skip",
         "branches": [
           "fcn_assertuseralreadyexistsmessage_0"
-        ],
-        "dataSetId": -1
+        ]
       },
       "fcn_userexiststrueusercreated_by_admintrue_0": {
         "id": "fcn_userexiststrueusercreated_by_admintrue_0",
-        "content": "$user.exists\u003dtrue\n$user.created_by_admin\u003dtrue",
+        "content": "$users.exists\u003dtrue\n$users.admin_created\u003dtrue",
         "nodeType": "state",
         "branches": [
           "fcn_verifyusercreatedbyadmin_0"
-        ],
-        "dataSetId": -1
+        ]
       },
       "fcn_verifyusercreatedbyadmin_0": {
         "id": "fcn_verifyusercreatedbyadmin_0",
-        "content": "Verify $user created by admin",
+        "content": "Verify $users created by admin",
         "nodeType": "state",
         "branches": [
           "fcn_verifyuserdetails_0"
-        ],
-        "dataSetId": -1
+        ]
       },
       "fcn_verifyuserdetails_0": {
         "id": "fcn_verifyuserdetails_0",
-        "content": "Verify $user details",
+        "content": "Verify $users details",
         "nodeType": "state",
-        "branches": [],
-        "dataSetId": -1
+        "branches": []
       }
     },
     "positions": {
       "fcn_start_0": {
-        "top": 150,
-        "left": 500
+        "top": 150.0,
+        "left": 500.0
       },
       "fcn_registeruser_0": {
-        "top": 211,
-        "left": 500
+        "top": 211.0,
+        "left": 500.0
       },
       "fcn_registration_0": {
-        "top": 270,
-        "left": 500
+        "top": 270.0,
+        "left": 500.0
       },
       "fcn_registeruser_1": {
-        "top": 329,
-        "left": 500
+        "top": 329.0,
+        "left": 500.0
       },
       "fcn_verifyuserregistered_0": {
-        "top": 394.140625,
-        "left": 500
+        "top": 394.1562,
+        "left": 500.0
       },
       "fcn_userexiststrue_0": {
-        "top": 459.28125,
-        "left": 500
+        "top": 459.296825,
+        "left": 500.0
       },
       "fcn_userloggedintrue_0": {
-        "top": 524.421875,
-        "left": 500
+        "top": 524.43745,
+        "left": 500.0
       },
       "fcn_loginuser_0": {
-        "top": 211,
-        "left": 780
+        "top": 211.0,
+        "left": 780.0
       },
       "fcn_userexists_0": {
-        "top": 270,
-        "left": 780
+        "top": 270.0,
+        "left": 780.0
       },
       "fcn_user_correctpassword_0": {
-        "top": 335.140625,
-        "left": 780
-      },
-      "fcn_loginuserpasswordwrong_0": {
-        "top": 400.28125,
-        "left": 1060
-      },
-      "fcn_verifyuserloginfailed_0": {
-        "top": 465.421875,
-        "left": 1060
+        "top": 335.1562,
+        "left": 780.0
       },
       "fcn_loginuser_1": {
-        "top": 400.28125,
-        "left": 780
+        "top": 400.296825,
+        "left": 780.0
       },
       "fcn_verifyuserloginsuccessful_0": {
-        "top": 465.421875,
-        "left": 780
+        "top": 465.43745,
+        "left": 780.0
       },
       "fcn_userloggedintrue_1": {
-        "top": 530.5625,
-        "left": 780
+        "top": 530.578075,
+        "left": 780.0
+      },
+      "fcn_loginuserpasswordwrong_0": {
+        "top": 400.296825,
+        "left": 1060.0
+      },
+      "fcn_verifyuserloginfailed_0": {
+        "top": 465.43745,
+        "left": 1060.0
       },
       "fcn_createuser_0": {
-        "top": 208,
-        "left": 1588
+        "top": 208.0,
+        "left": 1588.0
       },
       "fcn_login_admin_0": {
-        "top": 267,
-        "left": 1588
+        "top": 270.0,
+        "left": 1060.0
       },
       "fcn_users_0": {
-        "top": 326,
-        "left": 1588
+        "top": 329.0,
+        "left": 1060.0
       },
       "fcn_createuser_1": {
-        "top": 385,
-        "left": 1588
+        "top": 388.0,
+        "left": 1060.0
       },
       "fcn_userexists_1": {
-        "top": 450.140625,
-        "left": 1588
-      },
-      "fcn_userexiststrueusercreated_by_admintrue_0": {
-        "top": 668.28125,
-        "left": 1858
-      },
-      "fcn_verifyusercreatedbyadmin_0": {
-        "top": 753.59375,
-        "left": 1858
-      },
-      "fcn_verifyuserdetails_0": {
-        "top": 818.734375,
-        "left": 1858
+        "top": 453.1562,
+        "left": 1060.0
       },
       "fcn_usercreated_by_admin_0": {
-        "top": 515.28125,
-        "left": 1588
-      },
-      "fcn_connector_0": {
-        "top": 580.421875,
-        "left": 1868
+        "top": 518.296825,
+        "left": 1060.0
       },
       "fcn_assertuseralreadyexistsmessage_0": {
         "top": 658.421875,
-        "left": 1588
+        "left": 1588.0
+      },
+      "fcn_connector_0": {
+        "top": 583.43745,
+        "left": 1340.0
+      },
+      "fcn_userexiststrueusercreated_by_admintrue_0": {
+        "top": 668.28125,
+        "left": 1498.0
+      },
+      "fcn_verifyusercreatedbyadmin_0": {
+        "top": 603.59375,
+        "left": 1340.0
+      },
+      "fcn_verifyuserdetails_0": {
+        "top": 668.74995,
+        "left": 1340.0
       }
     },
     "settings": {
-      "maxProceedsPerPath": 10000,
       "maxProceedDepth": 100,
-      "maxProceedsPerDepth": 1,
       "maxProceedsForFirstDepth": 1,
-      "maxMatchingPaths": 3,
+      "maxProceedsPerDepth": 1,
       "maxPathRepititionsPerComboPath": 1,
-      "maxToggles": 2
+      "maxProceedsPerPath": 10000,
+      "maxToggles": 2,
+      "maxMatchingPaths": 3
     },
     "isPrimary": true,
-    "pathNames": [],
-    "flowChartUID": "fcUID_1728887426759",
+    "pathNames": [
+      {
+        "pathKey": [
+          "fcn_registeruser_0",
+          "fcn_registration_0",
+          "fcn_registeruser_1",
+          "fcn_verifyuserregistered_0",
+          "fcn_userexiststrue_0",
+          "fcn_userloggedintrue_0"
+        ],
+        "pathName": "User Registration",
+        "dependsPathUID": "17292470561480",
+        "isValidationsEnabled": false
+      }
+    ],
+    "flowChartUID": "fcUID_1729246834509",
     "pathExecutionOrder": []
   },
   "enabled": true,

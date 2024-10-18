@@ -1,0 +1,178 @@
+{
+  "modifiedOn": "2024-07-18T07:25:33.724Z",
+  "name": "Send Incoming Message $smssenderid",
+  "id": "28436",
+  "type": 3,
+  "createdOn": "2024-02-08T06:49:51.763Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Send Incoming Message $smssenderid",
+    "parameters": [
+      {
+        "parameterId": "smssenderid_",
+        "entityTypeId": "smssenderid",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "POST"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "$incomingSMSURLIntelli"
+          }
+        ],
+        "stepType": "REST",
+        "isRawScript": true,
+        "rawScript": "var $request_6fgEiHDyO7 \u003d new RESTRequest();\r\n$request_6fgEiHDyO7.setURL($incomingSMSURLIntelli);\r\n$request_6fgEiHDyO7.addToQueryString(\"Message\", $smssenderid.text);\r\n$request_6fgEiHDyO7.addToQueryString(\"OriginatorAddress\", $smssenderid.source);\r\n$request_6fgEiHDyO7.addToQueryString(\"DestinationAddress\", $smssenderid.smsSenderID);\r\nvar $response_6fgEiHDyO7 \u003d $request_6fgEiHDyO7.submit(\"POST\");\r\nvar responseBody \u003d JSON.parse($response_6fgEiHDyO7.getBodyAsString());\r\n\t var $responseBodyObj_6fgEiHDyO7 \u003d $response_6fgEiHDyO7.getBodyAsString();\r\n\tvar responseType \u003d $response_6fgEiHDyO7.getHeader(\"Content-Type\");\r\n\tif (responseType.indexOf(\"json\")!\u003d-1) {\r\n\t\t$responseBodyObj_6fgEiHDyO7 \u003d JSON.parse($responseBodyObj_6fgEiHDyO7);\r\n\t}\r\n\telse if (responseType.indexOf(\"xml\")!\u003d-1) {\r\n\t\t$responseBodyObj_6fgEiHDyO7 \u003d $responseBodyObj_6fgEiHDyO7.replace(/\u003c\\xml.*?\u003e/g, \u0027\u0027).replace(/\\n/g, \u0027\u0027).replace(/\\r/g, \u0027\u0027);\r\n\t\t$responseBodyObj_6fgEiHDyO7 \u003d new XML(undefined);\r\n\t}\r\n\r\n\t//assertions\r\n\r\n",
+        "state": {
+          "contentType": "json",
+          "request": {
+            "method": "POST",
+            "url": "$incomingSMSURLIntelli",
+            "parameters": [
+              [
+                "Message",
+                "$smssenderid.text"
+              ],
+              [
+                "OriginatorAddress",
+                "$smssenderid.source"
+              ],
+              [
+                "DestinationAddress",
+                "$smssenderid.smsSenderID"
+              ]
+            ],
+            "headers": [],
+            "authType": "none",
+            "body": "",
+            "bodyParams": [],
+            "isParametrizedBody": false,
+            "resetCookies": false
+          },
+          "assertions": {
+            "status": [],
+            "header": [],
+            "body": []
+          },
+          "variables": {
+            "status": [],
+            "header": [],
+            "body": []
+          },
+          "authInfo": {}
+        }
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "3000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "POST"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "https://qa-api.txtbox.in/v1/sms/incoming/aerial"
+          }
+        ],
+        "stepType": "REST",
+        "isRawScript": true,
+        "rawScript": "var $request_lloctflhfw \u003d new RESTRequest();\r\n$request_lloctflhfw.setURL(\"https://qa-api.txtbox.in/v1/sms/incoming/aerial\");\r\n$request_lloctflhfw.addToQueryString(\"source\", $source);\r\n$request_lloctflhfw.addToQueryString(\"destination\", $destination);\r\n$request_lloctflhfw.addToQueryString(\"connectionGUID\", \"be8b9421-90af-4441-9aca-91652d2e4ede\");\r\n$request_lloctflhfw.addToQueryString(\"transactionGUID\", \"c4529cd7-3r11-4028-a78c-aad550a4d2b4\");\r\n$request_lloctflhfw.addToQueryString(\"messageText\", \"@dyhhnbm6687\");\r\n$request_lloctflhfw.setHeader(\"Content-Type\", \"multipart/form-data; boundary\u003d\u003ccalculated when request is sent\u003e\");\r\n$request_lloctflhfw.setHeader(\"Content-Length\", \"\u003ccalculated when request is sent\u003e\");\r\n$request_lloctflhfw.setHeader(\"Host\", \"\u003ccalculated when request is sent\u003e\");\r\n$request_lloctflhfw.setHeader(\"User-Agent\", \"PostmanRuntime/7.40.0\");\r\n$request_lloctflhfw.setHeader(\"Accept\", \"*/*\");\r\n$request_lloctflhfw.setHeader(\"Accept-Encoding\", \"gzip, deflate, br\");\r\n$request_lloctflhfw.setHeader(\"Connection\", \"keep-alive\");\r\nvar $response_lloctflhfw \u003d $request_lloctflhfw.submit(\"POST\");\r\nvar responseBody \u003d JSON.parse($response_lloctflhfw.getBodyAsString());\r\n\t var $responseBodyObj_lloctflhfw \u003d $response_lloctflhfw.getBodyAsString();\r\n\tvar responseType \u003d $response_lloctflhfw.getHeader(\"Content-Type\");\r\n\tif (responseType.indexOf(\"json\")!\u003d-1) {\r\n\t\t$responseBodyObj_lloctflhfw \u003d JSON.parse($responseBodyObj_lloctflhfw);\r\n\t}\r\n\telse if (responseType.indexOf(\"xml\")!\u003d-1) {\r\n\t\t$responseBodyObj_lloctflhfw \u003d $responseBodyObj_lloctflhfw.replace(/\u003c\\xml.*?\u003e/g, \u0027\u0027).replace(/\\n/g, \u0027\u0027).replace(/\\r/g, \u0027\u0027);\r\n\t\t$responseBodyObj_lloctflhfw \u003d new XML(undefined);\r\n\t}\r\n\r\n\t//assertions\r\n\r\n",
+        "state": {
+          "contentType": "json",
+          "request": {
+            "method": "POST",
+            "url": "https://qa-api.txtbox.in/v1/sms/incoming/aerial",
+            "parameters": [
+              [
+                "source",
+                "$source"
+              ],
+              [
+                "destination",
+                "$destination"
+              ],
+              [
+                "connectionGUID",
+                "be8b9421-90af-4441-9aca-91652d2e4ede"
+              ],
+              [
+                "transactionGUID",
+                "c4529cd7-3r11-4028-a78c-aad550a4d2b4"
+              ],
+              [
+                "messageText",
+                "@dyhhnbm6687"
+              ]
+            ],
+            "headers": [
+              [
+                "Content-Type",
+                "multipart/form-data; boundary\u003d\u003ccalculated when request is sent\u003e"
+              ],
+              [
+                "Content-Length",
+                "\u003ccalculated when request is sent\u003e"
+              ],
+              [
+                "Host",
+                "\u003ccalculated when request is sent\u003e"
+              ],
+              [
+                "User-Agent",
+                "PostmanRuntime/7.40.0"
+              ],
+              [
+                "Accept",
+                "*/*"
+              ],
+              [
+                "Accept-Encoding",
+                "gzip, deflate, br"
+              ],
+              [
+                "Connection",
+                "keep-alive"
+              ]
+            ],
+            "authType": "none",
+            "body": "",
+            "bodyParams": [],
+            "isParametrizedBody": false,
+            "resetCookies": false
+          },
+          "assertions": {
+            "status": [],
+            "header": [],
+            "body": []
+          },
+          "variables": {
+            "status": [],
+            "header": [],
+            "body": []
+          },
+          "authInfo": {}
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

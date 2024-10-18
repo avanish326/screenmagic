@@ -1,0 +1,73 @@
+{
+  "modifiedOn": "2024-09-29T13:38:22.204481675Z",
+  "name": "view the campaign of a brand",
+  "id": "0",
+  "type": 3,
+  "createdOn": "2024-09-29T13:38:22.204478455Z",
+  "content": {
+    "title": "view the campaign of a brand",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "if(_isVisible(_paragraph(0, _near(_span($brandOfButton))))){\n_wait(2000);\n_click(_paragraph(0, _near(_span($brandOfButton))));\n}"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_paragraph(0, _near(_heading6(\"Pending\")))"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Store",
+        "secondaryParam": {
+          "paramMode": "code",
+          "customValue": "$noOfCampaign"
+        }
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "1000"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_paragraph(\"Add campaign\")"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "2000"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action"
+      }
+    ],
+    "isSystemKeyword": false
+  },
+  "enabled": false,
+  "parentId": ""
+}

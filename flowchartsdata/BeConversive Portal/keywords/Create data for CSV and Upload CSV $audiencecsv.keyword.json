@@ -1,0 +1,69 @@
+{
+  "modifiedOn": "2024-08-28T11:00:25.271Z",
+  "name": "Create data for CSV and Upload CSV $audiencecsv",
+  "id": "58979",
+  "type": 3,
+  "createdOn": "2024-08-28T04:37:12.467Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Create data for CSV and Upload CSV $audiencecsv",
+    "parameters": [
+      {
+        "parameterId": "audiencecsv_",
+        "entityTypeId": "audiencecsv",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_file(0)"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "$path \u003d _userDataDir(\"/\")+\"/scripts/\"+$audiencecsv.csvFileNew+\"\";\n_log($path);"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "var $userinfo \u003d _readCSVFile($path, {includeHeader: true});\nvar $headers \u003d $userinfo[0];\nvar $output\u003d []\n\n$output.push($userinfo[0])\n$rows \u003d 10;\n\nfor(var $i\u003d1;$i\u003c$rows+1;$i++){\nvar $rowContent \u003d[];\nvar $firstname \u003d \"First\"+_random(100).toString()+$i;\nvar $lastname \u003d \"Last\"+_random(100).toString() +$i;\nvar $phone  \u003d_random(9).toString();\nfor(var $j\u003d0;$j\u003c9;$j++){\n$phone\u003d_random(9).toString() +$phone;\n}\n\nvar $address \u003d \"Test Add\"+_random(100).toString()+$i;\nvar $email \u003d $firstname+\".\"+$lastname+\"@\"+$phone+\"gmail.com\"\n$rowContent.push($firstname);\n$rowContent.push($lastname)\n$rowContent.push($phone)\n$rowContent.push($address)\n$rowContent.push($email)\n$output.push($rowContent)\n}\n_writeCSVFile($output,$path,true);"
+      },
+      {
+        "commented": false,
+        "action": "_setFile3",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_file(0)"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "$path"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "2000"
+          }
+        ],
+        "stepType": "Action"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

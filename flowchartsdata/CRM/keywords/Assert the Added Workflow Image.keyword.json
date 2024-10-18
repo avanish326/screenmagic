@@ -1,0 +1,206 @@
+{
+  "modifiedOn": "2024-02-09T14:13:30.631Z",
+  "name": "Assert the Added Workflow Image",
+  "id": "19969",
+  "type": 3,
+  "createdOn": "2023-11-23T10:49:36.526Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Assert the Added Workflow Image",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_isVisible",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(\"Guided\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Is_False"
+      },
+      {
+        "commented": true,
+        "isRawScript": true,
+        "rawScript": "_assertSnapShot(\"/Users/pranitakolekar/tfc_engine/userdata/scripts/Healthcare_flow.jpg\", _image(\"Healthcare_flow.jpg\"))"
+      },
+      {
+        "commented": true,
+        "isRawScript": true,
+        "rawScript": "_takePageScreenShot(_image(\"Healthcare_flow.jpg\"),\"/Users/pranitakolekar/tfc_engine/userdata/scripts/Healthcare_Guided.jpg\");\n\nvar $same \u003d _compareImages(\"/Users/pranitakolekar/tfc_engine/userdata/scripts/Healthcare_Guided.jpg\", \"/Users/pranitakolekar/tfc_engine/userdata/scripts/Healthcare_flow.jpg\");\n\n_assert($same);"
+      },
+      {
+        "commented": false,
+        "action": "_isVisible",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(\"Recipe type:\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Is_False"
+      },
+      {
+        "commented": false,
+        "action": "_isVisible",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(\"Conversation Flow\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Is_False"
+      },
+      {
+        "commented": false,
+        "action": "_isVisible",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"The recipe consists of:Guided\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Is_False"
+      },
+      {
+        "commented": false,
+        "action": "_isVisible",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"/You have the option to embed the conversive button directly onto your website/\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Is_False"
+      },
+      {
+        "commented": false,
+        "action": "_isVisible",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(\"Prerequisites\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Is_False"
+      },
+      {
+        "commented": true,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(\"/Connect with patients effortlessly/\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"\\\"Connect with patients effortlessly using our chat template. Simply set it up to automatically handle queries about Appointments, document submissions, and visits. Add a chat button to your site or publish QR codes in your ads for easy access. Activate this chat automation and let it handle conversations on your website, through texts, or WhatsApp, keeping patients engaged with zero hassle\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_isVisible",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_submit(\"Get this Automation\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Is_True"
+      },
+      {
+        "commented": false,
+        "action": "_isVisible",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"Message Preview\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Is_True"
+      },
+      {
+        "commented": false,
+        "action": "_isVisible",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(\"Details\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Is_True"
+      },
+      {
+        "commented": false,
+        "action": "_isVisible",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(\"CRM Integrations\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Is_True"
+      },
+      {
+        "commented": true,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(\"Salesforce, Zoho, HubSpot, SMS-Magic\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"Salesforce, Zoho, HubSpot, SMS-Magic\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_isVisible",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(\"Supported Channels\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Is_True"
+      },
+      {
+        "commented": true,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(\"SMS, WhatsApp, Web Chat\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"SMS, WhatsApp, Web Chat\""
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

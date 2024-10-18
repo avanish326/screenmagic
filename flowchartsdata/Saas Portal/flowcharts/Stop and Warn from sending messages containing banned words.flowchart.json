@@ -1,0 +1,347 @@
+{
+  "modifiedOn": "2024-09-02T11:44:55.215Z",
+  "name": "Stop and Warn from sending messages containing banned words",
+  "id": "45712",
+  "type": 0,
+  "createdOn": "2024-05-06T09:58:12.927Z",
+  "content": {
+    "settings": {
+      "maxProceedDepth": 100,
+      "maxProceedsForFirstDepth": 1,
+      "maxProceedsPerDepth": 1,
+      "maxPathRepititionsPerComboPath": 1,
+      "maxProceedsPerPath": 10000,
+      "maxToggles": 2,
+      "maxMatchingPaths": 3
+    },
+    "flowChartUID": "fcUID_1714989492994",
+    "nodesMap": {
+      "fcn_start_0": {
+        "dataSetId": -1,
+        "id": "fcn_start_0",
+        "nodeType": "start",
+        "branches": [
+          "fcn_improvmentticketforrestrictedkeywordunderthemoderation_0",
+          "fcn_restrcitonkeywordsftosaas_0"
+        ],
+        "content": "Start"
+      },
+      "fcn_improvmentticketforrestrictedkeywordunderthemoderation_0": {
+        "dataSetId": -1,
+        "id": "fcn_improvmentticketforrestrictedkeywordunderthemoderation_0",
+        "nodeType": "pathlabel",
+        "branches": [
+          "fcn_logintosaasportal_1725259209082_0"
+        ],
+        "content": "Improvment ticket for add Restricted keyword under the moderation"
+      },
+      "fcn_gotothesmsservice_0": {
+        "dataSetId": -1,
+        "id": "fcn_gotothesmsservice_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_gotothemoderation_0"
+        ],
+        "content": "Go to the SMS-Service"
+      },
+      "fcn_gotothemoderation_0": {
+        "dataSetId": -1,
+        "id": "fcn_gotothemoderation_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_addnewbannedword_0"
+        ],
+        "content": "Go to the Moderation"
+      },
+      "fcn_addnewbannedword_0": {
+        "dataSetId": -1,
+        "id": "fcn_addnewbannedword_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertbannedwordundermoderation_0"
+        ],
+        "content": "Add new banned $word"
+      },
+      "fcn_assertbannedwordundermoderation_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertbannedwordundermoderation_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_sendbannedkeywordwordfromdesknewmessage_0",
+          "fcn_validatebaandkeywordwordontemplate_0"
+        ],
+        "content": "Assert Banned $word under moderation"
+      },
+      "fcn_sendbannedkeywordwordfromdesknewmessage_0": {
+        "dataSetId": -1,
+        "id": "fcn_sendbannedkeywordwordfromdesknewmessage_0",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_navigatetoconversedesk_1724149898028_0"
+        ],
+        "content": "Send banned keyword $word from desk new message"
+      },
+      "fcn_navigatetoconversedesk_1724149898028_0": {
+        "dataSetId": -1,
+        "id": "fcn_navigatetoconversedesk_1724149898028_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_sendbannedkeywordwordfromdesknewmessage_1"
+        ],
+        "content": "Navigate to Converse Desk"
+      },
+      "fcn_sendbannedkeywordwordfromdesknewmessage_1": {
+        "dataSetId": -1,
+        "id": "fcn_sendbannedkeywordwordfromdesknewmessage_1",
+        "nodeType": "action",
+        "branches": [
+          "fcn_validatesmshistoryforbannedword_0",
+          "fcn_sendbannedkeywordfromexistingmessage_0"
+        ],
+        "content": "Send banned keyword $word from desk new message"
+      },
+      "fcn_logintosaasportal_1725259209082_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintosaasportal_1725259209082_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_gotothesmsservice_0"
+        ],
+        "content": "login to $saasportal"
+      },
+      "fcn_validatesmshistoryforbannedword_0": {
+        "dataSetId": -1,
+        "id": "fcn_validatesmshistoryforbannedword_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Validate SMS-History for banned $word"
+      },
+      "fcn_sendbannedkeywordfromexistingmessage_0": {
+        "dataSetId": -1,
+        "id": "fcn_sendbannedkeywordfromexistingmessage_0",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_sendbanndkeywordwordfromexistingconversation_0"
+        ],
+        "content": "Send banned keyword from existing message"
+      },
+      "fcn_sendbanndkeywordwordfromexistingconversation_0": {
+        "dataSetId": -1,
+        "id": "fcn_sendbanndkeywordwordfromexistingconversation_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_validatesmshistoryforbannedword_1725261991499_0"
+        ],
+        "content": "Send bannd keyword $word from existing conversation"
+      },
+      "fcn_validatesmshistoryforbannedword_1725261991499_0": {
+        "dataSetId": -1,
+        "id": "fcn_validatesmshistoryforbannedword_1725261991499_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Validate SMS-History for banned $word"
+      },
+      "fcn_validatebaandkeywordwordontemplate_0": {
+        "dataSetId": -1,
+        "id": "fcn_validatebaandkeywordwordontemplate_0",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_navigatetomessagetemplate_1725263560394_0"
+        ],
+        "content": "Validate baand keyword $word on template"
+      },
+      "fcn_navigatetomessagetemplate_1725263560394_0": {
+        "dataSetId": -1,
+        "id": "fcn_navigatetomessagetemplate_1725263560394_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_createbannedkeyoworfwordtemplate_0"
+        ],
+        "content": "Navigate to Message Template"
+      },
+      "fcn_createbannedkeyoworfwordtemplate_0": {
+        "dataSetId": -1,
+        "id": "fcn_createbannedkeyoworfwordtemplate_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Create banned key$word $template "
+      },
+      "fcn_restrcitonkeywordsftosaas_0": {
+        "dataSetId": -1,
+        "id": "fcn_restrcitonkeywordsftosaas_0",
+        "nodeType": "pathlabel",
+        "branches": [
+          "fcn_logintosalesforce_0"
+        ],
+        "content": "Restrciton Keyword SF to SaaS"
+      },
+      "fcn_logintosalesforce_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintosalesforce_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_addbannedkeywordinsf_0"
+        ],
+        "content": "Login to salesforce"
+      },
+      "fcn_addbannedkeywordinsf_0": {
+        "dataSetId": -1,
+        "id": "fcn_addbannedkeywordinsf_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_validatethekeywordonsaasportal_0"
+        ],
+        "content": "Add banned $keyword in sf"
+      },
+      "fcn_validatethekeywordonsaasportal_0": {
+        "dataSetId": -1,
+        "id": "fcn_validatethekeywordonsaasportal_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_navigatetosaasportal_0"
+        ],
+        "content": "Validate the $keyword on SF settings"
+      },
+      "fcn_navigatetosaasportal_0": {
+        "dataSetId": -1,
+        "id": "fcn_navigatetosaasportal_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_gotothesmsservice_1725273301325_0"
+        ],
+        "content": "Navigate to SaaS Portal"
+      },
+      "fcn_validatethesfrestrctedkeywordinsaasword_0": {
+        "dataSetId": -1,
+        "id": "fcn_validatethesfrestrctedkeywordinsaasword_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Validate the SF restrcted keyword in SaaS $word $keyword"
+      },
+      "fcn_gotothesmsservice_1725273301325_0": {
+        "dataSetId": -1,
+        "id": "fcn_gotothesmsservice_1725273301325_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_gotothemoderation_1725273301325_0"
+        ],
+        "content": "Go to the SMS-Service"
+      },
+      "fcn_gotothemoderation_1725273301325_0": {
+        "dataSetId": -1,
+        "id": "fcn_gotothemoderation_1725273301325_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_validatethesfrestrctedkeywordinsaasword_0"
+        ],
+        "content": "Go to the Moderation"
+      }
+    },
+    "pathNames": {},
+    "isPrimary": false,
+    "positions": {
+      "fcn_start_0": {
+        "top": 149.89999389648438,
+        "left": 499.69751930236816
+      },
+      "fcn_improvmentticketforrestrictedkeywordunderthemoderation_0": {
+        "top": 246.7022247314453,
+        "left": 439.7745361328125
+      },
+      "fcn_logintosaasportal_1725259209082_0": {
+        "top": 317.17535400390625,
+        "left": 438.64086151123047
+      },
+      "fcn_gotothesmsservice_0": {
+        "top": 378.6253356933594,
+        "left": 441.7873992919922
+      },
+      "fcn_gotothemoderation_0": {
+        "top": 434.9390563964844,
+        "left": 439.7745361328125
+      },
+      "fcn_addnewbannedword_0": {
+        "top": 493.24249267578125,
+        "left": 443.73084259033203
+      },
+      "fcn_assertbannedwordundermoderation_0": {
+        "top": 564.2708740234375,
+        "left": 440.69998931884766
+      },
+      "fcn_sendbannedkeywordwordfromdesknewmessage_0": {
+        "top": 646.080810546875,
+        "left": 432.48661041259766
+      },
+      "fcn_navigatetoconversedesk_1724149898028_0": {
+        "top": 720.1168823242188,
+        "left": 432.55601501464844
+      },
+      "fcn_sendbannedkeywordwordfromdesknewmessage_1": {
+        "top": 779.1375732421875,
+        "left": 438.59458923339844
+      },
+      "fcn_validatesmshistoryforbannedword_0": {
+        "top": 859.0965576171875,
+        "left": 431.5842971801758
+      },
+      "fcn_sendbannedkeywordfromexistingmessage_0": {
+        "top": 823.0733642578125,
+        "left": 755.4460296630859
+      },
+      "fcn_sendbanndkeywordwordfromexistingconversation_0": {
+        "top": 898.7058715820312,
+        "left": 758.5694274902344
+      },
+      "fcn_validatesmshistoryforbannedword_1725261991499_0": {
+        "top": 976.6751708984375,
+        "left": 760.582275390625
+      },
+      "fcn_validatebaandkeywordwordontemplate_0": {
+        "top": 821.060546875,
+        "left": 1082.5699462890625
+      },
+      "fcn_navigatetomessagetemplate_1725263560394_0": {
+        "top": 900.1171875,
+        "left": 1083.5648193359375
+      },
+      "fcn_createbannedkeyoworfwordtemplate_0": {
+        "top": 961.9605102539062,
+        "left": 1085.5545654296875
+      },
+      "fcn_restrcitonkeywordsftosaas_0": {
+        "top": 261.67138671875,
+        "left": 1417.8841552734375
+      },
+      "fcn_logintosalesforce_0": {
+        "top": 318.9337158203125,
+        "left": 1420.8687744140625
+      },
+      "fcn_addbannedkeywordinsf_0": {
+        "top": 378.2782897949219,
+        "left": 1417.8841552734375
+      },
+      "fcn_validatethekeywordonsaasportal_0": {
+        "top": 456.66400146484375,
+        "left": 1420.79931640625
+      },
+      "fcn_navigatetosaasportal_0": {
+        "top": 519.1319580078125,
+        "left": 1420.79931640625
+      },
+      "fcn_gotothesmsservice_1725273301325_0": {
+        "top": 572.9006958007812,
+        "left": 1421.6785278320312
+      },
+      "fcn_gotothemoderation_1725273301325_0": {
+        "top": 624.2169799804688,
+        "left": 1419.7581787109375
+      },
+      "fcn_validatethesfrestrctedkeywordinsaasword_0": {
+        "top": 678.4947509765625,
+        "left": 1421.70166015625
+      }
+    }
+  },
+  "enabled": true,
+  "parentId": ""
+}

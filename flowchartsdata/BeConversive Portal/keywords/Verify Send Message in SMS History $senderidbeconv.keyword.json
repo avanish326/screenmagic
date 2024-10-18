@@ -1,0 +1,88 @@
+{
+  "modifiedOn": "2024-05-20T11:32:29.495Z",
+  "name": "Verify Send Message in SMS History $senderidbeconv",
+  "id": "46168",
+  "type": 3,
+  "createdOn": "2024-05-20T11:09:50.312Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Verify Send Message in SMS History $senderidbeconv",
+    "parameters": [
+      {
+        "parameterId": "senderidbeconv_",
+        "entityTypeId": "senderidbeconv",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_cell(\"\"+$senderidbeconv.senderID+\"\", _leftOf(_cell(\"\"+$phoneNumber+\"[1]\")))"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "parameterId": "senderidbeconv_",
+          "attributeId": "attr_01715257073383"
+        },
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(0, _rightOf(_cell($phoneNumber)))"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$templateText"
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_cell(\"\"+$senderidbeconv.senderID+\"\", _leftOf(_cell($phoneNumber)))"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "parameterId": "senderidbeconv_",
+          "attributeId": "attr_01715257073383"
+        },
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(0, _rightOf(_cell($phoneNumber)))"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$templateText"
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

@@ -1,0 +1,83 @@
+{
+  "modifiedOn": "2024-03-27T05:56:27.234Z",
+  "name": "check lead capture for SMS in SaaS $basicinfo for Guided flow",
+  "id": "14788",
+  "type": 3,
+  "createdOn": "2023-09-18T11:56:55.368Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "check lead capture for SMS in SaaS $basicinfo for Guided flow",
+    "parameters": [
+      {
+        "parameterId": "basicinfo_",
+        "entityTypeId": "basicinfo",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"Contacts\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"trancet-txt\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Contains",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$basicinfo.firstName+\" \"+$basicinfo.lastName"
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_cell(\"min180[1]\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "parameterId": "basicinfo_",
+          "attributeId": "attr_31707810609920"
+        },
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"txt-trancet-email\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "parameterId": "basicinfo_",
+          "attributeId": "attr_21707810570919"
+        },
+        "visibleCheck": false
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

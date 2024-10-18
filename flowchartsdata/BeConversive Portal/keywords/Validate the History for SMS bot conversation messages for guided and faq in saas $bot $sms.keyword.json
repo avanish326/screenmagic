@@ -1,0 +1,70 @@
+{
+  "modifiedOn": "2024-06-04T09:24:43.468Z",
+  "name": "Validate the History for SMS bot conversation messages for guided and faq in saas $bot $sms",
+  "id": "28731",
+  "type": 3,
+  "createdOn": "2024-02-08T06:49:56.123Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Validate the History for SMS bot conversation messages for guided and faq in saas $bot $sms",
+    "parameters": [
+      {
+        "parameterId": "bot_",
+        "entityTypeId": "bot",
+        "suffix": ""
+      },
+      {
+        "parameterId": "sms_",
+        "entityTypeId": "sms",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"You\u0027re welcome! https://www.sms-magic.com/lets-talk-about-chatbots/ of this chatbot for your own website.\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"You\u0027re welcome! https://www.sms-magic.com/lets-talk-about-chatbots/ of this chatbot for your own website.\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"/Incoming Messages/\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"Okay\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"Okay\""
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

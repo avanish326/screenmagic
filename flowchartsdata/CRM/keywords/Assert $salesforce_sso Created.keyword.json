@@ -1,0 +1,89 @@
+{
+  "modifiedOn": "2024-02-06T07:11:45.599Z",
+  "name": "Assert $salesforce_sso Created",
+  "id": "10769",
+  "type": 3,
+  "createdOn": "2023-08-02T07:12:35.845Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Assert $salesforce_sso Created",
+    "parameters": [
+      {
+        "parameterId": "salesforce_sso_",
+        "entityTypeId": "salesforce_sso",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_isVisible",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_heading2(\"Workspace\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Is_True"
+      },
+      {
+        "commented": true,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_heading3(\"SMS Magic in your Salesforce Org\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"SMS Magic in your Salesforce Org\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_exists",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"Installed and configured\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Is_True"
+      },
+      {
+        "commented": false,
+        "action": "_exists",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"Installed and configured\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Is_True"
+      },
+      {
+        "commented": true,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "90000"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "_isVisible(_span(\"Installed and configured\"))"
+          }
+        ],
+        "stepType": "Action"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

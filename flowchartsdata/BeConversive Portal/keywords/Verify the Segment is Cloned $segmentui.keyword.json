@@ -1,0 +1,38 @@
+{
+  "modifiedOn": "2024-08-26T14:06:31.643Z",
+  "name": "Verify the Segment is Cloned $segmentui",
+  "id": "58272",
+  "type": 3,
+  "createdOn": "2024-07-10T14:46:58.094Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Verify the Segment is Cloned $segmentui",
+    "parameters": [
+      {
+        "parameterId": "segmentui_",
+        "entityTypeId": "segmentui",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_containsText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_cell(0)"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "\"\"+$segmentui.editedSegmentName+\" copy 1\""
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Is_True"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

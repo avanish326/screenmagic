@@ -1,0 +1,63 @@
+{
+  "modifiedOn": "2024-02-08T06:49:46.206Z",
+  "name": "Unblock the Domain URls WhiteListing",
+  "id": "28043",
+  "type": 3,
+  "createdOn": "2024-02-08T06:49:46.206Z",
+  "content": {
+    "title": "Unblock the Domain URls WhiteListing",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"is_trusted_account_domain_edit\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_check",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_radioGroup(\"trusted_account_domain_enable\")"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "true"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"is_trusted_account_domain_save\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "1000"
+          }
+        ],
+        "stepType": "Action"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

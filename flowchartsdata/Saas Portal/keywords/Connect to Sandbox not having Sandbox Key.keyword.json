@@ -1,0 +1,106 @@
+{
+  "modifiedOn": "2024-05-22T06:07:40.750Z",
+  "name": "Connect to Sandbox not having Sandbox Key",
+  "id": "46235",
+  "type": 3,
+  "createdOn": "2024-05-22T05:41:21.766Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Connect to Sandbox not having Sandbox Key",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "3000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_button(\"Connect Account\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"linkConnect Existing Account\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_textbox(\"apikey\")"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "$sfAPIKey"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_numberbox(0, _near(_label(\"Add SMS Magic Account ID\")))"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "$smsAccountId"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_submit(\"Connect\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"Account \"+$smsAccountId+\" connected successfully.\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"Account \"+$smsAccountId+\" connected successfully.\""
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

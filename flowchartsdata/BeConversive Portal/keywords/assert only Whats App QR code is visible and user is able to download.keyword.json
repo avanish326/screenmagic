@@ -1,0 +1,73 @@
+{
+  "modifiedOn": "2024-06-05T07:20:05.416Z",
+  "name": "assert only Whats App QR code is visible and user is able to download",
+  "id": "27621",
+  "type": 3,
+  "createdOn": "2024-02-08T06:49:40.278Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "assert only Whats App QR code is visible and user is able to download",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"Back\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_button(\"download-button\", _near(_italic(\"more_vert\")))"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_isVisible",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_submit(\"Whatsapp\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Is_True"
+      },
+      {
+        "commented": false,
+        "action": "_isVisible",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_submit(\"SMS\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Is_False"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_submit(\"Download\")"
+          }
+        ],
+        "stepType": "Action"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

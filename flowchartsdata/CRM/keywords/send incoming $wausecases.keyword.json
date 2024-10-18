@@ -1,0 +1,79 @@
+{
+  "modifiedOn": "2024-02-08T16:48:23.394Z",
+  "name": "send incoming $wausecases",
+  "id": "29063",
+  "type": 3,
+  "createdOn": "2024-02-08T14:09:33.109Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "send incoming $wausecases",
+    "parameters": [
+      {
+        "parameterId": "wausecases_",
+        "entityTypeId": "wausecases",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "POST"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "https://qa-api.txtbox.in/messages/incoming/whatsapp/twilio"
+          }
+        ],
+        "stepType": "REST",
+        "isRawScript": true,
+        "rawScript": "var $request_sCkn08sYXu \u003d new RESTRequest();\r\n$request_sCkn08sYXu.setURL(\"https://qa-api.txtbox.in/messages/incoming/whatsapp/twilio\");\r\n$request_sCkn08sYXu.setHeader(\"Content-Type\", \"application/json\");\r\nvar sanitizedBody \u003d eval(\"(\"+\"{\" + \"   \\\"SmsMessageSid\\\":\\\"SM91805a30f08ed4a44c8fe7b1264deb14\\\",\" + \"   \\\"ProfileName\\\":\\\"abc\\\",\" + \"   \\\"SmsSid\\\":\\\"SM91805a30f08ed4a44c8fe7b1264deb14\\\",\" + \"   \\\"WaId\\\":\\\"91750878281\\\",\" + \"   \\\"SmsStatus\\\":\\\"received\\\",\" + \"   \\\"Body\\\":\\\"\\\"+\\\"\" + escapeString($wausecases.keyword) + \"\\\"+\\\"\\\",\" + \"   \\\"To\\\":\\\"whatsapp:+14155238886\\\",\" + \"   \\\"NumSegments\\\":\\\"919088772221\\\",\" + \"   \\\"ReferralNumMedia\\\":\\\"0\\\",\" + \"   \\\"MessageSid\\\":\\\"SM91805a30f08ed4a44c8fe7b1264deb14\\\",\" + \"   \\\"AccountSid\\\":\\\"AC00a7b3b1c35de688eb9696b3119e0388\\\",\" + \"   \\\"From\\\":\\\"whatsapp:+\\\"+\\\"\" + escapeString($wausecases.source) + \"\\\"+\\\"\\\",\" + \"   \\\"ApiVersion\\\":\\\"2010-04-01\\\",   \" + \"   \\\"message_uuid\\\":\\\"SM91805a30f08ed4a44c8fe7b1264deb14\\\",       \" + \"   \\\"num_media\\\":\\\"1\\\"\" + \"}\"+\")\");\n$request_sCkn08sYXu.setBody(JSON.stringify(sanitizedBody));\r\nvar $response_sCkn08sYXu \u003d $request_sCkn08sYXu.submit(\"POST\");\r\nvar responseBody \u003d JSON.parse($response_sCkn08sYXu.getBodyAsString());\r\n\t var $responseBodyObj_sCkn08sYXu \u003d $response_sCkn08sYXu.getBodyAsString();\r\n\tvar responseType \u003d $response_sCkn08sYXu.getHeader(\"Content-Type\");\r\n\tif (responseType.indexOf(\"json\")!\u003d-1) {\r\n\t\t$responseBodyObj_sCkn08sYXu \u003d JSON.parse($responseBodyObj_sCkn08sYXu);\r\n\t}\r\n\telse if (responseType.indexOf(\"xml\")!\u003d-1) {\r\n\t\t$responseBodyObj_sCkn08sYXu \u003d $responseBodyObj_sCkn08sYXu.replace(/\u003c\\xml.*?\u003e/g, \u0027\u0027).replace(/\\n/g, \u0027\u0027).replace(/\\r/g, \u0027\u0027);\r\n\t\t$responseBodyObj_sCkn08sYXu \u003d new XML(undefined);\r\n\t}\r\n\r\n\t//assertions\r\n\r\n",
+        "state": {
+          "contentType": "json",
+          "request": {
+            "method": "POST",
+            "url": "https://qa-api.txtbox.in/messages/incoming/whatsapp/twilio",
+            "parameters": [],
+            "headers": [
+              [
+                "Content-Type",
+                "application/json"
+              ]
+            ],
+            "authType": "none",
+            "body": "{\n   \"SmsMessageSid\":\"SM91805a30f08ed4a44c8fe7b1264deb14\",\n   \"ProfileName\":\"abc\",\n   \"SmsSid\":\"SM91805a30f08ed4a44c8fe7b1264deb14\",\n   \"WaId\":\"91750878281\",\n   \"SmsStatus\":\"received\",\n   \"Body\":\"\"+$wausecases.keyword+\"\",\n   \"To\":\"whatsapp:+14155238886\",\n   \"NumSegments\":\"919088772221\",\n   \"ReferralNumMedia\":\"0\",\n   \"MessageSid\":\"SM91805a30f08ed4a44c8fe7b1264deb14\",\n   \"AccountSid\":\"AC00a7b3b1c35de688eb9696b3119e0388\",\n   \"From\":\"whatsapp:+\"+$wausecases.source+\"\",\n   \"ApiVersion\":\"2010-04-01\",   \n   \"message_uuid\":\"SM91805a30f08ed4a44c8fe7b1264deb14\",       \n   \"num_media\":\"1\"\n}",
+            "bodyParams": [],
+            "isParametrizedBody": false,
+            "resetCookies": false
+          },
+          "assertions": {
+            "status": [],
+            "header": [],
+            "body": []
+          },
+          "variables": {
+            "status": [],
+            "header": [],
+            "body": []
+          },
+          "authInfo": {}
+        }
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "20000"
+          }
+        ],
+        "stepType": "Action"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

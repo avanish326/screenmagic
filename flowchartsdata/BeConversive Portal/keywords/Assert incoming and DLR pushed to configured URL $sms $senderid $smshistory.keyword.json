@@ -1,0 +1,70 @@
+{
+  "modifiedOn": "2024-02-08T06:49:44.983Z",
+  "name": "Assert incoming and DLR pushed to configured URL $sms $senderid $smshistory",
+  "id": "27962",
+  "type": 3,
+  "createdOn": "2024-02-08T06:49:44.983Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Assert incoming and DLR pushed to configured URL $sms $senderid $smshistory",
+    "parameters": [
+      {
+        "parameterId": "sms_",
+        "entityTypeId": "sms",
+        "suffix": ""
+      },
+      {
+        "parameterId": "senderid_",
+        "entityTypeId": "senderid",
+        "suffix": ""
+      },
+      {
+        "parameterId": "16702_",
+        "entityTypeId": "16702",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_selectBrowser",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "$browserWebhook"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "$expected \u003d \"{\\\"msg\\\": \\\"\"+$sms.messageHipaa+\"\\\", \\\"sent_from\\\": \\\"\"+$sms.sourceCheck+\"\\\", \\\"id\\\": \"+$idSMSHistory+\", \\\"sent_to\\\": \\\"\"+$senderID+\"\\\"}\";\n"
+      },
+      {
+        "commented": true,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"value ng-binding[2]\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Contains",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$expected"
+        }
+      },
+      {
+        "commented": false,
+        "action": "_selectBrowser",
+        "stepParameters": [],
+        "stepType": "Action"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

@@ -1,0 +1,85 @@
+{
+  "modifiedOn": "2024-01-12T12:25:45.492Z",
+  "name": "Assert Sync Status in SMS History $sms History",
+  "id": "16695",
+  "type": 3,
+  "createdOn": "2023-10-03T11:45:14.930Z",
+  "content": {
+    "title": "Assert Sync Status in SMS History $sms History",
+    "parameters": [
+      {
+        "parameterId": "sms_",
+        "entityTypeId": "sms",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"Campaign\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"Message History\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"/Incoming Messages/\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"success\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"success\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_cell(6)"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$idSMSHistory"
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

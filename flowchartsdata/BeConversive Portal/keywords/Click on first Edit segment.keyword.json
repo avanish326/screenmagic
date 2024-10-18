@@ -1,0 +1,66 @@
+{
+  "modifiedOn": "2024-08-09T10:12:10.069Z",
+  "name": "Click on first Edit segment",
+  "id": "58780",
+  "type": 3,
+  "createdOn": "2024-08-09T10:08:41.966Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Click on first Edit segment",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": true,
+        "action": "_isVisible",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"tooltip-wrapper[3]\", _rightOf(_cell($segmentui.segmentName)))"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Is_True"
+      },
+      {
+        "commented": true,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"tooltip-wrapper[3]\", _rightOf(_cell($segmentui.segmentName)))"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(1, _under(_tableHeader(\"Segment Name\")))"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(\"Audience Segmentation\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"Audience Segmentation\""
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

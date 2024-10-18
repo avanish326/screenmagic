@@ -1,0 +1,84 @@
+{
+  "name": "Verify the position of the first name last name and mobile number are fixed",
+  "id": "-1",
+  "type": 3,
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Verify the position of the first name last name and mobile number are fixed",
+    "specific": [],
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_position",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_tableHeader(\"First Name\")"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Store",
+        "secondaryParam": {
+          "paramMode": "code",
+          "customValue": "$posFirstName"
+        },
+        "specific": []
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "_assertEqual(\"275,472\", $posFirstName)",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_position",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_tableHeader(\"Mobile Number\")"
+          }
+        ],
+        "stepType": "Store",
+        "stepCategory": "inbuilt",
+        "secondaryParam": {
+          "paramMode": "code",
+          "customValue": "$posMobile"
+        },
+        "specific": []
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "_assertEqual(\"403,472\", $posMobile)",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_position",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_tableHeader(\"Last Name\")"
+          }
+        ],
+        "stepType": "Store",
+        "stepCategory": "inbuilt",
+        "secondaryParam": {
+          "paramMode": "code",
+          "customValue": "$posLastName"
+        },
+        "specific": []
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "_assertEqual(\"541,472\", $posLastName)",
+        "specific": []
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

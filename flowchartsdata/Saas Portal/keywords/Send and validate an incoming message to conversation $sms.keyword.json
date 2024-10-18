@@ -1,0 +1,177 @@
+{
+  "modifiedOn": "2024-10-01T11:17:09.518932528Z",
+  "name": "Send and validate an incoming message to conversation $sms",
+  "id": "-1",
+  "type": 3,
+  "createdOn": "2024-08-12T07:14:33Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Send and validate an incoming message to conversation $sms",
+    "parameters": [
+      {
+        "parameterId": "sms_",
+        "entityTypeId": "sms",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "$mNumberWithCCode\u003d\"1\"+$sms.mobileSMS;"
+      },
+      {
+        "commented": false,
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "POST"
+          },
+          {
+            "paramMode": "code",
+            "customValue": "$incomingSMSURLTwilio"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "REST",
+        "isRawScript": false,
+        "state": {
+          "contentType": "html",
+          "request": {
+            "method": "POST",
+            "url": "$incomingSMSURLTwilio",
+            "parameters": [
+              [
+                "From",
+                "$mNumberWithCCode"
+              ],
+              [
+                "To",
+                "$SenderID"
+              ],
+              [
+                "Body",
+                "Hello, this is an incoming message."
+              ],
+              [
+                "SmsSid",
+                "182989801289"
+              ]
+            ],
+            "headers": [],
+            "authType": "none",
+            "body": "",
+            "bodyParams": [],
+            "isParametrizedBody": false,
+            "resetCookies": false
+          },
+          "assertions": {
+            "status": [],
+            "header": [],
+            "body": []
+          },
+          "variables": {
+            "status": [],
+            "header": [],
+            "body": []
+          },
+          "authInfo": {}
+        }
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_italic(\"close\")"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "5000"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_paragraph(\"My Inbox\")"
+          }
+        ],
+        "stepType": "Action",
+        "stepCategory": "inbuilt"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_span($mNumberWithCCode)"
+          },
+          {
+            "paramMode": "default"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_paragraph(\"Hello, this is an incoming message.\")"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "paramMode": "code",
+          "customValue": "\"Hello, this is an incoming message.\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_italic(\"close\")"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "3000"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

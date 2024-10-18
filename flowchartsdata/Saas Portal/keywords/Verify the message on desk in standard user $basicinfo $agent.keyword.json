@@ -1,0 +1,82 @@
+{
+  "modifiedOn": "2024-06-27T13:47:36.178Z",
+  "name": "Verify the message on desk in standard user $basicinfo $agent",
+  "id": "57933",
+  "type": 3,
+  "createdOn": "2024-06-27T13:47:36.178Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Verify the message on desk in standard user $basicinfo $agent",
+    "parameters": [
+      {
+        "parameterId": "basicinfo_",
+        "entityTypeId": "basicinfo",
+        "suffix": ""
+      },
+      {
+        "parameterId": "agent_",
+        "entityTypeId": "agent",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"mail-content\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_containsText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_heading1(0)"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "$heading"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Is_True"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph($agent.visitorMessage)"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "parameterId": "agent_",
+          "attributeId": "attr_11693224177770"
+        },
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_italic(\"close\")"
+          }
+        ],
+        "stepType": "Action"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

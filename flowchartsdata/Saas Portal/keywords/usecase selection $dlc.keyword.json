@@ -1,0 +1,132 @@
+{
+  "modifiedOn": "2024-09-27T08:51:22.342894644Z",
+  "name": "usecase selection $dlc",
+  "id": "-1",
+  "type": 3,
+  "createdOn": "2024-05-10T11:14:58Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "usecase selection $dlc",
+    "parameters": [
+      {
+        "parameterId": "dlc_",
+        "entityTypeId": "dlc",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_paragraph(\"step-title\")"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getOptions",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_select(\"form-select\")"
+          },
+          {
+            "paramMode": "code",
+            "customValue": "\"sahiText\""
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Store",
+        "secondaryParam": {
+          "paramMode": "code",
+          "customValue": "$options"
+        }
+      },
+      {
+        "commented": true,
+        "isRawScript": true,
+        "rawScript": "$optionsLen \u003d $options.length-1\n$selectOption \u003d _random(1, $optionsLen)\n//$selectOption \u003d $optionLen[1];\n\n$option\u003d $options[$selectOption];\n\n//.split(\u0027(\u0027)[0].trim()\n//$selectOption \u003d \"TUrlM (DLCB-1863)\"\n//$firstHalf \u003d\"TUrlM\""
+      },
+      {
+        "commented": false,
+        "action": "_setSelected",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_select(\"form-select\")"
+          },
+          {
+            "paramMode": "code",
+            "customValue": "$options[1]"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "6000"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_setSelected",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_select(\"form-select\")"
+          },
+          {
+            "paramMode": "code",
+            "customValue": "$option"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "isRawScript": true,
+        "rawScript": "$splitString \u003d $option.split(\u0027(\u0027);\n\n$firstHalf \u003d $splitString[0].trim();\n\n_log(\"The brand name is :  \"+$firstHalf);"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_span(\"2FA\")"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_button(\"Next\")"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

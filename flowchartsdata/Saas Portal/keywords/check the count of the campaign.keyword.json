@@ -1,0 +1,55 @@
+{
+  "modifiedOn": "2024-09-30T07:27:33.507020527Z",
+  "name": "check the count of the campaign",
+  "id": "0",
+  "type": 3,
+  "createdOn": "2024-09-30T07:27:33.507017237Z",
+  "content": {
+    "title": "check the count of the campaign",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "if(_isVisible(_paragraph(0, _near(_span($brandOfButton))))){\n_wait(2000);\n_click(_paragraph(0, _near(_span($brandOfButton))));\n}"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "$campNo \u003d +$noOfCampaign;\n\n$campNo++;"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_paragraph(0, _near(_heading6(\"Pending\")))"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "paramMode": "code",
+          "customValue": "$campNo"
+        }
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "2000"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action"
+      }
+    ],
+    "isSystemKeyword": false
+  },
+  "enabled": false,
+  "parentId": ""
+}

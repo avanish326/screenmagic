@@ -1,0 +1,42 @@
+{
+  "modifiedOn": "2024-03-15T14:34:41.945Z",
+  "name": "Get the status of Analytics from User Permission",
+  "id": "44675",
+  "type": 3,
+  "createdOn": "2024-03-15T14:33:04.439Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Get the status of Analytics from User Permission",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_isChecked",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_checkbox(0, _rightOf(_span(\"Analytics\")))"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$statusAnalytics"
+        }
+      },
+      {
+        "commented": false,
+        "action": "_log",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "$statusAnalytics"
+          }
+        ],
+        "stepType": "Action"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

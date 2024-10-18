@@ -1,0 +1,119 @@
+{
+  "name": "transfer some credits to child $createchild",
+  "id": "-1",
+  "type": 3,
+  "content": {
+    "isSystemKeyword": false,
+    "title": "transfer some credits to child $createchild",
+    "specific": [],
+    "parameters": [
+      {
+        "parameterId": "createchild_",
+        "entityTypeId": "createchild",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "5000"
+          },
+          {
+            "paramMode": "code",
+            "customValue": "_isVisible(_list(0))"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "//$pages \u003d _collectAttributes(\"_listItem\", \"/.*/\", \"sahiText\", _in(_list(0)));\n\n$pages \u003d _collectAttributes(\"_listItem\", \"/.*/\", \"sahiText\", _in(_div(\"pagination\")));\nif($pages.length \u003e 1){\n\t$page \u003d $pages[($pages.length)-1];\n}\nelse{\n\t$page \u003d $pages[0];\n}\n_click(_listItem($page))",
+        "specific": []
+      },
+      {
+        "commented": true,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_emailbox(\"Email\")"
+          },
+          {
+            "paramMode": "default",
+            "parameterId": "createchild_",
+            "attributeId": "attr_11720536515729"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "visibleCheck": false,
+        "specific": []
+      },
+      {
+        "commented": true,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "10000"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_numberbox(0, _near(_cell($childAccount)))"
+          },
+          {
+            "paramMode": "code",
+            "customValue": "\"2\""
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_div(\"Account\")"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_selectWindow",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "\"SMS Magic\""
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

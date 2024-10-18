@@ -1,0 +1,117 @@
+{
+  "modifiedOn": "2024-09-27T07:13:28.439532398Z",
+  "name": "check compliance in overview",
+  "id": "0",
+  "type": 3,
+  "createdOn": "2024-09-27T07:13:28.439524498Z",
+  "content": {
+    "title": "check compliance in overview",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_heading6(\"Website Verification\")"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "paramMode": "code",
+          "customValue": "\"Website Verification\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "2000"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_paragraph(0, _near(_heading6(\"Website Verification\")))"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "paramMode": "code",
+          "customValue": "\"Let\u0027s ensure that your website adheres to various legal, regulatory and industry standards. Share links to necessary pages to provide confirmation.\""
+        }
+      },
+      {
+        "commented": true,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_paragraph(0, _near(_heading6(\"Website Verification\")))"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Store",
+        "secondaryParam": {
+          "paramMode": "code",
+          "customValue": "$webSub"
+        }
+      },
+      {
+        "commented": true,
+        "isRawScript": true,
+        "rawScript": "\n $webSub \u003d $webSub.replace(\u0027\\’\u0027,\u0027\u0027)\n\n_log($webSub)"
+      },
+      {
+        "commented": true,
+        "action": "_areEqual",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "$webSub"
+          },
+          {
+            "paramMode": "code",
+            "customValue": "\"Lets ensure that your website adheres to various legal, regulatory and industry standards. Share links to necessary pages to provide confirmation.\""
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Assert",
+        "assertType": "Is_True"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_paragraph(1, _near(_heading6(\"Website Verification\")))"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "paramMode": "code",
+          "customValue": "\"All page links \u0026 screenshots shared\""
+        }
+      }
+    ],
+    "isSystemKeyword": false
+  },
+  "enabled": false,
+  "parentId": ""
+}

@@ -1,0 +1,130 @@
+{
+  "modifiedOn": "2024-01-18T13:03:30.084Z",
+  "name": "Assert Auto Replay is Triggered in Standard user account for known user $sharedinbox $smssenderid",
+  "id": "22620",
+  "type": 3,
+  "createdOn": "2024-01-18T12:05:29.840Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Assert Auto Replay is Triggered in Standard user account for known user $sharedinbox $smssenderid",
+    "parameters": [
+      {
+        "parameterId": "sharedinbox_",
+        "entityTypeId": "sharedinbox",
+        "suffix": ""
+      },
+      {
+        "parameterId": "smssenderid_",
+        "entityTypeId": "smssenderid",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "7000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "var $name\u003d $sharedinbox.inboxName1;"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"\"+$name+\"\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"mail-content\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "var $message\u003d$smssenderid.text;"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(\"\"+$message+\"\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "parameterId": "smssenderid_",
+          "attributeId": "attr_01702443983828"
+        },
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_heading1(\"\"+$contactName+\" (\"+$phoneNumber+\")\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"\"+$contactName+\" (\"+$phoneNumber+\")\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"This is Auto Replay\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"This is Auto Replay\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_italic(\"close\")"
+          }
+        ],
+        "stepType": "Action"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

@@ -1,0 +1,1363 @@
+{
+  "modifiedOn": "2024-09-11T09:03:18.525617516Z",
+  "name": "Salesforce",
+  "id": "-1",
+  "type": 0,
+  "createdOn": "2023-07-27T05:56:33Z",
+  "content": {
+    "nodesMap": {
+      "fcn_start_0": {
+        "id": "fcn_start_0",
+        "content": "Start",
+        "nodeType": "start",
+        "branches": [
+          "fcn_createsalesforce_registration_0",
+          "fcn_createsalesforce_login_0",
+          "fcn_createsalesforce_sso_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_createsalesforce_registration_0": {
+        "id": "fcn_createsalesforce_registration_0",
+        "content": "Create salesforce_registration",
+        "nodeType": "pathlabel",
+        "branches": [
+          "fcn_createsalesforce_registration_1"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_createsalesforce_registration_1": {
+        "id": "fcn_createsalesforce_registration_1",
+        "content": "Create $salesforce_registration",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertsalesforce_registrationcreated_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_assertsalesforce_registrationcreated_0": {
+        "id": "fcn_assertsalesforce_registrationcreated_0",
+        "content": "Assert $salesforce_registration Created",
+        "nodeType": "state",
+        "branches": [
+          "fcn_salesforce_registrationexiststrue_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_salesforce_registrationexiststrue_0": {
+        "id": "fcn_salesforce_registrationexiststrue_0",
+        "content": "$salesforce_registration.exists\u003dtrue",
+        "nodeType": "state",
+        "branches": [
+          "fcn_salesforceemailvalidation_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_createsalesforce_login_0": {
+        "id": "fcn_createsalesforce_login_0",
+        "content": "Create salesforce_login",
+        "nodeType": "pathlabel",
+        "branches": [
+          "fcn_createsalesforce_login_1"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_createsalesforce_login_1": {
+        "id": "fcn_createsalesforce_login_1",
+        "content": "Create $salesforce_login",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertsalesforce_logincreated_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_assertsalesforce_logincreated_0": {
+        "id": "fcn_assertsalesforce_logincreated_0",
+        "content": "Assert $salesforce_login Created",
+        "nodeType": "state",
+        "branches": [
+          "fcn_salesforce_loginexiststrue_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_salesforce_loginexiststrue_0": {
+        "id": "fcn_salesforce_loginexiststrue_0",
+        "content": "$salesforce_login.exists\u003dtrue",
+        "nodeType": "decision",
+        "branches": [
+          "fcn_incomingsalesforce_0",
+          "fcn_sendsmsfromsalesforce_1"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_sendsmsfromsalesforce_1": {
+        "id": "fcn_sendsmsfromsalesforce_1",
+        "content": "Send SMS from Salesforce",
+        "nodeType": "action",
+        "branches": [],
+        "dataSetId": "-1"
+      },
+      "fcn_incomingsalesforce_0": {
+        "id": "fcn_incomingsalesforce_0",
+        "content": "Incoming Salesforce",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checksmshistory_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_checksmshistory_0": {
+        "id": "fcn_checksmshistory_0",
+        "content": "Check sms history",
+        "nodeType": "action",
+        "branches": [],
+        "dataSetId": "-1"
+      },
+      "fcn_createsalesforce_sso_0": {
+        "id": "fcn_createsalesforce_sso_0",
+        "content": "Create salesforce_sso",
+        "nodeType": "pathlabel",
+        "branches": [
+          "fcn_createsalesforce_sso_1",
+          "fcn_createsalesforcessosandbox_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_createsalesforce_sso_1": {
+        "id": "fcn_createsalesforce_sso_1",
+        "content": "Create $salesforce_sso",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertsalesforce_ssocreated_0",
+          "fcn_navigateuserflow_0",
+          "fcn_prerequisite_0",
+          "fcn_production_0",
+          "fcn_disablesalesforcetaskcheckbox_0",
+          "fcn_connecttosandboxnothavingsandboxkey_0",
+          "fcn_incomingsynctosf_0",
+          "fcn_errorwhileconnectinginactiveorg_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_assertsalesforce_ssocreated_0": {
+        "id": "fcn_assertsalesforce_ssocreated_0",
+        "content": "Assert $salesforce_sso Created",
+        "nodeType": "state",
+        "branches": [
+          "fcn_salesforce_ssoexiststrue_0",
+          "fcn_latestavailablepackage_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_salesforce_ssoexiststrue_0": {
+        "id": "fcn_salesforce_ssoexiststrue_0",
+        "content": "$salesforce_sso.exists\u003dtrue",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_createsalesforce_login_2"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_salesforceemailvalidation_0": {
+        "id": "fcn_salesforceemailvalidation_0",
+        "content": "Validate $salesforceemail",
+        "nodeType": "action",
+        "branches": [],
+        "dataSetId": "-1"
+      },
+      "fcn_createsalesforce_login_2": {
+        "id": "fcn_createsalesforce_login_2",
+        "content": "Create $salesforce_login",
+        "nodeType": "action",
+        "branches": [],
+        "dataSetId": "-1"
+      },
+      "fcn_navigateuserflow_0": {
+        "id": "fcn_navigateuserflow_0",
+        "content": "navigate $userflow",
+        "nodeType": "action",
+        "branches": [],
+        "dataSetId": "-1"
+      },
+      "fcn_createsalesforcessosandbox_0": {
+        "id": "fcn_createsalesforcessosandbox_0",
+        "content": "Create $salesforcesso $sandbox",
+        "nodeType": "action",
+        "branches": [
+          "fcn_latestavailablepackage_1706628030073_0",
+          "fcn_sandboxsetupcorrection_0",
+          "fcn_fetchpackageversionfromlma_0",
+          "fcn_connecttorefreshorg_0",
+          "fcn_sandboxupdateorgidfromconversesettings_0",
+          "fcn_updateexpiryofsandboxorg_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_latestavailablepackage_0": {
+        "id": "fcn_latestavailablepackage_0",
+        "content": "Latest Available Package",
+        "nodeType": "action",
+        "branches": [
+          "fcn_packageversiongreaterthanequalto173_0",
+          "fcn_packagelessthan173_0",
+          "fcn_checktheupgrademailafterupgrade_0",
+          "fcn_registrationsetup_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_packagelessthan173_0": {
+        "id": "fcn_packagelessthan173_0",
+        "content": "SF Package equal or greater than latest package",
+        "nodeType": "skip",
+        "branches": [],
+        "dataSetId": "-1"
+      },
+      "fcn_packageversiongreaterthanequalto173_0": {
+        "id": "fcn_packageversiongreaterthanequalto173_0",
+        "content": "SF Package less than latest package",
+        "nodeType": "skip",
+        "branches": [],
+        "dataSetId": "-1"
+      },
+      "fcn_sfpackageinstalled_0": {
+        "id": "fcn_sfpackageinstalled_0",
+        "content": "SF Package Installed",
+        "nodeType": "decision",
+        "branches": [],
+        "dataSetId": "-1"
+      },
+      "fcn_latestavailablepackage_1706628030073_0": {
+        "id": "fcn_latestavailablepackage_1706628030073_0",
+        "content": "Latest Available Package",
+        "nodeType": "dynamic-decision",
+        "branches": [
+          "fcn_sfpackagelessthanlatestpackage_1706628051249_0",
+          "fcn_sfpackageequalorgreaterthanlatestpackage_1706628045620_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_sfpackageequalorgreaterthanlatestpackage_1706628045620_0": {
+        "id": "fcn_sfpackageequalorgreaterthanlatestpackage_1706628045620_0",
+        "content": "SF Package equal or greater than latest package",
+        "nodeType": "action",
+        "branches": [],
+        "dataSetId": "-1"
+      },
+      "fcn_sfpackagelessthanlatestpackage_1706628051249_0": {
+        "id": "fcn_sfpackagelessthanlatestpackage_1706628051249_0",
+        "content": "SF Package less than latest package",
+        "nodeType": "action",
+        "branches": [],
+        "dataSetId": "-1"
+      },
+      "fcn_assertafterupgrade_0": {
+        "id": "fcn_assertafterupgrade_0",
+        "content": "Assert after upgrade",
+        "nodeType": "action",
+        "branches": [],
+        "dataSetId": "-1"
+      },
+      "fcn_checktheupgrademailafterupgrade_0": {
+        "id": "fcn_checktheupgrademailafterupgrade_0",
+        "content": "check the upgrade mail after upgrade",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_collectaccountdetails_0",
+          "fcn_logintogmailemaillogin_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_logintogmailemaillogin_0": {
+        "id": "fcn_logintogmailemaillogin_0",
+        "content": "Login to gmail $emaillogin",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checkthemailsalesforce_sso_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_checkthemailsalesforce_sso_0": {
+        "id": "fcn_checkthemailsalesforce_sso_0",
+        "content": "check the mail $salesforce_sso",
+        "nodeType": "action",
+        "branches": [],
+        "dataSetId": "-1"
+      },
+      "fcn_collectaccountdetails_0": {
+        "id": "fcn_collectaccountdetails_0",
+        "content": "collect account details",
+        "nodeType": "skip",
+        "branches": [],
+        "dataSetId": "-1"
+      },
+      "fcn_checkthebeforeversion_0": {
+        "id": "fcn_checkthebeforeversion_0",
+        "content": "check the before config",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_triggerthesetup_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_triggerthesetup_0": {
+        "id": "fcn_triggerthesetup_0",
+        "content": "Trigger the setup",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checktheafterversion_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_checktheafterversion_0": {
+        "id": "fcn_checktheafterversion_0",
+        "content": "go to the converse settings",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logintogmailemaillogin_1"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_sandboxsetupcorrection_0": {
+        "id": "fcn_sandboxsetupcorrection_0",
+        "content": "sandbox setup correction",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_checkthebeforeversion_0",
+          "fcn_prerequisite_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_logintogmailemaillogin_1": {
+        "id": "fcn_logintogmailemaillogin_1",
+        "content": "Login to gmail $emaillogin",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checktheinstallationmailsalesforce_sso_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_checktheinstallationmailsalesforce_sso_0": {
+        "id": "fcn_checktheinstallationmailsalesforce_sso_0",
+        "content": "check the installation mail $salesforce_sso",
+        "nodeType": "action",
+        "branches": [],
+        "dataSetId": "-1"
+      },
+      "fcn_prerequisite_0": {
+        "id": "fcn_prerequisite_0",
+        "content": "pre-requisite for sandbox setup correction \u003d Use 1.72 and above org",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_connectthesandboxaccount_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_connectthesandboxaccount_0": {
+        "id": "fcn_connectthesandboxaccount_0",
+        "content": "connect the sandbox account",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checkthesandboxisadded_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_checkthesandboxisadded_0": {
+        "id": "fcn_checkthesandboxisadded_0",
+        "content": "check the sandbox is added",
+        "nodeType": "action",
+        "branches": [],
+        "dataSetId": "-1"
+      },
+      "fcn_registrationsetup_0": {
+        "id": "fcn_registrationsetup_0",
+        "content": "Registration \u0026 setup",
+        "nodeType": "action",
+        "branches": [
+          "fcn_usermanagement_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_usermanagement_0": {
+        "id": "fcn_usermanagement_0",
+        "content": "User management",
+        "nodeType": "action",
+        "branches": [
+          "fcn_messageconfiguration_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_messageconfiguration_0": {
+        "id": "fcn_messageconfiguration_0",
+        "content": "Message Configuration",
+        "nodeType": "action",
+        "branches": [
+          "fcn_senderid_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_senderid_0": {
+        "id": "fcn_senderid_0",
+        "content": "Sender Id",
+        "nodeType": "action",
+        "branches": [
+          "fcn_compliance_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_compliance_0": {
+        "id": "fcn_compliance_0",
+        "content": "Compliance",
+        "nodeType": "action",
+        "branches": [
+          "fcn_conversations_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_conversations_0": {
+        "id": "fcn_conversations_0",
+        "content": "Conversations",
+        "nodeType": "action",
+        "branches": [
+          "fcn_updatetothelatest_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_updatetothelatest_0": {
+        "id": "fcn_updatetothelatest_0",
+        "content": "Update to the latest",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertafterupgrade_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_fetchpackageversionfromlma_0": {
+        "id": "fcn_fetchpackageversionfromlma_0",
+        "content": "fetch package version from LMA",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_sandbox_0",
+          "fcn_production_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_sandbox_0": {
+        "id": "fcn_sandbox_0",
+        "content": "sandbox",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_dooneclicksetup_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_dooneclicksetup_0": {
+        "id": "fcn_dooneclicksetup_0",
+        "content": "do one click setup",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checkforpatchversion_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_checkforpatchversion_0": {
+        "id": "fcn_checkforpatchversion_0",
+        "content": "check for patch $packversion",
+        "nodeType": "action",
+        "branches": [
+          "fcn_upgradethepackage_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_upgradethepackage_0": {
+        "id": "fcn_upgradethepackage_0",
+        "content": "upgrade the package $packversion",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checkforpatchversionafterupgarde_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_checkforpatchversionafterupgarde_0": {
+        "id": "fcn_checkforpatchversionafterupgarde_0",
+        "content": "check for patch $packversion after upgarde",
+        "nodeType": "action",
+        "branches": [],
+        "dataSetId": "-1"
+      },
+      "fcn_production_0": {
+        "id": "fcn_production_0",
+        "content": "Production",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_dooneclicksetup_1"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_dooneclicksetup_1": {
+        "id": "fcn_dooneclicksetup_1",
+        "content": "do one click setup",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checkforpatchpackversion_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_checkforpatchpackversion_0": {
+        "id": "fcn_checkforpatchpackversion_0",
+        "content": "check for patch $packversion",
+        "nodeType": "action",
+        "branches": [
+          "fcn_upgradethepackagepackversion_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_upgradethepackagepackversion_0": {
+        "id": "fcn_upgradethepackagepackversion_0",
+        "content": "upgrade the package $packversion",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checkforpatchpackversionafterupgrade_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_checkforpatchpackversionafterupgrade_0": {
+        "id": "fcn_checkforpatchpackversionafterupgrade_0",
+        "content": "check for patch $packversion after upgarde",
+        "nodeType": "action",
+        "branches": [],
+        "dataSetId": "-1"
+      },
+      "fcn_connecttorefreshedorg_0": {
+        "id": "fcn_connecttorefreshedorg_0",
+        "content": "Connect to Refreshed Org",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logintoopsportallogin_1714144863360_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_connecttorefreshorg_0": {
+        "id": "fcn_connecttorefreshorg_0",
+        "content": "Refresh Org",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_connecttorefreshorg_1",
+          "fcn_connecttoorgnotrefreshed_0",
+          "fcn_conencttodifferentrefreshedorg_0",
+          "fcn_connecttoarefreshedactiveorg_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_connecttorefreshorg_1": {
+        "id": "fcn_connecttorefreshorg_1",
+        "content": "Connect to Refresh Org",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_connecttorefreshedorg_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_connecttoorgnotrefreshed_0": {
+        "id": "fcn_connecttoorgnotrefreshed_0",
+        "content": "Connect to Org not Refreshed",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_connecttoorgnotrefreshed_1"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_conencttodifferentrefreshedorg_0": {
+        "id": "fcn_conencttodifferentrefreshedorg_0",
+        "content": "Conenct to different Refreshed Org",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_connecttodifferentrefreshedorg_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_connecttoorgnotrefreshed_1": {
+        "id": "fcn_connecttoorgnotrefreshed_1",
+        "content": "Connect to Org Not Refreshed",
+        "nodeType": "action",
+        "branches": [],
+        "dataSetId": "-1"
+      },
+      "fcn_connecttodifferentrefreshedorg_0": {
+        "id": "fcn_connecttodifferentrefreshedorg_0",
+        "content": "Connect to different Refreshed Org",
+        "nodeType": "action",
+        "branches": [],
+        "dataSetId": "-1"
+      },
+      "fcn_validateorgidonops_0": {
+        "id": "fcn_validateorgidonops_0",
+        "content": "Validate Org Id on OPS",
+        "nodeType": "action",
+        "branches": [],
+        "dataSetId": "-1"
+      },
+      "fcn_logintoopsportallogin_1714144863360_0": {
+        "id": "fcn_logintoopsportallogin_1714144863360_0",
+        "content": "Login to $opsportallogin",
+        "nodeType": "action",
+        "branches": [
+          "fcn_validateorgidonops_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_disablesalesforcetaskcheckbox_0": {
+        "id": "fcn_disablesalesforcetaskcheckbox_0",
+        "content": "Disable salesforce task checkbox",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_dooneclicksetup_1714481865349_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_dooneclicksetup_1714481865349_0": {
+        "id": "fcn_dooneclicksetup_1714481865349_0",
+        "content": "do one click setup",
+        "nodeType": "action",
+        "branches": [
+          "fcn_gotosalesforce_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_gotosalesforce_0": {
+        "id": "fcn_gotosalesforce_0",
+        "content": "go to salesforce",
+        "nodeType": "action",
+        "branches": [
+          "fcn_gotosetup_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_gotosetup_0": {
+        "id": "fcn_gotosetup_0",
+        "content": "go to setup",
+        "nodeType": "action",
+        "branches": [
+          "fcn_gotocustomsettings_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_gotocustomsettings_0": {
+        "id": "fcn_gotocustomsettings_0",
+        "content": "go to custom settings",
+        "nodeType": "action",
+        "branches": [
+          "fcn_gotodisable_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_gotodisable_0": {
+        "id": "fcn_gotodisable_0",
+        "content": "go to disable",
+        "nodeType": "action",
+        "branches": [
+          "fcn_validatethecheckbox_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_validatethecheckbox_0": {
+        "id": "fcn_validatethecheckbox_0",
+        "content": "validate the check box",
+        "nodeType": "action",
+        "branches": [],
+        "dataSetId": "-1"
+      },
+      "fcn_sandboxupdateorgidfromconversesettings_0": {
+        "id": "fcn_sandboxupdateorgidfromconversesettings_0",
+        "content": "sandbox update org id from converse settings",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_openthecard_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_gotosalesforce_1715762751790_0": {
+        "id": "fcn_gotosalesforce_1715762751790_0",
+        "content": "go to salesforce",
+        "nodeType": "action",
+        "branches": [
+          "fcn_gotosetup_1715830838227_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_openthecard_0": {
+        "id": "fcn_openthecard_0",
+        "content": "open the card",
+        "nodeType": "action",
+        "branches": [
+          "fcn_gotosalesforce_1715762751790_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_gotosetup_1715830838227_0": {
+        "id": "fcn_gotosetup_1715830838227_0",
+        "content": "go to setup",
+        "nodeType": "action",
+        "branches": [
+          "fcn_gotocompanyinformation_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_gotocompanyinformation_0": {
+        "id": "fcn_gotocompanyinformation_0",
+        "content": "go to company information",
+        "nodeType": "action",
+        "branches": [
+          "fcn_smsmagicconverse_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_smsmagicconverse_0": {
+        "id": "fcn_smsmagicconverse_0",
+        "content": "sms magic converse",
+        "nodeType": "action",
+        "branches": [
+          "fcn_dosso_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_dosso_0": {
+        "id": "fcn_dosso_0",
+        "content": "do SSO",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logintoopsportallogin_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_logintoopsportallogin_0": {
+        "id": "fcn_logintoopsportallogin_0",
+        "content": "Login to $opsportallogin",
+        "nodeType": "action",
+        "branches": [
+          "fcn_enteraccountid_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_validateorgid_0": {
+        "id": "fcn_validateorgid_0",
+        "content": "Validate org Id",
+        "nodeType": "action",
+        "branches": [],
+        "dataSetId": "-1"
+      },
+      "fcn_enteraccountid_0": {
+        "id": "fcn_enteraccountid_0",
+        "content": "enter accountId on OPS",
+        "nodeType": "action",
+        "branches": [
+          "fcn_validateorgid_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_connecttosandboxnothavingsandboxkey_0": {
+        "id": "fcn_connecttosandboxnothavingsandboxkey_0",
+        "content": "Connect to Sandbox Not having Sandbox key",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_connecttosandboxnothavingsandboxkey_1"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_connecttosandboxnothavingsandboxkey_1": {
+        "id": "fcn_connecttosandboxnothavingsandboxkey_1",
+        "content": "Connect to Sandbox not having Sandbox Key",
+        "nodeType": "action",
+        "branches": [],
+        "dataSetId": "-1"
+      },
+      "fcn_incomingsynctosf_0": {
+        "id": "fcn_incomingsynctosf_0",
+        "content": "Incoming Sync to SF",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_sendincomingmessage_0",
+          "fcn_mediastorageflagdisabled_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_sendincomingmessage_0": {
+        "id": "fcn_sendincomingmessage_0",
+        "content": "Send Incoming Message1 $smssenderid",
+        "nodeType": "action",
+        "branches": [],
+        "dataSetId": "-1"
+      },
+      "fcn_mediastorageflagdisabled_0": {
+        "id": "fcn_mediastorageflagdisabled_0",
+        "content": "Media Storage Flag Disabled",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_sendincomingmmsssmssenderid_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_sendincomingmmsssmssenderid_0": {
+        "id": "fcn_sendincomingmmsssmssenderid_0",
+        "content": "Send Incoming MMSS $smssenderid",
+        "nodeType": "action",
+        "branches": [],
+        "dataSetId": "-1"
+      },
+      "fcn_updateexpiryofsandboxorg_0": {
+        "id": "fcn_updateexpiryofsandboxorg_0",
+        "content": "Update Expiry of Sandbox Org",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_sandboxconnectedtosfproduction_0",
+          "fcn_sandboxnotconnectedtosfproduction_0",
+          "fcn_createsalesforcessosandbox_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_sandboxconnectedtosfproduction_0": {
+        "id": "fcn_sandboxconnectedtosfproduction_0",
+        "content": "Sandbox Connected to SF Production",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_logintoopsportallogin_1722338376865_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_sandboxnotconnectedtosfproduction_0": {
+        "id": "fcn_sandboxnotconnectedtosfproduction_0",
+        "content": "Sandbox Not Connected to SF Production",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_logintoopsportallogin_1722409661036_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_logintoopsportallogin_1722338376865_0": {
+        "id": "fcn_logintoopsportallogin_1722338376865_0",
+        "content": "Login to $opsportallogin",
+        "nodeType": "action",
+        "branches": [
+          "fcn_storeaccountexpiryfromops_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_storeaccountexpiryfromops_0": {
+        "id": "fcn_storeaccountexpiryfromops_0",
+        "content": "Store Account Expiry from OPS $expirydate",
+        "nodeType": "action",
+        "branches": [
+          "fcn_refreshsandboxorg_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_refreshsandboxorg_0": {
+        "id": "fcn_refreshsandboxorg_0",
+        "content": "Refresh Sandbox Org $expirydate",
+        "nodeType": "action",
+        "branches": [],
+        "dataSetId": "-1"
+      },
+      "fcn_logintoopsportallogin_1722409661036_0": {
+        "id": "fcn_logintoopsportallogin_1722409661036_0",
+        "content": "Login to $opsportallogin",
+        "nodeType": "action",
+        "branches": [
+          "fcn_storesandboxexpiryfromopsexpirydate_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_storesandboxexpiryfromopsexpirydate_0": {
+        "id": "fcn_storesandboxexpiryfromopsexpirydate_0",
+        "content": "Store Sandbox Expiry from OPS $expirydate",
+        "nodeType": "action",
+        "branches": [
+          "fcn_refreshsandboxorgnotconnectedtoproductionexpirydate_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_refreshsandboxorgnotconnectedtoproductionexpirydate_0": {
+        "id": "fcn_refreshsandboxorgnotconnectedtoproductionexpirydate_0",
+        "content": "Refresh Sandbox Org Not Connected to Production $expirydate",
+        "nodeType": "action",
+        "branches": [],
+        "dataSetId": "-1"
+      },
+      "fcn_errorwhileconnectinginactiveorg_0": {
+        "id": "fcn_errorwhileconnectinginactiveorg_0",
+        "content": "Error while connecting inactive org",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_connecttoinactiveorg_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_connecttoinactiveorg_0": {
+        "id": "fcn_connecttoinactiveorg_0",
+        "content": "connect to inactive org",
+        "nodeType": "action",
+        "branches": [],
+        "dataSetId": "-1"
+      },
+      "fcn_connecttoarefreshedactiveorg_0": {
+        "id": "fcn_connecttoarefreshedactiveorg_0",
+        "content": "connect to a refreshed \u0026 active org",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_connecttorefreshedorg_1726039980702_0"
+        ],
+        "dataSetId": -1
+      },
+      "fcn_connecttorefreshedorg_1726039980702_0": {
+        "id": "fcn_connecttorefreshedorg_1726039980702_0",
+        "content": "Connect to Refreshed Org",
+        "nodeType": "action",
+        "branches": [],
+        "dataSetId": "-1"
+      }
+    },
+    "positions": {
+      "fcn_start_0": {
+        "top": 145.93333435058594,
+        "left": 351.933349609375
+      },
+      "fcn_createsalesforce_registration_0": {
+        "top": 216,
+        "left": 32.933349609375
+      },
+      "fcn_createsalesforce_registration_1": {
+        "top": 284,
+        "left": 32.933349609375
+      },
+      "fcn_assertsalesforce_registrationcreated_0": {
+        "top": 353,
+        "left": 32.933349609375
+      },
+      "fcn_salesforce_registrationexiststrue_0": {
+        "top": 440,
+        "left": 32.933349609375
+      },
+      "fcn_salesforceemailvalidation_0": {
+        "top": 513.13330078125,
+        "left": 43.933349609375
+      },
+      "fcn_createsalesforce_login_0": {
+        "top": 216,
+        "left": 369
+      },
+      "fcn_createsalesforce_login_1": {
+        "top": 277,
+        "left": 369
+      },
+      "fcn_assertsalesforce_logincreated_0": {
+        "top": 337,
+        "left": 369
+      },
+      "fcn_salesforce_loginexiststrue_0": {
+        "top": 397,
+        "left": 369
+      },
+      "fcn_incomingsalesforce_0": {
+        "top": 462.1333312988281,
+        "left": 649
+      },
+      "fcn_checksmshistory_0": {
+        "top": 521.13330078125,
+        "left": 649
+      },
+      "fcn_sendsmsfromsalesforce_1": {
+        "top": 462.1333312988281,
+        "left": 369
+      },
+      "fcn_createsalesforce_sso_0": {
+        "top": 196.96665954589844,
+        "left": 999
+      },
+      "fcn_createsalesforce_sso_1": {
+        "top": 254,
+        "left": 1002
+      },
+      "fcn_assertsalesforce_ssocreated_0": {
+        "top": 317,
+        "left": 999
+      },
+      "fcn_salesforce_ssoexiststrue_0": {
+        "top": 389,
+        "left": 999
+      },
+      "fcn_createsalesforce_login_2": {
+        "top": 465.1333312988281,
+        "left": 999
+      },
+      "fcn_latestavailablepackage_0": {
+        "top": 567,
+        "left": 1191
+      },
+      "fcn_packageversiongreaterthanequalto173_0": {
+        "top": 633,
+        "left": 1473
+      },
+      "fcn_packagelessthan173_0": {
+        "top": 623,
+        "left": 1189
+      },
+      "fcn_checktheupgrademailafterupgrade_0": {
+        "top": 627,
+        "left": 850
+      },
+      "fcn_collectaccountdetails_0": {
+        "top": 680.566650390625,
+        "left": 620
+      },
+      "fcn_logintogmailemaillogin_0": {
+        "top": 725.566650390625,
+        "left": 847
+      },
+      "fcn_checkthemailsalesforce_sso_0": {
+        "top": 792.75,
+        "left": 851
+      },
+      "fcn_registrationsetup_0": {
+        "top": 711,
+        "left": 1472
+      },
+      "fcn_usermanagement_0": {
+        "top": 769.566650390625,
+        "left": 1472
+      },
+      "fcn_messageconfiguration_0": {
+        "top": 828.183349609375,
+        "left": 1472
+      },
+      "fcn_senderid_0": {
+        "top": 886.7666625976562,
+        "left": 1472
+      },
+      "fcn_compliance_0": {
+        "top": 945.38330078125,
+        "left": 1471
+      },
+      "fcn_conversations_0": {
+        "top": 1004,
+        "left": 1471
+      },
+      "fcn_updatetothelatest_0": {
+        "top": 1062.566650390625,
+        "left": 1471
+      },
+      "fcn_assertafterupgrade_0": {
+        "top": 1119.183349609375,
+        "left": 1472
+      },
+      "fcn_navigateuserflow_0": {
+        "top": 294,
+        "left": 1364
+      },
+      "fcn_prerequisite_0": {
+        "top": 408.1333312988281,
+        "left": 2141.9666748046875
+      },
+      "fcn_connectthesandboxaccount_0": {
+        "top": 466.7166748046875,
+        "left": 2141.9666748046875
+      },
+      "fcn_checkthesandboxisadded_0": {
+        "top": 525.316650390625,
+        "left": 2144.9666748046875
+      },
+      "fcn_production_0": {
+        "top": 449.7166748046875,
+        "left": 3214
+      },
+      "fcn_dooneclicksetup_1": {
+        "top": 508.316650390625,
+        "left": 3214
+      },
+      "fcn_checkforpatchpackversion_0": {
+        "top": 566.933349609375,
+        "left": 3214
+      },
+      "fcn_upgradethepackagepackversion_0": {
+        "top": 632.066650390625,
+        "left": 3214
+      },
+      "fcn_checkforpatchpackversionafterupgrade_0": {
+        "top": 697.2166748046875,
+        "left": 3215
+      },
+      "fcn_disablesalesforcetaskcheckbox_0": {
+        "top": 352.7166748046875,
+        "left": 6360
+      },
+      "fcn_dooneclicksetup_1714481865349_0": {
+        "top": 411.316650390625,
+        "left": 6360
+      },
+      "fcn_gotosalesforce_0": {
+        "top": 469.8999938964844,
+        "left": 6360
+      },
+      "fcn_gotosetup_0": {
+        "top": 528.5,
+        "left": 6360
+      },
+      "fcn_gotocustomsettings_0": {
+        "top": 587.13330078125,
+        "left": 6360
+      },
+      "fcn_gotodisable_0": {
+        "top": 645.7166748046875,
+        "left": 6360
+      },
+      "fcn_validatethecheckbox_0": {
+        "top": 704.316650390625,
+        "left": 6360
+      },
+      "fcn_connecttosandboxnothavingsandboxkey_0": {
+        "top": 393.7166748046875,
+        "left": 5201
+      },
+      "fcn_connecttosandboxnothavingsandboxkey_1": {
+        "top": 466.7166748046875,
+        "left": 5201
+      },
+      "fcn_incomingsynctosf_0": {
+        "top": 393.7166748046875,
+        "left": 5481
+      },
+      "fcn_sendincomingmessage_0": {
+        "top": 452.7166748046875,
+        "left": 5481
+      },
+      "fcn_mediastorageflagdisabled_0": {
+        "top": 513.7166748046875,
+        "left": 5475
+      },
+      "fcn_sendincomingmmsssmssenderid_0": {
+        "top": 554.7166748046875,
+        "left": 5477
+      },
+      "fcn_errorwhileconnectinginactiveorg_0": {
+        "top": 452.1333312988281,
+        "left": 4318
+      },
+      "fcn_connecttoinactiveorg_0": {
+        "top": 513.2999877929688,
+        "left": 4321
+      },
+      "fcn_createsalesforcessosandbox_0": {
+        "top": 355,
+        "left": 1653.966552734375
+      },
+      "fcn_latestavailablepackage_1706628030073_0": {
+        "top": 423.1333312988281,
+        "left": 1648.966552734375
+      },
+      "fcn_sfpackagelessthanlatestpackage_1706628051249_0": {
+        "top": 495.1333312988281,
+        "left": 1853.9666748046875
+      },
+      "fcn_sfpackageequalorgreaterthanlatestpackage_1706628045620_0": {
+        "top": 495.1333312988281,
+        "left": 1575
+      },
+      "fcn_sandboxsetupcorrection_0": {
+        "top": 393.1333312988281,
+        "left": 2435.9666748046875
+      },
+      "fcn_checkthebeforeversion_0": {
+        "top": 446.1333312988281,
+        "left": 2440.9666748046875
+      },
+      "fcn_triggerthesetup_0": {
+        "top": 496.7166748046875,
+        "left": 2440.9666748046875
+      },
+      "fcn_checktheafterversion_0": {
+        "top": 546.316650390625,
+        "left": 2441.9666748046875
+      },
+      "fcn_logintogmailemaillogin_1": {
+        "top": 598.933349609375,
+        "left": 2442.9666748046875
+      },
+      "fcn_checktheinstallationmailsalesforce_sso_0": {
+        "top": 665.066650390625,
+        "left": 2443.9666748046875
+      },
+      "fcn_fetchpackageversionfromlma_0": {
+        "top": 393.1333312988281,
+        "left": 3019
+      },
+      "fcn_sandbox_0": {
+        "top": 451.7166748046875,
+        "left": 2818
+      },
+      "fcn_dooneclicksetup_0": {
+        "top": 511.316650390625,
+        "left": 2820
+      },
+      "fcn_checkforpatchversion_0": {
+        "top": 569.933349609375,
+        "left": 2820
+      },
+      "fcn_upgradethepackage_0": {
+        "top": 628.5,
+        "left": 2820
+      },
+      "fcn_checkforpatchversionafterupgarde_0": {
+        "top": 687.13330078125,
+        "left": 2820
+      },
+      "fcn_connecttorefreshorg_0": {
+        "top": 394.1333312988281,
+        "left": 3782
+      },
+      "fcn_connecttorefreshorg_1": {
+        "top": 449.1333312988281,
+        "left": 3508
+      },
+      "fcn_connecttorefreshedorg_0": {
+        "top": 511.1333312988281,
+        "left": 3507
+      },
+      "fcn_logintoopsportallogin_1714144863360_0": {
+        "top": 572.13330078125,
+        "left": 3506
+      },
+      "fcn_validateorgidonops_0": {
+        "top": 640.433349609375,
+        "left": 3505
+      },
+      "fcn_connecttoorgnotrefreshed_0": {
+        "top": 449.1333312988281,
+        "left": 3780
+      },
+      "fcn_connecttoorgnotrefreshed_1": {
+        "top": 512.13330078125,
+        "left": 3776
+      },
+      "fcn_conencttodifferentrefreshedorg_0": {
+        "top": 450.1333312988281,
+        "left": 4046
+      },
+      "fcn_connecttodifferentrefreshedorg_0": {
+        "top": 513.13330078125,
+        "left": 4043
+      },
+      "fcn_connecttoarefreshedactiveorg_0": {
+        "top": 453.1333312988281,
+        "left": 4610
+      },
+      "fcn_connecttorefreshedorg_1726039980702_0": {
+        "top": 507.1333312988281,
+        "left": 4615
+      },
+      "fcn_sandboxupdateorgidfromconversesettings_0": {
+        "top": 397.1333312988281,
+        "left": 4893
+      },
+      "fcn_openthecard_0": {
+        "top": 472.1333312988281,
+        "left": 4919
+      },
+      "fcn_gotosalesforce_1715762751790_0": {
+        "top": 532.13330078125,
+        "left": 4915
+      },
+      "fcn_gotosetup_1715830838227_0": {
+        "top": 590.7166748046875,
+        "left": 4915
+      },
+      "fcn_gotocompanyinformation_0": {
+        "top": 649.316650390625,
+        "left": 4915
+      },
+      "fcn_smsmagicconverse_0": {
+        "top": 707.9166870117188,
+        "left": 4915
+      },
+      "fcn_dosso_0": {
+        "top": 766.5166625976562,
+        "left": 4915
+      },
+      "fcn_logintoopsportallogin_0": {
+        "top": 825.13330078125,
+        "left": 4915
+      },
+      "fcn_enteraccountid_0": {
+        "top": 894.2666625976562,
+        "left": 4917
+      },
+      "fcn_validateorgid_0": {
+        "top": 957.2666625976562,
+        "left": 4918
+      },
+      "fcn_updateexpiryofsandboxorg_0": {
+        "top": 398.7166748046875,
+        "left": 5903
+      },
+      "fcn_sandboxconnectedtosfproduction_0": {
+        "top": 457.7166748046875,
+        "left": 5757
+      },
+      "fcn_logintoopsportallogin_1722338376865_0": {
+        "top": 516.7166748046875,
+        "left": 5757
+      },
+      "fcn_storeaccountexpiryfromops_0": {
+        "top": 585.86669921875,
+        "left": 5753
+      },
+      "fcn_refreshsandboxorg_0": {
+        "top": 670.86669921875,
+        "left": 5757
+      },
+      "fcn_sandboxnotconnectedtosfproduction_0": {
+        "top": 459.7166748046875,
+        "left": 6056
+      },
+      "fcn_logintoopsportallogin_1722409661036_0": {
+        "top": 518.7166748046875,
+        "left": 6056
+      },
+      "fcn_storesandboxexpiryfromopsexpirydate_0": {
+        "top": 583.86669921875,
+        "left": 6056
+      },
+      "fcn_refreshsandboxorgnotconnectedtoproductionexpirydate_0": {
+        "top": 663.0166625976562,
+        "left": 6056
+      }
+    },
+    "settings": {
+      "maxProceedDepth": 100,
+      "maxProceedsForFirstDepth": 1,
+      "maxProceedsPerDepth": 1,
+      "maxPathRepititionsPerComboPath": 1,
+      "maxProceedsPerPath": 10000,
+      "maxToggles": 2,
+      "maxMatchingPaths": 3
+    },
+    "isPrimary": false,
+    "pathNames": [
+      {
+        "pathTags": "SalesforceRegistration",
+        "pathDependsOn": "{}",
+        "pathKey": [
+          "fcn_createsalesforce_registration_0",
+          "fcn_createsalesforce_registration_1",
+          "fcn_assertsalesforce_registrationcreated_0",
+          "fcn_salesforce_registrationexiststrue_0",
+          "fcn_salesforceemailvalidation_0"
+        ],
+        "dataSet": {
+          "dataSetName": "Loan Qualification Flow.csv"
+        }
+      }
+    ],
+    "flowChartUID": "fcUID_1709724607034",
+    "pathExecutionOrder": []
+  },
+  "enabled": true,
+  "parentId": ""
+}

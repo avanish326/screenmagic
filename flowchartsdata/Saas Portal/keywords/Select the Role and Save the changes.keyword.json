@@ -1,0 +1,84 @@
+{
+  "modifiedOn": "2024-02-26T06:59:43.240Z",
+  "name": "Select the Role and Save the changes",
+  "id": "43272",
+  "type": 3,
+  "createdOn": "2024-02-26T04:56:45.409Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Select the Role and Save the changes",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_log",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "$userRole"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "if($userRole\u003d\u003d\u0027User\u0027)\n{"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_submit(\"Admin\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "}\nelse\n{"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_submit(\"User\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "}"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_submit(\"/check_circle/\")"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$selected"
+        }
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "$expectedUserRole \u003d $selected.split(\u0027 \u0027)[0];\n"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

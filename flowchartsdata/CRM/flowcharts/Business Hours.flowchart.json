@@ -1,0 +1,302 @@
+{
+  "modifiedOn": "2024-02-06T13:05:13.526Z",
+  "name": "Business Hours",
+  "id": "22978",
+  "type": 0,
+  "createdOn": "2024-01-30T06:00:49.961Z",
+  "content": {
+    "settings": {
+      "maxProceedDepth": 100,
+      "maxProceedsForFirstDepth": 1,
+      "maxProceedsPerDepth": 1,
+      "maxPathRepititionsPerComboPath": 1,
+      "maxProceedsPerPath": 10000,
+      "maxToggles": 2,
+      "maxMatchingPaths": 3
+    },
+    "nodesMap": {
+      "fcn_start_0": {
+        "dataSetId": -1,
+        "id": "fcn_start_0",
+        "nodeType": "start",
+        "branches": [
+          "fcn_businesshours_1706594474815_0"
+        ],
+        "content": "Start"
+      },
+      "fcn_businesshours_1706594474815_0": {
+        "dataSetId": -1,
+        "id": "fcn_businesshours_1706594474815_0",
+        "nodeType": "pathlabel",
+        "branches": [
+          "fcn_logintosaasconversive_1706594485149_0"
+        ],
+        "content": "Business Hours"
+      },
+      "fcn_logintosaasconversive_1706594485149_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintosaasconversive_1706594485149_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_navigatetomessagetemplate_1706594485149_0"
+        ],
+        "content": "login to $saasconversive"
+      },
+      "fcn_navigatetomessagetemplate_1706594485149_0": {
+        "dataSetId": -1,
+        "id": "fcn_navigatetomessagetemplate_1706594485149_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_createtemplateoftypeautomation_1706594485149_0"
+        ],
+        "content": "Navigate to message template"
+      },
+      "fcn_createtemplateoftypeautomation_1706594485149_0": {
+        "dataSetId": -1,
+        "id": "fcn_createtemplateoftypeautomation_1706594485149_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_navigatetosmsservice_1706594485149_0"
+        ],
+        "content": "create $template of type Automation"
+      },
+      "fcn_navigatetosmsservice_1706594485149_0": {
+        "dataSetId": -1,
+        "id": "fcn_navigatetosmsservice_1706594485149_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_navigatetobusinesshours_1706594485149_0"
+        ],
+        "content": "Navigate to SMS Service"
+      },
+      "fcn_navigatetobusinesshours_1706594485149_0": {
+        "dataSetId": -1,
+        "id": "fcn_navigatetobusinesshours_1706594485149_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_isbusinesshoursexists_1706594485149_0"
+        ],
+        "content": "Navigate to Business Hours"
+      },
+      "fcn_isbusinesshoursexists_1706594485149_0": {
+        "dataSetId": -1,
+        "id": "fcn_isbusinesshoursexists_1706594485149_0",
+        "nodeType": "dynamic-decision",
+        "branches": [
+          "fcn_addbusinesshours_1706594499386_0",
+          "fcn_isbusinesshoursenabled_1706594492217_0"
+        ],
+        "content": "Is Business Hours exists ?"
+      },
+      "fcn_isbusinesshoursenabled_1706594492217_0": {
+        "dataSetId": -1,
+        "id": "fcn_isbusinesshoursenabled_1706594492217_0",
+        "nodeType": "dynamic-decision",
+        "branches": [
+          "fcn_enablethebusinesshours_1706594521465_0",
+          "fcn_disableandenablethebh_1706594510433_0"
+        ],
+        "content": "Is Business Hours Enabled ?"
+      },
+      "fcn_addbusinesshours_1706594499386_0": {
+        "dataSetId": -1,
+        "id": "fcn_addbusinesshours_1706594499386_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_disableandenablethebh_1706594510433_0"
+        ],
+        "content": "Add $businesshours"
+      },
+      "fcn_disableandenablethebh_1706594510433_0": {
+        "dataSetId": -1,
+        "id": "fcn_disableandenablethebh_1706594510433_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_editbusinesshours_1706594548065_0"
+        ],
+        "content": "Disable and Enable the BH"
+      },
+      "fcn_enablethebusinesshours_1706594521465_0": {
+        "dataSetId": -1,
+        "id": "fcn_enablethebusinesshours_1706594521465_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_disableandenablethebh_1706594510433_0"
+        ],
+        "content": "Enable the Business Hours"
+      },
+      "fcn_editbusinesshours_1706594548065_0": {
+        "dataSetId": -1,
+        "id": "fcn_editbusinesshours_1706594548065_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_isautoreplayset_1706594557936_0"
+        ],
+        "content": "Edit $businesshours"
+      },
+      "fcn_isautoreplayset_1706594557936_0": {
+        "dataSetId": -1,
+        "id": "fcn_isautoreplayset_1706594557936_0",
+        "nodeType": "dynamic-decision",
+        "branches": [
+          "fcn_setautoreplaytemplate_1706594587367_0",
+          "fcn_isautoreplayenabled_1706594567950_0"
+        ],
+        "content": "Is Auto Replay Set ?"
+      },
+      "fcn_isautoreplayenabled_1706594567950_0": {
+        "dataSetId": -1,
+        "id": "fcn_isautoreplayenabled_1706594567950_0",
+        "nodeType": "dynamic-decision",
+        "branches": [
+          "fcn_enabletheautoreplayandselecttemplate_1706594616284_0",
+          "fcn_disabletheautoreplay_1706594605416_0"
+        ],
+        "content": "Is Auto Replay Enabled ?"
+      },
+      "fcn_setautoreplaytemplate_1706594587367_0": {
+        "dataSetId": -1,
+        "id": "fcn_setautoreplaytemplate_1706594587367_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_isautoreplayenabled_1706594567950_0"
+        ],
+        "content": "set autoreplay $template"
+      },
+      "fcn_disabletheautoreplay_1706594605416_0": {
+        "dataSetId": -1,
+        "id": "fcn_disabletheautoreplay_1706594605416_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_enabletheautoreplayandselecttemplate_1706594616284_0"
+        ],
+        "content": "Disable the auto replay"
+      },
+      "fcn_enabletheautoreplayandselecttemplate_1706594616284_0": {
+        "dataSetId": -1,
+        "id": "fcn_enabletheautoreplayandselecttemplate_1706594616284_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_sendincomingmessagesms_1706594647617_0"
+        ],
+        "content": "Enable the Auto Replay and Select $template"
+      },
+      "fcn_sendincomingmessagesms_1706594647617_0": {
+        "dataSetId": -1,
+        "id": "fcn_sendincomingmessagesms_1706594647617_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checktriggeredautoreplaytemplate_1706594647617_0"
+        ],
+        "content": "send incoming message $sms"
+      },
+      "fcn_checktriggeredautoreplaytemplate_1706594647617_0": {
+        "dataSetId": -1,
+        "id": "fcn_checktriggeredautoreplaytemplate_1706594647617_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_disablethebusinesshours_1706594647617_0"
+        ],
+        "content": "check triggered auto replay $template"
+      },
+      "fcn_disablethebusinesshours_1706594647617_0": {
+        "dataSetId": -1,
+        "id": "fcn_disablethebusinesshours_1706594647617_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Disable the Business Hours"
+      }
+    },
+    "pathNames": {},
+    "isPrimary": false,
+    "positions": {
+      "fcn_start_0": {
+        "top": 150.0,
+        "left": 500.0
+      },
+      "fcn_businesshours_1706594474815_0": {
+        "top": 223.0,
+        "left": 562.0
+      },
+      "fcn_logintosaasconversive_1706594485149_0": {
+        "top": 282.0,
+        "left": 562.0
+      },
+      "fcn_navigatetomessagetemplate_1706594485149_0": {
+        "top": 345.1328125,
+        "left": 562.0
+      },
+      "fcn_createtemplateoftypeautomation_1706594485149_0": {
+        "top": 402.1328125,
+        "left": 562.0
+      },
+      "fcn_navigatetosmsservice_1706594485149_0": {
+        "top": 468.1328125,
+        "left": 562.0
+      },
+      "fcn_navigatetobusinesshours_1706594485149_0": {
+        "top": 523.1328125,
+        "left": 562.0
+      },
+      "fcn_isbusinesshoursexists_1706594485149_0": {
+        "top": 578.1328125,
+        "left": 562.0
+      },
+      "fcn_addbusinesshours_1706594499386_0": {
+        "top": 628.1328125,
+        "left": 823.0
+      },
+      "fcn_disableandenablethebh_1706594510433_0": {
+        "top": 830.1328125,
+        "left": 548.0
+      },
+      "fcn_editbusinesshours_1706594548065_0": {
+        "top": 902.1328125,
+        "left": 548.0
+      },
+      "fcn_isautoreplayset_1706594557936_0": {
+        "top": 983.28125,
+        "left": 546.0
+      },
+      "fcn_setautoreplaytemplate_1706594587367_0": {
+        "top": 1088.28125,
+        "left": 773.0
+      },
+      "fcn_isautoreplayenabled_1706594567950_0": {
+        "top": 1046.28125,
+        "left": 340.0
+      },
+      "fcn_enabletheautoreplayandselecttemplate_1706594616284_0": {
+        "top": 1224.28125,
+        "left": 546.0
+      },
+      "fcn_disabletheautoreplay_1706594605416_0": {
+        "top": 1145.28125,
+        "left": 333.0
+      },
+      "fcn_isbusinesshoursenabled_1706594492217_0": {
+        "top": 658.1328125,
+        "left": 324.0
+      },
+      "fcn_enablethebusinesshours_1706594521465_0": {
+        "top": 748.1328125,
+        "left": 177.0
+      },
+      "fcn_sendincomingmessagesms_1706594647617_0": {
+        "top": 1303.43745,
+        "left": 546.0
+      },
+      "fcn_checktriggeredautoreplaytemplate_1706594647617_0": {
+        "top": 1366.5858875,
+        "left": 546.0
+      },
+      "fcn_disablethebusinesshours_1706594647617_0": {
+        "top": 1432.5858875,
+        "left": 546.0
+      }
+    },
+    "tags": ""
+  },
+  "enabled": true,
+  "parentId": ""
+}

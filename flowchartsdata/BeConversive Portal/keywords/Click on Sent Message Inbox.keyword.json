@@ -1,0 +1,45 @@
+{
+  "modifiedOn": "2024-09-13T12:09:39.479629Z",
+  "name": "Click on Sent Message Inbox",
+  "id": "-1",
+  "type": 3,
+  "createdOn": "2024-09-13T06:39:22Z",
+  "content": {
+    "title": "Click on Sent Message Inbox",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_link(\"Sent Messages\")"
+          }
+        ],
+        "stepType": "Action",
+        "stepCategory": "inbuilt"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_listItem(\"Sent\")"
+          }
+        ],
+        "stepType": "Assert",
+        "stepCategory": "inbuilt",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "paramMode": "string",
+          "customValue": "Sent"
+        }
+      }
+    ],
+    "isSystemKeyword": false
+  },
+  "enabled": false,
+  "parentId": ""
+}

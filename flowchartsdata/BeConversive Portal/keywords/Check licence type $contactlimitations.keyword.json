@@ -1,0 +1,73 @@
+{
+  "modifiedOn": "2024-08-05T11:35:30.529Z",
+  "name": "Check licence type $contactlimitations",
+  "id": "58699",
+  "type": 3,
+  "createdOn": "2024-08-05T08:43:33.895Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Check licence type $contactlimitations",
+    "parameters": [
+      {
+        "parameterId": "contactlimitations_",
+        "entityTypeId": "contactlimitations",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"avatar-icon avatar-icon-32\")"
+          },
+          {}
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"Account Settings\")"
+          },
+          {}
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "3000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(0, _near(_label(\"Subscription Plan\")))"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Contains",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$contactlimitations.licenseName"
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

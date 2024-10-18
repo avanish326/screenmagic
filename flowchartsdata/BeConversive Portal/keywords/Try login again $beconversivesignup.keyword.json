@@ -1,0 +1,85 @@
+{
+  "modifiedOn": "2024-09-19T09:44:10.637621879Z",
+  "name": "Try login again $beconversivesignup",
+  "id": "-1",
+  "type": 3,
+  "createdOn": "2024-09-17T20:18:26Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Try login again $beconversivesignup",
+    "parameters": [
+      {
+        "parameterId": "beconversivesignup_",
+        "entityTypeId": "beconversivesignup",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_emailbox(\"username\")"
+          },
+          {
+            "paramMode": "default",
+            "parameterId": "beconversivesignup_",
+            "attributeId": "attr_131703859961860"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_password(\"password\")"
+          },
+          {
+            "paramMode": "default",
+            "parameterId": "beconversivesignup_",
+            "attributeId": "attr_161705419053080"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "8000"
+          }
+        ],
+        "stepType": "Action",
+        "stepCategory": "inbuilt"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_paragraph(\"INACTIVE-USER\")"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "paramMode": "string",
+          "customValue": "INACTIVE-USER"
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

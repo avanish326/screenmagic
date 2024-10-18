@@ -1,0 +1,100 @@
+{
+  "modifiedOn": "2024-02-08T06:49:52.703Z",
+  "name": "go to $opsportallogin again $trial_signup $accountid",
+  "id": "28500",
+  "type": 3,
+  "createdOn": "2024-02-08T06:49:52.703Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "go to $opsportallogin again $trial_signup $accountid",
+    "parameters": [
+      {
+        "parameterId": "opsportallogin_",
+        "entityTypeId": "opsportallogin",
+        "suffix": ""
+      },
+      {
+        "parameterId": "trial_signup_",
+        "entityTypeId": "trial_signup",
+        "suffix": ""
+      },
+      {
+        "parameterId": "accountid_",
+        "entityTypeId": "accountid",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_navigateTo",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "$opsUrl"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "isRawScript": true,
+        "rawScript": "_set($accountid,_textbox(\"accountToSearch\").innerText)"
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_textbox(\"accountToSearch\")"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "$accountid"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "19000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_textbox(\"query\")"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "$account"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"fa fa-search menu ms-2\")"
+          }
+        ],
+        "stepType": "Action"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

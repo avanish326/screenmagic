@@ -1,0 +1,45 @@
+{
+  "modifiedOn": "2024-08-23T07:28:58.315Z",
+  "name": "Get the Properties Name from Audience Manager page",
+  "id": "58932",
+  "type": 3,
+  "createdOn": "2024-08-23T07:28:58.315Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Get the Properties Name from Audience Manager page",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "$header \u003d _collectAttributes(\"_tableHeader\",\"/.*/\",\"sahiText\",_in(_row(0)));\n_log($header)"
+      },
+      {
+        "commented": false,
+        "action": "_isChecked",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_checkbox(\"Notes\", _near(_paragraph(\"Notes\")))"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Is_True"
+      },
+      {
+        "commented": false,
+        "action": "_isVisible",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(\"Notes\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Is_True"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

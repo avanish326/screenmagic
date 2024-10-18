@@ -1,0 +1,121 @@
+{
+  "name": "create child until the button disables $createchild",
+  "id": "-1",
+  "type": 3,
+  "content": {
+    "isSystemKeyword": false,
+    "title": "create child until the button disables $createchild",
+    "specific": [],
+    "parameters": [
+      {
+        "parameterId": "createchild_",
+        "entityTypeId": "createchild",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_div(\"Account\")"
+          }
+        ],
+        "stepType": "Assert",
+        "stepCategory": "inbuilt",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "paramMode": "code",
+          "customValue": "\"Account\""
+        },
+        "specific": []
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "\n$letterOne\u003d [\"a\", \"b\", \"c\", \"d\", \"e\", \"f\", \"g\"];\n$letterTwo\u003d [\"a\", \"b\", \"c\", \"d\", \"e\", \"f\"];\n$mailOne \u003d \"automaton.user1+child\";\n$mailTwo \u003d \"@screen-magic.com\"\n$loop \u003d true\n\nwhile($loop){",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_getAttribute",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_submit(\"Create Account\")"
+          },
+          {
+            "paramMode": "code",
+            "customValue": "\"class\""
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Store",
+        "secondaryParam": {
+          "paramMode": "code",
+          "customValue": "$disableCheck"
+        },
+        "specific": []
+      },
+      {
+        "commented": true,
+        "action": "_isEnabled",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_submit(\"Create Account\")"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Store",
+        "secondaryParam": {
+          "paramMode": "code",
+          "customValue": "$button"
+        },
+        "specific": []
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "\nif(!_areEqual(\"/cursor-not-allowed/\",$disableCheck)){\n$i \u003d _random($letterOne.length-1);\n$j \u003d _random($letterTwo.length-1);\n$childName \u003d $createchild.accountName+$letterOne[$i]+$letterTwo[$j];\n_click(_submit(\"Create Account\"));\n_setValue(_textbox(\"Account Name\"), $childName);\n_setValue(_emailbox(\"Email\"), $mailOne+$letterOne[$i]+$letterTwo[$j]+$mailTwo);\n_click(_submit(\"Create\"));\n_wait(5000);\n}else{\nbreak;\n}\n}",
+        "specific": []
+      },
+      {
+        "commented": true,
+        "action": "_isEnabled",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_submit(\"Create Account\")"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Assert",
+        "assertType": "Is_False",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_areEqual",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "\"/cursor-not-allowed/\""
+          },
+          {
+            "paramMode": "code",
+            "customValue": "$disableCheck"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Assert",
+        "assertType": "Is_True",
+        "specific": []
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

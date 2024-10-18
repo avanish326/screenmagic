@@ -1,0 +1,3048 @@
+{
+  "modifiedOn": "2024-02-07T05:13:11.270Z",
+  "name": "Conversive Button SMS",
+  "id": "15019",
+  "type": 0,
+  "createdOn": "2023-09-27T07:28:18.177Z",
+  "content": {
+    "settings": {
+      "maxProceedDepth": 100,
+      "maxProceedsForFirstDepth": 1,
+      "maxProceedsPerDepth": 1,
+      "maxPathRepititionsPerComboPath": 1,
+      "maxProceedsPerPath": 10000,
+      "maxToggles": 2,
+      "maxMatchingPaths": 3
+    },
+    "nodesMap": {
+      "fcn_start_0": {
+        "dataSetId": -1,
+        "id": "fcn_start_0",
+        "nodeType": "start",
+        "branches": [
+          "fcn_leadcaptureforsaasthroughfaqbotforsmschannel_1695800032075_0",
+          "fcn_botconversationsforsmsforsaas_1695800229514_0",
+          "fcn_leadcaptureforzohothroughfaqbotforsmschannel_1695803800391_0",
+          "fcn_botconversationsforsmsforzoho_1695804008514_0",
+          "fcn_botconversationforsalesforcesms_1695825054151_0",
+          "fcn_leadcaptureforsfthroughfaqbotforsmschannel_1695825362111_0",
+          "fcn_leadcaptureforsmschannelinsaasforguidedflow_1695825573929_0",
+          "fcn_leadcaptureforsmsinsfforguidedflow_1695825620047_0",
+          "fcn_leadcaptureforsmsinzohoforguidedflow_1695825679515_0"
+        ],
+        "content": "Start"
+      },
+      "fcn_leadcaptureforsaasthroughfaqbotforsmschannel_1695800032075_0": {
+        "dataSetId": -1,
+        "id": "fcn_leadcaptureforsaasthroughfaqbotforsmschannel_1695800032075_0",
+        "nodeType": "pathlabel",
+        "branches": [
+          "fcn_logintosaasconversive_1695800054225_0"
+        ],
+        "content": "Lead Capture for SaaS through FAQBot for SMS channel"
+      },
+      "fcn_logintosaasconversive_1695800054225_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintosaasconversive_1695800054225_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_startconversationwithbotthroughsms_1695800054225_0",
+          "fcn_startconversationwithbotthroughsmsandskipphonenumber_1695800085609_0",
+          "fcn_startconversationwithbotthroughsmsandskipphonenumberandemailinsaas_1695800140459_0"
+        ],
+        "content": "login to $saasconversive"
+      },
+      "fcn_startconversationwithbotthroughsms_1695800054225_0": {
+        "dataSetId": -1,
+        "id": "fcn_startconversationwithbotthroughsms_1695800054225_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checkleadcaptureforsmsinsaassms_1695800054225_0"
+        ],
+        "content": "start conversation with bot through $sms"
+      },
+      "fcn_checkleadcaptureforsmsinsaassms_1695800054225_0": {
+        "dataSetId": -1,
+        "id": "fcn_checkleadcaptureforsmsinsaassms_1695800054225_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "check lead capture for SMS in SaaS $sms"
+      },
+      "fcn_startconversationwithbotthroughsmsandskipphonenumber_1695800085609_0": {
+        "dataSetId": -1,
+        "id": "fcn_startconversationwithbotthroughsmsandskipphonenumber_1695800085609_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checkleadcaptureforsmsinsaassmswhenskipphonenumber_1695800085609_0"
+        ],
+        "content": "start conversation with bot through $sms and skip phone number"
+      },
+      "fcn_checkleadcaptureforsmsinsaassmswhenskipphonenumber_1695800085609_0": {
+        "dataSetId": -1,
+        "id": "fcn_checkleadcaptureforsmsinsaassmswhenskipphonenumber_1695800085609_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "check lead capture for SMS in SaaS $sms when skip phone number"
+      },
+      "fcn_startconversationwithbotthroughsmsandskipphonenumberandemailinsaas_1695800140459_0": {
+        "dataSetId": -1,
+        "id": "fcn_startconversationwithbotthroughsmsandskipphonenumberandemailinsaas_1695800140459_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checkleadcaptureforsmsinsaassmswhenskipphonenumberandemail_1695800140459_0"
+        ],
+        "content": "start conversation with bot through $sms and skip phone number and email in SaaS"
+      },
+      "fcn_checkleadcaptureforsmsinsaassmswhenskipphonenumberandemail_1695800140459_0": {
+        "dataSetId": -1,
+        "id": "fcn_checkleadcaptureforsmsinsaassmswhenskipphonenumberandemail_1695800140459_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "check lead capture for SMS in SaaS $sms when skip phone number and email"
+      },
+      "fcn_botconversationsforsmsforsaas_1695800229514_0": {
+        "dataSetId": -1,
+        "id": "fcn_botconversationsforsmsforsaas_1695800229514_0",
+        "nodeType": "pathlabel",
+        "branches": [
+          "fcn_logintosaasconversive_1695803666605_0"
+        ],
+        "content": "Bot Conversations for SMS for SaaS"
+      },
+      "fcn_logintosaasconversive_1695803666605_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintosaasconversive_1695803666605_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_getagentname_1695803666605_0"
+        ],
+        "content": "login to $saasconversive"
+      },
+      "fcn_getagentname_1695803666605_0": {
+        "dataSetId": -1,
+        "id": "fcn_getagentname_1695803666605_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_startconversationwithbotthroughsms_1695803666605_0"
+        ],
+        "content": "get $agentname"
+      },
+      "fcn_startconversationwithbotthroughsms_1695803666605_0": {
+        "dataSetId": -1,
+        "id": "fcn_startconversationwithbotthroughsms_1695803666605_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_validatethebotconversationmessagesforsms_1695803666605_0"
+        ],
+        "content": "start conversation with bot through $sms"
+      },
+      "fcn_validatethebotconversationmessagesforsms_1695803666605_0": {
+        "dataSetId": -1,
+        "id": "fcn_validatethebotconversationmessagesforsms_1695803666605_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_validatebotconversationsmessagesinsmshistorysms_0"
+        ],
+        "content": "validate the bot conversation messages for $sms"
+      },
+      "fcn_starttheconversationwithagentforsmsagent_1695803666605_0": {
+        "dataSetId": -1,
+        "id": "fcn_starttheconversationwithagentforsmsagent_1695803666605_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_validatesmshistoryforagentmessageagentagentnamesms_1695803666605_0"
+        ],
+        "content": "start the conversation with agent for $sms $agent"
+      },
+      "fcn_validatesmshistoryforagentmessageagentagentnamesms_1695803666605_0": {
+        "dataSetId": -1,
+        "id": "fcn_validatesmshistoryforagentmessageagentagentnamesms_1695803666605_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "validate sms history for agent message $agent $agentname $sms"
+      },
+      "fcn_askforconversationwithagentthroughsms_1695803697348_0": {
+        "dataSetId": -1,
+        "id": "fcn_askforconversationwithagentthroughsms_1695803697348_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assignsmssenderidtoanotheruser_1695803697348_0",
+          "fcn_assignconversationafterhandoff_2"
+        ],
+        "content": "ask for conversation with agent through $sms"
+      },
+      "fcn_assignsmssenderidtoanotheruser_1695803697348_0": {
+        "dataSetId": -1,
+        "id": "fcn_assignsmssenderidtoanotheruser_1695803697348_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assignconversationtoanotheruser_1695803697348_0"
+        ],
+        "content": "assign sms sender id to another user"
+      },
+      "fcn_assignconversationtoanotheruser_1695803697348_0": {
+        "dataSetId": -1,
+        "id": "fcn_assignconversationtoanotheruser_1695803697348_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logintocustomer_portalusingstandarduser_1695803697348_0"
+        ],
+        "content": "assign conversation to another user"
+      },
+      "fcn_logintocustomer_portalusingstandarduser_1695803697348_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintocustomer_portalusingstandarduser_1695803697348_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_starttheconversationwithagentforsmsagentafterassignment_1"
+        ],
+        "content": "Login to $customer_portal using standard user"
+      },
+      "fcn_accepthandofffortheconversationagent_1695803723690_0": {
+        "dataSetId": -1,
+        "id": "fcn_accepthandofffortheconversationagent_1695803723690_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assignconversationtoanotheruser_1695803723690_0"
+        ],
+        "content": "accept hand off for the conversation $agent"
+      },
+      "fcn_assignconversationtoanotheruser_1695803723690_0": {
+        "dataSetId": -1,
+        "id": "fcn_assignconversationtoanotheruser_1695803723690_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logintocustomer_portalusingstandarduser_1695803723690_0"
+        ],
+        "content": "assign conversation to another user"
+      },
+      "fcn_logintocustomer_portalusingstandarduser_1695803723690_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintocustomer_portalusingstandarduser_1695803723690_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_startconversationwithagentafterhandoffacceptedforsms_1695803723690_0"
+        ],
+        "content": "Login to $customer_portal using standard user"
+      },
+      "fcn_startconversationwithagentafterhandoffacceptedforsms_1695803723690_0": {
+        "dataSetId": -1,
+        "id": "fcn_startconversationwithagentafterhandoffacceptedforsms_1695803723690_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_validatesmshistoryinstandardusersmsagent_1699336660123_0"
+        ],
+        "content": "start conversation with $agent after hand off accepted for $sms"
+      },
+      "fcn_leadcaptureforzohothroughfaqbotforsmschannel_1695803800391_0": {
+        "dataSetId": -1,
+        "id": "fcn_leadcaptureforzohothroughfaqbotforsmschannel_1695803800391_0",
+        "nodeType": "pathlabel",
+        "branches": [
+          "fcn_createzoho_login_1695803881495_0"
+        ],
+        "content": "Lead Capture for Zoho through FAQBot for SMS channel"
+      },
+      "fcn_createzoho_login_1695803881495_0": {
+        "dataSetId": -1,
+        "id": "fcn_createzoho_login_1695803881495_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_getconversivebtnnameforsmsandwhatsapp_1695803881495_0"
+        ],
+        "content": "Create $zoho_login"
+      },
+      "fcn_getconversivebtnnameforsmsandwhatsapp_1695803881495_0": {
+        "dataSetId": -1,
+        "id": "fcn_getconversivebtnnameforsmsandwhatsapp_1695803881495_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_startconversationwithbotthroughsmsforzoho_1695803881495_0",
+          "fcn_startconversationwithbotthroughsmsandskipphonenumberforzoho_1695803912080_0",
+          "fcn_startconversationwithbotthroughsmsandskipphonenumberandemailinzoho_1695803943165_0"
+        ],
+        "content": "get $conversivebtnname for SMS and Whats App"
+      },
+      "fcn_startconversationwithbotthroughsmsforzoho_1695803881495_0": {
+        "dataSetId": -1,
+        "id": "fcn_startconversationwithbotthroughsmsforzoho_1695803881495_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checkleadcaptureforsmsinzohoconversivebtnname_1695803881495_0"
+        ],
+        "content": "start conversation with bot through $sms for zoho"
+      },
+      "fcn_checkleadcaptureforsmsinzohoconversivebtnname_1695803881495_0": {
+        "dataSetId": -1,
+        "id": "fcn_checkleadcaptureforsmsinzohoconversivebtnname_1695803881495_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "check lead capture for $sms in zoho $conversivebtnname"
+      },
+      "fcn_startconversationwithbotthroughsmsandskipphonenumberforzoho_1695803912080_0": {
+        "dataSetId": -1,
+        "id": "fcn_startconversationwithbotthroughsmsandskipphonenumberforzoho_1695803912080_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checkleadcaptureforsmsinzohowhenskipphonenumberconversivebtnname_1695803912080_0"
+        ],
+        "content": "start conversation with bot through $sms and skip phone number for zoho"
+      },
+      "fcn_checkleadcaptureforsmsinzohowhenskipphonenumberconversivebtnname_1695803912080_0": {
+        "dataSetId": -1,
+        "id": "fcn_checkleadcaptureforsmsinzohowhenskipphonenumberconversivebtnname_1695803912080_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "check lead capture for $sms in zoho when skip phone number $conversivebtnname"
+      },
+      "fcn_startconversationwithbotthroughsmsandskipphonenumberandemailinzoho_1695803943165_0": {
+        "dataSetId": -1,
+        "id": "fcn_startconversationwithbotthroughsmsandskipphonenumberandemailinzoho_1695803943165_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertleadinzohoforsmswhenuserskipemailandphoneconversivebtnname_1695803943165_0"
+        ],
+        "content": "start conversation with bot through $sms and skip phone number and email in Zoho"
+      },
+      "fcn_assertleadinzohoforsmswhenuserskipemailandphoneconversivebtnname_1695803943165_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertleadinzohoforsmswhenuserskipemailandphoneconversivebtnname_1695803943165_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Assert Lead in Zoho for $sms when user skip Email and Phone $conversivebtnname"
+      },
+      "fcn_botconversationsforsmsforzoho_1695804008514_0": {
+        "dataSetId": -1,
+        "id": "fcn_botconversationsforsmsforzoho_1695804008514_0",
+        "nodeType": "pathlabel",
+        "branches": [
+          "fcn_createzoho_login_1695804008514_0"
+        ],
+        "content": "Bot Conversations for SMS for ZOHO"
+      },
+      "fcn_createzoho_login_1695804008514_0": {
+        "dataSetId": -1,
+        "id": "fcn_createzoho_login_1695804008514_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_getagentname_1695804008514_0"
+        ],
+        "content": "Create $zoho_login"
+      },
+      "fcn_getagentname_1695804008514_0": {
+        "dataSetId": -1,
+        "id": "fcn_getagentname_1695804008514_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_startconversationwithbotthroughsmsforzoho_1695804008514_0"
+        ],
+        "content": "get $agentname"
+      },
+      "fcn_startconversationwithbotthroughsmsforzoho_1695804008514_0": {
+        "dataSetId": -1,
+        "id": "fcn_startconversationwithbotthroughsmsforzoho_1695804008514_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_validatethebotconversationmessagesforsms_1695804008514_0",
+          "fcn_assignsmssenderidtoanotheruser_1695804109686_0"
+        ],
+        "content": "start conversation with bot through $sms for zoho"
+      },
+      "fcn_validatethebotconversationmessagesforsms_1695804008514_0": {
+        "dataSetId": -1,
+        "id": "fcn_validatethebotconversationmessagesforsms_1695804008514_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_starttheconversationwithagentforsmsagentforzoho_1695804008514_0"
+        ],
+        "content": "validate the bot conversation messages for $sms"
+      },
+      "fcn_starttheconversationwithagentforsmsagentforzoho_1695804008514_0": {
+        "dataSetId": -1,
+        "id": "fcn_starttheconversationwithagentforsmsagentforzoho_1695804008514_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_asserthistoryforbotagentconversationinzohobotagentagentnamezohocrmsms_0"
+        ],
+        "content": "start the conversation with agent for $sms $agent for zoho"
+      },
+      "fcn_assignsmssenderidtoanotheruser_1695804109686_0": {
+        "dataSetId": -1,
+        "id": "fcn_assignsmssenderidtoanotheruser_1695804109686_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_askforconversationwithagentthroughsmsforzoho_1695804109686_0"
+        ],
+        "content": "assign sms sender id to another user"
+      },
+      "fcn_askforconversationwithagentthroughsmsforzoho_1695804109686_0": {
+        "dataSetId": -1,
+        "id": "fcn_askforconversationwithagentthroughsmsforzoho_1695804109686_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assignconversationtoanotheruser_1695804109686_0",
+          "fcn_accepthandofffortheconversationagent_1695804193439_0"
+        ],
+        "content": "ask for conversation with agent through $sms for Zoho"
+      },
+      "fcn_assignconversationtoanotheruser_1695804109686_0": {
+        "dataSetId": -1,
+        "id": "fcn_assignconversationtoanotheruser_1695804109686_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logintocustomer_portal1usingstandarduserforzoho_1695804109686_0"
+        ],
+        "content": "assign conversation to another user"
+      },
+      "fcn_logintocustomer_portal1usingstandarduserforzoho_1695804109686_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintocustomer_portal1usingstandarduserforzoho_1695804109686_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_navigatetoconversedesk_1695804109686_0"
+        ],
+        "content": "Login to $customer_portal1 using standard user for zoho"
+      },
+      "fcn_navigatetoconversedesk_1695804109686_0": {
+        "dataSetId": -1,
+        "id": "fcn_navigatetoconversedesk_1695804109686_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_starttheconversationwithagentforsmsagentforzohoafterassignment_0"
+        ],
+        "content": "navigate to converse desk"
+      },
+      "fcn_accepthandofffortheconversationagent_1695804193439_0": {
+        "dataSetId": -1,
+        "id": "fcn_accepthandofffortheconversationagent_1695804193439_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assignconversationtoanotheruser_1695804193439_0"
+        ],
+        "content": "accept hand off for the conversation $agent"
+      },
+      "fcn_assignconversationtoanotheruser_1695804193439_0": {
+        "dataSetId": -1,
+        "id": "fcn_assignconversationtoanotheruser_1695804193439_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logintocustomer_portal1usingstandarduserforzoho_1695804193439_0"
+        ],
+        "content": "assign conversation to another user"
+      },
+      "fcn_logintocustomer_portal1usingstandarduserforzoho_1695804193439_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintocustomer_portal1usingstandarduserforzoho_1695804193439_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_startconversationwithagentafterhandoffacceptedforzohosms_1695804193439_0"
+        ],
+        "content": "Login to $customer_portal1 using standard user for zoho"
+      },
+      "fcn_startconversationwithagentafterhandoffacceptedforzohosms_1695804193439_0": {
+        "dataSetId": -1,
+        "id": "fcn_startconversationwithagentafterhandoffacceptedforzohosms_1695804193439_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_validatesmshistoryinstandardusersmsagent_1699336678372_0"
+        ],
+        "content": "start conversation with $agent after hand off accepted for Zoho $sms"
+      },
+      "fcn_botconversationforsalesforcesms_1695825054151_0": {
+        "dataSetId": -1,
+        "id": "fcn_botconversationforsalesforcesms_1695825054151_0",
+        "nodeType": "pathlabel",
+        "branches": [
+          "fcn_createsalesforce_login_1695825097918_0"
+        ],
+        "content": "bot conversation for salesforce sms "
+      },
+      "fcn_createsalesforce_login_1695825097918_0": {
+        "dataSetId": -1,
+        "id": "fcn_createsalesforce_login_1695825097918_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_navigatetosmsmagicconverse_1699599345185_0"
+        ],
+        "content": "create $salesforce_login"
+      },
+      "fcn_gotoconversedeskofsalesforce_1695825097918_0": {
+        "dataSetId": -1,
+        "id": "fcn_gotoconversedeskofsalesforce_1695825097918_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_startconversationwithbotthroughsmsforsalesforce_1695825097918_0"
+        ],
+        "content": "go to converse desk of salesforce"
+      },
+      "fcn_startconversationwithbotthroughsmsforsalesforce_1695825097918_0": {
+        "dataSetId": -1,
+        "id": "fcn_startconversationwithbotthroughsmsforsalesforce_1695825097918_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_validatethebotconversationmessagesforsmsinsf_1695825097918_0"
+        ],
+        "content": "start conversation with bot through $sms for salesforce"
+      },
+      "fcn_validatethebotconversationmessagesforsmsinsf_1695825097918_0": {
+        "dataSetId": -1,
+        "id": "fcn_validatethebotconversationmessagesforsmsinsf_1695825097918_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertsfsmshistorysmssfagent_1699532682568_0"
+        ],
+        "content": "validate the bot conversation messages for $sms in SF"
+      },
+      "fcn_starttheconversationwithagentforsmsinsfsfagent_1695825097918_0": {
+        "dataSetId": -1,
+        "id": "fcn_starttheconversationwithagentforsmsinsfsfagent_1695825097918_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertsmshistoryforagentmessagsinsfsmssfagent_0"
+        ],
+        "content": "start the conversation with agent for $sms in sf $sfagent"
+      },
+      "fcn_askforconversationwithagentforsmsinsf_1695825250494_0": {
+        "dataSetId": -1,
+        "id": "fcn_askforconversationwithagentforsmsinsf_1695825250494_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assignconversationtoanotheruserinsf_1695825250494_0",
+          "fcn_accepthandoffforsmsconversationinsfagentsfagent_1695825303590_0"
+        ],
+        "content": "ask for conversation with agent for $sms in SF"
+      },
+      "fcn_assignconversationtoanotheruserinsf_1695825250494_0": {
+        "dataSetId": -1,
+        "id": "fcn_assignconversationtoanotheruserinsf_1695825250494_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_createsalesforcelogin_stduser_1695825250494_0"
+        ],
+        "content": "assign conversation to another user in SF"
+      },
+      "fcn_createsalesforcelogin_stduser_1695825250494_0": {
+        "dataSetId": -1,
+        "id": "fcn_createsalesforcelogin_stduser_1695825250494_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_starttheconversationforsmsfromstandarduserfromsfsfagentagent_1695825250494_0"
+        ],
+        "content": "create $salesforcelogin_stduser"
+      },
+      "fcn_starttheconversationforsmsfromstandarduserfromsfsfagentagent_1695825250494_0": {
+        "dataSetId": -1,
+        "id": "fcn_starttheconversationforsmsfromstandarduserfromsfsfagentagent_1695825250494_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertsmshistoryinsfsmssfagentafterassignment_0"
+        ],
+        "content": "start the conversation for $sms from standard user from SF $sfagent $agent"
+      },
+      "fcn_accepthandoffforsmsconversationinsfagentsfagent_1695825303590_0": {
+        "dataSetId": -1,
+        "id": "fcn_accepthandoffforsmsconversationinsfagentsfagent_1695825303590_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assignconversationtoanotheruserinsf_1695825303590_0"
+        ],
+        "content": "accept hand off for sms conversation in sf $agent $sfagent"
+      },
+      "fcn_assignconversationtoanotheruserinsf_1695825303590_0": {
+        "dataSetId": -1,
+        "id": "fcn_assignconversationtoanotheruserinsf_1695825303590_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_createsalesforcelogin_stduser_1695825303590_0"
+        ],
+        "content": "assign conversation to another user in SF"
+      },
+      "fcn_createsalesforcelogin_stduser_1695825303590_0": {
+        "dataSetId": -1,
+        "id": "fcn_createsalesforcelogin_stduser_1695825303590_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_startconversationwithsfagentforsmsafterhandoffacceptedinsf_1695825303590_0"
+        ],
+        "content": "create $salesforcelogin_stduser"
+      },
+      "fcn_startconversationwithsfagentforsmsafterhandoffacceptedinsf_1695825303590_0": {
+        "dataSetId": -1,
+        "id": "fcn_startconversationwithsfagentforsmsafterhandoffacceptedinsf_1695825303590_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertsmshistoryinsfsmssfagentafterassignment_1699602974771_0"
+        ],
+        "content": "start conversation with $sfagent for $sms after HandOff accepted in SF"
+      },
+      "fcn_leadcaptureforsfthroughfaqbotforsmschannel_1695825362111_0": {
+        "dataSetId": -1,
+        "id": "fcn_leadcaptureforsfthroughfaqbotforsmschannel_1695825362111_0",
+        "nodeType": "pathlabel",
+        "branches": [
+          "fcn_createsalesforce_login_1695825448777_0"
+        ],
+        "content": "Lead Capture for SF through FAQBot for SMS channel"
+      },
+      "fcn_createsalesforce_login_1695825448777_0": {
+        "dataSetId": -1,
+        "id": "fcn_createsalesforce_login_1695825448777_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logintoportalusingsalesforce_cred_1695825448777_0"
+        ],
+        "content": "create $salesforce_login"
+      },
+      "fcn_logintoportalusingsalesforce_cred_1695825448777_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintoportalusingsalesforce_cred_1695825448777_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_navigatetoconversivebuttonsettingspage_1695825448777_0"
+        ],
+        "content": "login to portal using $salesforce_cred"
+      },
+      "fcn_navigatetoconversivebuttonsettingspage_1695825448777_0": {
+        "dataSetId": -1,
+        "id": "fcn_navigatetoconversivebuttonsettingspage_1695825448777_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_getconversivebtnnameforsmsandwhatsappinsf_1695825448777_0"
+        ],
+        "content": "navigate to conversive button settings page"
+      },
+      "fcn_getconversivebtnnameforsmsandwhatsappinsf_1695825448777_0": {
+        "dataSetId": -1,
+        "id": "fcn_getconversivebtnnameforsmsandwhatsappinsf_1695825448777_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_gotoconversedeskofsalesforce_1695825448777_0"
+        ],
+        "content": "get $conversivebtnname for SMS and Whats App in SF"
+      },
+      "fcn_gotoconversedeskofsalesforce_1695825448777_0": {
+        "dataSetId": -1,
+        "id": "fcn_gotoconversedeskofsalesforce_1695825448777_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_startconversationwithbotthroughsmsforsalesforce_1695825448777_0",
+          "fcn_startconversationwithbotthroughsmsandskipphonenumberandemailinsf_1695825484395_0",
+          "fcn_startconversationwithbotthroughsmsandskipphonenumberforsf_1695825533530_0"
+        ],
+        "content": "go to converse desk of salesforce"
+      },
+      "fcn_startconversationwithbotthroughsmsforsalesforce_1695825448777_0": {
+        "dataSetId": -1,
+        "id": "fcn_startconversationwithbotthroughsmsforsalesforce_1695825448777_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checkleadcaptureforsmsinsf_1695825448777_0"
+        ],
+        "content": "start conversation with bot through $sms for salesforce"
+      },
+      "fcn_checkleadcaptureforsmsinsf_1695825448777_0": {
+        "dataSetId": -1,
+        "id": "fcn_checkleadcaptureforsmsinsf_1695825448777_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertthesourceforsmsconversivebtnname_1695825448777_0"
+        ],
+        "content": "check lead capture for $sms in SF"
+      },
+      "fcn_assertthesourceforsmsconversivebtnname_1695825448777_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertthesourceforsmsconversivebtnname_1695825448777_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "assert the source for SMS $conversivebtnname"
+      },
+      "fcn_startconversationwithbotthroughsmsandskipphonenumberandemailinsf_1695825484395_0": {
+        "dataSetId": -1,
+        "id": "fcn_startconversationwithbotthroughsmsandskipphonenumberandemailinsf_1695825484395_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertleadcaptureinsfforsmswhenuserskipemailandphone_1695825484395_0"
+        ],
+        "content": "start conversation with bot through $sms and skip phone number and email in SF"
+      },
+      "fcn_assertleadcaptureinsfforsmswhenuserskipemailandphone_1695825484395_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertleadcaptureinsfforsmswhenuserskipemailandphone_1695825484395_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertthesourceforsmsconversivebtnname_1695825448777_0"
+        ],
+        "content": "Assert LeadCapture in SF for $sms when user skip Email and Phone"
+      },
+      "fcn_startconversationwithbotthroughsmsandskipphonenumberforsf_1695825533530_0": {
+        "dataSetId": -1,
+        "id": "fcn_startconversationwithbotthroughsmsandskipphonenumberforsf_1695825533530_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checkleadcaptureforsmsinsfwhenskipphonenumber_1695825533530_0"
+        ],
+        "content": "start conversation with bot through $sms and skip phone number for SF"
+      },
+      "fcn_checkleadcaptureforsmsinsfwhenskipphonenumber_1695825533530_0": {
+        "dataSetId": -1,
+        "id": "fcn_checkleadcaptureforsmsinsfwhenskipphonenumber_1695825533530_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertthesourceforsmsconversivebtnname_1695825448777_0"
+        ],
+        "content": "check lead capture for $sms in SF when skip phone number"
+      },
+      "fcn_leadcaptureforsmschannelinsaasforguidedflow_1695825573929_0": {
+        "dataSetId": -1,
+        "id": "fcn_leadcaptureforsmschannelinsaasforguidedflow_1695825573929_0",
+        "nodeType": "pathlabel",
+        "branches": [
+          "fcn_leadcaptureforsmschannelinsaasforguidedflow_0",
+          "fcn_botandagentconversationthroughguidedflowguidedandfaq_0"
+        ],
+        "content": "Guided Flow SMS"
+      },
+      "fcn_logintosaas_guided_1695825573929_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintosaas_guided_1695825573929_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_conversedeskvalidation_1695825573929_0",
+          "fcn_botandagentconversationthroughguidedflow_0"
+        ],
+        "content": "login to $saas_guided"
+      },
+      "fcn_conversedeskvalidation_1695825573929_0": {
+        "dataSetId": -1,
+        "id": "fcn_conversedeskvalidation_1695825573929_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_starttheconversationwithbotthroughsmsforguidedinsaas_1695825573929_0"
+        ],
+        "content": "Converse Desk Validation"
+      },
+      "fcn_starttheconversationwithbotthroughsmsforguidedinsaas_1695825573929_0": {
+        "dataSetId": -1,
+        "id": "fcn_starttheconversationwithbotthroughsmsforguidedinsaas_1695825573929_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checkleadcaptureforsmsinsaassmsforguidedflow_1695825573929_0"
+        ],
+        "content": "start the conversation with bot through $sms for guided in SaaS"
+      },
+      "fcn_checkleadcaptureforsmsinsaassmsforguidedflow_1695825573929_0": {
+        "dataSetId": -1,
+        "id": "fcn_checkleadcaptureforsmsinsaassmsforguidedflow_1695825573929_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "check lead capture for SMS in SaaS $sms for Guided flow"
+      },
+      "fcn_leadcaptureforsmsinsfforguidedflow_1695825620047_0": {
+        "dataSetId": -1,
+        "id": "fcn_leadcaptureforsmsinsfforguidedflow_1695825620047_0",
+        "nodeType": "pathlabel",
+        "branches": [
+          "fcn_leadcaptureforsmsinsfforguidedflow_0",
+          "fcn_botandagentconversationthroughguidedflowguidedandfaqforsf_0"
+        ],
+        "content": "Guided Flow for SMS SF"
+      },
+      "fcn_createsflogin_guided_1695825620047_0": {
+        "dataSetId": -1,
+        "id": "fcn_createsflogin_guided_1695825620047_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_botandagentconversationthroughguidedflow_2",
+          "fcn_navigatetosmsmagicconverse_1699504284919_0"
+        ],
+        "content": "create $sflogin_guided"
+      },
+      "fcn_logintoportalusingsalesforce_credforguided_1695825620047_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintoportalusingsalesforce_credforguided_1695825620047_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_navigatetoconversivebuttonsettingspage_1695825620047_0"
+        ],
+        "content": "login to portal using $salesforce_cred for guided "
+      },
+      "fcn_navigatetoconversivebuttonsettingspage_1695825620047_0": {
+        "dataSetId": -1,
+        "id": "fcn_navigatetoconversivebuttonsettingspage_1695825620047_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_getconversivebtnnameforsmsandwhatsappinsf_1695825620047_0"
+        ],
+        "content": "navigate to conversive button settings page"
+      },
+      "fcn_getconversivebtnnameforsmsandwhatsappinsf_1695825620047_0": {
+        "dataSetId": -1,
+        "id": "fcn_getconversivebtnnameforsmsandwhatsappinsf_1695825620047_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_gotoconversedeskofsalesforce_1695825620047_0"
+        ],
+        "content": "get $conversivebtnname for SMS and Whats App in SF"
+      },
+      "fcn_gotoconversedeskofsalesforce_1695825620047_0": {
+        "dataSetId": -1,
+        "id": "fcn_gotoconversedeskofsalesforce_1695825620047_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_starttheconversationwithbotthroughsmsforguidedinsf_1695825620047_0"
+        ],
+        "content": "go to converse desk of salesforce"
+      },
+      "fcn_starttheconversationwithbotthroughsmsforguidedinsf_1695825620047_0": {
+        "dataSetId": -1,
+        "id": "fcn_starttheconversationwithbotthroughsmsforguidedinsf_1695825620047_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checkleadcaptureforsmsinsfsmsforguidedflow_1695825620047_0"
+        ],
+        "content": "start the conversation with bot through $sms for guided in SF"
+      },
+      "fcn_checkleadcaptureforsmsinsfsmsforguidedflow_1695825620047_0": {
+        "dataSetId": -1,
+        "id": "fcn_checkleadcaptureforsmsinsfsmsforguidedflow_1695825620047_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertthesourceforsmsconversivebtnname_1695825620047_0"
+        ],
+        "content": "check lead capture for SMS in SF $sms for Guided flow"
+      },
+      "fcn_assertthesourceforsmsconversivebtnname_1695825620047_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertthesourceforsmsconversivebtnname_1695825620047_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "assert the source for SMS $conversivebtnname"
+      },
+      "fcn_leadcaptureforsmsinzohoforguidedflow_1695825679515_0": {
+        "dataSetId": -1,
+        "id": "fcn_leadcaptureforsmsinzohoforguidedflow_1695825679515_0",
+        "nodeType": "pathlabel",
+        "branches": [
+          "fcn_leadcaptureforsmsinzohoforguidedflow_0",
+          "fcn_botandagentconversationthroughguidedflowguidedandfaqforzoho_0"
+        ],
+        "content": "Guided Flow for SMS ZOHO"
+      },
+      "fcn_createzohologin_guided_1695825679515_0": {
+        "dataSetId": -1,
+        "id": "fcn_createzohologin_guided_1695825679515_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_navigatetoconversivebuttonsettingspage_1695825679515_0",
+          "fcn_botandagentconversationthroughguidedflow_1"
+        ],
+        "content": "create $zohologin_guided"
+      },
+      "fcn_navigatetoconversivebuttonsettingspage_1695825679515_0": {
+        "dataSetId": -1,
+        "id": "fcn_navigatetoconversivebuttonsettingspage_1695825679515_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_getconversivebtnnameforsmsandwhatsapp_1695825679515_0"
+        ],
+        "content": "navigate to conversive button settings page"
+      },
+      "fcn_getconversivebtnnameforsmsandwhatsapp_1695825679515_0": {
+        "dataSetId": -1,
+        "id": "fcn_getconversivebtnnameforsmsandwhatsapp_1695825679515_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_conversedeskvalidation_1695825679515_0"
+        ],
+        "content": "get $conversivebtnname for SMS and Whats App"
+      },
+      "fcn_conversedeskvalidation_1695825679515_0": {
+        "dataSetId": -1,
+        "id": "fcn_conversedeskvalidation_1695825679515_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_starttheconversationwithbotthroughsmsforguidedinzoho_1695825679515_0"
+        ],
+        "content": "Converse Desk Validation"
+      },
+      "fcn_starttheconversationwithbotthroughsmsforguidedinzoho_1695825679515_0": {
+        "dataSetId": -1,
+        "id": "fcn_starttheconversationwithbotthroughsmsforguidedinzoho_1695825679515_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checkleadcaptureforsmsinzohosmsforguidedflowconversivebtnname_1695825679515_0"
+        ],
+        "content": "start the conversation with bot through $sms for guided in ZOHO"
+      },
+      "fcn_checkleadcaptureforsmsinzohosmsforguidedflowconversivebtnname_1695825679515_0": {
+        "dataSetId": -1,
+        "id": "fcn_checkleadcaptureforsmsinzohosmsforguidedflowconversivebtnname_1695825679515_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "check lead capture for SMS in Zoho $sms for Guided flow $conversivebtnname"
+      },
+      "fcn_leadcaptureforsmschannelinsaasforguidedflow_0": {
+        "dataSetId": -1,
+        "id": "fcn_leadcaptureforsmschannelinsaasforguidedflow_0",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_logintosaas_guided_1695825573929_0"
+        ],
+        "content": "Lead Capture for SMS Channel In SaaS for Guided Flow"
+      },
+      "fcn_botandagentconversationthroughguidedflow_0": {
+        "dataSetId": -1,
+        "id": "fcn_botandagentconversationthroughguidedflow_0",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_getagentname_1699274448335_0"
+        ],
+        "content": "Bot and Agent Conversation through Guided Flow"
+      },
+      "fcn_getagentname_1699274448335_0": {
+        "dataSetId": -1,
+        "id": "fcn_getagentname_1699274448335_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_starttheconversationwithbotthroughsmsforguidedinsaas_1699274457779_0"
+        ],
+        "content": "get $agentname"
+      },
+      "fcn_starttheconversationwithbotthroughsmsforguidedinsaas_1699274457779_0": {
+        "dataSetId": -1,
+        "id": "fcn_starttheconversationwithbotthroughsmsforguidedinsaas_1699274457779_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_validatethesmshistoryforsmsbotconversationmessagesforguidedbotsms_0"
+        ],
+        "content": "start the conversation with bot through $sms for guided in SaaS"
+      },
+      "fcn_starttheconversationwithagentforsmsagentforguided_0": {
+        "dataSetId": -1,
+        "id": "fcn_starttheconversationwithagentforsmsagentforguided_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_verifysmshistoryforagentconversationforsmsbotagentagentname_0"
+        ],
+        "content": "start the conversation with agent for $sms $agent for guided"
+      },
+      "fcn_validatethesmshistoryforsmsbotconversationmessagesforguidedbotsms_0": {
+        "dataSetId": -1,
+        "id": "fcn_validatethesmshistoryforsmsbotconversationmessagesforguidedbotsms_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_validatethehistoryforsmsbotconversationmessagesforguidedbotsms_0"
+        ],
+        "content": "Validate SMS bot conversation messages for guided $bot $sms"
+      },
+      "fcn_validatethehistoryforsmsbotconversationmessagesforguidedbotsms_0": {
+        "dataSetId": -1,
+        "id": "fcn_validatethehistoryforsmsbotconversationmessagesforguidedbotsms_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_starttheconversationwithagentforsmsagentforguided_0",
+          "fcn_assignconversationafterhandoff_0"
+        ],
+        "content": "Validate the History for SMS bot conversation messages for guided $bot $sms"
+      },
+      "fcn_verifysmshistoryforagentconversationforsmsbotagentagentname_0": {
+        "dataSetId": -1,
+        "id": "fcn_verifysmshistoryforagentconversationforsmsbotagentagentname_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "verify SMS History for agent conversation for $sms $bot $agent $agentname"
+      },
+      "fcn_starttheconversationwithagentforsmsagentafterassignment_1": {
+        "dataSetId": -1,
+        "id": "fcn_starttheconversationwithagentforsmsagentafterassignment_1",
+        "nodeType": "action",
+        "branches": [
+          "fcn_validatesmshistoryforagentmessageagentagentnamesmsafterassignment_0"
+        ],
+        "content": "start the conversation with agent for $sms $agent after assignment"
+      },
+      "fcn_starttheconversationwithagentforsmsagentforzohoafterassignment_0": {
+        "dataSetId": -1,
+        "id": "fcn_starttheconversationwithagentforsmsagentforzohoafterassignment_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_validatesmshistoryforagentmessageagentagentnamesms_1699336670456_0"
+        ],
+        "content": "start the conversation with agent for $sms $agent for zoho after assignment"
+      },
+      "fcn_assignconversationtoanotheruser_1699335311315_0": {
+        "dataSetId": -1,
+        "id": "fcn_assignconversationtoanotheruser_1699335311315_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logintocustomer_portalusingstandarduserforguided_1699335507826_0"
+        ],
+        "content": "assign conversation to another user"
+      },
+      "fcn_assignconversationafterhandoff_0": {
+        "dataSetId": -1,
+        "id": "fcn_assignconversationafterhandoff_0",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_getstandardusernameforsaas_1706174434686_0"
+        ],
+        "content": "Assign Conversation After Hand Off"
+      },
+      "fcn_logintocustomer_portalusingstandarduserforguided_1699335507826_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintocustomer_portalusingstandarduserforguided_1699335507826_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_startconversationwithagentafterhandoffacceptedforsmsforguidedflow_0"
+        ],
+        "content": "Login to $customer_portal using standard user for guided"
+      },
+      "fcn_startconversationwithagentafterhandoffacceptedforsmsforguidedflow_0": {
+        "dataSetId": -1,
+        "id": "fcn_startconversationwithagentafterhandoffacceptedforsmsforguidedflow_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_validatesmshistoryinstandardusersms_0"
+        ],
+        "content": "start conversation with $agent after hand off accepted for $sms for guided flow"
+      },
+      "fcn_validatesmshistoryinstandardusersms_0": {
+        "dataSetId": -1,
+        "id": "fcn_validatesmshistoryinstandardusersms_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Validate sms history in standard user $sms $agent"
+      },
+      "fcn_leadcaptureforsmsinzohoforguidedflow_0": {
+        "dataSetId": -1,
+        "id": "fcn_leadcaptureforsmsinzohoforguidedflow_0",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_createzohologin_guided_1695825679515_0"
+        ],
+        "content": "Lead Capture for SMS In ZOHO for Guided Flow"
+      },
+      "fcn_botandagentconversationthroughguidedflow_1": {
+        "dataSetId": -1,
+        "id": "fcn_botandagentconversationthroughguidedflow_1",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_getagentname_1699336709240_0"
+        ],
+        "content": "Bot and Agent Conversation through Guided Flow"
+      },
+      "fcn_validatesmshistoryinstandardusersmsagent_1699336660123_0": {
+        "dataSetId": -1,
+        "id": "fcn_validatesmshistoryinstandardusersmsagent_1699336660123_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Validate sms history in standard user $sms $agent"
+      },
+      "fcn_validatesmshistoryforagentmessageagentagentnamesms_1699336670456_0": {
+        "dataSetId": -1,
+        "id": "fcn_validatesmshistoryforagentmessageagentagentnamesms_1699336670456_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "validate sms history for agent message $agent $agentname $sms"
+      },
+      "fcn_validatesmshistoryinstandardusersmsagent_1699336678372_0": {
+        "dataSetId": -1,
+        "id": "fcn_validatesmshistoryinstandardusersmsagent_1699336678372_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Validate sms history in standard user $sms $agent"
+      },
+      "fcn_getagentname_1699336709240_0": {
+        "dataSetId": -1,
+        "id": "fcn_getagentname_1699336709240_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_starttheconversationwithbotthroughsmsforguidedinzoho_0"
+        ],
+        "content": "get $agentname"
+      },
+      "fcn_validatesmsbotconversationmessagesforguidedbotsms_1699336804304_0": {
+        "dataSetId": -1,
+        "id": "fcn_validatesmsbotconversationmessagesforguidedbotsms_1699336804304_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_validatethehistoryforsmsbotconversationmessagesforguidedbotsms_1699345250895_0"
+        ],
+        "content": "Validate SMS bot conversation messages for guided $bot $sms"
+      },
+      "fcn_starttheconversationwithbotthroughsmsforguidedinzoho_0": {
+        "dataSetId": -1,
+        "id": "fcn_starttheconversationwithbotthroughsmsforguidedinzoho_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_validatesmsbotconversationmessagesforguidedbotsms_1699336804304_0"
+        ],
+        "content": "start the conversation with bot through $sms for guided in ZOHO"
+      },
+      "fcn_starttheconversationwithagentforsmsagentforguidedzoho_0": {
+        "dataSetId": -1,
+        "id": "fcn_starttheconversationwithagentforsmsagentforguidedzoho_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_verifysmshistoryforagentconversationforsmsbotagentagentname_1699345273861_0"
+        ],
+        "content": "start the conversation with agent for $sms $agent for guided ZOHO"
+      },
+      "fcn_validatethehistoryforsmsbotconversationmessagesforguidedbotsms_1699345250895_0": {
+        "dataSetId": -1,
+        "id": "fcn_validatethehistoryforsmsbotconversationmessagesforguidedbotsms_1699345250895_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_starttheconversationwithagentforsmsagentforguidedzoho_0",
+          "fcn_assignconversationafterhandoff_1"
+        ],
+        "content": "Validate the History for SMS bot conversation messages for guided $bot $sms"
+      },
+      "fcn_verifysmshistoryforagentconversationforsmsbotagentagentname_1699345273861_0": {
+        "dataSetId": -1,
+        "id": "fcn_verifysmshistoryforagentconversationforsmsbotagentagentname_1699345273861_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_asserthistoryinzohoforguidedbotagentagentnamezohocrmsms_0"
+        ],
+        "content": "verify SMS History for agent conversation for $sms $bot $agent $agentname"
+      },
+      "fcn_asserthistoryinzohoforguidedbotagentagentnamezohocrmsms_0": {
+        "dataSetId": -1,
+        "id": "fcn_asserthistoryinzohoforguidedbotagentagentnamezohocrmsms_0",
+        "nodeType": "skip",
+        "branches": [],
+        "content": "assert History in zoho for guided $bot $agent $agentnamezohocrm $sms"
+      },
+      "fcn_assignconversationafterhandoff_1": {
+        "dataSetId": -1,
+        "id": "fcn_assignconversationafterhandoff_1",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_getstandardusernameforsaas_1706174630585_0"
+        ],
+        "content": "Assign Conversation After Hand Off"
+      },
+      "fcn_assignconversationtoanotheruser_1699348072690_0": {
+        "dataSetId": -1,
+        "id": "fcn_assignconversationtoanotheruser_1699348072690_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logintocustomer_portalusingstandarduserforzohoguided_1699348094173_0"
+        ],
+        "content": "assign conversation to another user"
+      },
+      "fcn_logintocustomer_portalusingstandarduserforzohoguided_1699348094173_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintocustomer_portalusingstandarduserforzohoguided_1699348094173_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_startconversationwithagentafterhandoffacceptedforsmsforguidedzoho_0"
+        ],
+        "content": "Login to $customer_portal using standard user for Zoho guided "
+      },
+      "fcn_startconversationwithagentafterhandoffacceptedforsmsforguidedzoho_0": {
+        "dataSetId": -1,
+        "id": "fcn_startconversationwithagentafterhandoffacceptedforsmsforguidedzoho_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_validatesmshistoryinstandardusersmsagent_1699348146456_0"
+        ],
+        "content": "start conversation with $agent after hand off accepted for $sms for guided zoho"
+      },
+      "fcn_validatesmshistoryinstandardusersmsagent_1699348146456_0": {
+        "dataSetId": -1,
+        "id": "fcn_validatesmshistoryinstandardusersmsagent_1699348146456_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Validate sms history in standard user $sms $agent"
+      },
+      "fcn_assignconversationbeforehandoff_2": {
+        "dataSetId": -1,
+        "id": "fcn_assignconversationbeforehandoff_2",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_getstandardusernameforsaas_1699366114024_0"
+        ],
+        "content": "Assign Conversation Before Hand Off"
+      },
+      "fcn_getstandardusernameforsaas_1699366114024_0": {
+        "dataSetId": -1,
+        "id": "fcn_getstandardusernameforsaas_1699366114024_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_askforconversationwithagentthroughsms_1695803697348_0"
+        ],
+        "content": "get $standardusername for SaaS"
+      },
+      "fcn_validatesmshistoryforagentmessageagentagentnamesmsafterassignment_0": {
+        "dataSetId": -1,
+        "id": "fcn_validatesmshistoryforagentmessageagentagentnamesmsafterassignment_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "validate sms history for agent message $agent $agentname $sms after assignment"
+      },
+      "fcn_assignconversationafterhandoff_2": {
+        "dataSetId": -1,
+        "id": "fcn_assignconversationafterhandoff_2",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_accepthandofffortheconversationagent_1695803723690_0"
+        ],
+        "content": "Assign Conversation After Hand Off"
+      },
+      "fcn_leadcaptureforsmsinsfforguidedflow_0": {
+        "dataSetId": -1,
+        "id": "fcn_leadcaptureforsmsinsfforguidedflow_0",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_createsflogin_guided_1695825620047_0"
+        ],
+        "content": "Lead Capture for SMS In SF for Guided Flow"
+      },
+      "fcn_botandagentconversationthroughguidedflow_2": {
+        "dataSetId": -1,
+        "id": "fcn_botandagentconversationthroughguidedflow_2",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_navigatetosmsmagicconverse_1699504096922_0"
+        ],
+        "content": "Bot and Agent Conversation through Guided Flow"
+      },
+      "fcn_logintoportalusingsalesforce_credforguided_1699447154127_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintoportalusingsalesforce_credforguided_1699447154127_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_getagentnamesf_1699505167491_0"
+        ],
+        "content": "login to portal using $salesforce_cred for guided "
+      },
+      "fcn_gotoconversedeskofsalesforce_1699447154127_0": {
+        "dataSetId": -1,
+        "id": "fcn_gotoconversedeskofsalesforce_1699447154127_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_starttheconversationwithbotthroughsmsforguidedinsf_1699447154127_0"
+        ],
+        "content": "go to converse desk of salesforce"
+      },
+      "fcn_starttheconversationwithbotthroughsmsforguidedinsf_1699447154127_0": {
+        "dataSetId": -1,
+        "id": "fcn_starttheconversationwithbotthroughsmsforguidedinsf_1699447154127_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_validatethebotconversationmessagesforsmsinsfforguided_0"
+        ],
+        "content": "start the conversation with bot through $sms for guided in SF"
+      },
+      "fcn_validatethebotconversationmessagesforsmsinsfforguided_0": {
+        "dataSetId": -1,
+        "id": "fcn_validatethebotconversationmessagesforsmsinsfforguided_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_navigatetosmshistory_1706070550760_0",
+          "fcn_assignconversationafterhandoff_3"
+        ],
+        "content": "validate the bot conversation messages for $sms in SF for guided"
+      },
+      "fcn_assertsfsmshistoryforsfagentmessagessms_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertsfsmshistoryforsfagentmessagessms_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertsfsmshistoryforsfagentmessagessmsinportalforguided_0"
+        ],
+        "content": "Assert SF SMS History for $sfagent messages $sms"
+      },
+      "fcn_assignconversationafterhandoff_3": {
+        "dataSetId": -1,
+        "id": "fcn_assignconversationafterhandoff_3",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_assignconversationtoanotheruserinsf_1699503883074_0"
+        ],
+        "content": "Assign Conversation After Hand Off"
+      },
+      "fcn_assignconversationtoanotheruserinsf_1699503883074_0": {
+        "dataSetId": -1,
+        "id": "fcn_assignconversationtoanotheruserinsf_1699503883074_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_createsalesforcelogin_stduserforguided_1699503887941_0"
+        ],
+        "content": "assign conversation to another user in SF"
+      },
+      "fcn_createsalesforcelogin_stduserforguided_1699503887941_0": {
+        "dataSetId": -1,
+        "id": "fcn_createsalesforcelogin_stduserforguided_1699503887941_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_startconversationwithsfagentforsmsafterhandoffacceptedinsf_1699503894521_0"
+        ],
+        "content": "create $salesforcelogin_stduser for guided"
+      },
+      "fcn_startconversationwithsfagentforsmsafterhandoffacceptedinsf_1699503894521_0": {
+        "dataSetId": -1,
+        "id": "fcn_startconversationwithsfagentforsmsafterhandoffacceptedinsf_1699503894521_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "start conversation with $sfagent for $sms after HandOff accepted in SF"
+      },
+      "fcn_navigatetosmsmagicconverse_1699504096922_0": {
+        "dataSetId": -1,
+        "id": "fcn_navigatetosmsmagicconverse_1699504096922_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_switchtosalesforceclassic_1699504096922_0"
+        ],
+        "content": "Navigate to SMS Magic Converse"
+      },
+      "fcn_switchtosalesforceclassic_1699504096922_0": {
+        "dataSetId": -1,
+        "id": "fcn_switchtosalesforceclassic_1699504096922_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logintoportalusingsalesforce_credforguided_1699447154127_0"
+        ],
+        "content": "Switch to salesforce classic "
+      },
+      "fcn_navigatetosmsmagicconverse_1699504284919_0": {
+        "dataSetId": -1,
+        "id": "fcn_navigatetosmsmagicconverse_1699504284919_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_switchtosalesforceclassic_1699504284919_0"
+        ],
+        "content": "Navigate to SMS Magic Converse"
+      },
+      "fcn_switchtosalesforceclassic_1699504284919_0": {
+        "dataSetId": -1,
+        "id": "fcn_switchtosalesforceclassic_1699504284919_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logintoportalusingsalesforce_credforguided_1695825620047_0"
+        ],
+        "content": "Switch to salesforce classic "
+      },
+      "fcn_getagentnamesf_1699505167491_0": {
+        "dataSetId": -1,
+        "id": "fcn_getagentnamesf_1699505167491_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_gotoconversedeskofsalesforce_1699447154127_0"
+        ],
+        "content": "get $agentnamesf"
+      },
+      "fcn_validatebotconversationsmessagesinsmshistorysms_0": {
+        "dataSetId": -1,
+        "id": "fcn_validatebotconversationsmessagesinsmshistorysms_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_starttheconversationwithagentforsmsagent_1695803666605_0",
+          "fcn_assignconversationbeforehandoff_2"
+        ],
+        "content": "Validate bot conversations messages in SMS History $sms"
+      },
+      "fcn_asserthistoryforbotagentconversationinzohobotagentagentnamezohocrmsms_0": {
+        "dataSetId": -1,
+        "id": "fcn_asserthistoryforbotagentconversationinzohobotagentagentnamezohocrmsms_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "assert History bot agent messages in zoho $bot $agent $agentnamezohocrm $sms"
+      },
+      "fcn_assertsfsmshistorysmssfagent_1699532682568_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertsfsmshistorysmssfagent_1699532682568_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_starttheconversationwithagentforsmsinsfsfagent_1695825097918_0",
+          "fcn_askforconversationwithagentforsmsinsf_1695825250494_0"
+        ],
+        "content": "Assert SF SMS History $sms $sfagent "
+      },
+      "fcn_assertsmshistoryforagentmessagsinsfsmssfagent_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertsmshistoryforagentmessagsinsfsmssfagent_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Assert SMS History for agent messags in SF $sms $sfagent"
+      },
+      "fcn_navigatetosmsmagicconverse_1699599345185_0": {
+        "dataSetId": -1,
+        "id": "fcn_navigatetosmsmagicconverse_1699599345185_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_switchtosalesforceclassic_1699599461050_0"
+        ],
+        "content": "Navigate to SMS Magic Converse"
+      },
+      "fcn_switchtosalesforceclassic_1699599461050_0": {
+        "dataSetId": -1,
+        "id": "fcn_switchtosalesforceclassic_1699599461050_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logintoportalusingsalesforce_cred_1699599887276_0"
+        ],
+        "content": "Switch to salesforce classic "
+      },
+      "fcn_logintoportalusingsalesforce_cred_1699599887276_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintoportalusingsalesforce_cred_1699599887276_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_getagentnamesf_1699599983801_0"
+        ],
+        "content": "login to portal using $salesforce_cred"
+      },
+      "fcn_getagentnamesf_1699599983801_0": {
+        "dataSetId": -1,
+        "id": "fcn_getagentnamesf_1699599983801_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_gotoconversedeskofsalesforce_1695825097918_0"
+        ],
+        "content": "get $agentnamesf"
+      },
+      "fcn_assertsmshistoryinsfsmssfagentafterassignment_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertsmshistoryinsfsmssfagentafterassignment_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Assert SMS History in SF $sms $sfagent after assignment"
+      },
+      "fcn_assertsmshistoryinsfsmssfagentafterassignment_1699602974771_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertsmshistoryinsfsmssfagentafterassignment_1699602974771_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Assert SMS History in SF $sms $sfagent after assignment"
+      },
+      "fcn_botandagentconversationthroughguidedflowguidedandfaq_0": {
+        "dataSetId": -1,
+        "id": "fcn_botandagentconversationthroughguidedflowguidedandfaq_0",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_logintosaas_guidedforguidedandfaq_1706013992309_0"
+        ],
+        "content": "Bot and Agent Conversation through Guided Flow Guided and FAQ"
+      },
+      "fcn_logintosaas_guidedforguidedandfaq_1706013992309_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintosaas_guidedforguidedandfaq_1706013992309_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_getagentname_1706015350692_0"
+        ],
+        "content": "login to $saas_guided for guided and faq"
+      },
+      "fcn_starttheconversationwithbotthroughsmsforguidedandfaqinsaas_0": {
+        "dataSetId": -1,
+        "id": "fcn_starttheconversationwithbotthroughsmsforguidedandfaqinsaas_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_validatesmsbotconversationmessagesforguidedandfaqinsaasbotsms_0"
+        ],
+        "content": "start the conversation with bot through $sms for guided and faq in SaaS"
+      },
+      "fcn_validatesmsbotconversationmessagesforguidedandfaqinsaasbotsms_0": {
+        "dataSetId": -1,
+        "id": "fcn_validatesmsbotconversationmessagesforguidedandfaqinsaasbotsms_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_validatethehistoryforsmsbotconversationmessagesforguidedandfaqinsaasbotsms_0"
+        ],
+        "content": "Validate SMS bot conversation messages for guided and faq in saas $bot $sms"
+      },
+      "fcn_validatethehistoryforsmsbotconversationmessagesforguidedandfaqinsaasbotsms_0": {
+        "dataSetId": -1,
+        "id": "fcn_validatethehistoryforsmsbotconversationmessagesforguidedandfaqinsaasbotsms_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_askforconversationwithagentthroughsmsforguidedflow_1",
+          "fcn_assignconversationbeforehandoff_1706174402536_0"
+        ],
+        "content": "Validate the History for SMS bot conversation messages for guided and faq in saas $bot $sms"
+      },
+      "fcn_askforconversationwithagentthroughsmsforguidedflow_1": {
+        "dataSetId": -1,
+        "id": "fcn_askforconversationwithagentthroughsmsforguidedflow_1",
+        "nodeType": "action",
+        "branches": [
+          "fcn_accepthandofffortheconversationagent_1706014480589_0"
+        ],
+        "content": "ask for conversation with agent through $sms for guided flow"
+      },
+      "fcn_accepthandofffortheconversationagent_1706014480589_0": {
+        "dataSetId": -1,
+        "id": "fcn_accepthandofffortheconversationagent_1706014480589_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_starttheconversationwithagentforsmsagentforguidedandfaq_0"
+        ],
+        "content": "accept hand off for the conversation $agent"
+      },
+      "fcn_getagentname_1706015350692_0": {
+        "dataSetId": -1,
+        "id": "fcn_getagentname_1706015350692_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_starttheconversationwithbotthroughsmsforguidedandfaqinsaas_0"
+        ],
+        "content": "get $agentname"
+      },
+      "fcn_starttheconversationwithagentforsmsagentforguidedandfaq_0": {
+        "dataSetId": -1,
+        "id": "fcn_starttheconversationwithagentforsmsagentforguidedandfaq_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_verifysmshistoryforagentconversationforsmsbotagentagentnameforguidedandfaqinsaas_0"
+        ],
+        "content": "start the conversation with agent for $sms $agent for guided and faq"
+      },
+      "fcn_verifysmshistoryforagentconversationforsmsbotagentagentnameforguidedandfaqinsaas_0": {
+        "dataSetId": -1,
+        "id": "fcn_verifysmshistoryforagentconversationforsmsbotagentagentnameforguidedandfaqinsaas_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "verify SMS History for agent conversation for $sms $bot $agent $agentname for guided and faq in saas"
+      },
+      "fcn_botandagentconversationthroughguidedflowguidedandfaqforzoho_0": {
+        "dataSetId": -1,
+        "id": "fcn_botandagentconversationthroughguidedflowguidedandfaqforzoho_0",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_createzohologin_guidedforguidedandfaq_0"
+        ],
+        "content": "Bot and Agent Conversation through Guided Flow Guided and FAQ for ZOHO"
+      },
+      "fcn_createzohologin_guidedforguidedandfaq_0": {
+        "dataSetId": -1,
+        "id": "fcn_createzohologin_guidedforguidedandfaq_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_conversedeskvalidation_1706019716232_0"
+        ],
+        "content": "create $zohologin_guided for guided and faq"
+      },
+      "fcn_conversedeskvalidation_1706019716232_0": {
+        "dataSetId": -1,
+        "id": "fcn_conversedeskvalidation_1706019716232_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_starttheconversationwithbotthroughsmsforguidedandfaqinzoho_0"
+        ],
+        "content": "Converse Desk Validation"
+      },
+      "fcn_starttheconversationwithbotthroughsmsforguidedandfaqinzoho_0": {
+        "dataSetId": -1,
+        "id": "fcn_starttheconversationwithbotthroughsmsforguidedandfaqinzoho_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_validatesmsbotconversationmessagesforguidedandfaqinsaasbotsms_1706019952796_0"
+        ],
+        "content": "start the conversation with bot through $sms for guided and faq in ZOHO"
+      },
+      "fcn_validatesmsbotconversationmessagesforguidedandfaqinsaasbotsms_1706019952796_0": {
+        "dataSetId": -1,
+        "id": "fcn_validatesmsbotconversationmessagesforguidedandfaqinsaasbotsms_1706019952796_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_validatethehistoryforsmsbotconversationmessagesforguidedandfaqinsaasbotsms_1706019960049_0"
+        ],
+        "content": "Validate SMS bot conversation messages for guided and faq in saas $bot $sms"
+      },
+      "fcn_validatethehistoryforsmsbotconversationmessagesforguidedandfaqinsaasbotsms_1706019960049_0": {
+        "dataSetId": -1,
+        "id": "fcn_validatethehistoryforsmsbotconversationmessagesforguidedandfaqinsaasbotsms_1706019960049_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_askforconversationwithagentthroughsmsforguidedflowinzoho_0",
+          "fcn_assignconversationbeforehandoff_1706174646605_0"
+        ],
+        "content": "Validate the History for SMS bot conversation messages for guided and faq in saas $bot $sms"
+      },
+      "fcn_askforconversationwithagentthroughsmsforguidedflowinzoho_0": {
+        "dataSetId": -1,
+        "id": "fcn_askforconversationwithagentthroughsmsforguidedflowinzoho_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_accepthandofffortheconversationagent_1706020024466_0"
+        ],
+        "content": "ask for conversation with agent through $sms for guided flow in zoho"
+      },
+      "fcn_accepthandofffortheconversationagent_1706020024466_0": {
+        "dataSetId": -1,
+        "id": "fcn_accepthandofffortheconversationagent_1706020024466_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_starttheconversationwithagentforsmsagentforguidedandfaqinzoho_0"
+        ],
+        "content": "accept hand off for the conversation $agent"
+      },
+      "fcn_verifysmshistoryforagentconversationforsmsbotagentagentnameforguidedandfaqinsaas_1706020024466_0": {
+        "dataSetId": -1,
+        "id": "fcn_verifysmshistoryforagentconversationforsmsbotagentagentnameforguidedandfaqinsaas_1706020024466_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "verify SMS History for agent conversation for $sms $bot $agent $agentname for guided and faq in saas"
+      },
+      "fcn_starttheconversationwithagentforsmsagentforguidedandfaqinzoho_0": {
+        "dataSetId": -1,
+        "id": "fcn_starttheconversationwithagentforsmsagentforguidedandfaqinzoho_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_verifysmshistoryforagentconversationforsmsbotagentagentnameforguidedandfaqinsaas_1706020024466_0"
+        ],
+        "content": "start the conversation with agent for $sms $agent for guided and faq in zoho"
+      },
+      "fcn_navigatetosmshistory_1706070550760_0": {
+        "dataSetId": -1,
+        "id": "fcn_navigatetosmshistory_1706070550760_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_sortthesmshistorybycreatedon_1706070562059_0"
+        ],
+        "content": "Navigate to SMS History"
+      },
+      "fcn_sortthesmshistorybycreatedon_1706070562059_0": {
+        "dataSetId": -1,
+        "id": "fcn_sortthesmshistorybycreatedon_1706070562059_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertsmshistoryonsfforguidedpatientenquiryflowsms_0"
+        ],
+        "content": "Sort the SMS History by Created On"
+      },
+      "fcn_assertsmshistoryonsfforguidedpatientenquiryflowsms_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertsmshistoryonsfforguidedpatientenquiryflowsms_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertsmshistoryonportalforsfguidedpatientenquiryflowsms_0"
+        ],
+        "content": "Assert SMS History on SF for Guided patient enquiry flow $sms"
+      },
+      "fcn_assertsmshistoryonportalforsfguidedpatientenquiryflowsms_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertsmshistoryonportalforsfguidedpatientenquiryflowsms_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_starttheconversationwithagentforsmsinsfsfagentafterguidedflowdone_0"
+        ],
+        "content": "Assert SMS History on Portal for SF guided patient enquiry flow $sms "
+      },
+      "fcn_starttheconversationwithagentforsmsinsfsfagentafterguidedflowdone_0": {
+        "dataSetId": -1,
+        "id": "fcn_starttheconversationwithagentforsmsinsfsfagentafterguidedflowdone_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertsfsmshistoryforsfagentmessagessms_0"
+        ],
+        "content": "start the conversation with agent for $sms in sf $sfagent after guided flow done"
+      },
+      "fcn_assertsfsmshistoryforsfagentmessagessmsinportalforguided_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertsfsmshistoryforsfagentmessagessmsinportalforguided_0",
+        "nodeType": "skip",
+        "branches": [],
+        "content": "Assert SF SMS History for $sfagent messages $sms in portal for guided"
+      },
+      "fcn_botandagentconversationthroughguidedflowguidedandfaqforsf_0": {
+        "dataSetId": -1,
+        "id": "fcn_botandagentconversationthroughguidedflowguidedandfaqforsf_0",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_createsflogin_guidedforguidedandfaq_1706081178763_0"
+        ],
+        "content": "Bot and Agent Conversation through Guided Flow Guided and FAQ for SF"
+      },
+      "fcn_createsflogin_guidedforguidedandfaq_1706081178763_0": {
+        "dataSetId": -1,
+        "id": "fcn_createsflogin_guidedforguidedandfaq_1706081178763_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_navigatetosmsmagicconverse_1706081191100_0"
+        ],
+        "content": "create $sflogin_guided for guided and faq"
+      },
+      "fcn_navigatetosmsmagicconverse_1706081191100_0": {
+        "dataSetId": -1,
+        "id": "fcn_navigatetosmsmagicconverse_1706081191100_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_switchtosalesforceclassic_1706081191100_0"
+        ],
+        "content": "Navigate to SMS Magic Converse"
+      },
+      "fcn_switchtosalesforceclassic_1706081191100_0": {
+        "dataSetId": -1,
+        "id": "fcn_switchtosalesforceclassic_1706081191100_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logintoportalusingsalesforce_credforguidedandfaq_1706088279427_0"
+        ],
+        "content": "Switch to salesforce classic "
+      },
+      "fcn_getagentnamesf_1706081191100_0": {
+        "dataSetId": -1,
+        "id": "fcn_getagentnamesf_1706081191100_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_gotoconversedeskofsalesforce_1706081191100_0"
+        ],
+        "content": "get $agentnamesf"
+      },
+      "fcn_gotoconversedeskofsalesforce_1706081191100_0": {
+        "dataSetId": -1,
+        "id": "fcn_gotoconversedeskofsalesforce_1706081191100_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_starttheconversationwithbotthroughsmsforguidedandfaqinsf_0"
+        ],
+        "content": "go to converse desk of salesforce"
+      },
+      "fcn_starttheconversationwithbotthroughsmsforguidedandfaqinsf_0": {
+        "dataSetId": -1,
+        "id": "fcn_starttheconversationwithbotthroughsmsforguidedandfaqinsf_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_validatethebotconversationmessagesforsmsinsfforguidedandfaq_0"
+        ],
+        "content": "start the conversation with bot through $sms for guided and faq in SF"
+      },
+      "fcn_validatethebotconversationmessagesforsmsinsfforguidedandfaq_0": {
+        "dataSetId": -1,
+        "id": "fcn_validatethebotconversationmessagesforsmsinsfforguidedandfaq_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_navigatetosmshistory_1706081411032_0",
+          "fcn_assignconversationbeforehandoff_1706168399897_0"
+        ],
+        "content": "validate the bot conversation messages for $sms in SF for guided and faq"
+      },
+      "fcn_navigatetosmshistory_1706081411032_0": {
+        "dataSetId": -1,
+        "id": "fcn_navigatetosmshistory_1706081411032_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_sortthesmshistorybycreatedon_1706081411032_0"
+        ],
+        "content": "Navigate to SMS History"
+      },
+      "fcn_sortthesmshistorybycreatedon_1706081411032_0": {
+        "dataSetId": -1,
+        "id": "fcn_sortthesmshistorybycreatedon_1706081411032_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertsmshistoryonsfforguidedandfaqpatientenquiryflowsms_0"
+        ],
+        "content": "Sort the SMS History by Created On"
+      },
+      "fcn_assertsmshistoryonsfforguidedandfaqpatientenquiryflowsms_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertsmshistoryonsfforguidedandfaqpatientenquiryflowsms_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertsmshistoryonportalforsffaqandguidedpatientenquiryflowsms_0"
+        ],
+        "content": "Assert SMS History on SF for Guided and faq patient enquiry flow $sms"
+      },
+      "fcn_assertsmshistoryonportalforsffaqandguidedpatientenquiryflowsms_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertsmshistoryonportalforsffaqandguidedpatientenquiryflowsms_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_askforconversationwithagentthroughsmsforguidedflowinsf_0"
+        ],
+        "content": "Assert SMS History on Portal for SF faq and guided patient enquiry flow $sms "
+      },
+      "fcn_starttheconversationwithagentforsmsinsfsfagentafterfaqandguidedflowdone_0": {
+        "dataSetId": -1,
+        "id": "fcn_starttheconversationwithagentforsmsinsfsfagentafterfaqandguidedflowdone_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertsfsmshistoryforsfagentmessagessmsafterhandoffaccepted_0"
+        ],
+        "content": "start the conversation with agent for $sms in sf $sfagent after faq and guided flow done"
+      },
+      "fcn_askforconversationwithagentthroughsmsforguidedflowinsf_0": {
+        "dataSetId": -1,
+        "id": "fcn_askforconversationwithagentthroughsmsforguidedflowinsf_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_starttheconversationwithagentforsmsinsfsfagentafterfaqandguidedflowdone_0"
+        ],
+        "content": "ask for conversation with agent through $sms for guided flow in SF"
+      },
+      "fcn_assertsfsmshistoryforsfagentmessagessmsafterhandoffaccepted_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertsfsmshistoryforsfagentmessagessmsafterhandoffaccepted_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertsfsmshistoryforsfagentmessagessmsinportalforguidedafterhandoff_0"
+        ],
+        "content": "Assert SF SMS History for $sfagent messages $sms after hand off accepted"
+      },
+      "fcn_assertsfsmshistoryforsfagentmessagessmsinportalforguidedafterhandoff_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertsfsmshistoryforsfagentmessagessmsinportalforguidedafterhandoff_0",
+        "nodeType": "skip",
+        "branches": [],
+        "content": "Assert Portal SMS History for $sfagent messages $sms in portal for guided after hand off"
+      },
+      "fcn_logintoportalusingsalesforce_credforguidedandfaq_1706088279427_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintoportalusingsalesforce_credforguidedandfaq_1706088279427_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_getagentnamesf_1706081191100_0"
+        ],
+        "content": "login to portal using $salesforce_cred for guided and faq"
+      },
+      "fcn_assignconversationbeforehandoff_1706168399897_0": {
+        "dataSetId": -1,
+        "id": "fcn_assignconversationbeforehandoff_1706168399897_0",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_askforconversationwithagentforsmsinsf_1706168399897_0"
+        ],
+        "content": "Assign Conversation Before Hand Off"
+      },
+      "fcn_askforconversationwithagentforsmsinsf_1706168399897_0": {
+        "dataSetId": -1,
+        "id": "fcn_askforconversationwithagentforsmsinsf_1706168399897_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assignconversationtoanotheruserinsf_1706168399897_0"
+        ],
+        "content": "ask for conversation with agent for $sms in SF"
+      },
+      "fcn_assignconversationtoanotheruserinsf_1706168399897_0": {
+        "dataSetId": -1,
+        "id": "fcn_assignconversationtoanotheruserinsf_1706168399897_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_createsalesforcelogin_stduserforguided_1706168399897_0"
+        ],
+        "content": "assign conversation to another user in SF"
+      },
+      "fcn_createsalesforcelogin_stduserforguided_1706168399897_0": {
+        "dataSetId": -1,
+        "id": "fcn_createsalesforcelogin_stduserforguided_1706168399897_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_navigatetosmsmagicconverse_1706168399897_0"
+        ],
+        "content": "create $salesforcelogin_stduser for guided"
+      },
+      "fcn_navigatetosmsmagicconverse_1706168399897_0": {
+        "dataSetId": -1,
+        "id": "fcn_navigatetosmsmagicconverse_1706168399897_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_switchtosalesforceclassic_1706168399897_0"
+        ],
+        "content": "Navigate to SMS Magic Converse"
+      },
+      "fcn_switchtosalesforceclassic_1706168399897_0": {
+        "dataSetId": -1,
+        "id": "fcn_switchtosalesforceclassic_1706168399897_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_starttheconversationforsmsfromstandarduserfromsfsfagentagent_1706168399897_0"
+        ],
+        "content": "Switch to salesforce classic "
+      },
+      "fcn_starttheconversationforsmsfromstandarduserfromsfsfagentagent_1706168399897_0": {
+        "dataSetId": -1,
+        "id": "fcn_starttheconversationforsmsfromstandarduserfromsfsfagentagent_1706168399897_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertsmshistoryinsfstdusersfagentsms_1706168399897_0"
+        ],
+        "content": "start the conversation for $sms from standard user from SF $sfagent $agent"
+      },
+      "fcn_assertsmshistoryinsfstdusersfagentsms_1706168399897_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertsmshistoryinsfstdusersfagentsms_1706168399897_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Assert SMS History in SF Std User $sfagent $sms"
+      },
+      "fcn_assignconversationbeforehandoff_1706174402536_0": {
+        "dataSetId": -1,
+        "id": "fcn_assignconversationbeforehandoff_1706174402536_0",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_getstandardusernameforsaas_1706174411869_0"
+        ],
+        "content": "Assign Conversation Before Hand Off"
+      },
+      "fcn_getstandardusernameforsaas_1706174411869_0": {
+        "dataSetId": -1,
+        "id": "fcn_getstandardusernameforsaas_1706174411869_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_askforconversationwithagentthroughsmsforguidedflow_1706174411869_0"
+        ],
+        "content": "get $standardusername for SaaS"
+      },
+      "fcn_askforconversationwithagentthroughsmsforguidedflow_1706174411869_0": {
+        "dataSetId": -1,
+        "id": "fcn_askforconversationwithagentthroughsmsforguidedflow_1706174411869_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assignsmssenderidtoanotheruser_1706174411869_0"
+        ],
+        "content": "ask for conversation with agent through $sms for guided flow"
+      },
+      "fcn_assignsmssenderidtoanotheruser_1706174411869_0": {
+        "dataSetId": -1,
+        "id": "fcn_assignsmssenderidtoanotheruser_1706174411869_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assignconversationtoanotheruser_1706174411869_0"
+        ],
+        "content": "assign sms sender id to another user"
+      },
+      "fcn_assignconversationtoanotheruser_1706174411869_0": {
+        "dataSetId": -1,
+        "id": "fcn_assignconversationtoanotheruser_1706174411869_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logintocustomer_portalusingstandarduserforguided_1706174411869_0"
+        ],
+        "content": "assign conversation to another user"
+      },
+      "fcn_logintocustomer_portalusingstandarduserforguided_1706174411869_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintocustomer_portalusingstandarduserforguided_1706174411869_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_starttheconversationwithagentforsmsagentafterassignmentforguided_1706174411869_0"
+        ],
+        "content": "Login to $customer_portal using standard user for guided"
+      },
+      "fcn_starttheconversationwithagentforsmsagentafterassignmentforguided_1706174411869_0": {
+        "dataSetId": -1,
+        "id": "fcn_starttheconversationwithagentforsmsagentafterassignmentforguided_1706174411869_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_validatesmshistoryforagentmessageagentagentnamesms_1706174411869_0"
+        ],
+        "content": "start the conversation with agent for $sms $agent after assignment for guided"
+      },
+      "fcn_validatesmshistoryforagentmessageagentagentnamesms_1706174411869_0": {
+        "dataSetId": -1,
+        "id": "fcn_validatesmshistoryforagentmessageagentagentnamesms_1706174411869_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "validate sms history for agent message $agent $agentname $sms"
+      },
+      "fcn_getstandardusernameforsaas_1706174434686_0": {
+        "dataSetId": -1,
+        "id": "fcn_getstandardusernameforsaas_1706174434686_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assignconversationtoanotheruser_1699335311315_0"
+        ],
+        "content": "get $standardusername for SaaS"
+      },
+      "fcn_getstandardusernameforsaas_1706174630585_0": {
+        "dataSetId": -1,
+        "id": "fcn_getstandardusernameforsaas_1706174630585_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assignconversationtoanotheruser_1699348072690_0"
+        ],
+        "content": "get $standardusername for SaaS"
+      },
+      "fcn_assignconversationbeforehandoff_1706174646605_0": {
+        "dataSetId": -1,
+        "id": "fcn_assignconversationbeforehandoff_1706174646605_0",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_getstandardusernameforsaas_1706174646605_0"
+        ],
+        "content": "Assign Conversation Before Hand Off"
+      },
+      "fcn_getstandardusernameforsaas_1706174646605_0": {
+        "dataSetId": -1,
+        "id": "fcn_getstandardusernameforsaas_1706174646605_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_askforconversationwithagentthroughsmsforguidedflowzoho_1706174646605_0"
+        ],
+        "content": "get $standardusername for SaaS"
+      },
+      "fcn_askforconversationwithagentthroughsmsforguidedflowzoho_1706174646605_0": {
+        "dataSetId": -1,
+        "id": "fcn_askforconversationwithagentthroughsmsforguidedflowzoho_1706174646605_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assignsmssenderidtoanotheruser_1706174646605_0"
+        ],
+        "content": "ask for conversation with agent through $sms for guided flow zoho"
+      },
+      "fcn_assignsmssenderidtoanotheruser_1706174646605_0": {
+        "dataSetId": -1,
+        "id": "fcn_assignsmssenderidtoanotheruser_1706174646605_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assignconversationtoanotheruser_1706174646605_0"
+        ],
+        "content": "assign sms sender id to another user"
+      },
+      "fcn_assignconversationtoanotheruser_1706174646605_0": {
+        "dataSetId": -1,
+        "id": "fcn_assignconversationtoanotheruser_1706174646605_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logintocustomer_portalusingstandarduserforzohoguided_1706174646605_0"
+        ],
+        "content": "assign conversation to another user"
+      },
+      "fcn_logintocustomer_portalusingstandarduserforzohoguided_1706174646605_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintocustomer_portalusingstandarduserforzohoguided_1706174646605_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_starttheconversationwithagentforsmsagentafterassignmentforguidedzoho_1706174646605_0"
+        ],
+        "content": "Login to $customer_portal using standard user for Zoho guided "
+      },
+      "fcn_starttheconversationwithagentforsmsagentafterassignmentforguidedzoho_1706174646605_0": {
+        "dataSetId": -1,
+        "id": "fcn_starttheconversationwithagentforsmsagentafterassignmentforguidedzoho_1706174646605_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_validatesmshistoryforagentmessageagentagentnamesms_1706174646605_0"
+        ],
+        "content": "start the conversation with agent for $sms $agent after assignment for guided zoho"
+      },
+      "fcn_validatesmshistoryforagentmessageagentagentnamesms_1706174646605_0": {
+        "dataSetId": -1,
+        "id": "fcn_validatesmshistoryforagentmessageagentagentnamesms_1706174646605_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "validate sms history for agent message $agent $agentname $sms"
+      }
+    },
+    "pathNames": {
+      "[\"fcn_leadcaptureforzohothroughfaqbotforsmschannel_1695803800391_0\",\"fcn_createzoho_login_1695803881495_0\",\"fcn_getconversivebtnnameforsmsandwhatsapp_1695803881495_0\",\"fcn_startconversationwithbotthroughsmsandskipphonenumberandemailinzoho_1695803943165_0\",\"fcn_assertleadinzohoforsmswhenuserskipemailandphoneconversivebtnname_1695803943165_0\"]": {
+        "pathTags": "smsConv",
+        "pathDependsOn": "{}"
+      },
+      "[\"fcn_botconversationsforsmsforsaas_1695800229514_0\",\"fcn_logintosaasconversive_1695803666605_0\",\"fcn_getagentname_1695803666605_0\",\"fcn_startconversationwithbotthroughsms_1695803666605_0\",\"fcn_assignconversationbeforehandoff_2\",\"fcn_askforconversationwithagentthroughsms_1695803697348_0\",\"fcn_assignconversationafterhandoff_2\",\"fcn_assignsmssenderidtoanotheruser_1695803697348_0\",\"fcn_assignconversationtoanotheruser_1695803697348_0\",\"fcn_logintocustomer_portalusingstandarduser_1695803697348_0\",\"fcn_starttheconversationwithagentforsmsagentafterassignment_1\",\"fcn_validatesmshistoryforagentmessageagentagentnamesmsafterassignment_0\"]": {
+        "pathTags": "",
+        "pathDependsOn": "{}"
+      },
+      "[\"fcn_botconversationsforsmsforsaas_1695800229514_0\",\"fcn_logintosaasconversive_1695803666605_0\",\"fcn_getagentname_1695803666605_0\",\"fcn_startconversationwithbotthroughsms_1695803666605_0\",\"fcn_assignconversationbeforehandoff_2\",\"fcn_validatethebotconversationmessagesforsms_1695803666605_0\",\"fcn_validatebotconversationsmessagesinsmshistorysms_0\",\"fcn_starttheconversationwithagentforsmsagent_1695803666605_0\",\"fcn_validatesmshistoryforagentmessageagentagentnamesms_1695803666605_0\"]": {
+        "pathTags": "",
+        "pathDependsOn": "{}"
+      },
+      "[\"fcn_leadcaptureforsmschannelinsaasforguidedflow_1695825573929_0\",\"fcn_leadcaptureforsmschannelinsaasforguidedflow_0\",\"fcn_logintosaas_guided_1695825573929_0\",\"fcn_botandagentconversationthroughguidedflow_0\",\"fcn_getagentname_1699274448335_0\",\"fcn_starttheconversationwithbotthroughsmsforguidedinsaas_1699274457779_0\",\"fcn_validatethesmshistoryforsmsbotconversationmessagesforguidedbotsms_0\",\"fcn_validatethehistoryforsmsbotconversationmessagesforguidedbotsms_0\"]": {
+        "pathTags": "",
+        "pathDependsOn": "{}"
+      },
+      "[\"fcn_botconversationforsalesforcesms_1695825054151_0\",\"fcn_createsalesforce_login_1695825097918_0\",\"fcn_gotoconversedeskofsalesforce_1695825097918_0\",\"fcn_startconversationwithbotthroughsmsforsalesforce_1695825097918_0\",\"fcn_validatethebotconversationmessagesforsmsinsf_1695825097918_0\",\"fcn_starttheconversationwithagentforsmsinsfsfagent_1695825097918_0\",\"fcn_assertsmshistoryforagentmessagsinsfsmssfagent_0\"]": {
+        "pathTags": "",
+        "pathDependsOn": "{}"
+      },
+      "[\"fcn_botconversationsforsmsforsaas_1695800229514_0\",\"fcn_logintosaasconversive_1695803666605_0\",\"fcn_getagentname_1695803666605_0\",\"fcn_startconversationwithbotthroughsms_1695803666605_0\",\"fcn_assignconversationbeforehandoff_2\",\"fcn_askforconversationwithagentthroughsms_1695803697348_0\",\"fcn_assignconversationafterhandoff_2\",\"fcn_accepthandofffortheconversationagent_1695803723690_0\",\"fcn_assignconversationtoanotheruser_1695803723690_0\",\"fcn_logintocustomer_portalusingstandarduser_1695803723690_0\",\"fcn_startconversationwithagentafterhandoffacceptedforsms_1695803723690_0\",\"fcn_validatesmshistoryinstandardusersmsagent_1699336660123_0\"]": {
+        "pathTags": "",
+        "pathDependsOn": "{}"
+      },
+      "[\"fcn_leadcaptureforsmsinzohoforguidedflow_1695825679515_0\",\"fcn_leadcaptureforsmsinzohoforguidedflow_0\",\"fcn_createzohologin_guided_1695825679515_0\",\"fcn_botandagentconversationthroughguidedflow_1\",\"fcn_getagentname_1699336709240_0\",\"fcn_starttheconversationwithbotthroughsmsforguidedinzoho_0\",\"fcn_validatesmsbotconversationmessagesforguidedbotsms_1699336804304_0\",\"fcn_starttheconversationwithagentforsmsagentforguidedzoho_0\"]": {
+        "pathTags": "",
+        "pathDependsOn": "{}"
+      },
+      "[\"fcn_leadcaptureforzohothroughfaqbotforsmschannel_1695803800391_0\",\"fcn_createzoho_login_1695803881495_0\",\"fcn_getconversivebtnnameforsmsandwhatsapp_1695803881495_0\",\"fcn_startconversationwithbotthroughsmsforzoho_1695803881495_0\",\"fcn_checkleadcaptureforsmsinzohoconversivebtnname_1695803881495_0\"]": {
+        "pathTags": "smsConv",
+        "pathDependsOn": "{}"
+      },
+      "[\"fcn_botconversationsforsmsforzoho_1695804008514_0\",\"fcn_createzoho_login_1695804008514_0\",\"fcn_getagentname_1695804008514_0\",\"fcn_startconversationwithbotthroughsmsforzoho_1695804008514_0\",\"fcn_validatethebotconversationmessagesforsms_1695804008514_0\",\"fcn_starttheconversationwithagentforsmsagentforzoho_1695804008514_0\",\"fcn_asserthistoryforbotagentconversationinzohobotagentagentnamezohocrmsms_0\"]": {
+        "pathTags": "",
+        "pathDependsOn": "{}"
+      },
+      "[\"fcn_leadcaptureforsfthroughfaqbotforsmschannel_1695825362111_0\",\"fcn_createsalesforce_login_1695825448777_0\",\"fcn_logintoportalusingsalesforce_cred_1695825448777_0\",\"fcn_navigatetoconversivebuttonsettingspage_1695825448777_0\",\"fcn_getconversivebtnnameforsmsandwhatsappinsf_1695825448777_0\",\"fcn_gotoconversedeskofsalesforce_1695825448777_0\",\"fcn_startconversationwithbotthroughsmsforsalesforce_1695825448777_0\",\"fcn_checkleadcaptureforsmsinsf_1695825448777_0\",\"fcn_assertthesourceforsmsconversivebtnname_1695825448777_0\"]": {
+        "pathTags": "",
+        "pathDependsOn": "{}"
+      },
+      "[\"fcn_leadcaptureforsmsinzohoforguidedflow_1695825679515_0\",\"fcn_leadcaptureforsmsinzohoforguidedflow_0\",\"fcn_createzohologin_guided_1695825679515_0\",\"fcn_navigatetoconversivebuttonsettingspage_1695825679515_0\",\"fcn_getconversivebtnnameforsmsandwhatsapp_1695825679515_0\",\"fcn_conversedeskvalidation_1695825679515_0\",\"fcn_starttheconversationwithbotthroughsmsforguidedinzoho_1695825679515_0\",\"fcn_checkleadcaptureforsmsinzohosmsforguidedflowconversivebtnname_1695825679515_0\"]": {
+        "pathTags": "",
+        "pathDependsOn": "{}"
+      },
+      "[\"fcn_leadcaptureforsfthroughfaqbotforsmschannel_1695825362111_0\",\"fcn_createsalesforce_login_1695825448777_0\",\"fcn_logintoportalusingsalesforce_cred_1695825448777_0\",\"fcn_navigatetoconversivebuttonsettingspage_1695825448777_0\",\"fcn_getconversivebtnnameforsmsandwhatsappinsf_1695825448777_0\",\"fcn_gotoconversedeskofsalesforce_1695825448777_0\",\"fcn_startconversationwithbotthroughsmsandskipphonenumberforsf_1695825533530_0\",\"fcn_checkleadcaptureforsmsinsfwhenskipphonenumber_1695825533530_0\",\"fcn_assertthesourceforsmsconversivebtnname_1695825448777_0\"]": {
+        "pathTags": "",
+        "pathDependsOn": "{}"
+      },
+      "[\"fcn_botconversationforsalesforcesms_1695825054151_0\",\"fcn_createsalesforce_login_1695825097918_0\",\"fcn_gotoconversedeskofsalesforce_1695825097918_0\",\"fcn_startconversationwithbotthroughsmsforsalesforce_1695825097918_0\",\"fcn_askforconversationwithagentforsmsinsf_1695825250494_0\",\"fcn_accepthandoffforsmsconversationinsfagentsfagent_1695825303590_0\",\"fcn_assignconversationtoanotheruserinsf_1695825303590_0\",\"fcn_createsalesforcelogin_stduser_1695825303590_0\",\"fcn_startconversationwithsfagentforsmsafterhandoffacceptedinsf_1695825303590_0\"]": {
+        "pathTags": "",
+        "pathDependsOn": "{}"
+      },
+      "[\"fcn_leadcaptureforsmsinsfforguidedflow_1695825620047_0\",\"fcn_leadcaptureforsmsinsfforguidedflow_0\",\"fcn_createsflogin_guided_1695825620047_0\",\"fcn_navigatetosmsmagicconverse_1699504284919_0\",\"fcn_switchtosalesforceclassic_1699504284919_0\",\"fcn_botandagentconversationthroughguidedflow_2\",\"fcn_navigatetosmsmagicconverse_1699504096922_0\",\"fcn_switchtosalesforceclassic_1699504096922_0\",\"fcn_logintoportalusingsalesforce_credforguided_1699447154127_0\",\"fcn_gotoconversedeskofsalesforce_1699447154127_0\",\"fcn_starttheconversationwithbotthroughsmsforguidedinsf_1699447154127_0\",\"fcn_assignconversationafterhandoff_3\",\"fcn_assignconversationtoanotheruserinsf_1699503883074_0\",\"fcn_validatethebotconversationmessagesforsmsinsfforguided_0\",\"fcn_logintoportalusingsalesforce_credforguided_1695825620047_0\",\"fcn_navigatetoconversivebuttonsettingspage_1695825620047_0\",\"fcn_getconversivebtnnameforsmsandwhatsappinsf_1695825620047_0\",\"fcn_gotoconversedeskofsalesforce_1695825620047_0\",\"fcn_starttheconversationwithbotthroughsmsforguidedinsf_1695825620047_0\",\"fcn_checkleadcaptureforsmsinsfsmsforguidedflow_1695825620047_0\",\"fcn_assertthesourceforsmsconversivebtnname_1695825620047_0\"]": {
+        "pathTags": "",
+        "pathDependsOn": "{}"
+      },
+      "[\"fcn_leadcaptureforsaasthroughfaqbotforsmschannel_1695800032075_0\",\"fcn_logintosaasconversive_1695800054225_0\",\"fcn_startconversationwithbotthroughsmsandskipphonenumberandemailinsaas_1695800140459_0\",\"fcn_checkleadcaptureforsmsinsaassmswhenskipphonenumberandemail_1695800140459_0\"]": {
+        "pathTags": "",
+        "pathDependsOn": "{}"
+      },
+      "[\"fcn_leadcaptureforsmschannelinsaasforguidedflow_1695825573929_0\",\"fcn_leadcaptureforsmschannelinsaasforguidedflow_0\",\"fcn_logintosaas_guided_1695825573929_0\",\"fcn_botandagentconversationthroughguidedflow_0\",\"fcn_getagentname_1699274448335_0\",\"fcn_starttheconversationwithbotthroughsmsforguidedinsaas_1699274457779_0\",\"fcn_validatethesmshistoryforsmsbotconversationmessagesforguidedbotsms_0\",\"fcn_validatethehistoryforsmsbotconversationmessagesforguidedbotsms_0\",\"fcn_assignconversationafterhandoff_0\",\"fcn_assignconversationtoanotheruser_1699335311315_0\",\"fcn_logintocustomer_portalusingstandarduserforguided_1699335507826_0\",\"fcn_startconversationwithagentafterhandoffacceptedforsmsforguidedflow_0\",\"fcn_validatesmshistoryinstandardusersms_0\"]": {
+        "pathTags": "",
+        "pathDependsOn": "{}"
+      },
+      "[\"fcn_botconversationsforsmsforzoho_1695804008514_0\",\"fcn_createzoho_login_1695804008514_0\",\"fcn_getagentname_1695804008514_0\",\"fcn_startconversationwithbotthroughsmsforzoho_1695804008514_0\",\"fcn_assignsmssenderidtoanotheruser_1695804109686_0\",\"fcn_askforconversationwithagentthroughsmsforzoho_1695804109686_0\",\"fcn_accepthandofffortheconversationagent_1695804193439_0\",\"fcn_assignconversationtoanotheruser_1695804193439_0\",\"fcn_logintocustomer_portal1usingstandarduserforzoho_1695804193439_0\",\"fcn_startconversationwithagentafterhandoffacceptedforzohosms_1695804193439_0\",\"fcn_validatesmshistoryinstandardusersmsagent_1699336678372_0\"]": {
+        "pathTags": "",
+        "pathDependsOn": "{}"
+      },
+      "[\"fcn_botconversationforsalesforcesms_1695825054151_0\",\"fcn_createsalesforce_login_1695825097918_0\",\"fcn_gotoconversedeskofsalesforce_1695825097918_0\",\"fcn_startconversationwithbotthroughsmsforsalesforce_1695825097918_0\",\"fcn_askforconversationwithagentforsmsinsf_1695825250494_0\",\"fcn_assignconversationtoanotheruserinsf_1695825250494_0\",\"fcn_createsalesforcelogin_stduser_1695825250494_0\",\"fcn_starttheconversationforsmsfromstandarduserfromsfsfagentagent_1695825250494_0\",\"fcn_assertsmshistoryinsfsmssfagentafterassignment_0\"]": {
+        "pathTags": "",
+        "pathDependsOn": "{}"
+      },
+      "[\"fcn_leadcaptureforsmschannelinsaasforguidedflow_1695825573929_0\",\"fcn_leadcaptureforsmschannelinsaasforguidedflow_0\",\"fcn_logintosaas_guided_1695825573929_0\",\"fcn_conversedeskvalidation_1695825573929_0\",\"fcn_starttheconversationwithbotthroughsmsforguidedinsaas_1695825573929_0\",\"fcn_checkleadcaptureforsmsinsaassmsforguidedflow_1695825573929_0\"]": {
+        "pathTags": "",
+        "pathDependsOn": "{}"
+      },
+      "[\"fcn_leadcaptureforsaasthroughfaqbotforsmschannel_1695800032075_0\",\"fcn_logintosaasconversive_1695800054225_0\",\"fcn_startconversationwithbotthroughsms_1695800054225_0\",\"fcn_checkleadcaptureforsmsinsaassms_1695800054225_0\"]": {
+        "pathTags": "",
+        "pathDependsOn": "{}"
+      },
+      "[\"fcn_leadcaptureforzohothroughfaqbotforsmschannel_1695803800391_0\",\"fcn_createzoho_login_1695803881495_0\",\"fcn_getconversivebtnnameforsmsandwhatsapp_1695803881495_0\",\"fcn_startconversationwithbotthroughsmsandskipphonenumberforzoho_1695803912080_0\",\"fcn_checkleadcaptureforsmsinzohowhenskipphonenumberconversivebtnname_1695803912080_0\"]": {
+        "pathTags": "smsConv",
+        "pathDependsOn": "{}"
+      },
+      "[\"fcn_leadcaptureforsmschannelinsaasforguidedflow_1695825573929_0\",\"fcn_leadcaptureforsmschannelinsaasforguidedflow_0\",\"fcn_logintosaas_guided_1695825573929_0\",\"fcn_botandagentconversationthroughguidedflow_0\",\"fcn_getagentname_1699274448335_0\",\"fcn_starttheconversationwithbotthroughsmsforguidedinsaas_1699274457779_0\",\"fcn_validatethesmshistoryforsmsbotconversationmessagesforguidedbotsms_0\",\"fcn_validatethehistoryforsmsbotconversationmessagesforguidedbotsms_0\",\"fcn_starttheconversationwithagentforsmsagentforguided_0\",\"fcn_verifysmshistoryforagentconversationforsmsbotagentagentname_0\"]": {
+        "pathTags": "",
+        "pathDependsOn": "{}"
+      },
+      "[\"fcn_leadcaptureforsaasthroughfaqbotforsmschannel_1695800032075_0\",\"fcn_logintosaasconversive_1695800054225_0\",\"fcn_startconversationwithbotthroughsmsandskipphonenumber_1695800085609_0\",\"fcn_checkleadcaptureforsmsinsaassmswhenskipphonenumber_1695800085609_0\"]": {
+        "pathTags": "",
+        "pathDependsOn": "{}"
+      },
+      "[\"fcn_leadcaptureforsfthroughfaqbotforsmschannel_1695825362111_0\",\"fcn_createsalesforce_login_1695825448777_0\",\"fcn_logintoportalusingsalesforce_cred_1695825448777_0\",\"fcn_navigatetoconversivebuttonsettingspage_1695825448777_0\",\"fcn_getconversivebtnnameforsmsandwhatsappinsf_1695825448777_0\",\"fcn_gotoconversedeskofsalesforce_1695825448777_0\",\"fcn_startconversationwithbotthroughsmsandskipphonenumberandemailinsf_1695825484395_0\",\"fcn_assertleadcaptureinsfforsmswhenuserskipemailandphone_1695825484395_0\",\"fcn_assertthesourceforsmsconversivebtnname_1695825448777_0\"]": {
+        "pathTags": "",
+        "pathDependsOn": "{}"
+      },
+      "[\"fcn_botconversationsforsmsforzoho_1695804008514_0\",\"fcn_createzoho_login_1695804008514_0\",\"fcn_getagentname_1695804008514_0\",\"fcn_startconversationwithbotthroughsmsforzoho_1695804008514_0\",\"fcn_assignsmssenderidtoanotheruser_1695804109686_0\",\"fcn_askforconversationwithagentthroughsmsforzoho_1695804109686_0\",\"fcn_assignconversationtoanotheruser_1695804109686_0\",\"fcn_logintocustomer_portal1usingstandarduserforzoho_1695804109686_0\",\"fcn_navigatetoconversedesk_1695804109686_0\",\"fcn_starttheconversationwithagentforsmsagentforzohoafterassignment_0\",\"fcn_validatesmshistoryforagentmessageagentagentnamesms_1699336670456_0\"]": {
+        "pathTags": "",
+        "pathDependsOn": "{}"
+      }
+    },
+    "isPrimary": true,
+    "positions": {
+      "fcn_start_0": {
+        "top": 150.0,
+        "left": 500.0
+      },
+      "fcn_leadcaptureforsaasthroughfaqbotforsmschannel_1695800032075_0": {
+        "top": 216.0,
+        "left": 671.0
+      },
+      "fcn_logintosaasconversive_1695800054225_0": {
+        "top": 286.0,
+        "left": 670.0
+      },
+      "fcn_startconversationwithbotthroughsms_1695800054225_0": {
+        "top": 349.1484375,
+        "left": 670.0
+      },
+      "fcn_checkleadcaptureforsmsinsaassms_1695800054225_0": {
+        "top": 412.296875,
+        "left": 670.0
+      },
+      "fcn_startconversationwithbotthroughsmsandskipphonenumber_1695800085609_0": {
+        "top": 352.1484375,
+        "left": 393.0
+      },
+      "fcn_checkleadcaptureforsmsinsaassmswhenskipphonenumber_1695800085609_0": {
+        "top": 432.296875,
+        "left": 386.0
+      },
+      "fcn_startconversationwithbotthroughsmsandskipphonenumberandemailinsaas_1695800140459_0": {
+        "top": 348.1484375,
+        "left": 113.0
+      },
+      "fcn_checkleadcaptureforsmsinsaassmswhenskipphonenumberandemail_1695800140459_0": {
+        "top": 435.296875,
+        "left": 108.0
+      },
+      "fcn_botconversationsforsmsforsaas_1695800229514_0": {
+        "top": 222.0,
+        "left": 1131.0
+      },
+      "fcn_logintosaasconversive_1695803666605_0": {
+        "top": 281.0,
+        "left": 1131.0
+      },
+      "fcn_getagentname_1695803666605_0": {
+        "top": 349.0,
+        "left": 1131.0
+      },
+      "fcn_startconversationwithbotthroughsms_1695803666605_0": {
+        "top": 416.0,
+        "left": 1131.0
+      },
+      "fcn_validatethebotconversationmessagesforsms_1695803666605_0": {
+        "top": 477.0,
+        "left": 1131.0
+      },
+      "fcn_validatebotconversationsmessagesinsmshistorysms_0": {
+        "top": 561.0,
+        "left": 1131.0
+      },
+      "fcn_starttheconversationwithagentforsmsagent_1695803666605_0": {
+        "top": 642.0,
+        "left": 1131.0
+      },
+      "fcn_validatesmshistoryforagentmessageagentagentnamesms_1695803666605_0": {
+        "top": 713.1484375,
+        "left": 1131.0
+      },
+      "fcn_assignconversationbeforehandoff_2": {
+        "top": 596.0,
+        "left": 1414.0
+      },
+      "fcn_getstandardusernameforsaas_1699366114024_0": {
+        "top": 651.0,
+        "left": 1413.0
+      },
+      "fcn_askforconversationwithagentthroughsms_1695803697348_0": {
+        "top": 713.0,
+        "left": 1411.0
+      },
+      "fcn_assignsmssenderidtoanotheruser_1695803697348_0": {
+        "top": 787.0,
+        "left": 1418.0
+      },
+      "fcn_assignconversationtoanotheruser_1695803697348_0": {
+        "top": 847.0,
+        "left": 1415.0
+      },
+      "fcn_logintocustomer_portalusingstandarduser_1695803697348_0": {
+        "top": 907.0,
+        "left": 1413.0
+      },
+      "fcn_starttheconversationwithagentforsmsagentafterassignment_1": {
+        "top": 986.0,
+        "left": 1410.0
+      },
+      "fcn_validatesmshistoryforagentmessageagentagentnamesmsafterassignment_0": {
+        "top": 1060.1484375,
+        "left": 1413.0
+      },
+      "fcn_assignconversationafterhandoff_2": {
+        "top": 749.0,
+        "left": 1693.0
+      },
+      "fcn_accepthandofffortheconversationagent_1695803723690_0": {
+        "top": 804.0,
+        "left": 1693.0
+      },
+      "fcn_assignconversationtoanotheruser_1695803723690_0": {
+        "top": 884.296875,
+        "left": 1693.0
+      },
+      "fcn_logintocustomer_portalusingstandarduser_1695803723690_0": {
+        "top": 942.296875,
+        "left": 1693.0
+      },
+      "fcn_startconversationwithagentafterhandoffacceptedforsms_1695803723690_0": {
+        "top": 1023.296875,
+        "left": 1693.0
+      },
+      "fcn_validatesmshistoryinstandardusersmsagent_1699336660123_0": {
+        "top": 1104.609375,
+        "left": 1693.0
+      },
+      "fcn_leadcaptureforzohothroughfaqbotforsmschannel_1695803800391_0": {
+        "top": 194.0,
+        "left": 2169.0
+      },
+      "fcn_createzoho_login_1695803881495_0": {
+        "top": 267.0,
+        "left": 2169.0
+      },
+      "fcn_getconversivebtnnameforsmsandwhatsapp_1695803881495_0": {
+        "top": 337.296875,
+        "left": 2173.0
+      },
+      "fcn_startconversationwithbotthroughsmsforzoho_1695803881495_0": {
+        "top": 416.296875,
+        "left": 2172.0
+      },
+      "fcn_checkleadcaptureforsmsinzohoconversivebtnname_1695803881495_0": {
+        "top": 494.4453125,
+        "left": 2171.0
+      },
+      "fcn_startconversationwithbotthroughsmsandskipphonenumberforzoho_1695803912080_0": {
+        "top": 404.296875,
+        "left": 2453.0
+      },
+      "fcn_checkleadcaptureforsmsinzohowhenskipphonenumberconversivebtnname_1695803912080_0": {
+        "top": 491.4453125,
+        "left": 2451.0
+      },
+      "fcn_startconversationwithbotthroughsmsandskipphonenumberandemailinzoho_1695803943165_0": {
+        "top": 397.296875,
+        "left": 2724.0
+      },
+      "fcn_assertleadinzohoforsmswhenuserskipemailandphoneconversivebtnname_1695803943165_0": {
+        "top": 491.4453125,
+        "left": 2730.0
+      },
+      "fcn_botconversationsforsmsforzoho_1695804008514_0": {
+        "top": 187.0,
+        "left": 3242.0
+      },
+      "fcn_createzoho_login_1695804008514_0": {
+        "top": 253.0,
+        "left": 3242.0
+      },
+      "fcn_getagentname_1695804008514_0": {
+        "top": 315.1484375,
+        "left": 3242.0
+      },
+      "fcn_startconversationwithbotthroughsmsforzoho_1695804008514_0": {
+        "top": 374.296875,
+        "left": 3242.0
+      },
+      "fcn_validatethebotconversationmessagesforsms_1695804008514_0": {
+        "top": 454.4453125,
+        "left": 3242.0
+      },
+      "fcn_starttheconversationwithagentforsmsagentforzoho_1695804008514_0": {
+        "top": 531.59375,
+        "left": 3242.0
+      },
+      "fcn_asserthistoryforbotagentconversationinzohobotagentagentnamezohocrmsms_0": {
+        "top": 610.7421875,
+        "left": 3242.0
+      },
+      "fcn_assignsmssenderidtoanotheruser_1695804109686_0": {
+        "top": 426.4453125,
+        "left": 3522.0
+      },
+      "fcn_askforconversationwithagentthroughsmsforzoho_1695804109686_0": {
+        "top": 487.4453125,
+        "left": 3523.0
+      },
+      "fcn_assignconversationtoanotheruser_1695804109686_0": {
+        "top": 562.4453125,
+        "left": 3522.0
+      },
+      "fcn_logintocustomer_portal1usingstandarduserforzoho_1695804109686_0": {
+        "top": 615.4453125,
+        "left": 3522.0
+      },
+      "fcn_navigatetoconversedesk_1695804109686_0": {
+        "top": 691.59375,
+        "left": 3525.0
+      },
+      "fcn_starttheconversationwithagentforsmsagentforzohoafterassignment_0": {
+        "top": 748.59375,
+        "left": 3526.0
+      },
+      "fcn_validatesmshistoryforagentmessageagentagentnamesms_1699336670456_0": {
+        "top": 827.7421875,
+        "left": 3526.0
+      },
+      "fcn_accepthandofffortheconversationagent_1695804193439_0": {
+        "top": 562.4453125,
+        "left": 3802.0
+      },
+      "fcn_assignconversationtoanotheruser_1695804193439_0": {
+        "top": 643.7421875,
+        "left": 3800.0
+      },
+      "fcn_logintocustomer_portal1usingstandarduserforzoho_1695804193439_0": {
+        "top": 705.7421875,
+        "left": 3802.0
+      },
+      "fcn_startconversationwithagentafterhandoffacceptedforzohosms_1695804193439_0": {
+        "top": 780.890625,
+        "left": 3802.0
+      },
+      "fcn_validatesmshistoryinstandardusersmsagent_1699336678372_0": {
+        "top": 866.203125,
+        "left": 3802.0
+      },
+      "fcn_botconversationforsalesforcesms_1695825054151_0": {
+        "top": 194.0,
+        "left": 4534.0
+      },
+      "fcn_createsalesforce_login_1695825097918_0": {
+        "top": 253.0,
+        "left": 4534.0
+      },
+      "fcn_navigatetosmsmagicconverse_1699599345185_0": {
+        "top": 313.15625,
+        "left": 4534.0
+      },
+      "fcn_switchtosalesforceclassic_1699599461050_0": {
+        "top": 371.15625,
+        "left": 4534.0
+      },
+      "fcn_logintoportalusingsalesforce_cred_1699599887276_0": {
+        "top": 424.15625,
+        "left": 4534.0
+      },
+      "fcn_getagentnamesf_1699599983801_0": {
+        "top": 495.15625,
+        "left": 4534.0
+      },
+      "fcn_gotoconversedeskofsalesforce_1695825097918_0": {
+        "top": 560.15625,
+        "left": 4534.0
+      },
+      "fcn_startconversationwithbotthroughsmsforsalesforce_1695825097918_0": {
+        "top": 627.1640625,
+        "left": 4534.0
+      },
+      "fcn_validatethebotconversationmessagesforsmsinsf_1695825097918_0": {
+        "top": 705.1640625,
+        "left": 4535.0
+      },
+      "fcn_assertsfsmshistorysmssfagent_1699532682568_0": {
+        "top": 786.1640625,
+        "left": 4535.0
+      },
+      "fcn_starttheconversationwithagentforsmsinsfsfagent_1695825097918_0": {
+        "top": 853.1640625,
+        "left": 4538.0
+      },
+      "fcn_assertsmshistoryforagentmessagsinsfsmssfagent_0": {
+        "top": 940.3125,
+        "left": 4539.0
+      },
+      "fcn_askforconversationwithagentforsmsinsf_1695825250494_0": {
+        "top": 838.1640625,
+        "left": 4827.0
+      },
+      "fcn_assignconversationtoanotheruserinsf_1695825250494_0": {
+        "top": 914.3203125,
+        "left": 4826.0
+      },
+      "fcn_createsalesforcelogin_stduser_1695825250494_0": {
+        "top": 975.3203125,
+        "left": 4827.0
+      },
+      "fcn_starttheconversationforsmsfromstandarduserfromsfsfagentagent_1695825250494_0": {
+        "top": 1038.4765625,
+        "left": 4827.0
+      },
+      "fcn_assertsmshistoryinsfsmssfagentafterassignment_0": {
+        "top": 1123.7890625,
+        "left": 4827.0
+      },
+      "fcn_accepthandoffforsmsconversationinsfagentsfagent_1695825303590_0": {
+        "top": 888.3203125,
+        "left": 5123.0
+      },
+      "fcn_assignconversationtoanotheruserinsf_1695825303590_0": {
+        "top": 967.4765625,
+        "left": 5123.0
+      },
+      "fcn_createsalesforcelogin_stduser_1695825303590_0": {
+        "top": 1030.4765625,
+        "left": 5123.0
+      },
+      "fcn_startconversationwithsfagentforsmsafterhandoffacceptedinsf_1695825303590_0": {
+        "top": 1094.6328125,
+        "left": 5123.0
+      },
+      "fcn_assertsmshistoryinsfsmssfagentafterassignment_1699602974771_0": {
+        "top": 1173.7890625,
+        "left": 5123.0
+      },
+      "fcn_leadcaptureforsfthroughfaqbotforsmschannel_1695825362111_0": {
+        "top": 189.0,
+        "left": 5635.0
+      },
+      "fcn_createsalesforce_login_1695825448777_0": {
+        "top": 262.0,
+        "left": 5635.0
+      },
+      "fcn_logintoportalusingsalesforce_cred_1695825448777_0": {
+        "top": 329.15625,
+        "left": 5635.0
+      },
+      "fcn_navigatetoconversivebuttonsettingspage_1695825448777_0": {
+        "top": 396.15625,
+        "left": 5635.0
+      },
+      "fcn_getconversivebtnnameforsmsandwhatsappinsf_1695825448777_0": {
+        "top": 462.15625,
+        "left": 5639.0
+      },
+      "fcn_gotoconversedeskofsalesforce_1695825448777_0": {
+        "top": 542.15625,
+        "left": 5635.0
+      },
+      "fcn_startconversationwithbotthroughsmsforsalesforce_1695825448777_0": {
+        "top": 597.15625,
+        "left": 5635.0
+      },
+      "fcn_checkleadcaptureforsmsinsf_1695825448777_0": {
+        "top": 671.1640625,
+        "left": 5635.0
+      },
+      "fcn_assertthesourceforsmsconversivebtnname_1695825448777_0": {
+        "top": 739.3203125,
+        "left": 5635.0
+      },
+      "fcn_startconversationwithbotthroughsmsandskipphonenumberandemailinsf_1695825484395_0": {
+        "top": 580.15625,
+        "left": 5915.0
+      },
+      "fcn_assertleadcaptureinsfforsmswhenuserskipemailandphone_1695825484395_0": {
+        "top": 651.3125,
+        "left": 5915.0
+      },
+      "fcn_startconversationwithbotthroughsmsandskipphonenumberforsf_1695825533530_0": {
+        "top": 580.15625,
+        "left": 6195.0
+      },
+      "fcn_checkleadcaptureforsmsinsfwhenskipphonenumber_1695825533530_0": {
+        "top": 657.3125,
+        "left": 6194.0
+      },
+      "fcn_leadcaptureforsmschannelinsaasforguidedflow_1695825573929_0": {
+        "top": 195.0,
+        "left": 6632.0
+      },
+      "fcn_leadcaptureforsmschannelinsaasforguidedflow_0": {
+        "top": 265.0,
+        "left": 6632.0
+      },
+      "fcn_logintosaas_guided_1695825573929_0": {
+        "top": 338.0,
+        "left": 6632.0
+      },
+      "fcn_conversedeskvalidation_1695825573929_0": {
+        "top": 402.15625,
+        "left": 6632.0
+      },
+      "fcn_starttheconversationwithbotthroughsmsforguidedinsaas_1695825573929_0": {
+        "top": 459.15625,
+        "left": 6632.0
+      },
+      "fcn_checkleadcaptureforsmsinsaassmsforguidedflow_1695825573929_0": {
+        "top": 540.3125,
+        "left": 6632.0
+      },
+      "fcn_botandagentconversationthroughguidedflow_0": {
+        "top": 367.15625,
+        "left": 7009.0
+      },
+      "fcn_getagentname_1699274448335_0": {
+        "top": 440.15625,
+        "left": 7009.0
+      },
+      "fcn_starttheconversationwithbotthroughsmsforguidedinsaas_1699274457779_0": {
+        "top": 503.15625,
+        "left": 7009.0
+      },
+      "fcn_validatethesmshistoryforsmsbotconversationmessagesforguidedbotsms_0": {
+        "top": 580.15625,
+        "left": 7009.0
+      },
+      "fcn_validatethehistoryforsmsbotconversationmessagesforguidedbotsms_0": {
+        "top": 657.15625,
+        "left": 7009.0
+      },
+      "fcn_starttheconversationwithagentforsmsagentforguided_0": {
+        "top": 752.3046875,
+        "left": 7009.0
+      },
+      "fcn_verifysmshistoryforagentconversationforsmsbotagentagentname_0": {
+        "top": 833.453125,
+        "left": 7009.0
+      },
+      "fcn_assignconversationafterhandoff_0": {
+        "top": 705.15625,
+        "left": 7320.0
+      },
+      "fcn_getstandardusernameforsaas_1706174434686_0": {
+        "top": 761.15625,
+        "left": 7320.0
+      },
+      "fcn_assignconversationtoanotheruser_1699335311315_0": {
+        "top": 823.453125,
+        "left": 7320.0
+      },
+      "fcn_logintocustomer_portalusingstandarduserforguided_1699335507826_0": {
+        "top": 885.453125,
+        "left": 7320.0
+      },
+      "fcn_startconversationwithagentafterhandoffacceptedforsmsforguidedflow_0": {
+        "top": 966.453125,
+        "left": 7320.0
+      },
+      "fcn_validatesmshistoryinstandardusersms_0": {
+        "top": 1049.765625,
+        "left": 7320.0
+      },
+      "fcn_botandagentconversationthroughguidedflowguidedandfaq_0": {
+        "top": 237.0,
+        "left": 7713.0
+      },
+      "fcn_logintosaas_guidedforguidedandfaq_1706013992309_0": {
+        "top": 311.0,
+        "left": 7713.0
+      },
+      "fcn_getagentname_1706015350692_0": {
+        "top": 372.1484375,
+        "left": 7713.0
+      },
+      "fcn_starttheconversationwithbotthroughsmsforguidedandfaqinsaas_0": {
+        "top": 437.1484375,
+        "left": 7713.0
+      },
+      "fcn_validatesmsbotconversationmessagesforguidedandfaqinsaasbotsms_0": {
+        "top": 516.296875,
+        "left": 7713.0
+      },
+      "fcn_validatethehistoryforsmsbotconversationmessagesforguidedandfaqinsaasbotsms_0": {
+        "top": 596.4453125,
+        "left": 7713.0
+      },
+      "fcn_askforconversationwithagentthroughsmsforguidedflow_1": {
+        "top": 685.59375,
+        "left": 7713.0
+      },
+      "fcn_accepthandofffortheconversationagent_1706014480589_0": {
+        "top": 765.7421875,
+        "left": 7713.0
+      },
+      "fcn_starttheconversationwithagentforsmsagentforguidedandfaq_0": {
+        "top": 838.890625,
+        "left": 7713.0
+      },
+      "fcn_verifysmshistoryforagentconversationforsmsbotagentagentnameforguidedandfaqinsaas_0": {
+        "top": 915.0390625,
+        "left": 7713.0
+      },
+      "fcn_assignconversationbeforehandoff_1706174402536_0": {
+        "top": 654.59375,
+        "left": 8023.0
+      },
+      "fcn_getstandardusernameforsaas_1706174411869_0": {
+        "top": 714.59375,
+        "left": 8023.0
+      },
+      "fcn_askforconversationwithagentthroughsmsforguidedflow_1706174411869_0": {
+        "top": 778.59375,
+        "left": 8023.0
+      },
+      "fcn_assignsmssenderidtoanotheruser_1706174411869_0": {
+        "top": 855.59375,
+        "left": 8023.0
+      },
+      "fcn_assignconversationtoanotheruser_1706174411869_0": {
+        "top": 908.59375,
+        "left": 8023.0
+      },
+      "fcn_logintocustomer_portalusingstandarduserforguided_1706174411869_0": {
+        "top": 964.59375,
+        "left": 8023.0
+      },
+      "fcn_starttheconversationwithagentforsmsagentafterassignmentforguided_1706174411869_0": {
+        "top": 1043.7421875,
+        "left": 8023.0
+      },
+      "fcn_validatesmshistoryforagentmessageagentagentnamesms_1706174411869_0": {
+        "top": 1122.890625,
+        "left": 8023.0
+      },
+      "fcn_leadcaptureforsmsinsfforguidedflow_1695825620047_0": {
+        "top": 201.0,
+        "left": 10474.0
+      },
+      "fcn_leadcaptureforsmsinsfforguidedflow_0": {
+        "top": 248.0,
+        "left": 10474.0
+      },
+      "fcn_createsflogin_guided_1695825620047_0": {
+        "top": 332.0,
+        "left": 10474.0
+      },
+      "fcn_botandagentconversationthroughguidedflow_2": {
+        "top": 379.15625,
+        "left": 10810.0
+      },
+      "fcn_navigatetosmsmagicconverse_1699504096922_0": {
+        "top": 447.15625,
+        "left": 10810.0
+      },
+      "fcn_switchtosalesforceclassic_1699504096922_0": {
+        "top": 504.15625,
+        "left": 10810.0
+      },
+      "fcn_logintoportalusingsalesforce_credforguided_1699447154127_0": {
+        "top": 566.15625,
+        "left": 10810.0
+      },
+      "fcn_getagentnamesf_1699505167491_0": {
+        "top": 645.15625,
+        "left": 10810.0
+      },
+      "fcn_gotoconversedeskofsalesforce_1699447154127_0": {
+        "top": 709.15625,
+        "left": 10810.0
+      },
+      "fcn_starttheconversationwithbotthroughsmsforguidedinsf_1699447154127_0": {
+        "top": 768.15625,
+        "left": 10810.0
+      },
+      "fcn_validatethebotconversationmessagesforsmsinsfforguided_0": {
+        "top": 850.3046875,
+        "left": 10810.0
+      },
+      "fcn_navigatetosmshistory_1706070550760_0": {
+        "top": 926.453125,
+        "left": 10810.0
+      },
+      "fcn_sortthesmshistorybycreatedon_1706070562059_0": {
+        "top": 981.453125,
+        "left": 10810.0
+      },
+      "fcn_assertsmshistoryonsfforguidedpatientenquiryflowsms_0": {
+        "top": 1036.4453125,
+        "left": 10810.0
+      },
+      "fcn_assertsmshistoryonportalforsfguidedpatientenquiryflowsms_0": {
+        "top": 1113.625,
+        "left": 10810.0
+      },
+      "fcn_starttheconversationwithagentforsmsinsfsfagentafterguidedflowdone_0": {
+        "top": 1193.453125,
+        "left": 10806.0
+      },
+      "fcn_assertsfsmshistoryforsfagentmessagessms_0": {
+        "top": 1283.6015625,
+        "left": 10802.0
+      },
+      "fcn_assertsfsmshistoryforsfagentmessagessmsinportalforguided_0": {
+        "top": 1368.9140625,
+        "left": 10802.0
+      },
+      "fcn_assignconversationafterhandoff_3": {
+        "top": 960.4609375,
+        "left": 11131.0
+      },
+      "fcn_assignconversationtoanotheruserinsf_1699503883074_0": {
+        "top": 1018.6171875,
+        "left": 11132.0
+      },
+      "fcn_createsalesforcelogin_stduserforguided_1699503887941_0": {
+        "top": 1074.6171875,
+        "left": 11131.0
+      },
+      "fcn_startconversationwithsfagentforsmsafterhandoffacceptedinsf_1699503894521_0": {
+        "top": 1156.7734375,
+        "left": 11131.0
+      },
+      "fcn_navigatetosmsmagicconverse_1699504284919_0": {
+        "top": 397.15625,
+        "left": 10474.0
+      },
+      "fcn_switchtosalesforceclassic_1699504284919_0": {
+        "top": 453.15625,
+        "left": 10474.0
+      },
+      "fcn_logintoportalusingsalesforce_credforguided_1695825620047_0": {
+        "top": 513.15625,
+        "left": 10474.0
+      },
+      "fcn_navigatetoconversivebuttonsettingspage_1695825620047_0": {
+        "top": 598.15625,
+        "left": 10474.0
+      },
+      "fcn_getconversivebtnnameforsmsandwhatsappinsf_1695825620047_0": {
+        "top": 670.15625,
+        "left": 10474.0
+      },
+      "fcn_gotoconversedeskofsalesforce_1695825620047_0": {
+        "top": 748.15625,
+        "left": 10474.0
+      },
+      "fcn_starttheconversationwithbotthroughsmsforguidedinsf_1695825620047_0": {
+        "top": 812.15625,
+        "left": 10474.0
+      },
+      "fcn_checkleadcaptureforsmsinsfsmsforguidedflow_1695825620047_0": {
+        "top": 894.3125,
+        "left": 10474.0
+      },
+      "fcn_assertthesourceforsmsconversivebtnname_1695825620047_0": {
+        "top": 973.46875,
+        "left": 10474.0
+      },
+      "fcn_botandagentconversationthroughguidedflowguidedandfaqforsf_0": {
+        "top": 291.0,
+        "left": 11789.0
+      },
+      "fcn_createsflogin_guidedforguidedandfaq_1706081178763_0": {
+        "top": 364.0,
+        "left": 11789.0
+      },
+      "fcn_navigatetosmsmagicconverse_1706081191100_0": {
+        "top": 429.1484375,
+        "left": 11789.0
+      },
+      "fcn_switchtosalesforceclassic_1706081191100_0": {
+        "top": 486.1484375,
+        "left": 11789.0
+      },
+      "fcn_logintoportalusingsalesforce_credforguidedandfaq_1706088279427_0": {
+        "top": 545.1484375,
+        "left": 11789.0
+      },
+      "fcn_getagentnamesf_1706081191100_0": {
+        "top": 627.1484375,
+        "left": 11789.0
+      },
+      "fcn_gotoconversedeskofsalesforce_1706081191100_0": {
+        "top": 691.1484375,
+        "left": 11789.0
+      },
+      "fcn_starttheconversationwithbotthroughsmsforguidedandfaqinsf_0": {
+        "top": 750.1484375,
+        "left": 11789.0
+      },
+      "fcn_validatethebotconversationmessagesforsmsinsfforguidedandfaq_0": {
+        "top": 829.296875,
+        "left": 11789.0
+      },
+      "fcn_navigatetosmshistory_1706081411032_0": {
+        "top": 908.4453125,
+        "left": 11789.0
+      },
+      "fcn_sortthesmshistorybycreatedon_1706081411032_0": {
+        "top": 963.4453125,
+        "left": 11789.0
+      },
+      "fcn_assertsmshistoryonsfforguidedandfaqpatientenquiryflowsms_0": {
+        "top": 1022.4453125,
+        "left": 11789.0
+      },
+      "fcn_assertsmshistoryonportalforsffaqandguidedpatientenquiryflowsms_0": {
+        "top": 1101.6015625,
+        "left": 11789.0
+      },
+      "fcn_askforconversationwithagentthroughsmsforguidedflowinsf_0": {
+        "top": 1178.7578125,
+        "left": 11789.0
+      },
+      "fcn_starttheconversationwithagentforsmsinsfsfagentafterfaqandguidedflowdone_0": {
+        "top": 1258.7578125,
+        "left": 11789.0
+      },
+      "fcn_assertsfsmshistoryforsfagentmessagessmsafterhandoffaccepted_0": {
+        "top": 1351.9140625,
+        "left": 11789.0
+      },
+      "fcn_assertsfsmshistoryforsfagentmessagessmsinportalforguidedafterhandoff_0": {
+        "top": 1437.2265625,
+        "left": 11789.0
+      },
+      "fcn_assignconversationbeforehandoff_1706168399897_0": {
+        "top": 908.4453125,
+        "left": 12163.0
+      },
+      "fcn_askforconversationwithagentforsmsinsf_1706168399897_0": {
+        "top": 962.4453125,
+        "left": 12163.0
+      },
+      "fcn_assignconversationtoanotheruserinsf_1706168399897_0": {
+        "top": 1038.6015625,
+        "left": 12163.0
+      },
+      "fcn_createsalesforcelogin_stduserforguided_1706168399897_0": {
+        "top": 1091.6015625,
+        "left": 12163.0
+      },
+      "fcn_navigatetosmsmagicconverse_1706168399897_0": {
+        "top": 1170.0546875,
+        "left": 12163.0
+      },
+      "fcn_switchtosalesforceclassic_1706168399897_0": {
+        "top": 1221.0546875,
+        "left": 12163.0
+      },
+      "fcn_starttheconversationforsmsfromstandarduserfromsfsfagentagent_1706168399897_0": {
+        "top": 1274.7578125,
+        "left": 12163.0
+      },
+      "fcn_assertsmshistoryinsfstdusersfagentsms_1706168399897_0": {
+        "top": 1366.0703125,
+        "left": 12163.0
+      },
+      "fcn_leadcaptureforsmsinzohoforguidedflow_1695825679515_0": {
+        "top": 190.0,
+        "left": 8519.0
+      },
+      "fcn_leadcaptureforsmsinzohoforguidedflow_0": {
+        "top": 243.0,
+        "left": 8518.0
+      },
+      "fcn_createzohologin_guided_1695825679515_0": {
+        "top": 310.0,
+        "left": 8519.0
+      },
+      "fcn_navigatetoconversivebuttonsettingspage_1695825679515_0": {
+        "top": 382.15625,
+        "left": 8519.0
+      },
+      "fcn_getconversivebtnnameforsmsandwhatsapp_1695825679515_0": {
+        "top": 458.453125,
+        "left": 8519.0
+      },
+      "fcn_conversedeskvalidation_1695825679515_0": {
+        "top": 543.15625,
+        "left": 8519.0
+      },
+      "fcn_starttheconversationwithbotthroughsmsforguidedinzoho_1695825679515_0": {
+        "top": 600.15625,
+        "left": 8519.0
+      },
+      "fcn_checkleadcaptureforsmsinzohosmsforguidedflowconversivebtnname_1695825679515_0": {
+        "top": 682.3125,
+        "left": 8519.0
+      },
+      "fcn_botandagentconversationthroughguidedflow_1": {
+        "top": 361.15625,
+        "left": 8902.0
+      },
+      "fcn_getagentname_1699336709240_0": {
+        "top": 439.15625,
+        "left": 8902.0
+      },
+      "fcn_starttheconversationwithbotthroughsmsforguidedinzoho_0": {
+        "top": 500.453125,
+        "left": 8902.0
+      },
+      "fcn_validatesmsbotconversationmessagesforguidedbotsms_1699336804304_0": {
+        "top": 579.6015625,
+        "left": 8902.0
+      },
+      "fcn_validatethehistoryforsmsbotconversationmessagesforguidedbotsms_1699345250895_0": {
+        "top": 658.6015625,
+        "left": 8902.0
+      },
+      "fcn_starttheconversationwithagentforsmsagentforguidedzoho_0": {
+        "top": 756.6015625,
+        "left": 8902.0
+      },
+      "fcn_verifysmshistoryforagentconversationforsmsbotagentagentname_1699345273861_0": {
+        "top": 836.75,
+        "left": 8902.0
+      },
+      "fcn_asserthistoryinzohoforguidedbotagentagentnamezohocrmsms_0": {
+        "top": 911.8984375,
+        "left": 8902.0
+      },
+      "fcn_assignconversationafterhandoff_1": {
+        "top": 714.8984375,
+        "left": 9202.0
+      },
+      "fcn_getstandardusernameforsaas_1706174630585_0": {
+        "top": 770.8984375,
+        "left": 9202.0
+      },
+      "fcn_assignconversationtoanotheruser_1699348072690_0": {
+        "top": 835.1953125,
+        "left": 9202.0
+      },
+      "fcn_logintocustomer_portalusingstandarduserforzohoguided_1699348094173_0": {
+        "top": 891.1953125,
+        "left": 9202.0
+      },
+      "fcn_startconversationwithagentafterhandoffacceptedforsmsforguidedzoho_0": {
+        "top": 969.3515625,
+        "left": 9202.0
+      },
+      "fcn_validatesmshistoryinstandardusersmsagent_1699348146456_0": {
+        "top": 1050.6640625,
+        "left": 9202.0
+      },
+      "fcn_botandagentconversationthroughguidedflowguidedandfaqforzoho_0": {
+        "top": 244.0,
+        "left": 9633.0
+      },
+      "fcn_createzohologin_guidedforguidedandfaq_0": {
+        "top": 327.0,
+        "left": 9633.0
+      },
+      "fcn_conversedeskvalidation_1706019716232_0": {
+        "top": 408.1484375,
+        "left": 9633.0
+      },
+      "fcn_starttheconversationwithbotthroughsmsforguidedandfaqinzoho_0": {
+        "top": 465.1484375,
+        "left": 9633.0
+      },
+      "fcn_validatesmsbotconversationmessagesforguidedandfaqinsaasbotsms_1706019952796_0": {
+        "top": 547.296875,
+        "left": 9633.0
+      },
+      "fcn_validatethehistoryforsmsbotconversationmessagesforguidedandfaqinsaasbotsms_1706019960049_0": {
+        "top": 627.4453125,
+        "left": 9633.0
+      },
+      "fcn_askforconversationwithagentthroughsmsforguidedflowinzoho_0": {
+        "top": 724.59375,
+        "left": 9633.0
+      },
+      "fcn_accepthandofffortheconversationagent_1706020024466_0": {
+        "top": 810.7421875,
+        "left": 9633.0
+      },
+      "fcn_starttheconversationwithagentforsmsagentforguidedandfaqinzoho_0": {
+        "top": 896.8984375,
+        "left": 9633.0
+      },
+      "fcn_verifysmshistoryforagentconversationforsmsbotagentagentnameforguidedandfaqinsaas_1706020024466_0": {
+        "top": 980.046875,
+        "left": 9633.0
+      },
+      "fcn_assignconversationbeforehandoff_1706174646605_0": {
+        "top": 682.59375,
+        "left": 9923.0
+      },
+      "fcn_getstandardusernameforsaas_1706174646605_0": {
+        "top": 738.59375,
+        "left": 9923.0
+      },
+      "fcn_askforconversationwithagentthroughsmsforguidedflowzoho_1706174646605_0": {
+        "top": 803.7421875,
+        "left": 9923.0
+      },
+      "fcn_assignsmssenderidtoanotheruser_1706174646605_0": {
+        "top": 882.890625,
+        "left": 9923.0
+      },
+      "fcn_assignconversationtoanotheruser_1706174646605_0": {
+        "top": 943.890625,
+        "left": 9923.0
+      },
+      "fcn_logintocustomer_portalusingstandarduserforzohoguided_1706174646605_0": {
+        "top": 1000.890625,
+        "left": 9923.0
+      },
+      "fcn_starttheconversationwithagentforsmsagentafterassignmentforguidedzoho_1706174646605_0": {
+        "top": 1086.046875,
+        "left": 9923.0
+      },
+      "fcn_validatesmshistoryforagentmessageagentagentnamesms_1706174646605_0": {
+        "top": 1181.203125,
+        "left": 9923.0
+      }
+    }
+  },
+  "enabled": true,
+  "parentId": ""
+}

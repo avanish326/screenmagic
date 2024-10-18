@@ -1,0 +1,50 @@
+{
+  "modifiedOn": "2024-02-08T06:49:56.820Z",
+  "name": "Validate template $conversationtype",
+  "id": "28773",
+  "type": 3,
+  "createdOn": "2024-02-08T06:49:56.820Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Validate template $conversationtype",
+    "parameters": [
+      {
+        "parameterId": "conversationtype_",
+        "entityTypeId": "conversationtype",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "3000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"/Conversation/\",_under(_tableHeader(\"TEMPLATE NAME\")))"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "parameterId": "conversationtype_",
+          "attributeId": "attr_01706001096320"
+        },
+        "visibleCheck": false
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

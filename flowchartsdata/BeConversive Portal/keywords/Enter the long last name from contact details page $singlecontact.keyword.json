@@ -1,0 +1,51 @@
+{
+  "name": "Enter the long last name from contact details page $singlecontact",
+  "id": "-1",
+  "type": 3,
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Enter the long last name from contact details page $singlecontact",
+    "specific": [],
+    "parameters": [
+      {
+        "parameterId": "singlecontact_",
+        "entityTypeId": "singlecontact",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_svg_path(0, _near(_cell(\"Last Name\")))"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_textbox(0)"
+          },
+          {
+            "parameterId": "singlecontact_",
+            "attributeId": "attr_longLastName_5"
+          }
+        ],
+        "stepType": "Action",
+        "stepCategory": "inbuilt",
+        "specific": []
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

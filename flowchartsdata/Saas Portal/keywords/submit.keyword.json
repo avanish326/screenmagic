@@ -1,0 +1,34 @@
+{
+  "modifiedOn": "2024-09-27T08:36:27.613661555Z",
+  "name": "submit",
+  "id": "-1",
+  "type": 3,
+  "createdOn": "2024-05-10T04:37:28Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "submit",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "if(_isVisible(_submit(\"Submit\"))){\n\t_click(_submit(\"Submit\"));\n}\nif(_isVisible(_button(\"Submit \u0026 Next\"))){\n\t_click(_button(\"Submit \u0026 Next\"));\n}"
+      },
+      {
+        "commented": true,
+        "action": "_isVisible",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_div(\"custom-toster success-toster\")"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Assert",
+        "assertType": "Is_True"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

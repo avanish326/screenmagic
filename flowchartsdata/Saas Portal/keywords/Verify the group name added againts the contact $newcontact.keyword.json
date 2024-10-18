@@ -1,0 +1,58 @@
+{
+  "modifiedOn": "2024-09-12T07:01:21.638901Z",
+  "name": "Verify the group name added againts the contact $newcontact",
+  "id": "-1",
+  "type": 3,
+  "createdOn": "2024-09-11T03:11:01Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Verify the group name added againts the contact $newcontact",
+    "parameters": [
+      {
+        "parameterId": "newcontact_",
+        "entityTypeId": "newcontact",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_cell($newcontact.groupName, _near(_div($name)))"
+          }
+        ],
+        "stepType": "Assert",
+        "stepCategory": "inbuilt",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "paramMode": "default",
+          "parameterId": "newcontact_",
+          "attributeId": "attr_91706857979063"
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_cell($newcontact.groupName, _near(_div($name1)))"
+          }
+        ],
+        "stepType": "Assert",
+        "stepCategory": "inbuilt",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "paramMode": "default",
+          "parameterId": "newcontact_",
+          "attributeId": "attr_91706857979063"
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

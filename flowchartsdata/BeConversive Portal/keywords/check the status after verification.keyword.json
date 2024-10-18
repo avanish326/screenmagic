@@ -1,0 +1,70 @@
+{
+  "modifiedOn": "2024-02-08T06:49:49.183Z",
+  "name": "check the status after verification",
+  "id": "28253",
+  "type": 3,
+  "createdOn": "2024-02-08T06:49:49.183Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "check the status after verification",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": true,
+        "action": "_selectWindow",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "\"qa-ops.txtbox.in\""
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "var $windows \u003d _getWindows();\n_log($windows.length)\nfor(var $i\u003d0; $i\u003c$windows.length; $i++){\n_log($windows[$i].windowTitle)\nif(($windows[$i].windowTitle).indexOf(\"SMS Magic\")!\u003d-1){\n_selectWindow($windows[$i].windowTitle)\n_log($windows[$i].windowTitle)\n}}"
+      },
+      {
+        "commented": false,
+        "action": "_windowAction",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "\"refresh\""
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_submit(\"Expand All\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"isVerificationLabelId\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"Verified\""
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

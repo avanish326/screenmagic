@@ -1,0 +1,192 @@
+{
+  "modifiedOn": "2024-02-08T06:49:45.253Z",
+  "name": "Add Toll Free Number for USA $accountid $numbermanagment",
+  "id": "27978",
+  "type": 3,
+  "createdOn": "2024-02-08T06:49:45.253Z",
+  "content": {
+    "title": "Add Toll Free Number for USA $accountid $numbermanagment",
+    "parameters": [
+      {
+        "parameterId": "accountid_",
+        "entityTypeId": "accountid",
+        "suffix": ""
+      },
+      {
+        "parameterId": "numbermanagment_",
+        "entityTypeId": "numbermanagment",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"Provider\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"Incoming Provider\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"List of Incoming Numbers For SMS\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_button(\"Add Inbound Number\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_setSelected",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_select(\"addcountryId\")"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "\"USA\""
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_textbox(\"addshortCode\")"
+          },
+          {
+            "parameterId": "numbermanagment_",
+            "attributeId": "attr_01694422045551"
+          }
+        ],
+        "stepType": "Action",
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "parameterId": "numbermanagment_",
+            "attributeId": "attr_01694422045551",
+            "accessorId": "acc0"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$senderID"
+        },
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_setSelected",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_select(\"inboundNumberType\")"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "\"Toll Free Number\""
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_row(\"Shortcode *[1]\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_button(\"Add\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_textbox(\"shortCode\")"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "$senderID"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_submit(\"Search\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_closeBrowser",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": ""
+          }
+        ],
+        "stepType": "Action"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

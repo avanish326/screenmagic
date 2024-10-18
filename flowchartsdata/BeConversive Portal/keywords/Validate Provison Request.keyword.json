@@ -1,0 +1,63 @@
+{
+  "modifiedOn": "2024-03-21T04:19:50.948Z",
+  "name": "Validate Provison Request",
+  "id": "44739",
+  "type": 3,
+  "createdOn": "2024-03-20T10:29:21.558Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Validate Provison Request",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "2000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_textbox(\"Search in mail\")"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "$beconversiveForget"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "_click(_submit(0, _near(_div(\"/Search in mail/\"))));"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"Request to provision number for Conversive Account\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "var $reset \u003d _collect(\"_link\",\"/Reset Password/\");\n_click($reset[$reset.length-1]);"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

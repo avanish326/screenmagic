@@ -1,0 +1,104 @@
+{
+  "modifiedOn": "2024-08-20T14:37:28.756Z",
+  "name": "Verify the added contact in Audience Manager with first name and phone number $singlecontact",
+  "id": "58916",
+  "type": 3,
+  "createdOn": "2024-08-20T14:37:28.756Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Verify the added contact in Audience Manager with first name and phone number $singlecontact",
+    "parameters": [
+      {
+        "parameterId": "singlecontact_",
+        "entityTypeId": "singlecontact",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "10000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "var $inc\u003d1;\n\n$newTotalContacts\u003dNumber($totalContacts)+$inc ;\n\n$newContactsThisMonth1\u003dNumber($newContactThisMonth)+$inc ;"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(0, _under(_span(\"Total Contacts\")))"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$newTotalContacts"
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(0, _under(_span(\"New Contacts this month\")))"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$newContactsThisMonth1"
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_cell($singlecontact.firstName)"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "parameterId": "singlecontact_",
+          "attributeId": "attr_01724163498407"
+        },
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_cell(0, _under(_tableHeader(\"Mobile Number\")))"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Contains",
+        "secondaryParam": {
+          "parameterId": "singlecontact_",
+          "attributeId": "attr_21724163506957"
+        },
+        "visibleCheck": false
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

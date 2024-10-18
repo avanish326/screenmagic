@@ -1,0 +1,195 @@
+{
+  "modifiedOn": "2024-02-08T06:49:54.528Z",
+  "name": "Assert History in Portal when we provide mobile with country code for $bot $webform",
+  "id": "28622",
+  "type": 3,
+  "createdOn": "2024-02-08T06:49:54.528Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Assert History in Portal when we provide mobile with country code for $bot $webform",
+    "parameters": [
+      {
+        "parameterId": "bot_",
+        "entityTypeId": "bot",
+        "suffix": ""
+      },
+      {
+        "parameterId": "webform_",
+        "entityTypeId": "webform",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_selectBrowser",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "$browserPortal"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"Message Reports\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"Message History\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"/Outgoing Messages/\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "var $phone\u003d$webform.phoneWithCountryCode;"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_cell(\"\"+$phone+\"\", _near(_div(\"Hi, I am Tenali, SMS-Magic’s ChatBot! Happy to chat with you 😊 Welcome to SMS-Magic.\")))"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "parameterId": "webform_",
+          "attributeId": "attr_51703736709557"
+        },
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_cell(\"\"+$phone+\"\", _near(_div(\"Hey, thank you for reaching out to us. We are happy to assist you. One of our business agents will respond to you shortly. You are now connected with \"+$agentnameCheck+\". Please continue the conversation.\")))"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "parameterId": "webform_",
+          "attributeId": "attr_51703736709557"
+        },
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "var $sfagentMessage\u003d$sfagent.sfagentMessage;"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"\"+$sfagentMessage+\"\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "parameterId": "sfagent_",
+          "attributeId": "attr_01693488220472"
+        },
+        "visibleCheck": false
+      },
+      {
+        "commented": true,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_cell(\"\"+$phone+\"\", _near(_div(\"\"+$sfagentMessage+\"\")))"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {}
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"/Incoming Messages/\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "var $visitorMessage\u003d$agent.visitorMessage;"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"\"+$visitorMessage+\"\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "parameterId": "agent_",
+          "attributeId": "attr_11693224177770"
+        },
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_cell(\"\"+$phone+\"\", _near(_div(\"\"+$visitorMessage+\"\")))"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "parameterId": "webform_",
+          "attributeId": "attr_51703736709557"
+        },
+        "visibleCheck": false
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

@@ -1,0 +1,63 @@
+{
+  "modifiedOn": "2024-07-19T13:31:46.398Z",
+  "name": "SMS history validation for campaign",
+  "id": "14963",
+  "type": 3,
+  "createdOn": "2023-09-25T10:11:50.598Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "SMS history validation for campaign",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"Campaign\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"Message History\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_cell(0, _under(_tableHeader(\"Created On\"),50))"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$date"
+        }
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "_log(\"Date  from UI \"+ $date)\nvar $dateUI \u003d new Date($date.split(\" \")[0]+\"T\"+$date.split(\" \")[1]);\nvar $currentDate \u003d new Date();\n\nvar $formatter \u003d new java.text.SimpleDateFormat(\"yyyy-MM-dd HH:mm:ss\");\nvar $today \u003d $formatter.format($currentDate);\n\n_log($today)\n\nvar $diffTime \u003d $dateUI.getTime() - $currentDate.getTime();\n_log($diffTime);\n\nvar $TimeInSecond\u003d $diffTime/1000;\n_log($TimeInSecond);\n_assert($TimeInSecond \u003e 10);\n"
+      },
+      {
+        "commented": true,
+        "isRawScript": true,
+        "rawScript": "var $host \u003d \"smtp.gmail.com\";\nvar $port \u003d 465;\nvar $username \u003d \"qateam.automation@screen-magic.com\";\nvar $password \u003d \"Qa@team29321\";\nvar $isSSL \u003d true; // set to true if you use SSL\nvar $mailer \u003d new Packages.net.sf.sahi.util.Mailer($host, $port, $username, $password, $isSSL);\n$mailer.setFrom(\"qateam.automation@screen-magic.com\");\n$mailer.setTo(\"shweta.m@screen-magic.com\");\n$mailer.setSubject(\"Automation Email\");\n$mailer.setBody(\"Create Saas Portal Login -\u003e\u003e SMS History\" + _scriptStatus());"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

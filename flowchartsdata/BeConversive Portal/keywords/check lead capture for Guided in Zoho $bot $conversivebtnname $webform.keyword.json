@@ -1,0 +1,186 @@
+{
+  "modifiedOn": "2024-02-08T06:49:42.664Z",
+  "name": "check lead capture for Guided in Zoho $bot $conversivebtnname $webform",
+  "id": "27789",
+  "type": 3,
+  "createdOn": "2024-02-08T06:49:42.664Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "check lead capture for Guided in Zoho $bot $conversivebtnname $webform",
+    "parameters": [
+      {
+        "parameterId": "bot_",
+        "entityTypeId": "bot",
+        "suffix": ""
+      },
+      {
+        "parameterId": "conversivebtnname_",
+        "entityTypeId": "conversivebtnname",
+        "suffix": ""
+      },
+      {
+        "parameterId": "webform_",
+        "entityTypeId": "webform",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_selectBrowser",
+        "stepParameters": [],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_openWindow",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "\"https://crm.zoho.in/\""
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "\"zohoCrmTab\""
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_selectWindow",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "\"zohoCrmTab\""
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"Leads[1]\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_selectWindow",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "\"zohoCrmTab\""
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"link\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Contains",
+        "secondaryParam": {
+          "parameterId": "webform_",
+          "attributeId": "attr_11693985425678"
+        },
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_selectWindow",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "\"zohoCrmTab\""
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"cxEmailViewLink cruxPreventClick emailUnblock\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "parameterId": "webform_",
+          "attributeId": "attr_21693985570947"
+        },
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_selectWindow",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "\"zohoCrmTab\""
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"phoneRtl cxPhoneViewZPBEnabled cruxPreventClick\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "parameterId": "webform_",
+          "attributeId": "attr_31693986417692"
+        },
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_selectWindow",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "\"zohoCrmTab\""
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_lyte_text(\"\"+$conversivebuttonname+\"-web\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"\"+$conversivebuttonname+\"-web\""
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

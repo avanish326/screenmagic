@@ -1,0 +1,32 @@
+{
+  "modifiedOn": "2024-02-08T06:49:50.211Z",
+  "name": "Database validation after activating sms flow $smsguidedauto",
+  "id": "28323",
+  "type": 3,
+  "createdOn": "2024-02-08T06:49:50.211Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Database validation after activating sms flow $smsguidedauto",
+    "parameters": [
+      {
+        "parameterId": "smsguidedauto_",
+        "entityTypeId": "smsguidedauto",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": true,
+        "isRawScript": true,
+        "rawScript": "var $senderID1\u003d$smsguidedauto.smsSenderID1;"
+      },
+      {
+        "commented": true,
+        "isRawScript": true,
+        "rawScript": "var $db \u003d _getDB(\"com.mysql.jdbc.Driver\", \"jdbc:mysql://127.0.0.1/smsmagic\", \"admin_portal\",\"Smd3v$Au321\");\nvar $rs \u003d $db.select(\"select bot_status from incoming_config where accountId \u003d\u0027\"+$account+\"\u0027 and shortCode \u003d \u0027\"+$senderID1+\"\u0027 \");\nvar $bot_status\u003d $rs[0][0];\n_assertEqual($bot_status, 1)\n\nvar $rs1 \u003d $db.select(\"select start_bot from chatbot_config where account_id \u003d\u0027\"+$account+\"\u0027 and sender_id \u003d \u0027\"+$senderID1+\"\u0027 \");\nvar $start_bot\u003d $rs1[0][0];\n_assertEqual($start_bot, 2)"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

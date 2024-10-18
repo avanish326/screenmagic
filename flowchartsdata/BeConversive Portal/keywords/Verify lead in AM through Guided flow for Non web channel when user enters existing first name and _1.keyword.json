@@ -1,0 +1,107 @@
+{
+  "modifiedOn": "2024-07-01T10:34:42.210Z",
+  "name": "Verify lead in AM through Guided flow for Non web channel when user enters existing first name and last name$basicinfo",
+  "id": "57971",
+  "type": 3,
+  "createdOn": "2024-07-01T10:25:56.032Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Verify lead in AM through Guided flow for Non web channel when user enters existing first name and last name$basicinfo",
+    "parameters": [
+      {
+        "parameterId": "basicinfo_",
+        "entityTypeId": "basicinfo",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_heading3(\"Contacts\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"Contacts\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_cell($firstName)"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$firstName"
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_cell($lastName)"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$lastName"
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_cell($basicinfo.email)"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$basicinfo.email"
+        }
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "$mobileNum\u003d$basicinfo.source;"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_cell($mobileNum)"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$mobileNum"
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

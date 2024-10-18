@@ -1,0 +1,89 @@
+{
+  "modifiedOn": "2024-05-20T06:22:22.355Z",
+  "name": "Validate Whatsaap sms-History $hubspot",
+  "id": "46152",
+  "type": 3,
+  "createdOn": "2024-05-20T06:02:51.715Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Validate Whatsaap sms-History $hubspot",
+    "parameters": [
+      {
+        "parameterId": "hubspot_",
+        "entityTypeId": "hubspot",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"Campaign\")"
+          },
+          {}
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"Message History\")"
+          },
+          {}
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"WhatsApp\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"/Hello How are You Sent Message/\", _under(_tableHeader(\"Message\")))"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "parameterId": "hubspot_",
+          "attributeId": "attr_11714637899246"
+        },
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_cell(\"undelivered\", _near(_tableHeader(\"Delivery Status\")))"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$DlrStatus"
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

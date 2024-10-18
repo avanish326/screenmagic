@@ -1,0 +1,207 @@
+{
+  "modifiedOn": "2024-02-16T07:04:33.109Z",
+  "name": "api backend",
+  "id": "29455",
+  "type": 0,
+  "createdOn": "2024-02-14T07:46:58.944Z",
+  "content": {
+    "settings": {
+      "maxProceedDepth": 100,
+      "maxProceedsForFirstDepth": 1,
+      "maxProceedsPerDepth": 1,
+      "maxPathRepititionsPerComboPath": 1,
+      "maxProceedsPerPath": 10000,
+      "maxToggles": 2,
+      "maxMatchingPaths": 3
+    },
+    "flowChartUID": "fcUID_1707997621088",
+    "nodesMap": {
+      "fcn_start_0": {
+        "dataSetId": -1,
+        "id": "fcn_start_0",
+        "nodeType": "start",
+        "branches": [
+          "fcn_anyticsapi_1707897228486_0"
+        ],
+        "content": "Start"
+      },
+      "fcn_anyticsapi_1707897228486_0": {
+        "dataSetId": -1,
+        "id": "fcn_anyticsapi_1707897228486_0",
+        "nodeType": "pathlabel",
+        "branches": [
+          "fcn_apihit_1707897228486_0",
+          "fcn_apihit_1707999060118_0"
+        ],
+        "content": "Anytics API"
+      },
+      "fcn_apihit_1707897228486_0": {
+        "dataSetId": -1,
+        "id": "fcn_apihit_1707897228486_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_createzohologin_guided_1707900833737_0"
+        ],
+        "content": "API HIT"
+      },
+      "fcn_createzohologin_guided_1707900833737_0": {
+        "dataSetId": -1,
+        "id": "fcn_createzohologin_guided_1707900833737_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_starttheconversationforsmssmsusecases_0"
+        ],
+        "content": "create $zohologin_guided"
+      },
+      "fcn_starttheconversationforsmssmsusecases_0": {
+        "dataSetId": -1,
+        "id": "fcn_starttheconversationforsmssmsusecases_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertmessagesondeskwhenselectsiasmsusecases_0"
+        ],
+        "content": "Start the Conversation for SMS $smsusecases"
+      },
+      "fcn_assertmessagesondeskwhenselectsiasmsusecases_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertmessagesondeskwhenselectsiasmsusecases_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertmessagesinsmshistorysmsusecases_0"
+        ],
+        "content": "Assert messages on desk when select SIA $smsusecases"
+      },
+      "fcn_assertmessagesinsmshistorysmsusecases_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertmessagesinsmshistorysmsusecases_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checkapiaftehitting_0"
+        ],
+        "content": "Assert messages in SMS History $smsusecases"
+      },
+      "fcn_checkapiaftehitting_0": {
+        "dataSetId": -1,
+        "id": "fcn_checkapiaftehitting_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertapi_0"
+        ],
+        "content": "Check API afte Hitting"
+      },
+      "fcn_apihit_1707999060118_0": {
+        "dataSetId": -1,
+        "id": "fcn_apihit_1707999060118_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_loginsaas_usecase_0"
+        ],
+        "content": "API HIT"
+      },
+      "fcn_loginsaas_usecase_0": {
+        "dataSetId": -1,
+        "id": "fcn_loginsaas_usecase_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_getagentname_1707999890528_0"
+        ],
+        "content": "login saas_usecase"
+      },
+      "fcn_getagentname_1707999890528_0": {
+        "dataSetId": -1,
+        "id": "fcn_getagentname_1707999890528_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_starttheconversationforsmssmsusecases_1708001141374_0"
+        ],
+        "content": "get $agentname"
+      },
+      "fcn_assertapi_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertapi_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "assert api"
+      },
+      "fcn_starttheconversationforsmssmsusecases_1708001141374_0": {
+        "dataSetId": -1,
+        "id": "fcn_starttheconversationforsmssmsusecases_1708001141374_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertmessagesondeskwhenselectsiasmsusecases_1708001192838_0"
+        ],
+        "content": "Start the Conversation for SMS $smsusecases"
+      },
+      "fcn_assertmessagesondeskwhenselectsiasmsusecases_1708001192838_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertmessagesondeskwhenselectsiasmsusecases_1708001192838_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Assert messages on desk when select SIA $smsusecases"
+      }
+    },
+    "pathNames": {},
+    "isPrimary": false,
+    "positions": {
+      "fcn_start_0": {
+        "top": 150.0,
+        "left": 500.0
+      },
+      "fcn_anyticsapi_1707897228486_0": {
+        "top": 207.0,
+        "left": 432.0
+      },
+      "fcn_apihit_1707897228486_0": {
+        "top": 264.0,
+        "left": 432.0
+      },
+      "fcn_createzohologin_guided_1707900833737_0": {
+        "top": 323.0,
+        "left": 432.0
+      },
+      "fcn_starttheconversationforsmssmsusecases_0": {
+        "top": 388.1484375,
+        "left": 433.0
+      },
+      "fcn_assertmessagesondeskwhenselectsiasmsusecases_0": {
+        "top": 468.296875,
+        "left": 433.0
+      },
+      "fcn_assertmessagesinsmshistorysmsusecases_0": {
+        "top": 547.4453125,
+        "left": 433.0
+      },
+      "fcn_checkapiaftehitting_0": {
+        "top": 626.59375,
+        "left": 433.0
+      },
+      "fcn_assertapi_0": {
+        "top": 685.59375,
+        "left": 433.0
+      },
+      "fcn_apihit_1707999060118_0": {
+        "top": 229.0,
+        "left": 830.0
+      },
+      "fcn_loginsaas_usecase_0": {
+        "top": 289.0,
+        "left": 830.0
+      },
+      "fcn_getagentname_1707999890528_0": {
+        "top": 348.0,
+        "left": 830.0
+      },
+      "fcn_starttheconversationforsmssmsusecases_1708001141374_0": {
+        "top": 414.1484375,
+        "left": 830.0
+      },
+      "fcn_assertmessagesondeskwhenselectsiasmsusecases_1708001192838_0": {
+        "top": 492.296875,
+        "left": 830.0
+      }
+    },
+    "tags": ""
+  },
+  "enabled": true,
+  "parentId": ""
+}

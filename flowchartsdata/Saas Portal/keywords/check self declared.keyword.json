@@ -1,0 +1,54 @@
+{
+  "modifiedOn": "2024-05-10T10:09:47.011Z",
+  "name": "check self declared",
+  "id": "45984",
+  "type": 3,
+  "createdOn": "2024-05-10T10:09:18.317Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "check self declared",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_windowAction",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "\"refresh\""
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "5000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"listing-data listing-badge badge-orange\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"Self declared\""
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

@@ -1,0 +1,45 @@
+{
+  "modifiedOn": "2024-09-11T12:49:32.081095Z",
+  "name": "Validate message in the desk",
+  "id": "-1",
+  "type": 3,
+  "createdOn": "2024-09-09T15:52:30Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Validate message in the desk",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_span(\"918767656545\")"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_paragraph(\"outgoing are are my details: Adhaar Card -*565-7575-9731 pan card eg- **dsf1234j DOB- 12-10-199* Email- *****mail.com Phone number- **********[1]\")"
+          }
+        ],
+        "stepType": "Assert",
+        "stepCategory": "inbuilt",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "paramMode": "string",
+          "customValue": "outgoing are are my details: Adhaar Card -*565-7575-9731 \u2028pan card eg- **dsf1234j DOB- 12-10-199* \u2028Email- *****mail.com \u2028Phone number- **********"
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

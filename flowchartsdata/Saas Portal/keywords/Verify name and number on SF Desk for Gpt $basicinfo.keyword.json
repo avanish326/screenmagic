@@ -1,0 +1,87 @@
+{
+  "modifiedOn": "2024-03-05T07:32:57.652Z",
+  "name": "Verify name and number on SF Desk for Gpt $basicinfo",
+  "id": "43931",
+  "type": 3,
+  "createdOn": "2024-03-05T07:32:11.107Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Verify name and number on SF Desk for Gpt $basicinfo",
+    "parameters": [
+      {
+        "parameterId": "basicinfo_",
+        "entityTypeId": "basicinfo",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "8000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"Bot Conversations\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_button(\"All\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"recordMessageWrap\", _near(_button(\"All\")))"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "isRawScript": true,
+        "rawScript": "var $firstName\u003d$basicinfo.firstName;\nvar $lastName\u003d$basicinfo.lastName;\nvar $phone\u003d$basicinfo.source;\n\n\nvar $heading\u003d$firstName+\" \"+$lastName;"
+      },
+      {
+        "commented": true,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_heading3($heading)"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$heading"
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

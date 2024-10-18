@@ -1,7 +1,9 @@
 {
+  "modifiedOn": "2024-10-11T05:25:36.585059700Z",
   "name": "Registration",
   "id": "-1",
   "type": 0,
+  "createdOn": "2024-04-03T06:36:44Z",
   "content": {
     "nodesMap": {
       "fcn_start_0": {
@@ -9,9 +11,9 @@
         "content": "Start",
         "nodeType": "start",
         "branches": [
-          "fcn_userregistration_0",
-          "fcn_createavanish_0"
-        ]
+          "fcn_userregistration_0"
+        ],
+        "dataSetId": "-1"
       },
       "fcn_userregistration_0": {
         "id": "fcn_userregistration_0",
@@ -19,7 +21,8 @@
         "nodeType": "pathlabel",
         "branches": [
           "fcn_gotoregistrationpage_0"
-        ]
+        ],
+        "dataSetId": "-1"
       },
       "fcn_gotoregistrationpage_0": {
         "id": "fcn_gotoregistrationpage_0",
@@ -27,7 +30,8 @@
         "nodeType": "action",
         "branches": [
           "fcn_registernewuser_0"
-        ]
+        ],
+        "dataSetId": "-1"
       },
       "fcn_registernewuser_0": {
         "id": "fcn_registernewuser_0",
@@ -35,7 +39,8 @@
         "nodeType": "action",
         "branches": [
           "fcn_verifyuserregistered_0"
-        ]
+        ],
+        "dataSetId": "-1"
       },
       "fcn_verifyuserregistered_0": {
         "id": "fcn_verifyuserregistered_0",
@@ -43,85 +48,41 @@
         "nodeType": "state",
         "branches": [
           "fcn_logout_0"
-        ]
+        ],
+        "dataSetId": "-1"
       },
       "fcn_logout_0": {
         "id": "fcn_logout_0",
         "content": "Logout",
         "nodeType": "action",
-        "branches": []
-      },
-      "fcn_createavanish_0": {
-        "id": "fcn_createavanish_0",
-        "content": "Create avanish",
-        "nodeType": "pathlabel",
-        "branches": [
-          "fcn_createavanish_1"
-        ]
-      },
-      "fcn_createavanish_1": {
-        "id": "fcn_createavanish_1",
-        "content": "Create $avanish",
-        "nodeType": "action",
-        "branches": [
-          "fcn_assertavanishcreated_0"
-        ]
-      },
-      "fcn_assertavanishcreated_0": {
-        "id": "fcn_assertavanishcreated_0",
-        "content": "Assert $avanish Created",
-        "nodeType": "state",
-        "branches": [
-          "fcn_avanishexiststrue_0"
-        ]
-      },
-      "fcn_avanishexiststrue_0": {
-        "id": "fcn_avanishexiststrue_0",
-        "content": "$avanish.exists\u003dtrue",
-        "nodeType": "state",
-        "branches": []
+        "branches": [],
+        "dataSetId": "-1"
       }
     },
     "positions": {
       "fcn_start_0": {
-        "top": 150.0,
-        "left": 500.0
+        "top": 150,
+        "left": 500
       },
       "fcn_userregistration_0": {
-        "top": 211.0,
-        "left": 500.0
+        "top": 211,
+        "left": 500
       },
       "fcn_gotoregistrationpage_0": {
-        "top": 270.0,
-        "left": 500.0
+        "top": 270,
+        "left": 500
       },
       "fcn_registernewuser_0": {
-        "top": 329.0,
-        "left": 502.0
+        "top": 329,
+        "left": 502
       },
       "fcn_verifyuserregistered_0": {
         "top": 393.13543701171875,
-        "left": 500.0
+        "left": 500
       },
       "fcn_logout_0": {
         "top": 458.29168701171875,
-        "left": 501.0
-      },
-      "fcn_createavanish_0": {
-        "top": 211.0,
-        "left": 780.0
-      },
-      "fcn_createavanish_1": {
-        "top": 271.0,
-        "left": 780.0
-      },
-      "fcn_assertavanishcreated_0": {
-        "top": 331.0,
-        "left": 780.0
-      },
-      "fcn_avanishexiststrue_0": {
-        "top": 391.0,
-        "left": 780.0
+        "left": 501
       }
     },
     "settings": {
@@ -136,6 +97,9 @@
     "isPrimary": true,
     "pathNames": [
       {
+        "pathName": "Registration",
+        "dependsPathUID": "1713764926800",
+        "isValidationsEnabled": true,
         "pathKey": [
           "fcn_userregistration_0",
           "fcn_gotoregistrationpage_0",
@@ -143,25 +107,21 @@
           "fcn_verifyuserregistered_0",
           "fcn_logout_0"
         ],
-        "pathName": "Registration",
-        "dependsPathUID": "1713764926800",
-        "dataSet": {
-          "dataSetName": "user_details.csv",
-          "dataSetGroupName": "group_1"
-        },
         "pathTags": "Test",
-        "isValidationsEnabled": true
+        "dataSet": {
+          "dataSetName": "-1"
+        }
       },
       {
+        "dependsPathUID": "1713764926838",
+        "isValidationsEnabled": false,
         "pathKey": [
           "fcn_userregistration_0",
           "fcn_gotoregistrationpage_0",
           "fcn_registernewuser_0",
           "fcn_verifyuserregistered_0"
         ],
-        "dependsPathUID": "1713764926838",
-        "dataSet": {},
-        "isValidationsEnabled": false
+        "dataSet": {}
       }
     ],
     "flowChartUID": "fcUID_1713432997066",

@@ -1,0 +1,76 @@
+{
+  "modifiedOn": "2024-03-15T09:36:35.453Z",
+  "name": "Verify Message Credit Balance is visible to Standard User or Not",
+  "id": "44647",
+  "type": 3,
+  "createdOn": "2024-03-15T08:20:30.815Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Verify Message Credit Balance is visible to Standard User or Not",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "//Refresh the Page\n_call(window.location.reload())"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "if($MessageCreditBalance\u003d\u003dtrue)\n{"
+      },
+      {
+        "commented": false,
+        "action": "_isVisible",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"btn btn-default dropdown-toggle\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Is_True"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(1, _under(_paragraph(\"Balance\")))"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$balance"
+        }
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "}\nelse\n{"
+      },
+      {
+        "commented": false,
+        "action": "_isVisible",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"btn btn-default dropdown-toggle\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Is_False"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "}"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

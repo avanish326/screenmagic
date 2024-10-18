@@ -1,0 +1,79 @@
+{
+  "modifiedOn": "2024-01-18T13:11:19.504Z",
+  "name": "Send Incoming Message $wasenderid from known user",
+  "id": "22622",
+  "type": 3,
+  "createdOn": "2024-01-18T13:09:12.935Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Send Incoming Message $wasenderid from known user",
+    "parameters": [
+      {
+        "parameterId": "wasenderid_",
+        "entityTypeId": "wasenderid",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "POST"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "$incomingWAURL"
+          }
+        ],
+        "stepType": "REST",
+        "isRawScript": true,
+        "rawScript": "var $request_oTm5RqJV09 \u003d new RESTRequest();\r\n$request_oTm5RqJV09.setURL($incomingWAURL);\r\n$request_oTm5RqJV09.setHeader(\"Content-Type\", \"application/json\");\r\nvar sanitizedBody \u003d eval(\"(\"+\"{\" + \"   \\\"SmsMessageSid\\\":\\\"SM91805a30f08ed4a44c8fe7b1264deb14\\\",\" + \"   \\\"ProfileName\\\":\\\"abc\\\",\" + \"   \\\"SmsSid\\\":\\\"SM91805a30f08ed4a44c8fe7b1264deb14\\\",\" + \"   \\\"WaId\\\":\\\"91750878281\\\",\" + \"   \\\"SmsStatus\\\":\\\"received\\\",\" + \"   \\\"Body\\\":\\\"\\\"+\\\"\" + escapeString($wasenderid.textKeyword) + \"\\\"+\\\"\\\",\" + \"   \\\"To\\\":\\\"whatsapp:+\\\"+\\\"\" + escapeString($wasenderid.waSenderID) + \"\\\"+\\\"\\\",\" + \"   \\\"NumSegments\\\":\\\"919088772221\\\",\" + \"   \\\"ReferralNumMedia\\\":\\\"0\\\",\" + \"   \\\"MessageSid\\\":\\\"SM91805a30f08ed4a44c8fe7b1264deb14\\\",\" + \"   \\\"AccountSid\\\":\\\"AC00a7b3b1c35de688eb9696b3119e0388\\\",\" + \"   \\\"From\\\":\\\"whatsapp:+\\\"+\\\"\" + escapeString($phoneNumber) + \"\\\"+\\\"\\\",\" + \"   \\\"ApiVersion\\\":\\\"2010-04-01\\\",   \" + \"   \\\"message_uuid\\\":\\\"SM91805a30f08ed4a44c8fe7b1264deb14\\\",       \" + \"   \\\"num_media\\\":\\\"1\\\"\" + \"}\"+\")\");\n$request_oTm5RqJV09.setBody(JSON.stringify(sanitizedBody));\r\nvar $response_oTm5RqJV09 \u003d $request_oTm5RqJV09.submit(\"POST\");\r\n\t var $responseBodyObj_oTm5RqJV09 \u003d $response_oTm5RqJV09.getBodyAsString();\r\n\tvar responseType \u003d $response_oTm5RqJV09.getHeader(\"Content-Type\");\r\n\tif (responseType.indexOf(\"json\")!\u003d-1) {\r\n\t\t$responseBodyObj_oTm5RqJV09 \u003d JSON.parse($responseBodyObj_oTm5RqJV09);\r\n\t}\r\n\telse if (responseType.indexOf(\"xml\")!\u003d-1) {\r\n\t\t$responseBodyObj_oTm5RqJV09 \u003d $responseBodyObj_oTm5RqJV09.replace(/\u003c\\xml.*?\u003e/g, \u0027\u0027).replace(/\\n/g, \u0027\u0027).replace(/\\r/g, \u0027\u0027);\r\n\t\t$responseBodyObj_oTm5RqJV09 \u003d new XML(undefined);\r\n\t}\r\n\r\n\t//assertions\r\n\r\n",
+        "state": {
+          "contentType": "html",
+          "request": {
+            "method": "POST",
+            "url": "$incomingWAURL",
+            "parameters": [],
+            "headers": [
+              [
+                "Content-Type",
+                "application/json"
+              ]
+            ],
+            "authType": "none",
+            "body": "{\n   \"SmsMessageSid\":\"SM91805a30f08ed4a44c8fe7b1264deb14\",\n   \"ProfileName\":\"abc\",\n   \"SmsSid\":\"SM91805a30f08ed4a44c8fe7b1264deb14\",\n   \"WaId\":\"91750878281\",\n   \"SmsStatus\":\"received\",\n   \"Body\":\"\"+$wasenderid.textKeyword+\"\",\n   \"To\":\"whatsapp:+\"+$wasenderid.waSenderID+\"\",\n   \"NumSegments\":\"919088772221\",\n   \"ReferralNumMedia\":\"0\",\n   \"MessageSid\":\"SM91805a30f08ed4a44c8fe7b1264deb14\",\n   \"AccountSid\":\"AC00a7b3b1c35de688eb9696b3119e0388\",\n   \"From\":\"whatsapp:+\"+$phoneNumber+\"\",\n   \"ApiVersion\":\"2010-04-01\",   \n   \"message_uuid\":\"SM91805a30f08ed4a44c8fe7b1264deb14\",       \n   \"num_media\":\"1\"\n}",
+            "bodyParams": [],
+            "isParametrizedBody": false,
+            "resetCookies": false
+          },
+          "assertions": {
+            "status": [],
+            "header": [],
+            "body": []
+          },
+          "variables": {
+            "status": [],
+            "header": [],
+            "body": []
+          },
+          "authInfo": {}
+        }
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "1500"
+          }
+        ],
+        "stepType": "Action"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

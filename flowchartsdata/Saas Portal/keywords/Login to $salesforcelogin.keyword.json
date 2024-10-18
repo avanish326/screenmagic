@@ -1,0 +1,96 @@
+{
+  "modifiedOn": "2024-04-16T09:14:53.625Z",
+  "name": "Login to $salesforcelogin",
+  "id": "45165",
+  "type": 3,
+  "createdOn": "2024-04-16T09:14:53.625Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Login to $salesforcelogin",
+    "parameters": [
+      {
+        "parameterId": "salesforcelogin_",
+        "entityTypeId": "salesforcelogin",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_setXHRReadyStatesToWaitFor",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "\"2,3\""
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_navigateTo",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "$loginURL"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "4000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_emailbox(\"username\")"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "$sfusername"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_password(\"pw\")"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "$sfpassword"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_submit(\"Log In\")"
+          }
+        ],
+        "stepType": "Action"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

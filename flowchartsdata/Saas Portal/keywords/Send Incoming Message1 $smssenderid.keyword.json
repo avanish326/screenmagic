@@ -1,0 +1,136 @@
+{
+  "modifiedOn": "2024-07-24T06:44:26.789Z",
+  "name": "Send Incoming Message1 $smssenderid",
+  "id": "58538",
+  "type": 3,
+  "createdOn": "2024-07-23T14:40:07.836Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Send Incoming Message1 $smssenderid",
+    "parameters": [
+      {
+        "parameterId": "smssenderid_",
+        "entityTypeId": "smssenderid",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "POST"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "$incomingSMSURLIntelli"
+          }
+        ],
+        "stepType": "REST",
+        "isRawScript": true,
+        "rawScript": "var $request_VanaYavNOB \u003d new RESTRequest();\r\n$request_VanaYavNOB.setURL($incomingSMSURLIntelli);\r\n$request_VanaYavNOB.addToQueryString(\"Message\", $smssenderid.text);\r\n$request_VanaYavNOB.addToQueryString(\"OriginatorAddress\", $smssenderid.source);\r\n$request_VanaYavNOB.addToQueryString(\"DestinationAddress\", $smssenderid.smsSenderID);\r\nvar $response_VanaYavNOB \u003d $request_VanaYavNOB.submit(\"POST\");\r\nvar responseBody \u003d JSON.parse($response_VanaYavNOB.getBodyAsString());\r\n\t var $responseBodyObj_VanaYavNOB \u003d $response_VanaYavNOB.getBodyAsString();\r\n\tvar responseType \u003d $response_VanaYavNOB.getHeader(\"Content-Type\");\r\n\tif (responseType.indexOf(\"json\")!\u003d-1) {\r\n\t\t$responseBodyObj_VanaYavNOB \u003d JSON.parse($responseBodyObj_VanaYavNOB);\r\n\t}\r\n\telse if (responseType.indexOf(\"xml\")!\u003d-1) {\r\n\t\t$responseBodyObj_VanaYavNOB \u003d $responseBodyObj_VanaYavNOB.replace(/\u003c\\xml.*?\u003e/g, \u0027\u0027).replace(/\\n/g, \u0027\u0027).replace(/\\r/g, \u0027\u0027);\r\n\t\t$responseBodyObj_VanaYavNOB \u003d new XML(undefined);\r\n\t}\r\n\r\n\t//assertions\r\n\r\n",
+        "state": {
+          "contentType": "json",
+          "request": {
+            "method": "POST",
+            "url": "$incomingSMSURLIntelli",
+            "parameters": [
+              [
+                "Message",
+                "$smssenderid.text"
+              ],
+              [
+                "OriginatorAddress",
+                "$smssenderid.source"
+              ],
+              [
+                "DestinationAddress",
+                "$smssenderid.smsSenderID"
+              ]
+            ],
+            "headers": [],
+            "authType": "none",
+            "body": "",
+            "bodyParams": [],
+            "isParametrizedBody": false,
+            "resetCookies": false
+          },
+          "assertions": {
+            "status": [],
+            "header": [],
+            "body": []
+          },
+          "variables": {
+            "status": [],
+            "header": [],
+            "body": []
+          },
+          "authInfo": {}
+        }
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"Message Reports\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "1000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"Message History\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "1000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"/Incoming Messages/\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "$actualValue\u003d _getText(_div(0, _near(_tableHeader(\"Message\"))));\n_log($actualValue);\n\n$expectedValue\u003d $smssenderid.text;\n_log($expectedValue);\n\nif(_assertEqual($expectedValue, $actualValue)){\n\n$syncStatusActual \u003d _getText(_span(1, _near(_tableHeader(\"SYNC Status\"))));\n$syncStatusExpected \u003d \"success\";\n_assertEqual($syncStatusExpected, $syncStatusActual);\n\n}\n"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

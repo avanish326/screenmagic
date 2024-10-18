@@ -1,0 +1,64 @@
+{
+  "modifiedOn": "2024-01-12T12:25:16.392Z",
+  "name": "Get sender id from saas $getsenderidzoho",
+  "id": "13107",
+  "type": 3,
+  "createdOn": "2023-08-25T05:52:58.208Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Get sender id from saas $getsenderidzoho",
+    "parameters": [
+      {
+        "parameterId": "getsenderidzoho_",
+        "entityTypeId": "getsenderidzoho",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"Get Started\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"Converse Desk\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"senderid-txt\")"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$zohoSenderID"
+        }
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "_log($zohoSenderID)"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

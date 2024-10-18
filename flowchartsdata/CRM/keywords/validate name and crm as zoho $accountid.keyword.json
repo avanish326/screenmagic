@@ -1,0 +1,69 @@
+{
+  "modifiedOn": "2024-01-12T12:25:46.565Z",
+  "name": "validate name and crm as zoho $accountid",
+  "id": "16840",
+  "type": 3,
+  "createdOn": "2023-10-06T11:14:38.561Z",
+  "content": {
+    "title": "validate name and crm as zoho $accountid",
+    "parameters": [
+      {
+        "parameterId": "accountid_",
+        "entityTypeId": "accountid",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"react-select__single-value css-1uccc91-singleValue\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"CRM zoho\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"ml-3 hidden lg:inline-block xl:inline-block\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Contains",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$account"
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"ml-3 text-sm hidden lg:block xl:block\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Contains",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$accountname"
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

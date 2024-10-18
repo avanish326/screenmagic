@@ -1,0 +1,59 @@
+{
+  "modifiedOn": "2024-01-12T12:26:20.018Z",
+  "name": "get $welcomemsg",
+  "id": "21078",
+  "type": 3,
+  "createdOn": "2023-12-06T12:21:42.919Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "get $welcomemsg",
+    "parameters": [
+      {
+        "parameterId": "welcomemsg_",
+        "entityTypeId": "welcomemsg",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_italic(\"more_vert\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"Edit\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_textarea(\"the-textarea[2]\")"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$welcomeMessage"
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

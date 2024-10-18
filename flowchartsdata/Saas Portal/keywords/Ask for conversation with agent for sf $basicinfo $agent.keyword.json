@@ -1,0 +1,161 @@
+{
+  "modifiedOn": "2024-08-12T05:11:04.636Z",
+  "name": "Ask for conversation with agent for sf $basicinfo $agent",
+  "id": "46009",
+  "type": 3,
+  "createdOn": "2024-05-10T14:06:04.079Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Ask for conversation with agent for sf $basicinfo $agent",
+    "parameters": [
+      {
+        "parameterId": "basicinfo_",
+        "entityTypeId": "basicinfo",
+        "suffix": ""
+      },
+      {
+        "parameterId": "agent_",
+        "entityTypeId": "agent",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": true,
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "POST"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "$incomingSMSURLIntelli"
+          }
+        ],
+        "stepType": "REST",
+        "isRawScript": true,
+        "rawScript": "var $request_jM4t4BLler \u003d new RESTRequest();\r\n$request_jM4t4BLler.setURL($incomingSMSURLIntelli);\r\n$request_jM4t4BLler.addToQueryString(\"Message\", $agent.handOffKeyword);\r\n$request_jM4t4BLler.addToQueryString(\"OriginatorAddress\", $basicinfo.source);\r\n$request_jM4t4BLler.addToQueryString(\"DestinationAddress\", $SmsSenderIDGPTSF1);\r\nvar $response_jM4t4BLler \u003d $request_jM4t4BLler.submit(\"POST\");\r\nvar responseBody \u003d JSON.parse($response_jM4t4BLler.getBodyAsString());\r\n\t var $responseBodyObj_jM4t4BLler \u003d $response_jM4t4BLler.getBodyAsString();\r\n\tvar responseType \u003d $response_jM4t4BLler.getHeader(\"Content-Type\");\r\n\tif (responseType.indexOf(\"json\")!\u003d-1) {\r\n\t\t$responseBodyObj_jM4t4BLler \u003d JSON.parse($responseBodyObj_jM4t4BLler);\r\n\t}\r\n\telse if (responseType.indexOf(\"xml\")!\u003d-1) {\r\n\t\t$responseBodyObj_jM4t4BLler \u003d $responseBodyObj_jM4t4BLler.replace(/\u003c\\xml.*?\u003e/g, \u0027\u0027).replace(/\\n/g, \u0027\u0027).replace(/\\r/g, \u0027\u0027);\r\n\t\t$responseBodyObj_jM4t4BLler \u003d new XML(undefined);\r\n\t}\r\n\r\n\t//assertions\r\n\r\n",
+        "state": {
+          "contentType": "json",
+          "request": {
+            "method": "POST",
+            "url": "$incomingSMSURLIntelli",
+            "parameters": [
+              [
+                "Message",
+                "$agent.handOffKeyword"
+              ],
+              [
+                "OriginatorAddress",
+                "$basicinfo.source"
+              ],
+              [
+                "DestinationAddress",
+                "$SmsSenderIDGPTSF1"
+              ]
+            ],
+            "headers": [],
+            "authType": "none",
+            "body": "",
+            "bodyParams": [],
+            "isParametrizedBody": false,
+            "resetCookies": false
+          },
+          "assertions": {
+            "status": [],
+            "header": [],
+            "body": []
+          },
+          "variables": {
+            "status": [],
+            "header": [],
+            "body": []
+          },
+          "authInfo": {}
+        }
+      },
+      {
+        "commented": true,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "12000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "POST"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "$incomingSMSURLTwilio"
+          }
+        ],
+        "stepType": "REST",
+        "isRawScript": true,
+        "rawScript": "var $request_OvSZMEKhGo \u003d new RESTRequest();\r\n$request_OvSZMEKhGo.setURL($incomingSMSURLTwilio);\r\n$request_OvSZMEKhGo.addToQueryString(\"From\", $basicinfo.source);\r\n$request_OvSZMEKhGo.addToQueryString(\"To\", $SmsSenderIDGPTSF1);\r\n$request_OvSZMEKhGo.addToQueryString(\"Body\", $agent.handOffKeyword);\r\n$request_OvSZMEKhGo.addToQueryString(\"SmsSid\", \"092090192\");\r\nvar $response_OvSZMEKhGo \u003d $request_OvSZMEKhGo.submit(\"POST\");\r\n\t var $responseBodyObj_OvSZMEKhGo \u003d $response_OvSZMEKhGo.getBodyAsString();\r\n\tvar responseType \u003d $response_OvSZMEKhGo.getHeader(\"Content-Type\");\r\n\tif (responseType.indexOf(\"json\")!\u003d-1) {\r\n\t\t$responseBodyObj_OvSZMEKhGo \u003d JSON.parse($responseBodyObj_OvSZMEKhGo);\r\n\t}\r\n\telse if (responseType.indexOf(\"xml\")!\u003d-1) {\r\n\t\t$responseBodyObj_OvSZMEKhGo \u003d $responseBodyObj_OvSZMEKhGo.replace(/\u003c\\xml.*?\u003e/g, \u0027\u0027).replace(/\\n/g, \u0027\u0027).replace(/\\r/g, \u0027\u0027);\r\n\t\t$responseBodyObj_OvSZMEKhGo \u003d new XML(undefined);\r\n\t}\r\n\r\n\t//assertions\r\n\r\n",
+        "state": {
+          "contentType": "html",
+          "request": {
+            "method": "POST",
+            "url": "$incomingSMSURLTwilio",
+            "parameters": [
+              [
+                "From",
+                "$basicinfo.source"
+              ],
+              [
+                "To",
+                "$SmsSenderIDGPTSF1"
+              ],
+              [
+                "Body",
+                "$agent.handOffKeyword"
+              ],
+              [
+                "SmsSid",
+                "092090192"
+              ]
+            ],
+            "headers": [],
+            "authType": "none",
+            "body": "",
+            "bodyParams": [],
+            "isParametrizedBody": false,
+            "resetCookies": false
+          },
+          "assertions": {
+            "status": [],
+            "header": [],
+            "body": []
+          },
+          "variables": {
+            "status": [],
+            "header": [],
+            "body": []
+          },
+          "authInfo": {}
+        }
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "5000"
+          }
+        ],
+        "stepType": "Action"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

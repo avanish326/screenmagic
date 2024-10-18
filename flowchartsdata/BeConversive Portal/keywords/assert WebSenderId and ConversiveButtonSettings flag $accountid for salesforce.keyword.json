@@ -1,0 +1,97 @@
+{
+  "modifiedOn": "2024-02-08T06:49:40.091Z",
+  "name": "assert WebSenderId and ConversiveButtonSettings flag $accountid for salesforce",
+  "id": "27607",
+  "type": 3,
+  "createdOn": "2024-02-08T06:49:40.091Z",
+  "content": {
+    "title": "assert WebSenderId and ConversiveButtonSettings flag $accountid for salesforce",
+    "parameters": [
+      {
+        "parameterId": "accountid_",
+        "entityTypeId": "accountid",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"Settings\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"SMS Services\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"My Sender IDs\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_cell(\"num-width\", _near(_span(\"Web\")))"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"WEB-DEMO-\"+$account+\"\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"Settings\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"Conversive Button Settings\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"Conversive Button Settings\""
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

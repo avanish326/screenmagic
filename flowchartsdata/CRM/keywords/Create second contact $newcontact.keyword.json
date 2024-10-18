@@ -1,0 +1,158 @@
+{
+  "modifiedOn": "2024-02-02T07:05:20.117Z",
+  "name": "Create second contact $newcontact",
+  "id": "23051",
+  "type": 3,
+  "createdOn": "2024-02-02T06:55:47.161Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Create second contact $newcontact",
+    "parameters": [
+      {
+        "parameterId": "newcontact_",
+        "entityTypeId": "newcontact",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_submit(\"add New Contact\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "parameterId": "newcontact_",
+            "attributeId": "attr_01694606031507",
+            "accessorId": "acc0"
+          },
+          {
+            "parameterId": "newcontact_",
+            "attributeId": "attr_51706856966751"
+          }
+        ],
+        "stepType": "Action",
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "parameterId": "newcontact_",
+            "attributeId": "attr_11694606037864",
+            "accessorId": "acc0"
+          },
+          {
+            "parameterId": "newcontact_",
+            "attributeId": "attr_71706856994353"
+          }
+        ],
+        "stepType": "Action",
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "parameterId": "newcontact_",
+            "attributeId": "attr_21694606042842",
+            "accessorId": "acc0"
+          },
+          {
+            "parameterId": "newcontact_",
+            "attributeId": "attr_21694606042842"
+          }
+        ],
+        "stepType": "Action",
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_submit(\"Add\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"Contacts Added Successfully\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"Contacts Added Successfully\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"trancet-txt\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "parameterId": "newcontact_",
+          "attributeId": "attr_51706856966751"
+        },
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_cell(2, _near(_tableHeader(\"Number\")))"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$SecondphoneNumber"
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"trancet-txt\")"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$SecondcontactName"
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

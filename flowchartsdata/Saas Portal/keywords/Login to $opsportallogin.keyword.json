@@ -1,0 +1,142 @@
+{
+  "modifiedOn": "2024-09-11T07:28:35.680233500Z",
+  "name": "Login to $opsportallogin",
+  "id": "-1",
+  "type": 3,
+  "createdOn": "2023-11-29T10:45:03Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Login to $opsportallogin",
+    "parameters": [
+      {
+        "parameterId": "opsportallogin_",
+        "entityTypeId": "opsportallogin",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "3000"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_selectWindow",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "\"Portal SMS Magic\""
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_openWindow",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "\"https://qa-ops.txtbox.in/customerportal/dashboard\""
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_selectWindow",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "\"/https://qa-ops.txtbox.in/\""
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "3000"
+          },
+          {
+            "paramMode": "code",
+            "customValue": "_isVisible(_emailbox(\"userEmail\"))"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_emailbox(\"userEmail\")"
+          },
+          {
+            "paramMode": "code",
+            "customValue": "\"admin@screen-magic.com\""
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_password(\"userPassword\")"
+          },
+          {
+            "paramMode": "code",
+            "customValue": "\"DontUpdate@88\""
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_submit(\"Sign In\")"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_selectWindow",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "\"SMS Magic\""
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

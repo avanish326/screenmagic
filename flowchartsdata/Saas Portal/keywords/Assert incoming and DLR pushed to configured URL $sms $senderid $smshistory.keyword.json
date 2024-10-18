@@ -1,0 +1,107 @@
+{
+  "name": "Assert incoming and DLR pushed to configured URL $sms $senderid $smshistory",
+  "id": "-1",
+  "type": 3,
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Assert incoming and DLR pushed to configured URL $sms $senderid $smshistory",
+    "specific": [],
+    "parameters": [
+      {
+        "parameterId": "sms_",
+        "entityTypeId": "sms",
+        "suffix": ""
+      },
+      {
+        "parameterId": "senderid_",
+        "entityTypeId": "senderid",
+        "suffix": ""
+      },
+      {
+        "parameterId": "smshistory_",
+        "entityTypeId": "smshistory",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_selectBrowser",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "$browserWebhook"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "//$expected \u003d \"{\\\"msg\\\": \\\"\"+$sms.messageHipaa+\"\\\", \\\"sent_from\\\": \\\"\"+$sms.sourceCheck+\"\\\", \\\"id\\\": \"+$idSMSHistory+\", \\\"sent_to\\\": \\\"\"+$senderID+\"\\\"}\";\n\n$expected \u003d \"{\\\"msg\\\": \\\"\"+$sms.messageHipaa+\"\\\", \\\"timestamp\\\": \\\"\"+$currTimestamp+\"\\\",, \\\"sent_from\\\": \\\"\"+$sms.sourceCheck+\"\\\", \\\"id\\\": \"+$idSMSHistory+\", \\\"sent_to\\\": \\\"\"+$senderID+\"\\\"}\";\n",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_log",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "$expected"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_div(\"value ng-binding[2]\")"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Store",
+        "secondaryParam": {
+          "paramMode": "code",
+          "customValue": "$actual"
+        },
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_log",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "$actual"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      },
+      {
+        "commented": true,
+        "isRawScript": true,
+        "rawScript": "_assertContainsText($expected,$actual)\n",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_selectBrowser",
+        "stepParameters": [],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

@@ -1,0 +1,32 @@
+{
+  "modifiedOn": "2024-06-21T11:42:47.211Z",
+  "name": "Valdiate Plan License under Conversive Overview $beconversivesignup",
+  "id": "57881",
+  "type": 3,
+  "createdOn": "2024-06-21T06:17:19.398Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Valdiate Plan License under Conversive Overview $beconversivesignup",
+    "parameters": [
+      {
+        "parameterId": "beconversivesignup_",
+        "entityTypeId": "beconversivesignup",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "\n//$a \u003d [\"Marketeer Basic\",\"Professionals Superior\"]\n$planOnConversive \u003d _collectAttributes(\"_paragraph\",\"/.*/\",\"sahiText\",_in(_div(\"/Subscription Plan/\")));\n\n$planConv \u003d $planOnConversive.sort()\n\nfor(var $i\u003d0;$i\u003c$planConv.length;$i++){\n_assert($planConv[$i].includes($licenseSort[$i]))\n}\n"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "function formatDate($newdate){\nvar $date \u003d new Date($newdate)\n$form \u003d new java.text.SimpleDateFormat(\"dd-MMM-YYYY\")\n$formattedDate \u003d $form.format($date)\nreturn $formattedDate;\n}\n\n$expiryConversive \u003d[];\n_collectAttributes(\"_paragraph\",\"/.*/\",\"sahiText\",_in(_div(\"/Expiry Date/\")))\n\n\n\nfor(var $i \u003d 0;$i\u003c$license.length;$i++){\n$expiryConversive.push(_getText(_paragraph(0,_rightOf(_paragraph(\"/\"+$planConv[$i]+\"/\")),_in(_div(\"/Expiry Date/\")))))\n}\n$expiryConversive\n\nfor(var $i \u003d 0; $i\u003c$expiryConversive.length;$i++){\n$date \u003d formatDate($planExpiry[$i].split(\" \")[0]);\n_log($date)\n_assertEqual($date,$expiryConversive[$i]);\n}"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

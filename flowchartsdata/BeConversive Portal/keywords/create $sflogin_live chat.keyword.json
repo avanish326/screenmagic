@@ -1,0 +1,90 @@
+{
+  "modifiedOn": "2024-02-08T06:49:53.915Z",
+  "name": "create $sflogin_live chat",
+  "id": "28579",
+  "type": 3,
+  "createdOn": "2024-02-08T06:49:53.915Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "create $sflogin_live chat",
+    "parameters": [
+      {
+        "parameterId": "sflogin_live_",
+        "entityTypeId": "sflogin_live",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "_setXHRReadyStatesToWaitFor(\"2,3\")"
+      },
+      {
+        "commented": false,
+        "action": "_navigateTo",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "\"https://login.salesforce.com/\""
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_emailbox(\"username\")"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "$sfusername1"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_password(\"pw\")"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "$sfpass1"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_submit(\"Log In\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "19000"
+          }
+        ],
+        "stepType": "Action"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

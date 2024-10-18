@@ -1,0 +1,114 @@
+{
+  "modifiedOn": "2024-01-12T12:25:19.458Z",
+  "name": "validate $urlshorteningtemplate",
+  "id": "13543",
+  "type": 3,
+  "createdOn": "2023-08-30T11:21:30.620Z",
+  "content": {
+    "title": "validate $urlshorteningtemplate",
+    "parameters": [
+      {
+        "parameterId": "urlshorteningtemplate_",
+        "entityTypeId": "urlshorteningtemplate",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_navigateTo",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "\"https://qa-app.txtbox.in/v2/template/\""
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_submit(\"Create New Template\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_textbox(0)"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_textbox(0)"
+          },
+          {
+            "parameterId": "urlshorteningtemplate_",
+            "attributeId": "attr_01693394317164"
+          }
+        ],
+        "stepType": "Action",
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_textbox(\"flt-text-editing transparentTextEditing\")"
+          },
+          {
+            "parameterId": "urlshorteningtemplate_",
+            "attributeId": "attr_11693394391116"
+          }
+        ],
+        "stepType": "Action",
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(88)"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "parameterId": "urlshorteningtemplate_",
+          "attributeId": "attr_01693394317164"
+        },
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"Converse Desk\")"
+          }
+        ],
+        "stepType": "Action"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

@@ -1,0 +1,65 @@
+{
+  "modifiedOn": "2024-02-08T06:49:42.595Z",
+  "name": "Search Contact $newcontact",
+  "id": "27783",
+  "type": 3,
+  "createdOn": "2024-02-08T06:49:42.595Z",
+  "content": {
+    "title": "Search Contact $newcontact",
+    "parameters": [
+      {
+        "parameterId": "newcontact_",
+        "entityTypeId": "newcontact",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_textbox(1)"
+          },
+          {
+            "parameterId": "newcontact_",
+            "attributeId": "attr_01694606031507"
+          }
+        ],
+        "stepType": "Action",
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_italic(\"search[1]\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"name-txt\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "parameterId": "newcontact_",
+          "attributeId": "attr_01694606031507"
+        },
+        "visibleCheck": false
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

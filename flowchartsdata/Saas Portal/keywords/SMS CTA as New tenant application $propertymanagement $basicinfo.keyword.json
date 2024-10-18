@@ -1,0 +1,81 @@
+{
+  "modifiedOn": "2024-02-19T14:28:56.996Z",
+  "name": "SMS CTA as New tenant application $propertymanagement $basicinfo",
+  "id": "37978",
+  "type": 3,
+  "createdOn": "2024-02-19T14:24:39.049Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "SMS CTA as New tenant application $propertymanagement $basicinfo",
+    "parameters": [
+      {
+        "parameterId": "propertymanagement_",
+        "entityTypeId": "propertymanagement",
+        "suffix": ""
+      },
+      {
+        "parameterId": "basicinfo_",
+        "entityTypeId": "basicinfo",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "POST"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "$incomingSMSURLIntelli"
+          }
+        ],
+        "stepType": "REST",
+        "isRawScript": true,
+        "rawScript": "var $request_ghPKQF0sZG \u003d new RESTRequest();\r\n$request_ghPKQF0sZG.setURL($incomingSMSURLIntelli);\r\n$request_ghPKQF0sZG.addToQueryString(\"Message\", \"wmOWYENZHMHm\");\r\n$request_ghPKQF0sZG.addToQueryString(\"OriginatorAddress\", $basicinfo.source);\r\n$request_ghPKQF0sZG.addToQueryString(\"DestinationAddress\", $smsSenderIDUsecases);\r\nvar $response_ghPKQF0sZG \u003d $request_ghPKQF0sZG.submit(\"POST\");\r\nvar responseBody \u003d JSON.parse($response_ghPKQF0sZG.getBodyAsString());\r\n\t var $responseBodyObj_ghPKQF0sZG \u003d $response_ghPKQF0sZG.getBodyAsString();\r\n\tvar responseType \u003d $response_ghPKQF0sZG.getHeader(\"Content-Type\");\r\n\tif (responseType.indexOf(\"json\")!\u003d-1) {\r\n\t\t$responseBodyObj_ghPKQF0sZG \u003d JSON.parse($responseBodyObj_ghPKQF0sZG);\r\n\t}\r\n\telse if (responseType.indexOf(\"xml\")!\u003d-1) {\r\n\t\t$responseBodyObj_ghPKQF0sZG \u003d $responseBodyObj_ghPKQF0sZG.replace(/\u003c\\xml.*?\u003e/g, \u0027\u0027).replace(/\\n/g, \u0027\u0027).replace(/\\r/g, \u0027\u0027);\r\n\t\t$responseBodyObj_ghPKQF0sZG \u003d new XML(undefined);\r\n\t}\r\n\r\n\t//assertions\r\n\r\n",
+        "state": {
+          "contentType": "json",
+          "request": {
+            "method": "POST",
+            "url": "$incomingSMSURLIntelli",
+            "parameters": [
+              [
+                "Message",
+                "wmOWYENZHMHm"
+              ],
+              [
+                "OriginatorAddress",
+                "$basicinfo.source"
+              ],
+              [
+                "DestinationAddress",
+                "$smsSenderIDUsecases"
+              ]
+            ],
+            "headers": [],
+            "authType": "none",
+            "body": "",
+            "bodyParams": [],
+            "isParametrizedBody": false,
+            "resetCookies": false
+          },
+          "assertions": {
+            "status": [],
+            "header": [],
+            "body": []
+          },
+          "variables": {
+            "status": [],
+            "header": [],
+            "body": []
+          },
+          "authInfo": {}
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

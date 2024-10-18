@@ -1,0 +1,67 @@
+{
+  "modifiedOn": "2024-04-23T04:38:47.367Z",
+  "name": "check for patch $packversion after upgarde",
+  "id": "45271",
+  "type": 3,
+  "createdOn": "2024-04-22T10:57:19.185Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "check for patch $packversion after upgarde",
+    "parameters": [
+      {
+        "parameterId": "packversion_",
+        "entityTypeId": "packversion",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"version-box\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "parameterId": "packversion_",
+          "attributeId": "attr_01713847066669"
+        },
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"account-card cursor-pointer\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"version-wrap\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Contains",
+        "secondaryParam": {
+          "parameterId": "packversion_",
+          "attributeId": "attr_01713847066669"
+        },
+        "visibleCheck": false
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

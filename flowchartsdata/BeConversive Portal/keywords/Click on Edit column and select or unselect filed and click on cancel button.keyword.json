@@ -1,0 +1,81 @@
+{
+  "modifiedOn": "2024-08-23T11:13:57.544Z",
+  "name": "Click on Edit column and select or unselect filed and click on cancel button",
+  "id": "58935",
+  "type": 3,
+  "createdOn": "2024-08-23T11:01:47.747Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Click on Edit column and select or unselect filed and click on cancel button",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_submit(1)"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "3000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_uncheck",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_checkbox(\"/true/\",_in(_label(\"/Atul/\")))"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_uncheck",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_checkbox(\"/true/\",_in(_label(\"/Amol/\")))"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "$headers \u003d _collect(\"_checkbox\",{value:\"true\"},_in(_div(\"check-box\")))\n\nvar $headersExpected \u003d [];\n\nfor(var $i\u003d0;$i\u003c$headers.length;$i++){\n$headersExpected.push(_getText(_parentNode($headers[$i],\"LABEL\")).replace(\" *\",\"\"))\n}\n\n"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_submit(\"Cancel\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "$tableHeaders\u003d _collectAttributes(\"_tableHeader\",\"/.*/\",\"sahiText\",_in(_table(0)))\n_assertEqual($headersExpected,$tableHeaders)"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

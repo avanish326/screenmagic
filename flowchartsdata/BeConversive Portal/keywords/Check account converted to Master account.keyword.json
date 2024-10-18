@@ -1,0 +1,43 @@
+{
+  "modifiedOn": "2024-07-09T11:33:56.008Z",
+  "name": "Check account converted to Master account",
+  "id": "58186",
+  "type": 3,
+  "createdOn": "2024-07-09T11:33:56.008Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Check account converted to Master account",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"Master Account\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"Master Account\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_selectWindow",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "\"SMS Magic\""
+          }
+        ],
+        "stepType": "Action"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

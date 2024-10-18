@@ -1,0 +1,61 @@
+{
+  "modifiedOn": "2024-07-17T05:10:09.241Z",
+  "name": "Select CTA from Question and CTA for Is there anything else I can help you with today for Schedule appt with an advisor $studentinquiry",
+  "id": "58368",
+  "type": 3,
+  "createdOn": "2024-07-17T05:10:03.543Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Select CTA from Question and CTA for Is there anything else I can help you with today for Schedule appt with an advisor $studentinquiry",
+    "parameters": [
+      {
+        "parameterId": "studentinquiry_",
+        "entityTypeId": "studentinquiry",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_submit($studentinquiry.ctaYesNo)"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "1500"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div($studentinquiry.ctaYesNo)"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "parameterId": "studentinquiry_",
+          "attributeId": "attr_21721190656995"
+        },
+        "visibleCheck": false
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

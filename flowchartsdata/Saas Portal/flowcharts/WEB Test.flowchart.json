@@ -1,0 +1,623 @@
+{
+  "modifiedOn": "2024-07-31T07:05:31.244Z",
+  "name": "WEB Test",
+  "id": "57994",
+  "type": 0,
+  "createdOn": "2024-07-02T07:46:49.398Z",
+  "content": {
+    "settings": {
+      "maxProceedDepth": 100,
+      "maxProceedsForFirstDepth": 1,
+      "maxProceedsPerDepth": 1,
+      "maxPathRepititionsPerComboPath": 1,
+      "maxProceedsPerPath": 10000,
+      "maxToggles": 2,
+      "maxMatchingPaths": 3
+    },
+    "flowChartUID": "fcUID_1719906409908",
+    "nodesMap": {
+      "fcn_start_0": {
+        "dataSetId": -1,
+        "id": "fcn_start_0",
+        "nodeType": "start",
+        "branches": [
+          "fcn_test_0"
+        ],
+        "content": "Start"
+      },
+      "fcn_test_0": {
+        "dataSetId": -1,
+        "id": "fcn_test_0",
+        "nodeType": "pathlabel",
+        "branches": [
+          "fcn_assignconversationbeforehandoff_1719906434354_0"
+        ],
+        "content": "Test"
+      },
+      "fcn_assignconversationbeforehandoff_1719906434354_0": {
+        "dataSetId": -1,
+        "id": "fcn_assignconversationbeforehandoff_1719906434354_0",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_navigatetosmsmagicconverse_1719906434354_0"
+        ],
+        "content": "Assign Conversation before Hand Off"
+      },
+      "fcn_navigatetosmsmagicconverse_1719906434354_0": {
+        "dataSetId": -1,
+        "id": "fcn_navigatetosmsmagicconverse_1719906434354_0",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_switchtosalesforceclassic_1719906434354_0"
+        ],
+        "content": "Navigate to SMS Magic Converse"
+      },
+      "fcn_switchtosalesforceclassic_1719906434354_0": {
+        "dataSetId": -1,
+        "id": "fcn_switchtosalesforceclassic_1719906434354_0",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_logintoportalusingsalesforce_credforguided_1719906434354_0"
+        ],
+        "content": "Switch to salesforce classic "
+      },
+      "fcn_logintoportalusingsalesforce_credforguided_1719906434354_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintoportalusingsalesforce_credforguided_1719906434354_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_getagentnamesf_1719906434354_0"
+        ],
+        "content": "login to portal using $salesforce_cred for guided "
+      },
+      "fcn_getagentnamesf_1719906434354_0": {
+        "dataSetId": -1,
+        "id": "fcn_getagentnamesf_1719906434354_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_getstdusernamesf_1719906434354_0"
+        ],
+        "content": "get $agentnamesf"
+      },
+      "fcn_getstdusernamesf_1719906434354_0": {
+        "dataSetId": -1,
+        "id": "fcn_getstdusernamesf_1719906434354_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_navigatetoconversivebuttonsettingspage_1719906434354_0"
+        ],
+        "content": "Get Std User Name SF"
+      },
+      "fcn_navigatetoconversivebuttonsettingspage_1719906434354_0": {
+        "dataSetId": -1,
+        "id": "fcn_navigatetoconversivebuttonsettingspage_1719906434354_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_clickoncreatenewbuttoninconversivebuttonpage_1719906434354_0"
+        ],
+        "content": "navigate to conversive button settings page"
+      },
+      "fcn_clickoncreatenewbuttoninconversivebuttonpage_1719906434354_0": {
+        "dataSetId": -1,
+        "id": "fcn_clickoncreatenewbuttoninconversivebuttonpage_1719906434354_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_verifythebasicinfosectionwhenuserclickoncreatenewbutton_1719906434354_0"
+        ],
+        "content": "Click on Create New Button in Conversive Button Page"
+      },
+      "fcn_verifythebasicinfosectionwhenuserclickoncreatenewbutton_1719906434354_0": {
+        "dataSetId": -1,
+        "id": "fcn_verifythebasicinfosectionwhenuserclickoncreatenewbutton_1719906434354_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_createconversivebuttonwithchannelaswebwithformdisablednewconversivebutton_1719906434354_0"
+        ],
+        "content": "Verify the Basic Info section when user click on Create New Button"
+      },
+      "fcn_createconversivebuttonwithchannelaswebwithformdisablednewconversivebutton_1719906434354_0": {
+        "dataSetId": -1,
+        "id": "fcn_createconversivebuttonwithchannelaswebwithformdisablednewconversivebutton_1719906434354_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_getscript_1719906434354_0"
+        ],
+        "content": "Create Conversive Button with channel as Web with form disabled $newconversivebutton"
+      },
+      "fcn_getscript_1719906434354_0": {
+        "dataSetId": -1,
+        "id": "fcn_getscript_1719906434354_0",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_getconversivebuttonidandbotname_1719906434354_0"
+        ],
+        "content": "get $script"
+      },
+      "fcn_getconversivebuttonidandbotname_1719906434354_0": {
+        "dataSetId": -1,
+        "id": "fcn_getconversivebuttonidandbotname_1719906434354_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_gotoconversedeskofsalesforce_1719906434354_0"
+        ],
+        "content": "Get Conversive Button ID and Bot Name"
+      },
+      "fcn_gotoconversedeskofsalesforce_1719906434354_0": {
+        "dataSetId": -1,
+        "id": "fcn_gotoconversedeskofsalesforce_1719906434354_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_embedscriptintowebsiteandnavigatetowebsite_1719906434354_0"
+        ],
+        "content": "go to converse desk of salesforce"
+      },
+      "fcn_embedscriptintowebsiteandnavigatetowebsite_1719906434354_0": {
+        "dataSetId": -1,
+        "id": "fcn_embedscriptintowebsiteandnavigatetowebsite_1719906434354_0",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_embedthescriptintomathhuntdomainandnavigatetowebsite_1719906434354_0"
+        ],
+        "content": "embed script into $website and navigate to website"
+      },
+      "fcn_embedthescriptintomathhuntdomainandnavigatetowebsite_1719906434354_0": {
+        "dataSetId": -1,
+        "id": "fcn_embedthescriptintomathhuntdomainandnavigatetowebsite_1719906434354_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_openconversivebuttonandthenopenwebchat_1719906434354_0"
+        ],
+        "content": "Embed the script into mathhunt domain and navigate to website"
+      },
+      "fcn_openconversivebuttonandthenopenwebchat_1719906434354_0": {
+        "dataSetId": -1,
+        "id": "fcn_openconversivebuttonandthenopenwebchat_1719906434354_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_starttheconversationwithbotforguidedstudentinquiryflow_1719906434354_0"
+        ],
+        "content": "Open Conversive Button and then open Web chat"
+      },
+      "fcn_starttheconversationwithbotforguidedstudentinquiryflow_1719906434354_0": {
+        "dataSetId": -1,
+        "id": "fcn_starttheconversationwithbotforguidedstudentinquiryflow_1719906434354_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_verifymessagesonsfconversedeskforguidedstudentinquiryflow_1719906434354_0"
+        ],
+        "content": "start the conversation with $bot for guided $studentinquiryflow"
+      },
+      "fcn_verifymessagesonsfconversedeskforguidedstudentinquiryflow_1719906434354_0": {
+        "dataSetId": -1,
+        "id": "fcn_verifymessagesonsfconversedeskforguidedstudentinquiryflow_1719906434354_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_navigatetosmshistory_1719906434354_0"
+        ],
+        "content": "Verify messages on SF converse desk for Guided $studentinquiryflow"
+      },
+      "fcn_navigatetosmshistory_1719906434354_0": {
+        "dataSetId": -1,
+        "id": "fcn_navigatetosmshistory_1719906434354_0",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_sortthesmshistorybycreatedon_1719906434354_0"
+        ],
+        "content": "Navigate to SMS History"
+      },
+      "fcn_sortthesmshistorybycreatedon_1719906434354_0": {
+        "dataSetId": -1,
+        "id": "fcn_sortthesmshistorybycreatedon_1719906434354_0",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_assertsmshistoryonsfforstudentinquiryflow_1719906434354_0"
+        ],
+        "content": "Sort the SMS History by Created On"
+      },
+      "fcn_assertsmshistoryonsfforstudentinquiryflow_1719906434354_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertsmshistoryonsfforstudentinquiryflow_1719906434354_0",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_assertsmshistoryonportalforsfguidedflowstudentinquiryflow_1719906434354_0"
+        ],
+        "content": "Assert SMS History on SF for $studentinquiryflow"
+      },
+      "fcn_assertsmshistoryonportalforsfguidedflowstudentinquiryflow_1719906434354_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertsmshistoryonportalforsfguidedflowstudentinquiryflow_1719906434354_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assignconversationtoanotheruserinsfstdsf_1719906434354_0",
+          "fcn_assignconversationafterhandoff_1719906434354_0"
+        ],
+        "content": "Assert SMS History on Portal for SF guided flow $studentinquiryflow "
+      },
+      "fcn_assignconversationtoanotheruserinsfstdsf_1719906434354_0": {
+        "dataSetId": -1,
+        "id": "fcn_assignconversationtoanotheruserinsfstdsf_1719906434354_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_createsalesforcelogin_stduserforguided_1719906434354_0"
+        ],
+        "content": "Assign conversation to another user in SF $stdsf"
+      },
+      "fcn_createsalesforcelogin_stduserforguided_1719906434354_0": {
+        "dataSetId": -1,
+        "id": "fcn_createsalesforcelogin_stduserforguided_1719906434354_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_startconversationfromstandarduserinsfagentsfagent_1719906434354_0"
+        ],
+        "content": "create $salesforcelogin_stduser for guided"
+      },
+      "fcn_startconversationfromstandarduserinsfagentsfagent_1719906434354_0": {
+        "dataSetId": -1,
+        "id": "fcn_startconversationfromstandarduserinsfagentsfagent_1719906434354_0",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_sendmessagefromwebwidgetandverifyautomatedmessageisnotgettingtriggered_1719906434354_0"
+        ],
+        "content": "start conversation from standard user in sf $agent $sfagent"
+      },
+      "fcn_sendmessagefromwebwidgetandverifyautomatedmessageisnotgettingtriggered_1719906434354_0": {
+        "dataSetId": -1,
+        "id": "fcn_sendmessagefromwebwidgetandverifyautomatedmessageisnotgettingtriggered_1719906434354_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_verifythethehandoffrequestedflagandcountintheconversationlistviewinsfconversedeskofstduser_1719906434354_0"
+        ],
+        "content": "Send Message from web widget and Verify Automated message is not getting triggered"
+      },
+      "fcn_verifythethehandoffrequestedflagandcountintheconversationlistviewinsfconversedeskofstduser_1719906434354_0": {
+        "dataSetId": -1,
+        "id": "fcn_verifythethehandoffrequestedflagandcountintheconversationlistviewinsfconversedeskofstduser_1719906434354_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_acceptthehandofffromsfstduserconversedesk_1719906434354_0"
+        ],
+        "content": "Verify the the hand off requested flag and count in the conversation list view in SF Converse Desk of std user"
+      },
+      "fcn_acceptthehandofffromsfstduserconversedesk_1719906434354_0": {
+        "dataSetId": -1,
+        "id": "fcn_acceptthehandofffromsfstduserconversedesk_1719906434354_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_starttheconversationwithagentfromsfstduserforguidedsfagentagent_1719906434354_0"
+        ],
+        "content": "Accept the Hand Off from SF Std User Converse Desk $stdsf"
+      },
+      "fcn_starttheconversationwithagentfromsfstduserforguidedsfagentagent_1719906434354_0": {
+        "dataSetId": -1,
+        "id": "fcn_starttheconversationwithagentfromsfstduserforguidedsfagentagent_1719906434354_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_validatemessagehistoryonwebwidgetstudentinquiryflowforguidedagentsfagentwhenassignconversationtosfstduser_1719906434354_0"
+        ],
+        "content": "start the conversation with agent from SF std user for guided $sfagent $agent"
+      },
+      "fcn_validatemessagehistoryonwebwidgetstudentinquiryflowforguidedagentsfagentwhenassignconversationtosfstduser_1719906434354_0": {
+        "dataSetId": -1,
+        "id": "fcn_validatemessagehistoryonwebwidgetstudentinquiryflowforguidedagentsfagentwhenassignconversationtosfstduser_1719906434354_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertsfsmshistoryinstduserforagentconversationagentbotsfagent_1719906434354_0"
+        ],
+        "content": "validate message history on web widget $studentinquiryflow for guided $agent $sfagent when assign conversation to sf std user"
+      },
+      "fcn_assertsfsmshistoryinstduserforagentconversationagentbotsfagent_1719906434354_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertsfsmshistoryinstduserforagentconversationagentbotsfagent_1719906434354_0",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_assertsfsmshistoryforagentsfagentmessagesinportalforguidedwhenconversationassignedtostduser_1719906434354_0"
+        ],
+        "content": "Assert SF SMS History in Std User for agent conversation $agent $bot $sfagent"
+      },
+      "fcn_assertsfsmshistoryforagentsfagentmessagesinportalforguidedwhenconversationassignedtostduser_1719906434354_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertsfsmshistoryforagentsfagentmessagesinportalforguidedwhenconversationassignedtostduser_1719906434354_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Assert SF SMS History for $agent $sfagent messages in portal for guided when conversation assigned to std user"
+      },
+      "fcn_assignconversationafterhandoff_1719906434354_0": {
+        "dataSetId": -1,
+        "id": "fcn_assignconversationafterhandoff_1719906434354_0",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_sendmessagefromwebwidgetandverifyautomatedmessageisnotgettingtriggered_1719906434354_1"
+        ],
+        "content": "Assign Conversation After Hand Off"
+      },
+      "fcn_sendmessagefromwebwidgetandverifyautomatedmessageisnotgettingtriggered_1719906434354_1": {
+        "dataSetId": -1,
+        "id": "fcn_sendmessagefromwebwidgetandverifyautomatedmessageisnotgettingtriggered_1719906434354_1",
+        "nodeType": "action",
+        "branches": [
+          "fcn_verifythethehandoffrequestedflagandcountintheconversationlistviewinsfconversedesk_1719906434354_0"
+        ],
+        "content": "Send Message from web widget and Verify Automated message is not getting triggered"
+      },
+      "fcn_verifythethehandoffrequestedflagandcountintheconversationlistviewinsfconversedesk_1719906434354_0": {
+        "dataSetId": -1,
+        "id": "fcn_verifythethehandoffrequestedflagandcountintheconversationlistviewinsfconversedesk_1719906434354_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_acceptthehandofffromsfconversedesk_1719906434354_0"
+        ],
+        "content": "Verify the the hand off requested flag and count in the conversation list view in SF Converse Desk"
+      },
+      "fcn_acceptthehandofffromsfconversedesk_1719906434354_0": {
+        "dataSetId": -1,
+        "id": "fcn_acceptthehandofffromsfconversedesk_1719906434354_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_sendmessagefromsfconversedesksfagentagent_1719906434354_0"
+        ],
+        "content": "Accept the Hand Off from SF Converse Desk"
+      },
+      "fcn_sendmessagefromsfconversedesksfagentagent_1719906434354_0": {
+        "dataSetId": -1,
+        "id": "fcn_sendmessagefromsfconversedesksfagentagent_1719906434354_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_verifythemessageonwebwidgetandsendmessagefromwidgetsfagentagent_1719906434354_0"
+        ],
+        "content": "Send Message from sf converse desk $sfagent $agent"
+      },
+      "fcn_verifythemessageonwebwidgetandsendmessagefromwidgetsfagentagent_1719906434354_0": {
+        "dataSetId": -1,
+        "id": "fcn_verifythemessageonwebwidgetandsendmessagefromwidgetsfagentagent_1719906434354_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_verifythevisitormessageonsfconversedeskagent_1719906434354_0"
+        ],
+        "content": "Verify the Message on web widget and send message from widget $sfagent $agent"
+      },
+      "fcn_verifythevisitormessageonsfconversedeskagent_1719906434354_0": {
+        "dataSetId": -1,
+        "id": "fcn_verifythevisitormessageonsfconversedeskagent_1719906434354_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assignconversationtoanotheruserinsfstdsf_1719906434354_1"
+        ],
+        "content": "Verify the visitor message on sf converse desk $agent "
+      },
+      "fcn_assignconversationtoanotheruserinsfstdsf_1719906434354_1": {
+        "dataSetId": -1,
+        "id": "fcn_assignconversationtoanotheruserinsfstdsf_1719906434354_1",
+        "nodeType": "action",
+        "branches": [
+          "fcn_createsalesforcelogin_stduserforguided_1719906434354_1"
+        ],
+        "content": "Assign conversation to another user in SF $stdsf"
+      },
+      "fcn_createsalesforcelogin_stduserforguided_1719906434354_1": {
+        "dataSetId": -1,
+        "id": "fcn_createsalesforcelogin_stduserforguided_1719906434354_1",
+        "nodeType": "action",
+        "branches": [
+          "fcn_starttheconversationfromsfstduserafterassigningtheconversationagentsfagent_1719906434354_0"
+        ],
+        "content": "create $salesforcelogin_stduser for guided"
+      },
+      "fcn_starttheconversationfromsfstduserafterassigningtheconversationagentsfagent_1719906434354_0": {
+        "dataSetId": -1,
+        "id": "fcn_starttheconversationfromsfstduserafterassigningtheconversationagentsfagent_1719906434354_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertsfsmshistoryinstduserforconversationafterassignmentagentbotsfagent_1719906434354_0"
+        ],
+        "content": "Start the conversation from sf std user after assigning the conversation $agent $sfagent "
+      },
+      "fcn_assertsfsmshistoryinstduserforconversationafterassignmentagentbotsfagent_1719906434354_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertsfsmshistoryinstduserforconversationafterassignmentagentbotsfagent_1719906434354_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertsfsmshistoryforagentsfagentmessagesinportalforguided_1719906434354_0"
+        ],
+        "content": "Assert SF SMS History in Std User for conversation after assignment $agent $bot $sfagent"
+      },
+      "fcn_assertsfsmshistoryforagentsfagentmessagesinportalforguided_1719906434354_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertsfsmshistoryforagentsfagentmessagesinportalforguided_1719906434354_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Assert SF SMS History for $agent $sfagent messages in portal for guided"
+      }
+    },
+    "pathNames": {},
+    "isPrimary": false,
+    "positions": {
+      "fcn_start_0": {
+        "top": 150.0,
+        "left": 500.0
+      },
+      "fcn_test_0": {
+        "top": 211.0,
+        "left": 500.0
+      },
+      "fcn_assignconversationbeforehandoff_1719906434354_0": {
+        "top": 270.0,
+        "left": 500.0
+      },
+      "fcn_navigatetosmsmagicconverse_1719906434354_0": {
+        "top": 321.9921875,
+        "left": 500.0
+      },
+      "fcn_switchtosalesforceclassic_1719906434354_0": {
+        "top": 378.0078125,
+        "left": 500.0
+      },
+      "fcn_logintoportalusingsalesforce_credforguided_1719906434354_0": {
+        "top": 433.1640625,
+        "left": 500.0
+      },
+      "fcn_getagentnamesf_1719906434354_0": {
+        "top": 515.15625,
+        "left": 500.0
+      },
+      "fcn_getstdusernamesf_1719906434354_0": {
+        "top": 580.3046875,
+        "left": 500.0
+      },
+      "fcn_navigatetoconversivebuttonsettingspage_1719906434354_0": {
+        "top": 650.28125,
+        "left": 500.0
+      },
+      "fcn_clickoncreatenewbuttoninconversivebuttonpage_1719906434354_0": {
+        "top": 723.28125,
+        "left": 500.0
+      },
+      "fcn_verifythebasicinfosectionwhenuserclickoncreatenewbutton_1719906434354_0": {
+        "top": 792.2734375,
+        "left": 500.0
+      },
+      "fcn_createconversivebuttonwithchannelaswebwithformdisablednewconversivebutton_1719906434354_0": {
+        "top": 867.28125,
+        "left": 500.0
+      },
+      "fcn_getscript_1719906434354_0": {
+        "top": 953.4453125,
+        "left": 500.0
+      },
+      "fcn_getconversivebuttonidandbotname_1719906434354_0": {
+        "top": 1010.140625,
+        "left": 500.0
+      },
+      "fcn_gotoconversedeskofsalesforce_1719906434354_0": {
+        "top": 1065.140625,
+        "left": 500.0
+      },
+      "fcn_embedscriptintowebsiteandnavigatetowebsite_1719906434354_0": {
+        "top": 1130.1171875,
+        "left": 500.0
+      },
+      "fcn_embedthescriptintomathhuntdomainandnavigatetowebsite_1719906434354_0": {
+        "top": 1212.421875,
+        "left": 500.0
+      },
+      "fcn_openconversivebuttonandthenopenwebchat_1719906434354_0": {
+        "top": 1285.421875,
+        "left": 500.0
+      },
+      "fcn_starttheconversationwithbotforguidedstudentinquiryflow_1719906434354_0": {
+        "top": 1366.421875,
+        "left": 500.0
+      },
+      "fcn_verifymessagesonsfconversedeskforguidedstudentinquiryflow_1719906434354_0": {
+        "top": 1454.5859375,
+        "left": 500.0
+      },
+      "fcn_navigatetosmshistory_1719906434354_0": {
+        "top": 1545.7578125,
+        "left": 500.0
+      },
+      "fcn_sortthesmshistorybycreatedon_1719906434354_0": {
+        "top": 1602.7265625,
+        "left": 500.0
+      },
+      "fcn_assertsmshistoryonsfforstudentinquiryflow_1719906434354_0": {
+        "top": 1666.7109375,
+        "left": 500.0
+      },
+      "fcn_assertsmshistoryonportalforsfguidedflowstudentinquiryflow_1719906434354_0": {
+        "top": 1745.8671875,
+        "left": 500.0
+      },
+      "fcn_assignconversationtoanotheruserinsfstdsf_1719906434354_0": {
+        "top": 1820.234375,
+        "left": 500.0
+      },
+      "fcn_createsalesforcelogin_stduserforguided_1719906434354_0": {
+        "top": 1892.3984375,
+        "left": 500.0
+      },
+      "fcn_startconversationfromstandarduserinsfagentsfagent_1719906434354_0": {
+        "top": 1966.4140625,
+        "left": 500.0
+      },
+      "fcn_sendmessagefromwebwidgetandverifyautomatedmessageisnotgettingtriggered_1719906434354_0": {
+        "top": 2045.5703125,
+        "left": 500.0
+      },
+      "fcn_verifythethehandoffrequestedflagandcountintheconversationlistviewinsfconversedeskofstduser_1719906434354_0": {
+        "top": 2132.5703125,
+        "left": 500.0
+      },
+      "fcn_acceptthehandofffromsfstduserconversedesk_1719906434354_0": {
+        "top": 2219.5703125,
+        "left": 500.0
+      },
+      "fcn_starttheconversationwithagentfromsfstduserforguidedsfagentagent_1719906434354_0": {
+        "top": 2292.5703125,
+        "left": 500.0
+      },
+      "fcn_validatemessagehistoryonwebwidgetstudentinquiryflowforguidedagentsfagentwhenassignconversationtosfstduser_1719906434354_0": {
+        "top": 2371.7265625,
+        "left": 500.0
+      },
+      "fcn_assertsfsmshistoryinstduserforagentconversationagentbotsfagent_1719906434354_0": {
+        "top": 2481.0390625,
+        "left": 500.0
+      },
+      "fcn_assertsfsmshistoryforagentsfagentmessagesinportalforguidedwhenconversationassignedtostduser_1719906434354_0": {
+        "top": 2560.1953125,
+        "left": 500.0
+      },
+      "fcn_assignconversationafterhandoff_1719906434354_0": {
+        "top": 1820.234375,
+        "left": 905.0
+      },
+      "fcn_sendmessagefromwebwidgetandverifyautomatedmessageisnotgettingtriggered_1719906434354_1": {
+        "top": 1879.234375,
+        "left": 905.0
+      },
+      "fcn_verifythethehandoffrequestedflagandcountintheconversationlistviewinsfconversedesk_1719906434354_0": {
+        "top": 1966.234375,
+        "left": 905.0
+      },
+      "fcn_acceptthehandofffromsfconversedesk_1719906434354_0": {
+        "top": 2053.234375,
+        "left": 905.0
+      },
+      "fcn_sendmessagefromsfconversedesksfagentagent_1719906434354_0": {
+        "top": 2126.234375,
+        "left": 905.0
+      },
+      "fcn_verifythemessageonwebwidgetandsendmessagefromwidgetsfagentagent_1719906434354_0": {
+        "top": 2205.390575,
+        "left": 905.0
+      },
+      "fcn_verifythevisitormessageonsfconversedeskagent_1719906434354_0": {
+        "top": 2304.703125,
+        "left": 905.0
+      },
+      "fcn_assignconversationtoanotheruserinsfstdsf_1719906434354_1": {
+        "top": 2383.859325,
+        "left": 905.0
+      },
+      "fcn_createsalesforcelogin_stduserforguided_1719906434354_1": {
+        "top": 2463.015575,
+        "left": 905.0
+      },
+      "fcn_starttheconversationfromsfstduserafterassigningtheconversationagentsfagent_1719906434354_0": {
+        "top": 2542.171825,
+        "left": 905.0
+      },
+      "fcn_assertsfsmshistoryinstduserforconversationafterassignmentagentbotsfagent_1719906434354_0": {
+        "top": 2641.484375,
+        "left": 905.0
+      },
+      "fcn_assertsfsmshistoryforagentsfagentmessagesinportalforguided_1719906434354_0": {
+        "top": 2740.796875,
+        "left": 905.0
+      }
+    },
+    "tags": ""
+  },
+  "enabled": true,
+  "parentId": ""
+}

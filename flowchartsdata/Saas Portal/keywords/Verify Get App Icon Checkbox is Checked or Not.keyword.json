@@ -1,0 +1,42 @@
+{
+  "modifiedOn": "2024-03-15T08:14:47.532Z",
+  "name": "Verify Get App Icon Checkbox is Checked or Not",
+  "id": "44644",
+  "type": 3,
+  "createdOn": "2024-03-15T08:14:22.445Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Verify Get App Icon Checkbox is Checked or Not",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_isChecked",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_checkbox(0, _rightOf(_span(\"Get App Icon\")))"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$GetAppIcon"
+        }
+      },
+      {
+        "commented": false,
+        "action": "_log",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "$GetAppIcon"
+          }
+        ],
+        "stepType": "Action"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

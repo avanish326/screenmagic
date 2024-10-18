@@ -1,0 +1,46 @@
+{
+  "modifiedOn": "2023-10-04T05:01:02.897Z",
+  "name": "Is Toll Free Number Not Available for Provision ?",
+  "id": "16730",
+  "type": 3,
+  "createdOn": "2023-10-04T05:00:15.724Z",
+  "content": {
+    "title": "Is Toll Free Number Not Available for Provision ?",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_isVisible",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(\"/Currently we have not automated/\")"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$senderIDStatus"
+        }
+      },
+      {
+        "commented": false,
+        "action": "return",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "$senderIDStatus"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "_log($senderIDStatus)"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

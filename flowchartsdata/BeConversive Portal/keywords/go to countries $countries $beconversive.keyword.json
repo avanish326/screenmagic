@@ -1,0 +1,70 @@
+{
+  "modifiedOn": "2024-04-12T04:26:17.624Z",
+  "name": "go to countries $countries $beconversive",
+  "id": "44970",
+  "type": 3,
+  "createdOn": "2024-04-09T14:00:13.432Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "go to countries $countries $beconversive",
+    "parameters": [
+      {
+        "parameterId": "countries_",
+        "entityTypeId": "countries",
+        "suffix": ""
+      },
+      {
+        "parameterId": "beconversive_",
+        "entityTypeId": "beconversive",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"Countries\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "isRawScript": true,
+        "rawScript": "var $countries \u003d [\"India\", \"USA\", \"Puerto Rico\", \"Argentina\", \"Singapore\", \"Canada\"];\n\nfor (var $i \u003d 0; $i \u003c $countries.length; $i++) {\n    var $country \u003d $countries[$i];\n    \n    var $messagingGuidelinesExist \u003d _isVisible(_cell($country).near(_cell(\"/Messaging Guidelines/\")));\n\n    _assertTrue($messagingGuidelinesExist, \"Messaging Guidelines exist for \" + $country);\n}"
+      },
+      {
+        "commented": true,
+        "isRawScript": true,
+        "rawScript": "//var $table \u003d _table(\"table-default table-hover\");\n//var $rowCount \u003d _rowCount($table);\n//var $rowData \u003d [];\n\nvar $data \u003d _getTableContents(_table(\"table-default table-hover\"),[0]);\n\n//for (var $row \u003d 0; $row \u003c $rowCount; $row++) {\n//var $cellText \u003d _getTableContents($table, [0], $row);\n//$rowData.push($cellText);\n//}\n\n_log(\"Row Data from the First Column: \" + $rowData);"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "var $table \u003d _table(\"table-default table-hover\");\n\n// Retrieve data from the first column of the table\nvar $firstColumnData \u003d _getTableContents($table, [0]);\n\n_log(\"Row Data from the First Column: \" + $firstColumnData);\n\nvar $containsValue \u003d false;\n\n// Iterate through the first column data array\nfor (var $i \u003d 0; $i \u003c $firstColumnData.length; $i++) {\n    if ($firstColumnData[$i].indexOf($beconversive.selectCountry) !\u003d\u003d -1) {\n        $containsValue \u003d true;\n        break;\n    }\n}\n\nif ($containsValue) {\n    _log(\"The first column data contains the value: \" + $beconversive.selectCountry);\n} else {\n    _log(\"The first column data does not contain the value: \" + $beconversive.selectCountry);\n}\n\n"
+      },
+      {
+        "commented": true,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_getTableContents($table, [0])"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Contains",
+        "secondaryParam": {
+          "parameterId": "beconversive_",
+          "attributeId": "attr_251712895238814"
+        },
+        "visibleCheck": false
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

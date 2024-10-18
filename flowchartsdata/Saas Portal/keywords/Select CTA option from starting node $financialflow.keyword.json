@@ -1,0 +1,61 @@
+{
+  "modifiedOn": "2024-02-15T07:17:55.106Z",
+  "name": "Select CTA option from starting node $financialflow",
+  "id": "29511",
+  "type": 3,
+  "createdOn": "2024-02-15T07:16:11.584Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Select CTA option from starting node $financialflow",
+    "parameters": [
+      {
+        "parameterId": "financialflow_",
+        "entityTypeId": "financialflow",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_submit($financialflow.firstCTA)"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "1500"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div($financialflow.firstCTA)"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "parameterId": "financialflow_",
+          "attributeId": "attr_01707981409555"
+        },
+        "visibleCheck": false
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

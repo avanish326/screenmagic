@@ -1,0 +1,343 @@
+{
+  "name": "Create text category template $templatedata",
+  "id": "-1",
+  "type": 3,
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Create text category template $templatedata",
+    "specific": [],
+    "parameters": [
+      {
+        "parameterId": "templatedata_",
+        "entityTypeId": "templatedata",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "40000"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "6000"
+          },
+          {
+            "paramMode": "code",
+            "customValue": "_fltPlaceholder(\"/Enable/\")"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_fltPlaceholder(\"/Enable/\")"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_fltSemantics(\"Create New\")"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "3000"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "_focus(_textbox(\"Enter template name\"))",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_textbox(\"Enter template name\")"
+          },
+          {
+            "paramMode": "default",
+            "parameterId": "templatedata_",
+            "attributeId": "attr_templateName_0"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "visibleCheck": false,
+        "specific": []
+      },
+      {
+        "commented": true,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "paramMode": "default",
+            "parameterId": "templatedata_",
+            "attributeId": "attr_templateName_0",
+            "accessorId": "acc0"
+          },
+          {
+            "paramMode": "default",
+            "parameterId": "templatedata_",
+            "attributeId": "attr_templateName_0"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "3000"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "if($machine \u003d\u003d \"macOS\"){\n_wait(1000)\nvar $robot \u003d new java.awt.Robot();\n$robot.keyPress(java.awt.event.KeyEvent.VK_META);\n$robot.keyPress(java.awt.event.KeyEvent.VK_CONTROL);\n$robot.keyPress(java.awt.event.KeyEvent.VK_F);\n$robot.keyRelease(java.awt.event.KeyEvent.VK_F);\n$robot.keyRelease(java.awt.event.KeyEvent.VK_CONTROL);\n$robot.keyRelease(java.awt.event.KeyEvent.VK_META);\n}\nif($machine \u003d\u003d \"windows\" || $machine \u003d\u003d \"chromeOS\"){\n_typeKeyCodeNative(java.awt.event.KeyEvent.VK_F11);\n}",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_position",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_iframe(0)"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Store",
+        "secondaryParam": {
+          "paramMode": "code",
+          "customValue": "$pos1"
+        },
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_fltSemantics(\"Select Template type\")"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_position",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_fltSemantics($templatedata.templateType)"
+          },
+          {
+            "paramMode": "code",
+            "customValue": "true"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Store",
+        "secondaryParam": {
+          "paramMode": "code",
+          "customValue": "$pos2"
+        },
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_clickNativeXY",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "$pos1[0]+$pos2[0]+5"
+          },
+          {
+            "paramMode": "code",
+            "customValue": "$pos1[1]+$pos2[1]+5"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "500"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "if($machine \u003d\u003d \"macOS\"){\n_wait(1000)\nvar $robot \u003d new java.awt.Robot();\n$robot.keyPress(java.awt.event.KeyEvent.VK_META);\n$robot.keyPress(java.awt.event.KeyEvent.VK_CONTROL);\n$robot.keyPress(java.awt.event.KeyEvent.VK_F);\n$robot.keyRelease(java.awt.event.KeyEvent.VK_F);\n$robot.keyRelease(java.awt.event.KeyEvent.VK_CONTROL);\n$robot.keyRelease(java.awt.event.KeyEvent.VK_META);\n}\nif($machine \u003d\u003d \"windows\" || $machine \u003d\u003d \"chromeOS\"){\n_typeKeyCodeNative(java.awt.event.KeyEvent.VK_F11);\n}",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "2000"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_fltSemantics(\"Only Text\")"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_fltSemantics($templatedata.templateChannel)"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "3000"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "_focus(_textarea(0))",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_textarea(0)"
+          },
+          {
+            "paramMode": "default",
+            "parameterId": "templatedata_",
+            "attributeId": "attr_templateText_1"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "2000"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_fltSemantics(\"Save\")"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

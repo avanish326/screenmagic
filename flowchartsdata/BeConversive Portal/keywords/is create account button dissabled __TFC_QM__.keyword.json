@@ -1,0 +1,62 @@
+{
+  "modifiedOn": "2024-08-16T07:45:39.235Z",
+  "name": "is create account button dissabled ?",
+  "id": "58635",
+  "type": 3,
+  "createdOn": "2024-08-02T08:41:40.622Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "is create account button dissabled ?",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_getAttribute",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_submit(\"Create Account\")"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "\"class\""
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$disableCheck"
+        }
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "if(_areEqual(\"/cursor-not-allowed/\",$disableCheck)){\n$isButton \u003d true;\n}\nif(!_areEqual(\"/cursor-not-allowed/\",$disableCheck)){\n$isButton \u003d false;\n}"
+      },
+      {
+        "commented": false,
+        "action": "_log",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "$isButton"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "return",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "$isButton"
+          }
+        ],
+        "stepType": "Action"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

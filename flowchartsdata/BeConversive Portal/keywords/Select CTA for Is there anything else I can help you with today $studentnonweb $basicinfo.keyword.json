@@ -1,0 +1,92 @@
+{
+  "modifiedOn": "2024-07-17T09:32:43.814Z",
+  "name": "Select CTA for Is there anything else I can help you with today $studentnonweb $basicinfo",
+  "id": "58384",
+  "type": 3,
+  "createdOn": "2024-07-17T09:32:43.814Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Select CTA for Is there anything else I can help you with today $studentnonweb $basicinfo",
+    "parameters": [
+      {
+        "parameterId": "studentnonweb_",
+        "entityTypeId": "studentnonweb",
+        "suffix": ""
+      },
+      {
+        "parameterId": "basicinfo_",
+        "entityTypeId": "basicinfo",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "POST"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "$incomingSMSURLIntelli"
+          }
+        ],
+        "stepType": "REST",
+        "isRawScript": true,
+        "rawScript": "var $request_5kbsXAp6dv \u003d new RESTRequest();\r\n$request_5kbsXAp6dv.setURL($incomingSMSURLIntelli);\r\n$request_5kbsXAp6dv.addToQueryString(\"Message\", $studentnonweb.ctaYesNo);\r\n$request_5kbsXAp6dv.addToQueryString(\"OriginatorAddress\", $basicinfo.source);\r\n$request_5kbsXAp6dv.addToQueryString(\"DestinationAddress\", $smsSenderIDUsecases);\r\nvar $response_5kbsXAp6dv \u003d $request_5kbsXAp6dv.submit(\"POST\");\r\nvar responseBody \u003d JSON.parse($response_5kbsXAp6dv.getBodyAsString());\r\n\t var $responseBodyObj_5kbsXAp6dv \u003d $response_5kbsXAp6dv.getBodyAsString();\r\n\tvar responseType \u003d $response_5kbsXAp6dv.getHeader(\"Content-Type\");\r\n\tif (responseType.indexOf(\"json\")!\u003d-1) {\r\n\t\t$responseBodyObj_5kbsXAp6dv \u003d JSON.parse($responseBodyObj_5kbsXAp6dv);\r\n\t}\r\n\telse if (responseType.indexOf(\"xml\")!\u003d-1) {\r\n\t\t$responseBodyObj_5kbsXAp6dv \u003d $responseBodyObj_5kbsXAp6dv.replace(/\u003c\\xml.*?\u003e/g, \u0027\u0027).replace(/\\n/g, \u0027\u0027).replace(/\\r/g, \u0027\u0027);\r\n\t\t$responseBodyObj_5kbsXAp6dv \u003d new XML(undefined);\r\n\t}\r\n\r\n\t//assertions\r\n\r\n",
+        "state": {
+          "contentType": "json",
+          "request": {
+            "method": "POST",
+            "url": "$incomingSMSURLIntelli",
+            "parameters": [
+              [
+                "Message",
+                "$studentnonweb.ctaYesNo"
+              ],
+              [
+                "OriginatorAddress",
+                "$basicinfo.source"
+              ],
+              [
+                "DestinationAddress",
+                "$smsSenderIDUsecases"
+              ]
+            ],
+            "headers": [],
+            "authType": "none",
+            "body": "",
+            "bodyParams": [],
+            "isParametrizedBody": false,
+            "resetCookies": false
+          },
+          "assertions": {
+            "status": [],
+            "header": [],
+            "body": []
+          },
+          "variables": {
+            "status": [],
+            "header": [],
+            "body": []
+          },
+          "authInfo": {}
+        }
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "5000"
+          }
+        ],
+        "stepType": "Action"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

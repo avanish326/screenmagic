@@ -1,0 +1,1646 @@
+{
+  "name": "Conversive Associated Accounts",
+  "id": "-1",
+  "type": 0,
+  "content": {
+    "nodesMap": {
+      "fcn_start_0": {
+        "id": "fcn_start_0",
+        "content": "Start",
+        "nodeType": "start",
+        "branches": [
+          "fcn_associatedchildaccounts_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_logintobeconversive_1720525647959_0": {
+        "id": "fcn_logintobeconversive_1720525647959_0",
+        "content": "login to $beconversive",
+        "nodeType": "action",
+        "branches": [
+          "fcn_gotoaccountsettingsbeconversive_1720525760631_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_associatedchildaccounts_0": {
+        "id": "fcn_associatedchildaccounts_0",
+        "content": "Associated Child accounts",
+        "nodeType": "pathlabel",
+        "branches": [
+          "fcn_prerequisiteforconvertingtocustomplan_0",
+          "fcn_createchildaccounts_0",
+          "fcn_verifythecreateaccountbuttonisdisabling_0",
+          "fcn_enhancementinmasterandchildaccounts_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_prerequisiteforconvertingtocustomplan_0": {
+        "id": "fcn_prerequisiteforconvertingtocustomplan_0",
+        "content": "Pre requisite for converting to custom plan",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_logintobeconversive_1720525647959_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_gotoaccountsettingsbeconversive_1720525760631_0": {
+        "id": "fcn_gotoaccountsettingsbeconversive_1720525760631_0",
+        "content": "go to account settings $beconversive",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logintoopsportallogin_1720525805024_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_logintoopsportallogin_1720525805024_0": {
+        "id": "fcn_logintoopsportallogin_1720525805024_0",
+        "content": "Login to $opsportallogin",
+        "nodeType": "action",
+        "branches": [
+          "fcn_searchtheaccountbeconversive_1720525843470_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_searchtheaccountbeconversive_1720525843470_0": {
+        "id": "fcn_searchtheaccountbeconversive_1720525843470_0",
+        "content": "search the account $beconversive",
+        "nodeType": "action",
+        "branches": [
+          "fcn_converttocustomplan_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_converttocustomplan_0": {
+        "id": "fcn_converttocustomplan_0",
+        "content": "Convert to custom plan",
+        "nodeType": "action",
+        "branches": [
+          "fcn_verifyit_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_verifyit_0": {
+        "id": "fcn_verifyit_0",
+        "content": "verify it",
+        "nodeType": "state",
+        "branches": [
+          "fcn_addthechildcount_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_createchildaccounts_0": {
+        "id": "fcn_createchildaccounts_0",
+        "content": "create child accounts",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_logintobeconversive_1720527084863_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_logintobeconversive_1720527084863_0": {
+        "id": "fcn_logintobeconversive_1720527084863_0",
+        "content": "login to $beconversive",
+        "nodeType": "action",
+        "branches": [
+          "fcn_gotoaccountsettingsbeconversive_1720527090766_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_gotoaccountsettingsbeconversive_1720527090766_0": {
+        "id": "fcn_gotoaccountsettingsbeconversive_1720527090766_0",
+        "content": "go to account settings $beconversive",
+        "nodeType": "action",
+        "branches": [
+          "fcn_calculateavailableusers_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_checktheassociatedsection_0": {
+        "id": "fcn_checktheassociatedsection_0",
+        "content": "check the associated section",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checkthecreatedchildontablecreatechild_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_addthechildcount_0": {
+        "id": "fcn_addthechildcount_0",
+        "content": "add the child count \u0026 non-admin users",
+        "nodeType": "action",
+        "branches": [],
+        "dataSetId": "-1"
+      },
+      "fcn_calculateavailableusers_0": {
+        "id": "fcn_calculateavailableusers_0",
+        "content": "calculate available users",
+        "nodeType": "action",
+        "branches": [
+          "fcn_createchildaccount_0",
+          "fcn_iscreateaccountbuttondissabled_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_createchildaccount_0": {
+        "id": "fcn_createchildaccount_0",
+        "content": "create child account $createchild",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checktheassociatedsection_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_checkthecreatedchildontablecreatechild_0": {
+        "id": "fcn_checkthecreatedchildontablecreatechild_0",
+        "content": "check the created child on table $createchild",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logintogmailemaillogin_1720537302470_0",
+          "fcn_resendinviteflowforpendingaccounts_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_logintogmailemaillogin_1720537302470_0": {
+        "id": "fcn_logintogmailemaillogin_1720537302470_0",
+        "content": "Login to gmail $emaillogin",
+        "nodeType": "action",
+        "branches": [
+          "fcn_confirmaccount_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_confirmaccount_0": {
+        "id": "fcn_confirmaccount_0",
+        "content": "confirm account $createchild",
+        "nodeType": "action",
+        "branches": [
+          "fcn_setpasswordcreatechild_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_setpasswordcreatechild_0": {
+        "id": "fcn_setpasswordcreatechild_0",
+        "content": "set password $createchild",
+        "nodeType": "action",
+        "branches": [
+          "fcn_gotoaccountsettingsbeconversive_1720583320871_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_logoutfromtheaccount_1720583192578_0": {
+        "id": "fcn_logoutfromtheaccount_1720583192578_0",
+        "content": "logout from the account",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checktheviewdetails_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_gotoaccountsettingsbeconversive_1720583320871_0": {
+        "id": "fcn_gotoaccountsettingsbeconversive_1720583320871_0",
+        "content": "go to account settings $beconversive",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checkchildlicense_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_checkchildlicense_0": {
+        "id": "fcn_checkchildlicense_0",
+        "content": "check child license",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logoutfromtheaccount_1720583192578_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_checktheviewdetails_0": {
+        "id": "fcn_checktheviewdetails_0",
+        "content": "check the view details",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_logintobeconversive_1720583542312_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_logintobeconversive_1720583542312_0": {
+        "id": "fcn_logintobeconversive_1720583542312_0",
+        "content": "login to $beconversive",
+        "nodeType": "action",
+        "branches": [
+          "fcn_gotoaccountsettingsbeconversive_1720583597709_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_gotoaccountsettingsbeconversive_1720583597709_0": {
+        "id": "fcn_gotoaccountsettingsbeconversive_1720583597709_0",
+        "content": "go to account settings $beconversive",
+        "nodeType": "action",
+        "branches": [
+          "fcn_clickviewdetails_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_clickviewdetails_0": {
+        "id": "fcn_clickviewdetails_0",
+        "content": "click view details $createchild",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checkthedetailscreatechild_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_checkthedetailscreatechild_0": {
+        "id": "fcn_checkthedetailscreatechild_0",
+        "content": "check the details $createchild",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checkthechildonops_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_checkthechildonops_0": {
+        "id": "fcn_checkthechildonops_0",
+        "content": "check the child on OPS",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_logintoopsportallogin_1720584497846_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_logintoopsportallogin_1720584497846_0": {
+        "id": "fcn_logintoopsportallogin_1720584497846_0",
+        "content": "Login to $opsportallogin",
+        "nodeType": "action",
+        "branches": [
+          "fcn_searchtheaccountbeconversive_1720584507055_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_searchtheaccountbeconversive_1720584507055_0": {
+        "id": "fcn_searchtheaccountbeconversive_1720584507055_0",
+        "content": "search the account $beconversive",
+        "nodeType": "action",
+        "branches": [
+          "fcn_gotouserslicenses_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_gotouserslicenses_0": {
+        "id": "fcn_gotouserslicenses_0",
+        "content": "go to users licenses",
+        "nodeType": "action",
+        "branches": [
+          "fcn_openchildaccountsandgotoachildaccount_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_openchildaccountsandgotoachildaccount_0": {
+        "id": "fcn_openchildaccountsandgotoachildaccount_0",
+        "content": "open child accounts and go to a child account $createchild",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checkthelabelandmessages_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_checkthelabelandmessages_0": {
+        "id": "fcn_checkthelabelandmessages_0",
+        "content": "check the label and messages",
+        "nodeType": "action",
+        "branches": [],
+        "dataSetId": "-1"
+      },
+      "fcn_verifythecreateaccountbuttonisdisabling_0": {
+        "id": "fcn_verifythecreateaccountbuttonisdisabling_0",
+        "content": "verify the create account button is disabling and the OVERVIEW is ACCOUNTS",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_logintobeconversive_1720619171009_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_logintobeconversive_1720619171009_0": {
+        "id": "fcn_logintobeconversive_1720619171009_0",
+        "content": "login to $beconversive",
+        "nodeType": "action",
+        "branches": [
+          "fcn_gotoaccountsettingsbeconversive_1720619175230_0",
+          "fcn_verifytheusercountverifythetablewillnotcomeiftheplanischanged_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_gotoaccountsettingsbeconversive_1720619175230_0": {
+        "id": "fcn_gotoaccountsettingsbeconversive_1720619175230_0",
+        "content": "go to account settings $beconversive",
+        "nodeType": "action",
+        "branches": [
+          "fcn_createchilduntilthebuttondisablescreatechild_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_createchilduntilthebuttondisablescreatechild_0": {
+        "id": "fcn_createchilduntilthebuttondisablescreatechild_0",
+        "content": "create child until the button disables $createchild",
+        "nodeType": "action",
+        "branches": [],
+        "dataSetId": "-1"
+      },
+      "fcn_resendinvitecreatechild_0": {
+        "id": "fcn_resendinvitecreatechild_0",
+        "content": "Resend invite $createchild",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logintogmailemaillogin_1722427270342_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_logintogmailemaillogin_1722427270342_0": {
+        "id": "fcn_logintogmailemaillogin_1722427270342_0",
+        "content": "Login to gmail $emaillogin",
+        "nodeType": "action",
+        "branches": [
+          "fcn_confirmaccountforresentinvitecreatechild_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_setpasswordcreatechild_1722427287046_0": {
+        "id": "fcn_setpasswordcreatechild_1722427287046_0",
+        "content": "set password $createchild",
+        "nodeType": "action",
+        "branches": [
+          "fcn_gotoaccountsettingsbeconversive_1722427292366_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_gotoaccountsettingsbeconversive_1722427292366_0": {
+        "id": "fcn_gotoaccountsettingsbeconversive_1722427292366_0",
+        "content": "go to account settings $beconversive",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checkchildlicense_1722427295750_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_checkchildlicense_1722427295750_0": {
+        "id": "fcn_checkchildlicense_1722427295750_0",
+        "content": "check child license",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logoutfromtheaccount_1722427300198_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_logoutfromtheaccount_1722427300198_0": {
+        "id": "fcn_logoutfromtheaccount_1722427300198_0",
+        "content": "logout from the account",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checkthependingstatusandresendbuttonisnottherefortheaccount_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_resendinviteflowforpendingaccounts_0": {
+        "id": "fcn_resendinviteflowforpendingaccounts_0",
+        "content": "Resend invite flow for Pending accounts",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_resendinvitecreatechild_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_confirmaccountforresentinvitecreatechild_0": {
+        "id": "fcn_confirmaccountforresentinvitecreatechild_0",
+        "content": "confirm account for resent invite $createchild",
+        "nodeType": "action",
+        "branches": [
+          "fcn_setpasswordcreatechild_1722427287046_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_verifytheusercountverifythetablewillnotcomeiftheplanischanged_0": {
+        "id": "fcn_verifytheusercountverifythetablewillnotcomeiftheplanischanged_0",
+        "content": "verify the user count and verify the table will not come if the plan is changed",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_gotoaccountsettingsbeconversive_1722505797838_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_gotoaccountsettingsbeconversive_1722505797838_0": {
+        "id": "fcn_gotoaccountsettingsbeconversive_1722505797838_0",
+        "content": "go to account settings $beconversive",
+        "nodeType": "action",
+        "branches": [
+          "fcn_taketheusercount_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_taketheusercount_0": {
+        "id": "fcn_taketheusercount_0",
+        "content": "take the user count",
+        "nodeType": "action",
+        "branches": [
+          "fcn_transfersomeusersandrevokeitback_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_logintoopsportallogin_1722505942150_0": {
+        "id": "fcn_logintoopsportallogin_1722505942150_0",
+        "content": "Login to $opsportallogin",
+        "nodeType": "action",
+        "branches": [
+          "fcn_searchtheaccountbeconversive_1722505949109_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_searchtheaccountbeconversive_1722505949109_0": {
+        "id": "fcn_searchtheaccountbeconversive_1722505949109_0",
+        "content": "search the account $beconversive",
+        "nodeType": "action",
+        "branches": [
+          "fcn_gotouserslicenses_1722505958398_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_gotouserslicenses_1722505958398_0": {
+        "id": "fcn_gotouserslicenses_1722505958398_0",
+        "content": "go to users licenses",
+        "nodeType": "action",
+        "branches": [
+          "fcn_validatetheusercount_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_validatetheusercount_0": {
+        "id": "fcn_validatetheusercount_0",
+        "content": "Validate the user count",
+        "nodeType": "state",
+        "branches": [
+          "fcn_changetheplanandcheckthetable_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_changetheplanandcheckthetable_0": {
+        "id": "fcn_changetheplanandcheckthetable_0",
+        "content": "change the plan and check the table",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_changetheplantonormal_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_changetheplantonormal_0": {
+        "id": "fcn_changetheplantonormal_0",
+        "content": "change the plan and license to normal",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checkthetableonconversive_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_checkthetableonconversive_0": {
+        "id": "fcn_checkthetableonconversive_0",
+        "content": "check if the non-admin user can be edited",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checktheassociateaccounttableonconversive_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_checktheassociateaccounttableonconversive_0": {
+        "id": "fcn_checktheassociateaccounttableonconversive_0",
+        "content": "check the Associate account table on Conversive",
+        "nodeType": "state",
+        "branches": [],
+        "dataSetId": "-1"
+      },
+      "fcn_transfersomeusersandrevokeitback_0": {
+        "id": "fcn_transfersomeusersandrevokeitback_0",
+        "content": "transfer some users and revoke it back",
+        "nodeType": "action",
+        "branches": [
+          "fcn_takeuserfromtheusermanagement_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_takeuserfromtheusermanagement_0": {
+        "id": "fcn_takeuserfromtheusermanagement_0",
+        "content": "Take user from the user management",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logintoopsportallogin_1722505942150_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_checkthependingstatusandresendbuttonisnottherefortheaccount_0": {
+        "id": "fcn_checkthependingstatusandresendbuttonisnottherefortheaccount_0",
+        "content": "check the pending status and resend button is not there for the account",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_logintobeconversive_1722586229650_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_logintobeconversive_1722586229650_0": {
+        "id": "fcn_logintobeconversive_1722586229650_0",
+        "content": "login to $beconversive",
+        "nodeType": "action",
+        "branches": [
+          "fcn_gotoaccountsettingsbeconversive_1722586233402_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_gotoaccountsettingsbeconversive_1722586233402_0": {
+        "id": "fcn_gotoaccountsettingsbeconversive_1722586233402_0",
+        "content": "go to account settings $beconversive",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checktheaccountnamedoesnothavepending_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_checktheaccountnamedoesnothavepending_0": {
+        "id": "fcn_checktheaccountnamedoesnothavepending_0",
+        "content": "check the account name does not have Pending",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checktheresendoptionisnotvisible_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_checktheresendoptionisnotvisible_0": {
+        "id": "fcn_checktheresendoptionisnotvisible_0",
+        "content": "check the resend option is not visible",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checkthelimitationofresendoption_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_checkthelimitationofresendoption_0": {
+        "id": "fcn_checkthelimitationofresendoption_0",
+        "content": "check the limitation of resend option",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_iscreateaccountbuttondissabled_1722593209263_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_reseninvitemultipletimescreatechild_0": {
+        "id": "fcn_reseninvitemultipletimescreatechild_0",
+        "content": "resend invite multiple times $createchild",
+        "nodeType": "action",
+        "branches": [],
+        "dataSetId": "-1"
+      },
+      "fcn_iscreateaccountbuttondissabled_0": {
+        "id": "fcn_iscreateaccountbuttondissabled_0",
+        "content": "is create account button dissabled ?",
+        "nodeType": "dynamic-decision",
+        "branches": [
+          "fcn_createchildaccount_0",
+          "fcn_logintoopsportallogin_1722587696827_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_logintoopsportallogin_1722587696827_0": {
+        "id": "fcn_logintoopsportallogin_1722587696827_0",
+        "content": "Login to $opsportallogin",
+        "nodeType": "action",
+        "branches": [
+          "fcn_searchtheaccountbeconversive_1722587696827_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_searchtheaccountbeconversive_1722587696827_0": {
+        "id": "fcn_searchtheaccountbeconversive_1722587696827_0",
+        "content": "search the account $beconversive",
+        "nodeType": "action",
+        "branches": [
+          "fcn_gotouserslicenses_1722587696827_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_gotouserslicenses_1722587696827_0": {
+        "id": "fcn_gotouserslicenses_1722587696827_0",
+        "content": "go to users licenses",
+        "nodeType": "action",
+        "branches": [
+          "fcn_allotchildorgcount_1722587696827_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_allotchildorgcount_1722587696827_0": {
+        "id": "fcn_allotchildorgcount_1722587696827_0",
+        "content": "Allot child org count",
+        "nodeType": "action",
+        "branches": [
+          "fcn_createchildaccount_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_iscreateaccountbuttondissabled_1722593209263_0": {
+        "id": "fcn_iscreateaccountbuttondissabled_1722593209263_0",
+        "content": "is create account button dissabled ?",
+        "nodeType": "dynamic-decision",
+        "branches": [
+          "fcn_createchildaccountagaincreatechild_0",
+          "fcn_logintoopsportallogin_1722593209263_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_logintoopsportallogin_1722593209263_0": {
+        "id": "fcn_logintoopsportallogin_1722593209263_0",
+        "content": "Login to $opsportallogin",
+        "nodeType": "action",
+        "branches": [
+          "fcn_searchtheaccountbeconversive_1722593209263_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_searchtheaccountbeconversive_1722593209263_0": {
+        "id": "fcn_searchtheaccountbeconversive_1722593209263_0",
+        "content": "search the account $beconversive",
+        "nodeType": "action",
+        "branches": [
+          "fcn_gotouserslicenses_1722593209263_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_gotouserslicenses_1722593209263_0": {
+        "id": "fcn_gotouserslicenses_1722593209263_0",
+        "content": "go to users licenses",
+        "nodeType": "action",
+        "branches": [
+          "fcn_allotchildorgcount_1722593209263_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_allotchildorgcount_1722593209263_0": {
+        "id": "fcn_allotchildorgcount_1722593209263_0",
+        "content": "Allot child org count",
+        "nodeType": "action",
+        "branches": [
+          "fcn_createchildaccountagaincreatechild_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_createchildaccountagaincreatechild_0": {
+        "id": "fcn_createchildaccountagaincreatechild_0",
+        "content": "create child account again $createchild",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checkthesecondchildcreatechild_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_checkthesecondchildcreatechild_0": {
+        "id": "fcn_checkthesecondchildcreatechild_0",
+        "content": "check the second child $createchild",
+        "nodeType": "action",
+        "branches": [
+          "fcn_reseninvitemultipletimescreatechild_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_enhancementinmasterandchildaccounts_0": {
+        "id": "fcn_enhancementinmasterandchildaccounts_0",
+        "content": "Enhancement in Master and child accounts.",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_weneedaaccountwherethemasteraccountshouldnotcontainanynonadminuser_0",
+          "fcn_invitechildandvalidatethedropdownsandvalidatethechildaccount_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_weneedaaccountwherethemasteraccountshouldnotcontainanynonadminuser_0": {
+        "id": "fcn_weneedaaccountwherethemasteraccountshouldnotcontainanynonadminuser_0",
+        "content": "We need a account where the master account should not contain any non-admin user.",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_logintobeconversive_1723792196963_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_logintobeconversive_1723792196963_0": {
+        "id": "fcn_logintobeconversive_1723792196963_0",
+        "content": "login to $beconversive",
+        "nodeType": "action",
+        "branches": [
+          "fcn_gotoaccountsettingsbeconversive_1723792203338_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_gotoaccountsettingsbeconversive_1723792203338_0": {
+        "id": "fcn_gotoaccountsettingsbeconversive_1723792203338_0",
+        "content": "go to account settings $beconversive",
+        "nodeType": "action",
+        "branches": [
+          "fcn_inviteuserfromusermanagement_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_inviteuserfromusermanagement_0": {
+        "id": "fcn_inviteuserfromusermanagement_0",
+        "content": "try invite user from user management",
+        "nodeType": "action",
+        "branches": [
+          "fcn_validatethepopup_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_validatethepopup_0": {
+        "id": "fcn_validatethepopup_0",
+        "content": "Validate the popup",
+        "nodeType": "state",
+        "branches": [],
+        "dataSetId": "-1"
+      },
+      "fcn_invitechildandvalidatethedropdownsandvalidatethechildaccount_0": {
+        "id": "fcn_invitechildandvalidatethedropdownsandvalidatethechildaccount_0",
+        "content": "invite child and validate the dropdowns, and validate the child account",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_logintobeconversive_1723793943836_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_logintobeconversive_1723793943836_0": {
+        "id": "fcn_logintobeconversive_1723793943836_0",
+        "content": "login to $beconversive",
+        "nodeType": "action",
+        "branches": [
+          "fcn_gotoaccountsettingsbeconversive_1723793949395_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_gotoaccountsettingsbeconversive_1723793949395_0": {
+        "id": "fcn_gotoaccountsettingsbeconversive_1723793949395_0",
+        "content": "go to account settings $beconversive",
+        "nodeType": "action",
+        "branches": [
+          "fcn_iscreateaccountbuttondissabled_1"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_iscreateaccountbuttondissabled_1": {
+        "id": "fcn_iscreateaccountbuttondissabled_1",
+        "content": "is create account button dissabled ?",
+        "nodeType": "dynamic-decision",
+        "branches": [
+          "fcn_createchildaccountcreatechild_1723794484150_0",
+          "fcn_logintoopsportallogin_1723794426869_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_logintoopsportallogin_1723794426869_0": {
+        "id": "fcn_logintoopsportallogin_1723794426869_0",
+        "content": "Login to $opsportallogin",
+        "nodeType": "action",
+        "branches": [
+          "fcn_searchtheaccountbeconversive_1723794426869_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_searchtheaccountbeconversive_1723794426869_0": {
+        "id": "fcn_searchtheaccountbeconversive_1723794426869_0",
+        "content": "search the account $beconversive",
+        "nodeType": "action",
+        "branches": [
+          "fcn_gotouserslicenses_1723794426869_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_gotouserslicenses_1723794426869_0": {
+        "id": "fcn_gotouserslicenses_1723794426869_0",
+        "content": "go to users licenses",
+        "nodeType": "action",
+        "branches": [
+          "fcn_allotchildorgcount_1723794426869_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_allotchildorgcount_1723794426869_0": {
+        "id": "fcn_allotchildorgcount_1723794426869_0",
+        "content": "Allot child org count",
+        "nodeType": "action",
+        "branches": [
+          "fcn_allotnonadminusers_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_createchildaccountcreatechild_1723794484150_0": {
+        "id": "fcn_createchildaccountcreatechild_1723794484150_0",
+        "content": "create child account $createchild",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checkthecreatedchildontablecreatechild_1723794521568_0",
+          "fcn_createachildandinviteusersfrommasterandcheckthechildininviteduser_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_checkthecreatedchildontablecreatechild_1723794521568_0": {
+        "id": "fcn_checkthecreatedchildontablecreatechild_1723794521568_0",
+        "content": "check the created child on table $createchild",
+        "nodeType": "action",
+        "branches": [
+          "fcn_refreshtheaccountsettingsprocess_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_gotousermanagement_0": {
+        "id": "fcn_gotousermanagement_0",
+        "content": "Go to User management $createchild",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checkthedropdownandchildrelatedvalidationscreatechild_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_refreshtheaccountsettingsprocess_0": {
+        "id": "fcn_refreshtheaccountsettingsprocess_0",
+        "content": "refresh the account settings process",
+        "nodeType": "action",
+        "branches": [
+          "fcn_gotousermanagement_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_checkthedropdownandchildrelatedvalidationscreatechild_0": {
+        "id": "fcn_checkthedropdownandchildrelatedvalidationscreatechild_0",
+        "content": "check the dropdown and child related validations $createchild",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logintogmailemaillogin_1723797086677_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_logintogmailemaillogin_1723797086677_0": {
+        "id": "fcn_logintogmailemaillogin_1723797086677_0",
+        "content": "Login to gmail $emaillogin",
+        "nodeType": "action",
+        "branches": [
+          "fcn_confirmaccountcreatechild_1723797086677_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_confirmaccountcreatechild_1723797086677_0": {
+        "id": "fcn_confirmaccountcreatechild_1723797086677_0",
+        "content": "confirm account $createchild",
+        "nodeType": "action",
+        "branches": [
+          "fcn_setpasswordcreatechild_1723797086677_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_setpasswordcreatechild_1723797086677_0": {
+        "id": "fcn_setpasswordcreatechild_1723797086677_0",
+        "content": "set password $createchild",
+        "nodeType": "action",
+        "branches": [
+          "fcn_gotoaccountsettingsbeconversive_1723797086677_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_gotoaccountsettingsbeconversive_1723797086677_0": {
+        "id": "fcn_gotoaccountsettingsbeconversive_1723797086677_0",
+        "content": "go to account settings $beconversive",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checkchildlicense_1723797086677_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_checkchildlicense_1723797086677_0": {
+        "id": "fcn_checkchildlicense_1723797086677_0",
+        "content": "check child license",
+        "nodeType": "action",
+        "branches": [
+          "fcn_gotousermanagementcreatechild_1723797121085_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_gotousermanagementcreatechild_1723797121085_0": {
+        "id": "fcn_gotousermanagementcreatechild_1723797121085_0",
+        "content": "Go to User management $createchild",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checkthedropdownofchildcreatechild_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_checkthedropdownofchildcreatechild_0": {
+        "id": "fcn_checkthedropdownofchildcreatechild_0",
+        "content": "check the dropdown of child $createchild",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logoutfromtheaccount_1723809786583_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_allotnonadminusers_0": {
+        "id": "fcn_allotnonadminusers_0",
+        "content": "allot non admin users",
+        "nodeType": "action",
+        "branches": [
+          "fcn_createchildaccountcreatechild_1723794484150_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_inviteusersfromchild_0": {
+        "id": "fcn_inviteusersfromchild_0",
+        "content": "invite users from child",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_logintobeconversive_1723809639790_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_logintobeconversive_1723809639790_0": {
+        "id": "fcn_logintobeconversive_1723809639790_0",
+        "content": "login to $beconversive",
+        "nodeType": "action",
+        "branches": [
+          "fcn_gotoaccountsettingsbeconversive_1723814740127_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_transfersomecreditstochildcreatechild_0": {
+        "id": "fcn_transfersomecreditstochildcreatechild_0",
+        "content": "transfer some credits to child $createchild",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logoutfromtheaccount_1723809821182_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_logoutfromtheaccount_1723809786583_0": {
+        "id": "fcn_logoutfromtheaccount_1723809786583_0",
+        "content": "logout from the account",
+        "nodeType": "action",
+        "branches": [
+          "fcn_inviteusersfromchild_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_logoutfromtheaccount_1723809821182_0": {
+        "id": "fcn_logoutfromtheaccount_1723809821182_0",
+        "content": "logout from the account",
+        "nodeType": "action",
+        "branches": [
+          "fcn_loginbacktochildcreatechild_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_loginbacktochildcreatechild_0": {
+        "id": "fcn_loginbacktochildcreatechild_0",
+        "content": "login back to child $createchild",
+        "nodeType": "action",
+        "branches": [
+          "fcn_gotoaccountsettingsbeconversive_1723809987190_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_gotoaccountsettingsbeconversive_1723809987190_0": {
+        "id": "fcn_gotoaccountsettingsbeconversive_1723809987190_0",
+        "content": "go to account settings $beconversive",
+        "nodeType": "action",
+        "branches": [
+          "fcn_gotousermanagementcreatechild_1723814089543_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_inviteuserfromusermanagementbeconversivesignup_1723810395156_0": {
+        "id": "fcn_inviteuserfromusermanagementbeconversivesignup_1723810395156_0",
+        "content": "invite user from user management $beconversivesignup",
+        "nodeType": "action",
+        "branches": [],
+        "dataSetId": "-1"
+      },
+      "fcn_createachildandinviteusersfrommasterandcheckthechildininviteduser_0": {
+        "id": "fcn_createachildandinviteusersfrommasterandcheckthechildininviteduser_0",
+        "content": "create a child and invite users from master and check the child in invited user",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_checkthecreatedchildontablecreatechild_1723810683294_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_checkthecreatedchildontablecreatechild_1723810683294_0": {
+        "id": "fcn_checkthecreatedchildontablecreatechild_1723810683294_0",
+        "content": "check the created child on table $createchild",
+        "nodeType": "action",
+        "branches": [
+          "fcn_gotousermanagementcreatechild_1723810702270_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_gotousermanagementcreatechild_1723810702270_0": {
+        "id": "fcn_gotousermanagementcreatechild_1723810702270_0",
+        "content": "Go to User management $createchild",
+        "nodeType": "action",
+        "branches": [
+          "fcn_inviteuserfromusermanagementbeconversivesignup_1723810706927_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_inviteuserfromusermanagementbeconversivesignup_1723810706927_0": {
+        "id": "fcn_inviteuserfromusermanagementbeconversivesignup_1723810706927_0",
+        "content": "invite user from user management $beconversivesignup",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logintogmailemaillogin_1723810732830_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_logintogmailemaillogin_1723810732830_0": {
+        "id": "fcn_logintogmailemaillogin_1723810732830_0",
+        "content": "Login to gmail $emaillogin",
+        "nodeType": "action",
+        "branches": [
+          "fcn_confirmtheinviteduserbeconversivesignup_1723810732830_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_confirmtheinviteduserbeconversivesignup_1723810732830_0": {
+        "id": "fcn_confirmtheinviteduserbeconversivesignup_1723810732830_0",
+        "content": "confirm the invited user $beconversivesignup",
+        "nodeType": "action",
+        "branches": [
+          "fcn_registerinviteuserbeconversivesignup_1723810732830_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_registerinviteuserbeconversivesignup_1723810732830_0": {
+        "id": "fcn_registerinviteuserbeconversivesignup_1723810732830_0",
+        "content": "register invite user $beconversivesignup",
+        "nodeType": "action",
+        "branches": [
+          "fcn_gotoaccountsettingsbeconversive_1723810741366_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_gotoaccountsettingsbeconversive_1723810741366_0": {
+        "id": "fcn_gotoaccountsettingsbeconversive_1723810741366_0",
+        "content": "go to account settings $beconversive",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checkfortheassociatedaccountsectioncreatechild_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_checkfortheassociatedaccountsectioncreatechild_0": {
+        "id": "fcn_checkfortheassociatedaccountsectioncreatechild_0",
+        "content": "check for the associated account section $createchild",
+        "nodeType": "state",
+        "branches": [
+          "fcn_resendinvitecreatechild_1723810816084_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_resendinvitecreatechild_1723810816084_0": {
+        "id": "fcn_resendinvitecreatechild_1723810816084_0",
+        "content": "Resend invite $createchild",
+        "nodeType": "action",
+        "branches": [],
+        "dataSetId": "-1"
+      },
+      "fcn_gotousermanagementcreatechild_1723814089543_0": {
+        "id": "fcn_gotousermanagementcreatechild_1723814089543_0",
+        "content": "Go to User management $createchild",
+        "nodeType": "action",
+        "branches": [
+          "fcn_inviteuserfromusermanagementbeconversivesignup_1723810395156_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_gotoaccountsettingsbeconversive_1723814740127_0": {
+        "id": "fcn_gotoaccountsettingsbeconversive_1723814740127_0",
+        "content": "go to account settings $beconversive",
+        "nodeType": "action",
+        "branches": [
+          "fcn_transfersomecreditstochildcreatechild_0"
+        ],
+        "dataSetId": "-1"
+      }
+    },
+    "positions": {
+      "fcn_start_0": {
+        "top": 149.88333129882812,
+        "left": 499.93333435058594
+      },
+      "fcn_associatedchildaccounts_0": {
+        "top": 268.73333740234375,
+        "left": 664.9333343505859
+      },
+      "fcn_prerequisiteforconvertingtocustomplan_0": {
+        "top": 311.3000030517578,
+        "left": 370.93333435058594
+      },
+      "fcn_logintobeconversive_1720525647959_0": {
+        "top": 390.71665954589844,
+        "left": 372.93333435058594
+      },
+      "fcn_gotoaccountsettingsbeconversive_1720525760631_0": {
+        "top": 454.95001220703125,
+        "left": 369.93333435058594
+      },
+      "fcn_logintoopsportallogin_1720525805024_0": {
+        "top": 520.1000061035156,
+        "left": 369.93333435058594
+      },
+      "fcn_searchtheaccountbeconversive_1720525843470_0": {
+        "top": 585.25,
+        "left": 369.93333435058594
+      },
+      "fcn_converttocustomplan_0": {
+        "top": 650.4000244140625,
+        "left": 369.93333435058594
+      },
+      "fcn_verifyit_0": {
+        "top": 717,
+        "left": 369.93333435058594
+      },
+      "fcn_addthechildcount_0": {
+        "top": 775.5999755859375,
+        "left": 369.93333435058594
+      },
+      "fcn_createchildaccounts_0": {
+        "top": 317.3000030517578,
+        "left": 980.933349609375
+      },
+      "fcn_logintobeconversive_1720527084863_0": {
+        "top": 373.8999938964844,
+        "left": 982.933349609375
+      },
+      "fcn_gotoaccountsettingsbeconversive_1720527090766_0": {
+        "top": 439.1333312988281,
+        "left": 982.933349609375
+      },
+      "fcn_calculateavailableusers_0": {
+        "top": 510.8999938964844,
+        "left": 982.933349609375
+      },
+      "fcn_createchildaccount_0": {
+        "top": 569.5,
+        "left": 982.933349609375
+      },
+      "fcn_checktheassociatedsection_0": {
+        "top": 632.2999877929688,
+        "left": 983.933349609375
+      },
+      "fcn_checkthecreatedchildontablecreatechild_0": {
+        "top": 692.6500244140625,
+        "left": 981.933349609375
+      },
+      "fcn_logintogmailemaillogin_1720537302470_0": {
+        "top": 780.4000244140625,
+        "left": 980.933349609375
+      },
+      "fcn_confirmaccount_0": {
+        "top": 853.5499877929688,
+        "left": 981.933349609375
+      },
+      "fcn_setpasswordcreatechild_0": {
+        "top": 927.7000122070312,
+        "left": 982.933349609375
+      },
+      "fcn_gotoaccountsettingsbeconversive_1720583320871_0": {
+        "top": 1001.8499755859375,
+        "left": 983.933349609375
+      },
+      "fcn_checkchildlicense_0": {
+        "top": 1073,
+        "left": 982.933349609375
+      },
+      "fcn_logoutfromtheaccount_1720583192578_0": {
+        "top": 1140.8499755859375,
+        "left": 984.933349609375
+      },
+      "fcn_checktheviewdetails_0": {
+        "top": 1206.449951171875,
+        "left": 986.933349609375
+      },
+      "fcn_logintobeconversive_1720583542312_0": {
+        "top": 1265.050048828125,
+        "left": 986.933349609375
+      },
+      "fcn_gotoaccountsettingsbeconversive_1720583597709_0": {
+        "top": 1335.199951171875,
+        "left": 985.933349609375
+      },
+      "fcn_clickviewdetails_0": {
+        "top": 1401.3499755859375,
+        "left": 986.933349609375
+      },
+      "fcn_checkthedetailscreatechild_0": {
+        "top": 1466.949951171875,
+        "left": 987.933349609375
+      },
+      "fcn_checkthechildonops_0": {
+        "top": 1208.0999755859375,
+        "left": 1309.933349609375
+      },
+      "fcn_logintoopsportallogin_1720584497846_0": {
+        "top": 1265.699951171875,
+        "left": 1329.933349609375
+      },
+      "fcn_searchtheaccountbeconversive_1720584507055_0": {
+        "top": 1327.8499755859375,
+        "left": 1332.933349609375
+      },
+      "fcn_gotouserslicenses_0": {
+        "top": 1383,
+        "left": 1333.933349609375
+      },
+      "fcn_openchildaccountsandgotoachildaccount_0": {
+        "top": 1436.5999755859375,
+        "left": 1333.933349609375
+      },
+      "fcn_checkthelabelandmessages_0": {
+        "top": 1507.3499755859375,
+        "left": 1335.933349609375
+      },
+      "fcn_resendinviteflowforpendingaccounts_0": {
+        "top": 321.3000030517578,
+        "left": 1338.933349609375
+      },
+      "fcn_resendinvitecreatechild_0": {
+        "top": 375.28334045410156,
+        "left": 1360.933349609375
+      },
+      "fcn_logintogmailemaillogin_1722427270342_0": {
+        "top": 436.3833312988281,
+        "left": 1360.933349609375
+      },
+      "fcn_confirmaccountforresentinvitecreatechild_0": {
+        "top": 503.54998779296875,
+        "left": 1359.933349609375
+      },
+      "fcn_setpasswordcreatechild_1722427287046_0": {
+        "top": 586.7000122070312,
+        "left": 1357.933349609375
+      },
+      "fcn_gotoaccountsettingsbeconversive_1722427292366_0": {
+        "top": 652.8499755859375,
+        "left": 1359.933349609375
+      },
+      "fcn_checkchildlicense_1722427295750_0": {
+        "top": 721,
+        "left": 1359.933349609375
+      },
+      "fcn_logoutfromtheaccount_1722427300198_0": {
+        "top": 783.5999755859375,
+        "left": 1357.933349609375
+      },
+      "fcn_checkthependingstatusandresendbuttonisnottherefortheaccount_0": {
+        "top": 819.2000122070312,
+        "left": 1637.9833984375
+      },
+      "fcn_logintobeconversive_1722586229650_0": {
+        "top": 891.4000244140625,
+        "left": 1637.9833984375
+      },
+      "fcn_gotoaccountsettingsbeconversive_1722586233402_0": {
+        "top": 956.5499877929688,
+        "left": 1637.9833984375
+      },
+      "fcn_checktheaccountnamedoesnothavepending_0": {
+        "top": 1022.7000122070312,
+        "left": 1638.9833984375
+      },
+      "fcn_checktheresendoptionisnotvisible_0": {
+        "top": 1093.9000244140625,
+        "left": 1639.9833984375
+      },
+      "fcn_checkthelimitationofresendoption_0": {
+        "top": 826.5,
+        "left": 1933.9833984375
+      },
+      "fcn_iscreateaccountbuttondissabled_1722593209263_0": {
+        "top": 872.5999755859375,
+        "left": 2281.9833984375
+      },
+      "fcn_createchildaccountagaincreatechild_0": {
+        "top": 899.5999755859375,
+        "left": 1985.9833984375
+      },
+      "fcn_checkthesecondchildcreatechild_0": {
+        "top": 976.75,
+        "left": 1985.9833984375
+      },
+      "fcn_reseninvitemultipletimescreatechild_0": {
+        "top": 1040.6500244140625,
+        "left": 1987.9833984375
+      },
+      "fcn_logintoopsportallogin_1722593209263_0": {
+        "top": 922.5999755859375,
+        "left": 2282.9833984375
+      },
+      "fcn_searchtheaccountbeconversive_1722593209263_0": {
+        "top": 978.7333374023438,
+        "left": 2284.9833984375
+      },
+      "fcn_gotouserslicenses_1722593209263_0": {
+        "top": 1034.9000244140625,
+        "left": 2286.9833984375
+      },
+      "fcn_allotchildorgcount_1722593209263_0": {
+        "top": 1084.4833374023438,
+        "left": 2288.9833984375
+      },
+      "fcn_iscreateaccountbuttondissabled_0": {
+        "top": 512.5,
+        "left": 671.9333343505859
+      },
+      "fcn_logintoopsportallogin_1722587696827_0": {
+        "top": 579.5,
+        "left": 674.9333343505859
+      },
+      "fcn_searchtheaccountbeconversive_1722587696827_0": {
+        "top": 647.6333312988281,
+        "left": 676.9333343505859
+      },
+      "fcn_gotouserslicenses_1722587696827_0": {
+        "top": 712.7999877929688,
+        "left": 675.9333343505859
+      },
+      "fcn_allotchildorgcount_1722587696827_0": {
+        "top": 777.38330078125,
+        "left": 673.9333343505859
+      },
+      "fcn_verifythecreateaccountbuttonisdisabling_0": {
+        "top": 300.3000030517578,
+        "left": 2215.9833984375
+      },
+      "fcn_logintobeconversive_1720619171009_0": {
+        "top": 386.53334045410156,
+        "left": 2215.9833984375
+      },
+      "fcn_gotoaccountsettingsbeconversive_1720619175230_0": {
+        "top": 457.75,
+        "left": 2219.9833984375
+      },
+      "fcn_createchilduntilthebuttondisablescreatechild_0": {
+        "top": 531.8999938964844,
+        "left": 2217.9833984375
+      },
+      "fcn_verifytheusercountverifythetablewillnotcomeiftheplanischanged_0": {
+        "top": 303.68333435058594,
+        "left": 2538
+      },
+      "fcn_gotoaccountsettingsbeconversive_1722505797838_0": {
+        "top": 377.8666687011719,
+        "left": 2611
+      },
+      "fcn_taketheusercount_0": {
+        "top": 446.08331298828125,
+        "left": 2609
+      },
+      "fcn_transfersomeusersandrevokeitback_0": {
+        "top": 509.70001220703125,
+        "left": 2610
+      },
+      "fcn_takeuserfromtheusermanagement_0": {
+        "top": 569.7000122070312,
+        "left": 2610
+      },
+      "fcn_logintoopsportallogin_1722505942150_0": {
+        "top": 627.7000122070312,
+        "left": 2611
+      },
+      "fcn_searchtheaccountbeconversive_1722505949109_0": {
+        "top": 693.8499755859375,
+        "left": 2613
+      },
+      "fcn_gotouserslicenses_1722505958398_0": {
+        "top": 762,
+        "left": 2613
+      },
+      "fcn_validatetheusercount_0": {
+        "top": 821.5999755859375,
+        "left": 2614
+      },
+      "fcn_changetheplanandcheckthetable_0": {
+        "top": 379.1166687011719,
+        "left": 2928
+      },
+      "fcn_changetheplantonormal_0": {
+        "top": 434.79998779296875,
+        "left": 2974
+      },
+      "fcn_checkthetableonconversive_0": {
+        "top": 492.3833312988281,
+        "left": 2976
+      },
+      "fcn_checktheassociateaccounttableonconversive_0": {
+        "top": 547,
+        "left": 2977
+      },
+      "fcn_enhancementinmasterandchildaccounts_0": {
+        "top": 288.3000030517578,
+        "left": 3420
+      },
+      "fcn_weneedaaccountwherethemasteraccountshouldnotcontainanynonadminuser_0": {
+        "top": 353.53334045410156,
+        "left": 3422
+      },
+      "fcn_logintobeconversive_1723792196963_0": {
+        "top": 432.33331298828125,
+        "left": 3424
+      },
+      "fcn_gotoaccountsettingsbeconversive_1723792203338_0": {
+        "top": 489.48333740234375,
+        "left": 3425
+      },
+      "fcn_inviteuserfromusermanagement_0": {
+        "top": 548.6333312988281,
+        "left": 3425
+      },
+      "fcn_validatethepopup_0": {
+        "top": 602.2333374023438,
+        "left": 3426
+      },
+      "fcn_invitechildandvalidatethedropdownsandvalidatethechildaccount_0": {
+        "top": 355.53334045410156,
+        "left": 3734
+      },
+      "fcn_logintobeconversive_1723793943836_0": {
+        "top": 427.73333740234375,
+        "left": 3734
+      },
+      "fcn_gotoaccountsettingsbeconversive_1723793949395_0": {
+        "top": 492.8833312988281,
+        "left": 3734
+      },
+      "fcn_iscreateaccountbuttondissabled_1": {
+        "top": 556.0333251953125,
+        "left": 3734
+      },
+      "fcn_createchildaccountcreatechild_1723794484150_0": {
+        "top": 611.6333312988281,
+        "left": 4029
+      },
+      "fcn_checkthecreatedchildontablecreatechild_1723794521568_0": {
+        "top": 679.7833251953125,
+        "left": 4030
+      },
+      "fcn_refreshtheaccountsettingsprocess_0": {
+        "top": 760.5333251953125,
+        "left": 4032
+      },
+      "fcn_gotousermanagement_0": {
+        "top": 818.5333251953125,
+        "left": 4029
+      },
+      "fcn_checkthedropdownandchildrelatedvalidationscreatechild_0": {
+        "top": 883.683349609375,
+        "left": 4029
+      },
+      "fcn_logintogmailemaillogin_1723797086677_0": {
+        "top": 962.433349609375,
+        "left": 4029
+      },
+      "fcn_confirmaccountcreatechild_1723797086677_0": {
+        "top": 1035.5833129882812,
+        "left": 4030
+      },
+      "fcn_setpasswordcreatechild_1723797086677_0": {
+        "top": 1110.7333374023438,
+        "left": 4031
+      },
+      "fcn_gotoaccountsettingsbeconversive_1723797086677_0": {
+        "top": 1183.88330078125,
+        "left": 4031
+      },
+      "fcn_checkchildlicense_1723797086677_0": {
+        "top": 1255.0333251953125,
+        "left": 4031
+      },
+      "fcn_gotousermanagementcreatechild_1723797121085_0": {
+        "top": 1313.63330078125,
+        "left": 4031
+      },
+      "fcn_checkthedropdownofchildcreatechild_0": {
+        "top": 1377.7833251953125,
+        "left": 4031
+      },
+      "fcn_logoutfromtheaccount_1723809786583_0": {
+        "top": 1455.5333251953125,
+        "left": 4033
+      },
+      "fcn_inviteusersfromchild_0": {
+        "top": 652.5333251953125,
+        "left": 4353
+      },
+      "fcn_logintobeconversive_1723809639790_0": {
+        "top": 712.13330078125,
+        "left": 4396
+      },
+      "fcn_gotoaccountsettingsbeconversive_1723814740127_0": {
+        "top": 775.2833251953125,
+        "left": 4401
+      },
+      "fcn_transfersomecreditstochildcreatechild_0": {
+        "top": 840.2833251953125,
+        "left": 4401
+      },
+      "fcn_logoutfromtheaccount_1723809821182_0": {
+        "top": 913.0333251953125,
+        "left": 4398
+      },
+      "fcn_loginbacktochildcreatechild_0": {
+        "top": 969.63330078125,
+        "left": 4399
+      },
+      "fcn_gotoaccountsettingsbeconversive_1723809987190_0": {
+        "top": 1042.7833251953125,
+        "left": 4402
+      },
+      "fcn_gotousermanagementcreatechild_1723814089543_0": {
+        "top": 1115.933349609375,
+        "left": 4402
+      },
+      "fcn_inviteuserfromusermanagementbeconversivesignup_1723810395156_0": {
+        "top": 1193.933349609375,
+        "left": 4402
+      },
+      "fcn_createachildandinviteusersfrommasterandcheckthechildininviteduser_0": {
+        "top": 645.7833251953125,
+        "left": 4771
+      },
+      "fcn_checkthecreatedchildontablecreatechild_1723810683294_0": {
+        "top": 717.9833374023438,
+        "left": 4771
+      },
+      "fcn_gotousermanagementcreatechild_1723810702270_0": {
+        "top": 796.7333374023438,
+        "left": 4771
+      },
+      "fcn_inviteuserfromusermanagementbeconversivesignup_1723810706927_0": {
+        "top": 861.88330078125,
+        "left": 4771
+      },
+      "fcn_logintogmailemaillogin_1723810732830_0": {
+        "top": 940.63330078125,
+        "left": 4771
+      },
+      "fcn_confirmtheinviteduserbeconversivesignup_1723810732830_0": {
+        "top": 994.5333251953125,
+        "left": 4768.93310546875
+      },
+      "fcn_registerinviteuserbeconversivesignup_1723810732830_0": {
+        "top": 1071.2833251953125,
+        "left": 4768.93310546875
+      },
+      "fcn_gotoaccountsettingsbeconversive_1723810741366_0": {
+        "top": 1150.0333251953125,
+        "left": 4768.93310546875
+      },
+      "fcn_checkfortheassociatedaccountsectioncreatechild_0": {
+        "top": 1215.183349609375,
+        "left": 4768.93310546875
+      },
+      "fcn_resendinvitecreatechild_1723810816084_0": {
+        "top": 1293.933349609375,
+        "left": 4768.93310546875
+      },
+      "fcn_logintoopsportallogin_1723794426869_0": {
+        "top": 612.6333312988281,
+        "left": 3735
+      },
+      "fcn_searchtheaccountbeconversive_1723794426869_0": {
+        "top": 676.7833251953125,
+        "left": 3736
+      },
+      "fcn_gotouserslicenses_1723794426869_0": {
+        "top": 738.933349609375,
+        "left": 3736
+      },
+      "fcn_allotchildorgcount_1723794426869_0": {
+        "top": 792.5333251953125,
+        "left": 3737
+      },
+      "fcn_allotnonadminusers_0": {
+        "top": 849.63330078125,
+        "left": 3736
+      }
+    },
+    "settings": {
+      "maxProceedDepth": 100,
+      "maxProceedsForFirstDepth": 1,
+      "maxProceedsPerDepth": 1,
+      "maxPathRepititionsPerComboPath": 1,
+      "maxProceedsPerPath": 10000,
+      "maxToggles": 2,
+      "maxMatchingPaths": 3
+    },
+    "isPrimary": false,
+    "pathNames": [],
+    "flowChartUID": "fcUID_1720525775348",
+    "pathExecutionOrder": []
+  },
+  "enabled": true,
+  "parentId": ""
+}

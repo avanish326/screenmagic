@@ -1,0 +1,78 @@
+{
+  "modifiedOn": "2024-10-01T10:41:49.754785Z",
+  "name": "Verify Added SenderID in Provision",
+  "id": "0",
+  "type": 3,
+  "createdOn": "2024-10-01T10:41:49.754768Z",
+  "content": {
+    "title": "Verify Added SenderID in Provision",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "stepParameters": [
+          {
+            "customValue": "_div(\"menu-item menu-item-dark menu-item-hoverable mb-2[7]\")",
+            "paramMode": "code"
+          },
+          {
+            "customValue": "",
+            "paramMode": "default"
+          }
+        ],
+        "action": "_click",
+        "stepCategory": "inbuilt",
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "stepParameters": [
+          {
+            "customValue": "_span(\"Sender IDs\")",
+            "paramMode": "code"
+          },
+          {
+            "customValue": "",
+            "paramMode": "default"
+          }
+        ],
+        "action": "_click",
+        "stepCategory": "inbuilt",
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "stepParameters": [
+          {
+            "customValue": "_cell(\"11234579999\")",
+            "paramMode": "code"
+          }
+        ],
+        "action": "_getText",
+        "stepCategory": "inbuilt",
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "customValue": "11234579999",
+          "paramMode": "string"
+        }
+      },
+      {
+        "commented": false,
+        "action": "_exists",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_cell()"
+          }
+        ],
+        "stepType": "Assert",
+        "stepCategory": "inbuilt",
+        "assertType": "Is_True"
+      }
+    ],
+    "isSystemKeyword": false
+  },
+  "enabled": false,
+  "parentId": ""
+}

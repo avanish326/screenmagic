@@ -1,0 +1,61 @@
+{
+  "modifiedOn": "2024-07-19T05:10:35.413Z",
+  "name": "Select CTA from Would you like to meet with an advisor to talk $studentinquiry",
+  "id": "58447",
+  "type": 3,
+  "createdOn": "2024-07-19T05:02:56.748Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Select CTA from Would you like to meet with an advisor to talk $studentinquiry",
+    "parameters": [
+      {
+        "parameterId": "studentinquiry_",
+        "entityTypeId": "studentinquiry",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_submit($studentinquiry.ctaMeetWithAdvisor)"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "1500"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div($studentinquiry.ctaMeetWithAdvisor)"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "parameterId": "studentinquiry_",
+          "attributeId": "attr_11721365502036"
+        },
+        "visibleCheck": false
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

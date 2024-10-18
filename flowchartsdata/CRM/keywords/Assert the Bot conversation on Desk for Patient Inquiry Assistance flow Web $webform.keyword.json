@@ -1,0 +1,110 @@
+{
+  "modifiedOn": "2024-02-09T15:53:02.140Z",
+  "name": "Assert the Bot conversation on Desk for Patient Inquiry Assistance flow Web $webform",
+  "id": "29255",
+  "type": 3,
+  "createdOn": "2024-02-09T15:53:02.140Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Assert the Bot conversation on Desk for Patient Inquiry Assistance flow Web $webform",
+    "parameters": [
+      {
+        "parameterId": "webform_",
+        "entityTypeId": "webform",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_selectBrowser",
+        "stepParameters": [],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "5000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"/Bot Conversations/\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"mail-content\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "\nvar $fName\u003d$webform.firstNameWebForm;\nvar $lName\u003d$webform.lastNameWebForm;\n\nvar $countryCodeVar1\u003d$webform.countryCode;\nvar $countryCodeVar\u003d$countryCodeVar1.split(\"+\")[1].trim()\n_log($countryCodeVar);\nvar $phoneNumberNew\u003d$webform.phoneWebForm1;\n\nvar $phoneNumberVar\u003d$countryCodeVar+$phoneNumberNew;\n\n\nvar $heading\u003d$fName+\" \"+$lName+\" \"+\"(\"+$phoneNumberVar+\")\";\n\n_log($heading)\n\n\n\n"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_heading1(\"\"+$heading+\"\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$heading"
+        }
+      },
+      {
+        "commented": false,
+        "action": "_isVisible",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(\"Chatbot is active for this conversation. Click here to disable the Bot and take over the conversation\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Is_True"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"Hello! Welcome to \u003cMedical facility name\u003e. My name is \u003cinsert appropriate name for appointment scheduling.\u003e. If this is an emergency, please call 911.\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"Hello! Welcome to \u003cMedical facility name\u003e. My name is \u003cinsert appropriate name for appointment scheduling.\u003e. If this is an emergency, please call 911.\""
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

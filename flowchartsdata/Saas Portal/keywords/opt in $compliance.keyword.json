@@ -1,0 +1,238 @@
+{
+  "modifiedOn": "2024-09-27T07:30:07.435768534Z",
+  "name": "opt in $compliance",
+  "id": "-1",
+  "type": 3,
+  "createdOn": "2024-09-27T07:11:18Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "opt in $compliance",
+    "parameters": [
+      {
+        "parameterId": "compliance_",
+        "entityTypeId": "compliance",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_heading4(\"Opt-In Form on Website\")"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "paramMode": "code",
+          "customValue": "\"Opt-In Form on Website\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_span(0, _near(_heading4(\"Opt-In Form on Website\")))"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "paramMode": "code",
+          "customValue": "\"Regulations require a consent checkbox below the cellphone/mobile number field if the phone number is collected on the website.\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_div(4, _near(_heading4(\"Opt-In Form on Website\")))"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "paramMode": "code",
+          "customValue": "\"Note:The checkbox should not be pre-checked.The checkbox should be non-mandatory (optional).\""
+        }
+      },
+      {
+        "commented": true,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_paragraph(1, _near(_heading4(\"Opt-In Form on Website\")))"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "paramMode": "code",
+          "customValue": "\"Consent Statement: “By checking this box you are agreeing to receive recurring messages from {Brand Name} related to your request for information. Message and data rates may apply. Carriers are not liable for delayed or undelivered messages. Text HELP for help and STOP to unsubscribe. Privacy Policy {Link}.”\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "visibleCheck": false,
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_textbox(\"Consent Form Page URL\")"
+          },
+          {
+            "parameterId": "compliance_",
+            "attributeId": "attr_01727421830616"
+          }
+        ],
+        "stepType": "Action",
+        "stepCategory": "inbuilt"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_label(\"Consent Form Page URL\")"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "var $el \u003d _span(\"Upload Image\");\nvar $fileEl\u003d_file(0,_near($el));\nvar $path \u003d _userDataPath($compliance.images);"
+      },
+      {
+        "commented": false,
+        "action": "_setFile3",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "$fileEl"
+          },
+          {
+            "paramMode": "code",
+            "customValue": "$path"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "1000"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_button(0, _near(_span(\"Consent Form Image\")))"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "var $el \u003d _span(\"Upload Image\");\nvar $fileEl\u003d_file(0,_near($el));\nvar $path \u003d _userDataPath($compliance.images);"
+      },
+      {
+        "commented": false,
+        "action": "_setFile3",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "$fileEl"
+          },
+          {
+            "paramMode": "code",
+            "customValue": "$path"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "1000"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_label(3, _near(_heading4(\"Opt-In Form on Website\")))"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "paramMode": "code",
+          "customValue": "\"I declare that we obtain user consent before sending any marketing, promotional, update texts, mails, etc.\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "3000"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_check",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_checkbox(\"optin\")"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

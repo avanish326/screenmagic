@@ -1,0 +1,123 @@
+{
+  "modifiedOn": "2024-07-19T06:33:09.378Z",
+  "name": "Navigate to Desk",
+  "id": "58407",
+  "type": 3,
+  "createdOn": "2024-07-18T05:25:47.604Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Navigate to Desk",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_mouseOver",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(8)"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(8)"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "5000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"Inbox\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"Inbox\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(9)"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Contains",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$agent1"
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(10)"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Contains",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$agent2"
+        }
+      },
+      {
+        "commented": true,
+        "isRawScript": true,
+        "rawScript": "var $elementText \u003d _getText(_div(\"pagination\"));\nvar $totalCount \u003d _extract($elementText, /of (\\d+)/, true);\n_log($totalCount)\nvar $newCount \u003d (parseInt($totalCount) - 1).toString();\n_log($newCount)"
+      },
+      {
+        "commented": true,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"pagination\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"\\\"Showing 1 to 13 of \\\"+$newCount\""
+        }
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "var $consumed \u003d _getText(_div(\"pagination\"));\nvar $totalMessages\u003d _extract($consumed, \"/of (.*)/\",true);// give correct pattern to extract the number\nvar $count \u003d (parseInt($totalMessages)).toString();\n_log($count);\n$totalCount\u003d(parseInt($totalMessages)-1).toString();\n_log($totalCount);"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

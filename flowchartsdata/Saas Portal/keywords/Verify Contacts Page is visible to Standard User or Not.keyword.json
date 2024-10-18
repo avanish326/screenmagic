@@ -1,0 +1,87 @@
+{
+  "modifiedOn": "2024-03-15T09:52:07.947Z",
+  "name": "Verify Contacts Page is visible to Standard User or Not",
+  "id": "44650",
+  "type": 3,
+  "createdOn": "2024-03-15T08:29:08.679Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Verify Contacts Page is visible to Standard User or Not",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "//Refresh the Page\n_call(window.location.reload())"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "if($Contacts\u003d\u003dtrue)\n{"
+      },
+      {
+        "commented": false,
+        "action": "_isVisible",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"Contacts\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Is_True"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"Contacts\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_submit(\"add New Contact\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"add New Contact\""
+        }
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "}\nelse\n{"
+      },
+      {
+        "commented": false,
+        "action": "_isVisible",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"Contacts\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Is_False"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "}"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

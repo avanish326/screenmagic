@@ -1,0 +1,272 @@
+{
+  "modifiedOn": "2024-01-12T12:25:31.230Z",
+  "name": "disable stop keyword and send incoming $sms $consent",
+  "id": "15018",
+  "type": 3,
+  "createdOn": "2023-09-27T07:22:23.026Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "disable stop keyword and send incoming $sms $consent",
+    "parameters": [
+      {
+        "parameterId": "sms_",
+        "entityTypeId": "sms",
+        "suffix": ""
+      },
+      {
+        "parameterId": "consent_",
+        "entityTypeId": "consent",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"Keyword Management\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"flipswitch-inner\", _near(_cell(\"STOP\")))"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "POST"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "https://qa-api.txtbox.in/v1/sms/incoming/aerial"
+          }
+        ],
+        "stepType": "REST",
+        "isRawScript": true,
+        "rawScript": "var $request_cMzrw1DXLt \u003d new RESTRequest();\r\n$request_cMzrw1DXLt.setURL(\"https://qa-api.txtbox.in/v1/sms/incoming/aerial\");\r\n$request_cMzrw1DXLt.setHeader(\"Content-Type\", \"multipart/form-data; boundary\u003d\u003ccalculated when request is sent\u003e\");\r\n$request_cMzrw1DXLt.setHeader(\"Content-Length\", \"\u003ccalculated when request is sent\u003e\");\r\n$request_cMzrw1DXLt.setHeader(\"Host\", \"\u003ccalculated when request is sent\u003e\");\r\n$request_cMzrw1DXLt.setHeader(\"Accept-Encoding\", \"gzip, deflate, br\");\r\n$request_cMzrw1DXLt.setHeader(\"Accept\", \"*/*\");\r\n$request_cMzrw1DXLt.setHeader(\"Connection\", \"keep-alive\");\r\n$request.addToBody(\"source\", \"$sms.stopDisabled\");\r\n$request.addToBody(\"messageText\", \"STOP\");\r\n$request.addToBody(\"destination\", \"$destination\");\r\n$request.addToBody(\"connectionGUID\", \"462986487956479182478917\");\r\n$request.addToBody(\"transactionGUID\", \"637584218451945954924596\");\r\nvar $response_cMzrw1DXLt \u003d $request_cMzrw1DXLt.submit(\"POST\");\r\nvar $responseBody \u003d $response_cMzrw1DXLt.getBodyAsString();\r\nvar responseBody \u003d JSON.parse($response_cMzrw1DXLt.getBodyAsString());\r\n\tvar $responseBodyObj_cMzrw1DXLt \u003d JSON.parse($response_cMzrw1DXLt.getBodyAsString());\r\n\r\n\t//assertions\r\n\r\n",
+        "state": {
+          "contentType": "json",
+          "request": {
+            "method": "POST",
+            "url": "https://qa-api.txtbox.in/v1/sms/incoming/aerial",
+            "parameters": {},
+            "headers": {
+              "Content-Type": "multipart/form-data; boundary\u003d\u003ccalculated when request is sent\u003e",
+              "Content-Length": "\u003ccalculated when request is sent\u003e",
+              "Host": "\u003ccalculated when request is sent\u003e",
+              "Accept-Encoding": "gzip, deflate, br",
+              "Accept": "*/*",
+              "Connection": "keep-alive"
+            },
+            "authType": "none",
+            "body": "source\u003d$sms.stopDisabled\u0026messageText\u003dSTOP\u0026destination\u003d$destination\u0026connectionGUID\u003d462986487956479182478917\u0026transactionGUID\u003d637584218451945954924596",
+            "bodyParams": {
+              "source": "$sms.stopDisabled",
+              "messageText": "STOP",
+              "destination": "$destination",
+              "connectionGUID": "462986487956479182478917",
+              "transactionGUID": "637584218451945954924596"
+            },
+            "isParametrizedBody": true,
+            "resetCookies": false
+          },
+          "assertions": {
+            "status": [],
+            "header": [],
+            "body": []
+          },
+          "variables": {
+            "status": [],
+            "header": [],
+            "body": []
+          },
+          "authInfo": {}
+        }
+      },
+      {
+        "commented": true,
+        "isRawScript": true,
+        "rawScript": "var $GUID\u003dMath.random();\n\n$request \u003d new RESTRequest();\n$request.setURL(\"https://api.txtbox.in/v1/sms/incoming/aerial\");\n$request.setHeader(\"Content-Type\", \"multipart/form-data; boundary\u003d\u003ccalculated when request is sent\u003e\");\n$request.setHeader(\"Content-Length\", \"\u003ccalculated when request is sent\u003e\");\n$request.setHeader(\"Host\", \"\u003ccalculated when request is sent\u003e\");\n$request.setHeader(\"User-Agent\", \"PostmanRuntime/7.32.3\");\n$request.setHeader(\"Accept\", \"*/*\");\n$request.setHeader(\"Accept-Encoding\", \"gzip, deflate, br\");\n$request.setHeader(\"Connection\", \"keep-alive\");\n$request.addToBody(\"source\", $sms.stopDisabled);\n$request.addToBody(\"messageText\", \"STOP\");\n$request.addToBody(\"destination\", $destination);\n$request.addToBody(\"connectionGUID\", $GUID);\n$request.addToBody(\"transactionGUID\", $GUID);\n$response \u003d $request.submit(\"POST\");\nvar $responseBody \u003d $response.getBodyAsString();"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"Campaign\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"Message History\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_containsText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_cell(8)"
+          },
+          {
+            "parameterId": "sms_",
+            "attributeId": "attr_91695799613617"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Is_False",
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_containsText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"sms-text\")"
+          },
+          {
+            "parameterId": "consent_",
+            "attributeId": "attr_01695728438252"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Is_False",
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"Incoming Messages (26)\")"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": ""
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_cell(8)"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "parameterId": "sms_",
+          "attributeId": "attr_91695799613617"
+        },
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"Settings\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"SMS Services\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"Consent Management\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_textbox(\"form-control ng-untouched ng-dirty ng-invalid\")"
+          },
+          {
+            "parameterId": "sms_",
+            "attributeId": "attr_81695728215317"
+          }
+        ],
+        "stepType": "Action",
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_italic(\"fa fa-search\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_containsText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_cell(\"color-red\")"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "\"Opted-Out\""
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Is_False"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

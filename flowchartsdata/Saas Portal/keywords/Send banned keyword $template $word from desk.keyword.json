@@ -1,0 +1,156 @@
+{
+  "modifiedOn": "2024-09-02T08:05:05.302Z",
+  "name": "Send banned keyword $template $word from desk",
+  "id": "59004",
+  "type": 3,
+  "createdOn": "2024-09-02T07:59:47.033Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Send banned keyword $template $word from desk",
+    "parameters": [
+      {
+        "parameterId": "template_",
+        "entityTypeId": "template",
+        "suffix": ""
+      },
+      {
+        "parameterId": "word_",
+        "entityTypeId": "word",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_submit(\"add New Message\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_button(\"ISD\")"
+          },
+          {}
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_button(\"India(91)\")"
+          },
+          {}
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_textbox(\"form-control\", _near(_label(\"Phone Number\")))"
+          },
+          {
+            "parameterId": "word_",
+            "attributeId": "attr_11725260454330"
+          },
+          {}
+        ],
+        "stepType": "Action",
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_button(\"\"+$senderID+\" (SMS)\")"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "\"\""
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"add-contact-form modal-body-sm\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"descriptionNo Data Available[1]\")"
+          },
+          {}
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_textbox(4)"
+          },
+          {
+            "parameterId": "template_",
+            "attributeId": "attr_01695902827118"
+          }
+        ],
+        "stepType": "Action",
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"icon-temp\")"
+          },
+          {}
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_submit(\"Send\")"
+          }
+        ],
+        "stepType": "Action"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

@@ -1,0 +1,371 @@
+{
+  "name": "Contact",
+  "id": "-1",
+  "type": 0,
+  "content": {
+    "nodesMap": {
+      "fcn_start_0": {
+        "id": "fcn_start_0",
+        "content": "Start",
+        "nodeType": "start",
+        "branches": [
+          "fcn_contactmoduleflows_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_contactmoduleflows_0": {
+        "id": "fcn_contactmoduleflows_0",
+        "content": "Contact Module Flows",
+        "nodeType": "pathlabel",
+        "branches": [
+          "fcn_logintosaasportal_1705907986764_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_logintosaasportal_1705907986764_0": {
+        "id": "fcn_logintosaasportal_1705907986764_0",
+        "content": "login to $saasportal",
+        "nodeType": "action",
+        "branches": [
+          "fcn_contactmanager_1705908005052_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_contactmanager_1705908005052_0": {
+        "id": "fcn_contactmanager_1705908005052_0",
+        "content": "Contact Manager",
+        "nodeType": "action",
+        "branches": [
+          "fcn_addcontact_0",
+          "fcn_editnewcontact_1705908022545_0",
+          "fcn_deletecontact_1705908052650_0",
+          "fcn_importcsvnewcontact_1705908058844_0",
+          "fcn_creategroup_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_createnewcontact_1705908010562_0": {
+        "id": "fcn_createnewcontact_1705908010562_0",
+        "content": "Create $newcontact",
+        "nodeType": "action",
+        "branches": [
+          "fcn_createnewcontact_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_editnewcontact_1705908022545_0": {
+        "id": "fcn_editnewcontact_1705908022545_0",
+        "content": "Edit $newcontact",
+        "nodeType": "action",
+        "branches": [],
+        "dataSetId": "-1"
+      },
+      "fcn_deletecontact_1705908052650_0": {
+        "id": "fcn_deletecontact_1705908052650_0",
+        "content": "Delete Contact",
+        "nodeType": "action",
+        "branches": [
+          "fcn_verifythedeletedcontactnotshowing_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_importcsvnewcontact_1705908058844_0": {
+        "id": "fcn_importcsvnewcontact_1705908058844_0",
+        "content": "Import CSV $newcontact",
+        "nodeType": "action",
+        "branches": [],
+        "dataSetId": "-1"
+      },
+      "fcn_createnewcontact_0": {
+        "id": "fcn_createnewcontact_0",
+        "content": "Create second contact $newcontact",
+        "nodeType": "action",
+        "branches": [
+          "fcn_createnewcontact_1706856802330_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_createnewcontact_1706856802330_0": {
+        "id": "fcn_createnewcontact_1706856802330_0",
+        "content": "Create third contact $newcontact",
+        "nodeType": "action",
+        "branches": [],
+        "dataSetId": "-1"
+      },
+      "fcn_creategroupnewcontact_0": {
+        "id": "fcn_creategroupnewcontact_0",
+        "content": "Create group $newcontact",
+        "nodeType": "action",
+        "branches": [
+          "fcn_savegroup_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_savegroup_0": {
+        "id": "fcn_savegroup_0",
+        "content": "save group",
+        "nodeType": "action",
+        "branches": [
+          "fcn_addcontacttocreategroup_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_addcontact_0": {
+        "id": "fcn_addcontact_0",
+        "content": "Add contact",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_createnewcontact_1705908010562_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_creategroup_0": {
+        "id": "fcn_creategroup_0",
+        "content": "Create Group",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_creategroupnewcontact_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_addcontacttocreategroup_0": {
+        "id": "fcn_addcontacttocreategroup_0",
+        "content": "Add Contact to create group",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_getthecontactnames_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_selectcontactincontactspage_0": {
+        "id": "fcn_selectcontactincontactspage_0",
+        "content": "Select Contact in Contacts Page",
+        "nodeType": "action",
+        "branches": [
+          "fcn_clickonaddtogroupandselectthegroupnameandapplynewcontact_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_getthecontactnames_0": {
+        "id": "fcn_getthecontactnames_0",
+        "content": "Get the Contact Names",
+        "nodeType": "action",
+        "branches": [
+          "fcn_selectcontactincontactspage_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_clickonaddtogroupandselectthegroupnameandapplynewcontact_0": {
+        "id": "fcn_clickonaddtogroupandselectthegroupnameandapplynewcontact_0",
+        "content": "Click on Add to group and select the group name and apply $newcontact",
+        "nodeType": "action",
+        "branches": [
+          "fcn_verifythegroupnameaddedagaintsthecontactnewgroup_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_verifythegroupnameaddedagaintsthecontactnewgroup_0": {
+        "id": "fcn_verifythegroupnameaddedagaintsthecontactnewgroup_0",
+        "content": "Verify the group name added againts the contact $newcontact",
+        "nodeType": "action",
+        "branches": [],
+        "dataSetId": "-1"
+      },
+      "fcn_verifythedeletedcontactnotshowing_0": {
+        "id": "fcn_verifythedeletedcontactnotshowing_0",
+        "content": "Verify the deleted contact not showing",
+        "nodeType": "action",
+        "branches": [],
+        "dataSetId": "-1"
+      }
+    },
+    "positions": {
+      "fcn_start_0": {
+        "top": 150,
+        "left": 500
+      },
+      "fcn_contactmoduleflows_0": {
+        "top": 211,
+        "left": 500
+      },
+      "fcn_logintosaasportal_1705907986764_0": {
+        "top": 270,
+        "left": 500
+      },
+      "fcn_contactmanager_1705908005052_0": {
+        "top": 335.1484375,
+        "left": 500
+      },
+      "fcn_addcontact_0": {
+        "top": 420.1484375,
+        "left": 217
+      },
+      "fcn_createnewcontact_1705908010562_0": {
+        "top": 473.1484375,
+        "left": 214
+      },
+      "fcn_createnewcontact_0": {
+        "top": 538.296875,
+        "left": 214
+      },
+      "fcn_createnewcontact_1706856802330_0": {
+        "top": 603.4453125,
+        "left": 214
+      },
+      "fcn_editnewcontact_1705908022545_0": {
+        "top": 414.1484375,
+        "left": 799
+      },
+      "fcn_deletecontact_1705908052650_0": {
+        "top": 410.1484375,
+        "left": 1078
+      },
+      "fcn_importcsvnewcontact_1705908058844_0": {
+        "top": 405.1484375,
+        "left": 1402
+      },
+      "fcn_creategroup_0": {
+        "top": 428.1484375,
+        "left": 504
+      },
+      "fcn_creategroupnewcontact_0": {
+        "top": 486.59375,
+        "left": 500
+      },
+      "fcn_savegroup_0": {
+        "top": 557.7421875,
+        "left": 502
+      },
+      "fcn_addcontacttocreategroup_0": {
+        "top": 616.7421875,
+        "left": 502
+      },
+      "fcn_selectcontactincontactspage_0": {
+        "top": 735.7421875,
+        "left": 502
+      },
+      "fcn_getthecontactnames_0": {
+        "top": 675.7421875,
+        "left": 502
+      },
+      "fcn_clickonaddtogroupandselectthegroupnameandapplynewcontact_0": {
+        "top": 794.7421875,
+        "left": 502
+      },
+      "fcn_verifythegroupnameaddedagaintsthecontactnewgroup_0": {
+        "top": 873.8983875,
+        "left": 502
+      },
+      "fcn_verifythedeletedcontactnotshowing_0": {
+        "top": 469.1484375,
+        "left": 1078
+      }
+    },
+    "settings": {
+      "maxProceedDepth": 100,
+      "maxProceedsForFirstDepth": 1,
+      "maxProceedsPerDepth": 1,
+      "maxPathRepititionsPerComboPath": 1,
+      "maxProceedsPerPath": 10000,
+      "maxToggles": 2,
+      "maxMatchingPaths": 3
+    },
+    "isPrimary": false,
+    "pathNames": [
+      {
+        "pathTags": "Sanity",
+        "pathDependsOn": "{}",
+        "pathKey": [
+          "fcn_contactmoduleflows_0",
+          "fcn_logintosaasportal_1705907986764_0",
+          "fcn_contactmanager_1705908005052_0",
+          "fcn_createnewcontact_1705908010562_0",
+          "fcn_createnewcontact_0",
+          "fcn_createnewcontact_1706856802330_0"
+        ]
+      },
+      {
+        "pathTags": "Sanity",
+        "pathDependsOn": "{}",
+        "pathKey": [
+          "fcn_contactmoduleflows_0",
+          "fcn_logintosaasportal_1705907986764_0",
+          "fcn_contactmanager_1705908005052_0",
+          "fcn_creategroupnewcontact_0",
+          "fcn_savegroup_0",
+          "fcn_addcontacttocreategroup_0",
+          "fcn_getthecontactnames_0",
+          "fcn_selectcontactincontactspage_0",
+          "fcn_clickonaddtogroupandselectthegroupnameandapplynewcontact_0",
+          "fcn_verifythegroupnameaddedagaintsthecontactnewgroup_0"
+        ]
+      },
+      {
+        "pathTags": "Contact_Managemnet",
+        "pathDependsOn": "{}",
+        "pathKey": [
+          "fcn_contactmoduleflows_0",
+          "fcn_logintosaasportal_1705907986764_0",
+          "fcn_contactmanager_1705908005052_0",
+          "fcn_editnewcontact_1705908022545_0"
+        ],
+        "dependsPathUID": "17286196008791"
+      },
+      {
+        "pathKey": [
+          "fcn_contactmoduleflows_0",
+          "fcn_logintosaasportal_1705907986764_0",
+          "fcn_contactmanager_1705908005052_0",
+          "fcn_addcontact_0",
+          "fcn_createnewcontact_1705908010562_0",
+          "fcn_createnewcontact_0",
+          "fcn_createnewcontact_1706856802330_0"
+        ],
+        "pathTags": "Contact_Managemnet",
+        "dependsPathUID": "17286195540720"
+      },
+      {
+        "pathKey": [
+          "fcn_contactmoduleflows_0",
+          "fcn_logintosaasportal_1705907986764_0",
+          "fcn_contactmanager_1705908005052_0",
+          "fcn_creategroup_0",
+          "fcn_creategroupnewcontact_0",
+          "fcn_savegroup_0",
+          "fcn_addcontacttocreategroup_0",
+          "fcn_getthecontactnames_0",
+          "fcn_selectcontactincontactspage_0",
+          "fcn_clickonaddtogroupandselectthegroupnameandapplynewcontact_0",
+          "fcn_verifythegroupnameaddedagaintsthecontactnewgroup_0"
+        ],
+        "pathTags": "Contact_Managemnet",
+        "dependsPathUID": "17286195874504"
+      },
+      {
+        "pathKey": [
+          "fcn_contactmoduleflows_0",
+          "fcn_logintosaasportal_1705907986764_0",
+          "fcn_contactmanager_1705908005052_0",
+          "fcn_deletecontact_1705908052650_0",
+          "fcn_verifythedeletedcontactnotshowing_0"
+        ],
+        "pathTags": "Contact_Managemnet",
+        "dependsPathUID": "17286196101282"
+      },
+      {
+        "pathKey": [
+          "fcn_contactmoduleflows_0",
+          "fcn_logintosaasportal_1705907986764_0",
+          "fcn_contactmanager_1705908005052_0",
+          "fcn_importcsvnewcontact_1705908058844_0"
+        ],
+        "pathTags": "Contact_Managemnet",
+        "dependsPathUID": "17286196184683"
+      }
+    ],
+    "flowChartUID": "fcUID_1722859377070",
+    "pathExecutionOrder": []
+  },
+  "enabled": true,
+  "parentId": ""
+}

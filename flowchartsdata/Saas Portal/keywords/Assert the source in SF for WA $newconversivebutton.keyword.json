@@ -1,0 +1,49 @@
+{
+  "modifiedOn": "2024-08-01T04:18:29.038Z",
+  "name": "Assert the source in SF for WA $newconversivebutton",
+  "id": "58604",
+  "type": 3,
+  "createdOn": "2024-08-01T04:18:16.214Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Assert the source in SF for WA $newconversivebutton",
+    "parameters": [
+      {
+        "parameterId": "newconversivebutton_",
+        "entityTypeId": "newconversivebutton",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span($name)"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"\"+$newconversivebutton.conversiveButtonName+\"-whatsapp\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"\"+$newconversivebutton.conversiveButtonName+\"-whatsapp\""
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

@@ -1,0 +1,135 @@
+{
+  "modifiedOn": "2023-12-01T10:21:28.713Z",
+  "name": "login to hubspot",
+  "id": "20381",
+  "type": 3,
+  "createdOn": "2023-12-01T10:06:54.890Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "login to hubspot",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_launchNewBrowser",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "\"https://app.hubspot.com/contacts/23684475/record/0-1/10966951/properties\""
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "\"chrome\""
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$browserHubspot"
+        }
+      },
+      {
+        "commented": false,
+        "action": "_selectBrowser",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "$browserHubspot"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"Sign in with Google\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_emailbox(\"identifier\")"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "\"automaton.user1@screen-magic.com\""
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"Next\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "3000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_password(\"Passwd\")"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "$emailPass"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"Next\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_emailbox(\"identifier\")"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "$emailPass"
+          }
+        ],
+        "stepType": "Action"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

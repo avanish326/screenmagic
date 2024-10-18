@@ -1,0 +1,60 @@
+{
+  "modifiedOn": "2024-08-29T08:18:25.748Z",
+  "name": "Verify the Status of Credit Card in Portal after verified from ops portal $creditcard",
+  "id": "45063",
+  "type": 3,
+  "createdOn": "2024-04-12T10:17:17.619Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Verify the Status of Credit Card in Portal after verified from ops portal $creditcard",
+    "parameters": [
+      {
+        "parameterId": "creditcard_",
+        "entityTypeId": "creditcard",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_selectBrowser",
+        "stepParameters": [],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "//Refresh the Page\n_call(window.location.reload())"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"Cards Information\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(0, _rightOf(_cell($creditcard.cardHolderName)))"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"Active\""
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

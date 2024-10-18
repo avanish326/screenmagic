@@ -1,0 +1,57 @@
+{
+  "modifiedOn": "2024-05-31T14:21:08.528Z",
+  "name": "Select SenderID from dropdown $sender_id",
+  "id": "45353",
+  "type": 3,
+  "createdOn": "2024-04-24T12:11:10.768Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Select SenderID from dropdown $sender_id",
+    "parameters": [
+      {
+        "parameterId": "sender_id_",
+        "entityTypeId": "sender_id",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_button(\"Select Sender Id\")"
+          },
+          {}
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_button($sender_id.senderid)"
+          },
+          {}
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "5000"
+          }
+        ],
+        "stepType": "Action"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

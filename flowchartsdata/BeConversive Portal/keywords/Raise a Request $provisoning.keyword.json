@@ -1,0 +1,65 @@
+{
+  "modifiedOn": "2024-03-20T08:13:41.013Z",
+  "name": "Raise a Request $provisoning",
+  "id": "44733",
+  "type": 3,
+  "createdOn": "2024-03-20T08:13:22.026Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Raise a Request $provisoning",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_select(0, _near(_label(\"Country\")))"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "\"India\""
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"Search\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_isVisible",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"Raise a request\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Is_True"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"Raise a request\")"
+          }
+        ],
+        "stepType": "Action"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

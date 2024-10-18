@@ -1,0 +1,366 @@
+{
+  "modifiedOn": "2024-01-31T06:44:13.602Z",
+  "name": "Salesforce",
+  "id": "10700",
+  "type": 0,
+  "createdOn": "2023-07-27T05:56:33.205Z",
+  "content": {
+    "settings": {
+      "maxProceedDepth": 100,
+      "maxProceedsForFirstDepth": 1,
+      "maxProceedsPerDepth": 1,
+      "maxPathRepititionsPerComboPath": 1,
+      "maxProceedsPerPath": 10000,
+      "maxToggles": 2,
+      "maxMatchingPaths": 3
+    },
+    "nodesMap": {
+      "fcn_start_0": {
+        "dataSetId": -1,
+        "id": "fcn_start_0",
+        "nodeType": "start",
+        "branches": [
+          "fcn_createsalesforce_registration_0",
+          "fcn_createsalesforce_login_0",
+          "fcn_createsalesforce_sso_0"
+        ],
+        "content": "Start"
+      },
+      "fcn_createsalesforce_registration_0": {
+        "dataSetId": -1,
+        "id": "fcn_createsalesforce_registration_0",
+        "nodeType": "pathlabel",
+        "branches": [
+          "fcn_createsalesforce_registration_1"
+        ],
+        "content": "Create salesforce_registration"
+      },
+      "fcn_createsalesforce_registration_1": {
+        "dataSetId": -1,
+        "id": "fcn_createsalesforce_registration_1",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertsalesforce_registrationcreated_0"
+        ],
+        "content": "Create $salesforce_registration"
+      },
+      "fcn_assertsalesforce_registrationcreated_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertsalesforce_registrationcreated_0",
+        "nodeType": "state",
+        "branches": [
+          "fcn_salesforce_registrationexiststrue_0"
+        ],
+        "content": "Assert $salesforce_registration Created"
+      },
+      "fcn_salesforce_registrationexiststrue_0": {
+        "dataSetId": -1,
+        "id": "fcn_salesforce_registrationexiststrue_0",
+        "nodeType": "state",
+        "branches": [
+          "fcn_salesforceemailvalidation_0"
+        ],
+        "content": "$salesforce_registration.exists\u003dtrue"
+      },
+      "fcn_createsalesforce_login_0": {
+        "dataSetId": -1,
+        "id": "fcn_createsalesforce_login_0",
+        "nodeType": "pathlabel",
+        "branches": [
+          "fcn_createsalesforce_login_1"
+        ],
+        "content": "Create salesforce_login"
+      },
+      "fcn_createsalesforce_login_1": {
+        "dataSetId": -1,
+        "id": "fcn_createsalesforce_login_1",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertsalesforce_logincreated_0"
+        ],
+        "content": "Create $salesforce_login"
+      },
+      "fcn_assertsalesforce_logincreated_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertsalesforce_logincreated_0",
+        "nodeType": "state",
+        "branches": [
+          "fcn_salesforce_loginexiststrue_0"
+        ],
+        "content": "Assert $salesforce_login Created"
+      },
+      "fcn_salesforce_loginexiststrue_0": {
+        "dataSetId": -1,
+        "id": "fcn_salesforce_loginexiststrue_0",
+        "nodeType": "decision",
+        "branches": [
+          "fcn_incomingsalesforce_0",
+          "fcn_sendsmsfromsalesforce_1"
+        ],
+        "content": "$salesforce_login.exists\u003dtrue"
+      },
+      "fcn_sendsmsfromsalesforce_1": {
+        "dataSetId": -1,
+        "id": "fcn_sendsmsfromsalesforce_1",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Send SMS from Salesforce"
+      },
+      "fcn_incomingsalesforce_0": {
+        "dataSetId": -1,
+        "id": "fcn_incomingsalesforce_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checksmshistory_0"
+        ],
+        "content": "Incoming Salesforce"
+      },
+      "fcn_checksmshistory_0": {
+        "dataSetId": -1,
+        "id": "fcn_checksmshistory_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Check sms history"
+      },
+      "fcn_createsalesforce_sso_0": {
+        "dataSetId": -1,
+        "id": "fcn_createsalesforce_sso_0",
+        "nodeType": "pathlabel",
+        "branches": [
+          "fcn_createsalesforce_sso_1",
+          "fcn_createsalesforcessosandbox_0"
+        ],
+        "content": "Create salesforce_sso"
+      },
+      "fcn_createsalesforce_sso_1": {
+        "dataSetId": -1,
+        "id": "fcn_createsalesforce_sso_1",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertsalesforce_ssocreated_0",
+          "fcn_navigateuserflow_0"
+        ],
+        "content": "Create $salesforce_sso"
+      },
+      "fcn_assertsalesforce_ssocreated_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertsalesforce_ssocreated_0",
+        "nodeType": "state",
+        "branches": [
+          "fcn_salesforce_ssoexiststrue_0",
+          "fcn_latestavailablepackage_0"
+        ],
+        "content": "Assert $salesforce_sso Created"
+      },
+      "fcn_salesforce_ssoexiststrue_0": {
+        "dataSetId": -1,
+        "id": "fcn_salesforce_ssoexiststrue_0",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_createsalesforce_login_2"
+        ],
+        "content": "$salesforce_sso.exists\u003dtrue"
+      },
+      "fcn_salesforceemailvalidation_0": {
+        "dataSetId": -1,
+        "id": "fcn_salesforceemailvalidation_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Validate $salesforceemail"
+      },
+      "fcn_createsalesforce_login_2": {
+        "dataSetId": -1,
+        "id": "fcn_createsalesforce_login_2",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Create $salesforce_login"
+      },
+      "fcn_navigateuserflow_0": {
+        "dataSetId": -1,
+        "id": "fcn_navigateuserflow_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "navigate $userflow"
+      },
+      "fcn_createsalesforcessosandbox_0": {
+        "dataSetId": -1,
+        "id": "fcn_createsalesforcessosandbox_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_latestavailablepackage_1706628030073_0"
+        ],
+        "content": "Create $salesforcesso $sandbox"
+      },
+      "fcn_latestavailablepackage_0": {
+        "dataSetId": -1,
+        "id": "fcn_latestavailablepackage_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_packageversiongreaterthanequalto173_0",
+          "fcn_packagelessthan173_0"
+        ],
+        "content": "Latest Available Package"
+      },
+      "fcn_packagelessthan173_0": {
+        "dataSetId": -1,
+        "id": "fcn_packagelessthan173_0",
+        "nodeType": "skip",
+        "branches": [],
+        "content": "SF Package equal or greater than latest package"
+      },
+      "fcn_packageversiongreaterthanequalto173_0": {
+        "dataSetId": -1,
+        "id": "fcn_packageversiongreaterthanequalto173_0",
+        "nodeType": "skip",
+        "branches": [],
+        "content": "SF Package less than latest package"
+      },
+      "fcn_sfpackageinstalled_0": {
+        "dataSetId": -1,
+        "id": "fcn_sfpackageinstalled_0",
+        "nodeType": "decision",
+        "branches": [],
+        "content": "SF Package Installed"
+      },
+      "fcn_latestavailablepackage_1706628030073_0": {
+        "dataSetId": -1,
+        "id": "fcn_latestavailablepackage_1706628030073_0",
+        "nodeType": "dynamic-decision",
+        "branches": [
+          "fcn_sfpackagelessthanlatestpackage_1706628051249_0",
+          "fcn_sfpackageequalorgreaterthanlatestpackage_1706628045620_0"
+        ],
+        "content": "Latest Available Package"
+      },
+      "fcn_sfpackageequalorgreaterthanlatestpackage_1706628045620_0": {
+        "dataSetId": -1,
+        "id": "fcn_sfpackageequalorgreaterthanlatestpackage_1706628045620_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "SF Package equal or greater than latest package"
+      },
+      "fcn_sfpackagelessthanlatestpackage_1706628051249_0": {
+        "dataSetId": -1,
+        "id": "fcn_sfpackagelessthanlatestpackage_1706628051249_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "SF Package less than latest package"
+      }
+    },
+    "pathNames": {
+      "[\"fcn_createsalesforce_registration_0\",\"fcn_createsalesforce_registration_1\",\"fcn_assertsalesforce_registrationcreated_0\",\"fcn_salesforce_registrationexiststrue_0\",\"fcn_salesforceemailvalidation_0\"]": {
+        "pathTags": "SalesforceRegistration",
+        "pathDependsOn": "{}"
+      }
+    },
+    "isPrimary": true,
+    "positions": {
+      "fcn_start_0": {
+        "top": 146.0,
+        "left": 351.9921875
+      },
+      "fcn_createsalesforce_registration_0": {
+        "top": 216.0,
+        "left": 32.9921875
+      },
+      "fcn_createsalesforce_registration_1": {
+        "top": 284.0,
+        "left": 32.9921875
+      },
+      "fcn_assertsalesforce_registrationcreated_0": {
+        "top": 353.0,
+        "left": 32.9921875
+      },
+      "fcn_salesforce_registrationexiststrue_0": {
+        "top": 440.0,
+        "left": 32.9921875
+      },
+      "fcn_salesforceemailvalidation_0": {
+        "top": 537.1328125,
+        "left": 32.9921875
+      },
+      "fcn_createsalesforce_login_0": {
+        "top": 216.0,
+        "left": 369.0
+      },
+      "fcn_createsalesforce_login_1": {
+        "top": 277.0,
+        "left": 369.0
+      },
+      "fcn_assertsalesforce_logincreated_0": {
+        "top": 337.0,
+        "left": 369.0
+      },
+      "fcn_salesforce_loginexiststrue_0": {
+        "top": 397.0,
+        "left": 369.0
+      },
+      "fcn_incomingsalesforce_0": {
+        "top": 462.1328125,
+        "left": 649.0
+      },
+      "fcn_checksmshistory_0": {
+        "top": 521.1328125,
+        "left": 649.0
+      },
+      "fcn_sendsmsfromsalesforce_1": {
+        "top": 462.1328125,
+        "left": 369.0
+      },
+      "fcn_createsalesforce_sso_0": {
+        "top": 197.0,
+        "left": 999.0
+      },
+      "fcn_createsalesforce_sso_1": {
+        "top": 254.0,
+        "left": 999.0
+      },
+      "fcn_assertsalesforce_ssocreated_0": {
+        "top": 317.0,
+        "left": 999.0
+      },
+      "fcn_salesforce_ssoexiststrue_0": {
+        "top": 389.0,
+        "left": 999.0
+      },
+      "fcn_createsalesforce_login_2": {
+        "top": 465.1328125,
+        "left": 999.0
+      },
+      "fcn_latestavailablepackage_0": {
+        "top": 567.0,
+        "left": 1190.0
+      },
+      "fcn_packageversiongreaterthanequalto173_0": {
+        "top": 633.0,
+        "left": 1473.0
+      },
+      "fcn_packagelessthan173_0": {
+        "top": 623.0,
+        "left": 1189.0
+      },
+      "fcn_navigateuserflow_0": {
+        "top": 294.0,
+        "left": 1364.0
+      },
+      "fcn_createsalesforcessosandbox_0": {
+        "top": 355.0,
+        "left": 1654.0
+      },
+      "fcn_latestavailablepackage_1706628030073_0": {
+        "top": 423.1484375,
+        "left": 1649.0
+      },
+      "fcn_sfpackagelessthanlatestpackage_1706628051249_0": {
+        "top": 495.1484375,
+        "left": 1854.0
+      },
+      "fcn_sfpackageequalorgreaterthanlatestpackage_1706628045620_0": {
+        "top": 495.1484375,
+        "left": 1575.0
+      }
+    }
+  },
+  "enabled": true,
+  "parentId": ""
+}

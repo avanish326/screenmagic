@@ -1,0 +1,57 @@
+{
+  "modifiedOn": "2024-02-12T10:20:42.096Z",
+  "name": "Select $template type",
+  "id": "29268",
+  "type": 3,
+  "createdOn": "2024-02-12T10:20:42.096Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Select $template type",
+    "parameters": [
+      {
+        "parameterId": "template_",
+        "entityTypeId": "template",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\" css-19bb58m\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div($template.type)"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(\"Salesforce, Zoho, HubSpot, SMS-Magic\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {}
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

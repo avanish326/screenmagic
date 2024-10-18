@@ -1,0 +1,27 @@
+{
+  "modifiedOn": "2024-06-05T12:26:34.924Z",
+  "name": "invite user until the no more license $beconversive",
+  "id": "52652",
+  "type": 3,
+  "createdOn": "2024-06-05T12:00:14.161Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "invite user until the no more license $beconversive",
+    "parameters": [
+      {
+        "parameterId": "beconversive_",
+        "entityTypeId": "beconversive",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "$prefix \u003d $beconversive.randomWords;\n$suffix \u003d \"@screen-magic.com\";\n$numText \u003d _getText(_paragraph(0, _near(_paragraph(\"Available License\"))));\n$num \u003d +$numText;\n\nfor($i\u003d0; $i\u003c$num; $i++){\n$mail \u003d $prefix + $i+ $suffix;\n_click(_submit(\"Invite User\"));\n_setValue(_textbox(\"Email Address\"), $mail);\n_click(_submit(\"Send Invitation\"));\n}\n\n//$mail;"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

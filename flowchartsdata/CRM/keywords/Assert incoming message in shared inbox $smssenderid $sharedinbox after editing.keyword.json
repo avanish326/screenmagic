@@ -1,0 +1,109 @@
+{
+  "modifiedOn": "2024-01-12T12:26:22.645Z",
+  "name": "Assert incoming message in shared inbox $smssenderid $sharedinbox after editing",
+  "id": "21353",
+  "type": 3,
+  "createdOn": "2023-12-13T11:29:22.257Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Assert incoming message in shared inbox $smssenderid $sharedinbox after editing",
+    "parameters": [
+      {
+        "parameterId": "smssenderid_",
+        "entityTypeId": "smssenderid",
+        "suffix": ""
+      },
+      {
+        "parameterId": "sharedinbox_",
+        "entityTypeId": "sharedinbox",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "var $name\u003d $sharedinbox.newInboxName;"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"\"+$name+\"\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"mail-content\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "var $message\u003d$smssenderid.text;"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"\"+$message+\"\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "parameterId": "smssenderid_",
+          "attributeId": "attr_01702443983828"
+        },
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "var $sourceCheck\u003d$smssenderid.source;"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_heading1(\"\"+$sourceCheck+\"\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "parameterId": "smssenderid_",
+          "attributeId": "attr_11702444033627"
+        },
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_italic(\"close\")"
+          }
+        ],
+        "stepType": "Action"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

@@ -1,0 +1,70 @@
+{
+  "modifiedOn": "2024-02-19T11:18:28.606Z",
+  "name": "Verify edited data should not be saved $accountdetails",
+  "id": "37969",
+  "type": 3,
+  "createdOn": "2024-02-19T11:17:50.869Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Verify edited data should not be saved $accountdetails",
+    "parameters": [
+      {
+        "parameterId": "accountdetails_",
+        "entityTypeId": "accountdetails",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(0, _near(_label(\"Contact Name\")))"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$contactName"
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(0, _near(_label(\"Phone Number\")))"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$phoneNumber"
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(0, _near(_label(\"Industry\")))"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$industry"
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

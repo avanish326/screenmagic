@@ -1,0 +1,65 @@
+{
+  "modifiedOn": "2024-04-24T08:52:43.402Z",
+  "name": "Message Configuration",
+  "id": "45228",
+  "type": 3,
+  "createdOn": "2024-04-19T04:13:40.227Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Message Configuration",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_selectWindow",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "\"Converse Settings | SMS-Magic\""
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "5000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(\"Message Configuration\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "5000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "\n//_selectWindow(\"Converse Settings | SMS-Magic\")\nvar $objects \u003d _collectAttributes(\"_div\",\"/parent-block smagicinteractObjectPicker/\",\"sahiText\",_under(_listItem(\"Object Name\")))\n_log($objects)\n\n$NameFileds \u003d_collectAttributes(\"_div\",\"/smagicinteractFieldPicker/\",\"sahiText\",_under(_listItem(\"Name field\")))\n_log($NameFileds)\n\n\n$phoneFeilds \u003d _collectAttributes(\"_div\",\"/smagicinteractFieldPicker/\",\"sahiText\",_under(_listItem(\"Phone Fields\")));\n_log($phoneFeilds)\n\n\n//for(var $i\u003d0;$i\u003c$phoneFeilds.length; $i++){\n//_assertEqual($NameFileds[$i],_getText(_span(0,_rightOf(_span($objects[$i])))))\n//}\n"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

@@ -1,0 +1,39 @@
+{
+  "modifiedOn": "2024-03-18T12:12:07.260Z",
+  "name": "Verify the Name of Standard User $usermanagement",
+  "id": "44696",
+  "type": 3,
+  "createdOn": "2024-03-18T11:54:52.894Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Verify the Name of Standard User $usermanagement",
+    "parameters": [
+      {
+        "parameterId": "usermanagement_",
+        "entityTypeId": "usermanagement",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_cell(0, _leftOf(_cell($stdUNameUserPermission)))"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "parameterId": "usermanagement_",
+          "attributeId": "attr_21710763805822"
+        },
+        "visibleCheck": false
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

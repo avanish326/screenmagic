@@ -1,0 +1,154 @@
+{
+  "modifiedOn": "2024-02-15T11:14:35.139Z",
+  "name": "Verify messages on desk for Financial Appoinment Flow when select CTA as No $financialflow",
+  "id": "29527",
+  "type": 3,
+  "createdOn": "2024-02-15T11:13:13.883Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Verify messages on desk for Financial Appoinment Flow when select CTA as No $financialflow",
+    "parameters": [
+      {
+        "parameterId": "financialflow_",
+        "entityTypeId": "financialflow",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(0, _near(_heading1(0)))"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"WEB\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_call",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"css-1bi66gg\").scrollTop\u003d0"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {}
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "3000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(\"Hi there! Welcome to [Your FI Name]! My name is {Insert preferred name here} .\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"Hi there! Welcome to [Your FI Name]! My name is {Insert preferred name here} .\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph($financialflow.firstCTA)"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "parameterId": "financialflow_",
+          "attributeId": "attr_01707981409555"
+        },
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(\"Here\u0027s a link {insert link to appropriate appointment calendar} to our appointment calendar. Please select the date and time that works for you and include any additional details. Thank you, [User\u0027s Name]! Is there anything else we can help you with?\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"Here\u0027s a link {insert link to appropriate appointment calendar} to our appointment calendar. Please select the date and time that works for you and include any additional details. Thank you, [User\u0027s Name]! Is there anything else we can help you with?\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph($financialflow.ctaYesNo)"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "parameterId": "financialflow_",
+          "attributeId": "attr_11707981756368"
+        },
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(\"Have a great day and we look forward to meeting with you.\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"Have a great day and we look forward to meeting with you.\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_italic(\"close\")"
+          }
+        ],
+        "stepType": "Action"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

@@ -1,0 +1,63 @@
+{
+  "modifiedOn": "2024-07-11T07:11:57.954Z",
+  "name": "Send a Campaign",
+  "id": "58281",
+  "type": 3,
+  "createdOn": "2024-07-11T07:08:08.864Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Send a Campaign",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_setSelected",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_radioGroup(\"sendcampaign\")"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "\"sendNow\""
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_submit(\"Send\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"The selected time for your campaign is outside of business hours. Please choose a different time.\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"The selected time for your campaign is outside of business hours. Please choose a different time.\""
+        }
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "$currentDate \u003d new java.util.Date();\n_log(\"Current Date \"+ $currentDate);"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

@@ -1,0 +1,310 @@
+{
+  "modifiedOn": "2024-08-01T12:19:54.671Z",
+  "name": "Conversive Subscriber Access",
+  "id": "44145",
+  "type": 0,
+  "createdOn": "2024-03-08T04:54:25.421Z",
+  "content": {
+    "settings": {
+      "maxProceedDepth": 100,
+      "maxProceedsForFirstDepth": 1,
+      "maxProceedsPerDepth": 1,
+      "maxPathRepititionsPerComboPath": 1,
+      "maxProceedsPerPath": 10000,
+      "maxToggles": 2,
+      "maxMatchingPaths": 3
+    },
+    "flowChartUID": "fcUID_1709873665531",
+    "nodesMap": {
+      "fcn_start_0": {
+        "dataSetId": -1,
+        "id": "fcn_start_0",
+        "nodeType": "start",
+        "branches": [
+          "fcn_logintoconversivewithsubscriberaccess_0"
+        ],
+        "content": "Start"
+      },
+      "fcn_logintoconversivewithsubscriberaccess_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintoconversivewithsubscriberaccess_0",
+        "nodeType": "pathlabel",
+        "branches": [
+          "fcn_loginwithfullsubscriberaccess_0",
+          "fcn_loginwithlimitedsubscriberaccess_0",
+          "fcn_subscriberaccessdisabled_0"
+        ],
+        "content": "Login to Conversive with Subscriber Access"
+      },
+      "fcn_loginwithfullsubscriberaccess_0": {
+        "dataSetId": -1,
+        "id": "fcn_loginwithfullsubscriberaccess_0",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_logintobeconversive_1709873773069_0"
+        ],
+        "content": "Login with Full Subscriber Access"
+      },
+      "fcn_loginwithlimitedsubscriberaccess_0": {
+        "dataSetId": -1,
+        "id": "fcn_loginwithlimitedsubscriberaccess_0",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_logintobeconversive_1710139009861_0"
+        ],
+        "content": "Login with Limited Subscriber Access"
+      },
+      "fcn_subscriberaccessdisabled_0": {
+        "dataSetId": -1,
+        "id": "fcn_subscriberaccessdisabled_0",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_logintobeconversive_1710140303736_0"
+        ],
+        "content": "Subscriber Access Disabled"
+      },
+      "fcn_logintobeconversive_1709873773069_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintobeconversive_1709873773069_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_navigatetomanageaccess_0"
+        ],
+        "content": "login to $beconversive"
+      },
+      "fcn_navigatetomanageaccess_0": {
+        "dataSetId": -1,
+        "id": "fcn_navigatetomanageaccess_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_enablefullaccess_0"
+        ],
+        "content": "Navigate to Manage Access"
+      },
+      "fcn_enablefullaccess_0": {
+        "dataSetId": -1,
+        "id": "fcn_enablefullaccess_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logintoopsportallogin_1709873824640_0"
+        ],
+        "content": "Enable Full Access"
+      },
+      "fcn_logintoopsportallogin_1709873824640_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintoopsportallogin_1709873824640_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_loginwithsubscriberaccess_0"
+        ],
+        "content": "Login to $opsportallogin"
+      },
+      "fcn_loginwithsubscriberaccess_0": {
+        "dataSetId": -1,
+        "id": "fcn_loginwithsubscriberaccess_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_valdiatemodules_0"
+        ],
+        "content": "Login with Subscriber Access"
+      },
+      "fcn_valdiatemodules_0": {
+        "dataSetId": -1,
+        "id": "fcn_valdiatemodules_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Valdiate Modules"
+      },
+      "fcn_logintobeconversive_1710139009861_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintobeconversive_1710139009861_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_navigatetomanageaccess_1710139014337_0"
+        ],
+        "content": "login to $beconversive"
+      },
+      "fcn_navigatetomanageaccess_1710139014337_0": {
+        "dataSetId": -1,
+        "id": "fcn_navigatetomanageaccess_1710139014337_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_enablelimitedaccess_0"
+        ],
+        "content": "Navigate to Manage Access"
+      },
+      "fcn_enablelimitedaccess_0": {
+        "dataSetId": -1,
+        "id": "fcn_enablelimitedaccess_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logintoopsportallogin_1710139728900_0"
+        ],
+        "content": "Enable Limited Access"
+      },
+      "fcn_logintoopsportallogin_1710139728900_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintoopsportallogin_1710139728900_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_loginwithsubscriberaccess_1710139732203_0"
+        ],
+        "content": "Login to $opsportallogin"
+      },
+      "fcn_loginwithsubscriberaccess_1710139732203_0": {
+        "dataSetId": -1,
+        "id": "fcn_loginwithsubscriberaccess_1710139732203_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_validatelimitedaccessmodules_0"
+        ],
+        "content": "Login with Subscriber Access"
+      },
+      "fcn_validatelimitedaccessmodules_0": {
+        "dataSetId": -1,
+        "id": "fcn_validatelimitedaccessmodules_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Validate Limited Access Modules"
+      },
+      "fcn_logintobeconversive_1710140303736_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintobeconversive_1710140303736_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_navigatetomanageaccess_1710140308059_0"
+        ],
+        "content": "login to $beconversive"
+      },
+      "fcn_navigatetomanageaccess_1710140308059_0": {
+        "dataSetId": -1,
+        "id": "fcn_navigatetomanageaccess_1710140308059_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_disablesubscriberaccess_0"
+        ],
+        "content": "Navigate to Manage Access"
+      },
+      "fcn_disablesubscriberaccess_0": {
+        "dataSetId": -1,
+        "id": "fcn_disablesubscriberaccess_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logintoopsportallogin_1710140471263_0"
+        ],
+        "content": "Disable Subscriber Access"
+      },
+      "fcn_logintoopsportallogin_1710140471263_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintoopsportallogin_1710140471263_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_validatenooptiontologinwithsubscriberaccess_0"
+        ],
+        "content": "Login to $opsportallogin"
+      },
+      "fcn_validatenooptiontologinwithsubscriberaccess_0": {
+        "dataSetId": -1,
+        "id": "fcn_validatenooptiontologinwithsubscriberaccess_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Validate no option to Login with Subscriber Access"
+      }
+    },
+    "pathNames": {},
+    "isPrimary": false,
+    "positions": {
+      "fcn_start_0": {
+        "top": 150.0,
+        "left": 500.0
+      },
+      "fcn_logintoconversivewithsubscriberaccess_0": {
+        "top": 226.0,
+        "left": 415.0
+      },
+      "fcn_loginwithfullsubscriberaccess_0": {
+        "top": 300.0,
+        "left": 151.0
+      },
+      "fcn_loginwithlimitedsubscriberaccess_0": {
+        "top": 303.0,
+        "left": 425.0
+      },
+      "fcn_subscriberaccessdisabled_0": {
+        "top": 311.0,
+        "left": 723.0
+      },
+      "fcn_logintobeconversive_1709873773069_0": {
+        "top": 359.0,
+        "left": 151.0
+      },
+      "fcn_navigatetomanageaccess_0": {
+        "top": 424.1562,
+        "left": 151.0
+      },
+      "fcn_enablefullaccess_0": {
+        "top": 483.1484375,
+        "left": 151.0
+      },
+      "fcn_logintoopsportallogin_1709873824640_0": {
+        "top": 542.1484375,
+        "left": 151.0
+      },
+      "fcn_loginwithsubscriberaccess_0": {
+        "top": 607.3046375,
+        "left": 151.0
+      },
+      "fcn_valdiatemodules_0": {
+        "top": 666.296875,
+        "left": 151.0
+      },
+      "fcn_logintobeconversive_1710139009861_0": {
+        "top": 362.0,
+        "left": 425.0
+      },
+      "fcn_navigatetomanageaccess_1710139014337_0": {
+        "top": 427.1562,
+        "left": 425.0
+      },
+      "fcn_enablelimitedaccess_0": {
+        "top": 486.1484375,
+        "left": 425.0
+      },
+      "fcn_logintoopsportallogin_1710139728900_0": {
+        "top": 545.1484375,
+        "left": 425.0
+      },
+      "fcn_loginwithsubscriberaccess_1710139732203_0": {
+        "top": 610.3046375,
+        "left": 425.0
+      },
+      "fcn_validatelimitedaccessmodules_0": {
+        "top": 669.296875,
+        "left": 425.0
+      },
+      "fcn_logintobeconversive_1710140303736_0": {
+        "top": 370.0,
+        "left": 723.0
+      },
+      "fcn_navigatetomanageaccess_1710140308059_0": {
+        "top": 435.1562,
+        "left": 723.0
+      },
+      "fcn_disablesubscriberaccess_0": {
+        "top": 494.1484375,
+        "left": 723.0
+      },
+      "fcn_logintoopsportallogin_1710140471263_0": {
+        "top": 553.1484375,
+        "left": 723.0
+      },
+      "fcn_validatenooptiontologinwithsubscriberaccess_0": {
+        "top": 618.3046375,
+        "left": 723.0
+      }
+    },
+    "tags": ""
+  },
+  "enabled": true,
+  "parentId": ""
+}

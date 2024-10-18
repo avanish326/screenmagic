@@ -1,0 +1,42 @@
+{
+  "modifiedOn": "2024-03-15T10:09:54.601Z",
+  "name": "Get the status of Message Template Page from User Permission",
+  "id": "44657",
+  "type": 3,
+  "createdOn": "2024-03-15T10:08:39.657Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Get the status of Message Template Page from User Permission",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_isChecked",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_checkbox(0, _rightOf(_span(\"Message Template\")))"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$MessageTemplate"
+        }
+      },
+      {
+        "commented": false,
+        "action": "_log",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "$MessageTemplate"
+          }
+        ],
+        "stepType": "Action"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

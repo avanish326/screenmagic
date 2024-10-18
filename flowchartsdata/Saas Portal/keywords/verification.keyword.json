@@ -1,0 +1,74 @@
+{
+  "modifiedOn": "2024-05-02T09:26:39.474Z",
+  "name": "verification",
+  "id": "45556",
+  "type": 3,
+  "createdOn": "2024-05-02T08:57:14.361Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "verification",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "$accountID\u003d \"txn0yuuCSUS3SsLEDEJ37jRYYKZgaUtmvkI4xD7BprwP\"\n$accountID1 \u003d \"/\"+$accountID.slice(0,28)+\"/\""
+      },
+      {
+        "commented": false,
+        "action": "_mouseOver",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph($accountID1)"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"/tooltiptext/\",_under(_div(\"/Assistant ID /\")))"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$accountId"
+        }
+      },
+      {
+        "commented": true,
+        "action": "_log",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "$accountId"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"/tooltiptext/\",_under(_div(\"/Assistant ID/\")))"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$accountID"
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

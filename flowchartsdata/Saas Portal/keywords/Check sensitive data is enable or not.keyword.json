@@ -1,0 +1,48 @@
+{
+  "modifiedOn": "2024-09-11T08:59:56.116723Z",
+  "name": "Check sensitive data is enable or not",
+  "id": "-1",
+  "type": 3,
+  "createdOn": "2024-09-08T22:30:25Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Check sensitive data is enable or not",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_link(\"Sensitive data handler\")"
+          },
+          {
+            "paramMode": "default"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "var $Status\u003d _isChecked(_checkbox(0,_near(_span(\"slider round\"))))\n_log($Status)\n//_assertEqual(true, $Status)"
+      },
+      {
+        "commented": false,
+        "action": "return",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "$Status"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

@@ -1,0 +1,194 @@
+{
+  "name": "Send RCS messages from desk",
+  "id": "-1",
+  "type": 0,
+  "content": {
+    "nodesMap": {
+      "fcn_start_0": {
+        "id": "fcn_start_0",
+        "content": "Start",
+        "nodeType": "start",
+        "branches": [
+          "fcn_sendsmsvalidation_1719925623421_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_sendsmsvalidation_1719925623421_0": {
+        "id": "fcn_sendsmsvalidation_1719925623421_0",
+        "content": "Send RCS messages",
+        "nodeType": "pathlabel",
+        "branches": [
+          "fcn_logintosaasportal_1719925623421_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_logintosaasportal_1719925623421_0": {
+        "id": "fcn_logintosaasportal_1719925623421_0",
+        "content": "login to $saasportal",
+        "nodeType": "action",
+        "branches": [
+          "fcn_sendnewmessage_0",
+          "fcn_sendfromexistingconversations_0",
+          "fcn_sendmessageusingnonregtemplate_0",
+          "fcn_sendmessagewithoutusingtemplate_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_sendnewmessage_0": {
+        "id": "fcn_sendnewmessage_0",
+        "content": "Send new message",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_sendnewsmsfromconversedeskusingtemplate_1719925671718_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_sendnewsmsfromconversedeskusingtemplate_1719925671718_0": {
+        "id": "fcn_sendnewsmsfromconversedeskusingtemplate_1719925671718_0",
+        "content": "Send New $sms from Converse Desk using $template",
+        "nodeType": "action",
+        "branches": [
+          "fcn_smshistorysmshistoryvalidationforsaas_1719925692302_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_smshistorysmshistoryvalidationforsaas_1719925692302_0": {
+        "id": "fcn_smshistorysmshistoryvalidationforsaas_1719925692302_0",
+        "content": "SMS History$sms history validation for saas",
+        "nodeType": "action",
+        "branches": [],
+        "dataSetId": "-1"
+      },
+      "fcn_sendfromexistingconversations_0": {
+        "id": "fcn_sendfromexistingconversations_0",
+        "content": "Send from existing conversations",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_replytoexistingsmsfromconversedeskusingtemplatefromsend_1719925733068_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_replytoexistingsmsfromconversedeskusingtemplatefromsend_1719925733068_0": {
+        "id": "fcn_replytoexistingsmsfromconversedeskusingtemplatefromsend_1719925733068_0",
+        "content": "Reply to $existingsms from Converse Desk using $template from send ",
+        "nodeType": "action",
+        "branches": [
+          "fcn_smshistorysmshistoryvalidationforsaas_1719925692302_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_sendmessageusingnonregtemplate_0": {
+        "id": "fcn_sendmessageusingnonregtemplate_0",
+        "content": "Send message using non-reg template",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_sendnewsmsfromconversedeskusingtemplate_1719925790518_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_sendnewsmsfromconversedeskusingtemplate_1719925790518_0": {
+        "id": "fcn_sendnewsmsfromconversedeskusingtemplate_1719925790518_0",
+        "content": "Send New $sms from Converse Desk using $template",
+        "nodeType": "action",
+        "branches": [
+          "fcn_validate24hwindowerror_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_validate24hwindowerror_0": {
+        "id": "fcn_validate24hwindowerror_0",
+        "content": "Validate 24h window error",
+        "nodeType": "action",
+        "branches": [],
+        "dataSetId": "-1"
+      },
+      "fcn_sendmessagewithoutusingtemplate_0": {
+        "id": "fcn_sendmessagewithoutusingtemplate_0",
+        "content": "Send message without using template",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_sendmessagewithoutusingtemplate_1"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_sendmessagewithoutusingtemplate_1": {
+        "id": "fcn_sendmessagewithoutusingtemplate_1",
+        "content": "Send message without using template",
+        "nodeType": "action",
+        "branches": [
+          "fcn_validate24hwindowerror_0"
+        ],
+        "dataSetId": "-1"
+      }
+    },
+    "positions": {
+      "fcn_start_0": {
+        "top": 150,
+        "left": 500
+      },
+      "fcn_sendsmsvalidation_1719925623421_0": {
+        "top": 212,
+        "left": 418
+      },
+      "fcn_logintosaasportal_1719925623421_0": {
+        "top": 288.0078125,
+        "left": 419
+      },
+      "fcn_sendnewmessage_0": {
+        "top": 366.15625,
+        "left": 18
+      },
+      "fcn_sendnewsmsfromconversedeskusingtemplate_1719925671718_0": {
+        "top": 446.15625,
+        "left": 17
+      },
+      "fcn_smshistorysmshistoryvalidationforsaas_1719925692302_0": {
+        "top": 550.46875,
+        "left": 235
+      },
+      "fcn_sendfromexistingconversations_0": {
+        "top": 364.15625,
+        "left": 399
+      },
+      "fcn_replytoexistingsmsfromconversedeskusingtemplatefromsend_1719925733068_0": {
+        "top": 438.15625,
+        "left": 402
+      },
+      "fcn_sendmessageusingnonregtemplate_0": {
+        "top": 364.15625,
+        "left": 703
+      },
+      "fcn_sendnewsmsfromconversedeskusingtemplate_1719925790518_0": {
+        "top": 439.15625,
+        "left": 706
+      },
+      "fcn_validate24hwindowerror_0": {
+        "top": 554.46875,
+        "left": 920
+      },
+      "fcn_sendmessagewithoutusingtemplate_0": {
+        "top": 363.15625,
+        "left": 1089
+      },
+      "fcn_sendmessagewithoutusingtemplate_1": {
+        "top": 438.15625,
+        "left": 1091
+      }
+    },
+    "settings": {
+      "maxProceedDepth": 100,
+      "maxProceedsForFirstDepth": 1,
+      "maxProceedsPerDepth": 1,
+      "maxPathRepititionsPerComboPath": 1,
+      "maxProceedsPerPath": 10000,
+      "maxToggles": 2,
+      "maxMatchingPaths": 3
+    },
+    "isPrimary": false,
+    "pathNames": [],
+    "flowChartUID": "fcUID_1719925612377",
+    "pathExecutionOrder": []
+  },
+  "enabled": true,
+  "parentId": ""
+}

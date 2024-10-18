@@ -1,0 +1,74 @@
+{
+  "modifiedOn": "2023-10-06T10:58:00.429Z",
+  "name": "Go to Hipaa Compliance and Validate the UI for ZOHO",
+  "id": "16839",
+  "type": 3,
+  "createdOn": "2023-10-06T10:56:17.585Z",
+  "content": {
+    "title": "Go to Hipaa Compliance and Validate the UI for ZOHO",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"HIPAA Compliance\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"Enabled\", _near(_heading3(\"HIPAA Compliance\")))"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"Enabled\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(13)"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"The Health Insurance Portability and Accountability Act (HIPAA) establishes the standards for accessing, storing and transmitting medical data and ensuring the privacy and security of Private Health Information (PHI). SMS Magic complies with all HIPAA standards for HIPAA enabled accounts.\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(14)"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"With HIPAA Compliance enabled, SMS Magic does not store any messages sent from your account. If you choose to be HIPAA compliant, the below default features / services will not be supported by SMS-Magic Platform and Customer Portal.\""
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

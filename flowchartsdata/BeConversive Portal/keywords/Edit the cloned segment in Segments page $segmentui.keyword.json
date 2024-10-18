@@ -1,0 +1,71 @@
+{
+  "modifiedOn": "2024-09-02T05:02:58.415Z",
+  "name": "Edit the cloned segment in Segments page $segmentui",
+  "id": "58995",
+  "type": 3,
+  "createdOn": "2024-09-02T05:02:31.344Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Edit the cloned segment in Segments page $segmentui",
+    "parameters": [
+      {
+        "parameterId": "segmentui_",
+        "entityTypeId": "segmentui",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "1000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_svg_path(1, _near(_cell($segmentui.segmentName)))"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "cell(\"\"+$segmentui.segmentName+\" copy 1\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(\"Audience Segmentation\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"Audience Segmentation\""
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

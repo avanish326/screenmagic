@@ -1,0 +1,82 @@
+{
+  "modifiedOn": "2023-11-20T11:07:04.410Z",
+  "name": "Disable the consent and save the changes",
+  "id": "17296",
+  "type": 3,
+  "createdOn": "2023-10-31T09:04:53.876Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Disable the consent and save the changes",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_selectBrowser",
+        "stepParameters": [],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_italic(\"more_vert\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"Edit\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_checkbox(0,_in(_div(\"Capture consent via web form\")))"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_submit(\"Save\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"The changes are saved and would automatically reflect on your website in a few moments.\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"The changes are saved and would automatically reflect on your website in a few moments.\""
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

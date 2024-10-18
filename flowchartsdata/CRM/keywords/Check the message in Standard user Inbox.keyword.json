@@ -1,0 +1,43 @@
+{
+  "modifiedOn": "2024-01-25T04:58:58.727Z",
+  "name": "Check the message in Standard user Inbox",
+  "id": "14827",
+  "type": 3,
+  "createdOn": "2023-09-20T13:48:26.132Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Check the message in Standard user Inbox",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"Hey\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"Hey[1]\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"Hey\""
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

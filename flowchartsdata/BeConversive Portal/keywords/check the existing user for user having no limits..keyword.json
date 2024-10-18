@@ -1,0 +1,47 @@
+{
+  "modifiedOn": "2024-07-01T05:42:18.024Z",
+  "name": "check the existing user for user having no limits.",
+  "id": "52698",
+  "type": 3,
+  "createdOn": "2024-06-07T08:37:29.923Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "check the existing user for user having no limits.",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(1, _near(_submit(\"Invite User\")))"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"Allotted Users\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(0, _near(_paragraph(\"Allotted Users\")))"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$existingUser"
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

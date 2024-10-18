@@ -1,0 +1,421 @@
+{
+  "name": "ZOHO Execution",
+  "id": "-1",
+  "type": 0,
+  "content": {
+    "pathExecutionOrder": [],
+    "settings": {
+      "maxProceedDepth": 100,
+      "maxProceedsForFirstDepth": 1,
+      "maxProceedsPerDepth": 1,
+      "maxPathRepititionsPerComboPath": 1,
+      "maxProceedsPerPath": 10000,
+      "maxToggles": 2,
+      "maxMatchingPaths": 3
+    },
+    "flowChartUID": "fcUID_1724247771532",
+    "nodesMap": {
+      "fcn_start_0": {
+        "id": "fcn_start_0",
+        "nodeType": "start",
+        "branches": [
+          "fcn_createzoho_setup_for_new_users_0",
+          "fcn_zohosetupforexistinguser_0",
+          "fcn_connectiontozohofromgetstartedpage_0"
+        ],
+        "content": "Start"
+      },
+      "fcn_createzoho_setup_for_new_users_0": {
+        "id": "fcn_createzoho_setup_for_new_users_0",
+        "nodeType": "pathlabel",
+        "branches": [
+          "fcn_signuptozohocrm_1693232665163_0"
+        ],
+        "content": "Zoho setup for new registration"
+      },
+      "fcn_signuptozohocrm_1693232665163_0": {
+        "id": "fcn_signuptozohocrm_1693232665163_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_integrationofconversedesk_1693232665163_0",
+          "fcn_getsenderidfromsaasgetsenderidzoho_1693232665163_0",
+          "fcn_createabuttonconfigurationlink_1693232665163_0",
+          "fcn_convertleadrecordintocontactandverifyhistory_1693232665163_0",
+          "fcn_createcustomviewinzohocrm_1",
+          "fcn_createabuttonconfigurationbulklink_0"
+        ],
+        "content": "Sign-in to $zohocrm"
+      },
+      "fcn_integrationofconversedesk_1693232665163_0": {
+        "id": "fcn_integrationofconversedesk_1693232665163_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Integration of Converse Desk"
+      },
+      "fcn_getsenderidfromsaasgetsenderidzoho_1693232665163_0": {
+        "id": "fcn_getsenderidfromsaasgetsenderidzoho_1693232665163_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_addsenderidzohosenderidgetsenderidzoho_1693232665163_0"
+        ],
+        "content": "Get sender id from saas $getsenderidzoho"
+      },
+      "fcn_addsenderidzohosenderidgetsenderidzoho_1693232665163_0": {
+        "id": "fcn_addsenderidzohosenderidgetsenderidzoho_1693232665163_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Add sender id $zohosenderid $getsenderidzoho"
+      },
+      "fcn_createabuttonconfigurationlink_1693232665163_0": {
+        "id": "fcn_createabuttonconfigurationlink_1693232665163_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_addsendbutton_1693232665163_0"
+        ],
+        "content": "Create a $buttonconfiguration link"
+      },
+      "fcn_addsendbutton_1693232665163_0": {
+        "id": "fcn_addsendbutton_1693232665163_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "add send button"
+      },
+      "fcn_convertleadrecordintocontactandverifyhistory_1693232665163_0": {
+        "id": "fcn_convertleadrecordintocontactandverifyhistory_1693232665163_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_convertleadintocontact_1693232665163_0"
+        ],
+        "content": "Convert lead record into contact and verify history"
+      },
+      "fcn_convertleadintocontact_1693232665163_0": {
+        "id": "fcn_convertleadintocontact_1693232665163_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Convert Lead into Contact"
+      },
+      "fcn_zohosetupforexistinguser_0": {
+        "id": "fcn_zohosetupforexistinguser_0",
+        "nodeType": "pathlabel",
+        "branches": [
+          "fcn_signuptozohocrm_1693233079906_0"
+        ],
+        "content": "Zoho setup for existing user"
+      },
+      "fcn_signuptozohocrm_1693233079906_0": {
+        "id": "fcn_signuptozohocrm_1693233079906_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_singsendsmswithtemplate_1693233079906_0",
+          "fcn_zohosendsmstomultiplerecords_1693233079906_0",
+          "fcn_createzohocontactcreate_1693233079906_0",
+          "fcn_zohosendsmsoutsidebusinesshours_0",
+          "fcn_zohosendsmssystemwise_0",
+          "fcn_validatethecustomview_0",
+          "fcn_createsmstemplateforleadmodule_0",
+          "fcn_zohobulkmesssagetocustomviewwithtemplate_0"
+        ],
+        "content": "Sign-in to $zohocrm"
+      },
+      "fcn_singsendsmswithtemplate_1693233079906_0": {
+        "id": "fcn_singsendsmswithtemplate_1693233079906_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Sing send sms with template"
+      },
+      "fcn_zohosendsmstomultiplerecords_1693233079906_0": {
+        "id": "fcn_zohosendsmstomultiplerecords_1693233079906_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Zoho send sms to multiple records"
+      },
+      "fcn_createzohocontactcreate_1693233079906_0": {
+        "id": "fcn_createzohocontactcreate_1693233079906_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_subscribtionmanagementsenderidwisezohocontactcreate_1693233079906_0"
+        ],
+        "content": "Create $zohocontactcreate"
+      },
+      "fcn_subscribtionmanagementsenderidwisezohocontactcreate_1693233079906_0": {
+        "id": "fcn_subscribtionmanagementsenderidwisezohocontactcreate_1693233079906_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Subscribtion Management Sender Id Wise $zohocontactcreate"
+      },
+      "fcn_zohosendsmsoutsidebusinesshours_0": {
+        "id": "fcn_zohosendsmsoutsidebusinesshours_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_getsenderidfromsaasgetsenderidzoho_0"
+        ],
+        "content": "Zoho Send SMS $outsidebusinesshours"
+      },
+      "fcn_zohosendsmssystemwise_0": {
+        "id": "fcn_zohosendsmssystemwise_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_getsenderidfromsaasgetsenderidzoho_0"
+        ],
+        "content": "Zoho Send SMS System Wise $zohocontactcreate"
+      },
+      "fcn_validatethecustomview_0": {
+        "id": "fcn_validatethecustomview_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Validate the $customview"
+      },
+      "fcn_createcustomviewinzohocrm_1": {
+        "id": "fcn_createcustomviewinzohocrm_1",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Create $customview in zoho crm"
+      },
+      "fcn_createsmstemplateforleadmodule_0": {
+        "id": "fcn_createsmstemplateforleadmodule_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_validatethetemplatecreated_0"
+        ],
+        "content": "Create $smstemplate for lead Module"
+      },
+      "fcn_getsenderidfromsaasgetsenderidzoho_0": {
+        "id": "fcn_getsenderidfromsaasgetsenderidzoho_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_sendzohosmsgetsenderidzoho_0"
+        ],
+        "content": "Get sender id from saas $getsenderidzoho"
+      },
+      "fcn_sendzohosmsgetsenderidzoho_0": {
+        "id": "fcn_sendzohosmsgetsenderidzoho_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Send Zoho SMS $getsenderidzoho"
+      },
+      "fcn_validatethetemplatecreated_0": {
+        "id": "fcn_validatethetemplatecreated_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_sendtemplatesms_0"
+        ],
+        "content": "Validate the template created $smstemplate"
+      },
+      "fcn_sendtemplatesms_0": {
+        "id": "fcn_sendtemplatesms_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Send $templatesms "
+      },
+      "fcn_createabuttonconfigurationbulklink_0": {
+        "id": "fcn_createabuttonconfigurationbulklink_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Create a $buttonconfigurationbulk link"
+      },
+      "fcn_zohobulkmesssagetocustomviewwithtemplate_0": {
+        "id": "fcn_zohobulkmesssagetocustomviewwithtemplate_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Zoho bulk messsage to custom view with template"
+      },
+      "fcn_connectiontozohofromgetstartedpage_0": {
+        "id": "fcn_connectiontozohofromgetstartedpage_0",
+        "nodeType": "pathlabel",
+        "branches": [
+          "fcn_logintozoho_0"
+        ],
+        "content": "Connection to zoho from Get Started page"
+      },
+      "fcn_logintozoho_0": {
+        "id": "fcn_logintozoho_0",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_trial_signup_1725256656424_0"
+        ],
+        "content": "Login to Zoho $zohocrm"
+      },
+      "fcn_trial_signup_1725256656424_0": {
+        "id": "fcn_trial_signup_1725256656424_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_signuponsaasportal_0"
+        ],
+        "content": "@trial_signup"
+      },
+      "fcn_signuponsaasportal_0": {
+        "id": "fcn_signuponsaasportal_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_connecttozoho_0"
+        ],
+        "content": "Sign-up on Saas Portal $trial_signup"
+      },
+      "fcn_connecttozoho_0": {
+        "id": "fcn_connecttozoho_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logintozohozohocrm_1725521773844_0"
+        ],
+        "content": "Connect to zoho"
+      },
+      "fcn_logintozohozohocrm_1725521773844_0": {
+        "id": "fcn_logintozohozohocrm_1725521773844_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertthelogin_0"
+        ],
+        "content": "Login to Zoho $zohocrm"
+      },
+      "fcn_assertthelogin_0": {
+        "id": "fcn_assertthelogin_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Assert the Login"
+      }
+    },
+    "pathNames": [],
+    "isPrimary": false,
+    "positions": {
+      "fcn_start_0": {
+        "top": 150.00000190734863,
+        "left": 920.0
+      },
+      "fcn_createzoho_setup_for_new_users_0": {
+        "top": 216.99653816223145,
+        "left": 497.96875
+      },
+      "fcn_signuptozohocrm_1693232665163_0": {
+        "top": 290.0000171661377,
+        "left": 31.996337890625
+      },
+      "fcn_integrationofconversedesk_1693232665163_0": {
+        "top": 374.1319751739502,
+        "left": 35.97216796875
+      },
+      "fcn_getsenderidfromsaasgetsenderidzoho_1693232665163_0": {
+        "top": 369.1319751739502,
+        "left": 321.99658203125
+      },
+      "fcn_addsenderidzohosenderidgetsenderidzoho_1693232665163_0": {
+        "top": 466.2673816680908,
+        "left": 330.0
+      },
+      "fcn_createabuttonconfigurationlink_1693232665163_0": {
+        "top": 380.12153816223145,
+        "left": 611.99658203125
+      },
+      "fcn_addsendbutton_1693232665163_0": {
+        "top": 492.2743396759033,
+        "left": 625.989501953125
+      },
+      "fcn_convertleadrecordintocontactandverifyhistory_1693232665163_0": {
+        "top": 376.12849617004395,
+        "left": 903.9757080078125
+      },
+      "fcn_convertleadintocontact_1693232665163_0": {
+        "top": 488.1250171661377,
+        "left": 907.986083984375
+      },
+      "fcn_createcustomviewinzohocrm_1": {
+        "top": 589.1146106719971,
+        "left": 1096.9964599609375
+      },
+      "fcn_createabuttonconfigurationbulklink_0": {
+        "top": 591.1111316680908,
+        "left": 1383.9757080078125
+      },
+      "fcn_zohosetupforexistinguser_0": {
+        "top": 215.989595413208,
+        "left": 1545.0
+      },
+      "fcn_signuptozohocrm_1693233079906_0": {
+        "top": 300.0000171661377,
+        "left": 1545.0
+      },
+      "fcn_singsendsmswithtemplate_1693233079906_0": {
+        "top": 386.12849617004395,
+        "left": 1545.0
+      },
+      "fcn_zohosendsmstomultiplerecords_1693233079906_0": {
+        "top": 479.1319751739502,
+        "left": 1545.0
+      },
+      "fcn_createzohocontactcreate_1693233079906_0": {
+        "top": 389.1319751739502,
+        "left": 1840.0
+      },
+      "fcn_subscribtionmanagementsenderidwisezohocontactcreate_1693233079906_0": {
+        "top": 479.27086067199707,
+        "left": 1836.9965209960938
+      },
+      "fcn_zohosendsmsoutsidebusinesshours_0": {
+        "top": 382.1180591583252,
+        "left": 2167.9861450195312
+      },
+      "fcn_getsenderidfromsaasgetsenderidzoho_0": {
+        "top": 470.27778816223145,
+        "left": 2167.9861450195312
+      },
+      "fcn_sendzohosmsgetsenderidzoho_0": {
+        "top": 602.4305896759033,
+        "left": 2167.9861450195312
+      },
+      "fcn_zohosendsmssystemwise_0": {
+        "top": 416.2673816680908,
+        "left": 2510.9896240234375
+      },
+      "fcn_validatethecustomview_0": {
+        "top": 383.2812671661377,
+        "left": 3145.9896545410156
+      },
+      "fcn_createsmstemplateforleadmodule_0": {
+        "top": 383.2812671661377,
+        "left": 2841.99658203125
+      },
+      "fcn_validatethetemplatecreated_0": {
+        "top": 450.43403816223145,
+        "left": 2841.99658203125
+      },
+      "fcn_sendtemplatesms_0": {
+        "top": 540.5729236602783,
+        "left": 2841.99658203125
+      },
+      "fcn_zohobulkmesssagetocustomviewwithtemplate_0": {
+        "top": 383.2812671661377,
+        "left": 3445.0000610351562
+      },
+      "fcn_connectiontozohofromgetstartedpage_0": {
+        "top": 218.97570991516113,
+        "left": 3820.0001220703125
+      },
+      "fcn_logintozoho_0": {
+        "top": 295.086806577301,
+        "left": 3820.0001220703125
+      },
+      "fcn_trial_signup_1725256656424_0": {
+        "top": 360.24302250976564,
+        "left": 3820.0000610351562
+      },
+      "fcn_signuponsaasportal_0": {
+        "top": 420.7813080078125,
+        "left": 3820.0000610351562
+      },
+      "fcn_connecttozoho_0": {
+        "top": 485.9500251953125,
+        "left": 3820.0
+      },
+      "fcn_logintozohozohocrm_1725521773844_0": {
+        "top": 545.4667122070313,
+        "left": 3820.0000610351562
+      },
+      "fcn_assertthelogin_0": {
+        "top": 610.6333748046875,
+        "left": 3820.0001220703125
+      }
+    },
+    "tags": ""
+  },
+  "enabled": true,
+  "parentId": ""
+}

@@ -1,0 +1,75 @@
+{
+  "modifiedOn": "2024-04-16T09:15:32.945Z",
+  "name": "Go to Campaign Manager",
+  "id": "45166",
+  "type": 3,
+  "createdOn": "2024-04-16T09:15:32.945Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Go to Campaign Manager",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "5000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_navigateTo",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "\"https://\"+document.domain+\"/lightning/n/SML__Campaign_Manager?0.source\u003dalohaHeader\""
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_navigateTo",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "\"https://\"+document.domain+\"/apex/CampaignManager?\""
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "70000"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "_isVisible(_button(\"New Campaign\"))"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_button(\"Campaign Manager\")"
+          }
+        ],
+        "stepType": "Action"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

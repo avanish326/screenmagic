@@ -1,0 +1,54 @@
+{
+  "modifiedOn": "2024-02-08T06:49:44.683Z",
+  "name": "Go to Business Hours and Assert the Message",
+  "id": "27938",
+  "type": 3,
+  "createdOn": "2024-02-08T06:49:44.683Z",
+  "content": {
+    "title": "Go to Business Hours and Assert the Message",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"Business Hours\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"/error_outline Business Hours feature/\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"error_outline Business Hours feature is not supported because the HIPAA Compliance setting is enabled.\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_isEnabled",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_submit(\"Add Business Hours[1]\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Is_False"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

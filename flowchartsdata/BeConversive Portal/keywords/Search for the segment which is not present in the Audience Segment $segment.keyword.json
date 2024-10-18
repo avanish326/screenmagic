@@ -1,0 +1,83 @@
+{
+  "modifiedOn": "2024-06-11T13:28:17.037Z",
+  "name": "Search for the segment which is not present in the Audience Segment $segment",
+  "id": "52767",
+  "type": 3,
+  "createdOn": "2024-06-11T04:26:21.375Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Search for the segment which is not present in the Audience Segment $segment",
+    "parameters": [
+      {
+        "parameterId": "segment_",
+        "entityTypeId": "segment",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "parameterId": "segment_",
+            "attributeId": "attr_111718079924606",
+            "accessorId": "acc0"
+          },
+          {
+            "parameterId": "segment_",
+            "attributeId": "attr_111718079924606"
+          }
+        ],
+        "stepType": "Action",
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_isVisible",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_cell($segment.searchText1)"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Is_False"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(\"There are no segments to display\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"There are no segments to display\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(\"Showing 0 segments\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"Showing 0 segments\""
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

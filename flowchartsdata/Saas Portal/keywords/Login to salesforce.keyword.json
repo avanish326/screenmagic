@@ -1,0 +1,79 @@
+{
+  "modifiedOn": "2024-09-02T10:44:15.531Z",
+  "name": "Login to salesforce",
+  "id": "59005",
+  "type": 3,
+  "createdOn": "2024-09-02T10:09:35.804Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Login to salesforce",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_setXHRReadyStatesToWaitFor",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "\"2,3\""
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_navigateTo",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "\"https://login.salesforce.com/\""
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_emailbox(\"username\")"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "\"shashikant+qa73@screen-magic.com\""
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_password(\"pw\")"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "\"Qatest#12345\""
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_submit(\"Log In\")"
+          }
+        ],
+        "stepType": "Action"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

@@ -1,0 +1,92 @@
+{
+  "modifiedOn": "2024-05-17T13:08:30.611Z",
+  "name": "Assert $sampledatacampaign",
+  "id": "13473",
+  "type": 3,
+  "createdOn": "2023-08-28T11:10:48.738Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Assert $sampledatacampaign",
+    "parameters": [
+      {
+        "parameterId": "sampledatacampaign_",
+        "entityTypeId": "sampledatacampaign",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_navigateTo",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "\"https://qa-app.txtbox.in/app/#/v2/campaign\""
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"Webinar (Sample)\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"Webinar (Sample)\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"Special Offer (Sample)\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"Special Offer (Sample)\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"Happy Birthday (Sample)\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"Happy Birthday (Sample)\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_navigateTo",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "\"https://qa-app.txtbox.in/app/#/login?redirectUrl\u003dcampaign\""
+          }
+        ],
+        "stepType": "Action"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

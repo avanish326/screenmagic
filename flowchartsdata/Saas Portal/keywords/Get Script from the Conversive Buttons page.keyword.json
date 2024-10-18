@@ -1,0 +1,47 @@
+{
+  "modifiedOn": "2024-04-01T11:44:05.098Z",
+  "name": "Get Script from the Conversive Buttons page",
+  "id": "44817",
+  "type": 3,
+  "createdOn": "2024-04-01T11:43:12.324Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Get Script from the Conversive Buttons page",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_submit(\"Copy Script\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"Copy Script\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_submit(\"Copy Script\")"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$scriptConversiveButtonsPage"
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

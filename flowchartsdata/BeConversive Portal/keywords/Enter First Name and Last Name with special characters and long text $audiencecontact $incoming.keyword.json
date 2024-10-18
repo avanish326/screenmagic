@@ -1,0 +1,175 @@
+{
+  "modifiedOn": "2024-08-16T07:11:48.498Z",
+  "name": "Enter First Name and Last Name with special characters and long text $audiencecontact $incoming",
+  "id": "58837",
+  "type": 3,
+  "createdOn": "2024-08-16T04:41:03.814Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Enter First Name and Last Name with special characters and long text $audiencecontact $incoming",
+    "parameters": [
+      {
+        "parameterId": "audiencecontact_",
+        "entityTypeId": "audiencecontact",
+        "suffix": ""
+      },
+      {
+        "parameterId": "incoming_",
+        "entityTypeId": "incoming",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "parameterId": "audiencecontact_",
+            "attributeId": "attr_01723631398505",
+            "accessorId": "acc0"
+          },
+          {
+            "parameterId": "audiencecontact_",
+            "attributeId": "attr_31723783564228"
+          }
+        ],
+        "stepType": "Action",
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "parameterId": "audiencecontact_",
+            "attributeId": "attr_11723631747597",
+            "accessorId": "acc0"
+          },
+          {
+            "parameterId": "audiencecontact_",
+            "attributeId": "attr_41723791278185"
+          }
+        ],
+        "stepType": "Action",
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "parameterId": "audiencecontact_",
+            "attributeId": "attr_21723780950393",
+            "accessorId": "acc0"
+          },
+          {
+            "parameterId": "audiencecontact_",
+            "attributeId": "attr_51723792257766"
+          }
+        ],
+        "stepType": "Action",
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_submit(\"Add\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(0, _near(_textbox(\"First Name\")))"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"Please enter a valid First Name. Maximum 20 characters allowed.\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(0, _near(_textbox(\"Last Name\")))"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"Please enter a valid First Name. Maximum 20 characters allowed.\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(0, _near(_textbox(\"Emailid\")))"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"Please type a valid Email Address\""
+        }
+      },
+      {
+        "commented": true,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "parameterId": "audiencecontact_",
+            "attributeId": "attr_11723631747597",
+            "accessorId": "acc0"
+          },
+          {
+            "parameterId": "audiencecontact_",
+            "attributeId": "attr_11723631747597"
+          }
+        ],
+        "stepType": "Action",
+        "visibleCheck": false
+      },
+      {
+        "commented": true,
+        "isRawScript": true,
+        "rawScript": "$phoneNumber\u003d$incoming.source;\n\nvar $localNumberLength \u003d 10;\n\nvar $countryCodeLength \u003d $phoneNumber.length - $localNumberLength;\nvar $number \u003d $phoneNumber.substring($countryCodeLength);\n\n_log($number)"
+      },
+      {
+        "commented": true,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_textbox(\"contactNumber\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Contains",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$number"
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

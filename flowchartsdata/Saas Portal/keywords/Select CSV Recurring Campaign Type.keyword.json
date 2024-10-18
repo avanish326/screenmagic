@@ -1,0 +1,54 @@
+{
+  "modifiedOn": "2024-08-26T06:56:05.420Z",
+  "name": "Select CSV Recurring Campaign Type",
+  "id": "58946",
+  "type": 3,
+  "createdOn": "2024-08-26T06:56:05.420Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Select CSV Recurring Campaign Type",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div($recurringCampaignType)"
+          },
+          {}
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_textbox(\"Description\")"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "$saasCampaignDescription"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "1500"
+          }
+        ],
+        "stepType": "Action"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

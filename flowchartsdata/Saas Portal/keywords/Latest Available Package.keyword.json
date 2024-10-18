@@ -1,0 +1,1244 @@
+{
+  "modifiedOn": "2024-05-06T06:32:55.863Z",
+  "name": "Latest Available Package",
+  "id": "22983",
+  "type": 3,
+  "createdOn": "2024-01-30T12:38:28.882Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Latest Available Package",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"More\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(0, _near(_label(\"SMS-Magic App version\")))"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$installedSalesforcePackage"
+        }
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "if (parseFloat($latestSalesforceVersion) \u003c\u003d parseFloat($installedSalesforcePackage) ){"
+      },
+      {
+        "commented": false,
+        "action": "_isVisible",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"latest-package\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Is_False"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "} else {"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"latest-package\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"Version 1.73.15 available Upgrade\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_italic(\"open_in_new\", _near(_label(\"Salesforce Org URL\"),25))"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_selectWindow",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "\"Salesforce - Developer Edition\""
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "10000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "isRawScript": true,
+        "rawScript": "var $recentWindow \u003d _getRecentWindow();\n\n_selectWindow($recentWindow);\n\n_log($recentWindow);"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "\nif((_windowExists(\"/Salesforce - Enterprise/\")) || (_windowExists(\"/Salesforce - Developer/\"))){"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "_selectWindow(\"/Salesforce/\");"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"SMS-Magic Converse\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "10000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "}else{"
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "10000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_selectWindow",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "\"Converse Home | SMS-Magic\""
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "}"
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "5000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_selectWindow",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "\"Converse Home | SMS-Magic\""
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_isVisible",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_button(\"Converse Settings\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Is_True"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_button(\"Converse Settings\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_button(\"Converse Settings\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_selectWindow",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "\"Version 1.73 - SMS-Magic Converse Release Notes\""
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_image(\"Close\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"https://www.sms-magic.com/docs/converse-release-notes/knowledge-base-category/patch-release/\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"Patch Release\""
+        }
+      },
+      {
+        "commented": true,
+        "action": "_selectWindow",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "\"Converse Settings | SMS-Magic\""
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "5000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(\"Registration \u0026 Setup\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "2000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(\"Registration \u0026 Setup\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "2000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(\"Registration \u0026 Setup\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_selectWindow",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "\"Converse Settings | SMS-Magic\""
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "1000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_heading4(\"1. Destination Country and Server Location\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "isRawScript": true,
+        "rawScript": "_selectWindow(\"Converse Settings | SMS-Magic\")\n\nvar $country \u003d _getText(_paragraph(\"/selected-value/\",_near(_paragraph(\"Destination Country\"))))\n_log($country)\n\nvar $serverLocation \u003d _getText(_paragraph(\"/selected-value/\",_near(_paragraph(\"Server Location\"))))\n_log($serverLocation)\n\n\n\n"
+      },
+      {
+        "commented": true,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(\"/selected-value/\",_near(_paragraph(\"Destination Country\")))"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$country "
+        }
+      },
+      {
+        "commented": true,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(\"/selected-value/\",_near(_paragraph(\"Server Location\")))"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$serverLocation"
+        }
+      },
+      {
+        "commented": true,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "1000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_heading4(\"2. Registration, OAuth Sync and Remote Site Setting\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "isRawScript": true,
+        "rawScript": "_selectWindow(\"Converse Settings | SMS-Magic\")\n\nvar $ApiKey \u003d _getText(_div(0,_near(_paragraph(\"apiKeyInput\"))))\n_log($ApiKey)"
+      },
+      {
+        "commented": true,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(0,_near(_paragraph(\"apiKeyInput\")))"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$apiKey"
+        }
+      },
+      {
+        "commented": true,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "1000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_heading4(\"3. Plan Selection\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "isRawScript": true,
+        "rawScript": "_selectWindow(\"Converse Settings | SMS-Magic\")\n\nvar $selectedPlan \u003d _getText(_listItem(\"plan-block selected\"))\n\n_log($selectedPlan)"
+      },
+      {
+        "commented": true,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_listItem(\"plan-block selected\")"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$plan"
+        }
+      },
+      {
+        "commented": true,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(\"User Management\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "2000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(\"User Management\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "isRawScript": true,
+        "rawScript": "_selectWindow(\"Converse Settings | SMS-Magic\")\n\n\n$licensesNum\u003d _collectAttributes(\"_div\",\"/licenses/\",\"sahiText\",_under(_heading3(\"Available User Licenses\")));\n\n//var $licenses \u003d _collect(\"_div\",\"licenses\",_under(_heading3(\"Available User //Licenses\")));\n// $licensesNum \u003d [];\n//for(var $i\u003d0; $i\u003c$licenses.length; $i++)\n//{\n//$licensesNum.push(_getText(_paragraph(0,_in($licenses[$i]))))\n//}\n//_log($licensesNum)\n\n$userNames \u003d_collectAttributes(\"_cell\",\"/.*/\",\"sahiText\",_under(_tableHeader(\"User Name\")),_in(_div(\"usertableList\")));\n_log($userNames)\n\n\n$profiles\u003d_collectAttributes(\"_cell\",\"/.*/\",\"sahiText\",_under(_tableHeader(\"Profile\")),_in(_div(\"usertableList\")))\n_log($profiles)\n\nfor(var $i\u003d0;$i\u003c$userNames.length; $i++){\n_assertVisible(_cell($profiles[$i]),\"This\" +$userNames[$i]+\"has profile\"+$profiles[$i]);\n}"
+      },
+      {
+        "commented": true,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "2000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"licenses-info slds-clearfix\")"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$licenses"
+        }
+      },
+      {
+        "commented": true,
+        "isRawScript": true,
+        "rawScript": "\n_selectWindow(\"Converse Settings | SMS-Magic\")\n\nvar $userNames \u003d_collectAttributes(\"_cell\",\"/.*/\",\"sahiText\",_under(_tableHeader(\"User Name\")),_in(_div(\"usertableList\")));\n_log($userNames)\n\n\nvar $profiles\u003d_collectAttributes(\"_cell\",\"/.*/\",\"sahiText\",_under(_tableHeader(\"Profile\")),_in(_div(\"usertableList\")))\n//_log($profiles)\n\nfor(var $i\u003d0;$i\u003c$userNames.length; $i++){\n_assertVisible(_cell($profiles[$i]),\"This\" +$userNames[$i]+\"has profile\"+$profiles[$i]);\n}"
+      },
+      {
+        "commented": true,
+        "isRawScript": true,
+        "rawScript": "_selectWindow(\"Converse Settings | SMS-Magic\")\n_assertEqual(\"System Administrator\",_getText(_div(0,_rightOf(_div(\"slds-truncate[5]\")),_under(_div(\"Profile\")))))"
+      },
+      {
+        "commented": true,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_table(\"slds-table slds-table_bordered slds-table_cell-buffer slds-no-row-hover\")"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$userDetails"
+        }
+      },
+      {
+        "commented": true,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(\"Message Configuration\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "5000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "isRawScript": true,
+        "rawScript": "\n//_selectWindow(\"Converse Settings | SMS-Magic\")\n$objects \u003d _collectAttributes(\"_div\",\"/parent-block smagicinteractObjectPicker/\",\"sahiText\",_under(_listItem(\"Object Name\")))\n_log($objects)\n\n$NameFileds \u003d_collectAttributes(\"_div\",\"/smagicinteractFieldPicker/\",\"sahiText\",_under(_listItem(\"Name field\")))\n_log($NameFileds)\n\n\n$phoneFeilds \u003d _collectAttributes(\"_div\",\"/smagicinteractFieldPicker/\",\"sahiText\",_under(_listItem(\"Phone Fields\")));\n_log($phoneFeilds)\n\n\n//for(var $i\u003d0;$i\u003c$phoneFeilds.length; $i++){\n//_assertEqual($NameFileds[$i],_getText(_span(0,_rightOf(_span($objects[$i])))))\n//}\n"
+      },
+      {
+        "commented": true,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"divTableBody config-object-scroll\")"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$moc"
+        }
+      },
+      {
+        "commented": true,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(\"Sender ID Assignment\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_selectWindow",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "\"Converse Settings | SMS-Magic\""
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "3000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "isRawScript": true,
+        "rawScript": "//_selectWindow(\"Converse Settings | SMS-Magic\")\n\n$senderId \u003d _collectAttributes(\"_lightning_formatted_text\",\"/.*/\",\"value\",_under(_listItem(\"Sender ID\")),_in(_list(\"detailObject\")))\n\n_log($senderId);\n\n\n\n$channel\u003d\n_collectAttributes(\"_lightning_formatted_text\",\"/.*/\",\"value\",_under(_listItem(\"CHANNEL(s)\")),_in(_list(\"detailObject\")))\n\n_log($channel);\n\n//for(var $i\u003d0; $i\u003c$senderId.length-1;$i++){\n//_assertVisible(_lightning_formatted_text({\"value\":$channel[$i]}),\"This channel is //for \"+$senderId[$i])\n//}\n\n\n\n//_collectAttributes(\"_div\",\"/parent-block smagicinteractObjectPicker/\",\"sahiText\",_under(_listItem(\"Sender ID\")))"
+      },
+      {
+        "commented": true,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"divTableBody scroll-table-wrapper\")"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$senderIdOne"
+        }
+      },
+      {
+        "commented": true,
+        "action": "_log",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "$senderIdOne"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(\"Compliance Configured\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "5000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "isRawScript": true,
+        "rawScript": "_selectWindow(\"Converse Settings | SMS-Magic\")\n\n$selectOne \u003d _collectAttributes(\"_div\",\"/consent-record-box consentActive/\",\"sahiText\",_in(_div(\"/consent-record-wrap/\")))\n\n//var $selectedOne \u003d_getText(_parentNode(_div(\"/Selected/\",_in(_div(\"consent-mode-detail\"))),\"DIV\"));\n_log($selectOne)\n\n$enabledText \u003d _getText(_span(0,_under(_heading3(\"Consent Record Expiry\"),25)))\n\n\n\n$enabled \u003d _getAttribute(_div(\"/EnabledDisabled/\",_rightOf(_heading3(\"Consent Record Expiry\"))),\"class\")\n_log($enabled)\n\n$enabled1 \u003d _getAttribute(_span(1,_in(_span(\"/checkbox/\",_rightOf(_heading3(\"/revoke consent/\"))))),\"class\");\n_log($enabled1)\n\n\n"
+      },
+      {
+        "commented": true,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "2000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "isRawScript": true,
+        "rawScript": "_selectWindow(\"Converse Settings | SMS-Magic\")\n\n\n//var $automatedConversation _getText(_button(\"pro\",_under(_paragraph(\"Automated Conversations\"),50)))\n\n //_getAttribute(_span(0,_in(_span(\"slds-checkbox_faux\"))),\"className\")\n//_log($automatedConversation)\n\n//var $bulkConversation \u003d _getText(_font(0,_leftOf(_span(\"slds-checkbox_faux\"))))\n//_log($bulkConversation)\n\n//var $interactiveConversation \u003d //_getText(_button(\"/pro/\",_near(_paragraph(\"Interactive Conversations\"))))\n//_log($interactiveConversation)\n\n\n"
+      },
+      {
+        "commented": true,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(6, _in(_div(\"slds-clearfix radio-wrap\")))"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$expiry"
+        }
+      },
+      {
+        "commented": true,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(3, _in(_div(\"notify-incoming\")))"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$inConsent"
+        }
+      },
+      {
+        "commented": true,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(\"Consent Method \u0026 Content\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "3000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"/Consent/\",_under(_paragraph(\"Automated Conversations\"),25))"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$automatedConv"
+        }
+      },
+      {
+        "commented": true,
+        "action": "_log",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "$automatedConv"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"/Consent/\",_under(_paragraph(\"Bulk Conversations\"),25))"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$bulkConv"
+        }
+      },
+      {
+        "commented": true,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"/Consent/\",_under(_paragraph(\"Interactive Conversations\"),25))"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$intConv"
+        }
+      },
+      {
+        "commented": true,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(\"Double Opt-in\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "5000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "isRawScript": true,
+        "rawScript": "if(_isVisible(_div(\"conditionDesBox\"))){"
+      },
+      {
+        "commented": true,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"conditionDesBox\")"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$doubleOptIn"
+        }
+      },
+      {
+        "commented": true,
+        "isRawScript": true,
+        "rawScript": "//_selectWindow(\"Converse Settings | SMS-Magic\")\n\n\nvar $doubleConfig \u003d _collectAttributes(\"_div\", \"/.*/\",\"sahiText\", _under(_span(\"SOURCE\")));\n//_log($doubleConfig)\n\nvar $source \u003d _collectAttributes(\"_lightBasetext\",\"/.*/\",\"value\",_under(_span(\"SOURCE\")));\n\nvar $configSenderId \u003d \n_collectAttributes(\"_lightBasetext\",\"/.*/\",\"value\",_under(_span(\"SENDER ID\"),50));\n\n"
+      },
+      {
+        "commented": true,
+        "isRawScript": true,
+        "rawScript": "}else{\n"
+      },
+      {
+        "commented": true,
+        "action": "_log",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "\"no table\""
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "isRawScript": true,
+        "rawScript": "}"
+      },
+      {
+        "commented": true,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(\"Keyword Management\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "2000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "isRawScript": true,
+        "rawScript": "//_selectWindow(\"Converse Settings | SMS-Magic\")\n\n$enabled \u003d _collectAttributes(\"_lightBasetext\",\"/.*/\",\"value\",_under(_div(\"STATUS\")));\n\n$types \u003d _collectAttributes(\"_lightBasetext\",\"/.*/\",\"value\",_under(_div(\"TYPE\")));\n \n//for(var $i\u003d0; $i\u003c$types.length; $i++){\n//_assertEqual($enabled[$i],_getValue(_lightBasetext(0,_rightOf(_lightBasetext($typ//es[$i])),_under(_div(\"STATUS\")))))\n//}\n"
+      },
+      {
+        "commented": true,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"conditionDesBox\")"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$keywordManage"
+        }
+      },
+      {
+        "commented": true,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(\"Conversations\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"General Settings\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_selectWindow",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "\"Converse Settings | SMS-Magic\""
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "2000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "isRawScript": true,
+        "rawScript": "//_selectWindow(\"Converse Settings | SMS-Magic\")\n\n$header \u003d _collectAttributes(\"_heading3\",\"/.*/\",\"sahiText\",_in(_div(\"tab-content-section\")))\n\n\n\n//_assertEqual($header,$headerUpdate)\n\n//$enable \u003d [];\n\n//for(var $i \u003d 0; $i\u003c$header.length ; $i++){\n//$enable.push(_getAttribute(_span(2,_rightOf(_heading3($header[$i]))),\"class\"))\n\n//}\n//$enable\n"
+      },
+      {
+        "commented": true,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"slds-tabs_default__content slds-show\")"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$genSettings"
+        }
+      },
+      {
+        "commented": true,
+        "action": "_getAttribute",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_collectAttributes(\"_lightBasetext\",\"/.*/\",\"value\",_under(_div(\"Objects\")))"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$genObjects"
+        }
+      },
+      {
+        "commented": true,
+        "action": "_getAttribute",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_collectAttributes(\"_lightBasetext\",\"/.*/\",\"value\",_under(_div(\"CRM Action\")))"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$crmAction"
+        }
+      },
+      {
+        "commented": true,
+        "isRawScript": true,
+        "rawScript": "//_selectWindow(\"Converse Settings | SMS-Magic\");\n\nif(_isVisible(_heading3(\"Auto Pull Incoming Messages When OAuth Gets Revoked\"))){\nvar $enable \u003d _getText(_span(\"/slds-checkbox/[2]\",_rightOf(_heading3(\"Auto Pull Incoming Messages When OAuth Gets Revoked\"))));\n_log($enable);\n}\n\n\nvar $objects \u003d _collectAttributes(\"_lightBasetext\",\"/.*/\",\"value\",_under(_div(\"Objects\")));\n_log(objects);\nvar $crmActions \u003d_collectAttributes(\"_lightBasetext\",\"/.*/\",\"value\",_under(_div(\"CRM Action\")));\n_log(crmActions);\n\n\n\n//for(var $i\u003d0; $i\u003c$crmActions.length; $i++){\n//_assertEqual($crmActions[$i],_getValue(_lightBasetext(0,_rightOf(_lightBasete///xt($objects[$i])))))\n//_assertVisible($objects[$i],\"This object is for \"+$crmActions[$i])\n//}\n"
+      },
+      {
+        "commented": true,
+        "isRawScript": true,
+        "rawScript": "_selectWindow(\"/Get Started/\");\n"
+      },
+      {
+        "commented": true,
+        "action": "_selectWindow",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "\"Get Started - SMS Magic\""
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_italic(\"keyboard_arrow_up\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"Upgrade\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_button(\"Upgrade to Version 1.73 now\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_selectWindow",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "\"Get Started - SMS Magic\""
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "900000"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "_isVisible(_div(\"sucess-configure\", _near(_label(\"SMS-Magic App version\"))))"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(0, _near(_label(\"SMS-Magic App version\")))"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$latestSalesforceVersion"
+        }
+      },
+      {
+        "commented": true,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "300000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "}"
+      },
+      {
+        "commented": true,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "5000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_selectWindow",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "\"Converse Settings | SMS-Magic\""
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_selectWindow",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "\"Converse Settings | SMS-Magic\""
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_selectWindow",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "\"Converse Settings | SMS-Magic\""
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_selectWindow",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "\"Converse Settings | SMS-Magic\""
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_selectWindow",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "\"Salesforce - Enterprise Edition\""
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_selectWindow",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "\"Salesforce - Enterprise Edition\""
+          }
+        ],
+        "stepType": "Action"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

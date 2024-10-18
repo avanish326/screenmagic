@@ -1,0 +1,21 @@
+{
+  "modifiedOn": "2024-05-22T12:57:22.685Z",
+  "name": "Database Validation",
+  "id": "27419",
+  "type": 3,
+  "createdOn": "2024-02-08T06:49:37.455Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Database Validation",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "var $db \u003d _getDB(\"com.mysql.jdbc.Driver\", \"jdbc:mysql://127.0.0.1/smsmagic\", \"admin_portal\",\"Smd3v$Au321\");\nvar $rs \u003d $db.select(\"select bot_status from incoming_config where accountId \u003d\u002790005136\u0027 and shortCode \u003d \u0027785553262\u0027;\");\nvar $is_active\u003d $rs[0][0];\n_assertEqual($is_active, 0)\n"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

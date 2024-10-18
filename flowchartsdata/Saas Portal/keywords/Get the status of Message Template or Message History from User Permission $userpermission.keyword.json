@@ -1,0 +1,48 @@
+{
+  "modifiedOn": "2024-03-18T07:35:23.982Z",
+  "name": "Get the status of Message Template or Message History from User Permission $userpermission",
+  "id": "44667",
+  "type": 3,
+  "createdOn": "2024-03-15T14:04:44.759Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Get the status of Message Template or Message History from User Permission $userpermission",
+    "parameters": [
+      {
+        "parameterId": "userpermission_",
+        "entityTypeId": "userpermission",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_isChecked",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_checkbox(0, _rightOf(_span(\"Message Template\")))"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$statusOfMessageTemplate"
+        }
+      },
+      {
+        "commented": false,
+        "action": "_log",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "$statusOfFeature"
+          }
+        ],
+        "stepType": "Action"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

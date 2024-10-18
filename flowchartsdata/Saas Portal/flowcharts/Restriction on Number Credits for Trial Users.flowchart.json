@@ -1,0 +1,256 @@
+{
+  "name": "Restriction on Number Credits for Trial Users",
+  "id": "-1",
+  "type": 0,
+  "content": {
+    "nodesMap": {
+      "fcn_start_0": {
+        "id": "fcn_start_0",
+        "content": "Start",
+        "nodeType": "start",
+        "branches": [
+          "fcn_checknumberprovisionflow_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_checknumberprovisionflow_0": {
+        "id": "fcn_checknumberprovisionflow_0",
+        "content": "Check Number Provision Flow",
+        "nodeType": "pathlabel",
+        "branches": [
+          "fcn_logintosaasportal_1719556418219_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_logintosaasportal_1719556418219_0": {
+        "id": "fcn_logintosaasportal_1719556418219_0",
+        "content": "login to saas portal using new trial acc",
+        "nodeType": "action",
+        "branches": [
+          "fcn_validateaccountistrialorpayee_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_validateaccountistrialorpayee_0": {
+        "id": "fcn_validateaccountistrialorpayee_0",
+        "content": "Validate Account is Trial Or Payee ",
+        "nodeType": "dynamic-decision",
+        "branches": [
+          "fcn_addnumbercreditstopayeeaccount_0",
+          "fcn_checkfortrialaccount_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_checkfortrialaccount_0": {
+        "id": "fcn_checkfortrialaccount_0",
+        "content": "Check SenderID Available in Trial Account",
+        "nodeType": "dynamic-decision",
+        "branches": [
+          "fcn_addsenderidintrialaccount_0",
+          "fcn__0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_addnumbercreditstopayeeaccount_0": {
+        "id": "fcn_addnumbercreditstopayeeaccount_0",
+        "content": "Add Number Credits to Payee Account",
+        "nodeType": "action",
+        "branches": [
+          "fcn_addsenderidinpayeeaccount_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn__0": {
+        "id": "fcn__0",
+        "content": "Check Number Credits for Trial",
+        "nodeType": "action",
+        "branches": [
+          "fcn_gotoaccountsettings_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_addsenderidintrialaccount_0": {
+        "id": "fcn_addsenderidintrialaccount_0",
+        "content": "Add SenderId in Trial account",
+        "nodeType": "action",
+        "branches": [
+          "fcn_validateaddedsenderid_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_validateaddedsenderid_0": {
+        "id": "fcn_validateaddedsenderid_0",
+        "content": "Validate Added SenderID",
+        "nodeType": "action",
+        "branches": [],
+        "dataSetId": "-1"
+      },
+      "fcn_addsenderidinpayeeaccount_0": {
+        "id": "fcn_addsenderidinpayeeaccount_0",
+        "content": "Add SenderID in Payee Account",
+        "nodeType": "action",
+        "branches": [],
+        "dataSetId": "-1"
+      },
+      "fcn_addcreditsfromopsportal_1720773895748_0": {
+        "id": "fcn_addcreditsfromopsportal_1720773895748_0",
+        "content": "Add credits from OPS portal ",
+        "nodeType": "action",
+        "branches": [
+          "fcn_closethebrowser_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_addcreditsfromopsadmin_1720775459565_0": {
+        "id": "fcn_addcreditsfromopsadmin_1720775459565_0",
+        "content": "Add credits from Ops admin ",
+        "nodeType": "action",
+        "branches": [
+          "fcn_againaddthecreditasonetheaccount_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_getaccountid_1728016626957_0": {
+        "id": "fcn_getaccountid_1728016626957_0",
+        "content": "Get Account ID",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logintotheopsportalandsearchtheaccount_1728016641150_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_logintotheopsportalandsearchtheaccount_1728016641150_0": {
+        "id": "fcn_logintotheopsportalandsearchtheaccount_1728016641150_0",
+        "content": "Login to the Ops Portal using other user and Search the Account",
+        "nodeType": "action",
+        "branches": [
+          "fcn_addcreditsfromopsportal_1720773895748_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_closethebrowser_0": {
+        "id": "fcn_closethebrowser_0",
+        "content": "Close the Browser",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logintotheopsportalandsearchtheaccount_1728018960939_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_againaddthecreditasonetheaccount_0": {
+        "id": "fcn_againaddthecreditasonetheaccount_0",
+        "content": "Again add the credit as one the account",
+        "nodeType": "action",
+        "branches": [],
+        "dataSetId": "-1"
+      },
+      "fcn_gotoaccountsettings_0": {
+        "id": "fcn_gotoaccountsettings_0",
+        "content": "Navigate to User Management",
+        "nodeType": "action",
+        "branches": [
+          "fcn_getaccountid_1728016626957_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_logintotheopsportalandsearchtheaccount_1728018960939_0": {
+        "id": "fcn_logintotheopsportalandsearchtheaccount_1728018960939_0",
+        "content": "Login to the Ops Portal and Search the Account",
+        "nodeType": "action",
+        "branches": [
+          "fcn_addcreditsfromopsadmin_1720775459565_0"
+        ],
+        "dataSetId": "-1"
+      }
+    },
+    "positions": {
+      "fcn_start_0": {
+        "top": 150,
+        "left": 500
+      },
+      "fcn_checknumberprovisionflow_0": {
+        "top": 265.640625,
+        "left": 658.9765625
+      },
+      "fcn_logintosaasportal_1719556418219_0": {
+        "top": 325.3125,
+        "left": 658.9765625
+      },
+      "fcn_validateaccountistrialorpayee_0": {
+        "top": 405.1015625,
+        "left": 658.9765625
+      },
+      "fcn_addnumbercreditstopayeeaccount_0": {
+        "top": 509.75,
+        "left": 1048.953125
+      },
+      "fcn_addsenderidinpayeeaccount_0": {
+        "top": 567.265625,
+        "left": 1049.953125
+      },
+      "fcn_checkfortrialaccount_0": {
+        "top": 503.75,
+        "left": 455.9765625
+      },
+      "fcn_addsenderidintrialaccount_0": {
+        "top": 592.4140625,
+        "left": 640.9765625
+      },
+      "fcn_validateaddedsenderid_0": {
+        "top": 660.1015625,
+        "left": 640.9765625
+      },
+      "fcn__0": {
+        "top": 634.4375,
+        "left": 246.9765625
+      },
+      "fcn_gotoaccountsettings_0": {
+        "top": 693.4375,
+        "left": 246.9765625
+      },
+      "fcn_getaccountid_1728016626957_0": {
+        "top": 753.4375,
+        "left": 246.9765625
+      },
+      "fcn_logintotheopsportalandsearchtheaccount_1728016641150_0": {
+        "top": 807.4375,
+        "left": 246.9765625
+      },
+      "fcn_addcreditsfromopsportal_1720773895748_0": {
+        "top": 880.1015625,
+        "left": 246.9765625
+      },
+      "fcn_closethebrowser_0": {
+        "top": 939.1015625,
+        "left": 246.9765625
+      },
+      "fcn_logintotheopsportalandsearchtheaccount_1728018960939_0": {
+        "top": 996.1015625,
+        "left": 244.9765625
+      },
+      "fcn_addcreditsfromopsadmin_1720775459565_0": {
+        "top": 1069.765625,
+        "left": 246.9765625
+      },
+      "fcn_againaddthecreditasonetheaccount_0": {
+        "top": 1128.765625,
+        "left": 246.9765625
+      }
+    },
+    "settings": {
+      "maxProceedDepth": 100,
+      "maxProceedsForFirstDepth": 1,
+      "maxProceedsPerDepth": 1,
+      "maxPathRepititionsPerComboPath": 1,
+      "maxProceedsPerPath": 10000,
+      "maxToggles": 2,
+      "maxMatchingPaths": 3
+    },
+    "isPrimary": false,
+    "pathNames": [],
+    "flowChartUID": "fcUID_1719553055284",
+    "pathExecutionOrder": []
+  },
+  "enabled": true,
+  "parentId": ""
+}

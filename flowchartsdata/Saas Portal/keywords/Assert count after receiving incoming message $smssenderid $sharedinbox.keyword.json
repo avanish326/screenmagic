@@ -1,0 +1,142 @@
+{
+  "modifiedOn": "2024-01-12T12:26:23.272Z",
+  "name": "Assert count after receiving incoming message $smssenderid $sharedinbox",
+  "id": "21515",
+  "type": 3,
+  "createdOn": "2023-12-14T07:37:49.406Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Assert count after receiving incoming message $smssenderid $sharedinbox",
+    "parameters": [
+      {
+        "parameterId": "smssenderid_",
+        "entityTypeId": "smssenderid",
+        "suffix": ""
+      },
+      {
+        "parameterId": "sharedinbox_",
+        "entityTypeId": "sharedinbox",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "var $inboxName\u003d$sharedinbox.inboxName1;"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"mail-count\", _near(_link(\"\"+$inboxName+\"\")))"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$countSharedInbox"
+        }
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "var $count \u003d $countSharedInbox.split(\" \")[0];\n_log($count)"
+      },
+      {
+        "commented": false,
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "POST"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "$incomingSMSURLIntelli"
+          }
+        ],
+        "stepType": "REST",
+        "isRawScript": true,
+        "rawScript": "var $request_cJgR6nNumD \u003d new RESTRequest();\r\n$request_cJgR6nNumD.setURL($incomingSMSURLIntelli);\r\n$request_cJgR6nNumD.addToQueryString(\"Message\", $smssenderid.text);\r\n$request_cJgR6nNumD.addToQueryString(\"OriginatorAddress\", $smssenderid.source);\r\n$request_cJgR6nNumD.addToQueryString(\"DestinationAddress\", $smssenderid.smsSenderID);\r\nvar $response_cJgR6nNumD \u003d $request_cJgR6nNumD.submit(\"POST\");\r\nvar responseBody \u003d JSON.parse($response_cJgR6nNumD.getBodyAsString());\r\n\t var $responseBodyObj_cJgR6nNumD \u003d $response_cJgR6nNumD.getBodyAsString();\r\n\tvar responseType \u003d $response_cJgR6nNumD.getHeader(\"Content-Type\");\r\n\tif (responseType.indexOf(\"json\")!\u003d-1) {\r\n\t\t$responseBodyObj_cJgR6nNumD \u003d JSON.parse($responseBodyObj_cJgR6nNumD);\r\n\t}\r\n\telse if (responseType.indexOf(\"xml\")!\u003d-1) {\r\n\t\t$responseBodyObj_cJgR6nNumD \u003d $responseBodyObj_cJgR6nNumD.replace(/\u003c\\xml.*?\u003e/g, \u0027\u0027).replace(/\\n/g, \u0027\u0027).replace(/\\r/g, \u0027\u0027);\r\n\t\t$responseBodyObj_cJgR6nNumD \u003d new XML(undefined);\r\n\t}\r\n\r\n\t//assertions\r\n\r\n",
+        "state": {
+          "contentType": "json",
+          "request": {
+            "method": "POST",
+            "url": "$incomingSMSURLIntelli",
+            "parameters": [
+              [
+                "Message",
+                "$smssenderid.text"
+              ],
+              [
+                "OriginatorAddress",
+                "$smssenderid.source"
+              ],
+              [
+                "DestinationAddress",
+                "$smssenderid.smsSenderID"
+              ]
+            ],
+            "headers": [],
+            "authType": "none",
+            "body": "",
+            "bodyParams": [],
+            "isParametrizedBody": false,
+            "resetCookies": false
+          },
+          "assertions": {
+            "status": [],
+            "header": [],
+            "body": []
+          },
+          "variables": {
+            "status": [],
+            "header": [],
+            "body": []
+          },
+          "authInfo": {}
+        }
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "3000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"mail-count\", _near(_link(\"\"+$inboxName+\"\")))"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$countSharedInbox1"
+        }
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "var $count1 \u003d $countSharedInbox1.split(\" \")[0];\n_log($count1)"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "_log($count);\n\nvar $inc\u003d1;\nvar $fCount\u003dNumber($count) + $inc ;\n_log($fCount);\n\n_assertEqual($fCount, $count1)"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

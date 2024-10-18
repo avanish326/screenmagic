@@ -1,0 +1,88 @@
+{
+  "modifiedOn": "2024-07-15T11:20:16.417Z",
+  "name": "Send incoming MMS using twilio api $smssenderid",
+  "id": "58322",
+  "type": 3,
+  "createdOn": "2024-07-15T11:10:37.609Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Send incoming MMS using twilio api $smssenderid",
+    "parameters": [
+      {
+        "parameterId": "smssenderid_",
+        "entityTypeId": "smssenderid",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "POST"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "$IncomingTwilioURL"
+          }
+        ],
+        "stepType": "REST",
+        "isRawScript": true,
+        "rawScript": "var $request_I45SUMGawW \u003d new RESTRequest();\r\n$request_I45SUMGawW.setURL($IncomingTwilioURL);\r\n$request_I45SUMGawW.addToQueryString(\"From\", $smssenderid.source);\r\n$request_I45SUMGawW.addToQueryString(\"To\", $smssenderid.smsSenderID);\r\n$request_I45SUMGawW.addToQueryString(\"NumMedia\", \"1\");\r\n$request_I45SUMGawW.addToQueryString(\"MediaUrl0\", \"https://qa-app.txtbox.in/api/v1/getmedia?media\u003d62e02ac5-f50d-4c61-b3fd-90a3065e16bc.aac\");\r\n$request_I45SUMGawW.addToQueryString(\"Body\", $smssenderid.text);\r\n$request_I45SUMGawW.addToQueryString(\"SmsSid\", \"test incoming MMS message 😂ws😃jbi4\");\r\nvar $response_I45SUMGawW \u003d $request_I45SUMGawW.submit(\"POST\");\r\n\t var $responseBodyObj_I45SUMGawW \u003d $response_I45SUMGawW.getBodyAsString();\r\n\tvar responseType \u003d $response_I45SUMGawW.getHeader(\"Content-Type\");\r\n\tif (responseType.indexOf(\"json\")!\u003d-1) {\r\n\t\t$responseBodyObj_I45SUMGawW \u003d JSON.parse($responseBodyObj_I45SUMGawW);\r\n\t}\r\n\telse if (responseType.indexOf(\"xml\")!\u003d-1) {\r\n\t\t$responseBodyObj_I45SUMGawW \u003d $responseBodyObj_I45SUMGawW.replace(/\u003c\\xml.*?\u003e/g, \u0027\u0027).replace(/\\n/g, \u0027\u0027).replace(/\\r/g, \u0027\u0027);\r\n\t\t$responseBodyObj_I45SUMGawW \u003d new XML(undefined);\r\n\t}\r\n\r\n\t//assertions\r\n\r\n",
+        "state": {
+          "contentType": "xml",
+          "request": {
+            "method": "POST",
+            "url": "$IncomingTwilioURL",
+            "parameters": [
+              [
+                "From",
+                "$smssenderid.source"
+              ],
+              [
+                "To",
+                "$smssenderid.smsSenderID"
+              ],
+              [
+                "NumMedia",
+                "1"
+              ],
+              [
+                "MediaUrl0",
+                "https://qa-app.txtbox.in/api/v1/getmedia?media\u003d62e02ac5-f50d-4c61-b3fd-90a3065e16bc.aac"
+              ],
+              [
+                "Body",
+                "$smssenderid.text"
+              ],
+              [
+                "SmsSid",
+                "test incoming MMS message 😂ws😃jbi4"
+              ]
+            ],
+            "headers": [],
+            "authType": "none",
+            "body": "",
+            "bodyParams": [],
+            "isParametrizedBody": false,
+            "resetCookies": false
+          },
+          "assertions": {
+            "status": [],
+            "header": [],
+            "body": []
+          },
+          "variables": {
+            "status": [],
+            "header": [],
+            "body": []
+          },
+          "authInfo": {}
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

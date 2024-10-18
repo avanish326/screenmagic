@@ -1,0 +1,46 @@
+{
+  "name": "check the account name does not have Pending",
+  "id": "-1",
+  "type": 3,
+  "content": {
+    "isSystemKeyword": false,
+    "title": "check the account name does not have Pending",
+    "specific": [],
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "$pages \u003d _collectAttributes(\"_listItem\", \"/.*/\", \"sahiText\", _in(_div(\"pagination\")));\nif($pages.length \u003e 1){\n\t$page \u003d $pages[($pages.length)-1];\n}\nelse{\n\t$page \u003d $pages[0];\n}\n_click(_listItem($page))",
+        "specific": []
+      },
+      {
+        "commented": true,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_listItem($page)"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "$cells \u003d _collectAttributes(\"_cell\", \"/.*/\", \"sahiText\", _under(_tableHeader(\"Account Name\")), _in(_div(\"overflow-x-auto\")));\n\n$no \u003d $cells.length;\n$lastCell \u003d $cells[$no-1];",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "$isPending \u003d !_containsText(_cell($lastCell), \"Pending\");\n\n$isPending;\n\nif($isPending){\n_log(\"After registering the child, the Pending status is gone!\");\n}else{\n_log(\"The pending status is there!\");\n_click(_submit(\"fail\"));\n}",
+        "specific": []
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

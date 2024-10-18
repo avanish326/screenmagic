@@ -1,0 +1,79 @@
+{
+  "modifiedOn": "2023-10-05T14:02:49.084Z",
+  "name": "Click on Manage Shared Sender ID and assign it to another user",
+  "id": "16822",
+  "type": 3,
+  "createdOn": "2023-10-05T13:31:22.980Z",
+  "content": {
+    "title": "Click on Manage Shared Sender ID and assign it to another user",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"more_vert\", _near(_span(\"SMS\")))"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"Manage Shared SenderID\", _near(_span(\"SMS\")))"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_setSelected",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_select(2)"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "$unameStdLicense"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_button(\"Add\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"SenderID Assigned Successfully\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"SenderID Assigned Successfully\""
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

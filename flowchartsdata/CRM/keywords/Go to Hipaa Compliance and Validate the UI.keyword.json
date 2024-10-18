@@ -1,0 +1,42 @@
+{
+  "modifiedOn": "2023-09-29T11:59:30.140Z",
+  "name": "Go to Hipaa Compliance and Validate the UI",
+  "id": "15167",
+  "type": 3,
+  "createdOn": "2023-09-29T11:55:50.794Z",
+  "content": {
+    "title": "Go to Hipaa Compliance and Validate the UI",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"HIPAA Compliance\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(\"/SMS-Magic ensures/\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"SMS-Magic ensures that the SMS data is synced to the connected CRM. We do not store any of the SMS data at our end. Kindly connect to a CRM to be HIPAA compliant using SMS-Magic.\""
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

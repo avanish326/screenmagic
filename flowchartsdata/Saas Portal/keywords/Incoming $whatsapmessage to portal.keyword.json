@@ -1,0 +1,73 @@
+{
+  "modifiedOn": "2024-05-20T06:45:10.195Z",
+  "name": "Incoming $whatsapmessage to portal",
+  "id": "46148",
+  "type": 3,
+  "createdOn": "2024-05-20T05:07:51.489Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Incoming $whatsapmessage to portal",
+    "parameters": [
+      {
+        "parameterId": "whatsapmessage_",
+        "entityTypeId": "whatsapmessage",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "_setXHRReadyStatesToWaitFor(\"2,3\");"
+      },
+      {
+        "commented": false,
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "POST"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "https://api.txtbox.in/messages/incoming/whatsapp/twilio"
+          }
+        ],
+        "stepType": "REST",
+        "isRawScript": true,
+        "rawScript": "var $request_yXM70ipSAo \u003d new RESTRequest();\r\n$request_yXM70ipSAo.setURL(\"https://api.txtbox.in/messages/incoming/whatsapp/twilio\");\r\n$request_yXM70ipSAo.setHeader(\"Content-Type\", \"application/json\");\r\nvar sanitizedBody \u003d eval(\"(\"+\"{\" + \"   \\\"SmsMessageSid\\\":\\\"SM91805a30f08ed4a44c8fe7b1264deb14\\\",\" + \"   \\\"ProfileName\\\":\\\"abc\\\",\" + \"   \\\"SmsSid\\\":\\\"SM91805a30f08ed4a44c8fe7b1264deb14\\\",\" + \"   \\\"WaId\\\":\\\"91750878281\\\",\" + \"   \\\"SmsStatus\\\":\\\"received\\\",\" + \"   \\\"Body\\\":\\\"QA WA1\\\",\" + \"   \\\"To\\\":\\\"whatsapp:+14155238886\\\",\" + \"   \\\"NumSegments\\\":\\\"91908872555\\\",\" + \"   \\\"ReferralNumMedia\\\":\\\"0\\\",\" + \"   \\\"MessageSid\\\":\\\"SM91805a30f08ed4a44c8fe7b1264deb14\\\",\" + \"   \\\"AccountSid\\\":\\\"AC00a7b3b1c35de688eb9696b3119e0388\\\",\" + \"   \\\"From\\\":\\\"whatsapp:+918888986723\\\",\" + \"   \\\"ApiVersion\\\":\\\"2010-04-01\\\",   \" + \"   \\\"message_uuid\\\":\\\"SM91805a30f08ed4a44c8fe7b1264deb14\\\",       \" + \"   \\\"num_media\\\":\\\"1\\\"\" + \"}\"+\")\");\n$request_yXM70ipSAo.setBody(JSON.stringify(sanitizedBody));\r\nvar $response_yXM70ipSAo \u003d $request_yXM70ipSAo.submit(\"POST\");\r\n\t var $responseBodyObj_yXM70ipSAo \u003d $response_yXM70ipSAo.getBodyAsString();\r\n\tvar responseType \u003d $response_yXM70ipSAo.getHeader(\"Content-Type\");\r\n\tif (responseType.indexOf(\"json\")!\u003d-1) {\r\n\t\t$responseBodyObj_yXM70ipSAo \u003d JSON.parse($responseBodyObj_yXM70ipSAo);\r\n\t}\r\n\telse if (responseType.indexOf(\"xml\")!\u003d-1) {\r\n\t\t$responseBodyObj_yXM70ipSAo \u003d $responseBodyObj_yXM70ipSAo.replace(/\u003c\\xml.*?\u003e/g, \u0027\u0027).replace(/\\n/g, \u0027\u0027).replace(/\\r/g, \u0027\u0027);\r\n\t\t$responseBodyObj_yXM70ipSAo \u003d new XML(undefined);\r\n\t}\r\n\r\n\t//assertions\r\n\r\n",
+        "state": {
+          "contentType": "html",
+          "request": {
+            "method": "POST",
+            "url": "https://api.txtbox.in/messages/incoming/whatsapp/twilio",
+            "parameters": [],
+            "headers": [
+              [
+                "Content-Type",
+                "application/json"
+              ]
+            ],
+            "authType": "none",
+            "body": "{\n   \"SmsMessageSid\":\"SM91805a30f08ed4a44c8fe7b1264deb14\",\n   \"ProfileName\":\"abc\",\n   \"SmsSid\":\"SM91805a30f08ed4a44c8fe7b1264deb14\",\n   \"WaId\":\"91750878281\",\n   \"SmsStatus\":\"received\",\n   \"Body\":\"QA WA1\",\n   \"To\":\"whatsapp:+14155238886\",\n   \"NumSegments\":\"91908872555\",\n   \"ReferralNumMedia\":\"0\",\n   \"MessageSid\":\"SM91805a30f08ed4a44c8fe7b1264deb14\",\n   \"AccountSid\":\"AC00a7b3b1c35de688eb9696b3119e0388\",\n   \"From\":\"whatsapp:+918888986723\",\n   \"ApiVersion\":\"2010-04-01\",   \n   \"message_uuid\":\"SM91805a30f08ed4a44c8fe7b1264deb14\",       \n   \"num_media\":\"1\"\n}",
+            "bodyParams": [],
+            "isParametrizedBody": false,
+            "resetCookies": false
+          },
+          "assertions": {
+            "status": [],
+            "header": [],
+            "body": []
+          },
+          "variables": {
+            "status": [],
+            "header": [],
+            "body": []
+          },
+          "authInfo": {}
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

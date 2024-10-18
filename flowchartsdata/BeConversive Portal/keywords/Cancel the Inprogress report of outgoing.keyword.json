@@ -1,0 +1,61 @@
+{
+  "modifiedOn": "2024-02-08T06:49:56.999Z",
+  "name": "Cancel the Inprogress report of outgoing",
+  "id": "28786",
+  "type": 3,
+  "createdOn": "2024-02-08T06:49:56.999Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Cancel the Inprogress report of outgoing",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_button(\"Download Outgoing Report\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"Download Generated Report\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"Cancel\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_isVisible",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"Cancel\", _near(_cell(\"In progress\")))"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Is_False"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

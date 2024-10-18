@@ -1,0 +1,54 @@
+{
+  "modifiedOn": "2024-02-27T11:08:18.072Z",
+  "name": "Validate sms-history templatetext",
+  "id": "43358",
+  "type": 3,
+  "createdOn": "2024-02-27T09:58:32.959Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Validate sms-history templatetext",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"Campaign\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"Message History\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"/hello/\", _under(_tableHeader(\"Message\")))"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$templateText"
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

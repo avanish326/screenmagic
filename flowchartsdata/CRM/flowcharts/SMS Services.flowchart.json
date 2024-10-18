@@ -1,0 +1,2284 @@
+{
+  "modifiedOn": "2024-01-12T12:24:12.277Z",
+  "name": "SMS Services",
+  "id": "14846",
+  "type": 0,
+  "createdOn": "2023-09-21T07:30:35.543Z",
+  "content": {
+    "settings": {
+      "maxProceedDepth": 100,
+      "maxProceedsForFirstDepth": 1,
+      "maxProceedsPerDepth": 1,
+      "maxPathRepititionsPerComboPath": 1,
+      "maxProceedsPerPath": 10000,
+      "maxToggles": 2,
+      "maxMatchingPaths": 3
+    },
+    "nodesMap": {
+      "fcn_start_0": {
+        "dataSetId": -1,
+        "id": "fcn_start_0",
+        "nodeType": "start",
+        "branches": [
+          "fcn_smsservice_0"
+        ],
+        "content": "Start"
+      },
+      "fcn_accepthandofffortheconversationagent_1695299243651_0": {
+        "dataSetId": -1,
+        "id": "fcn_accepthandofffortheconversationagent_1695299243651_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assignconversationtoanotheruser_1695299243651_0"
+        ],
+        "content": "accept hand off for the conversation $agent"
+      },
+      "fcn_assignconversationtoanotheruser_1695299243651_0": {
+        "dataSetId": -1,
+        "id": "fcn_assignconversationtoanotheruser_1695299243651_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logintocustomer_portalusingstandarduser_1695299243651_0"
+        ],
+        "content": "assign conversation to another user"
+      },
+      "fcn_logintocustomer_portalusingstandarduser_1695299243651_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintocustomer_portalusingstandarduser_1695299243651_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_startconversationfromstandarduserforassignedconversationagent_1695299243651_0"
+        ],
+        "content": "Login to $customer_portal using standard user"
+      },
+      "fcn_startconversationfromstandarduserforassignedconversationagent_1695299243651_0": {
+        "dataSetId": -1,
+        "id": "fcn_startconversationfromstandarduserforassignedconversationagent_1695299243651_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_removeassignedsenderid_1695299243651_0"
+        ],
+        "content": "start conversation from standard user for assigned conversation $agent"
+      },
+      "fcn_removeassignedsenderid_1695299243651_0": {
+        "dataSetId": -1,
+        "id": "fcn_removeassignedsenderid_1695299243651_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "remove assigned sender id"
+      },
+      "fcn_selectfilterasallandoutgoingmessages_0": {
+        "dataSetId": -1,
+        "id": "fcn_selectfilterasallandoutgoingmessages_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_dowanlaodoutgoingreport_0",
+          "fcn_downloadoutgoingreportformorethat31days_0",
+          "fcn_downloadoutgoingreport_1695381384553_0",
+          "fcn_selectdaterangewhichdoesnothavedataoutgoingreport_0"
+        ],
+        "content": "select filter as All and Outgoing Messages"
+      },
+      "fcn_asserttabsonhistorypageforchannels_0": {
+        "dataSetId": -1,
+        "id": "fcn_asserttabsonhistorypageforchannels_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "assert tabs on History Page for Channels"
+      },
+      "fcn_selectfilterassmsandincomingmessages_0": {
+        "dataSetId": -1,
+        "id": "fcn_selectfilterassmsandincomingmessages_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_asserttabsonhistorypageforchannels_0"
+        ],
+        "content": "select filter as SMS and Incoming Messages"
+      },
+      "fcn_selectfilteraswhatsappandincomingmessages_0": {
+        "dataSetId": -1,
+        "id": "fcn_selectfilteraswhatsappandincomingmessages_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_asserttabsonhistorypageforchannels_0"
+        ],
+        "content": "select filter as Whats App and Incoming Messages"
+      },
+      "fcn_selectfilterasfbandincomingmessages_0": {
+        "dataSetId": -1,
+        "id": "fcn_selectfilterasfbandincomingmessages_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_asserttabsonhistorypageforchannels_0"
+        ],
+        "content": "select filter as FB and Incoming Messages"
+      },
+      "fcn_dowanlaodoutgoingreport_0": {
+        "dataSetId": -1,
+        "id": "fcn_dowanlaodoutgoingreport_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_downlaodthegenratedreport_0"
+        ],
+        "content": "Download $outgoingreport"
+      },
+      "fcn_downlaodthegenratedreport_0": {
+        "dataSetId": -1,
+        "id": "fcn_downlaodthegenratedreport_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": " downlaod the genrated report "
+      },
+      "fcn_downloadoutgoingreportformorethat31days_0": {
+        "dataSetId": -1,
+        "id": "fcn_downloadoutgoingreportformorethat31days_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Download $outgoingreport for more that 31 days"
+      },
+      "fcn_downloadoutgoingreport_1695381384553_0": {
+        "dataSetId": -1,
+        "id": "fcn_downloadoutgoingreport_1695381384553_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_canceltheinprogressreport_0"
+        ],
+        "content": "Download $outgoingreport"
+      },
+      "fcn_canceltheinprogressreport_0": {
+        "dataSetId": -1,
+        "id": "fcn_canceltheinprogressreport_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Cancel the Inprogress report "
+      },
+      "fcn_selectdaterangewhichdoesnothavedataoutgoingreport_0": {
+        "dataSetId": -1,
+        "id": "fcn_selectdaterangewhichdoesnothavedataoutgoingreport_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "select date range which does not have data $outgoingreport"
+      },
+      "fcn_downloadincomingreportformorethat31days_0": {
+        "dataSetId": -1,
+        "id": "fcn_downloadincomingreportformorethat31days_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Download $incomingreport for more that 31 days"
+      },
+      "fcn_selectdaterangewhichdoesnothavedataincomingreport_0": {
+        "dataSetId": -1,
+        "id": "fcn_selectdaterangewhichdoesnothavedataincomingreport_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "select date range which does not have data $incomingreport"
+      },
+      "fcn_isautoreplayenabled_0": {
+        "dataSetId": -1,
+        "id": "fcn_isautoreplayenabled_0",
+        "nodeType": "dynamic-decision",
+        "branches": [],
+        "content": "Is Auto Replay Enabled ?"
+      },
+      "fcn_smsservice_0": {
+        "dataSetId": -1,
+        "id": "fcn_smsservice_0",
+        "nodeType": "pathlabel",
+        "branches": [
+          "fcn_uivaliadationonsmsservicescreenandsmsservicesflowsaddcoverageusaanddothenumberprovisioningandsettingurls_0",
+          "fcn_smsservicesflowsaddcoverageindiaanddothenumberprovisioningandsettingurls_0",
+          "fcn_smsservicesflowsnumberprovisioningshortcodee_0",
+          "fcn_smsservicesflowsnumberprovisioningtollfreecode_0",
+          "fcn_smsservicesflowsnumberprovisioningalphasenderid_0",
+          "fcn_smsservicesflowsmysendeeridalluivalidation_0",
+          "fcn_smsservicesflowsmysendeeridactionswhenlicenncemanagerflagisoff_0",
+          "fcn_smsservicesflowsmysendeeridactionswhenlicenncemanagerflagisoff_1",
+          "fcn_prerequisiteforsmsservice_0"
+        ],
+        "content": "SMS Service"
+      },
+      "fcn_navigatetosmsservice_1695963918160_0": {
+        "dataSetId": -1,
+        "id": "fcn_navigatetosmsservice_1695963918160_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_uivaliadationonsmsservicescreen_0"
+        ],
+        "content": "Navigate to SMS Service"
+      },
+      "fcn_uivaliadationonsmsservicescreen_0": {
+        "dataSetId": -1,
+        "id": "fcn_uivaliadationonsmsservicescreen_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_isaddcoverageusaadded_0"
+        ],
+        "content": "UI Valiadation on SMS Service Screen"
+      },
+      "fcn_isaddcoverageusaadded_0": {
+        "dataSetId": -1,
+        "id": "fcn_isaddcoverageusaadded_0",
+        "nodeType": "dynamic-decision",
+        "branches": [
+          "fcn_selectusacountry_0",
+          "fcn_clickonusaundercoverage_0"
+        ],
+        "content": "In  Add Coverage USA Added ?"
+      },
+      "fcn_clickonusaundercoverage_0": {
+        "dataSetId": -1,
+        "id": "fcn_clickonusaundercoverage_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_issenderidpresentforprovision_0"
+        ],
+        "content": "Click on USA under Coverage"
+      },
+      "fcn_selectusacountry_0": {
+        "dataSetId": -1,
+        "id": "fcn_selectusacountry_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_clickonusaundercoverage_0"
+        ],
+        "content": "Select USA Country"
+      },
+      "fcn_getaccountid_1696312240153_0": {
+        "dataSetId": -1,
+        "id": "fcn_getaccountid_1696312240153_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logintoopsportallogintrial_signupaccountidtoaddsenderidforusa_0"
+        ],
+        "content": "Get $accountid"
+      },
+      "fcn_addnumbercreditnumbermanagmentaccountid_1696312378478_0": {
+        "dataSetId": -1,
+        "id": "fcn_addnumbercreditnumbermanagmentaccountid_1696312378478_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_provisionsenderidforcountryusa_1696316679553_0"
+        ],
+        "content": "add Number credits and Sender ID $numbermanagment $accountid"
+      },
+      "fcn_logintoopsportallogintrial_signupaccountidtoaddsenderidforusa_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintoopsportallogintrial_signupaccountidtoaddsenderidforusa_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_addnumbercreditnumbermanagmentaccountid_1696312378478_0"
+        ],
+        "content": "Login to the $opsportallogin $trial_signup $accountid"
+      },
+      "fcn_issenderidpresentforprovision_0": {
+        "dataSetId": -1,
+        "id": "fcn_issenderidpresentforprovision_0",
+        "nodeType": "dynamic-decision",
+        "branches": [
+          "fcn_provisionsenderidforcountryusa_1696316679553_0",
+          "fcn_getaccountid_1696312240153_0"
+        ],
+        "content": "Is Sender Id Not Present for Provision ?"
+      },
+      "fcn_getaccountid_1696314988778_0": {
+        "dataSetId": -1,
+        "id": "fcn_getaccountid_1696314988778_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logintoopsportallogintrial_signupaccountidtoaddsenderidforusa_1696314988778_0"
+        ],
+        "content": "Get $accountid"
+      },
+      "fcn_logintoopsportallogintrial_signupaccountidtoaddsenderidforusa_1696314988778_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintoopsportallogintrial_signupaccountidtoaddsenderidforusa_1696314988778_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Login to the $opsportallogin $trial_signup $accountid"
+      },
+      "fcn_provisionsenderidforcountryusa_1696316679553_0": {
+        "dataSetId": -1,
+        "id": "fcn_provisionsenderidforcountryusa_1696316679553_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logintogmailemaillogin_1696571419796_0"
+        ],
+        "content": "Provision $senderid for country USA"
+      },
+      "fcn_clickondetailsagainstthenumberaddedsenderid_1696316679553_0": {
+        "dataSetId": -1,
+        "id": "fcn_clickondetailsagainstthenumberaddedsenderid_1696316679553_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertthefieldssenderid_1696316679553_0"
+        ],
+        "content": " Click on Details against the number added $senderid"
+      },
+      "fcn_assertthefieldssenderid_1696316679553_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertthefieldssenderid_1696316679553_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_addincomingconfigurationurl_0"
+        ],
+        "content": "Assert the fields $senderid"
+      },
+      "fcn_uivaliadationonsmsservicescreenandsmsservicesflowsaddcoverageusaanddothenumberprovisioningandsettingurls_0": {
+        "dataSetId": -1,
+        "id": "fcn_uivaliadationonsmsservicescreenandsmsservicesflowsaddcoverageusaanddothenumberprovisioningandsettingurls_0",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_logintosaasportal_1696571286938_0"
+        ],
+        "content": "UI Valiadation on SMS Service Screen and SMS Services Flows- Add Coverage USA , and do the number Provisioning and setting URLs"
+      },
+      "fcn_addincomingconfigurationurl_0": {
+        "dataSetId": -1,
+        "id": "fcn_addincomingconfigurationurl_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_isaddpushurlvisible_0"
+        ],
+        "content": "Add Incoming Configuration URL"
+      },
+      "fcn_isaddpushurlvisible_0": {
+        "dataSetId": -1,
+        "id": "fcn_isaddpushurlvisible_0",
+        "nodeType": "dynamic-decision",
+        "branches": [
+          "fcn_clickoneditindeliveryconfigurationandadddlrurl_0",
+          "fcn_adddlrconfigurationurl_1696332350004_0"
+        ],
+        "content": "Is Add Push URL Visible For DLR ?"
+      },
+      "fcn_clickoneditindeliveryconfigurationandadddlrurl_0": {
+        "dataSetId": -1,
+        "id": "fcn_clickoneditindeliveryconfigurationandadddlrurl_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertsummarysection_1696332350004_0"
+        ],
+        "content": "Click on Edit in Delivery Configuration and Add DLR URL"
+      },
+      "fcn_adddlrconfigurationurl_1696332350004_0": {
+        "dataSetId": -1,
+        "id": "fcn_adddlrconfigurationurl_1696332350004_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertsummarysection_1696332350004_0"
+        ],
+        "content": "Add DLR Configuration URL"
+      },
+      "fcn_assertsummarysection_1696332350004_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertsummarysection_1696332350004_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_sendincomingmessagesmssenderid_0"
+        ],
+        "content": "Assert Summary Section"
+      },
+      "fcn_sendincomingmessagesmssenderid_0": {
+        "dataSetId": -1,
+        "id": "fcn_sendincomingmessagesmssenderid_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertsyncstatusinsmshistory_0"
+        ],
+        "content": "Send Incoming Message $sms $senderid"
+      },
+      "fcn_assertsyncstatusinsmshistory_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertsyncstatusinsmshistory_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertincominganddlrispushedtoconfiguredurlsmssenderid_0"
+        ],
+        "content": "Assert Sync Status in SMS History $sms History"
+      },
+      "fcn_assertincominganddlrispushedtoconfiguredurlsmssenderid_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertincominganddlrispushedtoconfiguredurlsmssenderid_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_removeprovisionedsenderidfromops_0"
+        ],
+        "content": "Assert incoming and DLR pushed to configured URL $sms $senderid $smshistory"
+      },
+      "fcn_removeprovisionedsenderidfromops_0": {
+        "dataSetId": -1,
+        "id": "fcn_removeprovisionedsenderidfromops_0",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_getaccountid_1696337401469_0"
+        ],
+        "content": "Remove Provisioned Sender id from OPS"
+      },
+      "fcn_getaccountid_1696337401469_0": {
+        "dataSetId": -1,
+        "id": "fcn_getaccountid_1696337401469_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logintotheopsportallogintrial_signupaccountid_1696337406558_0"
+        ],
+        "content": "Get $accountid"
+      },
+      "fcn_logintotheopsportallogintrial_signupaccountid_1696337406558_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintotheopsportallogintrial_signupaccountid_1696337406558_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_gotonumbermanagementandremoveprovisionedsenderid_0"
+        ],
+        "content": "Login to the $opsportallogin $trial_signup $accountid"
+      },
+      "fcn_gotonumbermanagementandremoveprovisionedsenderid_0": {
+        "dataSetId": -1,
+        "id": "fcn_gotonumbermanagementandremoveprovisionedsenderid_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Go to Number Management and Remove Provisioned $senderid"
+      },
+      "fcn_smsservicesflowsaddcoverageindiaanddothenumberprovisioningandsettingurls_0": {
+        "dataSetId": -1,
+        "id": "fcn_smsservicesflowsaddcoverageindiaanddothenumberprovisioningandsettingurls_0",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_logintosaasportal_1696584849608_0"
+        ],
+        "content": "SMS Services Flows- Add Coverage India , and do the number Provisioning and setting URLs"
+      },
+      "fcn_navigatetosmsservice_1696338365078_0": {
+        "dataSetId": -1,
+        "id": "fcn_navigatetosmsservice_1696338365078_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_inaddcoverageindiaadded_0"
+        ],
+        "content": "Navigate to SMS Service"
+      },
+      "fcn_inaddcoverageindiaadded_0": {
+        "dataSetId": -1,
+        "id": "fcn_inaddcoverageindiaadded_0",
+        "nodeType": "dynamic-decision",
+        "branches": [
+          "fcn_selectindiacountry_0",
+          "fcn_clickonindiaundercoverage_0"
+        ],
+        "content": "In Add Coverage India Added ?"
+      },
+      "fcn_clickonindiaundercoverage_0": {
+        "dataSetId": -1,
+        "id": "fcn_clickonindiaundercoverage_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_issenderidnotpresentforprovisionforindia_0"
+        ],
+        "content": "Click on India under Coverage"
+      },
+      "fcn_selectindiacountry_0": {
+        "dataSetId": -1,
+        "id": "fcn_selectindiacountry_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_clickonindiaundercoverage_0"
+        ],
+        "content": "Select India Country"
+      },
+      "fcn_issenderidnotpresentforprovisionforindia_0": {
+        "dataSetId": -1,
+        "id": "fcn_issenderidnotpresentforprovisionforindia_0",
+        "nodeType": "dynamic-decision",
+        "branches": [
+          "fcn_provisionsenderidforcountryindia_0",
+          "fcn_getaccountid_1696339176639_0"
+        ],
+        "content": "Is Sender Id Not Present for Provision for India ?"
+      },
+      "fcn_getaccountid_1696339176639_0": {
+        "dataSetId": -1,
+        "id": "fcn_getaccountid_1696339176639_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logintotheopsportallogintrial_signupaccountid_1696339185473_0"
+        ],
+        "content": "Get $accountid"
+      },
+      "fcn_logintotheopsportallogintrial_signupaccountid_1696339185473_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintotheopsportallogintrial_signupaccountid_1696339185473_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_addsenderidforcountryindiaaccountid_0"
+        ],
+        "content": "Login to the $opsportallogin $trial_signup $accountid"
+      },
+      "fcn_addsenderidforcountryindiaaccountid_0": {
+        "dataSetId": -1,
+        "id": "fcn_addsenderidforcountryindiaaccountid_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_provisionsenderidforcountryindia_0"
+        ],
+        "content": "Add Sender ID for Country India $accountid $numbermanagment"
+      },
+      "fcn_provisionsenderidforcountryindia_0": {
+        "dataSetId": -1,
+        "id": "fcn_provisionsenderidforcountryindia_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logintogmailemaillogin_1696574869847_0"
+        ],
+        "content": "Provision $senderid for country India"
+      },
+      "fcn_clickondetailsagainstthenumberaddedsenderidforindia_0": {
+        "dataSetId": -1,
+        "id": "fcn_clickondetailsagainstthenumberaddedsenderidforindia_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertthefieldssenderidforindiasenderid_0"
+        ],
+        "content": " Click on Details against the Number added $senderid for India "
+      },
+      "fcn_assertthefieldssenderidforindiasenderid_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertthefieldssenderidforindiasenderid_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_addincomingconfigurationurl_1696340380791_0"
+        ],
+        "content": "Assert the fields $senderid for india sender id"
+      },
+      "fcn_addincomingconfigurationurl_1696340380791_0": {
+        "dataSetId": -1,
+        "id": "fcn_addincomingconfigurationurl_1696340380791_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_isaddpushurlvisiblefordlr_1696340416594_0"
+        ],
+        "content": "Add Incoming Configuration URL"
+      },
+      "fcn_isaddpushurlvisiblefordlr_1696340416594_0": {
+        "dataSetId": -1,
+        "id": "fcn_isaddpushurlvisiblefordlr_1696340416594_0",
+        "nodeType": "dynamic-decision",
+        "branches": [
+          "fcn_clickoneditindeliveryconfigurationandadddlrurl_1696340442394_0",
+          "fcn_adddlrconfigurationurl_1696340422395_0"
+        ],
+        "content": "Is Add Push URL Visible For DLR ?"
+      },
+      "fcn_adddlrconfigurationurl_1696340422395_0": {
+        "dataSetId": -1,
+        "id": "fcn_adddlrconfigurationurl_1696340422395_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertsummarysection_1696340452021_0"
+        ],
+        "content": "Add DLR Configuration URL"
+      },
+      "fcn_clickoneditindeliveryconfigurationandadddlrurl_1696340442394_0": {
+        "dataSetId": -1,
+        "id": "fcn_clickoneditindeliveryconfigurationandadddlrurl_1696340442394_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertsummarysection_1696340452021_0"
+        ],
+        "content": "Click on Edit in Delivery Configuration and Add DLR URL"
+      },
+      "fcn_assertsummarysection_1696340452021_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertsummarysection_1696340452021_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_sendincomingmessagesmssenderid_1696340476312_0"
+        ],
+        "content": "Assert Summary Section"
+      },
+      "fcn_sendincomingmessagesmssenderid_1696340476312_0": {
+        "dataSetId": -1,
+        "id": "fcn_sendincomingmessagesmssenderid_1696340476312_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertsyncstatusinsmshistorysmshistory_1696340489296_0"
+        ],
+        "content": "Send Incoming Message $sms $senderid"
+      },
+      "fcn_assertsyncstatusinsmshistorysmshistory_1696340489296_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertsyncstatusinsmshistorysmshistory_1696340489296_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertincominganddlrpushedtoconfiguredurlsmssenderidsmshistory_1696340493666_0"
+        ],
+        "content": "Assert Sync Status in SMS History $sms History"
+      },
+      "fcn_assertincominganddlrpushedtoconfiguredurlsmssenderidsmshistory_1696340493666_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertincominganddlrpushedtoconfiguredurlsmssenderidsmshistory_1696340493666_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_removeprovisionedsenderidfromops_1696424383312_0"
+        ],
+        "content": "Assert incoming and DLR pushed to configured URL $sms $senderid $smshistory"
+      },
+      "fcn_smsservicesflowsnumberprovisioningshortcodee_0": {
+        "dataSetId": -1,
+        "id": "fcn_smsservicesflowsnumberprovisioningshortcodee_0",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_logintosaasportal_1696584926009_0"
+        ],
+        "content": "SMS Services Flows- number Provisioning Long Code"
+      },
+      "fcn_navigatetosmsservice_1696393040287_0": {
+        "dataSetId": -1,
+        "id": "fcn_navigatetosmsservice_1696393040287_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_underincomingsectionclickonprovision_0"
+        ],
+        "content": "Navigate to SMS Service"
+      },
+      "fcn_underincomingsectionclickonprovision_0": {
+        "dataSetId": -1,
+        "id": "fcn_underincomingsectionclickonprovision_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_isshortcodeavailableforprovision_0"
+        ],
+        "content": "Under Incoming section click on Provision and search for long code"
+      },
+      "fcn_isshortcodeavailableforprovision_0": {
+        "dataSetId": -1,
+        "id": "fcn_isshortcodeavailableforprovision_0",
+        "nodeType": "dynamic-decision",
+        "branches": [
+          "fcn_provisionsenderidoftypeshortcodeforcountryusa_0",
+          "fcn_getaccountid_1696393629991_0"
+        ],
+        "content": "Is Long Code Not Available for Provision ?"
+      },
+      "fcn_getaccountid_1696393629991_0": {
+        "dataSetId": -1,
+        "id": "fcn_getaccountid_1696393629991_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logintotheopsportallogintrial_signupaccountid_1696393642606_0"
+        ],
+        "content": "Get $accountid"
+      },
+      "fcn_logintotheopsportallogintrial_signupaccountid_1696393642606_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintotheopsportallogintrial_signupaccountid_1696393642606_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_addsenderidoftypeshortcodeforusaaccountidnumbermanagment_0"
+        ],
+        "content": "Login to the $opsportallogin $trial_signup $accountid"
+      },
+      "fcn_addsenderidoftypeshortcodeforusaaccountidnumbermanagment_0": {
+        "dataSetId": -1,
+        "id": "fcn_addsenderidoftypeshortcodeforusaaccountidnumbermanagment_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_provisionsenderidoftypeshortcodeforcountryusa_0"
+        ],
+        "content": "Add Sender ID of type long code for USA $accountid $numbermanagment"
+      },
+      "fcn_provisionsenderidoftypeshortcodeforcountryusa_0": {
+        "dataSetId": -1,
+        "id": "fcn_provisionsenderidoftypeshortcodeforcountryusa_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logintogmailemaillogin_1696585098897_0"
+        ],
+        "content": "Provision $senderid of type short code for country USA"
+      },
+      "fcn_smsservicesflowsnumberprovisioningtollfreecode_0": {
+        "dataSetId": -1,
+        "id": "fcn_smsservicesflowsnumberprovisioningtollfreecode_0",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_logintosaasportal_1696584970795_0"
+        ],
+        "content": "SMS Services Flows- number Provisioning Tollfree Code"
+      },
+      "fcn_navigatetosmsservice_1696395329255_0": {
+        "dataSetId": -1,
+        "id": "fcn_navigatetosmsservice_1696395329255_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_underincomingsectionclickonprovisionandsearchfortollfreenumber_0"
+        ],
+        "content": "Navigate to SMS Service"
+      },
+      "fcn_underincomingsectionclickonprovisionandsearchfortollfreenumber_0": {
+        "dataSetId": -1,
+        "id": "fcn_underincomingsectionclickonprovisionandsearchfortollfreenumber_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_istollfreenumbernotavailableforprovision_0"
+        ],
+        "content": "Under Incoming section click on Provision and search for Toll Free Number"
+      },
+      "fcn_istollfreenumbernotavailableforprovision_0": {
+        "dataSetId": -1,
+        "id": "fcn_istollfreenumbernotavailableforprovision_0",
+        "nodeType": "dynamic-decision",
+        "branches": [
+          "fcn_provisionsenderidtollfreenumberforcountryusa_0",
+          "fcn_getaccountid_1696395485393_0"
+        ],
+        "content": "Is Toll Free Number Not Available for Provision ?"
+      },
+      "fcn_getaccountid_1696395485393_0": {
+        "dataSetId": -1,
+        "id": "fcn_getaccountid_1696395485393_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logintotheopsportallogintrial_signupaccountid_1696395494127_0"
+        ],
+        "content": "Get $accountid"
+      },
+      "fcn_logintotheopsportallogintrial_signupaccountid_1696395494127_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintotheopsportallogintrial_signupaccountid_1696395494127_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_addtollfreenumberforusaaccountidnumbermanagment_0"
+        ],
+        "content": "Login to the $opsportallogin $trial_signup $accountid"
+      },
+      "fcn_addtollfreenumberforusaaccountidnumbermanagment_0": {
+        "dataSetId": -1,
+        "id": "fcn_addtollfreenumberforusaaccountidnumbermanagment_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_provisionsenderidtollfreenumberforcountryusa_0"
+        ],
+        "content": "Add Toll Free Number for USA $accountid $numbermanagment"
+      },
+      "fcn_provisionsenderidtollfreenumberforcountryusa_0": {
+        "dataSetId": -1,
+        "id": "fcn_provisionsenderidtollfreenumberforcountryusa_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Provision $senderid Toll Free Number for country USA"
+      },
+      "fcn_removeprovisionedsenderidfromops_1696424383312_0": {
+        "dataSetId": -1,
+        "id": "fcn_removeprovisionedsenderidfromops_1696424383312_0",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_getaccountid_1696424387646_0"
+        ],
+        "content": "Remove Provisioned Sender id from OPS"
+      },
+      "fcn_getaccountid_1696424387646_0": {
+        "dataSetId": -1,
+        "id": "fcn_getaccountid_1696424387646_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logintotheopsportallogintrial_signupaccountid_1696424391729_0"
+        ],
+        "content": "Get $accountid"
+      },
+      "fcn_logintotheopsportallogintrial_signupaccountid_1696424391729_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintotheopsportallogintrial_signupaccountid_1696424391729_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_gotonumbermanagementandremoveprovisionedsenderid_1696424395850_0"
+        ],
+        "content": "Login to the $opsportallogin $trial_signup $accountid"
+      },
+      "fcn_gotonumbermanagementandremoveprovisionedsenderid_1696424395850_0": {
+        "dataSetId": -1,
+        "id": "fcn_gotonumbermanagementandremoveprovisionedsenderid_1696424395850_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Go to Number Management and Remove Provisioned $senderid"
+      },
+      "fcn_removeprovisionedsenderidfromops_1696424724148_0": {
+        "dataSetId": -1,
+        "id": "fcn_removeprovisionedsenderidfromops_1696424724148_0",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_getaccountid_1696424736412_0"
+        ],
+        "content": "Remove Provisioned Sender id from OPS"
+      },
+      "fcn_getaccountid_1696424736412_0": {
+        "dataSetId": -1,
+        "id": "fcn_getaccountid_1696424736412_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logintotheopsportallogintrial_signupaccountid_1696424736412_0"
+        ],
+        "content": "Get $accountid"
+      },
+      "fcn_logintotheopsportallogintrial_signupaccountid_1696424736412_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintotheopsportallogintrial_signupaccountid_1696424736412_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_gotonumbermanagementandremoveprovisionedsenderid_1696424736412_0"
+        ],
+        "content": "Login to the $opsportallogin $trial_signup $accountid"
+      },
+      "fcn_gotonumbermanagementandremoveprovisionedsenderid_1696424736412_0": {
+        "dataSetId": -1,
+        "id": "fcn_gotonumbermanagementandremoveprovisionedsenderid_1696424736412_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Go to Number Management and Remove Provisioned $senderid"
+      },
+      "fcn_smsservicesflowsnumberprovisioningalphasenderid_0": {
+        "dataSetId": -1,
+        "id": "fcn_smsservicesflowsnumberprovisioningalphasenderid_0",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_logintosaasportal_1696585006263_0"
+        ],
+        "content": "SMS Services Flows- number Provisioning AlphasenderID"
+      },
+      "fcn_navigatetosmsservice_1696425168705_0": {
+        "dataSetId": -1,
+        "id": "fcn_navigatetosmsservice_1696425168705_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_inaddcoverageindiaadded_1696425176853_0"
+        ],
+        "content": "Navigate to SMS Service"
+      },
+      "fcn_inaddcoverageindiaadded_1696425176853_0": {
+        "dataSetId": -1,
+        "id": "fcn_inaddcoverageindiaadded_1696425176853_0",
+        "nodeType": "dynamic-decision",
+        "branches": [
+          "fcn_selectindiacountry_1696425226907_0",
+          "fcn_clickonindiaundercoveragetoaddalphasenderid_0"
+        ],
+        "content": "In Add Coverage India Added ?"
+      },
+      "fcn_selectindiacountry_1696425226907_0": {
+        "dataSetId": -1,
+        "id": "fcn_selectindiacountry_1696425226907_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_clickonindiaundercoveragetoaddalphasenderid_0"
+        ],
+        "content": "Select India Country"
+      },
+      "fcn_clickonindiaundercoveragetoaddalphasenderid_0": {
+        "dataSetId": -1,
+        "id": "fcn_clickonindiaundercoveragetoaddalphasenderid_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_isalphasenderidalreadyadded_0"
+        ],
+        "content": "Click on India under Coverage to add Alpha Sender ID"
+      },
+      "fcn_addnewalphasenderid_0": {
+        "dataSetId": -1,
+        "id": "fcn_addnewalphasenderid_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_getaccountid_1696425823913_0"
+        ],
+        "content": "Add New Alpha Sender ID $senderid"
+      },
+      "fcn_getaccountid_1696425823913_0": {
+        "dataSetId": -1,
+        "id": "fcn_getaccountid_1696425823913_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logintotheopsportallogintrial_signupaccountid_1696425828249_0"
+        ],
+        "content": "Get $accountid"
+      },
+      "fcn_logintotheopsportallogintrial_signupaccountid_1696425828249_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintotheopsportallogintrial_signupaccountid_1696425828249_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_approvethealphasenderidfromadminportalsenderid_0"
+        ],
+        "content": "Login to the $opsportallogin $trial_signup $accountid"
+      },
+      "fcn_approvethealphasenderidfromadminportalsenderid_0": {
+        "dataSetId": -1,
+        "id": "fcn_approvethealphasenderidfromadminportalsenderid_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertthestatusofalphasenderid_0"
+        ],
+        "content": "Approve the Alpha sender id from Admin Portal $senderid"
+      },
+      "fcn_assertthestatusofalphasenderid_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertthestatusofalphasenderid_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_sendoutgoingmessageusingalphasenderid_0"
+        ],
+        "content": "Assert the status of Alpha Sender ID $senderid"
+      },
+      "fcn_sendoutgoingmessageusingalphasenderid_0": {
+        "dataSetId": -1,
+        "id": "fcn_sendoutgoingmessageusingalphasenderid_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_removeprovisionedsenderidfromops_1696481868820_0"
+        ],
+        "content": "Send Outgoing Message using Alpha Sender ID $senderid"
+      },
+      "fcn_removeprovisionedsenderidfromops_1696481868820_0": {
+        "dataSetId": -1,
+        "id": "fcn_removeprovisionedsenderidfromops_1696481868820_0",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_gotonumbermanagementandremovealphasenderidsenderid_0"
+        ],
+        "content": "Remove Provisioned Sender id from OPS"
+      },
+      "fcn_gotonumbermanagementandremovealphasenderidsenderid_0": {
+        "dataSetId": -1,
+        "id": "fcn_gotonumbermanagementandremovealphasenderidsenderid_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Go to Number Management and Remove Alpha Sender ID $senderid"
+      },
+      "fcn_isalphasenderidalreadyadded_0": {
+        "dataSetId": -1,
+        "id": "fcn_isalphasenderidalreadyadded_0",
+        "nodeType": "dynamic-decision",
+        "branches": [
+          "fcn_addalphasenderidsenderid_0",
+          "fcn_addnewalphasenderid_0"
+        ],
+        "content": "Is Alpha Sender ID Already Added ?"
+      },
+      "fcn_addalphasenderidsenderid_0": {
+        "dataSetId": -1,
+        "id": "fcn_addalphasenderidsenderid_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_getaccountid_1696425823913_0"
+        ],
+        "content": "Add Alpha Sender ID $senderid"
+      },
+      "fcn_smsservicesflowsmysendeeridalluivalidation_0": {
+        "dataSetId": -1,
+        "id": "fcn_smsservicesflowsmysendeeridalluivalidation_0",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_logintosaasportal_1696585046346_0"
+        ],
+        "content": "SMS Services Flows-My SendeerID all UI Validation"
+      },
+      "fcn_navigatetosmsservice_1696486671402_0": {
+        "dataSetId": -1,
+        "id": "fcn_navigatetosmsservice_1696486671402_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_gotomysenderids_0"
+        ],
+        "content": "Navigate to SMS Service"
+      },
+      "fcn_gotomysenderids_0": {
+        "dataSetId": -1,
+        "id": "fcn_gotomysenderids_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertthefieldsinmysenderids_0"
+        ],
+        "content": "Go to My Sender IDs"
+      },
+      "fcn_assertthefieldsinmysenderids_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertthefieldsinmysenderids_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_smsservicesflowsmysendeeridfilter_0"
+        ],
+        "content": "Assert the Fields in My Sender IDs"
+      },
+      "fcn_smsservicesflowsmysendeeridfilter_0": {
+        "dataSetId": -1,
+        "id": "fcn_smsservicesflowsmysendeeridfilter_0",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_filtersenderidswithallcountries_0"
+        ],
+        "content": "SMS Services Flows-My SendeerID - Filter"
+      },
+      "fcn_filtersenderidswithallcountries_0": {
+        "dataSetId": -1,
+        "id": "fcn_filtersenderidswithallcountries_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertfiltereddata_0"
+        ],
+        "content": "Filter Sender ids with All Countries and All Channels And All Sender Id Type"
+      },
+      "fcn_smsservicesflowsmysendeeridactionswhenlicenncemanagerflagisoff_0": {
+        "dataSetId": -1,
+        "id": "fcn_smsservicesflowsmysendeeridactionswhenlicenncemanagerflagisoff_0",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_logintosaasportal_1696502642628_0"
+        ],
+        "content": "SMS Services Flows-My SendeerID -Actions When Licennce Manager Flag is ON"
+      },
+      "fcn_getaccountid_1696491507591_0": {
+        "dataSetId": -1,
+        "id": "fcn_getaccountid_1696491507591_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logintotheopsportallogintrial_signupaccountid_1696491507591_0"
+        ],
+        "content": "Get $accountid"
+      },
+      "fcn_logintotheopsportallogintrial_signupaccountid_1696491507591_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintotheopsportallogintrial_signupaccountid_1696491507591_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_clickonexpandall_0"
+        ],
+        "content": "Login to the $opsportallogin $trial_signup $accountid"
+      },
+      "fcn_clickonexpandall_0": {
+        "dataSetId": -1,
+        "id": "fcn_clickonexpandall_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_islicensemanagerflagenabled_0"
+        ],
+        "content": "Click on Expand All"
+      },
+      "fcn_islicensemanagerflagenabled_0": {
+        "dataSetId": -1,
+        "id": "fcn_islicensemanagerflagenabled_0",
+        "nodeType": "dynamic-decision",
+        "branches": [
+          "fcn_enablethelicensesmanagerflag_0",
+          "fcn_gotomysenderidsandassertthefields_0"
+        ],
+        "content": "Is License Manager Flag Enabled ?"
+      },
+      "fcn_gotomysenderidsandassertthefields_0": {
+        "dataSetId": -1,
+        "id": "fcn_gotomysenderidsandassertthefields_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_clickonviewdetailsandassertthefields_0"
+        ],
+        "content": "Go to My Sender IDs and Assert the Fields"
+      },
+      "fcn_logintosaasportal_1696502642628_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintosaasportal_1696502642628_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_getaccountid_1696491507591_0"
+        ],
+        "content": "login to $saasportal"
+      },
+      "fcn_clickonviewdetailsandassertthefields_0": {
+        "dataSetId": -1,
+        "id": "fcn_clickonviewdetailsandassertthefields_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_sendincomingmessagefromunknowncontactsms_0"
+        ],
+        "content": "Click on View Details and Assert the Fields"
+      },
+      "fcn_sendincomingmessagefromunknowncontactsms_0": {
+        "dataSetId": -1,
+        "id": "fcn_sendincomingmessagefromunknowncontactsms_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_asserttheincomingmessage_0"
+        ],
+        "content": "Send Incoming Message From Unknown Contact $sms"
+      },
+      "fcn_smsservicesflowsmysendeeridactionswhenlicenncemanagerflagisoff_1": {
+        "dataSetId": -1,
+        "id": "fcn_smsservicesflowsmysendeeridactionswhenlicenncemanagerflagisoff_1",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_logintosaasportal_1696510158976_0"
+        ],
+        "content": "SMS Services Flows-My SendeerID -Actions When Licennce Manager Flag is OFF"
+      },
+      "fcn_logintosaasportal_1696510158976_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintosaasportal_1696510158976_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_getaccountid_1696510158976_0"
+        ],
+        "content": "login to $saasportal"
+      },
+      "fcn_getaccountid_1696510158976_0": {
+        "dataSetId": -1,
+        "id": "fcn_getaccountid_1696510158976_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logintotheopsportallogintrial_signupaccountid_1696510158976_0"
+        ],
+        "content": "Get $accountid"
+      },
+      "fcn_logintotheopsportallogintrial_signupaccountid_1696510158976_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintotheopsportallogintrial_signupaccountid_1696510158976_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_clickonexpandall_1696510158976_0"
+        ],
+        "content": "Login to the $opsportallogin $trial_signup $accountid"
+      },
+      "fcn_clickonexpandall_1696510158976_0": {
+        "dataSetId": -1,
+        "id": "fcn_clickonexpandall_1696510158976_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_islicensemanagerflagenabled_1696510158976_0"
+        ],
+        "content": "Click on Expand All"
+      },
+      "fcn_islicensemanagerflagenabled_1696510158976_0": {
+        "dataSetId": -1,
+        "id": "fcn_islicensemanagerflagenabled_1696510158976_0",
+        "nodeType": "dynamic-decision",
+        "branches": [
+          "fcn_logintothestandarduser_0",
+          "fcn_disablethelicensemanagerflag_1696510175328_0"
+        ],
+        "content": "Is License Manager Flag Enabled ?"
+      },
+      "fcn_disablethelicensemanagerflag_1696510175328_0": {
+        "dataSetId": -1,
+        "id": "fcn_disablethelicensemanagerflag_1696510175328_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logintothestandarduser_0"
+        ],
+        "content": "Disable the License Manager Flag"
+      },
+      "fcn_logintothestandarduser_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintothestandarduser_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertteaminbox_0"
+        ],
+        "content": "Login to the $standarduser "
+      },
+      "fcn_assertteaminbox_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertteaminbox_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Assert Team inbox "
+      },
+      "fcn_enablethelicensesmanagerflag_0": {
+        "dataSetId": -1,
+        "id": "fcn_enablethelicensesmanagerflag_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_gotomysenderidsandassertthefields_0"
+        ],
+        "content": "Enable the Licenses Manager Flag"
+      },
+      "fcn_asserttheincomingmessage_0": {
+        "dataSetId": -1,
+        "id": "fcn_asserttheincomingmessage_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_navigatetosmsservice_1696512023343_0"
+        ],
+        "content": "Assert the incoming message $sms"
+      },
+      "fcn_gotomysenderids_1": {
+        "dataSetId": -1,
+        "id": "fcn_gotomysenderids_1",
+        "nodeType": "action",
+        "branches": [
+          "fcn_clickonassignsenderidandassignsenderidtoanotheruser_0"
+        ],
+        "content": "Go to My Sender IDs"
+      },
+      "fcn_navigatetosmsservice_1696512023343_0": {
+        "dataSetId": -1,
+        "id": "fcn_navigatetosmsservice_1696512023343_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_gotomysenderids_1"
+        ],
+        "content": "Navigate to SMS Service"
+      },
+      "fcn_clickonmanagesharedsenderidandassignittoanotheruser_0": {
+        "dataSetId": -1,
+        "id": "fcn_clickonmanagesharedsenderidandassignittoanotheruser_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_sendincomingmessagefromunknowncontactsms_1696513165023_0"
+        ],
+        "content": "Click on Manage Shared Sender ID and assign it to another user"
+      },
+      "fcn_clickonassignsenderidandassignsenderidtoanotheruser_0": {
+        "dataSetId": -1,
+        "id": "fcn_clickonassignsenderidandassignsenderidtoanotheruser_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_clickonmanagesharedsenderidandassignittoanotheruser_0"
+        ],
+        "content": "Click on Assign Sender ID and Assign Sender ID to another user"
+      },
+      "fcn_sendincomingmessagefromunknowncontactsms_1696513165023_0": {
+        "dataSetId": -1,
+        "id": "fcn_sendincomingmessagefromunknowncontactsms_1696513165023_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logintothestandarduser_1696513175441_0"
+        ],
+        "content": "Send Incoming Message From Unknown Contact $sms"
+      },
+      "fcn_logintothestandarduser_1696513175441_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintothestandarduser_1696513175441_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_asserttheincomingmessagesms_1696513184623_0"
+        ],
+        "content": "Login to the $standarduser "
+      },
+      "fcn_asserttheincomingmessagesms_1696513184623_0": {
+        "dataSetId": -1,
+        "id": "fcn_asserttheincomingmessagesms_1696513184623_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_clickonmanagesharedsenderidandassignittoadminuser_0"
+        ],
+        "content": "Assert the incoming message $sms"
+      },
+      "fcn_clickonmanagesharedsenderidandassignittoadminuser_0": {
+        "dataSetId": -1,
+        "id": "fcn_clickonmanagesharedsenderidandassignittoadminuser_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Click on Manage Shared Sender ID and assign it to Admin user"
+      },
+      "fcn_assertfiltereddata_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertfiltereddata_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_filtersenderidswithusacountryandsmschannelandlongcodetype_0"
+        ],
+        "content": "Assert Filtered Data"
+      },
+      "fcn_filtersenderidswithusacountryandsmschannelandlongcodetype_0": {
+        "dataSetId": -1,
+        "id": "fcn_filtersenderidswithusacountryandsmschannelandlongcodetype_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertfiltereddata_1696566735565_0"
+        ],
+        "content": "Filter Sender ids with Usa Country and SMS Channel And Long Code Type"
+      },
+      "fcn_assertfiltereddata_1696566735565_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertfiltereddata_1696566735565_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_filtersenderidswithallcountriesandsmschannelandlongcodetype_0"
+        ],
+        "content": "Assert Filtered Data"
+      },
+      "fcn_filtersenderidswithallcountriesandsmschannelandlongcodetype_0": {
+        "dataSetId": -1,
+        "id": "fcn_filtersenderidswithallcountriesandsmschannelandlongcodetype_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertfiltereddata_1696566947788_0"
+        ],
+        "content": "Filter Sender ids with All Countries and SMS Channel And Long Code Type"
+      },
+      "fcn_assertfiltereddata_1696566947788_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertfiltereddata_1696566947788_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_filtersenderidswithusacountryandallchannelandlongcodetype_0"
+        ],
+        "content": "Assert Filtered Data"
+      },
+      "fcn_filtersenderidswithusacountryandallchannelandlongcodetype_0": {
+        "dataSetId": -1,
+        "id": "fcn_filtersenderidswithusacountryandallchannelandlongcodetype_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertfiltereddata_1696567063994_0"
+        ],
+        "content": "Filter Sender ids with Usa Country and All Channel And Long Code Type"
+      },
+      "fcn_assertfiltereddata_1696567063994_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertfiltereddata_1696567063994_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_filtersenderidswithallcountriesandallchannelandlongcodetype_0"
+        ],
+        "content": "Assert Filtered Data"
+      },
+      "fcn_filtersenderidswithallcountriesandallchannelandlongcodetype_0": {
+        "dataSetId": -1,
+        "id": "fcn_filtersenderidswithallcountriesandallchannelandlongcodetype_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertfiltereddata_1696567210501_0"
+        ],
+        "content": "Filter Sender ids with All Countries and All Channel And Long Code Type"
+      },
+      "fcn_assertfiltereddata_1696567210501_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertfiltereddata_1696567210501_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Assert Filtered Data"
+      },
+      "fcn_prerequisiteforsmsservice_0": {
+        "dataSetId": -1,
+        "id": "fcn_prerequisiteforsmsservice_0",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_logintosaasportal_1696568258881_0"
+        ],
+        "content": "Prerequisite for SMS Service (Assign Long Code, Short Code, Toll Free Credits And mark account as payee and unblock the flag Check for Domain URls WhiteListing)"
+      },
+      "fcn_logintosaasportal_1696568258881_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintosaasportal_1696568258881_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_getaccountid_1696568306150_0"
+        ],
+        "content": "login to $saasportal"
+      },
+      "fcn_getaccountid_1696568306150_0": {
+        "dataSetId": -1,
+        "id": "fcn_getaccountid_1696568306150_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logintotheopsportallogintrial_signupaccountid_1696568415271_0"
+        ],
+        "content": "Get $accountid"
+      },
+      "fcn_logintotheopsportallogintrial_signupaccountid_1696568415271_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintotheopsportallogintrial_signupaccountid_1696568415271_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_clickonexpandall_1696568420788_0"
+        ],
+        "content": "Login to the $opsportallogin $trial_signup $accountid"
+      },
+      "fcn_clickonexpandall_1696568420788_0": {
+        "dataSetId": -1,
+        "id": "fcn_clickonexpandall_1696568420788_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_isaccountstatusistrial_0"
+        ],
+        "content": "Click on Expand All"
+      },
+      "fcn_isaccountstatusistrial_0": {
+        "dataSetId": -1,
+        "id": "fcn_isaccountstatusistrial_0",
+        "nodeType": "dynamic-decision",
+        "branches": [
+          "fcn_gotonumbermanagementandallotthecredits_0",
+          "fcn_changethestatusofaccounttopayee_0"
+        ],
+        "content": "Is Account Status is Trial ?"
+      },
+      "fcn_changethestatusofaccounttopayee_0": {
+        "dataSetId": -1,
+        "id": "fcn_changethestatusofaccounttopayee_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_gotonumbermanagementandallotthecredits_0"
+        ],
+        "content": "Change The Status of Account to Payee "
+      },
+      "fcn_gotonumbermanagementandallotthecredits_0": {
+        "dataSetId": -1,
+        "id": "fcn_gotonumbermanagementandallotthecredits_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_gotoaccountinfoandclickonexpandall_0"
+        ],
+        "content": "Go to Number Management and Allot the credits $numbermanagment $accountid"
+      },
+      "fcn_isdomainurlswhitelistingblocked_0": {
+        "dataSetId": -1,
+        "id": "fcn_isdomainurlswhitelistingblocked_0",
+        "nodeType": "dynamic-decision",
+        "branches": [
+          null,
+          "fcn_unblockthedomainurlswhitelisting_0"
+        ],
+        "content": "Is Domain URls WhiteListing Blocked ?"
+      },
+      "fcn_gotoaccountinfoandclickonexpandall_0": {
+        "dataSetId": -1,
+        "id": "fcn_gotoaccountinfoandclickonexpandall_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_isdomainurlswhitelistingblocked_0"
+        ],
+        "content": "Go to Account Info and click on Expand All"
+      },
+      "fcn_unblockthedomainurlswhitelisting_0": {
+        "dataSetId": -1,
+        "id": "fcn_unblockthedomainurlswhitelisting_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Unblock the Domain URls WhiteListing"
+      },
+      "fcn_logintosaasportal_1696571286938_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintosaasportal_1696571286938_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_navigatetosmsservice_1695963918160_0"
+        ],
+        "content": "login to $saasportal"
+      },
+      "fcn_logintogmailemaillogin_1696571419796_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintogmailemaillogin_1696571419796_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_asserttheemailafternumberprovisioning_0"
+        ],
+        "content": "Login to gmail $emaillogin"
+      },
+      "fcn_asserttheemailafternumberprovisioning_0": {
+        "dataSetId": -1,
+        "id": "fcn_asserttheemailafternumberprovisioning_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_clickondetailsagainstthenumberaddedsenderid_1696316679553_0"
+        ],
+        "content": "Assert the Email after Number Provisioning $senderid"
+      },
+      "fcn_logintogmailemaillogin_1696574869847_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintogmailemaillogin_1696574869847_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_asserttheemailafternumberprovisioningsenderid_1696574869847_0"
+        ],
+        "content": "Login to gmail $emaillogin"
+      },
+      "fcn_asserttheemailafternumberprovisioningsenderid_1696574869847_0": {
+        "dataSetId": -1,
+        "id": "fcn_asserttheemailafternumberprovisioningsenderid_1696574869847_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_clickondetailsagainstthenumberaddedsenderidforindia_0"
+        ],
+        "content": "Assert the Email after Number Provisioning $senderid"
+      },
+      "fcn_logintosaasportal_1696584849608_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintosaasportal_1696584849608_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_navigatetosmsservice_1696338365078_0"
+        ],
+        "content": "login to $saasportal"
+      },
+      "fcn_logintosaasportal_1696584926009_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintosaasportal_1696584926009_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_navigatetosmsservice_1696393040287_0"
+        ],
+        "content": "login to $saasportal"
+      },
+      "fcn_logintosaasportal_1696584970795_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintosaasportal_1696584970795_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_navigatetosmsservice_1696395329255_0"
+        ],
+        "content": "login to $saasportal"
+      },
+      "fcn_logintosaasportal_1696585006263_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintosaasportal_1696585006263_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_navigatetosmsservice_1696425168705_0"
+        ],
+        "content": "login to $saasportal"
+      },
+      "fcn_logintosaasportal_1696585046346_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintosaasportal_1696585046346_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_navigatetosmsservice_1696486671402_0"
+        ],
+        "content": "login to $saasportal"
+      },
+      "fcn_logintogmailemaillogin_1696585098897_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintogmailemaillogin_1696585098897_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_asserttheemailafternumberprovisioningsenderid_1696585098897_0"
+        ],
+        "content": "Login to gmail $emaillogin"
+      },
+      "fcn_asserttheemailafternumberprovisioningsenderid_1696585098897_0": {
+        "dataSetId": -1,
+        "id": "fcn_asserttheemailafternumberprovisioningsenderid_1696585098897_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_removeprovisionedsenderidfromops_1696424724148_0"
+        ],
+        "content": "Assert the Email after Number Provisioning $senderid"
+      }
+    },
+    "pathNames": {
+      "[\"fcn_asserttabsonhistorypageforchannels_0\"]": {
+        "pathTags": "SMSHistory",
+        "pathDependsOn": "{}"
+      },
+      "[\"fcn_downloadincomingreportformorethat31days_0\"]": {
+        "pathTags": "SMSHistory",
+        "pathDependsOn": "{}"
+      },
+      "[\"fcn_smsservice_0\",\"fcn_smsservicesflowsmysendeeridalluivalidation_0\",\"fcn_navigatetosmsservice_1696486671402_0\",\"fcn_gotomysenderids_0\",\"fcn_assertthefieldsinmysenderids_0\",\"fcn_smsservicesflowsmysendeeridfilter_0\",\"fcn_filtersenderidswithallcountries_0\",\"fcn_assertfiltereddata_0\",\"fcn_filtersenderidswithusacountryandsmschannelandlongcodetype_0\",\"fcn_assertfiltereddata_1696566735565_0\",\"fcn_filtersenderidswithallcountriesandsmschannelandlongcodetype_0\",\"fcn_assertfiltereddata_1696566947788_0\",\"fcn_filtersenderidswithusacountryandallchannelandlongcodetype_0\",\"fcn_assertfiltereddata_1696567063994_0\",\"fcn_filtersenderidswithallcountriesandallchannelandlongcodetype_0\",\"fcn_assertfiltereddata_1696567210501_0\"]": {
+        "pathTags": "SMSServices",
+        "pathDependsOn": "{}"
+      },
+      "[\"fcn_smsservice_0\",\"fcn_smsservicesflowsmysendeeridactionswhenlicenncemanagerflagisoff_1\",\"fcn_logintosaasportal_1696510158976_0\",\"fcn_getaccountid_1696510158976_0\",\"fcn_logintotheopsportallogintrial_signupaccountid_1696510158976_0\",\"fcn_clickonexpandall_1696510158976_0\",\"fcn_islicensemanagerflagenabled_1696510158976_0\",\"fcn_disablethelicensemanagerflag_1696510175328_0\",\"fcn_logintothestandarduser_0\",\"fcn_assertteaminbox_0\",\"fcn_logintothestandarduser_0\",\"fcn_assertteaminbox_0\"]": {
+        "pathTags": "SMSServices",
+        "pathDependsOn": "{}"
+      },
+      "[\"fcn_smsservice_0\",\"fcn_smsservicesflowsnumberprovisioningalphasenderid_0\",\"fcn_navigatetosmsservice_1696425168705_0\",\"fcn_inaddcoverageindiaadded_1696425176853_0\",\"fcn_clickonindiaundercoveragetoaddalphasenderid_0\",\"fcn_isalphasenderidalreadyadded_0\",\"fcn_addnewalphasenderid_0\",\"fcn_getaccountid_1696425823913_0\",\"fcn_logintotheopsportallogintrial_signupaccountid_1696425828249_0\",\"fcn_approvethealphasenderidfromadminportalsenderid_0\",\"fcn_assertthestatusofalphasenderid_0\",\"fcn_sendoutgoingmessageusingalphasenderid_0\",\"fcn_removeprovisionedsenderidfromops_1696481868820_0\",\"fcn_gotonumbermanagementandremovealphasenderidsenderid_0\",\"fcn_addalphasenderidsenderid_0\",\"fcn_getaccountid_1696425823913_0\",\"fcn_logintotheopsportallogintrial_signupaccountid_1696425828249_0\",\"fcn_approvethealphasenderidfromadminportalsenderid_0\",\"fcn_assertthestatusofalphasenderid_0\",\"fcn_sendoutgoingmessageusingalphasenderid_0\",\"fcn_removeprovisionedsenderidfromops_1696481868820_0\",\"fcn_gotonumbermanagementandremovealphasenderidsenderid_0\",\"fcn_selectindiacountry_1696425226907_0\",\"fcn_clickonindiaundercoveragetoaddalphasenderid_0\",\"fcn_isalphasenderidalreadyadded_0\",\"fcn_addnewalphasenderid_0\",\"fcn_getaccountid_1696425823913_0\",\"fcn_logintotheopsportallogintrial_signupaccountid_1696425828249_0\",\"fcn_approvethealphasenderidfromadminportalsenderid_0\",\"fcn_assertthestatusofalphasenderid_0\",\"fcn_sendoutgoingmessageusingalphasenderid_0\",\"fcn_removeprovisionedsenderidfromops_1696481868820_0\",\"fcn_gotonumbermanagementandremovealphasenderidsenderid_0\",\"fcn_addalphasenderidsenderid_0\",\"fcn_getaccountid_1696425823913_0\",\"fcn_logintotheopsportallogintrial_signupaccountid_1696425828249_0\",\"fcn_approvethealphasenderidfromadminportalsenderid_0\",\"fcn_assertthestatusofalphasenderid_0\",\"fcn_sendoutgoingmessageusingalphasenderid_0\",\"fcn_removeprovisionedsenderidfromops_1696481868820_0\",\"fcn_gotonumbermanagementandremovealphasenderidsenderid_0\"]": {
+        "pathTags": "SMSServices",
+        "pathDependsOn": "{}"
+      },
+      "[\"fcn_selectdaterangewhichdoesnothavedataincomingreport_0\"]": {
+        "pathTags": "SMSHistory",
+        "pathDependsOn": "{}"
+      },
+      "[\"fcn_smsservice_0\",\"fcn_smsservicesflowsnumberprovisioningshortcodee_0\",\"fcn_logintosaasportal_1696584926009_0\",\"fcn_navigatetosmsservice_1696393040287_0\",\"fcn_underincomingsectionclickonprovision_0\",\"fcn_isshortcodeavailableforprovision_0\",\"fcn_getaccountid_1696393629991_0\",\"fcn_logintotheopsportallogintrial_signupaccountid_1696393642606_0\",\"fcn_addsenderidoftypeshortcodeforusaaccountidnumbermanagment_0\",\"fcn_provisionsenderidoftypeshortcodeforcountryusa_0\",\"fcn_logintogmailemaillogin_1696585098897_0\",\"fcn_asserttheemailafternumberprovisioningsenderid_1696585098897_0\",\"fcn_removeprovisionedsenderidfromops_1696424724148_0\",\"fcn_getaccountid_1696424736412_0\",\"fcn_logintotheopsportallogintrial_signupaccountid_1696424736412_0\",\"fcn_gotonumbermanagementandremoveprovisionedsenderid_1696424736412_0\",\"fcn_provisionsenderidoftypeshortcodeforcountryusa_0\",\"fcn_logintogmailemaillogin_1696585098897_0\",\"fcn_asserttheemailafternumberprovisioningsenderid_1696585098897_0\",\"fcn_removeprovisionedsenderidfromops_1696424724148_0\",\"fcn_getaccountid_1696424736412_0\",\"fcn_logintotheopsportallogintrial_signupaccountid_1696424736412_0\",\"fcn_gotonumbermanagementandremoveprovisionedsenderid_1696424736412_0\"]": {
+        "pathTags": "SMSServices",
+        "pathDependsOn": "{}"
+      },
+      "[\"fcn_smsservice_0\",\"fcn_smsservicesflowsnumberprovisioningtollfreecode_0\",\"fcn_navigatetosmsservice_1696395329255_0\",\"fcn_underincomingsectionclickonprovisionandsearchfortollfreenumber_0\",\"fcn_istollfreenumbernotavailableforprovision_0\",\"fcn_getaccountid_1696395485393_0\",\"fcn_logintotheopsportallogintrial_signupaccountid_1696395494127_0\",\"fcn_addtollfreenumberforusaaccountidnumbermanagment_0\",\"fcn_provisionsenderidtollfreenumberforcountryusa_0\",\"fcn_provisionsenderidtollfreenumberforcountryusa_0\"]": {
+        "pathTags": "SMSServices",
+        "pathDependsOn": "{}"
+      },
+      "[\"fcn_smsservice_0\",\"fcn_smsservicesflowsmysendeeridactionswhenlicenncemanagerflagisoff_0\",\"fcn_logintosaasportal_1696502642628_0\",\"fcn_getaccountid_1696491507591_0\",\"fcn_logintotheopsportallogintrial_signupaccountid_1696491507591_0\",\"fcn_clickonexpandall_0\",\"fcn_islicensemanagerflagenabled_0\",\"fcn_gotomysenderidsandassertthefields_0\",\"fcn_clickonviewdetailsandassertthefields_0\",\"fcn_sendincomingmessagefromunknowncontactsms_0\",\"fcn_asserttheincomingmessage_0\",\"fcn_navigatetosmsservice_1696512023343_0\",\"fcn_gotomysenderids_1\",\"fcn_clickonassignsenderidandassignsenderidtoanotheruser_0\",\"fcn_clickonmanagesharedsenderidandassignittoanotheruser_0\",\"fcn_sendincomingmessagefromunknowncontactsms_1696513165023_0\",\"fcn_logintothestandarduser_1696513175441_0\",\"fcn_asserttheincomingmessagesms_1696513184623_0\",\"fcn_clickonmanagesharedsenderidandassignittoadminuser_0\",\"fcn_enablethelicensesmanagerflag_0\",\"fcn_gotomysenderidsandassertthefields_0\",\"fcn_clickonviewdetailsandassertthefields_0\",\"fcn_sendincomingmessagefromunknowncontactsms_0\",\"fcn_asserttheincomingmessage_0\",\"fcn_navigatetosmsservice_1696512023343_0\",\"fcn_gotomysenderids_1\",\"fcn_clickonassignsenderidandassignsenderidtoanotheruser_0\",\"fcn_clickonmanagesharedsenderidandassignittoanotheruser_0\",\"fcn_sendincomingmessagefromunknowncontactsms_1696513165023_0\",\"fcn_logintothestandarduser_1696513175441_0\",\"fcn_asserttheincomingmessagesms_1696513184623_0\",\"fcn_clickonmanagesharedsenderidandassignittoadminuser_0\"]": {
+        "pathTags": "SMSServices",
+        "pathDependsOn": "{}"
+      },
+      "[\"fcn_selectfilterasallandoutgoingmessages_0\"]": {
+        "pathTags": "SMSHistory",
+        "pathDependsOn": "{}"
+      },
+      "[\"fcn_smsservice_0\",\"fcn_smsservicesflowsnumberprovisioningalphasenderid_0\",\"fcn_logintosaasportal_1696585006263_0\",\"fcn_navigatetosmsservice_1696425168705_0\",\"fcn_inaddcoverageindiaadded_1696425176853_0\",\"fcn_clickonindiaundercoveragetoaddalphasenderid_0\",\"fcn_isalphasenderidalreadyadded_0\",\"fcn_addnewalphasenderid_0\",\"fcn_getaccountid_1696425823913_0\",\"fcn_logintotheopsportallogintrial_signupaccountid_1696425828249_0\",\"fcn_approvethealphasenderidfromadminportalsenderid_0\",\"fcn_assertthestatusofalphasenderid_0\",\"fcn_sendoutgoingmessageusingalphasenderid_0\",\"fcn_removeprovisionedsenderidfromops_1696481868820_0\",\"fcn_gotonumbermanagementandremovealphasenderidsenderid_0\",\"fcn_addalphasenderidsenderid_0\",\"fcn_getaccountid_1696425823913_0\",\"fcn_logintotheopsportallogintrial_signupaccountid_1696425828249_0\",\"fcn_approvethealphasenderidfromadminportalsenderid_0\",\"fcn_assertthestatusofalphasenderid_0\",\"fcn_sendoutgoingmessageusingalphasenderid_0\",\"fcn_removeprovisionedsenderidfromops_1696481868820_0\",\"fcn_gotonumbermanagementandremovealphasenderidsenderid_0\",\"fcn_selectindiacountry_1696425226907_0\",\"fcn_clickonindiaundercoveragetoaddalphasenderid_0\",\"fcn_isalphasenderidalreadyadded_0\",\"fcn_addnewalphasenderid_0\",\"fcn_getaccountid_1696425823913_0\",\"fcn_logintotheopsportallogintrial_signupaccountid_1696425828249_0\",\"fcn_approvethealphasenderidfromadminportalsenderid_0\",\"fcn_assertthestatusofalphasenderid_0\",\"fcn_sendoutgoingmessageusingalphasenderid_0\",\"fcn_removeprovisionedsenderidfromops_1696481868820_0\",\"fcn_gotonumbermanagementandremovealphasenderidsenderid_0\",\"fcn_addalphasenderidsenderid_0\",\"fcn_getaccountid_1696425823913_0\",\"fcn_logintotheopsportallogintrial_signupaccountid_1696425828249_0\",\"fcn_approvethealphasenderidfromadminportalsenderid_0\",\"fcn_assertthestatusofalphasenderid_0\",\"fcn_sendoutgoingmessageusingalphasenderid_0\",\"fcn_removeprovisionedsenderidfromops_1696481868820_0\",\"fcn_gotonumbermanagementandremovealphasenderidsenderid_0\"]": {
+        "pathTags": "SMSServices",
+        "pathDependsOn": "{}"
+      },
+      "[\"fcn_selectfilterasallandoutgoingmessages_0\",\"fcn_downloadoutgoingreportformorethat31days_0\"]": {
+        "pathTags": "SMSHistory",
+        "pathDependsOn": "{}"
+      },
+      "[\"fcn_smsservice_0\",\"fcn_smsservicesflowsnumberprovisioningshortcodee_0\",\"fcn_logintosaasportal_1696584926009_0\",\"fcn_navigatetosmsservice_1696393040287_0\",\"fcn_underincomingsectionclickonprovision_0\",\"fcn_isshortcodeavailableforprovision_0\",\"fcn_getaccountid_1696393629991_0\",\"fcn_logintotheopsportallogintrial_signupaccountid_1696393642606_0\",\"fcn_addsenderidoftypeshortcodeforusaaccountidnumbermanagment_0\",\"fcn_provisionsenderidoftypeshortcodeforcountryusa_0\",\"fcn_logintogmailemaillogin_1696585098897_0\",\"fcn_asserttheemailafternumberprovisioningsenderid_1696585098897_0\",\"fcn_removeprovisionedsenderidfromops_1696424724148_0\",\"fcn_getaccountid_1696424736412_0\",\"fcn_logintotheopsportallogintrial_signupaccountid_1696424736412_0\",\"fcn_gotonumbermanagementandremoveprovisionedsenderid_1696424736412_0\",\"fcn_provisionsenderidoftypeshortcodeforcountryusa_0\",\"fcn_removeprovisionedsenderidfromops_1696424724148_0\",\"fcn_getaccountid_1696424736412_0\",\"fcn_logintotheopsportallogintrial_signupaccountid_1696424736412_0\",\"fcn_gotonumbermanagementandremoveprovisionedsenderid_1696424736412_0\"]": {
+        "pathTags": "SMSServices",
+        "pathDependsOn": "{}"
+      },
+      "[\"fcn_selectfilterassmsandincomingmessages_0\",\"fcn_asserttabsonhistorypageforchannels_0\"]": {
+        "pathTags": "SMSHistory",
+        "pathDependsOn": "{}"
+      },
+      "[]": {
+        "pathTags": "SMSHistory",
+        "pathDependsOn": "{}"
+      },
+      "[\"fcn_selectfilterasallandoutgoingmessages_0\",\"fcn_downloadoutgoingreport_1695381384553_0\",\"fcn_canceltheinprogressreport_0\"]": {
+        "pathTags": "SMSHistory",
+        "pathDependsOn": "{}"
+      },
+      "[\"fcn_smsservice_0\",\"fcn_smsservicesflowsnumberprovisioningtollfreecode_0\",\"fcn_logintosaasportal_1696584970795_0\",\"fcn_navigatetosmsservice_1696395329255_0\",\"fcn_underincomingsectionclickonprovisionandsearchfortollfreenumber_0\",\"fcn_istollfreenumbernotavailableforprovision_0\",\"fcn_getaccountid_1696395485393_0\",\"fcn_logintotheopsportallogintrial_signupaccountid_1696395494127_0\",\"fcn_addtollfreenumberforusaaccountidnumbermanagment_0\",\"fcn_provisionsenderidtollfreenumberforcountryusa_0\",\"fcn_provisionsenderidtollfreenumberforcountryusa_0\"]": {
+        "pathTags": "SMSServices",
+        "pathDependsOn": "{}"
+      },
+      "[\"fcn_smsservice_0\",\"fcn_smsservicesflowsaddcoverageindiaanddothenumberprovisioningandsettingurls_0\",\"fcn_logintosaasportal_1696584849608_0\",\"fcn_navigatetosmsservice_1696338365078_0\",\"fcn_inaddcoverageindiaadded_0\",\"fcn_clickonindiaundercoverage_0\",\"fcn_issenderidnotpresentforprovisionforindia_0\",\"fcn_getaccountid_1696339176639_0\",\"fcn_logintotheopsportallogintrial_signupaccountid_1696339185473_0\",\"fcn_addsenderidforcountryindiaaccountid_0\",\"fcn_provisionsenderidforcountryindia_0\",\"fcn_logintogmailemaillogin_1696574869847_0\",\"fcn_asserttheemailafternumberprovisioningsenderid_1696574869847_0\",\"fcn_clickondetailsagainstthenumberaddedsenderidforindia_0\",\"fcn_assertthefieldssenderidforindiasenderid_0\",\"fcn_addincomingconfigurationurl_1696340380791_0\",\"fcn_isaddpushurlvisiblefordlr_1696340416594_0\",\"fcn_adddlrconfigurationurl_1696340422395_0\",\"fcn_assertsummarysection_1696340452021_0\",\"fcn_sendincomingmessagesmssenderid_1696340476312_0\",\"fcn_assertsyncstatusinsmshistorysmshistory_1696340489296_0\",\"fcn_assertincominganddlrpushedtoconfiguredurlsmssenderidsmshistory_1696340493666_0\",\"fcn_removeprovisionedsenderidfromops_1696424383312_0\",\"fcn_getaccountid_1696424387646_0\",\"fcn_logintotheopsportallogintrial_signupaccountid_1696424391729_0\",\"fcn_gotonumbermanagementandremoveprovisionedsenderid_1696424395850_0\",\"fcn_clickoneditindeliveryconfigurationandadddlrurl_1696340442394_0\",\"fcn_assertsummarysection_1696340452021_0\",\"fcn_sendincomingmessagesmssenderid_1696340476312_0\",\"fcn_assertsyncstatusinsmshistorysmshistory_1696340489296_0\",\"fcn_assertincominganddlrpushedtoconfiguredurlsmssenderidsmshistory_1696340493666_0\",\"fcn_removeprovisionedsenderidfromops_1696424383312_0\",\"fcn_getaccountid_1696424387646_0\",\"fcn_logintotheopsportallogintrial_signupaccountid_1696424391729_0\",\"fcn_gotonumbermanagementandremoveprovisionedsenderid_1696424395850_0\",\"fcn_provisionsenderidforcountryindia_0\",\"fcn_logintogmailemaillogin_1696574869847_0\",\"fcn_asserttheemailafternumberprovisioningsenderid_1696574869847_0\",\"fcn_clickondetailsagainstthenumberaddedsenderidforindia_0\",\"fcn_assertthefieldssenderidforindiasenderid_0\",\"fcn_addincomingconfigurationurl_1696340380791_0\",\"fcn_isaddpushurlvisiblefordlr_1696340416594_0\",\"fcn_adddlrconfigurationurl_1696340422395_0\",\"fcn_assertsummarysection_1696340452021_0\",\"fcn_sendincomingmessagesmssenderid_1696340476312_0\",\"fcn_assertsyncstatusinsmshistorysmshistory_1696340489296_0\",\"fcn_assertincominganddlrpushedtoconfiguredurlsmssenderidsmshistory_1696340493666_0\",\"fcn_removeprovisionedsenderidfromops_1696424383312_0\",\"fcn_getaccountid_1696424387646_0\",\"fcn_logintotheopsportallogintrial_signupaccountid_1696424391729_0\",\"fcn_gotonumbermanagementandremoveprovisionedsenderid_1696424395850_0\",\"fcn_clickoneditindeliveryconfigurationandadddlrurl_1696340442394_0\",\"fcn_assertsummarysection_1696340452021_0\",\"fcn_sendincomingmessagesmssenderid_1696340476312_0\",\"fcn_assertsyncstatusinsmshistorysmshistory_1696340489296_0\",\"fcn_assertincominganddlrpushedtoconfiguredurlsmssenderidsmshistory_1696340493666_0\",\"fcn_removeprovisionedsenderidfromops_1696424383312_0\",\"fcn_getaccountid_1696424387646_0\",\"fcn_logintotheopsportallogintrial_signupaccountid_1696424391729_0\",\"fcn_gotonumbermanagementandremoveprovisionedsenderid_1696424395850_0\",\"fcn_selectindiacountry_0\",\"fcn_clickonindiaundercoverage_0\",\"fcn_issenderidnotpresentforprovisionforindia_0\",\"fcn_getaccountid_1696339176639_0\",\"fcn_logintotheopsportallogintrial_signupaccountid_1696339185473_0\",\"fcn_addsenderidforcountryindiaaccountid_0\",\"fcn_provisionsenderidforcountryindia_0\",\"fcn_logintogmailemaillogin_1696574869847_0\",\"fcn_asserttheemailafternumberprovisioningsenderid_1696574869847_0\",\"fcn_clickondetailsagainstthenumberaddedsenderidforindia_0\",\"fcn_assertthefieldssenderidforindiasenderid_0\",\"fcn_addincomingconfigurationurl_1696340380791_0\",\"fcn_isaddpushurlvisiblefordlr_1696340416594_0\",\"fcn_adddlrconfigurationurl_1696340422395_0\",\"fcn_assertsummarysection_1696340452021_0\",\"fcn_sendincomingmessagesmssenderid_1696340476312_0\",\"fcn_assertsyncstatusinsmshistorysmshistory_1696340489296_0\",\"fcn_assertincominganddlrpushedtoconfiguredurlsmssenderidsmshistory_1696340493666_0\",\"fcn_removeprovisionedsenderidfromops_1696424383312_0\",\"fcn_getaccountid_1696424387646_0\",\"fcn_logintotheopsportallogintrial_signupaccountid_1696424391729_0\",\"fcn_gotonumbermanagementandremoveprovisionedsenderid_1696424395850_0\",\"fcn_clickoneditindeliveryconfigurationandadddlrurl_1696340442394_0\",\"fcn_assertsummarysection_1696340452021_0\",\"fcn_sendincomingmessagesmssenderid_1696340476312_0\",\"fcn_assertsyncstatusinsmshistorysmshistory_1696340489296_0\",\"fcn_assertincominganddlrpushedtoconfiguredurlsmssenderidsmshistory_1696340493666_0\",\"fcn_removeprovisionedsenderidfromops_1696424383312_0\",\"fcn_getaccountid_1696424387646_0\",\"fcn_logintotheopsportallogintrial_signupaccountid_1696424391729_0\",\"fcn_gotonumbermanagementandremoveprovisionedsenderid_1696424395850_0\",\"fcn_provisionsenderidforcountryindia_0\",\"fcn_logintogmailemaillogin_1696574869847_0\",\"fcn_asserttheemailafternumberprovisioningsenderid_1696574869847_0\",\"fcn_clickondetailsagainstthenumberaddedsenderidforindia_0\",\"fcn_assertthefieldssenderidforindiasenderid_0\",\"fcn_addincomingconfigurationurl_1696340380791_0\",\"fcn_isaddpushurlvisiblefordlr_1696340416594_0\",\"fcn_adddlrconfigurationurl_1696340422395_0\",\"fcn_assertsummarysection_1696340452021_0\",\"fcn_sendincomingmessagesmssenderid_1696340476312_0\",\"fcn_assertsyncstatusinsmshistorysmshistory_1696340489296_0\",\"fcn_assertincominganddlrpushedtoconfiguredurlsmssenderidsmshistory_1696340493666_0\",\"fcn_removeprovisionedsenderidfromops_1696424383312_0\",\"fcn_getaccountid_1696424387646_0\",\"fcn_logintotheopsportallogintrial_signupaccountid_1696424391729_0\",\"fcn_gotonumbermanagementandremoveprovisionedsenderid_1696424395850_0\",\"fcn_clickoneditindeliveryconfigurationandadddlrurl_1696340442394_0\",\"fcn_assertsummarysection_1696340452021_0\",\"fcn_sendincomingmessagesmssenderid_1696340476312_0\",\"fcn_assertsyncstatusinsmshistorysmshistory_1696340489296_0\",\"fcn_assertincominganddlrpushedtoconfiguredurlsmssenderidsmshistory_1696340493666_0\",\"fcn_removeprovisionedsenderidfromops_1696424383312_0\",\"fcn_getaccountid_1696424387646_0\",\"fcn_logintotheopsportallogintrial_signupaccountid_1696424391729_0\",\"fcn_gotonumbermanagementandremoveprovisionedsenderid_1696424395850_0\"]": {
+        "pathTags": "SMSServices",
+        "pathDependsOn": "{}"
+      },
+      "[\"fcn_selectfilterasallandoutgoingmessages_0\",\"fcn_selectdaterangewhichdoesnothavedataoutgoingreport_0\"]": {
+        "pathTags": "SMSHistory",
+        "pathDependsOn": "{}"
+      },
+      "[\"fcn_selectfilterasfbandincomingmessages_0\",\"fcn_asserttabsonhistorypageforchannels_0\"]": {
+        "pathTags": "SMSHistory",
+        "pathDependsOn": "{}"
+      },
+      "[\"fcn_smsservice_0\",\"fcn_uivaliadationonsmsservicescreenandsmsservicesflowsaddcoverageusaanddothenumberprovisioningandsettingurls_0\",\"fcn_logintosaasportal_1696571286938_0\",\"fcn_navigatetosmsservice_1695963918160_0\",\"fcn_uivaliadationonsmsservicescreen_0\",\"fcn_isaddcoverageusaadded_0\",\"fcn_clickonusaundercoverage_0\",\"fcn_issenderidpresentforprovision_0\",\"fcn_getaccountid_1696312240153_0\",\"fcn_logintoopsportallogintrial_signupaccountidtoaddsenderidforusa_0\",\"fcn_addnumbercreditnumbermanagmentaccountid_1696312378478_0\",\"fcn_provisionsenderidforcountryusa_1696316679553_0\",\"fcn_logintogmailemaillogin_1696571419796_0\",\"fcn_asserttheemailafternumberprovisioning_0\",\"fcn_clickondetailsagainstthenumberaddedsenderid_1696316679553_0\",\"fcn_assertthefieldssenderid_1696316679553_0\",\"fcn_addincomingconfigurationurl_0\",\"fcn_isaddpushurlvisible_0\",\"fcn_adddlrconfigurationurl_1696332350004_0\",\"fcn_assertsummarysection_1696332350004_0\",\"fcn_sendincomingmessagesmssenderid_0\",\"fcn_assertsyncstatusinsmshistory_0\",\"fcn_assertincominganddlrispushedtoconfiguredurlsmssenderid_0\",\"fcn_removeprovisionedsenderidfromops_0\",\"fcn_getaccountid_1696337401469_0\",\"fcn_logintotheopsportallogintrial_signupaccountid_1696337406558_0\",\"fcn_gotonumbermanagementandremoveprovisionedsenderid_0\",\"fcn_clickoneditindeliveryconfigurationandadddlrurl_0\",\"fcn_assertsummarysection_1696332350004_0\",\"fcn_sendincomingmessagesmssenderid_0\",\"fcn_assertsyncstatusinsmshistory_0\",\"fcn_assertincominganddlrispushedtoconfiguredurlsmssenderid_0\",\"fcn_removeprovisionedsenderidfromops_0\",\"fcn_getaccountid_1696337401469_0\",\"fcn_logintotheopsportallogintrial_signupaccountid_1696337406558_0\",\"fcn_gotonumbermanagementandremoveprovisionedsenderid_0\",\"fcn_provisionsenderidforcountryusa_1696316679553_0\",\"fcn_logintogmailemaillogin_1696571419796_0\",\"fcn_asserttheemailafternumberprovisioning_0\",\"fcn_clickondetailsagainstthenumberaddedsenderid_1696316679553_0\",\"fcn_assertthefieldssenderid_1696316679553_0\",\"fcn_addincomingconfigurationurl_0\",\"fcn_isaddpushurlvisible_0\",\"fcn_adddlrconfigurationurl_1696332350004_0\",\"fcn_assertsummarysection_1696332350004_0\",\"fcn_sendincomingmessagesmssenderid_0\",\"fcn_assertsyncstatusinsmshistory_0\",\"fcn_assertincominganddlrispushedtoconfiguredurlsmssenderid_0\",\"fcn_removeprovisionedsenderidfromops_0\",\"fcn_getaccountid_1696337401469_0\",\"fcn_logintotheopsportallogintrial_signupaccountid_1696337406558_0\",\"fcn_gotonumbermanagementandremoveprovisionedsenderid_0\",\"fcn_clickoneditindeliveryconfigurationandadddlrurl_0\",\"fcn_assertsummarysection_1696332350004_0\",\"fcn_sendincomingmessagesmssenderid_0\",\"fcn_assertsyncstatusinsmshistory_0\",\"fcn_assertincominganddlrispushedtoconfiguredurlsmssenderid_0\",\"fcn_removeprovisionedsenderidfromops_0\",\"fcn_getaccountid_1696337401469_0\",\"fcn_logintotheopsportallogintrial_signupaccountid_1696337406558_0\",\"fcn_gotonumbermanagementandremoveprovisionedsenderid_0\",\"fcn_selectusacountry_0\",\"fcn_clickonusaundercoverage_0\",\"fcn_issenderidpresentforprovision_0\",\"fcn_getaccountid_1696312240153_0\",\"fcn_logintoopsportallogintrial_signupaccountidtoaddsenderidforusa_0\",\"fcn_addnumbercreditnumbermanagmentaccountid_1696312378478_0\",\"fcn_provisionsenderidforcountryusa_1696316679553_0\",\"fcn_logintogmailemaillogin_1696571419796_0\",\"fcn_asserttheemailafternumberprovisioning_0\",\"fcn_clickondetailsagainstthenumberaddedsenderid_1696316679553_0\",\"fcn_assertthefieldssenderid_1696316679553_0\",\"fcn_addincomingconfigurationurl_0\",\"fcn_isaddpushurlvisible_0\",\"fcn_adddlrconfigurationurl_1696332350004_0\",\"fcn_assertsummarysection_1696332350004_0\",\"fcn_sendincomingmessagesmssenderid_0\",\"fcn_assertsyncstatusinsmshistory_0\",\"fcn_assertincominganddlrispushedtoconfiguredurlsmssenderid_0\",\"fcn_removeprovisionedsenderidfromops_0\",\"fcn_getaccountid_1696337401469_0\",\"fcn_logintotheopsportallogintrial_signupaccountid_1696337406558_0\",\"fcn_gotonumbermanagementandremoveprovisionedsenderid_0\",\"fcn_clickoneditindeliveryconfigurationandadddlrurl_0\",\"fcn_assertsummarysection_1696332350004_0\",\"fcn_sendincomingmessagesmssenderid_0\",\"fcn_assertsyncstatusinsmshistory_0\",\"fcn_assertincominganddlrispushedtoconfiguredurlsmssenderid_0\",\"fcn_removeprovisionedsenderidfromops_0\",\"fcn_getaccountid_1696337401469_0\",\"fcn_logintotheopsportallogintrial_signupaccountid_1696337406558_0\",\"fcn_gotonumbermanagementandremoveprovisionedsenderid_0\",\"fcn_provisionsenderidforcountryusa_1696316679553_0\",\"fcn_logintogmailemaillogin_1696571419796_0\",\"fcn_asserttheemailafternumberprovisioning_0\",\"fcn_clickondetailsagainstthenumberaddedsenderid_1696316679553_0\",\"fcn_assertthefieldssenderid_1696316679553_0\",\"fcn_addincomingconfigurationurl_0\",\"fcn_isaddpushurlvisible_0\",\"fcn_adddlrconfigurationurl_1696332350004_0\",\"fcn_assertsummarysection_1696332350004_0\",\"fcn_sendincomingmessagesmssenderid_0\",\"fcn_assertsyncstatusinsmshistory_0\",\"fcn_assertincominganddlrispushedtoconfiguredurlsmssenderid_0\",\"fcn_removeprovisionedsenderidfromops_0\",\"fcn_getaccountid_1696337401469_0\",\"fcn_logintotheopsportallogintrial_signupaccountid_1696337406558_0\",\"fcn_gotonumbermanagementandremoveprovisionedsenderid_0\",\"fcn_clickoneditindeliveryconfigurationandadddlrurl_0\",\"fcn_assertsummarysection_1696332350004_0\",\"fcn_sendincomingmessagesmssenderid_0\",\"fcn_assertsyncstatusinsmshistory_0\",\"fcn_assertincominganddlrispushedtoconfiguredurlsmssenderid_0\",\"fcn_removeprovisionedsenderidfromops_0\",\"fcn_getaccountid_1696337401469_0\",\"fcn_logintotheopsportallogintrial_signupaccountid_1696337406558_0\",\"fcn_gotonumbermanagementandremoveprovisionedsenderid_0\"]": {
+        "pathTags": "SMSServices",
+        "pathDependsOn": "{}"
+      },
+      "[\"fcn_selectfilterasallandoutgoingmessages_0\",\"fcn_dowanlaodoutgoingreport_0\",\"fcn_downlaodthegenratedreport_0\"]": {
+        "pathTags": "SMSHistory",
+        "pathDependsOn": "{}"
+      },
+      "[\"fcn_smsservice_0\",\"fcn_smsservicesflowsaddcoverageindiaanddothenumberprovisioningandsettingurls_0\",\"fcn_navigatetosmsservice_1696338365078_0\",\"fcn_inaddcoverageindiaadded_0\",\"fcn_clickonindiaundercoverage_0\",\"fcn_issenderidnotpresentforprovisionforindia_0\",\"fcn_getaccountid_1696339176639_0\",\"fcn_logintotheopsportallogintrial_signupaccountid_1696339185473_0\",\"fcn_addsenderidforcountryindiaaccountid_0\",\"fcn_provisionsenderidforcountryindia_0\",\"fcn_logintogmailemaillogin_1696574869847_0\",\"fcn_asserttheemailafternumberprovisioningsenderid_1696574869847_0\",\"fcn_clickondetailsagainstthenumberaddedsenderidforindia_0\",\"fcn_assertthefieldssenderidforindiasenderid_0\",\"fcn_addincomingconfigurationurl_1696340380791_0\",\"fcn_isaddpushurlvisiblefordlr_1696340416594_0\",\"fcn_adddlrconfigurationurl_1696340422395_0\",\"fcn_assertsummarysection_1696340452021_0\",\"fcn_sendincomingmessagesmssenderid_1696340476312_0\",\"fcn_assertsyncstatusinsmshistorysmshistory_1696340489296_0\",\"fcn_assertincominganddlrpushedtoconfiguredurlsmssenderidsmshistory_1696340493666_0\",\"fcn_removeprovisionedsenderidfromops_1696424383312_0\",\"fcn_getaccountid_1696424387646_0\",\"fcn_logintotheopsportallogintrial_signupaccountid_1696424391729_0\",\"fcn_gotonumbermanagementandremoveprovisionedsenderid_1696424395850_0\",\"fcn_clickoneditindeliveryconfigurationandadddlrurl_1696340442394_0\",\"fcn_assertsummarysection_1696340452021_0\",\"fcn_sendincomingmessagesmssenderid_1696340476312_0\",\"fcn_assertsyncstatusinsmshistorysmshistory_1696340489296_0\",\"fcn_assertincominganddlrpushedtoconfiguredurlsmssenderidsmshistory_1696340493666_0\",\"fcn_removeprovisionedsenderidfromops_1696424383312_0\",\"fcn_getaccountid_1696424387646_0\",\"fcn_logintotheopsportallogintrial_signupaccountid_1696424391729_0\",\"fcn_gotonumbermanagementandremoveprovisionedsenderid_1696424395850_0\",\"fcn_provisionsenderidforcountryindia_0\",\"fcn_logintogmailemaillogin_1696574869847_0\",\"fcn_asserttheemailafternumberprovisioningsenderid_1696574869847_0\",\"fcn_clickondetailsagainstthenumberaddedsenderidforindia_0\",\"fcn_assertthefieldssenderidforindiasenderid_0\",\"fcn_addincomingconfigurationurl_1696340380791_0\",\"fcn_isaddpushurlvisiblefordlr_1696340416594_0\",\"fcn_adddlrconfigurationurl_1696340422395_0\",\"fcn_assertsummarysection_1696340452021_0\",\"fcn_sendincomingmessagesmssenderid_1696340476312_0\",\"fcn_assertsyncstatusinsmshistorysmshistory_1696340489296_0\",\"fcn_assertincominganddlrpushedtoconfiguredurlsmssenderidsmshistory_1696340493666_0\",\"fcn_removeprovisionedsenderidfromops_1696424383312_0\",\"fcn_getaccountid_1696424387646_0\",\"fcn_logintotheopsportallogintrial_signupaccountid_1696424391729_0\",\"fcn_gotonumbermanagementandremoveprovisionedsenderid_1696424395850_0\",\"fcn_clickoneditindeliveryconfigurationandadddlrurl_1696340442394_0\",\"fcn_assertsummarysection_1696340452021_0\",\"fcn_sendincomingmessagesmssenderid_1696340476312_0\",\"fcn_assertsyncstatusinsmshistorysmshistory_1696340489296_0\",\"fcn_assertincominganddlrpushedtoconfiguredurlsmssenderidsmshistory_1696340493666_0\",\"fcn_removeprovisionedsenderidfromops_1696424383312_0\",\"fcn_getaccountid_1696424387646_0\",\"fcn_logintotheopsportallogintrial_signupaccountid_1696424391729_0\",\"fcn_gotonumbermanagementandremoveprovisionedsenderid_1696424395850_0\",\"fcn_selectindiacountry_0\",\"fcn_clickonindiaundercoverage_0\",\"fcn_issenderidnotpresentforprovisionforindia_0\",\"fcn_getaccountid_1696339176639_0\",\"fcn_logintotheopsportallogintrial_signupaccountid_1696339185473_0\",\"fcn_addsenderidforcountryindiaaccountid_0\",\"fcn_provisionsenderidforcountryindia_0\",\"fcn_logintogmailemaillogin_1696574869847_0\",\"fcn_asserttheemailafternumberprovisioningsenderid_1696574869847_0\",\"fcn_clickondetailsagainstthenumberaddedsenderidforindia_0\",\"fcn_assertthefieldssenderidforindiasenderid_0\",\"fcn_addincomingconfigurationurl_1696340380791_0\",\"fcn_isaddpushurlvisiblefordlr_1696340416594_0\",\"fcn_adddlrconfigurationurl_1696340422395_0\",\"fcn_assertsummarysection_1696340452021_0\",\"fcn_sendincomingmessagesmssenderid_1696340476312_0\",\"fcn_assertsyncstatusinsmshistorysmshistory_1696340489296_0\",\"fcn_assertincominganddlrpushedtoconfiguredurlsmssenderidsmshistory_1696340493666_0\",\"fcn_removeprovisionedsenderidfromops_1696424383312_0\",\"fcn_getaccountid_1696424387646_0\",\"fcn_logintotheopsportallogintrial_signupaccountid_1696424391729_0\",\"fcn_gotonumbermanagementandremoveprovisionedsenderid_1696424395850_0\",\"fcn_clickoneditindeliveryconfigurationandadddlrurl_1696340442394_0\",\"fcn_assertsummarysection_1696340452021_0\",\"fcn_sendincomingmessagesmssenderid_1696340476312_0\",\"fcn_assertsyncstatusinsmshistorysmshistory_1696340489296_0\",\"fcn_assertincominganddlrpushedtoconfiguredurlsmssenderidsmshistory_1696340493666_0\",\"fcn_removeprovisionedsenderidfromops_1696424383312_0\",\"fcn_getaccountid_1696424387646_0\",\"fcn_logintotheopsportallogintrial_signupaccountid_1696424391729_0\",\"fcn_gotonumbermanagementandremoveprovisionedsenderid_1696424395850_0\",\"fcn_provisionsenderidforcountryindia_0\",\"fcn_logintogmailemaillogin_1696574869847_0\",\"fcn_asserttheemailafternumberprovisioningsenderid_1696574869847_0\",\"fcn_clickondetailsagainstthenumberaddedsenderidforindia_0\",\"fcn_assertthefieldssenderidforindiasenderid_0\",\"fcn_addincomingconfigurationurl_1696340380791_0\",\"fcn_isaddpushurlvisiblefordlr_1696340416594_0\",\"fcn_adddlrconfigurationurl_1696340422395_0\",\"fcn_assertsummarysection_1696340452021_0\",\"fcn_sendincomingmessagesmssenderid_1696340476312_0\",\"fcn_assertsyncstatusinsmshistorysmshistory_1696340489296_0\",\"fcn_assertincominganddlrpushedtoconfiguredurlsmssenderidsmshistory_1696340493666_0\",\"fcn_removeprovisionedsenderidfromops_1696424383312_0\",\"fcn_getaccountid_1696424387646_0\",\"fcn_logintotheopsportallogintrial_signupaccountid_1696424391729_0\",\"fcn_gotonumbermanagementandremoveprovisionedsenderid_1696424395850_0\",\"fcn_clickoneditindeliveryconfigurationandadddlrurl_1696340442394_0\",\"fcn_assertsummarysection_1696340452021_0\",\"fcn_sendincomingmessagesmssenderid_1696340476312_0\",\"fcn_assertsyncstatusinsmshistorysmshistory_1696340489296_0\",\"fcn_assertincominganddlrpushedtoconfiguredurlsmssenderidsmshistory_1696340493666_0\",\"fcn_removeprovisionedsenderidfromops_1696424383312_0\",\"fcn_getaccountid_1696424387646_0\",\"fcn_logintotheopsportallogintrial_signupaccountid_1696424391729_0\",\"fcn_gotonumbermanagementandremoveprovisionedsenderid_1696424395850_0\"]": {
+        "pathTags": "SMSServices",
+        "pathDependsOn": "{}"
+      },
+      "[\"fcn_smsservice_0\",\"fcn_prerequisiteforsmsservice_0\",\"fcn_logintosaasportal_1696568258881_0\",\"fcn_getaccountid_1696568306150_0\",\"fcn_logintotheopsportallogintrial_signupaccountid_1696568415271_0\",\"fcn_clickonexpandall_1696568420788_0\",\"fcn_isaccountstatusistrial_0\",\"fcn_changethestatusofaccounttopayee_0\",\"fcn_gotonumbermanagementandallotthecredits_0\",\"fcn_gotoaccountinfoandclickonexpandall_0\",\"fcn_isdomainurlswhitelistingblocked_0\",\"fcn_unblockthedomainurlswhitelisting_0\",\"fcn_gotonumbermanagementandallotthecredits_0\",\"fcn_gotoaccountinfoandclickonexpandall_0\",\"fcn_isdomainurlswhitelistingblocked_0\",\"fcn_unblockthedomainurlswhitelisting_0\"]": {
+        "pathTags": "SMSServices",
+        "pathDependsOn": "{}"
+      },
+      "[\"fcn_smsservice_0\",\"fcn_smsservicesflowsnumberprovisioningshortcodee_0\",\"fcn_navigatetosmsservice_1696393040287_0\",\"fcn_underincomingsectionclickonprovision_0\",\"fcn_isshortcodeavailableforprovision_0\",\"fcn_getaccountid_1696393629991_0\",\"fcn_logintotheopsportallogintrial_signupaccountid_1696393642606_0\",\"fcn_addsenderidoftypeshortcodeforusaaccountidnumbermanagment_0\",\"fcn_provisionsenderidoftypeshortcodeforcountryusa_0\",\"fcn_logintogmailemaillogin_1696585098897_0\",\"fcn_asserttheemailafternumberprovisioningsenderid_1696585098897_0\",\"fcn_removeprovisionedsenderidfromops_1696424724148_0\",\"fcn_getaccountid_1696424736412_0\",\"fcn_logintotheopsportallogintrial_signupaccountid_1696424736412_0\",\"fcn_gotonumbermanagementandremoveprovisionedsenderid_1696424736412_0\",\"fcn_provisionsenderidoftypeshortcodeforcountryusa_0\",\"fcn_removeprovisionedsenderidfromops_1696424724148_0\",\"fcn_getaccountid_1696424736412_0\",\"fcn_logintotheopsportallogintrial_signupaccountid_1696424736412_0\",\"fcn_gotonumbermanagementandremoveprovisionedsenderid_1696424736412_0\"]": {
+        "pathTags": "SMSServices",
+        "pathDependsOn": "{}"
+      },
+      "[\"fcn_selectfilteraswhatsappandincomingmessages_0\",\"fcn_asserttabsonhistorypageforchannels_0\"]": {
+        "pathTags": "SMSHistory",
+        "pathDependsOn": "{}"
+      }
+    },
+    "isPrimary": false,
+    "positions": {
+      "fcn_start_0": {
+        "top": 150.0,
+        "left": 500.0
+      },
+      "fcn_smsservice_0": {
+        "top": 201.0,
+        "left": 464.0
+      },
+      "fcn_uivaliadationonsmsservicescreenandsmsservicesflowsaddcoverageusaanddothenumberprovisioningandsettingurls_0": {
+        "top": 251.0,
+        "left": 1352.0
+      },
+      "fcn_logintosaasportal_1696571286938_0": {
+        "top": 351.0,
+        "left": 1352.0
+      },
+      "fcn_navigatetosmsservice_1695963918160_0": {
+        "top": 413.1484375,
+        "left": 1352.0
+      },
+      "fcn_uivaliadationonsmsservicescreen_0": {
+        "top": 472.1484375,
+        "left": 1352.0
+      },
+      "fcn_isaddcoverageusaadded_0": {
+        "top": 524.1484375,
+        "left": 1352.0
+      },
+      "fcn_selectusacountry_0": {
+        "top": 589.1484375,
+        "left": 1509.0
+      },
+      "fcn_clickonusaundercoverage_0": {
+        "top": 646.1484375,
+        "left": 1253.0
+      },
+      "fcn_issenderidpresentforprovision_0": {
+        "top": 712.1484375,
+        "left": 1253.0
+      },
+      "fcn_provisionsenderidforcountryusa_1696316679553_0": {
+        "top": 779.1484375,
+        "left": 1475.0
+      },
+      "fcn_logintogmailemaillogin_1696571419796_0": {
+        "top": 840.296875,
+        "left": 1475.0
+      },
+      "fcn_asserttheemailafternumberprovisioning_0": {
+        "top": 901.4453125,
+        "left": 1475.0
+      },
+      "fcn_clickondetailsagainstthenumberaddedsenderid_1696316679553_0": {
+        "top": 998.296875,
+        "left": 1475.0
+      },
+      "fcn_assertthefieldssenderid_1696316679553_0": {
+        "top": 1070.4453125,
+        "left": 1475.0
+      },
+      "fcn_addincomingconfigurationurl_0": {
+        "top": 1133.59375,
+        "left": 1475.0
+      },
+      "fcn_isaddpushurlvisible_0": {
+        "top": 1197.59375,
+        "left": 1475.0
+      },
+      "fcn_clickoneditindeliveryconfigurationandadddlrurl_0": {
+        "top": 1256.59375,
+        "left": 1657.0
+      },
+      "fcn_assertsummarysection_1696332350004_0": {
+        "top": 1349.59375,
+        "left": 1477.0
+      },
+      "fcn_sendincomingmessagesmssenderid_0": {
+        "top": 1403.59375,
+        "left": 1477.0
+      },
+      "fcn_assertsyncstatusinsmshistory_0": {
+        "top": 1465.75,
+        "left": 1477.0
+      },
+      "fcn_assertincominganddlrispushedtoconfiguredurlsmssenderid_0": {
+        "top": 1543.75,
+        "left": 1477.0
+      },
+      "fcn_removeprovisionedsenderidfromops_0": {
+        "top": 1640.0625,
+        "left": 1477.0
+      },
+      "fcn_getaccountid_1696337401469_0": {
+        "top": 1702.0625,
+        "left": 1477.0
+      },
+      "fcn_logintotheopsportallogintrial_signupaccountid_1696337406558_0": {
+        "top": 1763.21875,
+        "left": 1477.0
+      },
+      "fcn_gotonumbermanagementandremoveprovisionedsenderid_0": {
+        "top": 1846.53125,
+        "left": 1477.0
+      },
+      "fcn_adddlrconfigurationurl_1696332350004_0": {
+        "top": 1269.59375,
+        "left": 1301.0
+      },
+      "fcn_getaccountid_1696312240153_0": {
+        "top": 781.1484375,
+        "left": 1074.0
+      },
+      "fcn_logintoopsportallogintrial_signupaccountidtoaddsenderidforusa_0": {
+        "top": 847.296875,
+        "left": 1073.0
+      },
+      "fcn_addnumbercreditnumbermanagmentaccountid_1696312378478_0": {
+        "top": 937.609375,
+        "left": 1079.0
+      },
+      "fcn_smsservicesflowsaddcoverageindiaanddothenumberprovisioningandsettingurls_0": {
+        "top": 255.0,
+        "left": 2440.0
+      },
+      "fcn_logintosaasportal_1696584849608_0": {
+        "top": 337.0,
+        "left": 2438.0
+      },
+      "fcn_navigatetosmsservice_1696338365078_0": {
+        "top": 405.1484375,
+        "left": 2440.0
+      },
+      "fcn_inaddcoverageindiaadded_0": {
+        "top": 464.1484375,
+        "left": 2440.0
+      },
+      "fcn_selectindiacountry_0": {
+        "top": 526.1484375,
+        "left": 2591.0
+      },
+      "fcn_clickonindiaundercoverage_0": {
+        "top": 583.1484375,
+        "left": 2333.0
+      },
+      "fcn_issenderidnotpresentforprovisionforindia_0": {
+        "top": 641.1484375,
+        "left": 2333.0
+      },
+      "fcn_provisionsenderidforcountryindia_0": {
+        "top": 706.1484375,
+        "left": 2552.0
+      },
+      "fcn_logintogmailemaillogin_1696574869847_0": {
+        "top": 807.296875,
+        "left": 2552.0
+      },
+      "fcn_asserttheemailafternumberprovisioningsenderid_1696574869847_0": {
+        "top": 887.4453125,
+        "left": 2552.0
+      },
+      "fcn_clickondetailsagainstthenumberaddedsenderidforindia_0": {
+        "top": 970.296875,
+        "left": 2552.0
+      },
+      "fcn_assertthefieldssenderidforindiasenderid_0": {
+        "top": 1058.4453125,
+        "left": 2552.0
+      },
+      "fcn_addincomingconfigurationurl_1696340380791_0": {
+        "top": 1133.59375,
+        "left": 2552.0
+      },
+      "fcn_isaddpushurlvisiblefordlr_1696340416594_0": {
+        "top": 1197.59375,
+        "left": 2552.0
+      },
+      "fcn_clickoneditindeliveryconfigurationandadddlrurl_1696340442394_0": {
+        "top": 1257.59375,
+        "left": 2736.0
+      },
+      "fcn_assertsummarysection_1696340452021_0": {
+        "top": 1336.59375,
+        "left": 2555.0
+      },
+      "fcn_sendincomingmessagesmssenderid_1696340476312_0": {
+        "top": 1394.59375,
+        "left": 2555.0
+      },
+      "fcn_assertsyncstatusinsmshistorysmshistory_1696340489296_0": {
+        "top": 1458.75,
+        "left": 2555.0
+      },
+      "fcn_assertincominganddlrpushedtoconfiguredurlsmssenderidsmshistory_1696340493666_0": {
+        "top": 1538.90625,
+        "left": 2553.0
+      },
+      "fcn_removeprovisionedsenderidfromops_1696424383312_0": {
+        "top": 1632.21875,
+        "left": 2549.0
+      },
+      "fcn_getaccountid_1696424387646_0": {
+        "top": 1688.21875,
+        "left": 2554.0
+      },
+      "fcn_logintotheopsportallogintrial_signupaccountid_1696424391729_0": {
+        "top": 1752.375,
+        "left": 2553.0
+      },
+      "fcn_gotonumbermanagementandremoveprovisionedsenderid_1696424395850_0": {
+        "top": 1847.6875,
+        "left": 2553.0
+      },
+      "fcn_adddlrconfigurationurl_1696340422395_0": {
+        "top": 1272.59375,
+        "left": 2382.0
+      },
+      "fcn_getaccountid_1696339176639_0": {
+        "top": 711.1484375,
+        "left": 2158.0
+      },
+      "fcn_logintotheopsportallogintrial_signupaccountid_1696339185473_0": {
+        "top": 777.296875,
+        "left": 2159.0
+      },
+      "fcn_addsenderidforcountryindiaaccountid_0": {
+        "top": 867.609375,
+        "left": 2158.0
+      },
+      "fcn_smsservicesflowsnumberprovisioningshortcodee_0": {
+        "top": 256.0,
+        "left": 3428.0
+      },
+      "fcn_logintosaasportal_1696584926009_0": {
+        "top": 325.0,
+        "left": 3427.0
+      },
+      "fcn_navigatetosmsservice_1696393040287_0": {
+        "top": 383.1484375,
+        "left": 3428.0
+      },
+      "fcn_underincomingsectionclickonprovision_0": {
+        "top": 442.1484375,
+        "left": 3428.0
+      },
+      "fcn_isshortcodeavailableforprovision_0": {
+        "top": 518.1484375,
+        "left": 3428.0
+      },
+      "fcn_provisionsenderidoftypeshortcodeforcountryusa_0": {
+        "top": 588.1484375,
+        "left": 3590.0
+      },
+      "fcn_logintogmailemaillogin_1696585098897_0": {
+        "top": 671.296875,
+        "left": 3590.0
+      },
+      "fcn_asserttheemailafternumberprovisioningsenderid_1696585098897_0": {
+        "top": 740.4453125,
+        "left": 3590.0
+      },
+      "fcn_removeprovisionedsenderidfromops_1696424724148_0": {
+        "top": 811.296875,
+        "left": 3590.0
+      },
+      "fcn_getaccountid_1696424736412_0": {
+        "top": 872.296875,
+        "left": 3590.0
+      },
+      "fcn_logintotheopsportallogintrial_signupaccountid_1696424736412_0": {
+        "top": 940.453125,
+        "left": 3590.0
+      },
+      "fcn_gotonumbermanagementandremoveprovisionedsenderid_1696424736412_0": {
+        "top": 1025.765625,
+        "left": 3590.0
+      },
+      "fcn_getaccountid_1696393629991_0": {
+        "top": 588.1484375,
+        "left": 3260.0
+      },
+      "fcn_logintotheopsportallogintrial_signupaccountid_1696393642606_0": {
+        "top": 654.296875,
+        "left": 3259.0
+      },
+      "fcn_addsenderidoftypeshortcodeforusaaccountidnumbermanagment_0": {
+        "top": 740.609375,
+        "left": 3260.0
+      },
+      "fcn_smsservicesflowsnumberprovisioningtollfreecode_0": {
+        "top": 250.0,
+        "left": 4308.0
+      },
+      "fcn_logintosaasportal_1696584970795_0": {
+        "top": 321.0,
+        "left": 4307.0
+      },
+      "fcn_navigatetosmsservice_1696395329255_0": {
+        "top": 387.1484375,
+        "left": 4305.0
+      },
+      "fcn_underincomingsectionclickonprovisionandsearchfortollfreenumber_0": {
+        "top": 446.1484375,
+        "left": 4305.0
+      },
+      "fcn_istollfreenumbernotavailableforprovision_0": {
+        "top": 534.1484375,
+        "left": 4305.0
+      },
+      "fcn_provisionsenderidtollfreenumberforcountryusa_0": {
+        "top": 647.1484375,
+        "left": 4457.0
+      },
+      "fcn_getaccountid_1696395485393_0": {
+        "top": 614.1484375,
+        "left": 4116.0
+      },
+      "fcn_logintotheopsportallogintrial_signupaccountid_1696395494127_0": {
+        "top": 678.296875,
+        "left": 4116.0
+      },
+      "fcn_addtollfreenumberforusaaccountidnumbermanagment_0": {
+        "top": 762.609375,
+        "left": 4116.0
+      },
+      "fcn_smsservicesflowsnumberprovisioningalphasenderid_0": {
+        "top": 234.0,
+        "left": 5227.0
+      },
+      "fcn_logintosaasportal_1696585006263_0": {
+        "top": 306.0,
+        "left": 5225.0
+      },
+      "fcn_navigatetosmsservice_1696425168705_0": {
+        "top": 370.1484375,
+        "left": 5227.0
+      },
+      "fcn_inaddcoverageindiaadded_1696425176853_0": {
+        "top": 429.1484375,
+        "left": 5227.0
+      },
+      "fcn_selectindiacountry_1696425226907_0": {
+        "top": 504.1484375,
+        "left": 5392.0
+      },
+      "fcn_clickonindiaundercoveragetoaddalphasenderid_0": {
+        "top": 552.1484375,
+        "left": 5104.0
+      },
+      "fcn_isalphasenderidalreadyadded_0": {
+        "top": 623.1484375,
+        "left": 5104.0
+      },
+      "fcn_addalphasenderidsenderid_0": {
+        "top": 687.1484375,
+        "left": 5264.0
+      },
+      "fcn_getaccountid_1696425823913_0": {
+        "top": 765.296875,
+        "left": 5104.0
+      },
+      "fcn_logintotheopsportallogintrial_signupaccountid_1696425828249_0": {
+        "top": 829.4453125,
+        "left": 5105.0
+      },
+      "fcn_approvethealphasenderidfromadminportalsenderid_0": {
+        "top": 912.7578125,
+        "left": 5105.0
+      },
+      "fcn_assertthestatusofalphasenderid_0": {
+        "top": 988.90625,
+        "left": 5102.0
+      },
+      "fcn_sendoutgoingmessageusingalphasenderid_0": {
+        "top": 1066.0546875,
+        "left": 5102.0
+      },
+      "fcn_removeprovisionedsenderidfromops_1696481868820_0": {
+        "top": 1141.2109375,
+        "left": 5100.0
+      },
+      "fcn_gotonumbermanagementandremovealphasenderidsenderid_0": {
+        "top": 1206.2109375,
+        "left": 5106.0
+      },
+      "fcn_addnewalphasenderid_0": {
+        "top": 697.1484375,
+        "left": 4948.0
+      },
+      "fcn_smsservicesflowsmysendeeridalluivalidation_0": {
+        "top": 234.0,
+        "left": 5850.0
+      },
+      "fcn_logintosaasportal_1696585046346_0": {
+        "top": 308.0,
+        "left": 5850.0
+      },
+      "fcn_navigatetosmsservice_1696486671402_0": {
+        "top": 374.1484375,
+        "left": 5850.0
+      },
+      "fcn_gotomysenderids_0": {
+        "top": 433.1484375,
+        "left": 5850.0
+      },
+      "fcn_assertthefieldsinmysenderids_0": {
+        "top": 492.1484375,
+        "left": 5850.0
+      },
+      "fcn_smsservicesflowsmysendeeridfilter_0": {
+        "top": 557.1484375,
+        "left": 5850.0
+      },
+      "fcn_filtersenderidswithallcountries_0": {
+        "top": 615.1484375,
+        "left": 5850.0
+      },
+      "fcn_assertfiltereddata_0": {
+        "top": 688.1484375,
+        "left": 5850.0
+      },
+      "fcn_filtersenderidswithusacountryandsmschannelandlongcodetype_0": {
+        "top": 747.1484375,
+        "left": 5850.0
+      },
+      "fcn_assertfiltereddata_1696566735565_0": {
+        "top": 820.1484375,
+        "left": 5850.0
+      },
+      "fcn_filtersenderidswithallcountriesandsmschannelandlongcodetype_0": {
+        "top": 879.1484375,
+        "left": 5850.0
+      },
+      "fcn_assertfiltereddata_1696566947788_0": {
+        "top": 952.1484375,
+        "left": 5850.0
+      },
+      "fcn_filtersenderidswithusacountryandallchannelandlongcodetype_0": {
+        "top": 1011.1484375,
+        "left": 5850.0
+      },
+      "fcn_assertfiltereddata_1696567063994_0": {
+        "top": 1084.1484375,
+        "left": 5850.0
+      },
+      "fcn_filtersenderidswithallcountriesandallchannelandlongcodetype_0": {
+        "top": 1143.1484375,
+        "left": 5850.0
+      },
+      "fcn_assertfiltereddata_1696567210501_0": {
+        "top": 1216.1484375,
+        "left": 5850.0
+      },
+      "fcn_smsservicesflowsmysendeeridactionswhenlicenncemanagerflagisoff_0": {
+        "top": 244.0,
+        "left": 6521.0
+      },
+      "fcn_logintosaasportal_1696502642628_0": {
+        "top": 329.0,
+        "left": 6521.0
+      },
+      "fcn_getaccountid_1696491507591_0": {
+        "top": 398.1484375,
+        "left": 6521.0
+      },
+      "fcn_logintotheopsportallogintrial_signupaccountid_1696491507591_0": {
+        "top": 460.296875,
+        "left": 6521.0
+      },
+      "fcn_clickonexpandall_0": {
+        "top": 540.609375,
+        "left": 6521.0
+      },
+      "fcn_islicensemanagerflagenabled_0": {
+        "top": 599.609375,
+        "left": 6522.0
+      },
+      "fcn_enablethelicensesmanagerflag_0": {
+        "top": 662.609375,
+        "left": 6733.0
+      },
+      "fcn_gotomysenderidsandassertthefields_0": {
+        "top": 700.609375,
+        "left": 6349.0
+      },
+      "fcn_clickonviewdetailsandassertthefields_0": {
+        "top": 773.609375,
+        "left": 6349.0
+      },
+      "fcn_sendincomingmessagefromunknowncontactsms_0": {
+        "top": 843.609375,
+        "left": 6349.0
+      },
+      "fcn_asserttheincomingmessage_0": {
+        "top": 920.7578125,
+        "left": 6348.0
+      },
+      "fcn_navigatetosmsservice_1696512023343_0": {
+        "top": 982.90625,
+        "left": 6348.0
+      },
+      "fcn_gotomysenderids_1": {
+        "top": 1043.90625,
+        "left": 6349.0
+      },
+      "fcn_clickonassignsenderidandassignsenderidtoanotheruser_0": {
+        "top": 1100.90625,
+        "left": 6351.0
+      },
+      "fcn_clickonmanagesharedsenderidandassignittoanotheruser_0": {
+        "top": 1180.90625,
+        "left": 6351.0
+      },
+      "fcn_sendincomingmessagefromunknowncontactsms_1696513165023_0": {
+        "top": 1261.90625,
+        "left": 6351.0
+      },
+      "fcn_logintothestandarduser_1696513175441_0": {
+        "top": 1338.0625,
+        "left": 6352.0
+      },
+      "fcn_asserttheincomingmessagesms_1696513184623_0": {
+        "top": 1405.21875,
+        "left": 6350.0
+      },
+      "fcn_clickonmanagesharedsenderidandassignittoadminuser_0": {
+        "top": 1472.375,
+        "left": 6350.0
+      },
+      "fcn_smsservicesflowsmysendeeridactionswhenlicenncemanagerflagisoff_1": {
+        "top": 226.0,
+        "left": 7363.0
+      },
+      "fcn_logintosaasportal_1696510158976_0": {
+        "top": 314.0,
+        "left": 7363.0
+      },
+      "fcn_getaccountid_1696510158976_0": {
+        "top": 381.1484375,
+        "left": 7363.0
+      },
+      "fcn_logintotheopsportallogintrial_signupaccountid_1696510158976_0": {
+        "top": 447.296875,
+        "left": 7363.0
+      },
+      "fcn_clickonexpandall_1696510158976_0": {
+        "top": 535.609375,
+        "left": 7363.0
+      },
+      "fcn_islicensemanagerflagenabled_1696510158976_0": {
+        "top": 594.609375,
+        "left": 7363.0
+      },
+      "fcn_logintothestandarduser_0": {
+        "top": 718.609375,
+        "left": 7563.0
+      },
+      "fcn_assertteaminbox_0": {
+        "top": 786.7578125,
+        "left": 7563.0
+      },
+      "fcn_disablethelicensemanagerflag_1696510175328_0": {
+        "top": 664.609375,
+        "left": 7218.0
+      },
+      "fcn_prerequisiteforsmsservice_0": {
+        "top": 271.0,
+        "left": 470.0
+      },
+      "fcn_logintosaasportal_1696568258881_0": {
+        "top": 379.0,
+        "left": 470.0
+      },
+      "fcn_getaccountid_1696568306150_0": {
+        "top": 441.1484375,
+        "left": 470.0
+      },
+      "fcn_logintotheopsportallogintrial_signupaccountid_1696568415271_0": {
+        "top": 501.296875,
+        "left": 470.0
+      },
+      "fcn_clickonexpandall_1696568420788_0": {
+        "top": 589.609375,
+        "left": 470.0
+      },
+      "fcn_isaccountstatusistrial_0": {
+        "top": 651.609375,
+        "left": 470.0
+      },
+      "fcn_gotonumbermanagementandallotthecredits_0": {
+        "top": 761.609375,
+        "left": 630.0
+      },
+      "fcn_gotoaccountinfoandclickonexpandall_0": {
+        "top": 839.7578125,
+        "left": 626.0
+      },
+      "fcn_isdomainurlswhitelistingblocked_0": {
+        "top": 910.7578125,
+        "left": 626.0
+      },
+      "fcn_unblockthedomainurlswhitelisting_0": {
+        "top": 987.7578125,
+        "left": 626.0
+      },
+      "fcn_changethestatusofaccounttopayee_0": {
+        "top": 710.609375,
+        "left": 330.0
+      }
+    },
+    "tags": ""
+  },
+  "enabled": true,
+  "parentId": ""
+}

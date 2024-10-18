@@ -1,0 +1,32 @@
+{
+  "modifiedOn": "2024-01-12T12:26:20.211Z",
+  "name": "Database validation after activating whatsapp flow $waguidedauto",
+  "id": "21093",
+  "type": 3,
+  "createdOn": "2023-12-07T04:22:11.771Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Database validation after activating whatsapp flow $waguidedauto",
+    "parameters": [
+      {
+        "parameterId": "waguidedauto_",
+        "entityTypeId": "waguidedauto",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": true,
+        "isRawScript": true,
+        "rawScript": "var $waSenderID1\u003d$waguidedauto.waSenderID1;"
+      },
+      {
+        "commented": true,
+        "isRawScript": true,
+        "rawScript": "var $db \u003d _getDB(\"com.mysql.jdbc.Driver\", \"jdbc:mysql://127.0.0.1/smsmagic\", \"admin_portal\",\"Smd3v$Au321\");\nvar $rs \u003d $db.select(\"select bot_status from incoming_config where accountId \u003d\u0027\"+$account+\"\u0027 and shortCode \u003d \u0027\"+$waSenderID1+\"\u0027 \");\nvar $bot_status\u003d $rs[0][0];\n_assertEqual($bot_status, 1)\n\nvar $rs1 \u003d $db.select(\"select start_bot from chatbot_config where account_id \u003d\u0027\"+$account+\"\u0027 and sender_id \u003d \u0027\"+$waSenderID1+\"\u0027 \");\nvar $start_bot\u003d $rs1[0][0];\n_assertEqual($start_bot, 2)"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

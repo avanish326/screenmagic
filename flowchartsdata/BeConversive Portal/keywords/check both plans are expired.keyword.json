@@ -1,0 +1,26 @@
+{
+  "modifiedOn": "2024-07-23T14:16:24.982Z",
+  "name": "check both plans are expired",
+  "id": "58522",
+  "type": 3,
+  "createdOn": "2024-07-23T10:52:52.844Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "check both plans are expired",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "$one \u003d _getText(_paragraph(0, _near(_label(\"Subscription Plan\"))));\n$one_split \u003d $one.split(\" \");\n$planOne \u003d $one_split[0];\n\n$two \u003d _getText(_paragraph(1, _near(_label(\"Subscription Plan\"))));\n$two_split\u003d $two.split(\" \");\n$planTwo \u003d $two_split[0];"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "$onePlan \u003d \"\"\nif($planOne \u003d\u003d \"Professionals\"){\nfor($i\u003d0; $i\u003c$planOne.length-1; $i++){\n$onePlan +\u003d $planOne[$i];\n}\n$planOne \u003d $onePlan;\n}\n\nif($planTwo \u003d\u003d \"Professionals\"){\nfor($i\u003d0; $i\u003c$planOne.length-1; $i++){\n$onePlan +\u003d $planOne[$i];\n}\n$planTwo\u003d $onePlan;\n}\n\n"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

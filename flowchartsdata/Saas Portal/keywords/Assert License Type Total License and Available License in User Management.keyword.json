@@ -1,0 +1,64 @@
+{
+  "modifiedOn": "2024-02-22T09:13:56.473Z",
+  "name": "Assert License Type Total License and Available License in User Management",
+  "id": "42885",
+  "type": 3,
+  "createdOn": "2024-02-22T08:44:59.329Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Assert License Type Total License and Available License in User Management",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_getSelectedText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_select(\"selectedLicenseType\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$licenseType"
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"num-txt\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$totalLicense"
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"num-txt[1]\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$availableLicense"
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

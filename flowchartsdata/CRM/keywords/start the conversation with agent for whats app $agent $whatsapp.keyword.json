@@ -1,0 +1,309 @@
+{
+  "modifiedOn": "2024-01-18T10:57:02.868Z",
+  "name": "start the conversation with agent for whats app $agent $whatsapp",
+  "id": "14075",
+  "type": 3,
+  "createdOn": "2023-09-11T12:16:00.236Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "start the conversation with agent for whats app $agent $whatsapp",
+    "parameters": [
+      {
+        "parameterId": "agent_",
+        "entityTypeId": "agent",
+        "suffix": ""
+      },
+      {
+        "parameterId": "whatsapp_",
+        "entityTypeId": "whatsapp",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": true,
+        "isRawScript": true,
+        "rawScript": "$request \u003d new RESTRequest();\n$request.setURL($incomingWAURL);\n$request.setHeader(\"Content-Type\", \"application/json\");\n//var $file \u003d _readFile(\"D:/jsonfile.txt\");\n//$request.setBody($file);\n\n\nfunction generateRandomPhoneNumber() {\n    var $phoneNumber \u003d \u00270\u0027; // Start with a leading zero\n    for (var $i \u003d 0; $i \u003c 9; $i++) {\n        $phoneNumber +\u003d Math.floor(Math.random() * 10);\n    }\n    return \"91\"+$phoneNumber;\n}\n\n// Example usage\nvar $randomPhoneNumber \u003d generateRandomPhoneNumber();\n_log($randomPhoneNumber);\n\n\nvar $readFile \u003d _readFile(_userDataPath(\"scripts/sample.json\"));\nvar $jsonObj \u003d JSON.parse($readFile);\n$jsonObj.To \u003d  \"whatsapp:\\+\"+$waDestination; \n$jsonObj.From \u003d \"whatsapp:\\+\"+ $randomPhoneNumber; \nvar $jsonBody \u003d JSON.stringify($jsonObj);\n_writeToFile($jsonBody,_userDataPath(\"scripts/sample_test.json\"),true);\n_wait(5000);\nvar $x\u003d_readFile(_userDataPath(\"scripts/sample_test.json\"));\n$request.setBody($x);\n\n$response \u003d $request.submit(\"POST\");\nvar $responseBody \u003d $response.getBodyAsString();\n_assertEqual(\"200\", $response.getResponseCode());\n_log($response.getHeader(\u0027Content-Length\u0027));\n_log($responseBody);\n_log(\"number: \"+ $whatsapp.sourceWA);"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "$request \u003d new RESTRequest();\n$request.setURL($incomingWAURL);\n$request.setHeader(\"Content-Type\", \"application/json\");\n//var $file \u003d _readFile(\"D:/jsonfile.txt\");\n//$request.setBody($file);\n\n\n\nvar $x \u003d \"{\" +\n\"   \\\"SmsMessageSid\\\":\\\"SM91805a30f08ed4a44c8fe7b1264deb14\\\",\" +\n\"   \\\"ProfileName\\\":\\\"abc\\\",\" +\n\"   \\\"SmsSid\\\":\\\"SM91805a30f08ed4a44c8fe7b1264deb14\\\",\" +\n\"   \\\"WaId\\\":\\\"91750878289\\\",\" +\n\"   \\\"SmsStatus\\\":\\\"received\\\",\" +\n\"  \\\"Body\\\":\\\"agent\\\",\" +\n\"   \\\"To\\\":\\\"whatsapp:\\+\"+$waDestination+\"\\\",\" +\n\"   \\\"NumSegments\\\":\\\"1\\\",\" +\n\"   \\\"ReferralNumMedia\\\":\\\"0\\\",\" +\n\"   \\\"MessageSid\\\":\\\"SM91805a30f08ed4a44c8fe7b1264deb14\\\",\" +\n\"   \\\"AccountSid\\\":\\\"AC00a7b3b1c35de688eb9696b3119e0388\\\",\" +\n\"   \\\"From\\\":\\\"whatsapp:\\+\"+$whatsapp.sourceWA+\"\\\",\" +\n\"   \\\"ApiVersion\\\":\\\"2010-04-01\\\",   \" +\n\"   \\\"message_uuid\\\":\\\"SM91805a30f08ed4a44c8fe7b1264deb14\\\",       \" +\n\"   \\\"num_media\\\":\\\"1\\\"\" +\n\"}\";\n\n_log($x);\n$request.setBody($x);\n\n$response \u003d $request.submit(\"POST\");\nvar $responseBody \u003d $response.getBodyAsString();\n_assertEqual(\"200\", $response.getResponseCode());\n_log($response.getHeader(\u0027Content-Length\u0027));\n_log($responseBody);\n_log(\"number: \"+ $whatsapp.sourceWA);"
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "5000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(\"My Inbox\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"mail-content\", _near(_listItem(\"All My Messages\")))"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"Click here\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_textarea(\"textBox\")"
+          },
+          {
+            "parameterId": "agent_",
+            "attributeId": "attr_01693223861357"
+          }
+        ],
+        "stepType": "Action",
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_button(\"Send\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_italic(\"close\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "$request \u003d new RESTRequest();\n$request.setURL($incomingWAURL);\n$request.setHeader(\"Content-Type\", \"application/json\");\n//var $file \u003d _readFile(\"D:/jsonfile.txt\");\n//$request.setBody($file);\n\n\n\nvar $x \u003d \"{\" +\n\"   \\\"SmsMessageSid\\\":\\\"SM91805a30f08ed4a44c8fe7b1264deb14\\\",\" +\n\"   \\\"ProfileName\\\":\\\"abc\\\",\" +\n\"   \\\"SmsSid\\\":\\\"SM91805a30f08ed4a44c8fe7b1264deb14\\\",\" +\n\"   \\\"WaId\\\":\\\"91750878289\\\",\" +\n\"   \\\"SmsStatus\\\":\\\"received\\\",\" +\n\"  \\\"Body\\\":\\\"\"+$whatsapp.visitorMsgWA1+\"\\\",\" +\n\"   \\\"To\\\":\\\"whatsapp:+\"+$waDestination+\"\\\",\" +\n\"   \\\"NumSegments\\\":\\\"1\\\",\" +\n\"   \\\"ReferralNumMedia\\\":\\\"0\\\",\" +\n\"   \\\"MessageSid\\\":\\\"SM91805a30f08ed4a44c8fe7b1264deb14\\\",\" +\n\"   \\\"AccountSid\\\":\\\"AC00a7b3b1c35de688eb9696b3119e0388\\\",\" +\n\"   \\\"From\\\":\\\"whatsapp:+\"+$whatsapp.sourceWA+\"\\\",\" +\n\"   \\\"ApiVersion\\\":\\\"2010-04-01\\\",   \" +\n\"   \\\"message_uuid\\\":\\\"SM91805a30f08ed4a44c8fe7b1264deb14\\\",       \" +\n\"   \\\"num_media\\\":\\\"1\\\"\" +\n\"}\";\n\n_log($x);\n$request.setBody($x);\n\n$response \u003d $request.submit(\"POST\");\nvar $responseBody \u003d $response.getBodyAsString();\n_assertEqual(\"200\", $response.getResponseCode());\n_log($response.getHeader(\u0027Content-Length\u0027));\n_log($responseBody);"
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "5000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"mail-content\", _near(_listItem(\"All My Messages\")))"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "var $waMsg1\u003d$whatsapp.visitorMsgWA1;"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"\"+$waMsg1+\"\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "parameterId": "whatsapp_",
+          "attributeId": "attr_41694435048522"
+        },
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_textarea(\"textBox\")"
+          },
+          {
+            "parameterId": "agent_",
+            "attributeId": "attr_21693237404757"
+          }
+        ],
+        "stepType": "Action",
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_button(\"Send\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_italic(\"close\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "$request \u003d new RESTRequest();\n$request.setURL($incomingWAURL);\n$request.setHeader(\"Content-Type\", \"application/json\");\n//var $file \u003d _readFile(\"D:/jsonfile.txt\");\n//$request.setBody($file);\n\n\n\nvar $x \u003d \"{\" +\n\"   \\\"SmsMessageSid\\\":\\\"SM91805a30f08ed4a44c8fe7b1264deb14\\\",\" +\n\"   \\\"ProfileName\\\":\\\"abc\\\",\" +\n\"   \\\"SmsSid\\\":\\\"SM91805a30f08ed4a44c8fe7b1264deb14\\\",\" +\n\"   \\\"WaId\\\":\\\"91750878289\\\",\" +\n\"   \\\"SmsStatus\\\":\\\"received\\\",\" +\n\"  \\\"Body\\\":\\\"\"+$whatsapp.visitorMsgWA2+\"\\\",\" +\n\"   \\\"To\\\":\\\"whatsapp:+\"+$waDestination+\"\\\",\" +\n\"   \\\"NumSegments\\\":\\\"1\\\",\" +\n\"   \\\"ReferralNumMedia\\\":\\\"0\\\",\" +\n\"   \\\"MessageSid\\\":\\\"SM91805a30f08ed4a44c8fe7b1264deb14\\\",\" +\n\"   \\\"AccountSid\\\":\\\"AC00a7b3b1c35de688eb9696b3119e0388\\\",\" +\n\"   \\\"From\\\":\\\"whatsapp:+\"+$whatsapp.sourceWA+\"\\\",\" +\n\"   \\\"ApiVersion\\\":\\\"2010-04-01\\\",   \" +\n\"   \\\"message_uuid\\\":\\\"SM91805a30f08ed4a44c8fe7b1264deb14\\\",       \" +\n\"   \\\"num_media\\\":\\\"1\\\"\" +\n\"}\";\n\n_log($x);\n$request.setBody($x);\n\n$response \u003d $request.submit(\"POST\");\nvar $responseBody \u003d $response.getBodyAsString();\n_assertEqual(\"200\", $response.getResponseCode());\n_log($response.getHeader(\u0027Content-Length\u0027));\n_log($responseBody);"
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "5000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"mail-content\", _near(_listItem(\"All My Messages\")))"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "var $waMsg2\u003d$whatsapp.visitorMsgWA2;"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"\"+$waMsg2+\"\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "parameterId": "whatsapp_",
+          "attributeId": "attr_51694435285797"
+        },
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_textarea(\"textBox\")"
+          },
+          {
+            "parameterId": "agent_",
+            "attributeId": "attr_41693238735493"
+          }
+        ],
+        "stepType": "Action",
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_button(\"Send\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_italic(\"close\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "$request \u003d new RESTRequest();\n$request.setURL($incomingWAURL);\n$request.setHeader(\"Content-Type\", \"application/json\");\n//var $file \u003d _readFile(\"D:/jsonfile.txt\");\n//$request.setBody($file);\n\n\n\nvar $x \u003d \"{\" +\n\"   \\\"SmsMessageSid\\\":\\\"SM91805a30f08ed4a44c8fe7b1264deb14\\\",\" +\n\"   \\\"ProfileName\\\":\\\"abc\\\",\" +\n\"   \\\"SmsSid\\\":\\\"SM91805a30f08ed4a44c8fe7b1264deb14\\\",\" +\n\"   \\\"WaId\\\":\\\"91750878289\\\",\" +\n\"   \\\"SmsStatus\\\":\\\"received\\\",\" +\n\"  \\\"Body\\\":\\\"\"+$whatsapp.visitorMsgWA3+\"\\\",\" +\n\"   \\\"To\\\":\\\"whatsapp:+\"+$waDestination+\"\\\",\" +\n\"   \\\"NumSegments\\\":\\\"1\\\",\" +\n\"   \\\"ReferralNumMedia\\\":\\\"0\\\",\" +\n\"   \\\"MessageSid\\\":\\\"SM91805a30f08ed4a44c8fe7b1264deb14\\\",\" +\n\"   \\\"AccountSid\\\":\\\"AC00a7b3b1c35de688eb9696b3119e0388\\\",\" +\n\"   \\\"From\\\":\\\"whatsapp:+\"+$whatsapp.sourceWA+\"\\\",\" +\n\"   \\\"ApiVersion\\\":\\\"2010-04-01\\\",   \" +\n\"   \\\"message_uuid\\\":\\\"SM91805a30f08ed4a44c8fe7b1264deb14\\\",       \" +\n\"   \\\"num_media\\\":\\\"1\\\"\" +\n\"}\";\n\n_log($x);\n$request.setBody($x);\n\n$response \u003d $request.submit(\"POST\");\nvar $responseBody \u003d $response.getBodyAsString();\n_assertEqual(\"200\", $response.getResponseCode());\n_log($response.getHeader(\u0027Content-Length\u0027));\n_log($responseBody);"
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "5000"
+          }
+        ],
+        "stepType": "Action"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

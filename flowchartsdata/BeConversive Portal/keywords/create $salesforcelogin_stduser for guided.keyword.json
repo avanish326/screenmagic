@@ -1,0 +1,104 @@
+{
+  "modifiedOn": "2024-02-08T06:49:47.703Z",
+  "name": "create $salesforcelogin_stduser for guided",
+  "id": "28147",
+  "type": 3,
+  "createdOn": "2024-02-08T06:49:47.703Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "create $salesforcelogin_stduser for guided",
+    "parameters": [
+      {
+        "parameterId": "salesforcelogin_stduser_",
+        "entityTypeId": "salesforcelogin_stduser",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_launchNewBrowser",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "\"https://login.salesforce.com/\""
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "\"chrome\""
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$browserStdSF"
+        }
+      },
+      {
+        "commented": false,
+        "action": "_selectBrowser",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "$browserStdSF"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_emailbox(\"username\")"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "$sfusernameStdGuided"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_password(\"pw\")"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "$sfpasswordStdGuided"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_submit(\"Log In\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "19000"
+          }
+        ],
+        "stepType": "Action"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

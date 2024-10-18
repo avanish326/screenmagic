@@ -1,0 +1,36 @@
+{
+  "modifiedOn": "2024-02-26T14:33:49.551Z",
+  "name": "SMS Credit from Wallet",
+  "id": "43316",
+  "type": 3,
+  "createdOn": "2024-02-26T13:10:05.189Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "SMS Credit from Wallet",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(0, _near(_div(\"Available Message Balance\")))"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$currentSMSCredit"
+        }
+      },
+      {
+        "commented": true,
+        "isRawScript": true,
+        "rawScript": "\nvar $currentSMSCredit1\u003d parseFloat($currentSMSCredit);\n\n\n_log($currentSMSCredit1)\n\n"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

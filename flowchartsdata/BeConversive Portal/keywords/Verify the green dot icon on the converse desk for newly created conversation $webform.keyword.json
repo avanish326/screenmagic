@@ -1,0 +1,45 @@
+{
+  "modifiedOn": "2024-07-03T13:08:17.992Z",
+  "name": "Verify the green dot icon on the converse desk for newly created conversation $webform",
+  "id": "58061",
+  "type": 3,
+  "createdOn": "2024-07-03T13:08:17.992Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Verify the green dot icon on the converse desk for newly created conversation $webform",
+    "parameters": [
+      {
+        "parameterId": "webform_",
+        "entityTypeId": "webform",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_selectBrowser",
+        "stepParameters": [],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "\nvar $fName\u003d$webform.newFirstName;\nvar $lName\u003d$webform.newLastName;\n\nvar $countryCodeVar1\u003d$webform.countryCode;\nvar $countryCodeVar\u003d$countryCodeVar1.split(\"+\")[1].trim()\n_log($countryCodeVar);\nvar $phoneNumberNew\u003d$webform.phoneWebForm;\n\nvar $phoneNumberVar\u003d$countryCodeVar+$phoneNumberNew;\n\n\nvar $fullName\u003d$fName+\" \"+$lName\n\n\n"
+      },
+      {
+        "commented": false,
+        "action": "_isVisible",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(0, _leftOf(_span($fullName)))"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Is_False"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

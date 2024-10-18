@@ -1,0 +1,43 @@
+{
+  "modifiedOn": "2024-04-01T11:47:58.094Z",
+  "name": "Validate both the scripts",
+  "id": "44818",
+  "type": 3,
+  "createdOn": "2024-04-01T11:44:48.779Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Validate both the scripts",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_log",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "$scriptConversiveButtonsPage"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_log",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "$scriptConversiveButtonTest"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "_assertEqual($scriptConversiveButtonsPage, $scriptConversiveButtonTest)"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

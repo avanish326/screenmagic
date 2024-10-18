@@ -1,0 +1,59 @@
+{
+  "modifiedOn": "2024-06-04T09:23:23.677Z",
+  "name": "Validate FAQ bot message response in desk",
+  "id": "28730",
+  "type": 3,
+  "createdOn": "2024-02-08T06:49:56.102Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Validate FAQ bot message response in desk",
+    "parameters": [
+      {
+        "parameterId": "bot_",
+        "entityTypeId": "bot",
+        "suffix": ""
+      },
+      {
+        "parameterId": "sms_",
+        "entityTypeId": "sms",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(\"Okay\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"Okay\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"You\u0027re welcome! https://www.sms-magic.com/lets-talk-about-chatbots/ of this chatbot for your own website.\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"You\u0027re welcome! https://www.sms-magic.com/lets-talk-about-chatbots/ of this chatbot for your own website.\""
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

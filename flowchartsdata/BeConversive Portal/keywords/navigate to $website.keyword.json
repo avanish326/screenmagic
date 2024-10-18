@@ -1,0 +1,62 @@
+{
+  "modifiedOn": "2024-02-08T06:49:42.863Z",
+  "name": "navigate to $website",
+  "id": "27803",
+  "type": 3,
+  "createdOn": "2024-02-08T06:49:42.863Z",
+  "content": {
+    "title": "navigate to $website",
+    "parameters": [
+      {
+        "parameterId": "website_",
+        "entityTypeId": "website",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_launchNewBrowser",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "\"http://localhost.sahitest.com:10000/Screen-magic/\"+$fileName+\"\""
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "\"chrome\""
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$ChatTest"
+        }
+      },
+      {
+        "commented": false,
+        "action": "_selectBrowser",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "$ChatTest"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "10000"
+          }
+        ],
+        "stepType": "Action"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

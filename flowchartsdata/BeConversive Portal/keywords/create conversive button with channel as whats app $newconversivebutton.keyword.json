@@ -1,0 +1,139 @@
+{
+  "modifiedOn": "2024-02-08T06:49:40.311Z",
+  "name": "create conversive button with channel as whats app $newconversivebutton",
+  "id": "27623",
+  "type": 3,
+  "createdOn": "2024-02-08T06:49:40.311Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "create conversive button with channel as whats app $newconversivebutton",
+    "parameters": [
+      {
+        "parameterId": "newconversivebutton_",
+        "entityTypeId": "newconversivebutton",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "5000"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "_isVisible(_submit(\"Create New Button\"))"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_submit(\"Create New Button\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_textbox(\"button-name\")"
+          },
+          {
+            "parameterId": "newconversivebutton_",
+            "attributeId": "attr_01693801371237"
+          }
+        ],
+        "stepType": "Action",
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(\"SMS\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(\"WhatsApp\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_textbox(\"whatsApp-prefilled-text\")"
+          },
+          {
+            "parameterId": "newconversivebutton_",
+            "attributeId": "attr_21694522520874"
+          }
+        ],
+        "stepType": "Action",
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_textbox(\"domain\")"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "$testURL"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_submit(\"Generate Script\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "40000"
+          }
+        ],
+        "stepType": "Action"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

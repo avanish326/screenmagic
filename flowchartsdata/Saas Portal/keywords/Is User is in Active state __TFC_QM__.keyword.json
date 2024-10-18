@@ -1,0 +1,52 @@
+{
+  "modifiedOn": "2023-12-13T05:57:44.261Z",
+  "name": "Is User is in Active state ?",
+  "id": "21016",
+  "type": 3,
+  "createdOn": "2023-12-05T10:20:25.521Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Is User is in Active state ?",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "var $availabilityOfUser\u003d _isChecked(_checkbox(0,_near(_span(\"labels\"))))\n_log($availabilityOfUser)"
+      },
+      {
+        "commented": true,
+        "action": "_isVisible",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"badges active-badge\")"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$availabilityOfUser"
+        }
+      },
+      {
+        "commented": true,
+        "isRawScript": true,
+        "rawScript": "_log($availabilityOfUser)"
+      },
+      {
+        "commented": false,
+        "action": "return",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "$availabilityOfUser"
+          }
+        ],
+        "stepType": "Action"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

@@ -1,0 +1,464 @@
+{
+  "modifiedOn": "2024-09-02T09:41:05.675Z",
+  "name": "Create banned key$word $template",
+  "id": "59003",
+  "type": 3,
+  "createdOn": "2024-09-02T07:55:57.565Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Create banned key$word $template",
+    "parameters": [
+      {
+        "parameterId": "word_",
+        "entityTypeId": "word",
+        "suffix": ""
+      },
+      {
+        "parameterId": "template_",
+        "entityTypeId": "template",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "40000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "6000"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "_isVisible(_fltPlaceholder(\"/Enable/\"))"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_fltPlaceholder(\"/Enable/\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_fltSemantics(\"flt-semantic-node-10\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_fltSemantics(\"Create New\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "3000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "_focus(_textbox(\"Enter template name\"))"
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_textbox(\"Enter template name\")"
+          },
+          {
+            "parameterId": "template_",
+            "attributeId": "attr_01695902827118"
+          }
+        ],
+        "stepType": "Action",
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_textbox(0)"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$templateName"
+        }
+      },
+      {
+        "commented": true,
+        "action": "_exists",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_fltSemantics(\"You are using a restricted word, please rephrase.\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Is_True"
+      },
+      {
+        "commented": true,
+        "isRawScript": true,
+        "rawScript": "_focus(_textbox(\"Enter template name\"))"
+      },
+      {
+        "commented": true,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_textbox(\"Enter template name\")"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$templateNameEntered"
+        }
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "2000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "_typeKeyCodeNative(java.awt.event.KeyEvent.VK_F11)\n"
+      },
+      {
+        "commented": false,
+        "action": "_position",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_iframe(0)"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$pos1"
+        }
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_fltSemantics(\"Select Template type\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_position",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_fltSemantics(\"Conversation\")"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "true"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$pos2"
+        }
+      },
+      {
+        "commented": false,
+        "action": "_clickNativeXY",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "$pos1[0]+$pos2[0]+5"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "$pos1[1]+$pos2[1]+5"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "500"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "_typeKeyCodeNative(java.awt.event.KeyEvent.VK_F11)\n"
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "2000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "isRawScript": true,
+        "rawScript": "_selectDomain(\"/app.txtbox.in/\")\n_click(_fltPlaceholder(\"/Enable/\"))\n_click(_fltSemantics(\"Select Primary Object\"));\n_clickNative(_fltSemantics(\"Contact\"));"
+      },
+      {
+        "commented": true,
+        "action": "_clickNative",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_fltSemantics(\"Automation\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "2000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_fltSemantics(\"Only Text\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "6000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_fltSemantics(\"SMS\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "2000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "_focus(_textarea(0))"
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "parameterId": "template_",
+            "attributeId": "attr_21695961090879",
+            "accessorId": "acc0"
+          },
+          {
+            "parameterId": "word_",
+            "attributeId": "attr_01716446357124"
+          }
+        ],
+        "stepType": "Action",
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_exists",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_fltSemantics(\"You are using a restricted word, please rephrase.\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Is_True"
+      },
+      {
+        "commented": true,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "parameterId": "template_",
+            "attributeId": "attr_21695961090879"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$enteredText"
+        },
+        "visibleCheck": false
+      },
+      {
+        "commented": true,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "3000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_fltSemantics(\"Save\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "15000"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "_isVisible(_fltSemantics(\"Template created Successfully\"))"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "isRawScript": true,
+        "rawScript": "_focus(_textbox(\"Search by Template Name\"))"
+      },
+      {
+        "commented": true,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_textbox(\"Search by Template Name\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_textbox(\"Search by Template Name\")"
+          },
+          {
+            "parameterId": "template_",
+            "attributeId": "attr_01695902827118"
+          },
+          {}
+        ],
+        "stepType": "Action",
+        "visibleCheck": false
+      },
+      {
+        "commented": true,
+        "isRawScript": true,
+        "rawScript": "_typeKeyCodeNative(java.awt.event.KeyEvent.VK_ENTER);"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

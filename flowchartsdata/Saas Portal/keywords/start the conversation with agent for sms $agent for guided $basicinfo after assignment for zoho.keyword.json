@@ -1,0 +1,372 @@
+{
+  "modifiedOn": "2024-07-02T04:38:37.223Z",
+  "name": "start the conversation with agent for sms $agent for guided $basicinfo after assignment for zoho",
+  "id": "57981",
+  "type": 3,
+  "createdOn": "2024-07-02T04:38:13.423Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "start the conversation with agent for sms $agent for guided $basicinfo after assignment for zoho",
+    "parameters": [
+      {
+        "parameterId": "agent_",
+        "entityTypeId": "agent",
+        "suffix": ""
+      },
+      {
+        "parameterId": "basicinfo_",
+        "entityTypeId": "basicinfo",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(\"My Inbox\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"mail-content\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_isVisible",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"Click here\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Is_False"
+      },
+      {
+        "commented": false,
+        "action": "_isVisible",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(\"Chatbot is active for this conversation. Click here to disable the Bot and take over the conversation\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Is_False"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(\"Okay\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"Okay\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_textarea(\"textBox\")"
+          },
+          {
+            "parameterId": "agent_",
+            "attributeId": "attr_21693237404757"
+          }
+        ],
+        "stepType": "Action",
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_button(\"Send\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_italic(\"close\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "POST"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "$incomingSMSURLIntelli"
+          }
+        ],
+        "stepType": "REST",
+        "isRawScript": true,
+        "rawScript": "var $request_17T6Qki4o1 \u003d new RESTRequest();\r\n$request_17T6Qki4o1.setURL($incomingSMSURLIntelli);\r\n$request_17T6Qki4o1.addToQueryString(\"Message\", $agent.visitorMessage1);\r\n$request_17T6Qki4o1.addToQueryString(\"OriginatorAddress\", $basicinfo.source);\r\n$request_17T6Qki4o1.addToQueryString(\"DestinationAddress\", $SenderIDSMSZOHO);\r\nvar $response_17T6Qki4o1 \u003d $request_17T6Qki4o1.submit(\"POST\");\r\nvar responseBody \u003d JSON.parse($response_17T6Qki4o1.getBodyAsString());\r\n\t var $responseBodyObj_17T6Qki4o1 \u003d $response_17T6Qki4o1.getBodyAsString();\r\n\tvar responseType \u003d $response_17T6Qki4o1.getHeader(\"Content-Type\");\r\n\tif (responseType.indexOf(\"json\")!\u003d-1) {\r\n\t\t$responseBodyObj_17T6Qki4o1 \u003d JSON.parse($responseBodyObj_17T6Qki4o1);\r\n\t}\r\n\telse if (responseType.indexOf(\"xml\")!\u003d-1) {\r\n\t\t$responseBodyObj_17T6Qki4o1 \u003d $responseBodyObj_17T6Qki4o1.replace(/\u003c\\xml.*?\u003e/g, \u0027\u0027).replace(/\\n/g, \u0027\u0027).replace(/\\r/g, \u0027\u0027);\r\n\t\t$responseBodyObj_17T6Qki4o1 \u003d new XML(undefined);\r\n\t}\r\n\r\n\t//assertions\r\n\r\n",
+        "state": {
+          "contentType": "json",
+          "request": {
+            "method": "POST",
+            "url": "$incomingSMSURLIntelli",
+            "parameters": [
+              [
+                "Message",
+                "$agent.visitorMessage1"
+              ],
+              [
+                "OriginatorAddress",
+                "$basicinfo.source"
+              ],
+              [
+                "DestinationAddress",
+                "$SenderIDSMSZOHO"
+              ]
+            ],
+            "headers": [],
+            "authType": "none",
+            "body": "",
+            "bodyParams": [],
+            "isParametrizedBody": false,
+            "resetCookies": false
+          },
+          "assertions": {
+            "status": [],
+            "header": [],
+            "body": []
+          },
+          "variables": {
+            "status": [],
+            "header": [],
+            "body": []
+          },
+          "authInfo": {}
+        }
+      },
+      {
+        "commented": true,
+        "isRawScript": true,
+        "rawScript": "var $GUID\u003dMath.random();\n\n$request \u003d new RESTRequest();\n$request.setURL($incomingSMSURL);\n$request.setHeader(\"Content-Type\", \"multipart/form-data; boundary\u003d\u003ccalculated when request is sent\u003e\");\n$request.setHeader(\"Content-Length\", \"\u003ccalculated when request is sent\u003e\");\n$request.setHeader(\"Host\", \"\u003ccalculated when request is sent\u003e\");\n$request.setHeader(\"User-Agent\", \"PostmanRuntime/7.32.3\");\n$request.setHeader(\"Accept\", \"*/*\");\n$request.setHeader(\"Accept-Encoding\", \"gzip, deflate, br\");\n$request.setHeader(\"Connection\", \"keep-alive\");\n$request.addToBody(\"source\", $sms.sourceCheck);\n$request.addToBody(\"messageText\", $sms.visitorMsgSMS1);\n$request.addToBody(\"destination\", $destinationGuidedSaaS);\n$request.addToBody(\"connectionGUID\", $GUID);\n$request.addToBody(\"transactionGUID\", $GUID);\n$response \u003d $request.submit(\"POST\");\nvar $responseBody \u003d $response.getBodyAsString();"
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "5000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"mail-content\", _near(_listItem(\"All My Messages\")))"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span($agent.visitorMessage1)"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "parameterId": "agent_",
+          "attributeId": "attr_31693237588147"
+        },
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_textarea(\"textBox\")"
+          },
+          {
+            "parameterId": "agent_",
+            "attributeId": "attr_41693238735493"
+          }
+        ],
+        "stepType": "Action",
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_button(\"Send\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_italic(\"close\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "POST"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "$incomingSMSURLIntelli"
+          }
+        ],
+        "stepType": "REST",
+        "isRawScript": true,
+        "rawScript": "var $request_IZPGd7La1H \u003d new RESTRequest();\r\n$request_IZPGd7La1H.setURL($incomingSMSURLIntelli);\r\n$request_IZPGd7La1H.addToQueryString(\"Message\", $agent.visitorMessage2);\r\n$request_IZPGd7La1H.addToQueryString(\"OriginatorAddress\", $basicinfo.source);\r\n$request_IZPGd7La1H.addToQueryString(\"DestinationAddress\", $SenderIDSMSZOHO);\r\nvar $response_IZPGd7La1H \u003d $request_IZPGd7La1H.submit(\"POST\");\r\nvar responseBody \u003d JSON.parse($response_IZPGd7La1H.getBodyAsString());\r\n\t var $responseBodyObj_IZPGd7La1H \u003d $response_IZPGd7La1H.getBodyAsString();\r\n\tvar responseType \u003d $response_IZPGd7La1H.getHeader(\"Content-Type\");\r\n\tif (responseType.indexOf(\"json\")!\u003d-1) {\r\n\t\t$responseBodyObj_IZPGd7La1H \u003d JSON.parse($responseBodyObj_IZPGd7La1H);\r\n\t}\r\n\telse if (responseType.indexOf(\"xml\")!\u003d-1) {\r\n\t\t$responseBodyObj_IZPGd7La1H \u003d $responseBodyObj_IZPGd7La1H.replace(/\u003c\\xml.*?\u003e/g, \u0027\u0027).replace(/\\n/g, \u0027\u0027).replace(/\\r/g, \u0027\u0027);\r\n\t\t$responseBodyObj_IZPGd7La1H \u003d new XML(undefined);\r\n\t}\r\n\r\n\t//assertions\r\n\r\n",
+        "state": {
+          "contentType": "json",
+          "request": {
+            "method": "POST",
+            "url": "$incomingSMSURLIntelli",
+            "parameters": [
+              [
+                "Message",
+                "$agent.visitorMessage2"
+              ],
+              [
+                "OriginatorAddress",
+                "$basicinfo.source"
+              ],
+              [
+                "DestinationAddress",
+                "$SenderIDSMSZOHO"
+              ]
+            ],
+            "headers": [],
+            "authType": "none",
+            "body": "",
+            "bodyParams": [],
+            "isParametrizedBody": false,
+            "resetCookies": false
+          },
+          "assertions": {
+            "status": [],
+            "header": [],
+            "body": []
+          },
+          "variables": {
+            "status": [],
+            "header": [],
+            "body": []
+          },
+          "authInfo": {}
+        }
+      },
+      {
+        "commented": true,
+        "isRawScript": true,
+        "rawScript": "var $GUID\u003dMath.random();\n\n$request \u003d new RESTRequest();\n$request.setURL($incomingSMSURL);\n$request.setHeader(\"Content-Type\", \"multipart/form-data; boundary\u003d\u003ccalculated when request is sent\u003e\");\n$request.setHeader(\"Content-Length\", \"\u003ccalculated when request is sent\u003e\");\n$request.setHeader(\"Host\", \"\u003ccalculated when request is sent\u003e\");\n$request.setHeader(\"User-Agent\", \"PostmanRuntime/7.32.3\");\n$request.setHeader(\"Accept\", \"*/*\");\n$request.setHeader(\"Accept-Encoding\", \"gzip, deflate, br\");\n$request.setHeader(\"Connection\", \"keep-alive\");\n$request.addToBody(\"source\", $sms.sourceCheck);\n$request.addToBody(\"messageText\", $sms.visitorMsgSMS2);\n$request.addToBody(\"destination\", $destinationGuidedSaaS);\n$request.addToBody(\"connectionGUID\", $GUID);\n$request.addToBody(\"transactionGUID\", $GUID);\n$response \u003d $request.submit(\"POST\");\nvar $responseBody \u003d $response.getBodyAsString();"
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "5000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"mail-content\", _near(_listItem(\"All My Messages\")))"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span($agent.visitorMessage2)"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "parameterId": "agent_",
+          "attributeId": "attr_51693239110005"
+        },
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_italic(\"close\")"
+          }
+        ],
+        "stepType": "Action"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

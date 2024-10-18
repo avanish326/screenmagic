@@ -1,0 +1,37 @@
+{
+  "modifiedOn": "2024-02-08T06:49:44.760Z",
+  "name": "Send Incoming Message to Zoho for Hipaa $sms",
+  "id": "27944",
+  "type": 3,
+  "createdOn": "2024-02-08T06:49:44.760Z",
+  "content": {
+    "title": "Send Incoming Message to Zoho for Hipaa $sms",
+    "parameters": [
+      {
+        "parameterId": "sms_",
+        "entityTypeId": "sms",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "var $GUID\u003dMath.random();\n\n$request \u003d new RESTRequest();\n$request.setURL($incomingSMSURL);\n$request.setHeader(\"Content-Type\", \"multipart/form-data; boundary\u003d\u003ccalculated when request is sent\u003e\");\n$request.setHeader(\"Content-Length\", \"\u003ccalculated when request is sent\u003e\");\n$request.setHeader(\"Host\", \"\u003ccalculated when request is sent\u003e\");\n$request.setHeader(\"User-Agent\", \"PostmanRuntime/7.32.3\");\n$request.setHeader(\"Accept\", \"*/*\");\n$request.setHeader(\"Accept-Encoding\", \"gzip, deflate, br\");\n$request.setHeader(\"Connection\", \"keep-alive\");\n$request.addToBody(\"source\", $sms.sourceCheck);\n$request.addToBody(\"messageText\", $sms.messageHipaa);\n$request.addToBody(\"destination\", $destinationhipaaZoho);\n$request.addToBody(\"connectionGUID\", $GUID);\n$request.addToBody(\"transactionGUID\", $GUID);\n$response \u003d $request.submit(\"POST\");\nvar $responseBody \u003d $response.getBodyAsString();"
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "5000"
+          }
+        ],
+        "stepType": "Action"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

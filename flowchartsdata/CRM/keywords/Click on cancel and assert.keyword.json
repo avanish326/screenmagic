@@ -1,0 +1,43 @@
+{
+  "modifiedOn": "2023-12-13T13:03:57.902Z",
+  "name": "Click on cancel and assert",
+  "id": "21490",
+  "type": 3,
+  "createdOn": "2023-12-13T13:03:47.133Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Click on cancel and assert",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_submit(\"Cancel\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_submit(\"add New Message\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"add New Message\""
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

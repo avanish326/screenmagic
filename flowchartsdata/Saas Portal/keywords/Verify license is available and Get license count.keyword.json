@@ -1,0 +1,52 @@
+{
+  "modifiedOn": "2024-03-14T05:06:01.039Z",
+  "name": "Verify license is available and Get license count",
+  "id": "42964",
+  "type": 3,
+  "createdOn": "2024-02-23T11:59:38.025Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Verify license is available and Get license count",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"num-txt[1]\")"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$availableLicense"
+        }
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "if($availableLicense \u003e 0)\n{\n\n   _log(\"License available\");"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_submit(\"Invite User\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "}else{\n\n  _log(\"License is not available\");\n}"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

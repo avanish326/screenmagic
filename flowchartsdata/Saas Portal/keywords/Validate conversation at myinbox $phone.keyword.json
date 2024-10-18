@@ -1,0 +1,75 @@
+{
+  "modifiedOn": "2024-03-12T11:11:02.154Z",
+  "name": "Validate conversation at myinbox $phone",
+  "id": "44259",
+  "type": 3,
+  "createdOn": "2024-03-12T09:58:20.686Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Validate conversation at myinbox $phone",
+    "parameters": [
+      {
+        "parameterId": "phone_",
+        "entityTypeId": "phone",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"My Inbox\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_textbox(0, _in(_div(\"css-1awlv0m\")))"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "$PhoneNumber"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_italic(\"search\", _in(_div(\"css-1awlv0m\")))"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"name-txt\", _in(_div(\"view-conversation\", _near(_div(\"css-1awlv0m\")))))"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$PhoneNumber"
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

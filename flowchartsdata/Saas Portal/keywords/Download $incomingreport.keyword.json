@@ -1,0 +1,101 @@
+{
+  "modifiedOn": "2024-08-08T04:29:49.993Z",
+  "name": "Download $incomingreport",
+  "id": "14898",
+  "type": 3,
+  "createdOn": "2023-09-22T11:37:36.890Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Download $incomingreport",
+    "parameters": [
+      {
+        "parameterId": "incomingreport_",
+        "entityTypeId": "incomingreport",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_button(\"Download Incoming Report\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"Generate New Report\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_datebox(\"From Date\")"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "$FromDate"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_datebox(\"To Date\")"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "$ToDate"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_submit(\"Generate Report\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"/We will notify/\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"We will notify you on the email address \"+$username+\" once your data is ready to download.\""
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

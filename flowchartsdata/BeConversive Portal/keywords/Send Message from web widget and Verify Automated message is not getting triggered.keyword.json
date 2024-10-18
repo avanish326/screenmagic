@@ -1,0 +1,55 @@
+{
+  "modifiedOn": "2024-06-26T14:02:01.366Z",
+  "name": "Send Message from web widget and Verify Automated message is not getting triggered",
+  "id": "57866",
+  "type": 3,
+  "createdOn": "2024-06-20T12:48:57.061Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Send Message from web widget and Verify Automated message is not getting triggered",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_selectBrowser",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "$browserDomain"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "_call(_textarea(\"sms_user_input\").value\u003d\"Okay\")"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_image(\"send icon\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_isVisible",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"chatbot_name[6]\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Is_False"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

@@ -1,0 +1,90 @@
+{
+  "name": "Send Incoming message to the account $sms",
+  "id": "-1",
+  "type": 3,
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Send Incoming message to the account $sms",
+    "specific": [],
+    "parameters": [
+      {
+        "parameterId": "sms_",
+        "entityTypeId": "sms",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "stepType": "REST",
+        "state": {
+          "contentType": "html",
+          "request": {
+            "method": "POST",
+            "url": "$incomingSMSURLTwilio",
+            "parameters": [
+              [
+                "From",
+                "$sms.sourceCheck"
+              ],
+              [
+                "To",
+                "$smsSenderID"
+              ],
+              [
+                "Body",
+                "$sms.incoming"
+              ],
+              [
+                "SmsSid",
+                "124341"
+              ]
+            ],
+            "headers": [],
+            "authType": "none",
+            "body": "",
+            "bodyParams": [],
+            "isParametrizedBody": false,
+            "resetCookies": false
+          },
+          "assertions": {
+            "status": [],
+            "header": [],
+            "body": []
+          },
+          "variables": {
+            "status": [],
+            "header": [],
+            "body": []
+          },
+          "authInfo": {}
+        },
+        "stepParameters": [
+          {
+            "customValue": "POST",
+            "paramMode": "string"
+          },
+          {
+            "customValue": "$incomingSMSURLTwilio",
+            "paramMode": "string"
+          }
+        ]
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "5000"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

@@ -1,0 +1,60 @@
+{
+  "modifiedOn": "2024-04-15T05:49:59.030Z",
+  "name": "Verify the Status of Second Credit Card in Portal after verified from ops portal $newcreditcard",
+  "id": "45076",
+  "type": 3,
+  "createdOn": "2024-04-15T04:24:21.860Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Verify the Status of Second Credit Card in Portal after verified from ops portal $newcreditcard",
+    "parameters": [
+      {
+        "parameterId": "newcreditcard_",
+        "entityTypeId": "newcreditcard",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_selectBrowser",
+        "stepParameters": [],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "//Refresh the Page\n_call(window.location.reload())"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"Cards Information\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_containsText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_submit(\"activeBtn\", _near(_cell($newcreditcard.cardHolderName)))"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "\"Active\""
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Is_True"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

@@ -1,0 +1,64 @@
+{
+  "name": "Go to Number Management and Remove Provisioned $senderid",
+  "id": "-1",
+  "type": 3,
+  "content": {
+    "title": "Go to Number Management and Remove Provisioned $senderid",
+    "specific": [],
+    "parameters": [
+      {
+        "parameterId": "senderid_",
+        "entityTypeId": "senderid",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_link(\"Number Management\")"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_expectConfirm",
+        "stepParameters": [
+          {
+            "paramMode": "string",
+            "customValue": "Are you sure, you want to delete this incoming number?"
+          },
+          {
+            "paramMode": "code",
+            "customValue": "true"
+          }
+        ],
+        "stepType": "Action",
+        "stepCategory": "inbuilt",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_span(\"ui-icon ui-icon-trash  ui-corner-all ui-widget-header\", _near(_cell(\"\"+$senderID+\"\")))"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      }
+    ],
+    "isSystemKeyword": false
+  },
+  "enabled": false,
+  "parentId": ""
+}

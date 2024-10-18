@@ -1,0 +1,98 @@
+{
+  "modifiedOn": "2024-02-20T08:10:31.007Z",
+  "name": "Add Message Credits from ops $accountdetails",
+  "id": "37991",
+  "type": 3,
+  "createdOn": "2024-02-20T07:53:32.603Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Add Message Credits from ops $accountdetails",
+    "parameters": [
+      {
+        "parameterId": "accountdetails_",
+        "entityTypeId": "accountdetails",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"Billing\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"Add Balance\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "parameterId": "accountdetails_",
+            "attributeId": "attr_31708415643626",
+            "accessorId": "acc0"
+          },
+          {
+            "parameterId": "accountdetails_",
+            "attributeId": "attr_31708415643626"
+          }
+        ],
+        "stepType": "Action",
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_button(\"Add\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "2000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"oneBillSMSCredits\")"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$messageCredits"
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

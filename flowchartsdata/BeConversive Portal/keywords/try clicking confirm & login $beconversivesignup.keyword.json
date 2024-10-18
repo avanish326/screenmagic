@@ -1,0 +1,96 @@
+{
+  "modifiedOn": "2024-03-06T11:17:01.499Z",
+  "name": "try clicking confirm \u0026 login $beconversivesignup",
+  "id": "43964",
+  "type": 3,
+  "createdOn": "2024-03-05T11:12:59.763Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "try clicking confirm \u0026 login $beconversivesignup",
+    "parameters": [
+      {
+        "parameterId": "beconversivesignup_",
+        "entityTypeId": "beconversivesignup",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_textbox(\"Search in mail\")"
+          },
+          {
+            "parameterId": "beconversivesignup_",
+            "attributeId": "attr_51699344958745"
+          }
+        ],
+        "stepType": "Action",
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "_click(_submit(0, _near(_div(\"/Search in mail/\"))));"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "_selectWindow(\"/Search/\");"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"Welcome test! Verify Your Account Now.\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "_selectWindow(\"/Welcome/\");"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"Confirm and Login\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "_selectWindow(\"/Conversive/\");"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(\"Your Email ID already removed from our system.\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"Your Email ID already removed from our system.\""
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

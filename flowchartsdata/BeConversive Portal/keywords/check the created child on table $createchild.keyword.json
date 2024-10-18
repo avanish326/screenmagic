@@ -1,0 +1,88 @@
+{
+  "name": "check the created child on table $createchild",
+  "id": "-1",
+  "type": 3,
+  "content": {
+    "isSystemKeyword": false,
+    "title": "check the created child on table $createchild",
+    "specific": [],
+    "parameters": [
+      {
+        "parameterId": "createchild_",
+        "entityTypeId": "createchild",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "5000"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "//$pages \u003d _collectAttributes(\"_listItem\", \"/.*/\", \"sahiText\", _in(_list(0)));\n$pages \u003d _collectAttributes(\"_listItem\", \"/.*/\", \"sahiText\", _in(_div(\"pagination\")));\nif($pages.length \u003e 1){\n\t$page \u003d $pages[($pages.length)-1];\n}\nelse{\n\t$page \u003d $pages[0];\n}\n_click(_listItem($page));\n\n$cells \u003d _collectAttributes(\"_cell\", \"/.*/\", \"sahiText\", _under(_tableHeader(\"Account Name\")), _in(_div(\"overflow-x-auto\")));\n\n$no \u003d $cells.length;\n$lastCell \u003d $cells[$no-1];\n\n$actual \u003d $createchild.accountName+\"Pending\";\n\n//_assertEqual($lastCell, $createchild.accountName);\n",
+        "specific": []
+      },
+      {
+        "commented": true,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_cell($lastCell)"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "paramMode": "code",
+          "customValue": "$actual"
+        },
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_cell(1, _near(_cell($lastCell)))"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Store",
+        "secondaryParam": {
+          "paramMode": "code",
+          "customValue": "$childAccount"
+        },
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_log",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "$childAccount"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

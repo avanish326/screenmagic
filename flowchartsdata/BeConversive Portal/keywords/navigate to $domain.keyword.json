@@ -1,0 +1,51 @@
+{
+  "modifiedOn": "2024-02-08T06:49:38.126Z",
+  "name": "navigate to $domain",
+  "id": "27468",
+  "type": 3,
+  "createdOn": "2024-02-08T06:49:38.126Z",
+  "content": {
+    "title": "navigate to $domain",
+    "parameters": [
+      {
+        "parameterId": "domain_",
+        "entityTypeId": "domain",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_launchNewBrowser",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "$testURL"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "\"chrome\""
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$browserDomain"
+        }
+      },
+      {
+        "commented": false,
+        "action": "_selectBrowser",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "$browserDomain"
+          }
+        ],
+        "stepType": "Action"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

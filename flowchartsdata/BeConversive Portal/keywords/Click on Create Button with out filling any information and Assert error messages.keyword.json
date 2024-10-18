@@ -1,0 +1,75 @@
+{
+  "modifiedOn": "2024-02-08T06:49:49.907Z",
+  "name": "Click on Create Button with out filling any information and Assert error messages",
+  "id": "28304",
+  "type": 3,
+  "createdOn": "2024-02-08T06:49:49.907Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Click on Create Button with out filling any information and Assert error messages",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_submit(\"Create\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"Enter Name\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"Enter Name\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"Please select atleast one sender Id\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"Please select atleast one sender Id\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"Please select atleast one user\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"Please select atleast one user\""
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

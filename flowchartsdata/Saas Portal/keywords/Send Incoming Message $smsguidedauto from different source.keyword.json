@@ -1,0 +1,92 @@
+{
+  "modifiedOn": "2024-02-05T07:09:37.598Z",
+  "name": "Send Incoming Message $smsguidedauto from different source",
+  "id": "21120",
+  "type": 3,
+  "createdOn": "2023-12-07T06:48:11.563Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Send Incoming Message $smsguidedauto from different source",
+    "parameters": [
+      {
+        "parameterId": "smsguidedauto_",
+        "entityTypeId": "smsguidedauto",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "var $smsSenderID1\u003d$smsguidedauto.smsSenderID1;\n\nvar $inputString \u003d$smsSenderID1;\nvar $parts \u003d $inputString.split(\u0027 \u0027);\n$senderID1 \u003d $parts[0].trim();\n_log($senderID1);"
+      },
+      {
+        "commented": false,
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "POST"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "https://qa-api.txtbox.in/v1/sms/incoming/intelli"
+          }
+        ],
+        "stepType": "REST",
+        "isRawScript": true,
+        "rawScript": "var $request_thU4HYYooZ \u003d new RESTRequest();\r\n$request_thU4HYYooZ.setURL(\"https://qa-api.txtbox.in/v1/sms/incoming/intelli\");\r\n$request_thU4HYYooZ.addToQueryString(\"Message\", $smsguidedauto.text);\r\n$request_thU4HYYooZ.addToQueryString(\"OriginatorAddress\", $smsguidedauto.source1);\r\n$request_thU4HYYooZ.addToQueryString(\"DestinationAddress\", $senderID1);\r\nvar $response_thU4HYYooZ \u003d $request_thU4HYYooZ.submit(\"POST\");\r\nvar responseBody \u003d JSON.parse($response_thU4HYYooZ.getBodyAsString());\r\n\t var $responseBodyObj_thU4HYYooZ \u003d $response_thU4HYYooZ.getBodyAsString();\r\n\tvar responseType \u003d $response_thU4HYYooZ.getHeader(\"Content-Type\");\r\n\tif (responseType.indexOf(\"json\")!\u003d-1) {\r\n\t\t$responseBodyObj_thU4HYYooZ \u003d JSON.parse($responseBodyObj_thU4HYYooZ);\r\n\t}\r\n\telse if (responseType.indexOf(\"xml\")!\u003d-1) {\r\n\t\t$responseBodyObj_thU4HYYooZ \u003d $responseBodyObj_thU4HYYooZ.replace(/\u003c\\xml.*?\u003e/g, \u0027\u0027).replace(/\\n/g, \u0027\u0027).replace(/\\r/g, \u0027\u0027);\r\n\t\t$responseBodyObj_thU4HYYooZ \u003d new XML(undefined);\r\n\t}\r\n\r\n\t//assertions\r\n\r\n",
+        "state": {
+          "contentType": "json",
+          "request": {
+            "method": "POST",
+            "url": "https://qa-api.txtbox.in/v1/sms/incoming/intelli",
+            "parameters": [
+              [
+                "Message",
+                "$smsguidedauto.text"
+              ],
+              [
+                "OriginatorAddress",
+                "$smsguidedauto.source1"
+              ],
+              [
+                "DestinationAddress",
+                "$senderID1"
+              ]
+            ],
+            "headers": [],
+            "authType": "none",
+            "body": "",
+            "bodyParams": [],
+            "isParametrizedBody": false,
+            "resetCookies": false
+          },
+          "assertions": {
+            "status": [],
+            "header": [],
+            "body": []
+          },
+          "variables": {
+            "status": [],
+            "header": [],
+            "body": []
+          },
+          "authInfo": {}
+        }
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "3000"
+          }
+        ],
+        "stepType": "Action"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

@@ -1,0 +1,58 @@
+{
+  "modifiedOn": "2024-02-08T06:49:37.679Z",
+  "name": "Assert web form in Contacts",
+  "id": "27435",
+  "type": 3,
+  "createdOn": "2024-02-08T06:49:37.679Z",
+  "content": {
+    "title": "Assert web form in Contacts",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"Contacts\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_cell($mob)"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$mob"
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div($em)"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$em"
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

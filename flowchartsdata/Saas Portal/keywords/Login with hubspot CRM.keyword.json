@@ -1,0 +1,61 @@
+{
+  "modifiedOn": "2024-05-15T09:22:36.167Z",
+  "name": "Login with hubspot CRM",
+  "id": "46115",
+  "type": 3,
+  "createdOn": "2024-05-15T09:19:37.381Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Login with hubspot CRM",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_launchNewBrowser",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "\"https://app.hubspot.com/login?\""
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "\"chrome\""
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$browserStandardUser1"
+        }
+      },
+      {
+        "commented": false,
+        "action": "_selectBrowser",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "$browserStandardUser1"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "3000"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "_isVisible(_link(\"Sign In with sEmail\"))"
+          }
+        ],
+        "stepType": "Action"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

@@ -1,0 +1,31 @@
+{
+  "modifiedOn": "2024-05-22T12:55:17.865Z",
+  "name": "CSV Read",
+  "id": "46125",
+  "type": 3,
+  "createdOn": "2024-05-15T16:45:20.335Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "CSV Read",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": true,
+        "isRawScript": true,
+        "rawScript": "var $userinfo\u003d _readCSVFile(\"/Users/pranitakolekar/tfc_engine_new/userdata/scripts/AudienceContact.csv\", {includeHeader:true});\n\nvar $csvLength \u003d $userinfo.length\n\n_log($csvLength)\n\n\n$headers\u003d$userinfo[0];\n\n\nvar $firstNameIndex \u003d $headers.indexOf(\u0027First Name\u0027);\nvar $lastNameIndex \u003d $headers.indexOf(\u0027Last Name\u0027);\n\n\n_log($firstNameIndex)\n_log($lastNameIndex)\n\n$FirstName\u003d[];\n\nfor(var $i\u003d1; $i\u003c$userinfo.length; $i++)\n{\n   // $csvRecords\u003d$userinfo[$i];\n    //_log($csvRecords)\n\n var $data \u003d $userinfo[$i];\n\n var $firstName \u003d $data[$firstNameIndex];\nvar $lastName \u003d $data[$lastNameIndex];\n_log($firstName)\n_log($lastName)\n\n\n\n}\n\n\n $firstName \u003d [];\n $lastName \u003d [];\nfor(var $i \u003d1; $i\u003c$csvLength;$i++){\n$firstName.push($userinfo[$i][$firstNameIndex]);\n$lastName.push($userinfo[$i][$lastNameIndex]);\n}\n"
+      },
+      {
+        "commented": true,
+        "isRawScript": true,
+        "rawScript": "var $userinfo\u003d _readCSVFile(\"/Users/pranitakolekar/tfc_engine_new/userdata/scripts/AudienceContact.csv\", {includeHeader:true});\n\n$headers\u003d$userinfo[0];\n\nvar $firstNameIndex \u003d $headers.indexOf($headers[0]);\nvar $lastNameIndex \u003d $headers.indexOf($headers[1]);\n\n$firstNameUI \u003d _collectAttributes(\"_cell\",\"/.*/\",\"sahiText\",_under(_tableHeader(\"First Name\")))\n$firstNameUIupdate \u003d $firstNameUI.slice(0,$userinfo.length-1).sort()\n\n\n$lastNameUI \u003d _collectAttributes(\"_cell\",\"/.*/\",\"sahiText\",_under(_tableHeader(\"Last Name\")))\n$lastNameUIupdate \u003d $lastNameUI.slice(0,$userinfo.length-1).sort()\n\n\nvar $userinfo1\u003d _readCSVFile(\"/Users/pranitakolekar/tfc_engine_new/userdata/scripts/AudienceContact.csv\");\n\nfor(var $i \u003d0; $i\u003c$userinfo1.length;$i++){\n_assertEqual($userinfo1[$i][$firstNameIndex],$firstNameUIupdate[$i]);\n_assertEqual($userinfo1[$i][$lastNameIndex],$lastNameUIupdate[$i]);\n}\n"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "var $userinfo\u003d _readCSVFile(\"/Users/pranitakolekar/tfc_engine_new/userdata/scripts/AudienceContact.csv\", {includeHeader:true});\n\n$headers\u003d$userinfo[0];\n\nvar $firstNameIndex \u003d $headers.indexOf($headers[0]);\nvar $lastNameIndex \u003d $headers.indexOf($headers[1]);\n\nif($len\u003e10){\n_focusWindow()\n_click(_div(\"select-dropdown-indicator\"))\n_click(_div(\"50 / page\"))\n}\n\nvar $pagesNum \u003d Math.ceil($len/50);\n\nvar $firstNameUI \u003d[];\nvar $lastNameUI\u003d[];\nfor(var $i \u003d 0; $i\u003c$pagesNum; $i++){\nvar $firstName \u003d _collectAttributes(\"_cell\",\"/.*/\",\"sahiText\",_under(_tableHeader(\"First Name\")));\nfor(var $j\u003d0;$j\u003c$firstName.length;$j++){\nif($firstName[$j] \u003d\u003d \"-\"){\n$firstNameUI.push(\"\");\n}\nelse{\n$firstNameUI.push($firstName[$j]);\n}\n}\nvar $lastName \u003d _collectAttributes(\"_cell\",\"/.*/\",\"sahiText\",_under(_tableHeader(\"Last Name\")))\nfor(var $j\u003d0;$j\u003c$lastName.length;$j++){\nif($lastName[$j] \u003d\u003d \"-\"){\n$lastNameUI.push(\"\");\n}\nelse{\n$lastNameUI.push($lastName[$j]);\n}\n}\n_click(_span(\"/next/\"));\n}\n\n$firstNameUIupdate \u003d $firstNameUI.slice(0,$userinfo.length-1).sort();\n$lastNameUIupdate \u003d $lastNameUI.slice(0,$userinfo.length-1).sort();\n\nvar $userinfo1\u003d _readCSVFile(\"/Users/pranitakolekar/tfc_engine_new/userdata/scripts/AudienceContact.csv\");\n\nfor(var $i \u003d0; $i\u003c$userinfo1.length;$i++){\n_assertEqual($userinfo1[$i][$firstNameIndex],$firstNameUIupdate[$i]);\n_assertEqual($userinfo1[$i][$lastNameIndex],$lastNameUIupdate[$i]);\n}\n"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

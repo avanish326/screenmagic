@@ -1,0 +1,73 @@
+{
+  "modifiedOn": "2024-02-08T06:49:52.839Z",
+  "name": "Go to flow and check user is not able to edit the name $workflowname",
+  "id": "28510",
+  "type": 3,
+  "createdOn": "2024-02-08T06:49:52.839Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Go to flow and check user is not able to edit the name $workflowname",
+    "parameters": [
+      {
+        "parameterId": "workflowname_",
+        "entityTypeId": "workflowname",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(1, _near(_tableHeader(\"Automation Name\")))"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_submit(\"update_btn\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "parameterId": "workflowname_",
+          "attributeId": "attr_11702974707569"
+        },
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_doubleClick",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_submit(\"update_btn\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_isVisible",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_textbox(0)"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Is_False"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

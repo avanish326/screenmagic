@@ -1,0 +1,59 @@
+{
+  "modifiedOn": "2024-02-26T15:11:16.583Z",
+  "name": "check no of users on account",
+  "id": "43327",
+  "type": 3,
+  "createdOn": "2024-02-26T14:46:26.310Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "check no of users on account",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "var $noOfUsers \u003d _count(\"_span\",\"/Assigned/\",\"sahiText\",_under(_div(\"User Details Invite User\")),_in(_div(\"table-responsive[1]\")));"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"Accounts\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_windowAction",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "\"refresh\""
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_cell(3, _near(_tableHeader(\"No. of Users\")))"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$noOfUsers"
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

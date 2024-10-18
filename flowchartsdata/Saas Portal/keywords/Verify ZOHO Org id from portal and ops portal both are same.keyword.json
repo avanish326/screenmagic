@@ -1,0 +1,32 @@
+{
+  "modifiedOn": "2024-03-18T13:38:43.520Z",
+  "name": "Verify ZOHO Org id from portal and ops portal both are same",
+  "id": "44708",
+  "type": 3,
+  "createdOn": "2024-03-18T13:38:28.678Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Verify ZOHO Org id from portal and ops portal both are same",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_cell(0, _under(_tableHeader(\"Zoho ID\")))"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$zohoOrgID"
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

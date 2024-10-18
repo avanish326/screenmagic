@@ -1,0 +1,130 @@
+{
+  "modifiedOn": "2024-02-09T09:55:21.513Z",
+  "name": "Assert the Added Workflow Image for Campus Visit Feedback Survey",
+  "id": "29180",
+  "type": 3,
+  "createdOn": "2024-02-09T09:54:18.871Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Assert the Added Workflow Image for Campus Visit Feedback Survey",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": true,
+        "isRawScript": true,
+        "rawScript": "_assertSnapShot(\"/Users/pranitakolekar/tfc_engine/userdata/scripts/Healthcare_flow.jpg\", _image(\"Healthcare_flow.jpg\"))"
+      },
+      {
+        "commented": true,
+        "isRawScript": true,
+        "rawScript": "_takePageScreenShot(_image(\"Healthcare_flow.jpg\"),\"/Users/pranitakolekar/tfc_engine/userdata/scripts/Healthcare_Guided.jpg\");\n\nvar $same \u003d _compareImages(\"/Users/pranitakolekar/tfc_engine/userdata/scripts/Healthcare_Guided.jpg\", \"/Users/pranitakolekar/tfc_engine/userdata/scripts/Healthcare_flow.jpg\");\n\n_assert($same);"
+      },
+      {
+        "commented": false,
+        "action": "_isVisible",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(\"Recipe type:\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Is_False"
+      },
+      {
+        "commented": false,
+        "action": "_isVisible",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(\"Conversation Flow\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Is_False"
+      },
+      {
+        "commented": false,
+        "action": "_isVisible",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"The recipe consists of:Guided\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Is_False"
+      },
+      {
+        "commented": false,
+        "action": "_isVisible",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"/You have the option to embed the conversive button directly onto your website/\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Is_False"
+      },
+      {
+        "commented": false,
+        "action": "_isVisible",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(\"Prerequisites\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Is_False"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(\"converse_servey_text\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"Campus Visit Feedback Survey\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(\"/Connect with students effortlessly using our chat template. Simply set it up to automatically/\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"Connect with students effortlessly using our chat template. Simply set it up to automatically handle queries about courses, document submissions, and visits. Add a chat button to your site or publish QR codes in your ads for easy access. Activate this chat automation and let it handle conversations on your website, through texts, or WhatsApp, keeping students engaged with zero hassle\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_isVisible",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_submit(\"Get this Automation\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Is_True"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

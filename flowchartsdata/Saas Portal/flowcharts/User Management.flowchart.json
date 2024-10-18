@@ -1,0 +1,1966 @@
+{
+  "name": "User Management",
+  "id": "-1",
+  "type": 0,
+  "content": {
+    "nodesMap": {
+      "fcn_start_0": {
+        "id": "fcn_start_0",
+        "content": "Start",
+        "nodeType": "start",
+        "branches": [
+          "fcn_usermanagement_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_usermanagement_0": {
+        "id": "fcn_usermanagement_0",
+        "content": "User Management",
+        "nodeType": "pathlabel",
+        "branches": [
+          "fcn_logintosaasportal_1708590525037_0",
+          "fcn_toverifythatzohoadminusershouldhaveprovisiontoaddorupdatethenameoftheusersfromusermanagement_0",
+          "fcn_zohousermanagement_1710770288136_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_logintosaasportal_1708590525037_0": {
+        "id": "fcn_logintosaasportal_1708590525037_0",
+        "content": "login to $saasportal",
+        "nodeType": "action",
+        "branches": [
+          "fcn_navigatetousermanagement_0",
+          "fcn_ensurethatnonadminuserisalsoabletoupdatethenamefromcustomerportalbyupdatenamesectionfromsettingstab_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_navigatetousermanagement_0": {
+        "id": "fcn_navigatetousermanagement_0",
+        "content": "Navigate to User Management",
+        "nodeType": "action",
+        "branches": [
+          "fcn_toverifythedatawhichiscomingfromops_0",
+          "fcn_toverifywhenthelicenseisavailabletheinviteuserbuttonfunctionality_0",
+          "fcn_clickonresendinvitesmorethan4timesandverifyerrormessage_1710393133751_0",
+          "fcn_logoutafterunassigninglicense_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_toverifythedatawhichiscomingfromops_0": {
+        "id": "fcn_toverifythedatawhichiscomingfromops_0",
+        "content": "To verify the data which is coming from Ops ",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_getaccountid_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_getaccountid_0": {
+        "id": "fcn_getaccountid_0",
+        "content": "Get Account ID",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logintotheopsportallogintrial_signupaccountid_1708591115237_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_logintotheopsportallogintrial_signupaccountid_1708591115237_0": {
+        "id": "fcn_logintotheopsportallogintrial_signupaccountid_1708591115237_0",
+        "content": "Login to the Ops Portal and Search the Account",
+        "nodeType": "action",
+        "branches": [
+          "fcn_navigatetouserandlicenses_1708591127583_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_navigatetouserandlicenses_1708591127583_0": {
+        "id": "fcn_navigatetouserandlicenses_1708591127583_0",
+        "content": "Navigate to User and Licenses",
+        "nodeType": "action",
+        "branches": [
+          "fcn_getlicensetypetotallicenseandavailablelicense_0",
+          "fcn_toverifytheinviteuserbuttonfunctionalityislicenseisnotavailable_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_getlicensetypetotallicenseandavailablelicense_0": {
+        "id": "fcn_getlicensetypetotallicenseandavailablelicense_0",
+        "content": "Get License Type Total License and Available License",
+        "nodeType": "action",
+        "branches": [
+          "fcn_closethebrowser_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_closethebrowser_0": {
+        "id": "fcn_closethebrowser_0",
+        "content": "Close the Browser",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertlicensetypetotallicenseandavailablelicenseinusermanagement_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_assertlicensetypetotallicenseandavailablelicenseinusermanagement_0": {
+        "id": "fcn_assertlicensetypetotallicenseandavailablelicenseinusermanagement_0",
+        "content": "Assert License Type Total License and Available License in User Management",
+        "nodeType": "action",
+        "branches": [
+          "fcn_toverifyuserdetailstablecolumns_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_toverifyuserdetailstablecolumns_0": {
+        "id": "fcn_toverifyuserdetailstablecolumns_0",
+        "content": "To verify User Details table columns",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_toverifyuserdetailstablecolumns_1"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_toverifyuserdetailstablecolumns_1": {
+        "id": "fcn_toverifyuserdetailstablecolumns_1",
+        "content": "To verify User Details table columns",
+        "nodeType": "action",
+        "branches": [
+          "fcn_toverifywhenthefirsttimeusergototheusermanagementsection_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_toverifywhenthefirsttimeusergototheusermanagementsection_0": {
+        "id": "fcn_toverifywhenthefirsttimeusergototheusermanagementsection_0",
+        "content": "To verify when the first time user go to the User management section ",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_toverifywhenthefirsttimeusergototheusermanagementsection_1"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_toverifywhenthefirsttimeusergototheusermanagementsection_1": {
+        "id": "fcn_toverifywhenthefirsttimeusergototheusermanagementsection_1",
+        "content": "To verify when the first time user go to the User management section ",
+        "nodeType": "action",
+        "branches": [],
+        "dataSetId": "-1"
+      },
+      "fcn_toverifytheinviteuserbuttonfunctionalityislicenseisnotavailable_0": {
+        "id": "fcn_toverifytheinviteuserbuttonfunctionalityislicenseisnotavailable_0",
+        "content": "To verify the invite User button functionality is License is not Available ",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_addonlyonelicensetotheaccount_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_addonlyonelicensetotheaccount_0": {
+        "id": "fcn_addonlyonelicensetotheaccount_0",
+        "content": "Add only one license to the account",
+        "nodeType": "action",
+        "branches": [
+          "fcn_verifytheinviteuserbuttonfunctionalityislicenseisnotavailable_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_verifytheinviteuserbuttonfunctionalityislicenseisnotavailable_0": {
+        "id": "fcn_verifytheinviteuserbuttonfunctionalityislicenseisnotavailable_0",
+        "content": "Verify the invite User button functionality when License is not Available ",
+        "nodeType": "action",
+        "branches": [
+          "fcn_toverifytheupdatedlicensecountisupdatedoncustomerportalinusermanagementsection_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_toverifytheupdatedlicensecountisupdatedoncustomerportalinusermanagementsection_0": {
+        "id": "fcn_toverifytheupdatedlicensecountisupdatedoncustomerportalinusermanagementsection_0",
+        "content": "To verify the updated License count is updated on customer portal in User management section ",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_againaddthelicensestotheaccount_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_againaddthelicensestotheaccount_0": {
+        "id": "fcn_againaddthelicensestotheaccount_0",
+        "content": "Again add the licenses to the account",
+        "nodeType": "action",
+        "branches": [
+          "fcn_closethebrowser_1"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_closethebrowser_1": {
+        "id": "fcn_closethebrowser_1",
+        "content": "Close the Browser",
+        "nodeType": "action",
+        "branches": [
+          "fcn_toverifytheupdatedlicensecountisupdatedinusermanagementsection_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_toverifytheupdatedlicensecountisupdatedinusermanagementsection_0": {
+        "id": "fcn_toverifytheupdatedlicensecountisupdatedinusermanagementsection_0",
+        "content": "To verify the updated License count is updated in User Management section",
+        "nodeType": "action",
+        "branches": [],
+        "dataSetId": "-1"
+      },
+      "fcn_toverifywhenthelicenseisavailabletheinviteuserbuttonfunctionality_0": {
+        "id": "fcn_toverifywhenthelicenseisavailabletheinviteuserbuttonfunctionality_0",
+        "content": "To verify when the license is available the Invite user button functionality ",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_getaccountid_1708690603000_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_verifylicenseisavailable_0": {
+        "id": "fcn_verifylicenseisavailable_0",
+        "content": "Verify license is available and Get license count",
+        "nodeType": "action",
+        "branches": [
+          "fcn_entertheemailaddressandinvitetheuserusermanagement_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_entertheemailaddressandinvitetheuserusermanagement_0": {
+        "id": "fcn_entertheemailaddressandinvitetheuserusermanagement_0",
+        "content": "Enter the Email Address $usermanagement",
+        "nodeType": "action",
+        "branches": [
+          "fcn_invitetheuser_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_getaccountid_1708690603000_0": {
+        "id": "fcn_getaccountid_1708690603000_0",
+        "content": "Get Account ID",
+        "nodeType": "action",
+        "branches": [
+          "fcn_verifylicenseisavailable_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_invitetheuser_0": {
+        "id": "fcn_invitetheuser_0",
+        "content": "Invite the user ",
+        "nodeType": "action",
+        "branches": [
+          "fcn_toverifytheavailablelicensecount_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_toverifytheavailablelicensecount_0": {
+        "id": "fcn_toverifytheavailablelicensecount_0",
+        "content": "To verify the Available License count After user Invite",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_verifythelicensecountafterinvitinguser_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_verifythelicensecountafterinvitinguser_0": {
+        "id": "fcn_verifythelicensecountafterinvitinguser_0",
+        "content": "Verify the license count after inviting user ",
+        "nodeType": "action",
+        "branches": [
+          "fcn_verifythestatusofinviteduser_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_verifythestatusofinviteduser_0": {
+        "id": "fcn_verifythestatusofinviteduser_0",
+        "content": "Verify the status of invited user $usermanagement",
+        "nodeType": "action",
+        "branches": [
+          "fcn_toverifyinthetableeachrowhaveactionoptions_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_toverifyinthetableeachrowhaveactionoptions_0": {
+        "id": "fcn_toverifyinthetableeachrowhaveactionoptions_0",
+        "content": "To verify in the table each row have Action options",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_verifyinthetableeachrowhaveactionoptions_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_verifyinthetableeachrowhaveactionoptions_0": {
+        "id": "fcn_verifyinthetableeachrowhaveactionoptions_0",
+        "content": "Verify in the table each row have Action options $usermanagement",
+        "nodeType": "action",
+        "branches": [
+          "fcn_toverifywhenclickonresendinvitelink_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_toverifywhenclickonresendinvitelink_0": {
+        "id": "fcn_toverifywhenclickonresendinvitelink_0",
+        "content": "To verify when click on Resend Invite link",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_verifywhenclickonresendinvitelink_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_verifywhenclickonresendinvitelink_0": {
+        "id": "fcn_verifywhenclickonresendinvitelink_0",
+        "content": "Verify when click on Resend Invite link $usermanagement",
+        "nodeType": "action",
+        "branches": [
+          "fcn_toverifywhenclickonunassignedlicense_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_toverifywhenclickonunassignedlicense_0": {
+        "id": "fcn_toverifywhenclickonunassignedlicense_0",
+        "content": "To verify when click on unassigned license",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_verifywhenclickontheunassignedlicenseusermanagement_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_clickonremove_0": {
+        "id": "fcn_clickonremove_0",
+        "content": "Click on Remove",
+        "nodeType": "action",
+        "branches": [
+          "fcn_verifythelicensestatuswhenuserunassignedthelicense_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_verifywhenclickontheunassignedlicenseusermanagement_0": {
+        "id": "fcn_verifywhenclickontheunassignedlicenseusermanagement_0",
+        "content": "Verify when click on the unassigned license $usermanagement",
+        "nodeType": "action",
+        "branches": [
+          "fcn_whenuserclickonclosebuttonusermanagement_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_verifywhenclickontheunassignedlicenseusermanagement_1708922067316_0": {
+        "id": "fcn_verifywhenclickontheunassignedlicenseusermanagement_1708922067316_0",
+        "content": "Verify when click on the unassigned license $usermanagement",
+        "nodeType": "action",
+        "branches": [
+          "fcn_clickonremove_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_whenuserclickonclosebuttonusermanagement_0": {
+        "id": "fcn_whenuserclickonclosebuttonusermanagement_0",
+        "content": "When user click on Close button $usermanagement",
+        "nodeType": "action",
+        "branches": [
+          "fcn_verifywhenclickontheunassignedlicenseusermanagement_1708922067316_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_verifythelicensestatuswhenuserunassignedthelicense_0": {
+        "id": "fcn_verifythelicensestatuswhenuserunassignedthelicense_0",
+        "content": "Verify the license status when user unassigned the license $usermanagement",
+        "nodeType": "action",
+        "branches": [
+          "fcn_verifyavailablelicensecountisincreased_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_toverifywhenclickonassignlicense_0": {
+        "id": "fcn_toverifywhenclickonassignlicense_0",
+        "content": "To verify when click on assign license",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_verifywhenclickonassignlicenseusermanagement_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_verifywhenclickonassignlicenseusermanagement_0": {
+        "id": "fcn_verifywhenclickonassignlicenseusermanagement_0",
+        "content": "Verify when click on assign license $usermanagement",
+        "nodeType": "action",
+        "branches": [
+          "fcn_verifythelicensestatuswhenuserassignedthelicenseusermanagement_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_verifythelicensestatuswhenuserassignedthelicenseusermanagement_0": {
+        "id": "fcn_verifythelicensestatuswhenuserassignedthelicenseusermanagement_0",
+        "content": "Verify the license status when user assigned the license $usermanagement",
+        "nodeType": "action",
+        "branches": [
+          "fcn_verifyavailablelicensecountisdecreasedafterassigningthelicense_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_toverifywhenuserclickonchangeduserrolelink_0": {
+        "id": "fcn_toverifywhenuserclickonchangeduserrolelink_0",
+        "content": "To verify when user click on changed User Role link",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_verifywhenuserclickonchangeduserrolelinkusermanagement_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_verifywhenuserclickonchangeduserrolelinkusermanagement_0": {
+        "id": "fcn_verifywhenuserclickonchangeduserrolelinkusermanagement_0",
+        "content": "Verify when user click on changed User Role link $usermanagement",
+        "nodeType": "action",
+        "branches": [
+          "fcn_whenuserclickoncancelbuttonusermanagement_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_whenuserclickoncancelbuttonusermanagement_0": {
+        "id": "fcn_whenuserclickoncancelbuttonusermanagement_0",
+        "content": "When user click on Cancel button $usermanagement",
+        "nodeType": "action",
+        "branches": [
+          "fcn_verifywhenuserclickonchangeduserrolelinkusermanagement_1708923276575_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_verifywhenuserclickonchangeduserrolelinkusermanagement_1708923276575_0": {
+        "id": "fcn_verifywhenuserclickonchangeduserrolelinkusermanagement_1708923276575_0",
+        "content": "Verify when user click on changed User Role link $usermanagement",
+        "nodeType": "action",
+        "branches": [
+          "fcn_selecttheroleandsavethechanges_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_selecttheroleandsavethechanges_0": {
+        "id": "fcn_selecttheroleandsavethechanges_0",
+        "content": "Select the Role and Save the changes",
+        "nodeType": "action",
+        "branches": [
+          "fcn_savethechangesafterchangingtheuserroleusermanagement_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_savethechangesafterchangingtheuserroleusermanagement_0": {
+        "id": "fcn_savethechangesafterchangingtheuserroleusermanagement_0",
+        "content": "Save the Changes after changing the User Role $usermanagement",
+        "nodeType": "action",
+        "branches": [
+          "fcn_verifytheuserroleafterupdatingtheroleusermanagement_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_verifytheuserroleafterupdatingtheroleusermanagement_0": {
+        "id": "fcn_verifytheuserroleafterupdatingtheroleusermanagement_0",
+        "content": "Verify the User Role after updating the role $usermanagement",
+        "nodeType": "action",
+        "branches": [
+          "fcn_toverifywhenclickondeleteuserlinkandclickonclose_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_toverifywhenclickondeleteuserlinkandclickonclose_0": {
+        "id": "fcn_toverifywhenclickondeleteuserlinkandclickonclose_0",
+        "content": "To verify when click on delete user link",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_verifywhenuserclickondeleteuser_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_verifywhenuserclickondeleteuser_0": {
+        "id": "fcn_verifywhenuserclickondeleteuser_0",
+        "content": "Verify when user click on Delete User $usermanagement",
+        "nodeType": "action",
+        "branches": [
+          "fcn_whenuserclickonclosebuttonusermanagement_1"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_whenuserclickonclosebuttonusermanagement_1": {
+        "id": "fcn_whenuserclickonclosebuttonusermanagement_1",
+        "content": "When user click on Close button while deleting user $usermanagement",
+        "nodeType": "action",
+        "branches": [
+          "fcn_verifywhenuserclickondeleteuserusermanagement_1710392486956_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_verifywhenuserclickondeleteuserusermanagement_1710392486956_0": {
+        "id": "fcn_verifywhenuserclickondeleteuserusermanagement_1710392486956_0",
+        "content": "Verify when user click on Delete User $usermanagement",
+        "nodeType": "action",
+        "branches": [
+          "fcn_clickondeletebutton_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_clickondeletebutton_0": {
+        "id": "fcn_clickondeletebutton_0",
+        "content": "Click on Delete Button $usermanagement",
+        "nodeType": "action",
+        "branches": [
+          "fcn_verifyavailablelicensecountisincreatedafterdeletingtheuser_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_verifyavailablelicensecountisincreased_0": {
+        "id": "fcn_verifyavailablelicensecountisincreased_0",
+        "content": "Verify Available license count is increased after unassigned the license",
+        "nodeType": "action",
+        "branches": [
+          "fcn_toverifywhenclickonassignlicense_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_verifyavailablelicensecountisdecreasedafterassigningthelicense_0": {
+        "id": "fcn_verifyavailablelicensecountisdecreasedafterassigningthelicense_0",
+        "content": "Verify Available license count is decreased after assigning the license",
+        "nodeType": "action",
+        "branches": [
+          "fcn_toverifywhenuserclickonchangeduserrolelink_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_clickonresendinvitesmorethan4timesandverifyerrormessage_1710393133751_0": {
+        "id": "fcn_clickonresendinvitesmorethan4timesandverifyerrormessage_1710393133751_0",
+        "content": "Click on Resend Invites more than 4 times and Verify error message",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_getaccountid_1710397727050_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_clickonresendinvitesmorethanfourtimesandverifyerrormessageusermanagement_1710393133751_0": {
+        "id": "fcn_clickonresendinvitesmorethanfourtimesandverifyerrormessageusermanagement_1710393133751_0",
+        "content": "Click on Resend Invites more than four times and Verify error message $usermanagement",
+        "nodeType": "action",
+        "branches": [
+          "fcn_verifyifuserentertheexistinguseremailidforinviteuserandclickonbutton_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_verifyavailablelicensecountisincreatedafterdeletingtheuser_0": {
+        "id": "fcn_verifyavailablelicensecountisincreatedafterdeletingtheuser_0",
+        "content": "Verify Available license count is increased after deleting the user",
+        "nodeType": "action",
+        "branches": [],
+        "dataSetId": "-1"
+      },
+      "fcn_verifylicenseisavailableandgetlicensecount_1710397442079_0": {
+        "id": "fcn_verifylicenseisavailableandgetlicensecount_1710397442079_0",
+        "content": "Verify license is available and Get license count",
+        "nodeType": "action",
+        "branches": [
+          "fcn_entertheemailaddressusermanagement_1710397442079_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_entertheemailaddressusermanagement_1710397442079_0": {
+        "id": "fcn_entertheemailaddressusermanagement_1710397442079_0",
+        "content": "Enter the Email Address $usermanagement",
+        "nodeType": "action",
+        "branches": [
+          "fcn_invitetheuser_1710397442079_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_invitetheuser_1710397442079_0": {
+        "id": "fcn_invitetheuser_1710397442079_0",
+        "content": "Invite the user ",
+        "nodeType": "action",
+        "branches": [
+          "fcn_clickonresendinvitesmorethanfourtimesandverifyerrormessageusermanagement_1710393133751_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_getaccountid_1710397727050_0": {
+        "id": "fcn_getaccountid_1710397727050_0",
+        "content": "Get Account ID",
+        "nodeType": "action",
+        "branches": [
+          "fcn_verifylicenseisavailableandgetlicensecount_1710397442079_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_clickoninviteuser_0": {
+        "id": "fcn_clickoninviteuser_0",
+        "content": "Click on Invite User",
+        "nodeType": "action",
+        "branches": [
+          "fcn_againentertheemailaddressusermanagement_1710407326720_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_clickoninviteandverifythemessagewhenweenterexistingemailaddress_0": {
+        "id": "fcn_clickoninviteandverifythemessagewhenweenterexistingemailaddress_0",
+        "content": "Click On Invite and Verify the message when we enter existing email address $usermanagement",
+        "nodeType": "action",
+        "branches": [
+          "fcn_closetheinviteuserpopup_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_closetheinviteuserpopup_0": {
+        "id": "fcn_closetheinviteuserpopup_0",
+        "content": "Close the Invite User Pop up",
+        "nodeType": "action",
+        "branches": [
+          "fcn_verifyifuserentertheexistinguseremailidforinviteuserandclickoninvitebutton_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_clickoninviteuser_1710403696306_0": {
+        "id": "fcn_clickoninviteuser_1710403696306_0",
+        "content": "Click on Invite User",
+        "nodeType": "action",
+        "branches": [
+          "fcn_entertheemailaddressusermanagement_1710403702740_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_entertheemailaddressusermanagement_1710403702740_0": {
+        "id": "fcn_entertheemailaddressusermanagement_1710403702740_0",
+        "content": "Again enter the Email Address $usermanagement",
+        "nodeType": "action",
+        "branches": [
+          "fcn_clickonplusandverifythemessagewhenweenterexistingemailaddressusermanagement_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_clickonplusandverifythemessagewhenweenterexistingemailaddressusermanagement_0": {
+        "id": "fcn_clickonplusandverifythemessagewhenweenterexistingemailaddressusermanagement_0",
+        "content": "Click on Plus and Verify the message when we enter existing email address $usermanagement",
+        "nodeType": "action",
+        "branches": [
+          "fcn_closetheinviteuserpopup_1710403790072_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_closetheinviteuserpopup_1710403790072_0": {
+        "id": "fcn_closetheinviteuserpopup_1710403790072_0",
+        "content": "Close the Invite User Pop up",
+        "nodeType": "action",
+        "branches": [
+          "fcn_toverifythatadminisabletoaddthenameoftheuserfromusermanagement_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_verifyifuserentertheexistinguseremailidforinviteuserandclickonbutton_0": {
+        "id": "fcn_verifyifuserentertheexistinguseremailidforinviteuserandclickonbutton_0",
+        "content": "Verify if user enter the existing user email id for invite user and click on + button",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_clickoninviteuser_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_verifyifuserentertheexistinguseremailidforinviteuserandclickoninvitebutton_0": {
+        "id": "fcn_verifyifuserentertheexistinguseremailidforinviteuserandclickoninvitebutton_0",
+        "content": "Verify if user enter the existing user email id for invite user and click on Invite button",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_clickoninviteuser_1710403696306_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_againentertheemailaddressusermanagement_1710407326720_0": {
+        "id": "fcn_againentertheemailaddressusermanagement_1710407326720_0",
+        "content": "Again enter the Email Address $usermanagement",
+        "nodeType": "action",
+        "branches": [
+          "fcn_clickoninviteandverifythemessagewhenweenterexistingemailaddress_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_toverifythatadminisabletoaddthenameoftheuserfromusermanagement_0": {
+        "id": "fcn_toverifythatadminisabletoaddthenameoftheuserfromusermanagement_0",
+        "content": "To verify that admin is able to ADD the NAME of the user from user management",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_verifywhenuserclickonchangeduserrolelinkusermanagement_1710758990416_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_verifywhenuserclickonchangeduserrolelinkusermanagement_1710758990416_0": {
+        "id": "fcn_verifywhenuserclickonchangeduserrolelinkusermanagement_1710758990416_0",
+        "content": "Verify when user click on changed User Role link $usermanagement",
+        "nodeType": "action",
+        "branches": [
+          "fcn_addthenameandsavethechangesusermanagement_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_addthenameandsavethechangesusermanagement_0": {
+        "id": "fcn_addthenameandsavethechangesusermanagement_0",
+        "content": "Add the Name and Save the Changes $usermanagement",
+        "nodeType": "action",
+        "branches": [
+          "fcn_verifywhenuserclickondeleteuserusermanagement_1710759348824_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_verifywhenuserclickondeleteuserusermanagement_1710759348824_0": {
+        "id": "fcn_verifywhenuserclickondeleteuserusermanagement_1710759348824_0",
+        "content": "Verify when user click on Delete User $usermanagement",
+        "nodeType": "action",
+        "branches": [
+          "fcn_clickondeletebuttonusermanagement_1710759348824_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_clickondeletebuttonusermanagement_1710759348824_0": {
+        "id": "fcn_clickondeletebuttonusermanagement_1710759348824_0",
+        "content": "Click on Delete Button $usermanagement",
+        "nodeType": "action",
+        "branches": [
+          "fcn_verifyadminuserisabletoinvitedeleteduserwhichisdeletedfromcustomerportal_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_ensurethatnonadminuserisalsoabletoupdatethenamefromcustomerportalbyupdatenamesectionfromsettingstab_0": {
+        "id": "fcn_ensurethatnonadminuserisalsoabletoupdatethenamefromcustomerportalbyupdatenamesectionfromsettingstab_0",
+        "content": "Ensure that Non Admin User is also able to update the name from Customer Portal by Update Name section from settings tab",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_logintostandarduseraccount_1710762214818_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_logintostandarduseraccount_1710762214818_0": {
+        "id": "fcn_logintostandarduseraccount_1710762214818_0",
+        "content": "login to standard user account",
+        "nodeType": "action",
+        "branches": [
+          "fcn_navigatetoaccountsettings_1710762267624_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_navigatetoaccountsettings_1710762267624_0": {
+        "id": "fcn_navigatetoaccountsettings_1710762267624_0",
+        "content": "Navigate to Account Settings",
+        "nodeType": "action",
+        "branches": [
+          "fcn_gotosettings_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_gotosettings_0": {
+        "id": "fcn_gotosettings_0",
+        "content": "Go to Settings in Standard User Account",
+        "nodeType": "action",
+        "branches": [
+          "fcn_changethenameofstandarduserfromstandarduseraccountusermanagement_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_changethenameofstandarduserfromstandarduseraccountusermanagement_0": {
+        "id": "fcn_changethenameofstandarduserfromstandarduseraccountusermanagement_0",
+        "content": "Change the Name of Standard User from Standard User Account $usermanagement",
+        "nodeType": "action",
+        "branches": [
+          "fcn_selectportalbrowser_1710762810810_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_selectportalbrowser_1710762810810_0": {
+        "id": "fcn_selectportalbrowser_1710762810810_0",
+        "content": "Select portal browser",
+        "nodeType": "action",
+        "branches": [
+          "fcn_navigatetousermanagement_1710762841480_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_navigatetousermanagement_1710762841480_0": {
+        "id": "fcn_navigatetousermanagement_1710762841480_0",
+        "content": "Navigate to User Management",
+        "nodeType": "action",
+        "branches": [
+          "fcn_verifythenameofstandarduserusermanagement_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_verifythenameofstandarduserusermanagement_0": {
+        "id": "fcn_verifythenameofstandarduserusermanagement_0",
+        "content": "Verify the Name of Standard User $usermanagement",
+        "nodeType": "action",
+        "branches": [],
+        "dataSetId": "-1"
+      },
+      "fcn_toverifythatzohoadminusershouldhaveprovisiontoaddorupdatethenameoftheusersfromusermanagement_0": {
+        "id": "fcn_toverifythatzohoadminusershouldhaveprovisiontoaddorupdatethenameoftheusersfromusermanagement_0",
+        "content": "ZOHO User Management",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_logintoportalusingzoho_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_logintoportalusingzoho_0": {
+        "id": "fcn_logintoportalusingzoho_0",
+        "content": "login to SaaS using ZOHO",
+        "nodeType": "action",
+        "branches": [
+          "fcn_navigatetousermanagement_1710767343835_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_navigatetousermanagement_1710767343835_0": {
+        "id": "fcn_navigatetousermanagement_1710767343835_0",
+        "content": "Navigate to User Management",
+        "nodeType": "action",
+        "branches": [
+          "fcn_validatethedataforzohoadmininusermanagementtab_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_validatethedataforzohoadmininusermanagementtab_0": {
+        "id": "fcn_validatethedataforzohoadmininusermanagementtab_0",
+        "content": "Validate the data for Zoho Admin in User management tab",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_toverifyuserdetailstablecolumnsforzohouser_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_toverifyuserdetailstablecolumnsforzohouser_0": {
+        "id": "fcn_toverifyuserdetailstablecolumnsforzohouser_0",
+        "content": "To verify User Details table columns for ZOHO User",
+        "nodeType": "action",
+        "branches": [
+          "fcn_validateforzohouseridshouldbesameinboththeportalcustomerandopsportal_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_validateforzohouseridshouldbesameinboththeportalcustomerandopsportal_0": {
+        "id": "fcn_validateforzohouseridshouldbesameinboththeportalcustomerandopsportal_0",
+        "content": "Validate for Zoho User id should be same in both the portal (customer and Ops portal)",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_getaccountid_1710768846152_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_getaccountid_1710768846152_0": {
+        "id": "fcn_getaccountid_1710768846152_0",
+        "content": "Get Account ID",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logintotheopsportallogintrial_signupaccountid_1710768846152_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_logintotheopsportallogintrial_signupaccountid_1710768846152_0": {
+        "id": "fcn_logintotheopsportallogintrial_signupaccountid_1710768846152_0",
+        "content": "Login to the Ops Portal and Search the Account",
+        "nodeType": "action",
+        "branches": [
+          "fcn_clickonexpandall_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_clickonexpandall_0": {
+        "id": "fcn_clickonexpandall_0",
+        "content": "Click on Expand All",
+        "nodeType": "action",
+        "branches": [
+          "fcn_getzohoid_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_getzohoid_0": {
+        "id": "fcn_getzohoid_0",
+        "content": "Get the ZOHO ID",
+        "nodeType": "action",
+        "branches": [
+          "fcn_closethebrowser_1710769141989_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_selectportalbrowser_1710769012869_0": {
+        "id": "fcn_selectportalbrowser_1710769012869_0",
+        "content": "Select portal browser",
+        "nodeType": "action",
+        "branches": [
+          "fcn_verifyzohoorgidfromportalandopsportalbotharesame_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_verifyzohoorgidfromportalandopsportalbotharesame_0": {
+        "id": "fcn_verifyzohoorgidfromportalandopsportalbotharesame_0",
+        "content": "Verify ZOHO Org id from portal and ops portal both are same",
+        "nodeType": "action",
+        "branches": [
+          "fcn_verifylicensetypeforzohoaccount_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_closethebrowser_1710769141989_0": {
+        "id": "fcn_closethebrowser_1710769141989_0",
+        "content": "Close the Browser",
+        "nodeType": "action",
+        "branches": [
+          "fcn_selectportalbrowser_1710769012869_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_toverifythatzohoadminusershouldhaveprovisiontoaddorupdatethenameoftheusersfromusermanagement_1": {
+        "id": "fcn_toverifythatzohoadminusershouldhaveprovisiontoaddorupdatethenameoftheusersfromusermanagement_1",
+        "content": "To verify that Zoho Admin user should have provision to Add or Update the Name of the users from User Management ",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_verifyzohoidvisibleinusermanagementforzohoacoount_1710769213422_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_verifyzohoidvisibleinusermanagementforzohoacoount_1710769213422_0": {
+        "id": "fcn_verifyzohoidvisibleinusermanagementforzohoacoount_1710769213422_0",
+        "content": "Verify ZOHO ID Visible in User Management for Zoho Acoount",
+        "nodeType": "action",
+        "branches": [
+          "fcn_getaccountid_1710769213422_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_getaccountid_1710769213422_0": {
+        "id": "fcn_getaccountid_1710769213422_0",
+        "content": "Get Account ID",
+        "nodeType": "action",
+        "branches": [
+          "fcn_verifylicenseisavailableandgetlicensecount_1710769213422_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_verifylicenseisavailableandgetlicensecount_1710769213422_0": {
+        "id": "fcn_verifylicenseisavailableandgetlicensecount_1710769213422_0",
+        "content": "Verify license is available and Get license count",
+        "nodeType": "action",
+        "branches": [
+          "fcn_entertheemailaddressusermanagement_1710769213422_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_entertheemailaddressusermanagement_1710769213422_0": {
+        "id": "fcn_entertheemailaddressusermanagement_1710769213422_0",
+        "content": "Enter the Email Address $usermanagement",
+        "nodeType": "action",
+        "branches": [
+          "fcn_invitetheuser_1710769213422_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_invitetheuser_1710769213422_0": {
+        "id": "fcn_invitetheuser_1710769213422_0",
+        "content": "Invite the user ",
+        "nodeType": "action",
+        "branches": [
+          "fcn_verifywhenuserclickonchangeduserrolelinkusermanagement_1710769213422_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_verifywhenuserclickonchangeduserrolelinkusermanagement_1710769213422_0": {
+        "id": "fcn_verifywhenuserclickonchangeduserrolelinkusermanagement_1710769213422_0",
+        "content": "Verify when user click on changed User Role link $usermanagement",
+        "nodeType": "action",
+        "branches": [
+          "fcn_addthenameandsavethechangesusermanagement_1710769213422_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_addthenameandsavethechangesusermanagement_1710769213422_0": {
+        "id": "fcn_addthenameandsavethechangesusermanagement_1710769213422_0",
+        "content": "Add the Name and Save the Changes $usermanagement",
+        "nodeType": "action",
+        "branches": [
+          "fcn_verifywhenuserclickondeleteuserusermanagement_1710769213422_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_verifywhenuserclickondeleteuserusermanagement_1710769213422_0": {
+        "id": "fcn_verifywhenuserclickondeleteuserusermanagement_1710769213422_0",
+        "content": "Verify when user click on Delete User $usermanagement",
+        "nodeType": "action",
+        "branches": [
+          "fcn_clickondeletebuttonusermanagement_1710769213422_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_clickondeletebuttonusermanagement_1710769213422_0": {
+        "id": "fcn_clickondeletebuttonusermanagement_1710769213422_0",
+        "content": "Click on Delete Button $usermanagement",
+        "nodeType": "action",
+        "branches": [],
+        "dataSetId": "-1"
+      },
+      "fcn_verifyadminuserisabletoinvitedeleteduserwhichisdeletedfromcustomerportal_0": {
+        "id": "fcn_verifyadminuserisabletoinvitedeleteduserwhichisdeletedfromcustomerportal_0",
+        "content": "Verify admin user is able to INVITE deleted user which is deleted from Customer portal",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_clickoninviteuser_1710769655228_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_clickoninviteuser_1710769655228_0": {
+        "id": "fcn_clickoninviteuser_1710769655228_0",
+        "content": "Click on Invite User",
+        "nodeType": "action",
+        "branches": [
+          "fcn_againentertheemailaddressusermanagement_1710769730529_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_againentertheemailaddressusermanagement_1710769730529_0": {
+        "id": "fcn_againentertheemailaddressusermanagement_1710769730529_0",
+        "content": "Again enter the Email Address $usermanagement",
+        "nodeType": "action",
+        "branches": [
+          "fcn_invitetheuser_1710769749246_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_invitetheuser_1710769749246_0": {
+        "id": "fcn_invitetheuser_1710769749246_0",
+        "content": "Invite the user ",
+        "nodeType": "action",
+        "branches": [
+          "fcn_verifythestatusofinviteduserusermanagement_1710769774097_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_verifythestatusofinviteduserusermanagement_1710769774097_0": {
+        "id": "fcn_verifythestatusofinviteduserusermanagement_1710769774097_0",
+        "content": "Verify the status of invited user $usermanagement",
+        "nodeType": "action",
+        "branches": [
+          "fcn_verifywhenuserclickondeleteuserusermanagement_1710769798379_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_verifywhenuserclickondeleteuserusermanagement_1710769798379_0": {
+        "id": "fcn_verifywhenuserclickondeleteuserusermanagement_1710769798379_0",
+        "content": "Verify when user click on Delete User $usermanagement",
+        "nodeType": "action",
+        "branches": [
+          "fcn_clickondeletebuttonusermanagement_1710769798379_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_clickondeletebuttonusermanagement_1710769798379_0": {
+        "id": "fcn_clickondeletebuttonusermanagement_1710769798379_0",
+        "content": "Click on Delete Button $usermanagement",
+        "nodeType": "action",
+        "branches": [],
+        "dataSetId": "-1"
+      },
+      "fcn_zohousermanagement_1710770288136_0": {
+        "id": "fcn_zohousermanagement_1710770288136_0",
+        "content": "Salesforce User Management",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_logintosaasusingsalesforce_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_logintosaasusingsalesforce_0": {
+        "id": "fcn_logintosaasusingsalesforce_0",
+        "content": "Login to SaaS using Salesforce",
+        "nodeType": "action",
+        "branches": [
+          "fcn_navigatetousermanagement_1710770459435_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_navigatetousermanagement_1710770459435_0": {
+        "id": "fcn_navigatetousermanagement_1710770459435_0",
+        "content": "Navigate to User Management",
+        "nodeType": "action",
+        "branches": [
+          "fcn_validatethedataforzohoadmininusermanagementtab_1710770465300_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_validatethedataforzohoadmininusermanagementtab_1710770465300_0": {
+        "id": "fcn_validatethedataforzohoadmininusermanagementtab_1710770465300_0",
+        "content": "Validate the data for SF Admin in User management tab",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_toverifyuserdetailstablecolumnsforsfuser_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_toverifyuserdetailstablecolumnsforsfuser_0": {
+        "id": "fcn_toverifyuserdetailstablecolumnsforsfuser_0",
+        "content": "To verify User Details table columns for SF User",
+        "nodeType": "action",
+        "branches": [
+          "fcn_verifylicensetypeforsfaccount_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_verifylicensetypeforsfaccount_0": {
+        "id": "fcn_verifylicensetypeforsfaccount_0",
+        "content": "Verify License Type for SF Account",
+        "nodeType": "action",
+        "branches": [
+          "fcn_verifyinviteuserbuttonisdisabledforsalesforcelicensetype_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_verifylicensetypeforzohoaccount_0": {
+        "id": "fcn_verifylicensetypeforzohoaccount_0",
+        "content": "Verify License Type for ZOHO Account",
+        "nodeType": "action",
+        "branches": [
+          "fcn_toverifythatzohoadminusershouldhaveprovisiontoaddorupdatethenameoftheusersfromusermanagement_1"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_verifyinviteuserbuttonisdisabledforsalesforcelicensetype_0": {
+        "id": "fcn_verifyinviteuserbuttonisdisabledforsalesforcelicensetype_0",
+        "content": "Verify Invite User button is disabled for Salesforce License Type",
+        "nodeType": "action",
+        "branches": [],
+        "dataSetId": "-1"
+      },
+      "fcn_logoutafterunassigninglicense_0": {
+        "id": "fcn_logoutafterunassigninglicense_0",
+        "content": "Logout After Unassigning License",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_entertheemailaddressusermanagement_1726665001916_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_entertheemailaddressusermanagement_1726665001916_0": {
+        "id": "fcn_entertheemailaddressusermanagement_1726665001916_0",
+        "content": "Enter the Email Address $usermanagement",
+        "nodeType": "action",
+        "branches": [
+          "fcn_invitetheuser_1726665006580_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_invitetheuser_1726665006580_0": {
+        "id": "fcn_invitetheuser_1726665006580_0",
+        "content": "Invite the user ",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logintogmailemaillogin_1726669107469_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_logintogmailemaillogin_1726669107469_0": {
+        "id": "fcn_logintogmailemaillogin_1726669107469_0",
+        "content": "Login to gmail $emaillogin",
+        "nodeType": "action",
+        "branches": [
+          "fcn_confirminviteduser_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_confirminviteduser_0": {
+        "id": "fcn_confirminviteduser_0",
+        "content": "Confirm Invited User $usermanagement",
+        "nodeType": "action",
+        "branches": [
+          "fcn_asserttheautologinusermanagement_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_asserttheautologinusermanagement_0": {
+        "id": "fcn_asserttheautologinusermanagement_0",
+        "content": "Assert the auto Login $usermanagement",
+        "nodeType": "action",
+        "branches": [
+          "fcn_againlogintosaasportal_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_againlogintosaasportal_0": {
+        "id": "fcn_againlogintosaasportal_0",
+        "content": "Again Login to $saasportal",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_logintostandarduseraccount_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_unassignthelicenseusermanagement_0": {
+        "id": "fcn_unassignthelicenseusermanagement_0",
+        "content": "Unassign the License $usermanagement",
+        "nodeType": "action",
+        "branches": [
+          "fcn_verifylogout_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_verifylogout_0": {
+        "id": "fcn_verifylogout_0",
+        "content": "Verify Logout",
+        "nodeType": "action",
+        "branches": [
+          "fcn_tryloginusermanagement_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_tryloginusermanagement_0": {
+        "id": "fcn_tryloginusermanagement_0",
+        "content": "Try Login $usermanagement",
+        "nodeType": "skip",
+        "branches": [],
+        "dataSetId": "-1"
+      },
+      "fcn_logintostandarduseraccount_0": {
+        "id": "fcn_logintostandarduseraccount_0",
+        "content": "login to standard user account $usermanagement",
+        "nodeType": "action",
+        "branches": [
+          "fcn_unassignthelicenseusermanagement_0"
+        ],
+        "dataSetId": "-1"
+      }
+    },
+    "positions": {
+      "fcn_start_0": {
+        "top": 150,
+        "left": 499.99998474121094
+      },
+      "fcn_usermanagement_0": {
+        "top": 211,
+        "left": 499.99998474121094
+      },
+      "fcn_logintosaasportal_1708590525037_0": {
+        "top": 270,
+        "left": 499.99998474121094
+      },
+      "fcn_navigatetousermanagement_0": {
+        "top": 337.1499938964844,
+        "left": 499.99998474121094
+      },
+      "fcn_toverifythedatawhichiscomingfromops_0": {
+        "top": 396.1499938964844,
+        "left": 499.99998474121094
+      },
+      "fcn_getaccountid_0": {
+        "top": 469.1499938964844,
+        "left": 499.99998474121094
+      },
+      "fcn_logintotheopsportallogintrial_signupaccountid_1708591115237_0": {
+        "top": 522.1499938964844,
+        "left": 499.99998474121094
+      },
+      "fcn_navigatetouserandlicenses_1708591127583_0": {
+        "top": 590.4666748046875,
+        "left": 500.99998474121094
+      },
+      "fcn_getlicensetypetotallicenseandavailablelicense_0": {
+        "top": 645.4666748046875,
+        "left": 499.99998474121094
+      },
+      "fcn_closethebrowser_0": {
+        "top": 718.4666748046875,
+        "left": 498.99998474121094
+      },
+      "fcn_assertlicensetypetotallicenseandavailablelicenseinusermanagement_0": {
+        "top": 777.4666748046875,
+        "left": 499.99998474121094
+      },
+      "fcn_toverifyuserdetailstablecolumns_0": {
+        "top": 846.4666748046875,
+        "left": 499.99998474121094
+      },
+      "fcn_toverifyuserdetailstablecolumns_1": {
+        "top": 898.4666748046875,
+        "left": 499.99998474121094
+      },
+      "fcn_toverifywhenthefirsttimeusergototheusermanagementsection_0": {
+        "top": 952.4666748046875,
+        "left": 499.99998474121094
+      },
+      "fcn_toverifywhenthefirsttimeusergototheusermanagementsection_1": {
+        "top": 1025.4666748046875,
+        "left": 499.99998474121094
+      },
+      "fcn_toverifytheinviteuserbuttonfunctionalityislicenseisnotavailable_0": {
+        "top": 673.4666748046875,
+        "left": 852
+      },
+      "fcn_addonlyonelicensetotheaccount_0": {
+        "top": 746.4666748046875,
+        "left": 852
+      },
+      "fcn_verifytheinviteuserbuttonfunctionalityislicenseisnotavailable_0": {
+        "top": 805.4666748046875,
+        "left": 852
+      },
+      "fcn_toverifytheupdatedlicensecountisupdatedoncustomerportalinusermanagementsection_0": {
+        "top": 878.4666748046875,
+        "left": 852
+      },
+      "fcn_againaddthelicensestotheaccount_0": {
+        "top": 965.4666748046875,
+        "left": 852
+      },
+      "fcn_closethebrowser_1": {
+        "top": 1024.4666748046875,
+        "left": 852
+      },
+      "fcn_toverifytheupdatedlicensecountisupdatedinusermanagementsection_0": {
+        "top": 1083.4666748046875,
+        "left": 852
+      },
+      "fcn_toverifywhenthelicenseisavailabletheinviteuserbuttonfunctionality_0": {
+        "top": 381.46665954589844,
+        "left": 1403
+      },
+      "fcn_getaccountid_1708690603000_0": {
+        "top": 447.4666748046875,
+        "left": 1403
+      },
+      "fcn_verifylicenseisavailable_0": {
+        "top": 500.4666748046875,
+        "left": 1403
+      },
+      "fcn_entertheemailaddressandinvitetheuserusermanagement_0": {
+        "top": 569.4666748046875,
+        "left": 1403
+      },
+      "fcn_invitetheuser_0": {
+        "top": 648.6166687011719,
+        "left": 1403
+      },
+      "fcn_toverifytheavailablelicensecount_0": {
+        "top": 707.61669921875,
+        "left": 1403
+      },
+      "fcn_verifythelicensecountafterinvitinguser_0": {
+        "top": 780.61669921875,
+        "left": 1403
+      },
+      "fcn_verifythestatusofinviteduser_0": {
+        "top": 839.61669921875,
+        "left": 1403
+      },
+      "fcn_toverifyinthetableeachrowhaveactionoptions_0": {
+        "top": 918.75,
+        "left": 1403
+      },
+      "fcn_verifyinthetableeachrowhaveactionoptions_0": {
+        "top": 991.75,
+        "left": 1403
+      },
+      "fcn_toverifywhenclickonresendinvitelink_0": {
+        "top": 1070.9166870117188,
+        "left": 1403
+      },
+      "fcn_verifywhenclickonresendinvitelink_0": {
+        "top": 1129.9166870117188,
+        "left": 1403
+      },
+      "fcn_toverifywhenclickonunassignedlicense_0": {
+        "top": 446.91668701171875,
+        "left": 1706.9999389648438
+      },
+      "fcn_verifywhenclickontheunassignedlicenseusermanagement_0": {
+        "top": 550.9166870117188,
+        "left": 1887.9999389648438
+      },
+      "fcn_whenuserclickonclosebuttonusermanagement_0": {
+        "top": 631.9166870117188,
+        "left": 1887.9999389648438
+      },
+      "fcn_verifywhenclickontheunassignedlicenseusermanagement_1708922067316_0": {
+        "top": 712.9166870117188,
+        "left": 1887.9999389648438
+      },
+      "fcn_clickonremove_0": {
+        "top": 795.9166870117188,
+        "left": 1887.9999389648438
+      },
+      "fcn_verifythelicensestatuswhenuserunassignedthelicense_0": {
+        "top": 852.9166870117188,
+        "left": 1886.9999389648438
+      },
+      "fcn_verifyavailablelicensecountisincreased_0": {
+        "top": 938.066650390625,
+        "left": 1886.9999389648438
+      },
+      "fcn_toverifywhenclickonassignlicense_0": {
+        "top": 1010.066650390625,
+        "left": 1887.9999389648438
+      },
+      "fcn_verifywhenclickonassignlicenseusermanagement_0": {
+        "top": 1068.066650390625,
+        "left": 1887.9999389648438
+      },
+      "fcn_verifythelicensestatuswhenuserassignedthelicenseusermanagement_0": {
+        "top": 1140.2333374023438,
+        "left": 1887.9999389648438
+      },
+      "fcn_verifyavailablelicensecountisdecreasedafterassigningthelicense_0": {
+        "top": 1211.38330078125,
+        "left": 1888.9999389648438
+      },
+      "fcn_toverifywhenuserclickonchangeduserrolelink_0": {
+        "top": 461.3833312988281,
+        "left": 2170.9999389648438
+      },
+      "fcn_verifywhenuserclickonchangeduserrolelinkusermanagement_0": {
+        "top": 533.3833312988281,
+        "left": 2424.9999389648438
+      },
+      "fcn_whenuserclickoncancelbuttonusermanagement_0": {
+        "top": 614.5333251953125,
+        "left": 2424.9999389648438
+      },
+      "fcn_verifywhenuserclickonchangeduserrolelinkusermanagement_1708923276575_0": {
+        "top": 694.7000122070312,
+        "left": 2424.9999389648438
+      },
+      "fcn_selecttheroleandsavethechanges_0": {
+        "top": 773.8499755859375,
+        "left": 2424.9999389648438
+      },
+      "fcn_savethechangesafterchangingtheuserroleusermanagement_0": {
+        "top": 834.8499755859375,
+        "left": 2424.9999389648438
+      },
+      "fcn_verifytheuserroleafterupdatingtheroleusermanagement_0": {
+        "top": 912,
+        "left": 2424.9999389648438
+      },
+      "fcn_toverifywhenclickondeleteuserlinkandclickonclose_0": {
+        "top": 470.16668701171875,
+        "left": 2720.0000610351562
+      },
+      "fcn_verifywhenuserclickondeleteuser_0": {
+        "top": 536.1666870117188,
+        "left": 2974.0000610351562
+      },
+      "fcn_whenuserclickonclosebuttonusermanagement_1": {
+        "top": 612.316650390625,
+        "left": 2974.0000610351562
+      },
+      "fcn_verifywhenuserclickondeleteuserusermanagement_1710392486956_0": {
+        "top": 692.4833374023438,
+        "left": 2974.0000610351562
+      },
+      "fcn_clickondeletebutton_0": {
+        "top": 770.63330078125,
+        "left": 2974.0000610351562
+      },
+      "fcn_verifyavailablelicensecountisincreatedafterdeletingtheuser_0": {
+        "top": 840.7833251953125,
+        "left": 2974.0000610351562
+      },
+      "fcn_clickonresendinvitesmorethan4timesandverifyerrormessage_1710393133751_0": {
+        "top": 396.1499938964844,
+        "left": 3572.0000610351562
+      },
+      "fcn_getaccountid_1710397727050_0": {
+        "top": 466.1499938964844,
+        "left": 3572.0000610351562
+      },
+      "fcn_verifylicenseisavailableandgetlicensecount_1710397442079_0": {
+        "top": 521.1499938964844,
+        "left": 3572.0000610351562
+      },
+      "fcn_entertheemailaddressusermanagement_1710397442079_0": {
+        "top": 590.1499938964844,
+        "left": 3572.0000610351562
+      },
+      "fcn_invitetheuser_1710397442079_0": {
+        "top": 672.2999877929688,
+        "left": 3572.0000610351562
+      },
+      "fcn_clickonresendinvitesmorethanfourtimesandverifyerrormessageusermanagement_1710393133751_0": {
+        "top": 735.1500244140625,
+        "left": 3572.0000610351562
+      },
+      "fcn_verifyifuserentertheexistinguseremailidforinviteuserandclickonbutton_0": {
+        "top": 481.29998779296875,
+        "left": 3935.0000610351562
+      },
+      "fcn_clickoninviteuser_0": {
+        "top": 567.2999877929688,
+        "left": 4136.000061035156
+      },
+      "fcn_againentertheemailaddressusermanagement_1710407326720_0": {
+        "top": 629.2999877929688,
+        "left": 4136.000061035156
+      },
+      "fcn_clickoninviteandverifythemessagewhenweenterexistingemailaddress_0": {
+        "top": 704.4500122070312,
+        "left": 4136.000061035156
+      },
+      "fcn_closetheinviteuserpopup_0": {
+        "top": 795.5999755859375,
+        "left": 4136.000061035156
+      },
+      "fcn_verifyifuserentertheexistinguseremailidforinviteuserandclickoninvitebutton_0": {
+        "top": 494.6000061035156,
+        "left": 4401.000061035156
+      },
+      "fcn_clickoninviteuser_1710403696306_0": {
+        "top": 563.6000061035156,
+        "left": 4675.999816894531
+      },
+      "fcn_entertheemailaddressusermanagement_1710403702740_0": {
+        "top": 616.6000061035156,
+        "left": 4675.999816894531
+      },
+      "fcn_clickonplusandverifythemessagewhenweenterexistingemailaddressusermanagement_0": {
+        "top": 693.75,
+        "left": 4675.999816894531
+      },
+      "fcn_closetheinviteuserpopup_1710403790072_0": {
+        "top": 784.9166870117188,
+        "left": 4675.999816894531
+      },
+      "fcn_toverifythatadminisabletoaddthenameoftheuserfromusermanagement_0": {
+        "top": 846.9166870117188,
+        "left": 4675.999816894531
+      },
+      "fcn_verifywhenuserclickonchangeduserrolelinkusermanagement_1710758990416_0": {
+        "top": 919.9166870117188,
+        "left": 4675.999816894531
+      },
+      "fcn_addthenameandsavethechangesusermanagement_0": {
+        "top": 999.066650390625,
+        "left": 4675.999816894531
+      },
+      "fcn_verifywhenuserclickondeleteuserusermanagement_1710759348824_0": {
+        "top": 1078.2166748046875,
+        "left": 4675.999816894531
+      },
+      "fcn_clickondeletebuttonusermanagement_1710759348824_0": {
+        "top": 1156.38330078125,
+        "left": 4675.999816894531
+      },
+      "fcn_verifyadminuserisabletoinvitedeleteduserwhichisdeletedfromcustomerportal_0": {
+        "top": 1221.5333251953125,
+        "left": 4675.999816894531
+      },
+      "fcn_clickoninviteuser_1710769655228_0": {
+        "top": 1308.5333251953125,
+        "left": 4675.999816894531
+      },
+      "fcn_againentertheemailaddressusermanagement_1710769730529_0": {
+        "top": 1367.5333251953125,
+        "left": 4675.999816894531
+      },
+      "fcn_invitetheuser_1710769749246_0": {
+        "top": 1446.683349609375,
+        "left": 4675.999816894531
+      },
+      "fcn_verifythestatusofinviteduserusermanagement_1710769774097_0": {
+        "top": 1505.683349609375,
+        "left": 4675.999816894531
+      },
+      "fcn_verifywhenuserclickondeleteuserusermanagement_1710769798379_0": {
+        "top": 1584.8499755859375,
+        "left": 4675.999816894531
+      },
+      "fcn_clickondeletebuttonusermanagement_1710769798379_0": {
+        "top": 1663,
+        "left": 4675.999816894531
+      },
+      "fcn_logoutafterunassigninglicense_0": {
+        "top": 476.1499938964844,
+        "left": 1122
+      },
+      "fcn_ensurethatnonadminuserisalsoabletoupdatethenamefromcustomerportalbyupdatenamesectionfromsettingstab_0": {
+        "top": 330.1499938964844,
+        "left": 5138.999816894531
+      },
+      "fcn_logintostandarduseraccount_1710762214818_0": {
+        "top": 424.1499938964844,
+        "left": 5138.999816894531
+      },
+      "fcn_navigatetoaccountsettings_1710762267624_0": {
+        "top": 483.1499938964844,
+        "left": 5138.999816894531
+      },
+      "fcn_gotosettings_0": {
+        "top": 542.1499938964844,
+        "left": 5138.999816894531
+      },
+      "fcn_changethenameofstandarduserfromstandarduseraccountusermanagement_0": {
+        "top": 601.1499938964844,
+        "left": 5138.999816894531
+      },
+      "fcn_selectportalbrowser_1710762810810_0": {
+        "top": 694.2999877929688,
+        "left": 5138.999816894531
+      },
+      "fcn_navigatetousermanagement_1710762841480_0": {
+        "top": 753.2999877929688,
+        "left": 5138.999816894531
+      },
+      "fcn_verifythenameofstandarduserusermanagement_0": {
+        "top": 812.2999877929688,
+        "left": 5138.999816894531
+      },
+      "fcn_toverifythatzohoadminusershouldhaveprovisiontoaddorupdatethenameoftheusersfromusermanagement_0": {
+        "top": 324,
+        "left": 5651.999816894531
+      },
+      "fcn_logintoportalusingzoho_0": {
+        "top": 389,
+        "left": 5651.999816894531
+      },
+      "fcn_navigatetousermanagement_1710767343835_0": {
+        "top": 443,
+        "left": 5651.999816894531
+      },
+      "fcn_validatethedataforzohoadmininusermanagementtab_0": {
+        "top": 504,
+        "left": 5651.999816894531
+      },
+      "fcn_toverifyuserdetailstablecolumnsforzohouser_0": {
+        "top": 571,
+        "left": 5651.999816894531
+      },
+      "fcn_validateforzohouseridshouldbesameinboththeportalcustomerandopsportal_0": {
+        "top": 644,
+        "left": 5651.999816894531
+      },
+      "fcn_getaccountid_1710768846152_0": {
+        "top": 731,
+        "left": 5651.999816894531
+      },
+      "fcn_logintotheopsportallogintrial_signupaccountid_1710768846152_0": {
+        "top": 790,
+        "left": 5651.999816894531
+      },
+      "fcn_clickonexpandall_0": {
+        "top": 875.316650390625,
+        "left": 5651.999816894531
+      },
+      "fcn_getzohoid_0": {
+        "top": 934.316650390625,
+        "left": 5651.999816894531
+      },
+      "fcn_closethebrowser_1710769141989_0": {
+        "top": 992.316650390625,
+        "left": 5651.999816894531
+      },
+      "fcn_selectportalbrowser_1710769012869_0": {
+        "top": 1049.316650390625,
+        "left": 5651.999816894531
+      },
+      "fcn_verifyzohoorgidfromportalandopsportalbotharesame_0": {
+        "top": 1105.316650390625,
+        "left": 5651.999816894531
+      },
+      "fcn_verifylicensetypeforzohoaccount_0": {
+        "top": 1178,
+        "left": 5650.999816894531
+      },
+      "fcn_toverifythatzohoadminusershouldhaveprovisiontoaddorupdatethenameoftheusersfromusermanagement_1": {
+        "top": 494,
+        "left": 5977.999816894531
+      },
+      "fcn_verifyzohoidvisibleinusermanagementforzohoacoount_1710769213422_0": {
+        "top": 571,
+        "left": 6269.999816894531
+      },
+      "fcn_getaccountid_1710769213422_0": {
+        "top": 649,
+        "left": 6269.999816894531
+      },
+      "fcn_verifylicenseisavailableandgetlicensecount_1710769213422_0": {
+        "top": 701,
+        "left": 6269.999816894531
+      },
+      "fcn_entertheemailaddressusermanagement_1710769213422_0": {
+        "top": 769,
+        "left": 6269.999816894531
+      },
+      "fcn_invitetheuser_1710769213422_0": {
+        "top": 851.1500244140625,
+        "left": 6269.999816894531
+      },
+      "fcn_verifywhenuserclickonchangeduserrolelinkusermanagement_1710769213422_0": {
+        "top": 912.1500244140625,
+        "left": 6269.999816894531
+      },
+      "fcn_addthenameandsavethechangesusermanagement_1710769213422_0": {
+        "top": 993.2999877929688,
+        "left": 6269.999816894531
+      },
+      "fcn_verifywhenuserclickondeleteuserusermanagement_1710769213422_0": {
+        "top": 1067.4500122070312,
+        "left": 6269.999816894531
+      },
+      "fcn_clickondeletebuttonusermanagement_1710769213422_0": {
+        "top": 1143.61669921875,
+        "left": 6269.999816894531
+      },
+      "fcn_zohousermanagement_1710770288136_0": {
+        "top": 320,
+        "left": 6875.999816894531
+      },
+      "fcn_logintosaasusingsalesforce_0": {
+        "top": 379,
+        "left": 6875.999816894531
+      },
+      "fcn_navigatetousermanagement_1710770459435_0": {
+        "top": 438,
+        "left": 6875.999816894531
+      },
+      "fcn_validatethedataforzohoadmininusermanagementtab_1710770465300_0": {
+        "top": 497,
+        "left": 6875.999816894531
+      },
+      "fcn_toverifyuserdetailstablecolumnsforsfuser_0": {
+        "top": 570,
+        "left": 6875.999816894531
+      },
+      "fcn_verifylicensetypeforsfaccount_0": {
+        "top": 643,
+        "left": 6875.999816894531
+      },
+      "fcn_verifyinviteuserbuttonisdisabledforsalesforcelicensetype_0": {
+        "top": 702,
+        "left": 6875.999816894531
+      },
+      "fcn_entertheemailaddressusermanagement_1726665001916_0": {
+        "top": 535.6666938964844,
+        "left": 1122
+      },
+      "fcn_invitetheuser_1726665006580_0": {
+        "top": 615.3499870117188,
+        "left": 1122
+      },
+      "fcn_logintogmailemaillogin_1726669107469_0": {
+        "top": 674.8667061035156,
+        "left": 1122
+      },
+      "fcn_confirminviteduser_0": {
+        "top": 740.0333687011719,
+        "left": 1122
+      },
+      "fcn_asserttheautologinusermanagement_0": {
+        "top": 819.7166557128907,
+        "left": 1121.9999694824219
+      },
+      "fcn_againlogintosaasportal_0": {
+        "top": 899.3999595458985,
+        "left": 1122
+      },
+      "fcn_unassignthelicenseusermanagement_0": {
+        "top": 1024.5666938964844,
+        "left": 1122
+      },
+      "fcn_verifylogout_0": {
+        "top": 1104.2499503906251,
+        "left": 1122
+      },
+      "fcn_tryloginusermanagement_0": {
+        "top": 1163.766715258789,
+        "left": 1122
+      },
+      "fcn_logintostandarduseraccount_0": {
+        "top": 964.5666938964844,
+        "left": 1122.0000305175781
+      }
+    },
+    "settings": {
+      "maxProceedDepth": 100,
+      "maxProceedsForFirstDepth": 1,
+      "maxProceedsPerDepth": 1,
+      "maxPathRepititionsPerComboPath": 1,
+      "maxProceedsPerPath": 10000,
+      "maxToggles": 2,
+      "maxMatchingPaths": 3
+    },
+    "isPrimary": false,
+    "pathNames": [
+      {
+        "pathTags": "UserManagement",
+        "pathDependsOn": "{}",
+        "pathKey": [
+          "fcn_usermanagement_0",
+          "fcn_logintosaasportal_1708590525037_0",
+          "fcn_navigatetousermanagement_0",
+          "fcn_clickonresendinvitesmorethan4timesandverifyerrormessage_1710393133751_0",
+          "fcn_getaccountid_1710397727050_0",
+          "fcn_verifylicenseisavailableandgetlicensecount_1710397442079_0",
+          "fcn_entertheemailaddressusermanagement_1710397442079_0",
+          "fcn_invitetheuser_1710397442079_0",
+          "fcn_clickonresendinvitesmorethanfourtimesandverifyerrormessageusermanagement_1710393133751_0",
+          "fcn_verifyifuserentertheexistinguseremailidforinviteuserandclickonbutton_0",
+          "fcn_clickoninviteuser_0",
+          "fcn_againentertheemailaddressusermanagement_1710407326720_0",
+          "fcn_clickoninviteandverifythemessagewhenweenterexistingemailaddress_0",
+          "fcn_closetheinviteuserpopup_0",
+          "fcn_verifyifuserentertheexistinguseremailidforinviteuserandclickoninvitebutton_0",
+          "fcn_clickoninviteuser_1710403696306_0",
+          "fcn_entertheemailaddressusermanagement_1710403702740_0",
+          "fcn_clickonplusandverifythemessagewhenweenterexistingemailaddressusermanagement_0",
+          "fcn_closetheinviteuserpopup_1710403790072_0"
+        ]
+      },
+      {
+        "pathTags": "User_Management",
+        "pathDependsOn": "{}",
+        "pathKey": [
+          "fcn_usermanagement_0",
+          "fcn_logintosaasportal_1708590525037_0",
+          "fcn_navigatetousermanagement_0",
+          "fcn_toverifythedatawhichiscomingfromops_0",
+          "fcn_getaccountid_0",
+          "fcn_logintotheopsportallogintrial_signupaccountid_1708591115237_0",
+          "fcn_navigatetouserandlicenses_1708591127583_0",
+          "fcn_getlicensetypetotallicenseandavailablelicense_0",
+          "fcn_closethebrowser_0",
+          "fcn_assertlicensetypetotallicenseandavailablelicenseinusermanagement_0",
+          "fcn_toverifyuserdetailstablecolumns_0",
+          "fcn_toverifyuserdetailstablecolumns_1",
+          "fcn_toverifywhenthefirsttimeusergototheusermanagementsection_0",
+          "fcn_toverifywhenthefirsttimeusergototheusermanagementsection_1"
+        ],
+        "dependsPathUID": "17286273075170"
+      },
+      {
+        "pathTags": "User_Management",
+        "pathDependsOn": "{}",
+        "pathKey": [
+          "fcn_usermanagement_0",
+          "fcn_logintosaasportal_1708590525037_0",
+          "fcn_navigatetousermanagement_0",
+          "fcn_toverifywhenthelicenseisavailabletheinviteuserbuttonfunctionality_0",
+          "fcn_getaccountid_1708690603000_0",
+          "fcn_verifylicenseisavailable_0",
+          "fcn_entertheemailaddressandinvitetheuserusermanagement_0",
+          "fcn_invitetheuser_0",
+          "fcn_toverifytheavailablelicensecount_0",
+          "fcn_verifythelicensecountafterinvitinguser_0",
+          "fcn_verifythestatusofinviteduser_0",
+          "fcn_toverifyinthetableeachrowhaveactionoptions_0",
+          "fcn_verifyinthetableeachrowhaveactionoptions_0",
+          "fcn_toverifywhenclickonresendinvitelink_0",
+          "fcn_verifywhenclickonresendinvitelink_0",
+          "fcn_toverifywhenclickonunassignedlicense_0",
+          "fcn_verifywhenclickontheunassignedlicenseusermanagement_0",
+          "fcn_whenuserclickonclosebuttonusermanagement_0",
+          "fcn_verifywhenclickontheunassignedlicenseusermanagement_1708922067316_0",
+          "fcn_clickonremove_0",
+          "fcn_verifythelicensestatuswhenuserunassignedthelicense_0",
+          "fcn_verifyavailablelicensecountisincreased_0",
+          "fcn_toverifywhenclickonassignlicense_0",
+          "fcn_verifywhenclickonassignlicenseusermanagement_0",
+          "fcn_verifythelicensestatuswhenuserassignedthelicenseusermanagement_0",
+          "fcn_verifyavailablelicensecountisdecreasedafterassigningthelicense_0",
+          "fcn_toverifywhenuserclickonchangeduserrolelink_0",
+          "fcn_verifywhenuserclickonchangeduserrolelinkusermanagement_0",
+          "fcn_whenuserclickoncancelbuttonusermanagement_0",
+          "fcn_verifywhenuserclickonchangeduserrolelinkusermanagement_1708923276575_0",
+          "fcn_selecttheroleandsavethechanges_0",
+          "fcn_savethechangesafterchangingtheuserroleusermanagement_0",
+          "fcn_verifytheuserroleafterupdatingtheroleusermanagement_0",
+          "fcn_toverifywhenclickondeleteuserlinkandclickonclose_0",
+          "fcn_verifywhenuserclickondeleteuser_0",
+          "fcn_whenuserclickonclosebuttonusermanagement_1",
+          "fcn_verifywhenuserclickondeleteuserusermanagement_1710392486956_0",
+          "fcn_clickondeletebutton_0",
+          "fcn_verifyavailablelicensecountisincreatedafterdeletingtheuser_0"
+        ],
+        "dependsPathUID": "17286273298392"
+      },
+      {
+        "pathTags": "User_Management",
+        "pathDependsOn": "{}",
+        "pathKey": [
+          "fcn_usermanagement_0",
+          "fcn_logintosaasportal_1708590525037_0",
+          "fcn_navigatetousermanagement_0",
+          "fcn_toverifythedatawhichiscomingfromops_0",
+          "fcn_getaccountid_0",
+          "fcn_logintotheopsportallogintrial_signupaccountid_1708591115237_0",
+          "fcn_navigatetouserandlicenses_1708591127583_0",
+          "fcn_toverifytheinviteuserbuttonfunctionalityislicenseisnotavailable_0",
+          "fcn_addonlyonelicensetotheaccount_0",
+          "fcn_verifytheinviteuserbuttonfunctionalityislicenseisnotavailable_0",
+          "fcn_toverifytheupdatedlicensecountisupdatedoncustomerportalinusermanagementsection_0",
+          "fcn_againaddthelicensestotheaccount_0",
+          "fcn_closethebrowser_1",
+          "fcn_toverifytheupdatedlicensecountisupdatedinusermanagementsection_0"
+        ],
+        "dependsPathUID": "17286273151921"
+      },
+      {
+        "pathKey": [
+          "fcn_usermanagement_0",
+          "fcn_logintosaasportal_1708590525037_0",
+          "fcn_navigatetousermanagement_0",
+          "fcn_clickonresendinvitesmorethan4timesandverifyerrormessage_1710393133751_0",
+          "fcn_getaccountid_1710397727050_0",
+          "fcn_verifylicenseisavailableandgetlicensecount_1710397442079_0",
+          "fcn_entertheemailaddressusermanagement_1710397442079_0",
+          "fcn_invitetheuser_1710397442079_0",
+          "fcn_clickonresendinvitesmorethanfourtimesandverifyerrormessageusermanagement_1710393133751_0",
+          "fcn_verifyifuserentertheexistinguseremailidforinviteuserandclickonbutton_0",
+          "fcn_clickoninviteuser_0",
+          "fcn_againentertheemailaddressusermanagement_1710407326720_0",
+          "fcn_clickoninviteandverifythemessagewhenweenterexistingemailaddress_0",
+          "fcn_closetheinviteuserpopup_0",
+          "fcn_verifyifuserentertheexistinguseremailidforinviteuserandclickoninvitebutton_0",
+          "fcn_clickoninviteuser_1710403696306_0",
+          "fcn_entertheemailaddressusermanagement_1710403702740_0",
+          "fcn_clickonplusandverifythemessagewhenweenterexistingemailaddressusermanagement_0",
+          "fcn_closetheinviteuserpopup_1710403790072_0",
+          "fcn_toverifythatadminisabletoaddthenameoftheuserfromusermanagement_0",
+          "fcn_verifywhenuserclickonchangeduserrolelinkusermanagement_1710758990416_0",
+          "fcn_addthenameandsavethechangesusermanagement_0",
+          "fcn_verifywhenuserclickondeleteuserusermanagement_1710759348824_0",
+          "fcn_clickondeletebuttonusermanagement_1710759348824_0",
+          "fcn_verifyadminuserisabletoinvitedeleteduserwhichisdeletedfromcustomerportal_0",
+          "fcn_clickoninviteuser_1710769655228_0",
+          "fcn_againentertheemailaddressusermanagement_1710769730529_0",
+          "fcn_invitetheuser_1710769749246_0",
+          "fcn_verifythestatusofinviteduserusermanagement_1710769774097_0",
+          "fcn_verifywhenuserclickondeleteuserusermanagement_1710769798379_0",
+          "fcn_clickondeletebuttonusermanagement_1710769798379_0"
+        ],
+        "pathTags": "User_Management",
+        "dependsPathUID": "17286273416633"
+      },
+      {
+        "pathKey": [
+          "fcn_usermanagement_0",
+          "fcn_logintosaasportal_1708590525037_0",
+          "fcn_ensurethatnonadminuserisalsoabletoupdatethenamefromcustomerportalbyupdatenamesectionfromsettingstab_0",
+          "fcn_logintostandarduseraccount_1710762214818_0",
+          "fcn_navigatetoaccountsettings_1710762267624_0",
+          "fcn_gotosettings_0",
+          "fcn_changethenameofstandarduserfromstandarduseraccountusermanagement_0",
+          "fcn_selectportalbrowser_1710762810810_0",
+          "fcn_navigatetousermanagement_1710762841480_0",
+          "fcn_verifythenameofstandarduserusermanagement_0"
+        ],
+        "pathTags": "User_Management",
+        "dependsPathUID": "17286273785475"
+      },
+      {
+        "pathKey": [
+          "fcn_usermanagement_0",
+          "fcn_zohousermanagement_1710770288136_0",
+          "fcn_logintosaasusingsalesforce_0",
+          "fcn_navigatetousermanagement_1710770459435_0",
+          "fcn_validatethedataforzohoadmininusermanagementtab_1710770465300_0",
+          "fcn_toverifyuserdetailstablecolumnsforsfuser_0",
+          "fcn_verifylicensetypeforsfaccount_0",
+          "fcn_verifyinviteuserbuttonisdisabledforsalesforcelicensetype_0"
+        ],
+        "pathTags": "",
+        "dependsPathUID": "17286273916477"
+      }
+    ],
+    "flowChartUID": "fcUID_1708590448626",
+    "pathExecutionOrder": []
+  },
+  "enabled": true,
+  "parentId": ""
+}

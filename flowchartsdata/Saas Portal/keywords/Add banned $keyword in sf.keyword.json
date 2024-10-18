@@ -1,0 +1,160 @@
+{
+  "modifiedOn": "2024-09-02T11:43:56.994Z",
+  "name": "Add banned $keyword in sf",
+  "id": "59009",
+  "type": 3,
+  "createdOn": "2024-09-02T10:52:35.522Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Add banned $keyword in sf",
+    "parameters": [
+      {
+        "parameterId": "keyword_",
+        "entityTypeId": "keyword",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_navigateTo",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "\"https://sms-4b-dev-ed.develop.lightning.force.com/lightning/o/smagicinteract__Outgoing_Banned_Word__c/list?filterName\u003d__Recent\""
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"New\")"
+          },
+          {}
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_textbox(\"Name\")"
+          },
+          {
+            "parameterId": "keyword_",
+            "attributeId": "attr_01725275373311"
+          }
+        ],
+        "stepType": "Action",
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_textbox(\"smagicinteract__Keyword__c\")"
+          },
+          {
+            "parameterId": "keyword_",
+            "attributeId": "attr_01725275373311"
+          }
+        ],
+        "stepType": "Action",
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "_focus(_button(\"Save[1]\"));\n"
+      },
+      {
+        "commented": true,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_button(\"Save[1]\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_doubleClick",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_lightning_button(5)"
+          },
+          {}
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_lightning_button(2, _near(_button(\"Save \u0026 New\")))"
+          },
+          {}
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_doubleClick",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_listItem(\"slds-button-group-item visible[2]\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "10000"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "_isVisible(_div(\"Outgoing Banned WordsOutgoing Banned WordsRecently Viewed\"))"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"  test-listViewManager slds-card slds-card_boundary slds-grid slds-grid_vertical slds-grid--vertical forceListViewManager\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "parameterId": "keyword_",
+          "attributeId": "attr_01725275373311"
+        },
+        "visibleCheck": false
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

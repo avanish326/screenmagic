@@ -1,0 +1,76 @@
+{
+  "modifiedOn": "2024-04-24T08:52:55.891Z",
+  "name": "Sender Id",
+  "id": "45229",
+  "type": 3,
+  "createdOn": "2024-04-19T04:14:39.481Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Sender Id",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_selectWindow",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "\"Converse Settings | SMS-Magic\""
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "5000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(\"Sender ID Assignment\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_selectWindow",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "\"Converse Settings | SMS-Magic\""
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "3000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "//_selectWindow(\"Converse Settings | SMS-Magic\")\n\n$senderId \u003d _collectAttributes(\"_lightning_formatted_text\",\"/.*/\",\"value\",_under(_listItem(\"Sender ID\")),_in(_list(\"detailObject\")))\n\n_log($senderId);\n\n\n\n$channel\u003d\n_collectAttributes(\"_lightning_formatted_text\",\"/.*/\",\"value\",_under(_listItem(\"CHANNEL(s)\")),_in(_list(\"detailObject\")))\n\n_log($channel);\n\n//for(var $i\u003d0; $i\u003c$senderId.length-1;$i++){\n//_assertVisible(_lightning_formatted_text({\"value\":$channel[$i]}),\"This channel is //for \"+$senderId[$i])\n//}\n\n\n\n//_collectAttributes(\"_div\",\"/parent-block smagicinteractObjectPicker/\",\"sahiText\",_under(_listItem(\"Sender ID\")))"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

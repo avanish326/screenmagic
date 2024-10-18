@@ -1,0 +1,138 @@
+{
+  "modifiedOn": "2024-09-29T13:36:00.087894505Z",
+  "name": "assert the values $compliance",
+  "id": "-1",
+  "type": 3,
+  "createdOn": "2024-09-29T13:35:12Z",
+  "content": {
+    "title": "assert the values $compliance",
+    "parameters": [
+      {
+        "parameterId": "compliance_",
+        "entityTypeId": "compliance",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "3000"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_heading2(\"text-center\")"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "paramMode": "code",
+          "customValue": "\"Webpage links for content verification\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "visibleCheck": false,
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_textbox(\"About Us Page URL\")"
+          }
+        ],
+        "stepType": "Assert",
+        "stepCategory": "inbuilt",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "parameterId": "compliance_",
+          "attributeId": "attr_01727421830616"
+        }
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "visibleCheck": false,
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_textbox(\"Contact Us Page URL\")"
+          },
+          {
+            "parameterId": "compliance_",
+            "attributeId": "attr_01727421830616"
+          }
+        ],
+        "stepType": "Action",
+        "stepCategory": "inbuilt"
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "visibleCheck": false,
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_textbox(\"Privacy Policy Page URL\")"
+          },
+          {
+            "parameterId": "compliance_",
+            "attributeId": "attr_01727421830616"
+          }
+        ],
+        "stepType": "Action",
+        "stepCategory": "inbuilt"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "visibleCheck": false,
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_textbox(\"Terms \u0026 Conditions Page URL\")"
+          }
+        ],
+        "stepType": "Assert",
+        "stepCategory": "inbuilt",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "parameterId": "compliance_",
+          "attributeId": "attr_01727421830616"
+        }
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "visibleCheck": false,
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_textbox(\"Consent Form Page URL\")"
+          },
+          {
+            "parameterId": "compliance_",
+            "attributeId": "attr_01727421830616"
+          }
+        ],
+        "stepType": "Action",
+        "stepCategory": "inbuilt"
+      }
+    ],
+    "isSystemKeyword": false
+  },
+  "enabled": false,
+  "parentId": ""
+}

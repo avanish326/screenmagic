@@ -1,0 +1,312 @@
+{
+  "modifiedOn": "2024-05-13T14:24:14.757Z",
+  "name": "start conversation with bot through $whatsapp and ask for conversation with $agent in between the conversation for SF",
+  "id": "46075",
+  "type": 3,
+  "createdOn": "2024-05-13T14:23:47.245Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "start conversation with bot through $whatsapp and ask for conversation with $agent in between the conversation for SF",
+    "parameters": [
+      {
+        "parameterId": "whatsapp_",
+        "entityTypeId": "whatsapp",
+        "suffix": ""
+      },
+      {
+        "parameterId": "agent_",
+        "entityTypeId": "agent",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "POST"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "$incomingWAURL"
+          }
+        ],
+        "stepType": "REST",
+        "isRawScript": true,
+        "rawScript": "var $request_DNAL6uaQZ7 \u003d new RESTRequest();\r\n$request_DNAL6uaQZ7.setURL($incomingWAURL);\r\n$request_DNAL6uaQZ7.setHeader(\"Content-Type\", \"application/json\");\r\nvar sanitizedBody \u003d eval(\"(\"+\"{\" + \"   \\\"SmsMessageSid\\\":\\\"SM91805a30f08ed4a44c8fe7b1264deb14\\\",\" + \"   \\\"ProfileName\\\":\\\"abc\\\",\" + \"   \\\"SmsSid\\\":\\\"SM91805a30f08ed4a44c8fe7b1264deb14\\\",\" + \"   \\\"WaId\\\":\\\"91750878281\\\",\" + \"   \\\"SmsStatus\\\":\\\"received\\\",\" + \"   \\\"Body\\\":\\\"\\\"+\\\"\" + escapeString($whatsapp.keywordWASF) + \"\\\"+\\\"\\\",\" + \"   \\\"To\\\":\\\"whatsapp:+\\\"+\\\"\" + escapeString($waDestination) + \"\\\"+\\\"\\\",\" + \"   \\\"NumSegments\\\":\\\"919088772221\\\",\" + \"   \\\"ReferralNumMedia\\\":\\\"0\\\",\" + \"   \\\"MessageSid\\\":\\\"SM91805a30f08ed4a44c8fe7b1264deb14\\\",\" + \"   \\\"AccountSid\\\":\\\"AC00a7b3b1c35de688eb9696b3119e0388\\\",\" + \"   \\\"From\\\":\\\"whatsapp:+\\\"+\\\"\" + escapeString($whatsapp.sourceWA) + \"\\\"+\\\"\\\",\" + \"   \\\"ApiVersion\\\":\\\"2010-04-01\\\",   \" + \"   \\\"message_uuid\\\":\\\"SM91805a30f08ed4a44c8fe7b1264deb14\\\",       \" + \"   \\\"num_media\\\":\\\"1\\\"\" + \"}\"+\")\");\n$request_DNAL6uaQZ7.setBody(JSON.stringify(sanitizedBody));\r\nvar $response_DNAL6uaQZ7 \u003d $request_DNAL6uaQZ7.submit(\"POST\");\r\n\t var $responseBodyObj_DNAL6uaQZ7 \u003d $response_DNAL6uaQZ7.getBodyAsString();\r\n\tvar responseType \u003d $response_DNAL6uaQZ7.getHeader(\"Content-Type\");\r\n\tif (responseType.indexOf(\"json\")!\u003d-1) {\r\n\t\t$responseBodyObj_DNAL6uaQZ7 \u003d JSON.parse($responseBodyObj_DNAL6uaQZ7);\r\n\t}\r\n\telse if (responseType.indexOf(\"xml\")!\u003d-1) {\r\n\t\t$responseBodyObj_DNAL6uaQZ7 \u003d $responseBodyObj_DNAL6uaQZ7.replace(/\u003c\\xml.*?\u003e/g, \u0027\u0027).replace(/\\n/g, \u0027\u0027).replace(/\\r/g, \u0027\u0027);\r\n\t\t$responseBodyObj_DNAL6uaQZ7 \u003d new XML(undefined);\r\n\t}\r\n\r\n\t//assertions\r\n\r\n",
+        "state": {
+          "contentType": "html",
+          "request": {
+            "method": "POST",
+            "url": "$incomingWAURL",
+            "parameters": [],
+            "headers": [
+              [
+                "Content-Type",
+                "application/json"
+              ]
+            ],
+            "authType": "none",
+            "body": "{\n   \"SmsMessageSid\":\"SM91805a30f08ed4a44c8fe7b1264deb14\",\n   \"ProfileName\":\"abc\",\n   \"SmsSid\":\"SM91805a30f08ed4a44c8fe7b1264deb14\",\n   \"WaId\":\"91750878281\",\n   \"SmsStatus\":\"received\",\n   \"Body\":\"\"+$whatsapp.keywordWASF+\"\",\n   \"To\":\"whatsapp:+\"+$waDestination+\"\",\n   \"NumSegments\":\"919088772221\",\n   \"ReferralNumMedia\":\"0\",\n   \"MessageSid\":\"SM91805a30f08ed4a44c8fe7b1264deb14\",\n   \"AccountSid\":\"AC00a7b3b1c35de688eb9696b3119e0388\",\n   \"From\":\"whatsapp:+\"+$whatsapp.sourceWA+\"\",\n   \"ApiVersion\":\"2010-04-01\",   \n   \"message_uuid\":\"SM91805a30f08ed4a44c8fe7b1264deb14\",       \n   \"num_media\":\"1\"\n}",
+            "bodyParams": [],
+            "isParametrizedBody": false,
+            "resetCookies": false
+          },
+          "assertions": {
+            "status": [],
+            "header": [],
+            "body": []
+          },
+          "variables": {
+            "status": [],
+            "header": [],
+            "body": []
+          },
+          "authInfo": {}
+        }
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "5000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "POST"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "$incomingWAURL"
+          }
+        ],
+        "stepType": "REST",
+        "isRawScript": true,
+        "rawScript": "var $request_CPzZMwfY4P \u003d new RESTRequest();\r\n$request_CPzZMwfY4P.setURL($incomingWAURL);\r\n$request_CPzZMwfY4P.setHeader(\"Content-Type\", \"application/json\");\r\nvar sanitizedBody \u003d eval(\"(\"+\"{\" + \"   \\\"SmsMessageSid\\\":\\\"SM91805a30f08ed4a44c8fe7b1264deb14\\\",\" + \"   \\\"ProfileName\\\":\\\"abc\\\",\" + \"   \\\"SmsSid\\\":\\\"SM91805a30f08ed4a44c8fe7b1264deb14\\\",\" + \"   \\\"WaId\\\":\\\"91750878281\\\",\" + \"   \\\"SmsStatus\\\":\\\"received\\\",\" + \"   \\\"Body\\\":\\\"wmOWYENZHMHm\\\",\" + \"   \\\"To\\\":\\\"whatsapp:+\\\"+\\\"\" + escapeString($waDestination) + \"\\\"+\\\"\\\",\" + \"   \\\"NumSegments\\\":\\\"919088772221\\\",\" + \"   \\\"ReferralNumMedia\\\":\\\"0\\\",\" + \"   \\\"MessageSid\\\":\\\"SM91805a30f08ed4a44c8fe7b1264deb14\\\",\" + \"   \\\"AccountSid\\\":\\\"AC00a7b3b1c35de688eb9696b3119e0388\\\",\" + \"   \\\"From\\\":\\\"whatsapp:+\\\"+\\\"\" + escapeString($whatsapp.sourceWA) + \"\\\"+\\\"\\\",\" + \"   \\\"ApiVersion\\\":\\\"2010-04-01\\\",   \" + \"   \\\"message_uuid\\\":\\\"SM91805a30f08ed4a44c8fe7b1264deb14\\\",       \" + \"   \\\"num_media\\\":\\\"1\\\"\" + \"}\"+\")\");\n$request_CPzZMwfY4P.setBody(JSON.stringify(sanitizedBody));\r\nvar $response_CPzZMwfY4P \u003d $request_CPzZMwfY4P.submit(\"POST\");\r\n\t var $responseBodyObj_CPzZMwfY4P \u003d $response_CPzZMwfY4P.getBodyAsString();\r\n\tvar responseType \u003d $response_CPzZMwfY4P.getHeader(\"Content-Type\");\r\n\tif (responseType.indexOf(\"json\")!\u003d-1) {\r\n\t\t$responseBodyObj_CPzZMwfY4P \u003d JSON.parse($responseBodyObj_CPzZMwfY4P);\r\n\t}\r\n\telse if (responseType.indexOf(\"xml\")!\u003d-1) {\r\n\t\t$responseBodyObj_CPzZMwfY4P \u003d $responseBodyObj_CPzZMwfY4P.replace(/\u003c\\xml.*?\u003e/g, \u0027\u0027).replace(/\\n/g, \u0027\u0027).replace(/\\r/g, \u0027\u0027);\r\n\t\t$responseBodyObj_CPzZMwfY4P \u003d new XML(undefined);\r\n\t}\r\n\r\n\t//assertions\r\n\r\n",
+        "state": {
+          "contentType": "html",
+          "request": {
+            "method": "POST",
+            "url": "$incomingWAURL",
+            "parameters": [],
+            "headers": [
+              [
+                "Content-Type",
+                "application/json"
+              ]
+            ],
+            "authType": "none",
+            "body": "{\n   \"SmsMessageSid\":\"SM91805a30f08ed4a44c8fe7b1264deb14\",\n   \"ProfileName\":\"abc\",\n   \"SmsSid\":\"SM91805a30f08ed4a44c8fe7b1264deb14\",\n   \"WaId\":\"91750878281\",\n   \"SmsStatus\":\"received\",\n   \"Body\":\"wmOWYENZHMHm\",\n   \"To\":\"whatsapp:+\"+$waDestination+\"\",\n   \"NumSegments\":\"919088772221\",\n   \"ReferralNumMedia\":\"0\",\n   \"MessageSid\":\"SM91805a30f08ed4a44c8fe7b1264deb14\",\n   \"AccountSid\":\"AC00a7b3b1c35de688eb9696b3119e0388\",\n   \"From\":\"whatsapp:+\"+$whatsapp.sourceWA+\"\",\n   \"ApiVersion\":\"2010-04-01\",   \n   \"message_uuid\":\"SM91805a30f08ed4a44c8fe7b1264deb14\",       \n   \"num_media\":\"1\"\n}",
+            "bodyParams": [],
+            "isParametrizedBody": false,
+            "resetCookies": false
+          },
+          "assertions": {
+            "status": [],
+            "header": [],
+            "body": []
+          },
+          "variables": {
+            "status": [],
+            "header": [],
+            "body": []
+          },
+          "authInfo": {}
+        }
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "6000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "POST"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "$incomingWAURL"
+          }
+        ],
+        "stepType": "REST",
+        "isRawScript": true,
+        "rawScript": "var $request_Zq9rBzF97e \u003d new RESTRequest();\r\n$request_Zq9rBzF97e.setURL($incomingWAURL);\r\n$request_Zq9rBzF97e.setHeader(\"Content-Type\", \"application/json\");\r\nvar sanitizedBody \u003d eval(\"(\"+\"{\" + \"   \\\"SmsMessageSid\\\":\\\"SM91805a30f08ed4a44c8fe7b1264deb14\\\",\" + \"   \\\"ProfileName\\\":\\\"abc\\\",\" + \"   \\\"SmsSid\\\":\\\"SM91805a30f08ed4a44c8fe7b1264deb14\\\",\" + \"   \\\"WaId\\\":\\\"91750878281\\\",\" + \"   \\\"SmsStatus\\\":\\\"received\\\",\" + \"   \\\"Body\\\":\\\"1\\\",\" + \"   \\\"To\\\":\\\"whatsapp:+\\\"+\\\"\" + escapeString($waDestination) + \"\\\"+\\\"\\\",\" + \"   \\\"NumSegments\\\":\\\"919088772221\\\",\" + \"   \\\"ReferralNumMedia\\\":\\\"0\\\",\" + \"   \\\"MessageSid\\\":\\\"SM91805a30f08ed4a44c8fe7b1264deb14\\\",\" + \"   \\\"AccountSid\\\":\\\"AC00a7b3b1c35de688eb9696b3119e0388\\\",\" + \"   \\\"From\\\":\\\"whatsapp:+\\\"+\\\"\" + escapeString($whatsapp.sourceWA) + \"\\\"+\\\"\\\",\" + \"   \\\"ApiVersion\\\":\\\"2010-04-01\\\",   \" + \"   \\\"message_uuid\\\":\\\"SM91805a30f08ed4a44c8fe7b1264deb14\\\",       \" + \"   \\\"num_media\\\":\\\"1\\\"\" + \"}\"+\")\");\n$request_Zq9rBzF97e.setBody(JSON.stringify(sanitizedBody));\r\nvar $response_Zq9rBzF97e \u003d $request_Zq9rBzF97e.submit(\"POST\");\r\n\t var $responseBodyObj_Zq9rBzF97e \u003d $response_Zq9rBzF97e.getBodyAsString();\r\n\tvar responseType \u003d $response_Zq9rBzF97e.getHeader(\"Content-Type\");\r\n\tif (responseType.indexOf(\"json\")!\u003d-1) {\r\n\t\t$responseBodyObj_Zq9rBzF97e \u003d JSON.parse($responseBodyObj_Zq9rBzF97e);\r\n\t}\r\n\telse if (responseType.indexOf(\"xml\")!\u003d-1) {\r\n\t\t$responseBodyObj_Zq9rBzF97e \u003d $responseBodyObj_Zq9rBzF97e.replace(/\u003c\\xml.*?\u003e/g, \u0027\u0027).replace(/\\n/g, \u0027\u0027).replace(/\\r/g, \u0027\u0027);\r\n\t\t$responseBodyObj_Zq9rBzF97e \u003d new XML(undefined);\r\n\t}\r\n\r\n\t//assertions\r\n\r\n",
+        "state": {
+          "contentType": "html",
+          "request": {
+            "method": "POST",
+            "url": "$incomingWAURL",
+            "parameters": [],
+            "headers": [
+              [
+                "Content-Type",
+                "application/json"
+              ]
+            ],
+            "authType": "none",
+            "body": "{\n   \"SmsMessageSid\":\"SM91805a30f08ed4a44c8fe7b1264deb14\",\n   \"ProfileName\":\"abc\",\n   \"SmsSid\":\"SM91805a30f08ed4a44c8fe7b1264deb14\",\n   \"WaId\":\"91750878281\",\n   \"SmsStatus\":\"received\",\n   \"Body\":\"1\",\n   \"To\":\"whatsapp:+\"+$waDestination+\"\",\n   \"NumSegments\":\"919088772221\",\n   \"ReferralNumMedia\":\"0\",\n   \"MessageSid\":\"SM91805a30f08ed4a44c8fe7b1264deb14\",\n   \"AccountSid\":\"AC00a7b3b1c35de688eb9696b3119e0388\",\n   \"From\":\"whatsapp:+\"+$whatsapp.sourceWA+\"\",\n   \"ApiVersion\":\"2010-04-01\",   \n   \"message_uuid\":\"SM91805a30f08ed4a44c8fe7b1264deb14\",       \n   \"num_media\":\"1\"\n}",
+            "bodyParams": [],
+            "isParametrizedBody": false,
+            "resetCookies": false
+          },
+          "assertions": {
+            "status": [],
+            "header": [],
+            "body": []
+          },
+          "variables": {
+            "status": [],
+            "header": [],
+            "body": []
+          },
+          "authInfo": {}
+        }
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "8000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "POST"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "$incomingWAURL"
+          }
+        ],
+        "stepType": "REST",
+        "isRawScript": true,
+        "rawScript": "var $request_42YyXkK2nh \u003d new RESTRequest();\r\n$request_42YyXkK2nh.setURL($incomingWAURL);\r\n$request_42YyXkK2nh.setHeader(\"Content-Type\", \"application/json\");\r\nvar sanitizedBody \u003d eval(\"(\"+\"{\" + \"   \\\"SmsMessageSid\\\":\\\"SM91805a30f08ed4a44c8fe7b1264deb14\\\",\" + \"   \\\"ProfileName\\\":\\\"abc\\\",\" + \"   \\\"SmsSid\\\":\\\"SM91805a30f08ed4a44c8fe7b1264deb14\\\",\" + \"   \\\"WaId\\\":\\\"91750878281\\\",\" + \"   \\\"SmsStatus\\\":\\\"received\\\",\" + \"   \\\"Body\\\":\\\"1\\\",\" + \"   \\\"To\\\":\\\"whatsapp:+\\\"+\\\"\" + escapeString($waDestination) + \"\\\"+\\\"\\\",\" + \"   \\\"NumSegments\\\":\\\"919088772221\\\",\" + \"   \\\"ReferralNumMedia\\\":\\\"0\\\",\" + \"   \\\"MessageSid\\\":\\\"SM91805a30f08ed4a44c8fe7b1264deb14\\\",\" + \"   \\\"AccountSid\\\":\\\"AC00a7b3b1c35de688eb9696b3119e0388\\\",\" + \"   \\\"From\\\":\\\"whatsapp:+\\\"+\\\"\" + escapeString($whatsapp.sourceWA) + \"\\\"+\\\"\\\",\" + \"   \\\"ApiVersion\\\":\\\"2010-04-01\\\",   \" + \"   \\\"message_uuid\\\":\\\"SM91805a30f08ed4a44c8fe7b1264deb14\\\",       \" + \"   \\\"num_media\\\":\\\"1\\\"\" + \"}\"+\")\");\n$request_42YyXkK2nh.setBody(JSON.stringify(sanitizedBody));\r\nvar $response_42YyXkK2nh \u003d $request_42YyXkK2nh.submit(\"POST\");\r\n\t var $responseBodyObj_42YyXkK2nh \u003d $response_42YyXkK2nh.getBodyAsString();\r\n\tvar responseType \u003d $response_42YyXkK2nh.getHeader(\"Content-Type\");\r\n\tif (responseType.indexOf(\"json\")!\u003d-1) {\r\n\t\t$responseBodyObj_42YyXkK2nh \u003d JSON.parse($responseBodyObj_42YyXkK2nh);\r\n\t}\r\n\telse if (responseType.indexOf(\"xml\")!\u003d-1) {\r\n\t\t$responseBodyObj_42YyXkK2nh \u003d $responseBodyObj_42YyXkK2nh.replace(/\u003c\\xml.*?\u003e/g, \u0027\u0027).replace(/\\n/g, \u0027\u0027).replace(/\\r/g, \u0027\u0027);\r\n\t\t$responseBodyObj_42YyXkK2nh \u003d new XML(undefined);\r\n\t}\r\n\r\n\t//assertions\r\n\r\n",
+        "state": {
+          "contentType": "html",
+          "request": {
+            "method": "POST",
+            "url": "$incomingWAURL",
+            "parameters": [],
+            "headers": [
+              [
+                "Content-Type",
+                "application/json"
+              ]
+            ],
+            "authType": "none",
+            "body": "{\n   \"SmsMessageSid\":\"SM91805a30f08ed4a44c8fe7b1264deb14\",\n   \"ProfileName\":\"abc\",\n   \"SmsSid\":\"SM91805a30f08ed4a44c8fe7b1264deb14\",\n   \"WaId\":\"91750878281\",\n   \"SmsStatus\":\"received\",\n   \"Body\":\"1\",\n   \"To\":\"whatsapp:+\"+$waDestination+\"\",\n   \"NumSegments\":\"919088772221\",\n   \"ReferralNumMedia\":\"0\",\n   \"MessageSid\":\"SM91805a30f08ed4a44c8fe7b1264deb14\",\n   \"AccountSid\":\"AC00a7b3b1c35de688eb9696b3119e0388\",\n   \"From\":\"whatsapp:+\"+$whatsapp.sourceWA+\"\",\n   \"ApiVersion\":\"2010-04-01\",   \n   \"message_uuid\":\"SM91805a30f08ed4a44c8fe7b1264deb14\",       \n   \"num_media\":\"1\"\n}",
+            "bodyParams": [],
+            "isParametrizedBody": false,
+            "resetCookies": false
+          },
+          "assertions": {
+            "status": [],
+            "header": [],
+            "body": []
+          },
+          "variables": {
+            "status": [],
+            "header": [],
+            "body": []
+          },
+          "authInfo": {}
+        }
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "5000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "POST"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "$incomingWAURL"
+          }
+        ],
+        "stepType": "REST",
+        "isRawScript": true,
+        "rawScript": "var $request_aeB6PffqqD \u003d new RESTRequest();\r\n$request_aeB6PffqqD.setURL($incomingWAURL);\r\n$request_aeB6PffqqD.setHeader(\"Content-Type\", \"application/json\");\r\nvar sanitizedBody \u003d eval(\"(\"+\"{\" + \"   \\\"SmsMessageSid\\\":\\\"SM91805a30f08ed4a44c8fe7b1264deb14\\\",\" + \"   \\\"ProfileName\\\":\\\"abc\\\",\" + \"   \\\"SmsSid\\\":\\\"SM91805a30f08ed4a44c8fe7b1264deb14\\\",\" + \"   \\\"WaId\\\":\\\"91750878281\\\",\" + \"   \\\"SmsStatus\\\":\\\"received\\\",\" + \"   \\\"Body\\\":\\\"\\\"+\\\"\" + escapeString($agent.handOffKeyword) + \"\\\"+\\\"\\\",\" + \"   \\\"To\\\":\\\"whatsapp:+\\\"+\\\"\" + escapeString($waDestination) + \"\\\"+\\\"\\\",\" + \"   \\\"NumSegments\\\":\\\"919088772221\\\",\" + \"   \\\"ReferralNumMedia\\\":\\\"0\\\",\" + \"   \\\"MessageSid\\\":\\\"SM91805a30f08ed4a44c8fe7b1264deb14\\\",\" + \"   \\\"AccountSid\\\":\\\"AC00a7b3b1c35de688eb9696b3119e0388\\\",\" + \"   \\\"From\\\":\\\"whatsapp:+\\\"+\\\"\" + escapeString($whatsapp.sourceWA) + \"\\\"+\\\"\\\",\" + \"   \\\"ApiVersion\\\":\\\"2010-04-01\\\",   \" + \"   \\\"message_uuid\\\":\\\"SM91805a30f08ed4a44c8fe7b1264deb14\\\",       \" + \"   \\\"num_media\\\":\\\"1\\\"\" + \"}\"+\")\");\n$request_aeB6PffqqD.setBody(JSON.stringify(sanitizedBody));\r\nvar $response_aeB6PffqqD \u003d $request_aeB6PffqqD.submit(\"POST\");\r\n\t var $responseBodyObj_aeB6PffqqD \u003d $response_aeB6PffqqD.getBodyAsString();\r\n\tvar responseType \u003d $response_aeB6PffqqD.getHeader(\"Content-Type\");\r\n\tif (responseType.indexOf(\"json\")!\u003d-1) {\r\n\t\t$responseBodyObj_aeB6PffqqD \u003d JSON.parse($responseBodyObj_aeB6PffqqD);\r\n\t}\r\n\telse if (responseType.indexOf(\"xml\")!\u003d-1) {\r\n\t\t$responseBodyObj_aeB6PffqqD \u003d $responseBodyObj_aeB6PffqqD.replace(/\u003c\\xml.*?\u003e/g, \u0027\u0027).replace(/\\n/g, \u0027\u0027).replace(/\\r/g, \u0027\u0027);\r\n\t\t$responseBodyObj_aeB6PffqqD \u003d new XML(undefined);\r\n\t}\r\n\r\n\t//assertions\r\n\r\n",
+        "state": {
+          "contentType": "html",
+          "request": {
+            "method": "POST",
+            "url": "$incomingWAURL",
+            "parameters": [],
+            "headers": [
+              [
+                "Content-Type",
+                "application/json"
+              ]
+            ],
+            "authType": "none",
+            "body": "{\n   \"SmsMessageSid\":\"SM91805a30f08ed4a44c8fe7b1264deb14\",\n   \"ProfileName\":\"abc\",\n   \"SmsSid\":\"SM91805a30f08ed4a44c8fe7b1264deb14\",\n   \"WaId\":\"91750878281\",\n   \"SmsStatus\":\"received\",\n   \"Body\":\"\"+$agent.handOffKeyword+\"\",\n   \"To\":\"whatsapp:+\"+$waDestination+\"\",\n   \"NumSegments\":\"919088772221\",\n   \"ReferralNumMedia\":\"0\",\n   \"MessageSid\":\"SM91805a30f08ed4a44c8fe7b1264deb14\",\n   \"AccountSid\":\"AC00a7b3b1c35de688eb9696b3119e0388\",\n   \"From\":\"whatsapp:+\"+$whatsapp.sourceWA+\"\",\n   \"ApiVersion\":\"2010-04-01\",   \n   \"message_uuid\":\"SM91805a30f08ed4a44c8fe7b1264deb14\",       \n   \"num_media\":\"1\"\n}",
+            "bodyParams": [],
+            "isParametrizedBody": false,
+            "resetCookies": false
+          },
+          "assertions": {
+            "status": [],
+            "header": [],
+            "body": []
+          },
+          "variables": {
+            "status": [],
+            "header": [],
+            "body": []
+          },
+          "authInfo": {}
+        }
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "5000"
+          }
+        ],
+        "stepType": "Action"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

@@ -1,0 +1,56 @@
+{
+  "modifiedOn": "2024-08-01T04:57:09.043Z",
+  "name": "Verify the green dot icon on the converse desk once visitor closes the webchat $webform",
+  "id": "58033",
+  "type": 3,
+  "createdOn": "2024-07-03T09:29:20.855Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Verify the green dot icon on the converse desk once visitor closes the webchat $webform",
+    "parameters": [
+      {
+        "parameterId": "webform_",
+        "entityTypeId": "webform",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_selectBrowser",
+        "stepParameters": [],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"css-1fnwuyl\", _near(_textbox(1)))"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "\nvar $fName\u003d$webform.firstNameWebForm;\nvar $lName\u003d$webform.lastNameWebForm;\n\nvar $countryCodeVar1\u003d$webform.countryCode;\nvar $countryCodeVar\u003d$countryCodeVar1.split(\"+\")[1].trim()\n_log($countryCodeVar);\nvar $phoneNumberNew\u003d$webform.phoneWebForm;\n\nvar $phoneNumberVar\u003d$countryCodeVar+$phoneNumberNew;\n\n\nvar $fullName\u003d$fName+\" \"+$lName\n\n\n"
+      },
+      {
+        "commented": false,
+        "action": "_isVisible",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(0, _leftOf(_span($fullName)))"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Is_False"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

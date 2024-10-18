@@ -1,0 +1,92 @@
+{
+  "modifiedOn": "2024-09-09T11:57:38.611684Z",
+  "name": "Verify the Name in Desk $singlecontact $incoming",
+  "id": "-1",
+  "type": 3,
+  "createdOn": "2024-08-21T01:23:41Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Verify the Name in Desk $singlecontact $incoming",
+    "parameters": [
+      {
+        "parameterId": "singlecontact_",
+        "entityTypeId": "singlecontact",
+        "suffix": ""
+      },
+      {
+        "parameterId": "incoming_",
+        "entityTypeId": "incoming",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_div(\"css-1fnwuyl\")"
+          }
+        ],
+        "stepType": "Action",
+        "stepCategory": "inbuilt"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "$name\u003d$singlecontact.firstName+\" \"+$singlecontact.lastName;"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_span($name)"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "paramMode": "code",
+          "customValue": "$name"
+        }
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_div(\"mail-content\")"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_paragraph(\"sm-msg-wrap\")"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "paramMode": "default",
+          "parameterId": "incoming_",
+          "attributeId": "attr_11723630451906"
+        },
+        "visibleCheck": false
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

@@ -1,0 +1,475 @@
+{
+  "modifiedOn": "2024-07-31T07:03:43.051Z",
+  "name": "Zoho Bulk sync of delivery reports(set batch details from OPS portal)",
+  "id": "45473",
+  "type": 0,
+  "createdOn": "2024-04-26T14:33:51.944Z",
+  "content": {
+    "settings": {
+      "maxProceedDepth": 100,
+      "maxProceedsForFirstDepth": 1,
+      "maxProceedsPerDepth": 1,
+      "maxPathRepititionsPerComboPath": 1,
+      "maxProceedsPerPath": 10000,
+      "maxToggles": 2,
+      "maxMatchingPaths": 3
+    },
+    "flowChartUID": "fcUID_1714142031584",
+    "nodesMap": {
+      "fcn_start_0": {
+        "dataSetId": -1,
+        "id": "fcn_start_0",
+        "nodeType": "start",
+        "branches": [
+          "fcn_zohobulksyncofdeliveryreports_0"
+        ],
+        "content": "Start"
+      },
+      "fcn_zohobulksyncofdeliveryreports_0": {
+        "dataSetId": -1,
+        "id": "fcn_zohobulksyncofdeliveryreports_0",
+        "nodeType": "pathlabel",
+        "branches": [
+          "fcn_logintoopsportal_1714397758496_0"
+        ],
+        "content": "Zoho Bulk sync of delivery reports"
+      },
+      "fcn_logintoopsportal_1714397758496_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintoopsportal_1714397758496_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_validatebulkificationflagshouldbeeditableonops_1714397765362_0",
+          "fcn_validateerrormessagewhenuserprovidedalphanumerivalueinbulkification_0",
+          "fcn_validateerrormessagewhentheuserprovideslessthan30batch_0",
+          "fcn_validateerrormessagewhentheuserprovideslessthan120seconds_0",
+          "fcn_validateerrormessagewhentheuserprovidesmorethan300batchsize_0",
+          "fcn_validateerrormessagewhentheuserprovidesmorethan1200seconds_0",
+          "fcn_addbulkificationvalueas30batchand120sec_0"
+        ],
+        "content": "Login to $opsportal"
+      },
+      "fcn_validatebulkificationflagshouldbeeditableonops_1714397765362_0": {
+        "dataSetId": -1,
+        "id": "fcn_validatebulkificationflagshouldbeeditableonops_1714397765362_0",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_searchforaccountidaccountid_1714397770727_0"
+        ],
+        "content": "Validate bulkification flag should be editable on OPS"
+      },
+      "fcn_searchforaccountidaccountid_1714397770727_0": {
+        "dataSetId": -1,
+        "id": "fcn_searchforaccountidaccountid_1714397770727_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_validatebulkificationflag_1714397774012_0"
+        ],
+        "content": "Search for Account ID $accountid"
+      },
+      "fcn_validatebulkificationflag_1714397774012_0": {
+        "dataSetId": -1,
+        "id": "fcn_validatebulkificationflag_1714397774012_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Validate bulkification flag"
+      },
+      "fcn_validateerrormessagewhenuserprovidedalphanumerivalueinbulkification_0": {
+        "dataSetId": -1,
+        "id": "fcn_validateerrormessagewhenuserprovidedalphanumerivalueinbulkification_0",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_searchforaccountidaccountid_1714397848021_0"
+        ],
+        "content": "Validate error message when user provided empty value in bulkification"
+      },
+      "fcn_searchforaccountidaccountid_1714397848021_0": {
+        "dataSetId": -1,
+        "id": "fcn_searchforaccountidaccountid_1714397848021_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_validatebulkificationflag_1714397851888_0"
+        ],
+        "content": "Search for Account ID $accountid"
+      },
+      "fcn_validatebulkificationflag_1714397851888_0": {
+        "dataSetId": -1,
+        "id": "fcn_validatebulkificationflag_1714397851888_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_addemptyvalue_0"
+        ],
+        "content": "Validate bulkification flag"
+      },
+      "fcn_addemptyvalue_0": {
+        "dataSetId": -1,
+        "id": "fcn_addemptyvalue_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_validatetheerrormessage_1714398364111_0"
+        ],
+        "content": "Add empty value"
+      },
+      "fcn_validatetheerrormessage_1714398364111_0": {
+        "dataSetId": -1,
+        "id": "fcn_validatetheerrormessage_1714398364111_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Validate the error message"
+      },
+      "fcn_validateerrormessagewhentheuserprovideslessthan30batch_0": {
+        "dataSetId": -1,
+        "id": "fcn_validateerrormessagewhentheuserprovideslessthan30batch_0",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_searchforaccountidaccountid_1714398665241_0"
+        ],
+        "content": "Validate error message when the user provides less than 30 batch."
+      },
+      "fcn_searchforaccountidaccountid_1714398665241_0": {
+        "dataSetId": -1,
+        "id": "fcn_searchforaccountidaccountid_1714398665241_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_validatebulkificationflag_1714398668691_0"
+        ],
+        "content": "Search for Account ID $accountid"
+      },
+      "fcn_validatebulkificationflag_1714398668691_0": {
+        "dataSetId": -1,
+        "id": "fcn_validatebulkificationflag_1714398668691_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_addbatchandsec_1714398672874_0"
+        ],
+        "content": "Validate bulkification flag"
+      },
+      "fcn_addbatchandsec_1714398672874_0": {
+        "dataSetId": -1,
+        "id": "fcn_addbatchandsec_1714398672874_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_validatetheerrormessage_1714399275035_0"
+        ],
+        "content": "Add $batch and $sec "
+      },
+      "fcn_validatetheerrormessage_1714399275035_0": {
+        "dataSetId": -1,
+        "id": "fcn_validatetheerrormessage_1714399275035_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Validate the error message"
+      },
+      "fcn_validateerrormessagewhentheuserprovideslessthan120seconds_0": {
+        "dataSetId": -1,
+        "id": "fcn_validateerrormessagewhentheuserprovideslessthan120seconds_0",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_searchforaccountidaccountid_1714455371902_0"
+        ],
+        "content": "Validate error message when the user provides less than 120 seconds."
+      },
+      "fcn_searchforaccountidaccountid_1714455371902_0": {
+        "dataSetId": -1,
+        "id": "fcn_searchforaccountidaccountid_1714455371902_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_validatebulkificationflag_1714455375585_0"
+        ],
+        "content": "Search for Account ID $accountid"
+      },
+      "fcn_validatebulkificationflag_1714455375585_0": {
+        "dataSetId": -1,
+        "id": "fcn_validatebulkificationflag_1714455375585_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_addbatchandsec_1714455380282_0"
+        ],
+        "content": "Validate bulkification flag"
+      },
+      "fcn_addbatchandsec_1714455380282_0": {
+        "dataSetId": -1,
+        "id": "fcn_addbatchandsec_1714455380282_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_validatetheerrormessage_1714455389135_0"
+        ],
+        "content": "Add $batch and $sec "
+      },
+      "fcn_validatetheerrormessage_1714455389135_0": {
+        "dataSetId": -1,
+        "id": "fcn_validatetheerrormessage_1714455389135_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Validate the error message"
+      },
+      "fcn_validateerrormessagewhentheuserprovidesmorethan300batchsize_0": {
+        "dataSetId": -1,
+        "id": "fcn_validateerrormessagewhentheuserprovidesmorethan300batchsize_0",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_searchforaccountidaccountid_1714455437233_0"
+        ],
+        "content": "Validate error message when the user provides more than 300 batch size."
+      },
+      "fcn_searchforaccountidaccountid_1714455437233_0": {
+        "dataSetId": -1,
+        "id": "fcn_searchforaccountidaccountid_1714455437233_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_validatebulkificationflag_1714455440517_0"
+        ],
+        "content": "Search for Account ID $accountid"
+      },
+      "fcn_validatebulkificationflag_1714455440517_0": {
+        "dataSetId": -1,
+        "id": "fcn_validatebulkificationflag_1714455440517_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_addbatchandsec_1714455444617_0"
+        ],
+        "content": "Validate bulkification flag"
+      },
+      "fcn_addbatchandsec_1714455444617_0": {
+        "dataSetId": -1,
+        "id": "fcn_addbatchandsec_1714455444617_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_validatetheerrormessage_1714455448267_0"
+        ],
+        "content": "Add $batch and $sec "
+      },
+      "fcn_validatetheerrormessage_1714455448267_0": {
+        "dataSetId": -1,
+        "id": "fcn_validatetheerrormessage_1714455448267_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Validate the error message"
+      },
+      "fcn_validateerrormessagewhentheuserprovidesmorethan1200seconds_0": {
+        "dataSetId": -1,
+        "id": "fcn_validateerrormessagewhentheuserprovidesmorethan1200seconds_0",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_searchforaccountidaccountid_1714455475984_0"
+        ],
+        "content": "Validate error message when the user provides more than 1200 seconds."
+      },
+      "fcn_searchforaccountidaccountid_1714455475984_0": {
+        "dataSetId": -1,
+        "id": "fcn_searchforaccountidaccountid_1714455475984_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_validatebulkificationflag_1714455479418_0"
+        ],
+        "content": "Search for Account ID $accountid"
+      },
+      "fcn_validatebulkificationflag_1714455479418_0": {
+        "dataSetId": -1,
+        "id": "fcn_validatebulkificationflag_1714455479418_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_addbatchandsec_1714455482717_0"
+        ],
+        "content": "Validate bulkification flag"
+      },
+      "fcn_addbatchandsec_1714455482717_0": {
+        "dataSetId": -1,
+        "id": "fcn_addbatchandsec_1714455482717_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_validatetheerrormessage_1714455486451_0"
+        ],
+        "content": "Add $batch and $sec "
+      },
+      "fcn_validatetheerrormessage_1714455486451_0": {
+        "dataSetId": -1,
+        "id": "fcn_validatetheerrormessage_1714455486451_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Validate the error message"
+      },
+      "fcn_addbulkificationvalueas30batchand120sec_0": {
+        "dataSetId": -1,
+        "id": "fcn_addbulkificationvalueas30batchand120sec_0",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_searchforaccountidaccountid_1714467760774_0"
+        ],
+        "content": "Add bulkification value as 30batch and 120sec"
+      },
+      "fcn_searchforaccountidaccountid_1714467760774_0": {
+        "dataSetId": -1,
+        "id": "fcn_searchforaccountidaccountid_1714467760774_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_validatebulkificationflag_1714467763706_0"
+        ],
+        "content": "Search for Account ID $accountid"
+      },
+      "fcn_validatebulkificationflag_1714467763706_0": {
+        "dataSetId": -1,
+        "id": "fcn_validatebulkificationflag_1714467763706_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_addbatchandsec_1714467790307_0"
+        ],
+        "content": "Validate bulkification flag"
+      },
+      "fcn_addbatchandsec_1714467790307_0": {
+        "dataSetId": -1,
+        "id": "fcn_addbatchandsec_1714467790307_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Add $batch and $sec "
+      }
+    },
+    "pathNames": {},
+    "isPrimary": false,
+    "positions": {
+      "fcn_start_0": {
+        "top": 150.0,
+        "left": 500.0
+      },
+      "fcn_zohobulksyncofdeliveryreports_0": {
+        "top": 219.0,
+        "left": 413.0
+      },
+      "fcn_logintoopsportal_1714397758496_0": {
+        "top": 299.0,
+        "left": 413.0
+      },
+      "fcn_validatebulkificationflagshouldbeeditableonops_1714397765362_0": {
+        "top": 364.1484375,
+        "left": 89.0
+      },
+      "fcn_searchforaccountidaccountid_1714397770727_0": {
+        "top": 433.1484375,
+        "left": 89.0
+      },
+      "fcn_validatebulkificationflag_1714397774012_0": {
+        "top": 509.296875,
+        "left": 92.0
+      },
+      "fcn_validateerrormessagewhenuserprovidedalphanumerivalueinbulkification_0": {
+        "top": 361.1484375,
+        "left": 417.0
+      },
+      "fcn_searchforaccountidaccountid_1714397848021_0": {
+        "top": 435.1484375,
+        "left": 411.0
+      },
+      "fcn_validatebulkificationflag_1714397851888_0": {
+        "top": 502.296875,
+        "left": 411.0
+      },
+      "fcn_addemptyvalue_0": {
+        "top": 562.296875,
+        "left": 419.0
+      },
+      "fcn_validatetheerrormessage_1714398364111_0": {
+        "top": 626.296875,
+        "left": 415.0
+      },
+      "fcn_validateerrormessagewhentheuserprovideslessthan30batch_0": {
+        "top": 361.1484375,
+        "left": 697.0
+      },
+      "fcn_searchforaccountidaccountid_1714398665241_0": {
+        "top": 434.1484375,
+        "left": 697.0
+      },
+      "fcn_validatebulkificationflag_1714398668691_0": {
+        "top": 499.296875,
+        "left": 697.0
+      },
+      "fcn_addbatchandsec_1714398672874_0": {
+        "top": 558.296875,
+        "left": 697.0
+      },
+      "fcn_validatetheerrormessage_1714399275035_0": {
+        "top": 628.4453125,
+        "left": 697.0
+      },
+      "fcn_validateerrormessagewhentheuserprovideslessthan120seconds_0": {
+        "top": 361.1484375,
+        "left": 977.0
+      },
+      "fcn_searchforaccountidaccountid_1714455371902_0": {
+        "top": 434.1484375,
+        "left": 977.0
+      },
+      "fcn_validatebulkificationflag_1714455375585_0": {
+        "top": 499.296875,
+        "left": 977.0
+      },
+      "fcn_addbatchandsec_1714455380282_0": {
+        "top": 558.296875,
+        "left": 977.0
+      },
+      "fcn_validatetheerrormessage_1714455389135_0": {
+        "top": 628.4453125,
+        "left": 976.0
+      },
+      "fcn_validateerrormessagewhentheuserprovidesmorethan300batchsize_0": {
+        "top": 361.1484375,
+        "left": 1257.0
+      },
+      "fcn_searchforaccountidaccountid_1714455437233_0": {
+        "top": 434.1484375,
+        "left": 1257.0
+      },
+      "fcn_validatebulkificationflag_1714455440517_0": {
+        "top": 499.296875,
+        "left": 1257.0
+      },
+      "fcn_addbatchandsec_1714455444617_0": {
+        "top": 558.296875,
+        "left": 1257.0
+      },
+      "fcn_validatetheerrormessage_1714455448267_0": {
+        "top": 623.4453125,
+        "left": 1257.0
+      },
+      "fcn_validateerrormessagewhentheuserprovidesmorethan1200seconds_0": {
+        "top": 361.1484375,
+        "left": 1537.0
+      },
+      "fcn_searchforaccountidaccountid_1714455475984_0": {
+        "top": 434.1484375,
+        "left": 1537.0
+      },
+      "fcn_validatebulkificationflag_1714455479418_0": {
+        "top": 499.296875,
+        "left": 1537.0
+      },
+      "fcn_addbatchandsec_1714455482717_0": {
+        "top": 558.296875,
+        "left": 1537.0
+      },
+      "fcn_validatetheerrormessage_1714455486451_0": {
+        "top": 623.4453125,
+        "left": 1537.0
+      },
+      "fcn_addbulkificationvalueas30batchand120sec_0": {
+        "top": 361.1484375,
+        "left": 1817.0
+      },
+      "fcn_searchforaccountidaccountid_1714467760774_0": {
+        "top": 434.1484375,
+        "left": 1817.0
+      },
+      "fcn_validatebulkificationflag_1714467763706_0": {
+        "top": 499.3046375,
+        "left": 1817.0
+      },
+      "fcn_addbatchandsec_1714467790307_0": {
+        "top": 558.296875,
+        "left": 1817.0
+      }
+    },
+    "tags": ""
+  },
+  "enabled": true,
+  "parentId": ""
+}

@@ -1,0 +1,157 @@
+{
+  "modifiedOn": "2024-02-16T07:43:39.603Z",
+  "name": "Start the conversation for Financial Service Survey Flow SMS $financeflowsurvey $basicinfo",
+  "id": "33747",
+  "type": 3,
+  "createdOn": "2024-02-16T07:40:50.036Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Start the conversation for Financial Service Survey Flow SMS $financeflowsurvey $basicinfo",
+    "parameters": [
+      {
+        "parameterId": "financeflowsurvey_",
+        "entityTypeId": "financeflowsurvey",
+        "suffix": ""
+      },
+      {
+        "parameterId": "basicinfo_",
+        "entityTypeId": "basicinfo",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "POST"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "$incomingSMSURLIntelli"
+          }
+        ],
+        "stepType": "REST",
+        "isRawScript": true,
+        "rawScript": "var $request_MFNRzVx0zZ \u003d new RESTRequest();\r\n$request_MFNRzVx0zZ.setURL($incomingSMSURLIntelli);\r\n$request_MFNRzVx0zZ.addToQueryString(\"Message\", \"wmOWYENZHMHm\");\r\n$request_MFNRzVx0zZ.addToQueryString(\"OriginatorAddress\", $basicinfo.source);\r\n$request_MFNRzVx0zZ.addToQueryString(\"DestinationAddress\", $smsSenderIDUsecases);\r\nvar $response_MFNRzVx0zZ \u003d $request_MFNRzVx0zZ.submit(\"POST\");\r\nvar responseBody \u003d JSON.parse($response_MFNRzVx0zZ.getBodyAsString());\r\n\t var $responseBodyObj_MFNRzVx0zZ \u003d $response_MFNRzVx0zZ.getBodyAsString();\r\n\tvar responseType \u003d $response_MFNRzVx0zZ.getHeader(\"Content-Type\");\r\n\tif (responseType.indexOf(\"json\")!\u003d-1) {\r\n\t\t$responseBodyObj_MFNRzVx0zZ \u003d JSON.parse($responseBodyObj_MFNRzVx0zZ);\r\n\t}\r\n\telse if (responseType.indexOf(\"xml\")!\u003d-1) {\r\n\t\t$responseBodyObj_MFNRzVx0zZ \u003d $responseBodyObj_MFNRzVx0zZ.replace(/\u003c\\xml.*?\u003e/g, \u0027\u0027).replace(/\\n/g, \u0027\u0027).replace(/\\r/g, \u0027\u0027);\r\n\t\t$responseBodyObj_MFNRzVx0zZ \u003d new XML(undefined);\r\n\t}\r\n\r\n\t//assertions\r\n\r\n",
+        "state": {
+          "contentType": "json",
+          "request": {
+            "method": "POST",
+            "url": "$incomingSMSURLIntelli",
+            "parameters": [
+              [
+                "Message",
+                "wmOWYENZHMHm"
+              ],
+              [
+                "OriginatorAddress",
+                "$basicinfo.source"
+              ],
+              [
+                "DestinationAddress",
+                "$smsSenderIDUsecases"
+              ]
+            ],
+            "headers": [],
+            "authType": "none",
+            "body": "",
+            "bodyParams": [],
+            "isParametrizedBody": false,
+            "resetCookies": false
+          },
+          "assertions": {
+            "status": [],
+            "header": [],
+            "body": []
+          },
+          "variables": {
+            "status": [],
+            "header": [],
+            "body": []
+          },
+          "authInfo": {}
+        }
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "5000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "POST"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "$incomingSMSURLIntelli"
+          }
+        ],
+        "stepType": "REST",
+        "isRawScript": true,
+        "rawScript": "var $request_fJTHq9FALW \u003d new RESTRequest();\r\n$request_fJTHq9FALW.setURL($incomingSMSURLIntelli);\r\n$request_fJTHq9FALW.addToQueryString(\"Message\", $financeflowsurvey.ctaType);\r\n$request_fJTHq9FALW.addToQueryString(\"OriginatorAddress\", $basicinfo.source);\r\n$request_fJTHq9FALW.addToQueryString(\"DestinationAddress\", $smsSenderIDUsecases);\r\nvar $response_fJTHq9FALW \u003d $request_fJTHq9FALW.submit(\"POST\");\r\nvar responseBody \u003d JSON.parse($response_fJTHq9FALW.getBodyAsString());\r\n\t var $responseBodyObj_fJTHq9FALW \u003d $response_fJTHq9FALW.getBodyAsString();\r\n\tvar responseType \u003d $response_fJTHq9FALW.getHeader(\"Content-Type\");\r\n\tif (responseType.indexOf(\"json\")!\u003d-1) {\r\n\t\t$responseBodyObj_fJTHq9FALW \u003d JSON.parse($responseBodyObj_fJTHq9FALW);\r\n\t}\r\n\telse if (responseType.indexOf(\"xml\")!\u003d-1) {\r\n\t\t$responseBodyObj_fJTHq9FALW \u003d $responseBodyObj_fJTHq9FALW.replace(/\u003c\\xml.*?\u003e/g, \u0027\u0027).replace(/\\n/g, \u0027\u0027).replace(/\\r/g, \u0027\u0027);\r\n\t\t$responseBodyObj_fJTHq9FALW \u003d new XML(undefined);\r\n\t}\r\n\r\n\t//assertions\r\n\r\n",
+        "state": {
+          "contentType": "json",
+          "request": {
+            "method": "POST",
+            "url": "$incomingSMSURLIntelli",
+            "parameters": [
+              [
+                "Message",
+                "$financeflowsurvey.ctaType"
+              ],
+              [
+                "OriginatorAddress",
+                "$basicinfo.source"
+              ],
+              [
+                "DestinationAddress",
+                "$smsSenderIDUsecases"
+              ]
+            ],
+            "headers": [],
+            "authType": "none",
+            "body": "",
+            "bodyParams": [],
+            "isParametrizedBody": false,
+            "resetCookies": false
+          },
+          "assertions": {
+            "status": [],
+            "header": [],
+            "body": []
+          },
+          "variables": {
+            "status": [],
+            "header": [],
+            "body": []
+          },
+          "authInfo": {}
+        }
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "5000"
+          }
+        ],
+        "stepType": "Action"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

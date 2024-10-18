@@ -1,0 +1,106 @@
+{
+  "modifiedOn": "2024-08-12T13:03:26.961Z",
+  "name": "Send a new outgoing message using template Merge Field in an ongoing conversation $template $newcontact",
+  "id": "58797",
+  "type": 3,
+  "createdOn": "2024-08-12T12:58:29.585Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Send a new outgoing message using template Merge Field in an ongoing conversation $template $newcontact",
+    "parameters": [
+      {
+        "parameterId": "template_",
+        "entityTypeId": "template",
+        "suffix": ""
+      },
+      {
+        "parameterId": "newcontact_",
+        "entityTypeId": "newcontact",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"description\")"
+          },
+          {}
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span($template.templateName)"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_textarea(\"textBox\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"Hello ${Contact.Name}, this outgoing message using the temp merge field.\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_button(\"Send\")"
+          },
+          {}
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "3000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "$messageTextWithResolvedField1\u003d\"Hello \"+$newcontact.contactName+\", this outgoing message using the temp merge field.[1]\""
+      },
+      {
+        "commented": false,
+        "action": "_isVisible",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph($messageTextWithResolvedField1)"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Is_True"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

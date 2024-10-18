@@ -1,0 +1,54 @@
+{
+  "modifiedOn": "2024-07-19T05:03:56.282Z",
+  "name": "Go to My Automations and open the flow",
+  "id": "58453",
+  "type": 3,
+  "createdOn": "2024-07-19T05:03:56.282Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Go to My Automations and open the flow",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_submit(\"My Automations\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_cell(0, _near(_tableHeader(\"Automation Name\")))"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"Back\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"Back\""
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

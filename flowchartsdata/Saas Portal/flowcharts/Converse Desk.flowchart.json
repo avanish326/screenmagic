@@ -1,0 +1,581 @@
+{
+  "name": "Converse Desk",
+  "id": "-1",
+  "type": 0,
+  "content": {
+    "nodesMap": {
+      "fcn_start_0": {
+        "id": "fcn_start_0",
+        "content": "Start",
+        "nodeType": "start",
+        "branches": [
+          "fcn_conversedesk_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_conversedesk_0": {
+        "id": "fcn_conversedesk_0",
+        "content": "Converse Desk",
+        "nodeType": "pathlabel",
+        "branches": [
+          "fcn_logintosaasportal_1705997030585_0",
+          "fcn_needtoaddafilewithnameimagejpeginscripts_1723473355684_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_assignconversationtouser_1705996952839_0": {
+        "id": "fcn_assignconversationtouser_1705996952839_0",
+        "content": "Assign Conversation to user",
+        "nodeType": "action",
+        "branches": [
+          "fcn_standarduserinboxvalidationsms_1705996952839_0",
+          "fcn_savecontactnew_1705996952839_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_standarduserinboxvalidationsms_1705996952839_0": {
+        "id": "fcn_standarduserinboxvalidationsms_1705996952839_0",
+        "content": "Standard User Inbox Validation $sms",
+        "nodeType": "action",
+        "branches": [
+          "fcn_sendincomingmessagetousersms_1705996952839_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_sendincomingmessagetousersms_1705996952839_0": {
+        "id": "fcn_sendincomingmessagetousersms_1705996952839_0",
+        "content": "Send Incoming message to user $sms",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checkthemessageinstandarduserinbox_1705996952839_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_checkthemessageinstandarduserinbox_1705996952839_0": {
+        "id": "fcn_checkthemessageinstandarduserinbox_1705996952839_0",
+        "content": "Check the message in Standard user Inbox $sms",
+        "nodeType": "action",
+        "branches": [],
+        "dataSetId": "-1"
+      },
+      "fcn_savecontactnew_1705996952839_0": {
+        "id": "fcn_savecontactnew_1705996952839_0",
+        "content": "Save Contact $new",
+        "nodeType": "action",
+        "branches": [],
+        "dataSetId": "-1"
+      },
+      "fcn_sendincomingmessagetousersms_1705996952839_2": {
+        "id": "fcn_sendincomingmessagetousersms_1705996952839_2",
+        "content": "Send Incoming message to user $sms",
+        "nodeType": "action",
+        "branches": [
+          "fcn_validateunreadconversation_1705996952839_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_validateunreadconversation_1705996952839_0": {
+        "id": "fcn_validateunreadconversation_1705996952839_0",
+        "content": "Validate Unread Conversation",
+        "nodeType": "action",
+        "branches": [],
+        "dataSetId": "-1"
+      },
+      "fcn_searchcontactnewcontact_1705996952839_0": {
+        "id": "fcn_searchcontactnewcontact_1705996952839_0",
+        "content": "Search Contact $newcontact",
+        "nodeType": "action",
+        "branches": [],
+        "dataSetId": "-1"
+      },
+      "fcn_validatethecountofmessage_1705996952839_0": {
+        "id": "fcn_validatethecountofmessage_1705996952839_0",
+        "content": "Validate the count of message",
+        "nodeType": "action",
+        "branches": [],
+        "dataSetId": "-1"
+      },
+      "fcn_logintosaasportal_1705997030585_0": {
+        "id": "fcn_logintosaasportal_1705997030585_0",
+        "content": "login to $saasportal",
+        "nodeType": "action",
+        "branches": [
+          "fcn_sendincomingmessagetousersms_1706161170093_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_logintosaasportal_1706076975000_0": {
+        "id": "fcn_logintosaasportal_1706076975000_0",
+        "content": "login to $saasportal",
+        "nodeType": "action",
+        "branches": [],
+        "dataSetId": "-1"
+      },
+      "fcn_sendincomingmessagetousersms_1706161170093_0": {
+        "id": "fcn_sendincomingmessagetousersms_1706161170093_0",
+        "content": "Send Incoming message to user $sms",
+        "nodeType": "action",
+        "branches": [
+          "fcn_validatereadconversation_1706161170093_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_validatereadconversation_1706161170093_0": {
+        "id": "fcn_validatereadconversation_1706161170093_0",
+        "content": "Validate Read Conversation",
+        "nodeType": "action",
+        "branches": [
+          "fcn_sendincomingmessagetousersms_1706161186229_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_sendincomingmessagetousersms_1706161186229_0": {
+        "id": "fcn_sendincomingmessagetousersms_1706161186229_0",
+        "content": "Send Incoming message to user $sms",
+        "nodeType": "action",
+        "branches": [
+          "fcn_validateunreadconversation_1706161186229_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_validateunreadconversation_1706161186229_0": {
+        "id": "fcn_validateunreadconversation_1706161186229_0",
+        "content": "Validate Unread Conversation",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assignconversationtouser_1706161215299_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_assignconversationtouser_1706161215299_0": {
+        "id": "fcn_assignconversationtouser_1706161215299_0",
+        "content": "Assign Conversation to user",
+        "nodeType": "action",
+        "branches": [
+          "fcn_standarduserinboxvalidationsms_1706161215299_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_standarduserinboxvalidationsms_1706161215299_0": {
+        "id": "fcn_standarduserinboxvalidationsms_1706161215299_0",
+        "content": "Standard User Inbox Validation $sms",
+        "nodeType": "action",
+        "branches": [
+          "fcn_sendincomingmessagetousersms_1706161215299_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_sendincomingmessagetousersms_1706161215299_0": {
+        "id": "fcn_sendincomingmessagetousersms_1706161215299_0",
+        "content": "Send Incoming message to user $sms",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checkthemessageinstandarduserinbox_1706161215299_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_checkthemessageinstandarduserinbox_1706161215299_0": {
+        "id": "fcn_checkthemessageinstandarduserinbox_1706161215299_0",
+        "content": "Check the message in Standard user Inbox $sms",
+        "nodeType": "action",
+        "branches": [],
+        "dataSetId": "-1"
+      },
+      "fcn_logintosaasportal_1723449340082_0": {
+        "id": "fcn_logintosaasportal_1723449340082_0",
+        "content": "login to $saasportal",
+        "nodeType": "action",
+        "branches": [
+          "fcn_sendanewoutgoingmessagetoauserfromconversedesksms_0",
+          "fcn_sentoutgoingmessagewithtemplate_1723462299620_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_sendanewoutgoingmessagetoauserfromconversedesksms_0": {
+        "id": "fcn_sendanewoutgoingmessagetoauserfromconversedesksms_0",
+        "content": "Send a new outgoing message to a user from Converse Desk $sms",
+        "nodeType": "action",
+        "branches": [
+          "fcn_navigatetosentconversationsonconversedesk_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_navigatetosentconversationsonconversedesk_0": {
+        "id": "fcn_navigatetosentconversationsonconversedesk_0",
+        "content": "Navigate to sent conversations On Converse Desk",
+        "nodeType": "action",
+        "branches": [
+          "fcn_validatethesentmessageinsentconversation_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_validatethesentmessageinsentconversation_0": {
+        "id": "fcn_validatethesentmessageinsentconversation_0",
+        "content": "Validate the sent message in Sent conversation $sms",
+        "nodeType": "action",
+        "branches": [
+          "fcn_sendanincomingmessagetoconversationsms_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_sendanewoutgoingmessagetoauserinanongoingsms_0": {
+        "id": "fcn_sendanewoutgoingmessagetoauserinanongoingsms_0",
+        "content": "Send a new outgoing message with Media to a user in an ongoing $sms",
+        "nodeType": "action",
+        "branches": [
+          "fcn_navigatetomessagehistory_1723471662107_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_sentoutgoingmessagewithtemplate_0": {
+        "id": "fcn_sentoutgoingmessagewithtemplate_0",
+        "content": "Sent outgoing message to a new mobile number",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_logintosaasportal_1723449340082_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_sentoutgoingmessagewithtemplate_1723462299620_0": {
+        "id": "fcn_sentoutgoingmessagewithtemplate_1723462299620_0",
+        "content": "Sent outgoing message with Template with Merge Fields to a Contact",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_navigatetocontacts_0",
+          "fcn_templateforbusinesshourstemplate_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_createnewcontact_1723462443431_0": {
+        "id": "fcn_createnewcontact_1723462443431_0",
+        "content": "Create $newcontact",
+        "nodeType": "action",
+        "branches": [
+          "fcn_template12321_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_navigatetomessagetemplate_1723462689022_0": {
+        "id": "fcn_navigatetomessagetemplate_1723462689022_0",
+        "content": "Navigate to message template",
+        "nodeType": "action",
+        "branches": [
+          "fcn_clickoncreatenewinmessagetemplates_1723462689022_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_clickoncreatenewinmessagetemplates_1723462689022_0": {
+        "id": "fcn_clickoncreatenewinmessagetemplates_1723462689022_0",
+        "content": "Click on Create New in Message Templates",
+        "nodeType": "action",
+        "branches": [
+          "fcn_createtemplateoftypeautomation_1723462689022_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_createtemplateoftypeautomation_1723462689022_0": {
+        "id": "fcn_createtemplateoftypeautomation_1723462689022_0",
+        "content": "create $template of type Automation",
+        "nodeType": "action",
+        "branches": [
+          "fcn_navigatetoconversedesk_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_navigatetoconversedesk_0": {
+        "id": "fcn_navigatetoconversedesk_0",
+        "content": "Navigate to Converse Desk",
+        "nodeType": "action",
+        "branches": [
+          "fcn_sendanewoutgoingmessageusingtemplatemergefieldfromconversedesksms_1723462900275_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_sendanewoutgoingmessageusingtemplatemergefieldfromconversedesksms_1723462900275_0": {
+        "id": "fcn_sendanewoutgoingmessageusingtemplatemergefieldfromconversedesksms_1723462900275_0",
+        "content": "Send a new outgoing message using template Merge Field from Converse Desk $sms $newcontact $template",
+        "nodeType": "action",
+        "branches": [
+          "fcn_navigatetosentconversationsonconversedesk_1723466171568_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_template12321_0": {
+        "id": "fcn_template12321_0",
+        "content": "Template12321 $template",
+        "nodeType": "action",
+        "branches": [
+          "fcn_navigatetomessagetemplate_1723462689022_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_navigatetosentconversationsonconversedesk_1723466171568_0": {
+        "id": "fcn_navigatetosentconversationsonconversedesk_1723466171568_0",
+        "content": "Navigate to sent conversations On Converse Desk",
+        "nodeType": "action",
+        "branches": [
+          "fcn_validatethesenttemplatemessageinsentconversationsmsnewcontact_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_validatethesenttemplatemessageinsentconversationsmsnewcontact_0": {
+        "id": "fcn_validatethesenttemplatemessageinsentconversationsmsnewcontact_0",
+        "content": "Validate the sent templatemessage in Sent conversation $sms $newcontact",
+        "nodeType": "action",
+        "branches": [
+          "fcn_sendandvalidateanincomingmessagetoconversationnewcontact_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_sendanincomingmessagetoconversationsms_0": {
+        "id": "fcn_sendanincomingmessagetoconversationsms_0",
+        "content": "Send and validate an incoming message to conversation $sms",
+        "nodeType": "action",
+        "branches": [
+          "fcn_sendanewoutgoingmessagetoauserinanongoingsms_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_sendandvalidateanincomingmessagetoconversationnewcontact_0": {
+        "id": "fcn_sendandvalidateanincomingmessagetoconversationnewcontact_0",
+        "content": "Send and validate an incoming message to conversation $newcontact",
+        "nodeType": "action",
+        "branches": [
+          "fcn_sendanewoutgoingmessageusingtemplatemergefieldinanongoingconversationtemplate_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_sendanewoutgoingmessageusingtemplatemergefieldinanongoingconversationtemplate_0": {
+        "id": "fcn_sendanewoutgoingmessageusingtemplatemergefieldinanongoingconversationtemplate_0",
+        "content": "Send a new outgoing message using template Merge Field in an ongoing conversation $template $newcontact",
+        "nodeType": "action",
+        "branches": [
+          "fcn_navigatetomessagehistory_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_navigatetocontacts_0": {
+        "id": "fcn_navigatetocontacts_0",
+        "content": "Navigate to Contacts",
+        "nodeType": "action",
+        "branches": [
+          "fcn_createnewcontact_1723462443431_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_navigatetomessagehistory_0": {
+        "id": "fcn_navigatetomessagehistory_0",
+        "content": "Navigate to Message History",
+        "nodeType": "action",
+        "branches": [
+          "fcn_validatethemessagesinmessagehistory_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_validatethemessagesinmessagehistory_0": {
+        "id": "fcn_validatethemessagesinmessagehistory_0",
+        "content": "Validate the messages in Message history for template merge fields",
+        "nodeType": "action",
+        "branches": [],
+        "dataSetId": "-1"
+      },
+      "fcn_navigatetomessagehistory_1723471662107_0": {
+        "id": "fcn_navigatetomessagehistory_1723471662107_0",
+        "content": "Navigate to Message History",
+        "nodeType": "action",
+        "branches": [
+          "fcn_validatethemessagesinmessagehistoryforoutgoingmessages_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_validatethemessagesinmessagehistoryforoutgoingmessages_0": {
+        "id": "fcn_validatethemessagesinmessagehistoryforoutgoingmessages_0",
+        "content": "Validate the messages in Message history for outgoing messages $sms",
+        "nodeType": "action",
+        "branches": [],
+        "dataSetId": "-1"
+      },
+      "fcn_needtoaddafilewithnameimagejpeginscripts_1723473355684_0": {
+        "id": "fcn_needtoaddafilewithnameimagejpeginscripts_1723473355684_0",
+        "content": "Need to add a file with name image.jpeg in scripts",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_sentoutgoingmessagewithtemplate_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_templateforbusinesshourstemplate_0": {
+        "id": "fcn_templateforbusinesshourstemplate_0",
+        "content": "Template for Business Hours $template",
+        "nodeType": "action",
+        "branches": [],
+        "dataSetId": "-1"
+      }
+    },
+    "positions": {
+      "fcn_start_0": {
+        "top": 143.96665954589844,
+        "left": 541.9666748046875
+      },
+      "fcn_conversedesk_0": {
+        "top": 215,
+        "left": 179
+      },
+      "fcn_logintosaasportal_1705997030585_0": {
+        "top": 294,
+        "left": 185
+      },
+      "fcn_sendincomingmessagetousersms_1706161170093_0": {
+        "top": 359.1333312988281,
+        "left": 185
+      },
+      "fcn_validatereadconversation_1706161170093_0": {
+        "top": 432.29998779296875,
+        "left": 186.98333740234375
+      },
+      "fcn_sendincomingmessagetousersms_1706161186229_0": {
+        "top": 491.2833251953125,
+        "left": 186.98333740234375
+      },
+      "fcn_validateunreadconversation_1706161186229_0": {
+        "top": 567.433349609375,
+        "left": 186.98333740234375
+      },
+      "fcn_assignconversationtouser_1706161215299_0": {
+        "top": 626.4166870117188,
+        "left": 186.98333740234375
+      },
+      "fcn_standarduserinboxvalidationsms_1706161215299_0": {
+        "top": 689.433349609375,
+        "left": 177.98333740234375
+      },
+      "fcn_sendincomingmessagetousersms_1706161215299_0": {
+        "top": 752.433349609375,
+        "left": 189
+      },
+      "fcn_checkthemessageinstandarduserinbox_1706161215299_0": {
+        "top": 823.5833129882812,
+        "left": 186.98333740234375
+      },
+      "fcn_needtoaddafilewithnameimagejpeginscripts_1723473355684_0": {
+        "top": 275.5500030517578,
+        "left": 470
+      },
+      "fcn_sentoutgoingmessagewithtemplate_0": {
+        "top": 352.53334045410156,
+        "left": 470
+      },
+      "fcn_logintosaasportal_1723449340082_0": {
+        "top": 425.5333251953125,
+        "left": 469
+      },
+      "fcn_sendanewoutgoingmessagetoauserfromconversedesksms_0": {
+        "top": 490.683349609375,
+        "left": 469
+      },
+      "fcn_navigatetosentconversationsonconversedesk_0": {
+        "top": 571.3833312988281,
+        "left": 469
+      },
+      "fcn_validatethesentmessageinsentconversation_0": {
+        "top": 647.5,
+        "left": 469
+      },
+      "fcn_sendanincomingmessagetoconversationsms_0": {
+        "top": 728.2166748046875,
+        "left": 469
+      },
+      "fcn_sendanewoutgoingmessagetoauserinanongoingsms_0": {
+        "top": 815.2166748046875,
+        "left": 468.98333740234375
+      },
+      "fcn_navigatetomessagehistory_1723471662107_0": {
+        "top": 895.9166870117188,
+        "left": 468.98333740234375
+      },
+      "fcn_validatethemessagesinmessagehistoryforoutgoingmessages_0": {
+        "top": 956.4833374023438,
+        "left": 468.98333740234375
+      },
+      "fcn_sentoutgoingmessagewithtemplate_1723462299620_0": {
+        "top": 351.6666717529297,
+        "left": 810.9833374023438
+      },
+      "fcn_navigatetocontacts_0": {
+        "top": 427.76666259765625,
+        "left": 997.9666748046875
+      },
+      "fcn_createnewcontact_1723462443431_0": {
+        "top": 485.183349609375,
+        "left": 997.9666748046875
+      },
+      "fcn_template12321_0": {
+        "top": 551.3333129882812,
+        "left": 997.9666748046875
+      },
+      "fcn_navigatetomessagetemplate_1723462689022_0": {
+        "top": 609.3333129882812,
+        "left": 997.9666748046875
+      },
+      "fcn_clickoncreatenewinmessagetemplates_1723462689022_0": {
+        "top": 667.4500122070312,
+        "left": 998.9666748046875
+      },
+      "fcn_createtemplateoftypeautomation_1723462689022_0": {
+        "top": 741.433349609375,
+        "left": 998.9666748046875
+      },
+      "fcn_navigatetoconversedesk_0": {
+        "top": 806.5833129882812,
+        "left": 998.9666748046875
+      },
+      "fcn_sendanewoutgoingmessageusingtemplatemergefieldfromconversedesksms_1723462900275_0": {
+        "top": 867.13330078125,
+        "left": 998.9666748046875
+      },
+      "fcn_navigatetosentconversationsonconversedesk_1723466171568_0": {
+        "top": 963.4000244140625,
+        "left": 998.9666748046875
+      },
+      "fcn_validatethesenttemplatemessageinsentconversationsmsnewcontact_0": {
+        "top": 1039.5166625976562,
+        "left": 998.9666748046875
+      },
+      "fcn_sendandvalidateanincomingmessagetoconversationnewcontact_0": {
+        "top": 1120.2333374023438,
+        "left": 998.9666748046875
+      },
+      "fcn_sendanewoutgoingmessageusingtemplatemergefieldinanongoingconversationtemplate_0": {
+        "top": 1200.933349609375,
+        "left": 998.9666748046875
+      },
+      "fcn_navigatetomessagehistory_0": {
+        "top": 1297.199951171875,
+        "left": 998.9666748046875
+      },
+      "fcn_validatethemessagesinmessagehistory_0": {
+        "top": 1357.7666015625,
+        "left": 998.9666748046875
+      },
+      "fcn_templateforbusinesshourstemplate_0": {
+        "top": 427.76666259765625,
+        "left": 1277.9666748046875
+      }
+    },
+    "settings": {
+      "maxProceedDepth": 100,
+      "maxProceedsForFirstDepth": 1,
+      "maxProceedsPerDepth": 1,
+      "maxPathRepititionsPerComboPath": 1,
+      "maxProceedsPerPath": 10000,
+      "maxToggles": 2,
+      "maxMatchingPaths": 3
+    },
+    "isPrimary": false,
+    "pathNames": [],
+    "flowChartUID": "fcUID_1723449006136",
+    "pathExecutionOrder": []
+  },
+  "enabled": true,
+  "parentId": ""
+}

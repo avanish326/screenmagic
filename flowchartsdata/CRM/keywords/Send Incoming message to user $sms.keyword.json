@@ -1,0 +1,39 @@
+{
+  "modifiedOn": "2024-01-25T05:33:40.503Z",
+  "name": "Send Incoming message to user $sms",
+  "id": "14608",
+  "type": 3,
+  "createdOn": "2023-09-15T06:19:23.298Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Send Incoming message to user $sms",
+    "parameters": [
+      {
+        "parameterId": "sms_",
+        "entityTypeId": "sms",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "var $GUID\u003dMath.random();\n\n$request \u003d new RESTRequest();\n$request.setURL(\"https://api.txtbox.in/v1/sms/incoming/aerial\");\n$request.setHeader(\"Content-Type\", \"multipart/form-data; boundary\u003d\u003ccalculated when request is sent\u003e\");\n$request.setHeader(\"Content-Length\", \"\u003ccalculated when request is sent\u003e\");\n$request.setHeader(\"Host\", \"\u003ccalculated when request is sent\u003e\");\n$request.setHeader(\"User-Agent\", \"PostmanRuntime/7.32.3\");\n$request.setHeader(\"Accept\", \"*/*\");\n$request.setHeader(\"Accept-Encoding\", \"gzip, deflate, br\");\n$request.setHeader(\"Connection\", \"keep-alive\");\n$request.addToBody(\"source\", 9877888987);\n$request.addToBody(\"messageText\", \"hello ji\");\n$request.addToBody(\"destination\", $destination);\n$request.addToBody(\"connectionGUID\", $GUID);\n$request.addToBody(\"transactionGUID\", $GUID);\n$response \u003d $request.submit(\"POST\");\nvar $responseBody \u003d $response.getBodyAsString();"
+      },
+      {
+        "commented": false,
+        "action": "_isVisible",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"count-span[4]\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Is_False"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

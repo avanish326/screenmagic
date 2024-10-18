@@ -1,0 +1,195 @@
+{
+  "modifiedOn": "2024-03-05T14:38:54.443Z",
+  "name": "API validation for $audience",
+  "id": "43979",
+  "type": 3,
+  "createdOn": "2024-03-05T13:28:50.132Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "API validation for $audience",
+    "parameters": [
+      {
+        "parameterId": "audience_",
+        "entityTypeId": "audience",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "POST"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "$audience.posturl"
+          }
+        ],
+        "stepType": "REST",
+        "isRawScript": true,
+        "rawScript": "var $request_jb6c1Lmyim \u003d new RESTRequest();\r\n$request_jb6c1Lmyim.setURL($audience.posturl);\r\n$request_jb6c1Lmyim.setHeader(\"Content-Type\", \"application/json\");\r\nvar sanitizedBody \u003d eval(\"(\"+\"\" + \"{\" + \"   \\\"field\\\":\\\"\\\"+\\\"\" + escapeString($audience.postfield) + \"\\\"+\\\"\\\",\" + \"    \\\"data_type\\\":\\\"string\\\"\" + \"    \" + \"}\" + \"\" + \"\" + \"\" + \"\"+\")\");\n$request_jb6c1Lmyim.setBody(JSON.stringify(sanitizedBody));\r\nvar $response_jb6c1Lmyim \u003d $request_jb6c1Lmyim.submit(\"POST\");\r\n$responseInsert \u003d $response_jb6c1Lmyim.getBodyAsString();\r\nvar responseBody \u003d JSON.parse($response_jb6c1Lmyim.getBodyAsString());\r\n\t var $responseBodyObj_jb6c1Lmyim \u003d $response_jb6c1Lmyim.getBodyAsString();\r\n\tvar responseType \u003d $response_jb6c1Lmyim.getHeader(\"Content-Type\");\r\n\tif (responseType.indexOf(\"json\")!\u003d-1) {\r\n\t\t$responseBodyObj_jb6c1Lmyim \u003d JSON.parse($responseBodyObj_jb6c1Lmyim);\r\n\t}\r\n\telse if (responseType.indexOf(\"xml\")!\u003d-1) {\r\n\t\t$responseBodyObj_jb6c1Lmyim \u003d $responseBodyObj_jb6c1Lmyim.replace(/\u003c\\xml.*?\u003e/g, \u0027\u0027).replace(/\\n/g, \u0027\u0027).replace(/\\r/g, \u0027\u0027);\r\n\t\t$responseBodyObj_jb6c1Lmyim \u003d new XML(undefined);\r\n\t}\r\n\r\n\t//assertions\r\n\r\n",
+        "state": {
+          "contentType": "json",
+          "request": {
+            "method": "POST",
+            "url": "$audience.posturl",
+            "parameters": [],
+            "headers": [
+              [
+                "Content-Type",
+                "application/json"
+              ]
+            ],
+            "authType": "none",
+            "body": "\n{\n   \"field\":\"\"+$audience.postfield+\"\",\n    \"data_type\":\"string\"\n    \n}\n\n\n\n",
+            "bodyParams": [],
+            "isParametrizedBody": false,
+            "resetCookies": false
+          },
+          "assertions": {
+            "status": [],
+            "header": [],
+            "body": []
+          },
+          "variables": {
+            "status": [],
+            "header": [],
+            "body": []
+          },
+          "authInfo": {},
+          "rawResponseVar": "$responseInsert"
+        }
+      },
+      {
+        "commented": false,
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "GET"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "$audience.geturl"
+          }
+        ],
+        "stepType": "REST",
+        "isRawScript": true,
+        "rawScript": "var $request_5RU1bUJ59z \u003d new RESTRequest();\r\n$request_5RU1bUJ59z.setURL($audience.geturl);\r\n$request_5RU1bUJ59z.setHeader(\"Content-Type\", \"application/json\");\r\nvar $response_5RU1bUJ59z \u003d $request_5RU1bUJ59z.submit(\"GET\");\r\n$getResponse \u003d $response_5RU1bUJ59z.getBodyAsString();\r\nvar responseBody \u003d JSON.parse($response_5RU1bUJ59z.getBodyAsString());\r\n\t var $responseBodyObj_5RU1bUJ59z \u003d $response_5RU1bUJ59z.getBodyAsString();\r\n\tvar responseType \u003d $response_5RU1bUJ59z.getHeader(\"Content-Type\");\r\n\tif (responseType.indexOf(\"json\")!\u003d-1) {\r\n\t\t$responseBodyObj_5RU1bUJ59z \u003d JSON.parse($responseBodyObj_5RU1bUJ59z);\r\n\t}\r\n\telse if (responseType.indexOf(\"xml\")!\u003d-1) {\r\n\t\t$responseBodyObj_5RU1bUJ59z \u003d $responseBodyObj_5RU1bUJ59z.replace(/\u003c\\xml.*?\u003e/g, \u0027\u0027).replace(/\\n/g, \u0027\u0027).replace(/\\r/g, \u0027\u0027);\r\n\t\t$responseBodyObj_5RU1bUJ59z \u003d new XML(undefined);\r\n\t}\r\n\r\n\t//assertions\r\n\r\n",
+        "state": {
+          "contentType": "json",
+          "request": {
+            "method": "GET",
+            "url": "$audience.geturl",
+            "parameters": [],
+            "headers": [
+              [
+                "Content-Type",
+                "application/json"
+              ]
+            ],
+            "authType": "none",
+            "body": "",
+            "bodyParams": [],
+            "isParametrizedBody": false,
+            "resetCookies": false
+          },
+          "assertions": {
+            "status": [],
+            "header": [],
+            "body": []
+          },
+          "variables": {
+            "status": [],
+            "header": [],
+            "body": []
+          },
+          "authInfo": {},
+          "rawResponseVar": "$getResponse"
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "$audience.response"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$responseInsert"
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "$audience.getresponse"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$getResponse"
+        }
+      },
+      {
+        "commented": true,
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "POST"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "https://qa-api.txtbox.in/api/v1/desk/21/properties"
+          }
+        ],
+        "stepType": "REST",
+        "isRawScript": true,
+        "rawScript": "var $request_OvbIhTsUTW \u003d new RESTRequest();\r\n$request_OvbIhTsUTW.setURL(\"https://qa-api.txtbox.in/api/v1/desk/21/properties\");\r\n$request_OvbIhTsUTW.setHeader(\"Content-Type\", \"application/json\");\r\nvar sanitizedBody \u003d eval(\"(\"+\"\" + \"{\" + \"   \\\"field\\\":\\\"usertest\\\",\" + \"    \\\"data_type\\\":\\\"string\\\"\" + \"    \" + \"}\" + \"\" + \"\" + \"\" + \"\"+\")\");\n$request_OvbIhTsUTW.setBody(JSON.stringify(sanitizedBody));\r\nvar $response_OvbIhTsUTW \u003d $request_OvbIhTsUTW.submit(\"POST\");\r\n$responseInsert \u003d $response_OvbIhTsUTW.getBodyAsString();\r\nvar responseBody \u003d JSON.parse($response_OvbIhTsUTW.getBodyAsString());\r\n\t var $responseBodyObj_OvbIhTsUTW \u003d $response_OvbIhTsUTW.getBodyAsString();\r\n\tvar responseType \u003d $response_OvbIhTsUTW.getHeader(\"Content-Type\");\r\n\tif (responseType.indexOf(\"json\")!\u003d-1) {\r\n\t\t$responseBodyObj_OvbIhTsUTW \u003d JSON.parse($responseBodyObj_OvbIhTsUTW);\r\n\t}\r\n\telse if (responseType.indexOf(\"xml\")!\u003d-1) {\r\n\t\t$responseBodyObj_OvbIhTsUTW \u003d $responseBodyObj_OvbIhTsUTW.replace(/\u003c\\xml.*?\u003e/g, \u0027\u0027).replace(/\\n/g, \u0027\u0027).replace(/\\r/g, \u0027\u0027);\r\n\t\t$responseBodyObj_OvbIhTsUTW \u003d new XML(undefined);\r\n\t}\r\n\r\n\t//assertions\r\n\r\n",
+        "state": {
+          "contentType": "json",
+          "request": {
+            "method": "POST",
+            "url": "https://qa-api.txtbox.in/api/v1/desk/21/properties",
+            "parameters": [],
+            "headers": [
+              [
+                "Content-Type",
+                "application/json"
+              ]
+            ],
+            "authType": "none",
+            "body": "\n{\n   \"field\":\"usertest\",\n    \"data_type\":\"string\"\n    \n}\n\n\n\n",
+            "bodyParams": [],
+            "isParametrizedBody": false,
+            "resetCookies": false
+          },
+          "assertions": {
+            "status": [],
+            "header": [],
+            "body": []
+          },
+          "variables": {
+            "status": [],
+            "header": [],
+            "body": []
+          },
+          "authInfo": {},
+          "rawResponseVar": "$responseInsert"
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

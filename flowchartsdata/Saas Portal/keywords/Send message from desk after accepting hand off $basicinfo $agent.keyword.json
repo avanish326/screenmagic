@@ -1,0 +1,65 @@
+{
+  "modifiedOn": "2024-06-27T11:06:23.498Z",
+  "name": "Send message from desk after accepting hand off $basicinfo $agent",
+  "id": "57923",
+  "type": 3,
+  "createdOn": "2024-06-27T11:01:57.306Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Send message from desk after accepting hand off $basicinfo $agent",
+    "parameters": [
+      {
+        "parameterId": "basicinfo_",
+        "entityTypeId": "basicinfo",
+        "suffix": ""
+      },
+      {
+        "parameterId": "agent_",
+        "entityTypeId": "agent",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_textarea(\"textBox\")"
+          },
+          {
+            "parameterId": "agent_",
+            "attributeId": "attr_01693223861357"
+          }
+        ],
+        "stepType": "Action",
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_button(\"Send\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_italic(\"close\")"
+          }
+        ],
+        "stepType": "Action"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

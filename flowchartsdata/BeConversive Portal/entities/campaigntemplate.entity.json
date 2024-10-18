@@ -1,0 +1,128 @@
+{
+  "modifiedOn": "2024-02-08T06:49:35.863Z",
+  "name": "campaigntemplate",
+  "id": "27335",
+  "type": 1,
+  "createdOn": "2024-02-08T06:49:35.863Z",
+  "content": {
+    "default": {
+      "attr_01706071507222": {
+        "name": "result",
+        "accessors": [
+          {
+            "id": "acc0",
+            "name": "Result Input",
+            "accessor": "",
+            "messageAccessor": ""
+          }
+        ],
+        "type": "text",
+        "props": {
+          "include-alphabet": "true",
+          "include-numeric": "true",
+          "include-special": "false"
+        },
+        "invalidData": [],
+        "validData": []
+      },
+      "attr_11706071531465": {
+        "name": "templateName",
+        "accessors": [
+          {
+            "id": "acc0",
+            "name": "Template Name Input",
+            "accessor": "_textbox(\"Enter template name\")",
+            "messageAccessor": ""
+          }
+        ],
+        "type": "text",
+        "props": {
+          "prefix": "Campaign ",
+          "min-length": "2",
+          "max-length": "3",
+          "suffix": " type",
+          "include-alphabet": "true",
+          "include-numeric": "false",
+          "include-special": "false"
+        },
+        "invalidData": [],
+        "validData": []
+      },
+      "attr_21706072988133": {
+        "name": "intrgation",
+        "accessors": [
+          {
+            "id": "acc0",
+            "name": "Intrgation Input",
+            "accessor": "_fltSemantics(\"Hubspot\")",
+            "messageAccessor": ""
+          }
+        ],
+        "type": "list",
+        "props": {
+          "sync-items": [
+            "attr_31706073285259::Contacts"
+          ],
+          "values": {}
+        },
+        "invalidData": [],
+        "validData": []
+      },
+      "attr_31706078030369": {
+        "name": "objects",
+        "accessors": [
+          {
+            "id": "acc0",
+            "name": "Objects Input",
+            "accessor": "_textbox(\"Search\")",
+            "messageAccessor": ""
+          }
+        ],
+        "type": "list",
+        "props": {
+          "sync-with": "attr_21706072988133",
+          "values": {
+            "None": [
+              "Contacts",
+              "Deals"
+            ]
+          }
+        },
+        "invalidData": [],
+        "validData": []
+      },
+      "attr_41706078529855": {
+        "name": "mergeFieldContact",
+        "accessors": [
+          {
+            "id": "acc0",
+            "name": "Merge Field Input",
+            "accessor": "_fltSemantics(\"/flt-semantic-node/\",_under(_fltSemantics(\"/Enter the text for your message/\")))",
+            "messageAccessor": ""
+          }
+        ],
+        "type": "list",
+        "props": {
+          "sync-with": "attr_31706078030369",
+          "sync-items": [
+            "attr_31706078030369::Contacts"
+          ],
+          "values": {
+            "Contacts": [
+              "Company size",
+              "Date of birth",
+              "Day to Close",
+              "Degree",
+              "Field of study"
+            ]
+          }
+        },
+        "invalidData": [],
+        "validData": []
+      }
+    },
+    "specific": []
+  },
+  "enabled": false,
+  "parentId": ""
+}

@@ -1,0 +1,80 @@
+{
+  "modifiedOn": "2024-02-08T06:49:45.524Z",
+  "name": "Add Alpha Sender ID $senderid",
+  "id": "27998",
+  "type": 3,
+  "createdOn": "2024-02-08T06:49:45.524Z",
+  "content": {
+    "title": "Add Alpha Sender ID $senderid",
+    "parameters": [
+      {
+        "parameterId": "senderid_",
+        "entityTypeId": "senderid",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"Add Sender ID\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_textbox(\"Sender ID\")"
+          },
+          {
+            "parameterId": "senderid_",
+            "attributeId": "attr_01696425752004"
+          }
+        ],
+        "stepType": "Action",
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_submit(\"Send Request\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"SenderId Requested successfully\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"SenderId Requested successfully\""
+        }
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "var $alphaSenderIDTest\u003d$senderid.alphaSenderID\n\n_log($alphaSenderIDTest)\n"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

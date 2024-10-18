@@ -1,0 +1,86 @@
+{
+  "modifiedOn": "2024-02-09T11:51:24.427Z",
+  "name": "Create notification messages for $integration",
+  "id": "29198",
+  "type": 3,
+  "createdOn": "2024-02-09T11:51:24.427Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Create notification messages for $integration",
+    "parameters": [
+      {
+        "parameterId": "integration_",
+        "entityTypeId": "integration",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_image(1, _near(_paragraph(\"Notification Messages\")))"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_submit(\"Select Template\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "var $data \u003d _collectAttributes(\"_span\",\"/temp-name/\",\"sahiText\");\nvar $option \u003d $data[_random($data.length-1)];\n_click(_span($option))"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"all-box-alignment\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_textarea(0)"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$immediateTemplateMessage"
+        }
+      },
+      {
+        "commented": false,
+        "action": "_log",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "$immediateTemplateMessage"
+          }
+        ],
+        "stepType": "Action"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

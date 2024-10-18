@@ -1,0 +1,150 @@
+{
+  "modifiedOn": "2024-02-08T06:49:54.217Z",
+  "name": "Assert Message in sf SMS History when we enter mobile with country code $webform $agent $sfagent",
+  "id": "28600",
+  "type": 3,
+  "createdOn": "2024-02-08T06:49:54.217Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Assert Message in sf SMS History when we enter mobile with country code $webform $agent $sfagent",
+    "parameters": [
+      {
+        "parameterId": "webform_",
+        "entityTypeId": "webform",
+        "suffix": ""
+      },
+      {
+        "parameterId": "agent_",
+        "entityTypeId": "agent",
+        "suffix": ""
+      },
+      {
+        "parameterId": "sfagent_",
+        "entityTypeId": "sfagent",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "var $phone\u003d$webform.phoneWithCountryCode;"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"Hey, thank you for reaching out to us. We are happy to assist you. One of our business agents will respond to you shortly. You are now connected with \"+$agentnameCheck+\". Please continue the conversation.\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"Hey, thank you for reaching out to us. We are happy to assist you. One of our business agents will respond to you shortly. You are now connected with \"+$agentnameCheck+\". Please continue the conversation.\""
+        }
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "var $countryCodeVar1\u003d$webform.countryCode;\nvar $countryCodeVar\u003d$countryCodeVar1.split(\"+\")[1].trim()\n_log($countryCodeVar);\n\nvar $phoneNumberNew\u003d$webform.phoneWebForm;\n\nvar $phoneNumberVar\u003d$countryCodeVar+$phoneNumberNew;"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"\"+$phoneNumberVar+\"\", _near(_div(\"Hey, thank you for reaching out to us. We are happy to assist you. One of our business agents will respond to you shortly. You are now connected with \"+$agentnameCheck+\". Please continue the conversation.\")))"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$phoneNumberVar"
+        }
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "var $visitorMessage\u003d$agent.visitorMessage;"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"\"+$visitorMessage+\"\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "parameterId": "agent_",
+          "attributeId": "attr_11693224177770"
+        },
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"\"+$phoneNumberVar+\"\", _near(_div(\"\"+$visitorMessage+\"\")))"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$phoneNumberVar"
+        }
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "var $sfagentMessage\u003d$sfagent.sfagentMessage;"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"\"+$sfagentMessage+\"\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "parameterId": "sfagent_",
+          "attributeId": "attr_01693488220472"
+        },
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"\"+$phoneNumberVar+\"\", _near(_div(\"\"+$sfagentMessage+\"\")))"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$phoneNumberVar"
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

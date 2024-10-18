@@ -1,0 +1,57 @@
+{
+  "modifiedOn": "2024-05-09T13:35:22.775Z",
+  "name": "Is Zoho not Connected ?",
+  "id": "45956",
+  "type": 3,
+  "createdOn": "2024-05-09T13:35:22.775Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Is Zoho not Connected ?",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": true,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"Not-connected\", _near(_paragraph(\"Zoho\")))"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$NotConnectedZoho"
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"Connected\", _near(_paragraph(\"Zoho\")))"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$ConnectedZoho"
+        }
+      },
+      {
+        "commented": false,
+        "action": "return",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "$ConnectedZoho"
+          }
+        ],
+        "stepType": "Action"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}
