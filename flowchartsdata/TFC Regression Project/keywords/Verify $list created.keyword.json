@@ -1,0 +1,172 @@
+{
+  "modifiedOn": "2024-01-22T10:35:47.124384200Z",
+  "name": "Verify $list created",
+  "id": "-1",
+  "type": 3,
+  "createdOn": "2023-12-31T23:36:14Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Verify $list created",
+    "parameters": [
+      {
+        "parameterId": "list_",
+        "entityTypeId": "list",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"Navigate from @base to @address_list\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "3000"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "_isVisible(_table(\"tableStyle1\"))"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_count",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "\"_row\""
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "\"/.*/\""
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "_in(_table(\"tableStyle1\"))"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "2"
+        }
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"Create $address\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "3000"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "_isVisible(_table(\"tableStyle1\"))"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_count",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "\"_row\""
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "\"/.*/\""
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "_in(_table(\"tableStyle1\"))"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "4"
+        }
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"Verify $address details\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "3000"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "_isVisible(_table(\"tableStyle1\"))"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_count",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "\"_row\""
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "\"/.*/\""
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "_in(_table(\"tableStyle1\"))"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "4"
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

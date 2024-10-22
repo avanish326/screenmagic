@@ -1,0 +1,118 @@
+{
+  "modifiedOn": "2024-03-15T06:21:00.344898700Z",
+  "name": "Delete Row",
+  "id": "-1",
+  "type": 0,
+  "createdOn": "2024-01-04T05:27:59Z",
+  "content": {
+    "nodesMap": {
+      "fcn_start_0": {
+        "id": "fcn_start_0",
+        "content": "Start",
+        "nodeType": "start",
+        "branches": [
+          "fcn_deleterow_1704445367496_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_deleterow_1704445367496_0": {
+        "id": "fcn_deleterow_1704445367496_0",
+        "content": "Delete Row",
+        "nodeType": "pathlabel",
+        "branches": [
+          "fcn_row_list_1704445367496_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_row_list_1704445367496_0": {
+        "id": "fcn_row_list_1704445367496_0",
+        "content": "@row_list",
+        "nodeType": "action",
+        "branches": [
+          "fcn_renameexists_1704445367496_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_renameexists_1704445367496_0": {
+        "id": "fcn_renameexists_1704445367496_0",
+        "content": "$rename.exists?",
+        "nodeType": "decision",
+        "branches": [
+          null,
+          "fcn_dodeleterowfromentites_1704445367496_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_dodeleterowfromentites_1704445367496_0": {
+        "id": "fcn_dodeleterowfromentites_1704445367496_0",
+        "content": "Do $delete row from Entites",
+        "nodeType": "action",
+        "branches": [
+          "fcn_dodeleterowfromscreens_1704445367496_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_dodeleterowfromscreens_1704445367496_0": {
+        "id": "fcn_dodeleterowfromscreens_1704445367496_0",
+        "content": "Do $delete row from Screens",
+        "nodeType": "action",
+        "branches": [
+          "fcn_deleteexiststrue_1704445367496_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_deleteexiststrue_1704445367496_0": {
+        "id": "fcn_deleteexiststrue_1704445367496_0",
+        "content": "$delete.exists\u003dtrue",
+        "nodeType": "state",
+        "branches": [],
+        "dataSetId": "-1"
+      }
+    },
+    "positions": {
+      "fcn_start_0": {
+        "top": 185,
+        "left": 869
+      },
+      "fcn_deleterow_1704445367496_0": {
+        "top": 246,
+        "left": 869
+      },
+      "fcn_row_list_1704445367496_0": {
+        "top": 305,
+        "left": 869
+      },
+      "fcn_renameexists_1704445367496_0": {
+        "top": 379.015625,
+        "left": 869
+      },
+      "fcn_dodeleterowfromentites_1704445367496_0": {
+        "top": 459.15625,
+        "left": 869
+      },
+      "fcn_dodeleterowfromscreens_1704445367496_0": {
+        "top": 546.625,
+        "left": 876
+      },
+      "fcn_deleteexiststrue_1704445367496_0": {
+        "top": 619.625,
+        "left": 876
+      }
+    },
+    "settings": {
+      "maxProceedDepth": 100,
+      "maxProceedsForFirstDepth": 1,
+      "maxProceedsPerDepth": 1,
+      "maxPathRepititionsPerComboPath": 1,
+      "maxProceedsPerPath": 10000,
+      "maxToggles": 2,
+      "maxMatchingPaths": 3
+    },
+    "isPrimary": true,
+    "pathNames": [],
+    "flowChartUID": "fcUID_1710483655316",
+    "pathExecutionOrder": []
+  },
+  "enabled": true,
+  "parentId": ""
+}

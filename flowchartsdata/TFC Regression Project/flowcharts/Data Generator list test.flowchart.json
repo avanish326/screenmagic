@@ -1,0 +1,261 @@
+{
+  "modifiedOn": "2024-04-23T09:45:42.100501500Z",
+  "name": "Data Generator list test",
+  "id": "-1",
+  "type": 0,
+  "createdOn": "2024-01-01T22:27:12Z",
+  "content": {
+    "nodesMap": {
+      "fcn_start_0": {
+        "id": "fcn_start_0",
+        "content": "Start",
+        "nodeType": "start",
+        "branches": [
+          "fcn_createaddresslist_1704445405488_0",
+          "fcn_createaddressflow_1704445426519_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_createaddresslist_1704445405488_0": {
+        "id": "fcn_createaddresslist_1704445405488_0",
+        "content": "Create address list",
+        "nodeType": "pathlabel",
+        "branches": [
+          "fcn_address_list_1704445405488_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_address_list_1704445405488_0": {
+        "id": "fcn_address_list_1704445405488_0",
+        "content": "@address_list",
+        "nodeType": "action",
+        "branches": [
+          "fcn_address_flowexists_1704445405488_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_address_flowexists_1704445405488_0": {
+        "id": "fcn_address_flowexists_1704445405488_0",
+        "content": "$address_flow.exists?",
+        "nodeType": "decision",
+        "branches": [
+          null,
+          "fcn_createlist_1704445405488_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_createlist_1704445405488_0": {
+        "id": "fcn_createlist_1704445405488_0",
+        "content": "Create $list",
+        "nodeType": "action",
+        "branches": [
+          "fcn_verifylistcreated_1704445405488_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_verifylistcreated_1704445405488_0": {
+        "id": "fcn_verifylistcreated_1704445405488_0",
+        "content": "Verify $list created",
+        "nodeType": "state",
+        "branches": [
+          "fcn_doquickextract_1704445405488_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_doquickextract_1704445405488_0": {
+        "id": "fcn_doquickextract_1704445405488_0",
+        "content": "Do Quick Extract",
+        "nodeType": "action",
+        "branches": [
+          "fcn_dodatageneratorforlist_1704445405488_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_dodatageneratorforlist_1704445405488_0": {
+        "id": "fcn_dodatageneratorforlist_1704445405488_0",
+        "content": "Do Data Generator for list",
+        "nodeType": "action",
+        "branches": [
+          "fcn_listexiststrue_1704445405488_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_listexiststrue_1704445405488_0": {
+        "id": "fcn_listexiststrue_1704445405488_0",
+        "content": "$list.exists\u003dtrue",
+        "nodeType": "state",
+        "branches": [
+          "fcn_runlistflow_1704445405488_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_runlistflow_1704445405488_0": {
+        "id": "fcn_runlistflow_1704445405488_0",
+        "content": "Run $list flow",
+        "nodeType": "action",
+        "branches": [],
+        "dataSetId": "-1"
+      },
+      "fcn_createaddressflow_1704445426519_0": {
+        "id": "fcn_createaddressflow_1704445426519_0",
+        "content": "Create address flow",
+        "nodeType": "pathlabel",
+        "branches": [
+          "fcn_flows_1704445426519_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_flows_1704445426519_0": {
+        "id": "fcn_flows_1704445426519_0",
+        "content": "@flows",
+        "nodeType": "action",
+        "branches": [
+          "fcn_projectexistsdeleteexists_1704445426519_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_projectexistsdeleteexists_1704445426519_0": {
+        "id": "fcn_projectexistsdeleteexists_1704445426519_0",
+        "content": "//$project.exists?\n$delete.exists?",
+        "nodeType": "decision",
+        "branches": [
+          null,
+          "fcn_createaddress_flow_1704445426519_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_createaddress_flow_1704445426519_0": {
+        "id": "fcn_createaddress_flow_1704445426519_0",
+        "content": "Create $address_flow",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertaddress_flowcreated_1704445426519_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_assertaddress_flowcreated_1704445426519_0": {
+        "id": "fcn_assertaddress_flowcreated_1704445426519_0",
+        "content": "Assert $address_flow Created",
+        "nodeType": "state",
+        "branches": [
+          "fcn_editcreatedaddress_flow_1704445426519_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_editcreatedaddress_flow_1704445426519_0": {
+        "id": "fcn_editcreatedaddress_flow_1704445426519_0",
+        "content": "Edit created $address_flow",
+        "nodeType": "action",
+        "branches": [
+          "fcn_verifyaddress_flowdetails_1704445426519_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_verifyaddress_flowdetails_1704445426519_0": {
+        "id": "fcn_verifyaddress_flowdetails_1704445426519_0",
+        "content": "Verify $address_flow details",
+        "nodeType": "state",
+        "branches": [
+          "fcn_address_flowexiststrue_1704445426519_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_address_flowexiststrue_1704445426519_0": {
+        "id": "fcn_address_flowexiststrue_1704445426519_0",
+        "content": "$address_flow.exists\u003dtrue",
+        "nodeType": "state",
+        "branches": [],
+        "dataSetId": "-1"
+      }
+    },
+    "positions": {
+      "fcn_start_0": {
+        "top": 170,
+        "left": 906
+      },
+      "fcn_createaddresslist_1704445405488_0": {
+        "top": 231,
+        "left": 906
+      },
+      "fcn_address_list_1704445405488_0": {
+        "top": 297.140625,
+        "left": 905
+      },
+      "fcn_address_flowexists_1704445405488_0": {
+        "top": 352.296875,
+        "left": 914
+      },
+      "fcn_createlist_1704445405488_0": {
+        "top": 427.296875,
+        "left": 914
+      },
+      "fcn_verifylistcreated_1704445405488_0": {
+        "top": 507.453125,
+        "left": 914
+      },
+      "fcn_doquickextract_1704445405488_0": {
+        "top": 587.609375,
+        "left": 914
+      },
+      "fcn_dodatageneratorforlist_1704445405488_0": {
+        "top": 646.609375,
+        "left": 914
+      },
+      "fcn_listexiststrue_1704445405488_0": {
+        "top": 727.765625,
+        "left": 914
+      },
+      "fcn_runlistflow_1704445405488_0": {
+        "top": 792.90625,
+        "left": 914
+      },
+      "fcn_createaddressflow_1704445426519_0": {
+        "top": 231,
+        "left": 1186
+      },
+      "fcn_flows_1704445426519_0": {
+        "top": 290,
+        "left": 1186
+      },
+      "fcn_projectexistsdeleteexists_1704445426519_0": {
+        "top": 349,
+        "left": 1191
+      },
+      "fcn_createaddress_flow_1704445426519_0": {
+        "top": 445,
+        "left": 1186
+      },
+      "fcn_assertaddress_flowcreated_1704445426519_0": {
+        "top": 504,
+        "left": 1186
+      },
+      "fcn_editcreatedaddress_flow_1704445426519_0": {
+        "top": 570.140625,
+        "left": 1186
+      },
+      "fcn_verifyaddress_flowdetails_1704445426519_0": {
+        "top": 625,
+        "left": 1186
+      },
+      "fcn_address_flowexiststrue_1704445426519_0": {
+        "top": 690.140625,
+        "left": 1186
+      }
+    },
+    "settings": {
+      "maxProceedDepth": 100,
+      "maxProceedsForFirstDepth": 1,
+      "maxProceedsPerDepth": 1,
+      "maxPathRepititionsPerComboPath": 1,
+      "maxProceedsPerPath": 10000,
+      "maxToggles": 2,
+      "maxMatchingPaths": 3
+    },
+    "isPrimary": true,
+    "pathNames": [],
+    "flowChartUID": "fcUID_1710483666580",
+    "pathExecutionOrder": []
+  },
+  "enabled": true,
+  "parentId": ""
+}

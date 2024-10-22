@@ -1,93 +1,72 @@
 {
-  "modifiedOn": "2024-02-14T09:21:38.391Z",
   "name": "api backend",
-  "id": "29455",
+  "id": "-1",
   "type": 0,
-  "createdOn": "2024-02-14T07:46:58.944Z",
   "content": {
-    "settings": {
-      "maxProceedDepth": 100,
-      "maxProceedsForFirstDepth": 1,
-      "maxProceedsPerDepth": 1,
-      "maxPathRepititionsPerComboPath": 1,
-      "maxProceedsPerPath": 10000,
-      "maxToggles": 2,
-      "maxMatchingPaths": 3
-    },
     "nodesMap": {
       "fcn_start_0": {
-        "dataSetId": -1,
         "id": "fcn_start_0",
+        "content": "Start",
         "nodeType": "start",
         "branches": [
           "fcn_anyticsapi_1707897228486_0"
-        ],
-        "content": "Start"
+        ]
       },
       "fcn_anyticsapi_1707897228486_0": {
-        "dataSetId": -1,
         "id": "fcn_anyticsapi_1707897228486_0",
+        "content": "Anytics API",
         "nodeType": "pathlabel",
         "branches": [
           "fcn_apihit_1707897228486_0"
-        ],
-        "content": "Anytics API"
+        ]
       },
       "fcn_apihit_1707897228486_0": {
-        "dataSetId": -1,
         "id": "fcn_apihit_1707897228486_0",
+        "content": "API HIT",
         "nodeType": "action",
         "branches": [
           "fcn_createzohologin_guided_1707900833737_0"
-        ],
-        "content": "API HIT"
+        ]
       },
       "fcn_createzohologin_guided_1707900833737_0": {
-        "dataSetId": -1,
         "id": "fcn_createzohologin_guided_1707900833737_0",
+        "content": "create $zohologin_guided",
         "nodeType": "action",
         "branches": [
           "fcn_starttheconversationforsmssmsusecases_0"
-        ],
-        "content": "create $zohologin_guided"
+        ]
       },
       "fcn_starttheconversationforsmssmsusecases_0": {
-        "dataSetId": -1,
         "id": "fcn_starttheconversationforsmssmsusecases_0",
+        "content": "Start the Conversation for SMS $smsusecases",
         "nodeType": "action",
         "branches": [
           "fcn_assertmessagesondeskwhenselectsiasmsusecases_0"
-        ],
-        "content": "Start the Conversation for SMS $smsusecases"
+        ]
       },
       "fcn_assertmessagesondeskwhenselectsiasmsusecases_0": {
-        "dataSetId": -1,
         "id": "fcn_assertmessagesondeskwhenselectsiasmsusecases_0",
+        "content": "Assert messages on desk when select SIA $smsusecases",
         "nodeType": "action",
         "branches": [
           "fcn_assertmessagesinsmshistorysmsusecases_0"
-        ],
-        "content": "Assert messages on desk when select SIA $smsusecases"
+        ]
       },
       "fcn_assertmessagesinsmshistorysmsusecases_0": {
-        "dataSetId": -1,
         "id": "fcn_assertmessagesinsmshistorysmsusecases_0",
+        "content": "Assert messages in SMS History $smsusecases",
         "nodeType": "action",
         "branches": [
           "fcn_checkapiaftehitting_0"
-        ],
-        "content": "Assert messages in SMS History $smsusecases"
+        ]
       },
       "fcn_checkapiaftehitting_0": {
-        "dataSetId": -1,
         "id": "fcn_checkapiaftehitting_0",
+        "content": "Check API afte Hitting",
         "nodeType": "action",
-        "branches": [],
-        "content": "Check API afte Hitting"
+        "branches": []
       }
     },
-    "pathNames": {},
-    "isPrimary": true,
     "positions": {
       "fcn_start_0": {
         "top": 150.0,
@@ -118,10 +97,23 @@
         "left": 433.0
       },
       "fcn_checkapiaftehitting_0": {
-        "top": 626.6015125,
-        "left": 433.0
+        "top": 621.59375,
+        "left": 649.0
       }
-    }
+    },
+    "settings": {
+      "maxProceedDepth": 100,
+      "maxProceedsForFirstDepth": 1,
+      "maxProceedsPerDepth": 1,
+      "maxPathRepititionsPerComboPath": 1,
+      "maxProceedsPerPath": 10000,
+      "maxToggles": 2,
+      "maxMatchingPaths": 3
+    },
+    "isPrimary": true,
+    "pathNames": [],
+    "flowChartUID": "fcUID_apibackend_0",
+    "pathExecutionOrder": []
   },
   "enabled": true,
   "parentId": ""

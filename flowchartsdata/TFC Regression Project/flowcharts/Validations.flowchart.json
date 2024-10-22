@@ -1,0 +1,118 @@
+{
+  "modifiedOn": "2024-03-15T06:20:45.126682600Z",
+  "name": "Validations",
+  "id": "-1",
+  "type": 0,
+  "createdOn": "2024-01-04T05:26:47Z",
+  "content": {
+    "nodesMap": {
+      "fcn_start_0": {
+        "id": "fcn_start_0",
+        "content": "Start",
+        "nodeType": "start",
+        "branches": [
+          "fcn_createvalidations_1704445309464_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_createvalidations_1704445309464_0": {
+        "id": "fcn_createvalidations_1704445309464_0",
+        "content": "Create validations",
+        "nodeType": "pathlabel",
+        "branches": [
+          "fcn_validations_list_1704445309464_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_validations_list_1704445309464_0": {
+        "id": "fcn_validations_list_1704445309464_0",
+        "content": "@validations_list",
+        "nodeType": "action",
+        "branches": [
+          "fcn_datageneratorexists_1704445309464_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_datageneratorexists_1704445309464_0": {
+        "id": "fcn_datageneratorexists_1704445309464_0",
+        "content": "$datagenerator.exists?",
+        "nodeType": "decision",
+        "branches": [
+          null,
+          "fcn_editvalidations_1704445309464_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_editvalidations_1704445309464_0": {
+        "id": "fcn_editvalidations_1704445309464_0",
+        "content": "Edit $validations",
+        "nodeType": "action",
+        "branches": [
+          "fcn_verifyvalidationsdetails_1704445309464_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_verifyvalidationsdetails_1704445309464_0": {
+        "id": "fcn_verifyvalidationsdetails_1704445309464_0",
+        "content": "Verify $validations details",
+        "nodeType": "state",
+        "branches": [
+          "fcn_validationsexiststrue_1704445309464_0"
+        ],
+        "dataSetId": "-1"
+      },
+      "fcn_validationsexiststrue_1704445309464_0": {
+        "id": "fcn_validationsexiststrue_1704445309464_0",
+        "content": "$validations.exists\u003dtrue",
+        "nodeType": "state",
+        "branches": [],
+        "dataSetId": "-1"
+      }
+    },
+    "positions": {
+      "fcn_start_0": {
+        "top": 151,
+        "left": 726
+      },
+      "fcn_createvalidations_1704445309464_0": {
+        "top": 224,
+        "left": 726
+      },
+      "fcn_validations_list_1704445309464_0": {
+        "top": 295.140625,
+        "left": 726
+      },
+      "fcn_datageneratorexists_1704445309464_0": {
+        "top": 369.15625,
+        "left": 726
+      },
+      "fcn_editvalidations_1704445309464_0": {
+        "top": 449.296875,
+        "left": 726
+      },
+      "fcn_verifyvalidationsdetails_1704445309464_0": {
+        "top": 529.453125,
+        "left": 726
+      },
+      "fcn_validationsexiststrue_1704445309464_0": {
+        "top": 594.765625,
+        "left": 726
+      }
+    },
+    "settings": {
+      "maxProceedDepth": 100,
+      "maxProceedsForFirstDepth": 1,
+      "maxProceedsPerDepth": 1,
+      "maxPathRepititionsPerComboPath": 1,
+      "maxProceedsPerPath": 10000,
+      "maxToggles": 2,
+      "maxMatchingPaths": 3
+    },
+    "isPrimary": true,
+    "pathNames": [],
+    "flowChartUID": "fcUID_1710483594347",
+    "pathExecutionOrder": []
+  },
+  "enabled": true,
+  "parentId": ""
+}

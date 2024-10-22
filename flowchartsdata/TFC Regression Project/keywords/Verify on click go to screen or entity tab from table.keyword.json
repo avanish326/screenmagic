@@ -1,0 +1,166 @@
+{
+  "modifiedOn": "2024-04-23T09:49:43.435471800Z",
+  "name": "Verify on click go to screen or entity tab from table",
+  "id": "-1",
+  "type": 3,
+  "createdOn": "2024-01-02T06:12:07Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Verify on click go to screen or entity tab from table",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_div(\"closeX\", _in(_div(\"editArtifactDialogHandle\")))"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_bold(\"/1. Register User/\")"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_submit(\"smallbtn check\", _rightOf(_bold(\"/user/\", _in(_div(\"tableSection\")))))"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "3000"
+          },
+          {
+            "paramMode": "code",
+            "customValue": "_isVisible(_select(\"entityList\"))"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getSelectedText",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_select(\"entityList\")"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "paramMode": "code",
+          "customValue": "\"$user\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_div(\"Keywords\")"
+          }
+        ],
+        "stepType": "Action",
+        "stepCategory": "inbuilt"
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "3000"
+          },
+          {
+            "paramMode": "code",
+            "customValue": "_isVisible(_bold(\"/1. Register User/\"))"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_bold(\"/1. Register User/\")"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_submit(\"smallbtn check\", _rightOf(_div(\"/@registration/\", _in(_div(\"screenSection\")))))"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "3000"
+          },
+          {
+            "paramMode": "code",
+            "customValue": "_isVisible(_bold(\"Screen: @registration\"))"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_isVisible",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_bold(\"Screen: @registration\")"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Assert",
+        "assertType": "Is_True"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}
