@@ -1,0 +1,137 @@
+{
+  "name": "Navigate from @base to @register",
+  "id": "-1",
+  "type": 3,
+  "content": {
+    "isSystemKeyword": true,
+    "title": "Navigate from @base to @register",
+    "specific": [],
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_navigateTo",
+        "stepParameters": [
+          {
+            "paramMode": "string",
+            "customValue": "http://amit/opencart/"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_submit(\"Language\")"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_button(\"English\")"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": [
+          {
+            "filterId": "flt_ischineselang_true_0",
+            "overrides": {
+              "step": {
+                "commented": false,
+                "action": "_click",
+                "stepParameters": [
+                  {
+                    "paramMode": "code",
+                    "customValue": "_button(\"Chinese\")"
+                  }
+                ],
+                "stepCategory": "inbuilt",
+                "stepType": "Action",
+                "specific": []
+              }
+            }
+          }
+        ]
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_link(\"My Account\")"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": [
+          {
+            "filterId": "flt_ischineselang_true_0",
+            "overrides": {
+              "step": {
+                "commented": false,
+                "action": "_click",
+                "stepParameters": [
+                  {
+                    "paramMode": "code",
+                    "customValue": "_link(\"会员中心\")"
+                  }
+                ],
+                "stepCategory": "inbuilt",
+                "stepType": "Action",
+                "specific": []
+              }
+            }
+          }
+        ]
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_link(\"Register\")"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": [
+          {
+            "filterId": "flt_ischineselang_true_0",
+            "overrides": {
+              "step": {
+                "commented": false,
+                "action": "_click",
+                "stepParameters": [
+                  {
+                    "paramMode": "code",
+                    "customValue": "_link(\"会员注册\")"
+                  }
+                ],
+                "stepCategory": "inbuilt",
+                "stepType": "Action",
+                "specific": []
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

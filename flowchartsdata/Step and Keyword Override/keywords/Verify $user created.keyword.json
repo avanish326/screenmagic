@@ -1,0 +1,58 @@
+{
+  "name": "Verify $user created",
+  "id": "-1",
+  "type": 3,
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Verify $user created",
+    "specific": [
+      {
+        "filterId": "flt_ischineselang_true_0",
+        "overrides": {
+          "steps": [
+            {
+              "commented": false,
+              "action": "_exists",
+              "stepParameters": [
+                {
+                  "paramMode": "code",
+                  "customValue": "_heading1(\"您的账户已建立！\")"
+                }
+              ],
+              "stepCategory": "inbuilt",
+              "stepType": "Assert",
+              "assertType": "Is_True",
+              "specific": []
+            }
+          ]
+        },
+        "enabled": true
+      }
+    ],
+    "parameters": [
+      {
+        "parameterId": "user_",
+        "entityTypeId": "user",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_exists",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_heading1(\"Your Account Has Been Created!\")"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Assert",
+        "assertType": "Is_True",
+        "specific": []
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}
