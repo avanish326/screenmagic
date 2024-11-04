@@ -1,33 +1,26 @@
 {
-  "name": "Create $address from win",
+  "name": "Login $user",
   "id": "-1",
   "type": 3,
   "content": {
     "isSystemKeyword": false,
-    "title": "Create $address from win",
+    "title": "Login $user",
     "specific": [],
     "parameters": [
       {
-        "parameterId": "address_",
-        "entityTypeId": "address",
+        "parameterId": "user_",
+        "entityTypeId": "user",
         "suffix": ""
       }
     ],
     "steps": [
       {
         "commented": false,
-        "action": "_setSelected",
+        "action": "_click",
         "stepParameters": [
           {
-            "paramMode": "default",
-            "parameterId": "address_",
-            "attributeId": "attr_country_0",
-            "accessorId": "acc_select_country"
-          },
-          {
-            "paramMode": "default",
-            "parameterId": "address_",
-            "attributeId": "attr_country_0"
+            "paramMode": "code",
+            "customValue": "_link(\"Login[1]\")"
           }
         ],
         "stepCategory": "inbuilt",
@@ -36,18 +29,18 @@
       },
       {
         "commented": false,
-        "action": "_setSelected",
+        "action": "_setValue",
         "stepParameters": [
           {
             "paramMode": "default",
-            "parameterId": "address_",
-            "attributeId": "attr_state_1",
-            "accessorId": "acc_select_state"
+            "parameterId": "user_",
+            "attributeId": "attr_email_2",
+            "accessorId": "acc_textbox_email"
           },
           {
             "paramMode": "default",
-            "parameterId": "address_",
-            "attributeId": "attr_state_1"
+            "parameterId": "user_",
+            "attributeId": "attr_email_2"
           }
         ],
         "stepCategory": "inbuilt",
@@ -56,18 +49,32 @@
       },
       {
         "commented": false,
-        "action": "_setSelected",
+        "action": "_setPassword",
         "stepParameters": [
           {
             "paramMode": "default",
-            "parameterId": "address_",
-            "attributeId": "attr_city_2",
-            "accessorId": "acc_select_city"
+            "parameterId": "user_",
+            "attributeId": "attr_password_4",
+            "accessorId": "acc_password_password"
           },
           {
             "paramMode": "default",
-            "parameterId": "address_",
-            "attributeId": "attr_city_2"
+            "parameterId": "user_",
+            "attributeId": "attr_password_4"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "default",
+            "screenId": "login",
+            "accessorId": "acc_submit_login"
           }
         ],
         "stepCategory": "inbuilt",
