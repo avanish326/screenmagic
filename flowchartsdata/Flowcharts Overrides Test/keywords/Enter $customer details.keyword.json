@@ -1,0 +1,74 @@
+{
+  "name": "Enter $customer details",
+  "id": "-1",
+  "type": 3,
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Enter $customer details",
+    "specific": [],
+    "parameters": [
+      {
+        "parameterId": "customer_",
+        "entityTypeId": "customer",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_selectDomain",
+        "stepParameters": [
+          {
+            "paramMode": "string",
+            "customValue": "orders.sahipro.com"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "paramMode": "default",
+            "parameterId": "customer_",
+            "attributeId": "attr_email_0",
+            "accessorId": "acc_textbox_order_user_email"
+          },
+          {
+            "paramMode": "default",
+            "parameterId": "customer_",
+            "attributeId": "attr_email_0"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_setSelected",
+        "stepParameters": [
+          {
+            "paramMode": "default",
+            "parameterId": "customer_",
+            "attributeId": "attr_country_1",
+            "accessorId": "acc_select_order_user_country"
+          },
+          {
+            "paramMode": "default",
+            "parameterId": "customer_",
+            "attributeId": "attr_country_1"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

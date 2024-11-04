@@ -1,0 +1,102 @@
+{
+  "name": "Verify $user created",
+  "id": "-1",
+  "type": 3,
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Verify $user created",
+    "specific": [
+      {
+        "filterId": "flt_ischineselang_true_0",
+        "overrides": {
+          "steps": [
+            {
+              "commented": false,
+              "action": "_exists",
+              "stepParameters": [
+                {
+                  "paramMode": "default",
+                  "screenId": "register",
+                  "accessorId": "acc_heading1_您的账户已建立"
+                }
+              ],
+              "stepCategory": "inbuilt",
+              "stepType": "Assert",
+              "assertType": "Is_True",
+              "specific": []
+            },
+            {
+              "commented": false,
+              "action": "_getText",
+              "stepParameters": [
+                {
+                  "paramMode": "default",
+                  "screenId": "register",
+                  "accessorId": "acc_paragraph_1"
+                }
+              ],
+              "stepCategory": "inbuilt",
+              "stepType": "Assert",
+              "assertType": "Equals",
+              "secondaryParam": {
+                "paramMode": "string",
+                "customValue": "恭喜，您的账户已创建成功！"
+              },
+              "specific": []
+            }
+          ]
+        },
+        "enabled": true
+      }
+    ],
+    "parameters": [
+      {
+        "parameterId": "user_",
+        "entityTypeId": "user",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "paramMode": "default",
+            "screenId": "register",
+            "accessorId": "acc_heading1_0"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "paramMode": "string",
+          "customValue": "Your Account Has Been Created!"
+        },
+        "specific": []
+      },
+      {
+        "commented": true,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "paramMode": "default",
+            "screenId": "register",
+            "accessorId": "acc_paragraph_1"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "paramMode": "string",
+          "customValue": "Congratulations! Your new account has been successfully created!"
+        },
+        "specific": []
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

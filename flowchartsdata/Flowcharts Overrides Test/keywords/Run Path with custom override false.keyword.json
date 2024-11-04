@@ -1,0 +1,78 @@
+{
+  "name": "Run Path with custom override false",
+  "id": "-1",
+  "type": 3,
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Run Path with custom override false",
+    "specific": [],
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_div(\"advanceRunSettings\")"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_isVisible",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_textarea(\"extraParameters\")"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Assert",
+        "assertType": "Is_True",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_textarea(\"extraParameters\")"
+          },
+          {
+            "paramMode": "string",
+            "customValue": "_isChineseLang\u003dfalse"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_submit(\"Run\", _in(_div(\"runSettingsDialog\")))"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "if(_exists(_span(\"Verify $user created\", _in(_div(\"cbsummary cpath path-exists\"))))) {\n\tfor(var $i\u003d0; $i\u003c12; $i++){\n\t\tvar $color \u003d _style(_span(\"Verify $user created\", _in(_div(\"cbsummary cpath path-exists\"))), \"color\");\n\t\t_log(\"Keyword Color : \" + $color, \"CUSTOM4\");\n\t\tif($color \u003d\u003d \"rgb(0, 100, 0)\") {\n\t\t\t_log(\"Inside if block\");\n\t\t\tbreak;\n\t\t} else {\n\t\t\t_log(\"Inside else block\");\n\t\t\t_wait(5000);\n\t\t}\n\t}\n} else {\n\t_wait(10000);\n}",
+        "specific": []
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

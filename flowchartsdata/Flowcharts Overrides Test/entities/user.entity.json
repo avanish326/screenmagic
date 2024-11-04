@@ -1,0 +1,316 @@
+{
+  "name": "user",
+  "id": "-1",
+  "type": 1,
+  "content": {
+    "default": {
+      "attr_firstname_0": {
+        "name": "firstname",
+        "accessors": [
+          {
+            "id": "acc_textbox_firstname",
+            "name": "Firstname Input",
+            "accessor": "_textbox(\"firstname\")",
+            "messageAccessor": "_div(\"text-danger\", _in(_div(\"/First Name First Name/\")))"
+          }
+        ],
+        "type": "text",
+        "props": {
+          "prefix": "English",
+          "min-length": "0",
+          "max-length": "0"
+        },
+        "invalidData": [
+          {
+            "value": "",
+            "message": "First Name must be between 1 and 32 characters!",
+            "comment": ""
+          },
+          {
+            "value": "Maximiliana-Alexandrianna-Charlemagne",
+            "message": "First Name must be between 1 and 32 characters!",
+            "comment": ""
+          }
+        ],
+        "validData": [
+          {
+            "value": "Custom Override False Firstname",
+            "comment": ""
+          }
+        ],
+        "specific": [
+          {
+            "filterId": "flt_ischineselang_true_0",
+            "overrides": {
+              "name": "firstname",
+              "accessors": [
+                {
+                  "id": "acc_textbox_firstname",
+                  "name": "Firstname Input",
+                  "accessor": "_textbox(\"名字\")",
+                  "messageAccessor": "_div(\"text-danger\", _in(_div(\"/名字/\")))"
+                }
+              ],
+              "type": "text",
+              "props": {
+                "prefix": "Chinese",
+                "min-length": "0",
+                "max-length": "0",
+                "include-alphabet": "true",
+                "include-numeric": "true",
+                "include-special": "false",
+                "add-timestamp": "false"
+              },
+              "invalidData": [
+                {
+                  "value": "",
+                  "message": "名称必须介于 1 到 32 个字符之间 ！",
+                  "comment": ""
+                },
+                {
+                  "value": "Ruì\u0027ān Tiānyǔ Xīnghǎi Mèng Cuǐcàn Guānghuī",
+                  "message": "名称必须介于 1 到 32 个字符之间 ！",
+                  "comment": ""
+                }
+              ],
+              "validData": [
+                {
+                  "value": "Custom Override True Firstname",
+                  "comment": ""
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "attr_lastname_1": {
+        "name": "lastname",
+        "accessors": [
+          {
+            "id": "acc_textbox_lastname",
+            "name": "Lastname Input",
+            "accessor": "_textbox(\"lastname\")",
+            "messageAccessor": "_div(\"text-danger\", _in(_div(\"/Last Name Last Name/\")))"
+          }
+        ],
+        "type": "text",
+        "props": {
+          "prefix": "Language",
+          "min-length": "0",
+          "max-length": "0"
+        },
+        "invalidData": [
+          {
+            "value": "",
+            "message": "Last Name must be between 1 and 32 characters!",
+            "comment": ""
+          },
+          {
+            "value": "Smith-Jones-Williams-McDonald-Patterson",
+            "message": "Last Name must be between 1 and 32 characters!",
+            "comment": ""
+          }
+        ],
+        "validData": [
+          {
+            "value": "Custom Override False Lastname",
+            "comment": ""
+          }
+        ],
+        "specific": [
+          {
+            "filterId": "flt_ischineselang_true_0",
+            "overrides": {
+              "name": "lastname",
+              "accessors": [
+                {
+                  "id": "acc_textbox_lastname",
+                  "name": "Lastname Input",
+                  "accessor": "_textbox(\"姓氏\")",
+                  "messageAccessor": "_div(\"text-danger\", _in(_div(\"/姓氏 姓氏必须介于/\")))"
+                }
+              ],
+              "type": "text",
+              "props": {
+                "prefix": "Simplified",
+                "min-length": "0",
+                "max-length": "0",
+                "include-alphabet": "true",
+                "include-numeric": "true",
+                "include-special": "false",
+                "add-timestamp": "false"
+              },
+              "invalidData": [
+                {
+                  "value": "",
+                  "message": "姓氏必须介于 1 到 32 个字符之间 ！",
+                  "comment": ""
+                },
+                {
+                  "value": "Zhǎngjiǔ Huīhuáng Ānníng Héxié Tiānxià",
+                  "message": "姓氏必须介于 1 到 32 个字符之间 ！",
+                  "comment": ""
+                }
+              ],
+              "validData": [
+                {
+                  "value": "Custom Override True Lastname",
+                  "comment": ""
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "attr_email_2": {
+        "name": "email",
+        "accessors": [
+          {
+            "id": "acc_emailbox_email",
+            "name": "Email Input",
+            "accessor": "_emailbox(\"email\")",
+            "messageAccessor": "_div(\"text-danger\", _in(_div(\"/E-Mail E-Mail/\")))"
+          }
+        ],
+        "type": "email",
+        "props": {
+          "names": [
+            "english.lang"
+          ],
+          "domains": [
+            "example.com"
+          ],
+          "add-timestamp": "true"
+        },
+        "invalidData": [
+          {
+            "value": "",
+            "message": "E-Mail Address does not appear to be valid!",
+            "comment": ""
+          },
+          {
+            "value": "english@example",
+            "message": "E-Mail Address does not appear to be valid!",
+            "comment": ""
+          }
+        ],
+        "validData": [],
+        "specific": [
+          {
+            "filterId": "flt_ischineselang_true_0",
+            "overrides": {
+              "name": "email",
+              "accessors": [
+                {
+                  "id": "acc_emailbox_email",
+                  "name": "Email Input",
+                  "accessor": "_emailbox(\"电子邮箱\")",
+                  "messageAccessor": "_div(\"text-danger\", _in(_div(\"/电子邮箱/\")))"
+                }
+              ],
+              "type": "email",
+              "props": {
+                "names": [
+                  "chinese.lang"
+                ],
+                "domains": [
+                  "example.com"
+                ],
+                "add-timestamp": "true"
+              },
+              "invalidData": [
+                {
+                  "value": "",
+                  "message": "无效的邮箱地址！",
+                  "comment": ""
+                },
+                {
+                  "value": "chinese@example",
+                  "message": "无效的邮箱地址！",
+                  "comment": ""
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "attr_phone_3": {
+        "name": "phone",
+        "accessors": [
+          {
+            "id": "acc_telephonebox_telephone",
+            "name": "Phone Input",
+            "accessor": "_telephonebox(\"telephone\")",
+            "messageAccessor": ""
+          }
+        ],
+        "type": "number",
+        "props": {
+          "min": "9900099000",
+          "max": "9900099000"
+        },
+        "invalidData": [],
+        "validData": [
+          {
+            "value": "9900099002",
+            "comment": ""
+          }
+        ],
+        "specific": [
+          {
+            "filterId": "flt_ischineselang_true_0",
+            "overrides": {
+              "name": "phone",
+              "accessors": [
+                {
+                  "id": "acc_telephonebox_telephone",
+                  "name": "Phone Input",
+                  "accessor": "_telephonebox(\"联系电话\")",
+                  "messageAccessor": ""
+                }
+              ],
+              "type": "number",
+              "props": {
+                "min": "9900099001",
+                "max": "9900099001"
+              },
+              "validData": [
+                {
+                  "value": "9900099003",
+                  "comment": ""
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "attr_password_4": {
+        "name": "password",
+        "accessors": [
+          {
+            "id": "acc_password_password",
+            "name": "Password Input",
+            "accessor": "_password(\"password\")",
+            "messageAccessor": ""
+          },
+          {
+            "id": "acc_password_confirm",
+            "name": "Confirm Input",
+            "accessor": "_password(\"confirm\")",
+            "messageAccessor": ""
+          }
+        ],
+        "type": "simpletext",
+        "props": {
+          "text": "English123",
+          "is-password": "true"
+        },
+        "invalidData": [],
+        "validData": [],
+        "specific": []
+      }
+    }
+  },
+  "enabled": false,
+  "parentId": ""
+}

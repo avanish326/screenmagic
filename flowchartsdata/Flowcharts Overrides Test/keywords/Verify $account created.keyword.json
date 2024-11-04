@@ -1,0 +1,108 @@
+{
+  "name": "Verify $account created",
+  "id": "-1",
+  "type": 3,
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Verify $account created",
+    "specific": [],
+    "parameters": [
+      {
+        "parameterId": "account_",
+        "entityTypeId": "account",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "paramMode": "default",
+            "screenId": "registration",
+            "accessorId": "acc_heading1_0"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "paramMode": "string",
+          "customValue": "Your Account Has Been Created!"
+        },
+        "specific": [
+          {
+            "filterId": "flt_account_createbyadmin_true_0",
+            "overrides": {
+              "step": {
+                "commented": true,
+                "action": "_getText",
+                "stepParameters": [
+                  {
+                    "paramMode": "default",
+                    "screenId": "registration",
+                    "accessorId": "acc_heading1_0"
+                  }
+                ],
+                "stepCategory": "inbuilt",
+                "stepType": "Assert",
+                "assertType": "Equals",
+                "secondaryParam": {
+                  "paramMode": "string",
+                  "customValue": "Your Account Has Been Created!"
+                },
+                "specific": []
+              }
+            }
+          }
+        ]
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "paramMode": "default",
+            "screenId": "registration",
+            "accessorId": "acc_paragraph_1"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "paramMode": "string",
+          "customValue": "Congratulations! Your new account has been successfully created!"
+        },
+        "specific": [
+          {
+            "filterId": "flt_account_createbyadmin_true_0",
+            "overrides": {
+              "step": {
+                "commented": false,
+                "action": "_getText",
+                "stepParameters": [
+                  {
+                    "paramMode": "code",
+                    "customValue": "_div(\"alert alert-success alert-dismissible\")"
+                  }
+                ],
+                "stepCategory": "inbuilt",
+                "stepType": "Assert",
+                "assertType": "Equals",
+                "secondaryParam": {
+                  "paramMode": "string",
+                  "customValue": "Success: You have modified customers! ×"
+                },
+                "specific": []
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

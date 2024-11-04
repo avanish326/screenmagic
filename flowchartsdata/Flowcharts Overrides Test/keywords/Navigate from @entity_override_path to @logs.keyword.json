@@ -1,0 +1,69 @@
+{
+  "name": "Navigate from @entity_override_path to @logs",
+  "id": "0",
+  "type": 3,
+  "content": {
+    "isSystemKeyword": true,
+    "title": "Navigate from @entity_override_path to @logs",
+    "specific": [],
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_setStrictVisibilityCheck",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "true"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_navigateTo",
+        "stepParameters": [
+          {
+            "paramMode": "string",
+            "customValue": "http://localhost.sahitest.com:9999/_s_/dyn/pro/DBReports"
+          },
+          {
+            "paramMode": "code",
+            "customValue": "true"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "var $status \u003d _getText(_span(\"/status/\", _in(_parentNode(_link(\"link-1\"), \"TR\", 1))));\n\nfor(var $i\u003d0; $i\u003c\u003d15; $i++){\n\tif($status \u003d\u003d \"running\"){\n\t\t_wait(5000);\n\t\t_call(location.reload());\n\t}else{\n\t\tbreak;\n\t}\n\t$status \u003d _getText(_span(\"/status/\", _in(_parentNode(_link(\"link-1\"), \"TR\", 1))));\n}",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_link(\"link-1\")"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "paramMode": "string",
+          "customValue": "Register User - Custom Override Run P0_Override Sample Flow"
+        },
+        "specific": []
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}
