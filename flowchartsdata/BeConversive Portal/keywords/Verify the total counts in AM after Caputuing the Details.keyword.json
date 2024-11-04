@@ -1,0 +1,74 @@
+{
+  "name": "Verify the total counts in AM after Caputuing the Details",
+  "id": "0",
+  "type": 3,
+  "content": {
+    "title": "Verify the total counts in AM after Caputuing the Details",
+    "specific": [],
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "10000"
+          },
+          {
+            "paramMode": "code",
+            "customValue": "_isVisible(_cell(0, _under(_tableHeader(\"Mobile Number\"))))"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "\n$updatedTotalContacts\u003dNumber($totalContacts)+1\n$updatedTotalContactsInMonth\u003dNumber($totalContactsInThisMonth)+1\n_log($updatedTotalContacts)\n_log($updatedTotalContactsInMonth)",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_span(1, _near(_span(\"Total Contacts\")))"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "paramMode": "code",
+          "customValue": "$updatedTotalContacts"
+        },
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_span(1, _near(_span(\"New Contacts this month\")))"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "paramMode": "code",
+          "customValue": "$updatedTotalContactsInMonth"
+        },
+        "specific": []
+      }
+    ],
+    "isSystemKeyword": false
+  },
+  "enabled": false,
+  "parentId": ""
+}

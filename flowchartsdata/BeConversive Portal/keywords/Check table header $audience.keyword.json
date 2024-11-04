@@ -1,0 +1,105 @@
+{
+  "name": "Check table header $audience",
+  "id": "-1",
+  "type": 3,
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Check table header $audience",
+    "specific": [],
+    "parameters": [
+      {
+        "parameterId": "audience_",
+        "entityTypeId": "audience",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_collectAttributes",
+        "stepParameters": [
+          {
+            "paramMode": "string",
+            "customValue": "_tableHeader"
+          },
+          {
+            "paramMode": "string",
+            "customValue": "/.*/"
+          },
+          {
+            "paramMode": "string",
+            "customValue": "sahiText"
+          },
+          {
+            "paramMode": "code",
+            "customValue": "_table(0)"
+          }
+        ],
+        "stepType": "Store",
+        "stepCategory": "inbuilt",
+        "secondaryParam": {
+          "paramMode": "code",
+          "customValue": "$tableHeaders"
+        },
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_collectAttributes",
+        "stepParameters": [
+          {
+            "paramMode": "string",
+            "customValue": "_cell"
+          },
+          {
+            "paramMode": "string",
+            "customValue": "/.*/"
+          },
+          {
+            "paramMode": "string",
+            "customValue": "sahiText"
+          },
+          {
+            "paramMode": "code",
+            "customValue": "_cell(0)"
+          }
+        ],
+        "stepType": "Store",
+        "stepCategory": "inbuilt",
+        "secondaryParam": {
+          "paramMode": "code",
+          "customValue": "$rowfirst"
+        },
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_log",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "$tableHeaders"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_log",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "$rowfirst"
+          }
+        ],
+        "stepType": "Action",
+        "stepCategory": "inbuilt",
+        "specific": []
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}
