@@ -1,0 +1,141 @@
+{
+  "name": "Verify the added contact in Audience Manager $singlecontact $totalcontacts",
+  "id": "0",
+  "type": 3,
+  "content": {
+    "title": "Verify the added contact in Audience Manager $singlecontact $totalcontacts",
+    "specific": [],
+    "parameters": [
+      {
+        "parameterId": "singlecontact_",
+        "entityTypeId": "singlecontact",
+        "suffix": ""
+      },
+      {
+        "parameterId": "totalcontacts_",
+        "entityTypeId": "totalcontacts",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "10000"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "var $inc\u003d1;\n\n$newTotalContacts\u003dNumber($totalContacts)+$inc ;\n\n$newContactsThisMonth1\u003dNumber($newContactThisMonth)+$inc ;",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_span(0, _under(_span(\"Total Contacts\")))"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "paramMode": "code",
+          "customValue": "$newTotalContacts"
+        },
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_span(0, _under(_span(\"New Contacts this month\")))"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "paramMode": "code",
+          "customValue": "$newContactsThisMonth1"
+        },
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_cell($singlecontact.firstName)"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "paramMode": "default",
+          "parameterId": "singlecontact_",
+          "attributeId": "attr_01724163498407"
+        },
+        "visibleCheck": false,
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_cell($singlecontact.lastName)"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "paramMode": "default",
+          "parameterId": "singlecontact_",
+          "attributeId": "attr_11724163501723"
+        },
+        "visibleCheck": false,
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_cell(0, _under(_tableHeader(\"Mobile Number\")))"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Assert",
+        "assertType": "Contains",
+        "secondaryParam": {
+          "paramMode": "default",
+          "parameterId": "singlecontact_",
+          "attributeId": "attr_21724163506957"
+        },
+        "visibleCheck": false,
+        "specific": []
+      }
+    ],
+    "isSystemKeyword": false
+  },
+  "enabled": false,
+  "parentId": ""
+}

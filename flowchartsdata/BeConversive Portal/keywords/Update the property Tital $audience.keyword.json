@@ -1,0 +1,83 @@
+{
+  "name": "Update the property Tital $audience",
+  "id": "-1",
+  "type": 3,
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Update the property Tital $audience",
+    "specific": [],
+    "parameters": [
+      {
+        "parameterId": "audience_",
+        "entityTypeId": "audience",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_doubleClick",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_textbox(\"name\")"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_textbox(\"name\")"
+          },
+          {
+            "paramMode": "code",
+            "customValue": "$property.updatename"
+          }
+        ],
+        "stepType": "Action",
+        "stepCategory": "inbuilt",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_span(\"Save\")"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "visibleCheck": false,
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_cell(0,_under(_tableHeader(\"Name\")))"
+          }
+        ],
+        "stepType": "Assert",
+        "stepCategory": "inbuilt",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "paramMode": "string",
+          "customValue": "radha"
+        },
+        "specific": []
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}
