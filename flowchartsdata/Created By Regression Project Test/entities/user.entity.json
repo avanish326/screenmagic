@@ -1,0 +1,160 @@
+{
+  "name": "user",
+  "id": "-1",
+  "type": 1,
+  "content": {
+    "default": {
+      "attr_firstname_0": {
+        "name": "firstname",
+        "accessors": [
+          {
+            "id": "acc_textbox_firstname",
+            "name": "Firstname Input",
+            "accessor": "_textbox(\"firstname\")",
+            "messageAccessor": "_div(\"text-danger\", _near(_label(\"First Name\")))"
+          }
+        ],
+        "type": "text",
+        "props": {
+          "prefix": "Test_",
+          "min-length": "2",
+          "max-length": "5",
+          "include-alphabet": "true",
+          "include-numeric": "false",
+          "include-special": "false"
+        },
+        "invalidData": [
+          {
+            "value": "123456789123456789123456789123456789",
+            "message": "First Name must be between 1 and 32 characters!",
+            "comment": "Should not be blank"
+          }
+        ],
+        "validData": [],
+        "specific": []
+      },
+      "attr_lastname_1": {
+        "name": "lastname",
+        "accessors": [
+          {
+            "id": "acc_textbox_lastname",
+            "name": "Lastname Input",
+            "accessor": "_textbox(\"lastname\")",
+            "messageAccessor": "_div(\"text-danger\", _near(_label(\"Last Name\")))"
+          }
+        ],
+        "type": "text",
+        "props": {
+          "prefix": "Flow_",
+          "min-length": "2",
+          "max-length": "5",
+          "include-alphabet": "true",
+          "include-numeric": "false",
+          "include-special": "false"
+        },
+        "invalidData": [
+          {
+            "value": "123456789123456789123456789123456789",
+            "message": "Last Name must be between 1 and 32 characters!",
+            "comment": "Should not be blank"
+          }
+        ],
+        "validData": [],
+        "specific": []
+      },
+      "attr_email_2": {
+        "name": "email",
+        "accessors": [
+          {
+            "id": "acc_emailbox_email",
+            "name": "Email Input",
+            "accessor": "_emailbox(\"email\")",
+            "messageAccessor": "\"[built-in]\""
+          },
+          {
+            "id": "acc_textbox_email",
+            "name": "Email Input",
+            "accessor": "_textbox(\"email\")",
+            "messageAccessor": ""
+          }
+        ],
+        "type": "email",
+        "props": {
+          "names": [
+            "Test_Flow"
+          ],
+          "domains": [
+            "gmail.com"
+          ],
+          "add-timestamp": "true"
+        },
+        "invalidData": [
+          {
+            "value": "name.example.com",
+            "message": "",
+            "comment": "@ is missing"
+          },
+          {
+            "value": "@example.com",
+            "message": "@",
+            "comment": "Incomplete email id"
+          },
+          {
+            "value": "name@",
+            "message": "@",
+            "comment": "Email domain is missing"
+          }
+        ],
+        "validData": [],
+        "specific": []
+      },
+      "attr_telephone_3": {
+        "name": "telephone",
+        "accessors": [
+          {
+            "id": "acc_telephonebox_telephone",
+            "name": "Telephone Input",
+            "accessor": "_telephonebox(\"telephone\")",
+            "messageAccessor": ""
+          }
+        ],
+        "type": "number",
+        "props": {
+          "min": "6000000000",
+          "max": "9999999999"
+        },
+        "invalidData": [],
+        "validData": [],
+        "specific": []
+      },
+      "attr_password_4": {
+        "name": "password",
+        "accessors": [
+          {
+            "id": "acc_password_password",
+            "name": "Password Input",
+            "accessor": "_password(\"password\")",
+            "messageAccessor": ""
+          },
+          {
+            "id": "acc_password_confirm",
+            "name": "Confirm Input",
+            "accessor": "_password(\"confirm\")",
+            "messageAccessor": ""
+          }
+        ],
+        "type": "text",
+        "props": {
+          "prefix": "abcd1234",
+          "min-length": "0",
+          "max-length": "0"
+        },
+        "invalidData": [],
+        "validData": [],
+        "specific": []
+      }
+    }
+  },
+  "enabled": false,
+  "parentId": ""
+}
