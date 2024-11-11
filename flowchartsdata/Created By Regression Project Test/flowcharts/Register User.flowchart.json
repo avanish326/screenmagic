@@ -11,7 +11,8 @@
         "branches": [
           "fcn_registeruser_0",
           "fcn_loginuser_0",
-          "fcn_createuser_0"
+          "fcn_createuser_0",
+          "fcn_createvaibhavi_0"
         ]
       },
       "fcn_registeruser_0": {
@@ -207,6 +208,36 @@
         "content": "Verify $user details",
         "nodeType": "state",
         "branches": []
+      },
+      "fcn_createvaibhavi_0": {
+        "id": "fcn_createvaibhavi_0",
+        "content": "Create vaibhavi",
+        "nodeType": "pathlabel",
+        "branches": [
+          "fcn_createvaibhavi_1"
+        ]
+      },
+      "fcn_createvaibhavi_1": {
+        "id": "fcn_createvaibhavi_1",
+        "content": "Create $vaibhavi",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertvaibhavicreated_0"
+        ]
+      },
+      "fcn_assertvaibhavicreated_0": {
+        "id": "fcn_assertvaibhavicreated_0",
+        "content": "Assert $vaibhavi Created",
+        "nodeType": "state",
+        "branches": [
+          "fcn_vaibhaviexiststrue_0"
+        ]
+      },
+      "fcn_vaibhaviexiststrue_0": {
+        "id": "fcn_vaibhaviexiststrue_0",
+        "content": "$vaibhavi.exists\u003dtrue",
+        "nodeType": "state",
+        "branches": []
       }
     },
     "positions": {
@@ -313,6 +344,22 @@
       "fcn_verifyuserdetails_0": {
         "top": 668.74995,
         "left": 1340.0
+      },
+      "fcn_createvaibhavi_0": {
+        "top": 208.0,
+        "left": 1868.0
+      },
+      "fcn_createvaibhavi_1": {
+        "top": 268.0,
+        "left": 1868.0
+      },
+      "fcn_assertvaibhavicreated_0": {
+        "top": 328.0,
+        "left": 1868.0
+      },
+      "fcn_vaibhaviexiststrue_0": {
+        "top": 388.0,
+        "left": 1868.0
       }
     },
     "settings": {
