@@ -10,7 +10,8 @@
         "nodeType": "start",
         "branches": [
           "fcn_userregistration_0",
-          "fcn_createwin_0"
+          "fcn_createwin_0",
+          "fcn_createmac_0"
         ]
       },
       "fcn_userregistration_0": {
@@ -26,7 +27,8 @@
         "content": "Go To Registration Page",
         "nodeType": "action",
         "branches": [
-          "fcn_win_0"
+          "fcn_win_1",
+          "fcn_mac_0"
         ]
       },
       "fcn_registernewuser_0": {
@@ -51,6 +53,44 @@
         "nodeType": "action",
         "branches": []
       },
+      "fcn_createmac_0": {
+        "id": "fcn_createmac_0",
+        "content": "Create win",
+        "nodeType": "pathlabel",
+        "branches": [
+          "fcn_createmac_1"
+        ]
+      },
+      "fcn_createmac_1": {
+        "id": "fcn_createmac_1",
+        "content": "Create $mac",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertmaccreated_0"
+        ]
+      },
+      "fcn_assertmaccreated_0": {
+        "id": "fcn_assertmaccreated_0",
+        "content": "Assert $mac Created",
+        "nodeType": "state",
+        "branches": [
+          "fcn_macexiststrue_0"
+        ]
+      },
+      "fcn_macexiststrue_0": {
+        "id": "fcn_macexiststrue_0",
+        "content": "$mac.exists\u003dtrue",
+        "nodeType": "state",
+        "branches": []
+      },
+      "fcn_mac_0": {
+        "id": "fcn_mac_0",
+        "content": "mac",
+        "nodeType": "action",
+        "branches": [
+          "fcn_registernewuser_0"
+        ]
+      },
       "fcn_createwin_0": {
         "id": "fcn_createwin_0",
         "content": "Create win",
@@ -71,23 +111,7 @@
         "id": "fcn_assertwincreated_0",
         "content": "Assert $win Created",
         "nodeType": "state",
-        "branches": [
-          "fcn_winexiststrue_0"
-        ]
-      },
-      "fcn_winexiststrue_0": {
-        "id": "fcn_winexiststrue_0",
-        "content": "$win.exists\u003dtrue",
-        "nodeType": "state",
         "branches": []
-      },
-      "fcn_win_0": {
-        "id": "fcn_win_0",
-        "content": "win",
-        "nodeType": "action",
-        "branches": [
-          "fcn_win_1"
-        ]
       },
       "fcn_win_1": {
         "id": "fcn_win_1",
@@ -123,6 +147,26 @@
         "top": 578.2916870117188,
         "left": 501.0
       },
+      "fcn_createmac_0": {
+        "top": 236.5,
+        "left": 975.0
+      },
+      "fcn_createmac_1": {
+        "top": 301.11715,
+        "left": 975.0
+      },
+      "fcn_assertmaccreated_0": {
+        "top": 361.11715,
+        "left": 975.0
+      },
+      "fcn_macexiststrue_0": {
+        "top": 421.11715,
+        "left": 975.0
+      },
+      "fcn_mac_0": {
+        "top": 354.5,
+        "left": 695.0
+      },
       "fcn_createwin_0": {
         "top": 211.0,
         "left": 780.0
@@ -134,14 +178,6 @@
       "fcn_assertwincreated_0": {
         "top": 331.0,
         "left": 780.0
-      },
-      "fcn_winexiststrue_0": {
-        "top": 391.0,
-        "left": 780.0
-      },
-      "fcn_win_0": {
-        "top": 329.0,
-        "left": 500.0
       },
       "fcn_win_1": {
         "top": 388.0,
@@ -163,7 +199,6 @@
         "pathKey": [
           "fcn_userregistration_0",
           "fcn_gotoregistrationpage_0",
-          "fcn_win_0",
           "fcn_win_1",
           "fcn_registernewuser_0",
           "fcn_verifyuserregistered_0",
@@ -181,7 +216,6 @@
         "pathKey": [
           "fcn_userregistration_0",
           "fcn_gotoregistrationpage_0",
-          "fcn_win_0",
           "fcn_win_1",
           "fcn_registernewuser_0",
           "fcn_verifyuserregistered_0"
