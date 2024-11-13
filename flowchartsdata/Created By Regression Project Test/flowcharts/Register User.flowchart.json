@@ -11,8 +11,7 @@
         "branches": [
           "fcn_registeruser_0",
           "fcn_loginuser_0",
-          "fcn_createuser_0",
-          "fcn_createvaibhavi_0"
+          "fcn_createuser_0"
         ]
       },
       "fcn_registeruser_0": {
@@ -36,12 +35,8 @@
         "content": "Register $user",
         "nodeType": "action",
         "branches": [
-          "fcn_mac_0"
-        ],
-        "dataSet": {
-          "dataSetName": "test.csv",
-          "dataSetGroupName": "default"
-        }
+          "fcn_verifyuserregistered_0"
+        ]
       },
       "fcn_verifyuserregistered_0": {
         "id": "fcn_verifyuserregistered_0",
@@ -212,52 +207,6 @@
         "content": "Verify $user details",
         "nodeType": "state",
         "branches": []
-      },
-      "fcn_createvaibhavi_0": {
-        "id": "fcn_createvaibhavi_0",
-        "content": "Create vaibhavi",
-        "nodeType": "pathlabel",
-        "branches": [
-          "fcn_createvaibhavi_1"
-        ]
-      },
-      "fcn_createvaibhavi_1": {
-        "id": "fcn_createvaibhavi_1",
-        "content": "Create $vaibhavi",
-        "nodeType": "action",
-        "branches": [
-          "fcn_assertvaibhavicreated_0"
-        ]
-      },
-      "fcn_assertvaibhavicreated_0": {
-        "id": "fcn_assertvaibhavicreated_0",
-        "content": "Assert $vaibhavi Created",
-        "nodeType": "state",
-        "branches": [
-          "fcn_vaibhaviexiststrue_0"
-        ]
-      },
-      "fcn_vaibhaviexiststrue_0": {
-        "id": "fcn_vaibhaviexiststrue_0",
-        "content": "$vaibhavi.exists\u003dtrue",
-        "nodeType": "state",
-        "branches": []
-      },
-      "fcn_mac_0": {
-        "id": "fcn_mac_0",
-        "content": "mac",
-        "nodeType": "action",
-        "branches": [
-          "fcn_mac_1"
-        ]
-      },
-      "fcn_mac_1": {
-        "id": "fcn_mac_1",
-        "content": "@mac",
-        "nodeType": "action",
-        "branches": [
-          "fcn_verifyuserregistered_0"
-        ]
       }
     },
     "positions": {
@@ -274,19 +223,19 @@
         "left": 500.0
       },
       "fcn_registeruser_1": {
-        "top": 328.0,
+        "top": 329.0,
         "left": 500.0
       },
       "fcn_verifyuserregistered_0": {
-        "top": 574.1562,
+        "top": 394.1562,
         "left": 500.0
       },
       "fcn_userexiststrue_0": {
-        "top": 639.296825,
+        "top": 459.296825,
         "left": 500.0
       },
       "fcn_userloggedintrue_0": {
-        "top": 704.43745,
+        "top": 524.43745,
         "left": 500.0
       },
       "fcn_loginuser_0": {
@@ -326,68 +275,44 @@
         "left": 1588.0
       },
       "fcn_login_admin_0": {
-        "top": 292.0,
-        "left": 1580.0
+        "top": 267.0,
+        "left": 1588.0
       },
       "fcn_users_0": {
-        "top": 329.0,
-        "left": 1060.0
+        "top": 326.0,
+        "left": 1588.0
       },
       "fcn_createuser_1": {
-        "top": 388.0,
-        "left": 1060.0
+        "top": 385.0,
+        "left": 1588.0
       },
       "fcn_userexists_1": {
-        "top": 453.1562,
-        "left": 1060.0
+        "top": 450.140625,
+        "left": 1588.0
       },
       "fcn_usercreated_by_admin_0": {
-        "top": 518.296825,
-        "left": 1060.0
+        "top": 515.28125,
+        "left": 1588.0
       },
       "fcn_assertuseralreadyexistsmessage_0": {
-        "top": 658.421875,
+        "top": 580.421875,
         "left": 1588.0
       },
       "fcn_connector_0": {
-        "top": 583.43745,
-        "left": 1340.0
+        "top": 580.421875,
+        "left": 1868.0
       },
       "fcn_userexiststrueusercreated_by_admintrue_0": {
         "top": 668.28125,
-        "left": 1498.0
+        "left": 1818.0
       },
       "fcn_verifyusercreatedbyadmin_0": {
-        "top": 603.59375,
-        "left": 1340.0
+        "top": 753.59375,
+        "left": 1818.0
       },
       "fcn_verifyuserdetails_0": {
-        "top": 668.74995,
-        "left": 1340.0
-      },
-      "fcn_createvaibhavi_0": {
-        "top": 208.0,
-        "left": 1868.0
-      },
-      "fcn_createvaibhavi_1": {
-        "top": 268.0,
-        "left": 1868.0
-      },
-      "fcn_assertvaibhavicreated_0": {
-        "top": 328.0,
-        "left": 1868.0
-      },
-      "fcn_vaibhaviexiststrue_0": {
-        "top": 388.0,
-        "left": 1868.0
-      },
-      "fcn_mac_0": {
-        "top": 393.1562,
-        "left": 500.0
-      },
-      "fcn_mac_1": {
-        "top": 452.140625,
-        "left": 500.0
+        "top": 818.734375,
+        "left": 1818.0
       }
     },
     "settings": {
@@ -400,129 +325,7 @@
       "maxMatchingPaths": 3
     },
     "isPrimary": true,
-    "pathNames": [
-      {
-        "pathKey": [
-          "fcn_registeruser_0",
-          "fcn_registration_0",
-          "fcn_registeruser_1",
-          "fcn_mac_0",
-          "fcn_mac_1",
-          "fcn_verifyuserregistered_0",
-          "fcn_userexiststrue_0",
-          "fcn_userloggedintrue_0"
-        ],
-        "dependsPathUID": "17314082530230",
-        "pathTags": "mac",
-        "isValidationsEnabled": true
-      },
-      {
-        "pathKey": [
-          "fcn_loginuser_0",
-          "fcn_userexists_0",
-          "fcn_user_correctpassword_0",
-          "fcn_loginuserpasswordwrong_0",
-          "fcn_verifyuserloginfailed_0"
-        ],
-        "dependsPathUID": "17314082739671",
-        "pathDependsOn": {
-          "fcUID_registeruser_0": [
-            "17314082530230"
-          ]
-        },
-        "pathTags": "initial",
-        "isValidationsEnabled": true
-      },
-      {
-        "pathKey": [
-          "fcn_loginuser_0",
-          "fcn_userexists_0",
-          "fcn_user_correctpassword_0",
-          "fcn_loginuser_1",
-          "fcn_verifyuserloginsuccessful_0",
-          "fcn_userloggedintrue_1"
-        ],
-        "dependsPathUID": "17314082768232",
-        "pathDependsOn": {
-          "fcUID_registeruser_0": []
-        },
-        "pathTags": "mac",
-        "isValidationsEnabled": false
-      },
-      {
-        "pathKey": [
-          "fcn_createuser_0",
-          "fcn_login_admin_0",
-          "fcn_users_0",
-          "fcn_createuser_1",
-          "fcn_userexists_1",
-          "fcn_userexiststrueusercreated_by_admintrue_0",
-          "fcn_verifyusercreatedbyadmin_0",
-          "fcn_verifyuserdetails_0"
-        ],
-        "dependsPathUID": "17314082814873",
-        "pathDependsOn": {
-          "fcUID_registeruser_0": [
-            "17314082768232"
-          ]
-        },
-        "pathTags": "",
-        "isValidationsEnabled": true
-      },
-      {
-        "pathKey": [
-          "fcn_createuser_0",
-          "fcn_login_admin_0",
-          "fcn_users_0",
-          "fcn_createuser_1",
-          "fcn_userexists_1",
-          "fcn_usercreated_by_admin_0",
-          "fcn_connector_0",
-          "fcn_assertuseralreadyexistsmessage_0"
-        ],
-        "dependsPathUID": "17314082848554",
-        "pathDependsOn": {
-          "fcUID_registeruser_0": []
-        },
-        "pathTags": "mac",
-        "isValidationsEnabled": true
-      },
-      {
-        "pathKey": [
-          "fcn_createuser_0",
-          "fcn_login_admin_0",
-          "fcn_users_0",
-          "fcn_createuser_1",
-          "fcn_userexists_1",
-          "fcn_usercreated_by_admin_0",
-          "fcn_assertuseralreadyexistsmessage_0"
-        ],
-        "dependsPathUID": "17314082883995",
-        "pathDependsOn": {
-          "fcUID_registeruser_0": [
-            "17314082768232"
-          ]
-        },
-        "pathTags": "initial",
-        "isValidationsEnabled": false
-      },
-      {
-        "pathKey": [
-          "fcn_createvaibhavi_0",
-          "fcn_createvaibhavi_1",
-          "fcn_assertvaibhavicreated_0",
-          "fcn_vaibhaviexiststrue_0"
-        ],
-        "dependsPathUID": "17314082919196",
-        "pathDependsOn": {
-          "fcUID_registeruser_0": [
-            "17314082883995"
-          ]
-        },
-        "pathTags": "win",
-        "isValidationsEnabled": true
-      }
-    ],
+    "pathNames": [],
     "flowChartUID": "fcUID_registeruser_0",
     "pathExecutionOrder": []
   },

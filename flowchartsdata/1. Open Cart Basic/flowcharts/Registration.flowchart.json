@@ -9,7 +9,8 @@
         "content": "Start",
         "nodeType": "start",
         "branches": [
-          "fcn_userregistration_0"
+          "fcn_userregistration_0",
+          "fcn_createmac_0"
         ]
       },
       "fcn_userregistration_0": {
@@ -22,15 +23,15 @@
       },
       "fcn_gotoregistrationpage_0": {
         "id": "fcn_gotoregistrationpage_0",
-        "content": "Go To Registration Page from win",
+        "content": "Go To Registration Page",
         "nodeType": "action",
         "branches": [
-          "fcn_registernewuser_0"
+          "fcn_mac_0"
         ]
       },
       "fcn_registernewuser_0": {
         "id": "fcn_registernewuser_0",
-        "content": "Enter $user_from_win details from win",
+        "content": "Enter $usermac details",
         "nodeType": "action",
         "branches": [
           "fcn_verifyuserregistered_0"
@@ -49,6 +50,52 @@
         "content": "Logout",
         "nodeType": "action",
         "branches": []
+      },
+      "fcn_createmac_0": {
+        "id": "fcn_createmac_0",
+        "content": "Create win",
+        "nodeType": "pathlabel",
+        "branches": [
+          "fcn_createmac_1"
+        ]
+      },
+      "fcn_createmac_1": {
+        "id": "fcn_createmac_1",
+        "content": "Create $mac",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertmaccreated_0"
+        ]
+      },
+      "fcn_assertmaccreated_0": {
+        "id": "fcn_assertmaccreated_0",
+        "content": "Assert $mac Created",
+        "nodeType": "state",
+        "branches": [
+          "fcn_macexiststrue_0"
+        ]
+      },
+      "fcn_macexiststrue_0": {
+        "id": "fcn_macexiststrue_0",
+        "content": "$mac.exists\u003dtrue",
+        "nodeType": "state",
+        "branches": []
+      },
+      "fcn_mac_0": {
+        "id": "fcn_mac_0",
+        "content": "mac",
+        "nodeType": "action",
+        "branches": [
+          "fcn_mac_1"
+        ]
+      },
+      "fcn_mac_1": {
+        "id": "fcn_mac_1",
+        "content": "@mac",
+        "nodeType": "action",
+        "branches": [
+          "fcn_registernewuser_0"
+        ]
       }
     },
     "positions": {
@@ -65,16 +112,40 @@
         "left": 500.0
       },
       "fcn_registernewuser_0": {
-        "top": 329.0,
+        "top": 449.0,
         "left": 502.0
       },
       "fcn_verifyuserregistered_0": {
-        "top": 393.13543701171875,
+        "top": 513.1354370117188,
         "left": 500.0
       },
       "fcn_logout_0": {
-        "top": 458.29168701171875,
-        "left": 503.0
+        "top": 578.2916870117188,
+        "left": 501.0
+      },
+      "fcn_createmac_0": {
+        "top": 211.0,
+        "left": 780.0
+      },
+      "fcn_createmac_1": {
+        "top": 271.0,
+        "left": 780.0
+      },
+      "fcn_assertmaccreated_0": {
+        "top": 331.0,
+        "left": 780.0
+      },
+      "fcn_macexiststrue_0": {
+        "top": 391.0,
+        "left": 780.0
+      },
+      "fcn_mac_0": {
+        "top": 329.0,
+        "left": 500.0
+      },
+      "fcn_mac_1": {
+        "top": 388.0,
+        "left": 500.0
       }
     },
     "settings": {
@@ -92,6 +163,8 @@
         "pathKey": [
           "fcn_userregistration_0",
           "fcn_gotoregistrationpage_0",
+          "fcn_mac_0",
+          "fcn_mac_1",
           "fcn_registernewuser_0",
           "fcn_verifyuserregistered_0",
           "fcn_logout_0"
@@ -99,7 +172,7 @@
         "pathName": "Registration",
         "dependsPathUID": "1713764926800",
         "dataSet": {
-          "dataSetName": "user_details_from_win.csv",
+          "dataSetName": "user_details.csv",
           "dataSetGroupName": "group_1"
         },
         "pathTags": "Test",
@@ -109,6 +182,8 @@
         "pathKey": [
           "fcn_userregistration_0",
           "fcn_gotoregistrationpage_0",
+          "fcn_mac_0",
+          "fcn_mac_1",
           "fcn_registernewuser_0",
           "fcn_verifyuserregistered_0"
         ],
