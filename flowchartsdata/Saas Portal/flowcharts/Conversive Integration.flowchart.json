@@ -1,23 +1,12 @@
 {
-  "modifiedOn": "2024-01-12T12:24:11.997Z",
   "name": "Conversive Integration",
-  "id": "14617",
+  "id": "-1",
   "type": 0,
-  "createdOn": "2023-09-15T10:15:23.722Z",
   "content": {
-    "settings": {
-      "maxProceedDepth": 100,
-      "maxProceedsForFirstDepth": 1,
-      "maxProceedsPerDepth": 1,
-      "maxPathRepititionsPerComboPath": 1,
-      "maxProceedsPerPath": 10000,
-      "maxToggles": 2,
-      "maxMatchingPaths": 3
-    },
     "nodesMap": {
       "fcn_start_0": {
-        "dataSetId": -1,
         "id": "fcn_start_0",
+        "content": "Start",
         "nodeType": "start",
         "branches": [
           "fcn_integrationofzoho_0",
@@ -25,375 +14,330 @@
           "fcn_integrationofbullhorn_0",
           "fcn_integrationofzohobegin_0",
           "fcn_integrationofsaasportal_0"
-        ],
-        "content": "Start"
+        ]
       },
       "fcn_integrationofzoho_0": {
-        "dataSetId": -1,
         "id": "fcn_integrationofzoho_0",
+        "content": "Integration of Zoho",
         "nodeType": "pathlabel",
         "branches": [
           "fcn_logintosaasportal_0"
-        ],
-        "content": "Integration of Zoho"
+        ]
       },
       "fcn_integrationofsalesforce_0": {
-        "dataSetId": -1,
         "id": "fcn_integrationofsalesforce_0",
+        "content": "Integration of Salesforce",
         "nodeType": "pathlabel",
         "branches": [
           "fcn_logintosaas_1694776248616_0"
-        ],
-        "content": "Integration of Salesforce"
+        ]
       },
       "fcn_integrationofbullhorn_0": {
-        "dataSetId": -1,
         "id": "fcn_integrationofbullhorn_0",
+        "content": "Integration of BullHorn",
         "nodeType": "pathlabel",
         "branches": [
           "fcn_logintosaas_1695031098601_0"
-        ],
-        "content": "Integration of BullHorn"
+        ]
       },
       "fcn_logintosaasportal_0": {
-        "dataSetId": -1,
         "id": "fcn_logintosaasportal_0",
+        "content": "Login to $saas",
         "nodeType": "action",
         "branches": [
           "fcn_navigatetointegration_0"
-        ],
-        "content": "Login to $saas"
+        ]
       },
       "fcn_navigatetointegration_0": {
-        "dataSetId": -1,
         "id": "fcn_navigatetointegration_0",
+        "content": "Navigate to Integration",
         "nodeType": "action",
         "branches": [
           "fcn_crmauthorize_0",
           "fcn_contactobjectcreation_0",
           "fcn_createacontactusecaseforzoho_0",
           "fcn_createawebhookautomationforzohoapikeyapiid_0"
-        ],
-        "content": "Navigate to Integration"
+        ]
       },
       "fcn_logintosaas_1694776248616_0": {
-        "dataSetId": -1,
         "id": "fcn_logintosaas_1694776248616_0",
+        "content": "Login to $saas",
         "nodeType": "action",
         "branches": [
           "fcn_navigatetointegration_1694776259087_0"
-        ],
-        "content": "Login to $saas"
+        ]
       },
       "fcn_navigatetointegration_1694776259087_0": {
-        "dataSetId": -1,
         "id": "fcn_navigatetointegration_1694776259087_0",
+        "content": "Navigate to Integration",
         "nodeType": "action",
         "branches": [
           "fcn_crmauthorize_1695018963087_0",
           "fcn_usecaseforcontactzoho_0"
-        ],
-        "content": "Navigate to Integration"
+        ]
       },
       "fcn_crmauthorize_0": {
-        "dataSetId": -1,
         "id": "fcn_crmauthorize_0",
+        "content": "validate authorization $crm.authorize ? ",
         "nodeType": "dynamic-decision",
         "branches": [
           "fcn_zohocrmunauthorize_0",
           "fcn_zohocrmauthorize_0"
-        ],
-        "content": "validate authorization $crm.authorize ? "
+        ]
       },
       "fcn_zohocrmunauthorize_0": {
-        "dataSetId": -1,
         "id": "fcn_zohocrmunauthorize_0",
+        "content": "Zoho CRM Unauthorize",
         "nodeType": "action",
-        "branches": [],
-        "content": "Zoho CRM Unauthorize"
+        "branches": []
       },
       "fcn_zohocrmauthorize_0": {
-        "dataSetId": -1,
         "id": "fcn_zohocrmauthorize_0",
+        "content": "Zoho CRM Authorize",
         "nodeType": "action",
         "branches": [
           null,
           null
-        ],
-        "content": "Zoho CRM Authorize"
+        ]
       },
       "fcn_crmauthorize_1695018963087_0": {
-        "dataSetId": -1,
         "id": "fcn_crmauthorize_1695018963087_0",
+        "content": "validate $crm.authorize ?",
         "nodeType": "skip",
         "branches": [
           "fcn_salesforcecrmunauthorize_0",
           "fcn_salesforccrmauthorize_0"
-        ],
-        "content": "validate $crm.authorize ?"
+        ]
       },
       "fcn_salesforccrmauthorize_0": {
-        "dataSetId": -1,
         "id": "fcn_salesforccrmauthorize_0",
+        "content": "Salesforc CRM Authorize",
         "nodeType": "skip",
         "branches": [
           null,
           "fcn_contactobjectcreationforsalesforce_0"
-        ],
-        "content": "Salesforc CRM Authorize"
+        ]
       },
       "fcn_salesforcecrmunauthorize_0": {
-        "dataSetId": -1,
         "id": "fcn_salesforcecrmunauthorize_0",
+        "content": "Salesforce CRM Unauthorize",
         "nodeType": "skip",
-        "branches": [],
-        "content": "Salesforce CRM Unauthorize"
+        "branches": []
       },
       "fcn_integrationofzohobegin_0": {
-        "dataSetId": -1,
         "id": "fcn_integrationofzohobegin_0",
+        "content": "Integration of Zoho Begin",
         "nodeType": "pathlabel",
         "branches": [
           "fcn_logintosaas_1695020036802_0"
-        ],
-        "content": "Integration of Zoho Begin"
+        ]
       },
       "fcn_logintosaas_1695020036802_0": {
-        "dataSetId": -1,
         "id": "fcn_logintosaas_1695020036802_0",
+        "content": "Login to $saas",
         "nodeType": "action",
         "branches": [
           "fcn_navigatetointegration_1695020036802_0"
-        ],
-        "content": "Login to $saas"
+        ]
       },
       "fcn_navigatetointegration_1695020036802_0": {
-        "dataSetId": -1,
         "id": "fcn_navigatetointegration_1695020036802_0",
+        "content": "Navigate to Integration",
         "nodeType": "action",
         "branches": [
           "fcn_crmauthorize_1695020046672_0"
-        ],
-        "content": "Navigate to Integration"
+        ]
       },
       "fcn_crmauthorize_1695020046672_0": {
-        "dataSetId": -1,
         "id": "fcn_crmauthorize_1695020046672_0",
+        "content": "$crm.authorize?",
         "nodeType": "decision",
         "branches": [
           "fcn_zohobeginunauthorize_0",
           "fcn_zohobeginauthorize_0"
-        ],
-        "content": "$crm.authorize?"
+        ]
       },
       "fcn_zohobeginauthorize_0": {
-        "dataSetId": -1,
         "id": "fcn_zohobeginauthorize_0",
+        "content": "Zoho begin Authorize",
         "nodeType": "dynamic-decision",
-        "branches": [],
-        "content": "Zoho begin Authorize"
+        "branches": []
       },
       "fcn_zohobeginunauthorize_0": {
-        "dataSetId": -1,
         "id": "fcn_zohobeginunauthorize_0",
+        "content": "Zoho begin Unauthorize",
         "nodeType": "dynamic-decision",
-        "branches": [],
-        "content": "Zoho begin Unauthorize"
+        "branches": []
       },
       "fcn_logintosaas_1695031098601_0": {
-        "dataSetId": -1,
         "id": "fcn_logintosaas_1695031098601_0",
+        "content": "Login to $saas",
         "nodeType": "action",
         "branches": [
           "fcn_navigatetointegration_1695031098601_0"
-        ],
-        "content": "Login to $saas"
+        ]
       },
       "fcn_navigatetointegration_1695031098601_0": {
-        "dataSetId": -1,
         "id": "fcn_navigatetointegration_1695031098601_0",
+        "content": "Navigate to Integration",
         "nodeType": "action",
         "branches": [
           "fcn_crmauthorize_1695031104377_0"
-        ],
-        "content": "Navigate to Integration"
+        ]
       },
       "fcn_crmauthorize_1695031104377_0": {
-        "dataSetId": -1,
         "id": "fcn_crmauthorize_1695031104377_0",
+        "content": "$crm.authorize?",
         "nodeType": "decision",
         "branches": [
           "fcn_bullhornunauthorize_0",
           "fcn_bullhornauthorize_0"
-        ],
-        "content": "$crm.authorize?"
+        ]
       },
       "fcn_bullhornauthorize_0": {
-        "dataSetId": -1,
         "id": "fcn_bullhornauthorize_0",
+        "content": "Bullhorn Authorize",
         "nodeType": "dynamic-decision",
-        "branches": [],
-        "content": "Bullhorn Authorize"
+        "branches": []
       },
       "fcn_bullhornunauthorize_0": {
-        "dataSetId": -1,
         "id": "fcn_bullhornunauthorize_0",
+        "content": "Bullhorn Unauthorize",
         "nodeType": "dynamic-decision",
-        "branches": [],
-        "content": "Bullhorn Unauthorize"
+        "branches": []
       },
       "fcn_integrationofsaasportal_0": {
-        "dataSetId": -1,
         "id": "fcn_integrationofsaasportal_0",
+        "content": "Integration of Saas Portal",
         "nodeType": "pathlabel",
         "branches": [
           "fcn_logintosaas_1695031387981_0"
-        ],
-        "content": "Integration of Saas Portal"
+        ]
       },
       "fcn_logintosaas_1695031387981_0": {
-        "dataSetId": -1,
         "id": "fcn_logintosaas_1695031387981_0",
+        "content": "Login to $saas",
         "nodeType": "action",
         "branches": [
           "fcn_navigatetointegration_1695031387981_0"
-        ],
-        "content": "Login to $saas"
+        ]
       },
       "fcn_navigatetointegration_1695031387981_0": {
-        "dataSetId": -1,
         "id": "fcn_navigatetointegration_1695031387981_0",
+        "content": "Navigate to Integration",
         "nodeType": "action",
         "branches": [
           "fcn_crmauthorize_1695031387981_0"
-        ],
-        "content": "Navigate to Integration"
+        ]
       },
       "fcn_crmauthorize_1695031387981_0": {
-        "dataSetId": -1,
         "id": "fcn_crmauthorize_1695031387981_0",
+        "content": "$crm.authorize?",
         "nodeType": "decision",
         "branches": [
           "fcn_saasportalunauthoriz_0",
           "fcn_saasportalauthorization_0"
-        ],
-        "content": "$crm.authorize?"
+        ]
       },
       "fcn_saasportalauthorization_0": {
-        "dataSetId": -1,
         "id": "fcn_saasportalauthorization_0",
+        "content": "Saas Portal Authorization",
         "nodeType": "dynamic-decision",
-        "branches": [],
-        "content": "Saas Portal Authorization"
+        "branches": []
       },
       "fcn_saasportalunauthoriz_0": {
-        "dataSetId": -1,
         "id": "fcn_saasportalunauthoriz_0",
+        "content": "Saas Portal Unauthoriz",
         "nodeType": "dynamic-decision",
-        "branches": [],
-        "content": "Saas Portal Unauthoriz"
+        "branches": []
       },
       "fcn_createcontactobjectflow_0": {
-        "dataSetId": -1,
         "id": "fcn_createcontactobjectflow_0",
+        "content": "Create Contact Object flow",
         "nodeType": "action",
         "branches": [
           "fcn_createconfigurationforcontactobjectforzoho_0"
-        ],
-        "content": "Create Contact Object flow"
+        ]
       },
       "fcn_createconfigurationforcontactobjectforzoho_0": {
-        "dataSetId": -1,
         "id": "fcn_createconfigurationforcontactobjectforzoho_0",
+        "content": "Create configuration for contact object for zoho",
         "nodeType": "action",
-        "branches": [],
-        "content": "Create configuration for contact object for zoho"
+        "branches": []
       },
       "fcn_createacontactusecaseforzoho_0": {
-        "dataSetId": -1,
         "id": "fcn_createacontactusecaseforzoho_0",
+        "content": "Create a Contact Usecase for zoho",
         "nodeType": "action",
-        "branches": [],
-        "content": "Create a Contact Usecase for zoho"
+        "branches": []
       },
       "fcn_createzohowebhookautomationforcontact_0": {
-        "dataSetId": -1,
         "id": "fcn_createzohowebhookautomationforcontact_0",
+        "content": "Login $zohocrm",
         "nodeType": "action",
         "branches": [
           "fcn_createawebhookforzohocontact_0"
-        ],
-        "content": "Login $zohocrm"
+        ]
       },
       "fcn_createawebhookforzohocontact_0": {
-        "dataSetId": -1,
         "id": "fcn_createawebhookforzohocontact_0",
+        "content": "Create a webhook for Zoho Contact",
         "nodeType": "action",
-        "branches": [],
-        "content": "Create a webhook for Zoho Contact"
+        "branches": []
       },
       "fcn_contactobjectcreation_0": {
-        "dataSetId": -1,
         "id": "fcn_contactobjectcreation_0",
+        "content": "Contact object creation",
         "nodeType": "skip",
         "branches": [
           "fcn_createcontactobjectflow_0"
-        ],
-        "content": "Contact object creation"
+        ]
       },
       "fcn_createawebhookautomationforzohoapikeyapiid_0": {
-        "dataSetId": -1,
         "id": "fcn_createawebhookautomationforzohoapikeyapiid_0",
+        "content": "get  $apikey $apiid for webhook automation",
         "nodeType": "action",
         "branches": [
           "fcn_createzohowebhookautomationforcontact_0"
-        ],
-        "content": "get  $apikey $apiid for webhook automation"
+        ]
       },
       "fcn_contactobjectcreationforsalesforce_0": {
-        "dataSetId": -1,
         "id": "fcn_contactobjectcreationforsalesforce_0",
+        "content": "Contact object creation for salesforce",
         "nodeType": "action",
-        "branches": [],
-        "content": "Contact object creation for salesforce"
+        "branches": []
       },
       "fcn_usecaseforcontactzoho_0": {
-        "dataSetId": -1,
         "id": "fcn_usecaseforcontactzoho_0",
+        "content": "Usecase for contact salesforce",
         "nodeType": "action",
         "branches": [
           "fcn_createausecaseforsalesforceobjectcontact_0"
-        ],
-        "content": "Usecase for contact salesforce"
+        ]
       },
       "fcn_createausecaseforsalesforceobjectcontact_0": {
-        "dataSetId": -1,
         "id": "fcn_createausecaseforsalesforceobjectcontact_0",
+        "content": "create a usecase for salesforce object contact",
         "nodeType": "action",
         "branches": [
           "fcn_createwelcomeseriesmessage_0"
-        ],
-        "content": "create a usecase for salesforce object contact"
+        ]
       },
       "fcn_createwelcomeseriesmessage_0": {
-        "dataSetId": -1,
         "id": "fcn_createwelcomeseriesmessage_0",
+        "content": "Create welcome series message",
         "nodeType": "action",
         "branches": [
           "fcn_logintosalesforceorg_0"
-        ],
-        "content": "Create welcome series message"
+        ]
       },
       "fcn_logintosalesforceorg_0": {
-        "dataSetId": -1,
         "id": "fcn_logintosalesforceorg_0",
+        "content": "Login to #salesforce Org",
         "nodeType": "action",
-        "branches": [],
-        "content": "Login to #salesforce Org"
+        "branches": []
       }
     },
-    "pathNames": {},
-    "isPrimary": false,
     "positions": {
       "fcn_start_0": {
         "top": 160.99383544921875,
@@ -568,7 +512,20 @@
         "left": 1346.98291015625
       }
     },
-    "tags": ""
+    "settings": {
+      "maxProceedDepth": 100,
+      "maxProceedsForFirstDepth": 1,
+      "maxProceedsPerDepth": 1,
+      "maxPathRepititionsPerComboPath": 1,
+      "maxProceedsPerPath": 10000,
+      "maxToggles": 2,
+      "maxMatchingPaths": 3
+    },
+    "isPrimary": false,
+    "pathNames": [],
+    "tags": "",
+    "flowChartUID": "fcUID_173164959479720",
+    "pathExecutionOrder": []
   },
   "enabled": true,
   "parentId": ""
