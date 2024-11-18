@@ -1,0 +1,119 @@
+{
+  "name": "select plg for Kantesh $beconversivesignup",
+  "id": "-1",
+  "type": 3,
+  "content": {
+    "isSystemKeyword": false,
+    "title": "select plg for Kantesh $beconversivesignup",
+    "specific": [],
+    "parameters": [
+      {
+        "parameterId": "beconversivesignup_",
+        "entityTypeId": "beconversivesignup",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_setSelected",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_radioGroup(\"horizontal-list-radio-license\")"
+          },
+          {
+            "paramMode": "code",
+            "customValue": "\"plg\""
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "_startHarLogging();\n",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_div(\"Next\")"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "5000"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "_selectBrowser();\n_selectWindow();\n_closeWindow();\n//_closeBrowser();",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "3000"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "_stopHarLogging();",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "_wait(3000);\nvar $harLogs \u003d _getHarLogs();\n\n//_writeFile(JSON.stringify($harLogs),\"/Users/adnantelwala/Desktop/tfc_engine/u//serdata/output.txt\",true);\n//_log($harLogs)\nfor (var $i\u003d0; $i\u003c$harLogs.length; $i++) {\n\tvar $harLog \u003d $harLogs[$i];\n\t_log( \"Requested url : \" + $harLog.requestUrl );\nif( $harLog.requestUrl.indexOf(\"api/v1/trial/beconversive/lead_sync\") !\u003d -1 ) {\n\t\t_log( \"HTTP request method : \" + $harLog.requestMethod );\n_log(\"request payload :\" + $harLog.requestPayload);\n\t\t_log( \"Response status code : \" + $harLog.responseStatus );\n\t\t_log( \"Response status message : \" + $harLog.responseStatusText );\n_log(\"response body :\")\n\t\t_log( \"Size of response body in bytes : \" + $harLog.responseBodySize );\n\t\t_log( \"Total duration : \" + $harLog.time );\n_log($harLog.requestData[0].value);\n\t\tbreak;\n\n\t}\n}",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_heading2(0)"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "paramMode": "code",
+          "customValue": "\"Verify your email\""
+        },
+        "specific": []
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}
