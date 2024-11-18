@@ -1,418 +1,483 @@
 {
+  "modifiedOn": "2024-08-01T12:16:54.370Z",
   "name": "new Master",
-  "id": "-1",
+  "id": "27351",
   "type": 0,
+  "createdOn": "2024-02-08T06:49:36.202Z",
   "content": {
+    "settings": {
+      "maxProceedDepth": 100,
+      "maxProceedsForFirstDepth": 1,
+      "maxProceedsPerDepth": 1,
+      "maxPathRepititionsPerComboPath": 1,
+      "maxProceedsPerPath": 10000,
+      "maxToggles": 2,
+      "maxMatchingPaths": 3
+    },
     "nodesMap": {
       "fcn_start_0": {
+        "dataSetId": -1,
         "id": "fcn_start_0",
-        "content": "Start",
         "nodeType": "start",
         "branches": [
           "fcn_createtrial_signup_1694166763073_0",
           "fcn_createsaas_portal_login_1694608676099_0"
-        ]
+        ],
+        "content": "Start"
       },
       "fcn_createtrial_signup_1694166763073_0": {
+        "dataSetId": -1,
         "id": "fcn_createtrial_signup_1694166763073_0",
-        "content": "Create trial_signup",
         "nodeType": "pathlabel",
         "branches": [
           "fcn_trial_signup_1694166763073_0",
           "fcn_logintosaasportal_1694166763073_0",
           "fcn_createsalesforcesso_1694166763073_0",
           "fcn_createsalesforce_sso_1694166763073_0"
-        ]
+        ],
+        "content": "Create trial_signup"
       },
       "fcn_trial_signup_1694166763073_0": {
+        "dataSetId": -1,
         "id": "fcn_trial_signup_1694166763073_0",
-        "content": "@trial_signup",
         "nodeType": "action",
         "branches": [
           "fcn_createtrial_signup_1694166763073_1",
           "fcn_createtrial_signupforsalesforce_1694166763073_0"
-        ]
+        ],
+        "content": "@trial_signup"
       },
       "fcn_createtrial_signup_1694166763073_1": {
+        "dataSetId": -1,
         "id": "fcn_createtrial_signup_1694166763073_1",
-        "content": "Create $trial_signup",
         "nodeType": "action",
         "branches": [
           "fcn_assertrial_signupforplanautomation_1694166763073_0",
           "fcn_assertrial_signupforplanconversation_1694166763073_0",
           "fcn_assertrial_signupforplanmultichannel_1694166763073_0"
-        ]
+        ],
+        "content": "Create $trial_signup"
       },
       "fcn_assertrial_signupforplanautomation_1694166763073_0": {
+        "dataSetId": -1,
         "id": "fcn_assertrial_signupforplanautomation_1694166763073_0",
-        "content": "Asser $trial_signup for plan Automation",
         "nodeType": "state",
         "branches": [
           "fcn_trial_signupexiststrue_1694166763073_0",
           "fcn_validate10dlcsetuppopup_1694166763073_0"
-        ]
+        ],
+        "content": "Asser $trial_signup for plan Automation"
       },
       "fcn_trial_signupexiststrue_1694166763073_0": {
+        "dataSetId": -1,
         "id": "fcn_trial_signupexiststrue_1694166763073_0",
-        "content": "$trial_signup.exists\u003dtrue",
         "nodeType": "state",
-        "branches": []
+        "branches": [],
+        "content": "$trial_signup.exists\u003dtrue"
       },
       "fcn_validate10dlcsetuppopup_1694166763073_0": {
+        "dataSetId": -1,
         "id": "fcn_validate10dlcsetuppopup_1694166763073_0",
-        "content": "validate $10dlcsetuppopup",
         "nodeType": "action",
         "branches": [
           "fcn_assertsampledatacampaign_1694166763073_0",
           "fcn_10dlcregistration_1694166763073_0"
-        ]
+        ],
+        "content": "validate $10dlcsetuppopup"
       },
       "fcn_assertsampledatacampaign_1694166763073_0": {
+        "dataSetId": -1,
         "id": "fcn_assertsampledatacampaign_1694166763073_0",
-        "content": "Assert $sampledatacampaign",
         "nodeType": "action",
         "branches": [
           "fcn_assertsampleadatacontacts_1694166763073_0"
-        ]
+        ],
+        "content": "Assert $sampledatacampaign"
       },
       "fcn_assertsampleadatacontacts_1694166763073_0": {
+        "dataSetId": -1,
         "id": "fcn_assertsampleadatacontacts_1694166763073_0",
-        "content": "Assert $sampleadatacontacts",
         "nodeType": "action",
         "branches": [
           "fcn_logintogmailemaillogin_1694166763073_0",
           "fcn_getaccountid_1694166763073_0"
-        ]
+        ],
+        "content": "Assert $sampleadatacontacts"
       },
       "fcn_logintogmailemaillogin_1694166763073_0": {
+        "dataSetId": -1,
         "id": "fcn_logintogmailemaillogin_1694166763073_0",
-        "content": "Avanish Login to gmail $emaillogin",
         "nodeType": "action",
         "branches": [
           "fcn_confirmtheaccounttrial_signup_1694166763073_0"
-        ]
+        ],
+        "content": "Login to gmail $emaillogin"
       },
       "fcn_confirmtheaccounttrial_signup_1694166763073_0": {
+        "dataSetId": -1,
         "id": "fcn_confirmtheaccounttrial_signup_1694166763073_0",
-        "content": "Confirm the account $trial_signup",
         "nodeType": "action",
         "branches": [
           "fcn_setthepassword_1694166763073_0"
-        ]
+        ],
+        "content": "Confirm the account $trial_signup"
       },
       "fcn_setthepassword_1694166763073_0": {
+        "dataSetId": -1,
         "id": "fcn_setthepassword_1694166763073_0",
-        "content": "Set the password",
         "nodeType": "action",
         "branches": [
           "fcn_logintosmsmagicusingtrial_signup_1694166763073_0"
-        ]
+        ],
+        "content": "Set the password"
       },
       "fcn_logintosmsmagicusingtrial_signup_1694166763073_0": {
+        "dataSetId": -1,
         "id": "fcn_logintosmsmagicusingtrial_signup_1694166763073_0",
-        "content": "Login To SMS magic using $trial_signup",
         "nodeType": "action",
-        "branches": []
+        "branches": [],
+        "content": "Login To SMS magic using $trial_signup"
       },
       "fcn_getaccountid_1694166763073_0": {
+        "dataSetId": -1,
         "id": "fcn_getaccountid_1694166763073_0",
-        "content": "Get $accountid",
         "nodeType": "action",
         "branches": [
           "fcn_logintoopsportallogintrial_signupaccountid_1694166763073_0"
-        ]
+        ],
+        "content": "Get $accountid"
       },
       "fcn_logintoopsportallogintrial_signupaccountid_1694166763073_0": {
+        "dataSetId": -1,
         "id": "fcn_logintoopsportallogintrial_signupaccountid_1694166763073_0",
-        "content": "Login to $opsportallogin $trial_signup $accountid",
         "nodeType": "action",
         "branches": [
           "fcn_validatetheplandetailsonops_1694166763073_0"
-        ]
+        ],
+        "content": "Login to $opsportallogin $trial_signup $accountid"
       },
       "fcn_validatetheplandetailsonops_1694166763073_0": {
+        "dataSetId": -1,
         "id": "fcn_validatetheplandetailsonops_1694166763073_0",
-        "content": "Validate the $plan details on ops",
         "nodeType": "action",
-        "branches": []
+        "branches": [],
+        "content": "Validate the $plan details on ops"
       },
       "fcn_10dlcregistration_1694166763073_0": {
+        "dataSetId": -1,
         "id": "fcn_10dlcregistration_1694166763073_0",
-        "content": "10dlc $registration",
         "nodeType": "action",
-        "branches": []
+        "branches": [],
+        "content": "10dlc $registration"
       },
       "fcn_assertrial_signupforplanconversation_1694166763073_0": {
+        "dataSetId": -1,
         "id": "fcn_assertrial_signupforplanconversation_1694166763073_0",
-        "content": "Asser $trial_signup for plan conversation",
         "nodeType": "action",
         "branches": [
           "fcn_assertsampledataconversedesk_1694166763073_0"
-        ]
+        ],
+        "content": "Asser $trial_signup for plan conversation"
       },
       "fcn_assertsampledataconversedesk_1694166763073_0": {
+        "dataSetId": -1,
         "id": "fcn_assertsampledataconversedesk_1694166763073_0",
-        "content": "Assert $sampledataconversedesk",
         "nodeType": "action",
         "branches": [
           "fcn_assertsampledatacampaign_1694166763073_0"
-        ]
+        ],
+        "content": "Assert $sampledataconversedesk"
       },
       "fcn_assertrial_signupforplanmultichannel_1694166763073_0": {
+        "dataSetId": -1,
         "id": "fcn_assertrial_signupforplanmultichannel_1694166763073_0",
-        "content": "Asser $trial_signup for plan multichannel",
         "nodeType": "action",
         "branches": [
           "fcn_assertsampledataconversedesk_1694166763073_0"
-        ]
+        ],
+        "content": "Asser $trial_signup for plan multichannel"
       },
       "fcn_createtrial_signupforsalesforce_1694166763073_0": {
+        "dataSetId": -1,
         "id": "fcn_createtrial_signupforsalesforce_1694166763073_0",
-        "content": "Create $trial_signup for Salesforce",
         "nodeType": "action",
         "branches": [
           "fcn_salesforcesignin_1694166763073_0"
-        ]
+        ],
+        "content": "Create $trial_signup for Salesforce"
       },
       "fcn_salesforcesignin_1694166763073_0": {
+        "dataSetId": -1,
         "id": "fcn_salesforcesignin_1694166763073_0",
-        "content": "salesforce $signin",
         "nodeType": "action",
         "branches": [
           "fcn_logintogmail_1694166763073_0"
-        ]
+        ],
+        "content": "salesforce $signin"
       },
       "fcn_logintogmail_1694166763073_0": {
+        "dataSetId": -1,
         "id": "fcn_logintogmail_1694166763073_0",
-        "content": "Login to $gmail",
         "nodeType": "action",
         "branches": [
           "fcn_confirmsalesforceaccount_1694166763073_0"
-        ]
+        ],
+        "content": "Login to $gmail"
       },
       "fcn_confirmsalesforceaccount_1694166763073_0": {
+        "dataSetId": -1,
         "id": "fcn_confirmsalesforceaccount_1694166763073_0",
-        "content": "confirm salesforce $account",
         "nodeType": "action",
         "branches": [
           "fcn_addsfaccount_1694166763073_0",
           "fcn_linksfaccount_1694166763073_0"
-        ]
+        ],
+        "content": "confirm salesforce $account"
       },
       "fcn_addsfaccount_1694166763073_0": {
+        "dataSetId": -1,
         "id": "fcn_addsfaccount_1694166763073_0",
-        "content": "add $sfaccount",
         "nodeType": "action",
         "branches": [
           "fcn_assetcredits_1694166763073_0"
-        ]
+        ],
+        "content": "add $sfaccount"
       },
       "fcn_assetcredits_1694166763073_0": {
+        "dataSetId": -1,
         "id": "fcn_assetcredits_1694166763073_0",
-        "content": "asset $credits",
         "nodeType": "action",
         "branches": [
           "fcn_validationaccountactivity_1694166763073_0"
-        ]
+        ],
+        "content": "asset $credits"
       },
       "fcn_validationaccountactivity_1694166763073_0": {
+        "dataSetId": -1,
         "id": "fcn_validationaccountactivity_1694166763073_0",
-        "content": "validation $accountactivity",
         "nodeType": "action",
         "branches": [
           "fcn_transfersmscredit_1694166763073_0"
-        ]
+        ],
+        "content": "validation $accountactivity"
       },
       "fcn_transfersmscredit_1694166763073_0": {
+        "dataSetId": -1,
         "id": "fcn_transfersmscredit_1694166763073_0",
-        "content": "Transfer $smscredit",
         "nodeType": "action",
         "branches": [
           "fcn_getaccountid_1694166763073_1"
-        ]
+        ],
+        "content": "Transfer $smscredit"
       },
       "fcn_getaccountid_1694166763073_1": {
+        "dataSetId": -1,
         "id": "fcn_getaccountid_1694166763073_1",
-        "content": "Get $accountid",
         "nodeType": "action",
         "branches": [
           "fcn_logintoopsportallogintrial_signupaccountid_1694166763073_1"
-        ]
+        ],
+        "content": "Get $accountid"
       },
       "fcn_logintoopsportallogintrial_signupaccountid_1694166763073_1": {
+        "dataSetId": -1,
         "id": "fcn_logintoopsportallogintrial_signupaccountid_1694166763073_1",
-        "content": "Login to $opsportallogin $trial_signup $accountid",
         "nodeType": "action",
         "branches": [
           "fcn_changeaccountstatuspayee_1694166763073_0"
-        ]
+        ],
+        "content": "Login to $opsportallogin $trial_signup $accountid"
       },
       "fcn_changeaccountstatuspayee_1694166763073_0": {
+        "dataSetId": -1,
         "id": "fcn_changeaccountstatuspayee_1694166763073_0",
-        "content": "change accountStatus $payee",
         "nodeType": "action",
         "branches": [
           "fcn_transfersenderid_1694166763073_0"
-        ]
+        ],
+        "content": "change accountStatus $payee"
       },
       "fcn_transfersenderid_1694166763073_0": {
+        "dataSetId": -1,
         "id": "fcn_transfersenderid_1694166763073_0",
-        "content": "Transfer $senderid",
         "nodeType": "action",
-        "branches": []
+        "branches": [],
+        "content": "Transfer $senderid"
       },
       "fcn_linksfaccount_1694166763073_0": {
+        "dataSetId": -1,
         "id": "fcn_linksfaccount_1694166763073_0",
-        "content": "link $sfaccount",
         "nodeType": "action",
         "branches": [
           "fcn_assetcredits_1694166763073_0",
           "fcn_salesforceinstallandconfigure_1694166763073_0"
-        ]
+        ],
+        "content": "link $sfaccount"
       },
       "fcn_salesforceinstallandconfigure_1694166763073_0": {
+        "dataSetId": -1,
         "id": "fcn_salesforceinstallandconfigure_1694166763073_0",
-        "content": "salesforce $installandconfigure",
         "nodeType": "action",
         "branches": [
           "fcn_assetcredits_1694166763073_0"
-        ]
+        ],
+        "content": "salesforce $installandconfigure"
       },
       "fcn_logintosaasportal_1694166763073_0": {
+        "dataSetId": -1,
         "id": "fcn_logintosaasportal_1694166763073_0",
-        "content": "Login to $saas Portal",
         "nodeType": "action",
         "branches": [
           "fcn_assertlicensecount_1694166763073_0"
-        ]
+        ],
+        "content": "Login to $saas Portal"
       },
       "fcn_assertlicensecount_1694166763073_0": {
+        "dataSetId": -1,
         "id": "fcn_assertlicensecount_1694166763073_0",
-        "content": "assert $licensecount",
         "nodeType": "action",
         "branches": [
           "fcn_validateurlshortningconversedesk_1694166763073_0",
           "fcn_validateemailnotification_1694166763073_0"
-        ]
+        ],
+        "content": "assert $licensecount"
       },
       "fcn_validateurlshortningconversedesk_1694166763073_0": {
+        "dataSetId": -1,
         "id": "fcn_validateurlshortningconversedesk_1694166763073_0",
-        "content": "validate $urlshortningconversedesk",
         "nodeType": "action",
         "branches": [
           "fcn_editurlshortning_1694166763073_0"
-        ]
+        ],
+        "content": "validate $urlshortningconversedesk"
       },
       "fcn_editurlshortning_1694166763073_0": {
+        "dataSetId": -1,
         "id": "fcn_editurlshortning_1694166763073_0",
-        "content": "edit $urlshortning",
         "nodeType": "action",
         "branches": [
           "fcn_validateurlshorteningtemplate_1694166763073_0",
           "fcn_validateurlexistingconversation_1694166763073_0",
           "fcn_executeacampaigncampaign_1694166763073_0"
-        ]
+        ],
+        "content": "edit $urlshortning"
       },
       "fcn_validateurlshorteningtemplate_1694166763073_0": {
+        "dataSetId": -1,
         "id": "fcn_validateurlshorteningtemplate_1694166763073_0",
-        "content": "validate $urlshorteningtemplate",
         "nodeType": "action",
-        "branches": []
+        "branches": [],
+        "content": "validate $urlshorteningtemplate"
       },
       "fcn_validateurlexistingconversation_1694166763073_0": {
+        "dataSetId": -1,
         "id": "fcn_validateurlexistingconversation_1694166763073_0",
-        "content": "validate $urlexistingconversation",
         "nodeType": "action",
-        "branches": []
+        "branches": [],
+        "content": "validate $urlexistingconversation"
       },
       "fcn_executeacampaigncampaign_1694166763073_0": {
+        "dataSetId": -1,
         "id": "fcn_executeacampaigncampaign_1694166763073_0",
-        "content": "Execute a campaign $campaign",
         "nodeType": "action",
-        "branches": []
+        "branches": [],
+        "content": "Execute a campaign $campaign"
       },
       "fcn_validateemailnotification_1694166763073_0": {
+        "dataSetId": -1,
         "id": "fcn_validateemailnotification_1694166763073_0",
-        "content": "validate $emailnotification",
         "nodeType": "action",
-        "branches": []
+        "branches": [],
+        "content": "validate $emailnotification"
       },
       "fcn_createsalesforcesso_1694166763073_0": {
+        "dataSetId": -1,
         "id": "fcn_createsalesforcesso_1694166763073_0",
-        "content": "Create $salesforcesso",
         "nodeType": "action",
-        "branches": []
+        "branches": [],
+        "content": "Create $salesforcesso"
       },
       "fcn_createsalesforce_sso_1694166763073_0": {
+        "dataSetId": -1,
         "id": "fcn_createsalesforce_sso_1694166763073_0",
-        "content": "Create salesforce_sso",
         "nodeType": "pathlabel",
         "branches": [
           "fcn_createsalesforce_sso_1694166763073_1"
-        ]
+        ],
+        "content": "Create salesforce_sso"
       },
       "fcn_createsalesforce_sso_1694166763073_1": {
+        "dataSetId": -1,
         "id": "fcn_createsalesforce_sso_1694166763073_1",
-        "content": "Create $salesforce_sso",
         "nodeType": "action",
         "branches": [
           "fcn_assetcredits_1694166763073_0"
-        ]
+        ],
+        "content": "Create $salesforce_sso"
       },
       "fcn_createsaas_portal_login_1694608676099_0": {
+        "dataSetId": -1,
         "id": "fcn_createsaas_portal_login_1694608676099_0",
-        "content": "Create saas_portal_login",
         "nodeType": "pathlabel",
         "branches": [
           "fcn_logintosaasportal_1694608676099_0",
           "fcn_forgotpassword_1694608676099_0"
-        ]
+        ],
+        "content": "Create saas_portal_login"
       },
       "fcn_logintosaasportal_1694608676099_0": {
+        "dataSetId": -1,
         "id": "fcn_logintosaasportal_1694608676099_0",
-        "content": "login to $saasportal",
         "nodeType": "action",
         "branches": [
           "fcn_resetpassword_1694608676099_0"
-        ]
+        ],
+        "content": "login to $saasportal"
       },
       "fcn_resetpassword_1694608676099_0": {
+        "dataSetId": -1,
         "id": "fcn_resetpassword_1694608676099_0",
-        "content": "reset $password",
         "nodeType": "action",
-        "branches": []
+        "branches": [],
+        "content": "reset $password"
       },
       "fcn_forgotpassword_1694608676099_0": {
+        "dataSetId": -1,
         "id": "fcn_forgotpassword_1694608676099_0",
-        "content": "forgot $password",
         "nodeType": "action",
         "branches": [
           "fcn_logintogmailemaillogin_1694608676099_0"
-        ]
+        ],
+        "content": "forgot $password"
       },
       "fcn_logintogmailemaillogin_1694608676099_0": {
+        "dataSetId": -1,
         "id": "fcn_logintogmailemaillogin_1694608676099_0",
-        "content": "Avanish Login to gmail $emaillogin",
         "nodeType": "action",
         "branches": [
           "fcn_clickonresetpasswordlink_1694608676099_0"
-        ]
+        ],
+        "content": "Login to gmail $emaillogin"
       },
       "fcn_clickonresetpasswordlink_1694608676099_0": {
+        "dataSetId": -1,
         "id": "fcn_clickonresetpasswordlink_1694608676099_0",
-        "content": "click on reset $password link",
         "nodeType": "action",
         "branches": [
           "fcn_changepassword_0"
-        ]
+        ],
+        "content": "click on reset $password link"
       },
       "fcn_changepassword_0": {
+        "dataSetId": -1,
         "id": "fcn_changepassword_0",
-        "content": "change #password",
         "nodeType": "action",
-        "branches": []
+        "branches": [],
+        "content": "change #password"
       }
     },
+    "pathNames": {},
+    "isPrimary": false,
     "positions": {
       "fcn_start_0": {
         "top": 150.0,
@@ -623,19 +688,7 @@
         "left": 1639.0
       }
     },
-    "settings": {
-      "maxProceedDepth": 100,
-      "maxProceedsForFirstDepth": 1,
-      "maxProceedsPerDepth": 1,
-      "maxPathRepititionsPerComboPath": 1,
-      "maxProceedsPerPath": 10000,
-      "maxToggles": 2,
-      "maxMatchingPaths": 3
-    },
-    "isPrimary": false,
-    "pathNames": [],
-    "tags": "",
-    "pathExecutionOrder": []
+    "tags": ""
   },
   "enabled": true,
   "parentId": ""
