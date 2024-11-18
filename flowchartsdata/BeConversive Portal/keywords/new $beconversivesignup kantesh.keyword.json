@@ -1,0 +1,451 @@
+{
+  "name": "new $beconversivesignup kantesh",
+  "id": "-1",
+  "type": 3,
+  "content": {
+    "isSystemKeyword": false,
+    "title": "new $beconversivesignup kantesh",
+    "specific": [],
+    "parameters": [
+      {
+        "parameterId": "beconversivesignup_",
+        "entityTypeId": "beconversivesignup",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "_startHarLogging();\n",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_addToSession",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "$beconvDomainUrl"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      },
+      {
+        "commented": true,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_heading4(\"Your organization details\")"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "paramMode": "code",
+          "customValue": "\"Your organization details\""
+        },
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "paramMode": "default",
+            "parameterId": "beconversivesignup_",
+            "attributeId": "attr_71701167847533",
+            "accessorId": "acc0"
+          },
+          {
+            "paramMode": "default",
+            "parameterId": "beconversivesignup_",
+            "attributeId": "attr_71701167847533"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "visibleCheck": false,
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "paramMode": "default",
+            "parameterId": "beconversivesignup_",
+            "attributeId": "attr_81701167860385",
+            "accessorId": "acc0"
+          },
+          {
+            "paramMode": "default",
+            "parameterId": "beconversivesignup_",
+            "attributeId": "attr_81701167860385"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "visibleCheck": false,
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_div(\"select-dropdown-indicator\")"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_div($beconversivesignup.country)"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "$countryName \u003d _getText(_div(\"select__value-container select__value-container--has-value css-hlgwow\"));\n\n$countryCode \u003d \"\"\nfor($i\u003d0; $i\u003c$countryName.length-1; $i++){\n\t$countryCode +\u003d $countryName.charAt($i);\n}\n$countryCode;",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_div(\"select-dropdown-indicator\", _near(_label(\"Company Size\")))"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_div(\"11-1K\")"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_div(\"select-dropdown-indicator\", _near(_label(\"Industry\")))"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_div($beconversivesignup.industry)"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_heading4(\"Tell us about yourself\")"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "paramMode": "code",
+          "customValue": "\"Tell us about yourself\""
+        },
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_textbox(\"fullName\")"
+          },
+          {
+            "paramMode": "code",
+            "customValue": "$beconversivesignup.fullName"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      },
+      {
+        "commented": true,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_textbox(\"firstName\")"
+          },
+          {
+            "paramMode": "code",
+            "customValue": "\"test\""
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      },
+      {
+        "commented": true,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_textbox(\"lastName\")"
+          },
+          {
+            "paramMode": "code",
+            "customValue": "\"Test\""
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "paramMode": "default",
+            "parameterId": "beconversivesignup_",
+            "attributeId": "attr_51699344958745",
+            "accessorId": "acc0"
+          },
+          {
+            "paramMode": "default",
+            "parameterId": "beconversivesignup_",
+            "attributeId": "attr_51699344958745"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "visibleCheck": false,
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_div(\"select-dropdown-indicator[3]\")"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_div($beconversivesignup.countryCode)"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      },
+      {
+        "commented": true,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_div(\"select__value-container select__value-container--has-value css-hlgwow[3]\")"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Assert",
+        "assertType": "Contains",
+        "secondaryParam": {
+          "paramMode": "code",
+          "customValue": "$countryCode"
+        },
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "paramMode": "default",
+            "parameterId": "beconversivesignup_",
+            "attributeId": "attr_61701166510995",
+            "accessorId": "acc0"
+          },
+          {
+            "paramMode": "default",
+            "parameterId": "beconversivesignup_",
+            "attributeId": "attr_61701166510995"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "visibleCheck": false,
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_div(\"select-dropdown-indicator[4]\")"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_div($beconversivesignup.roleOrg)"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_div(\"select-dropdown-indicator[5]\")"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_div($beconversivesignup.whatboughtUhere)"
+          },
+          {
+            "paramMode": "code",
+            "customValue": ""
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_check",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_checkbox(\"checkbox text-blue-600\")"
+          },
+          {
+            "paramMode": "code",
+            "customValue": "true"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "20000"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_submit(\"Next\")"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "5000"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}
