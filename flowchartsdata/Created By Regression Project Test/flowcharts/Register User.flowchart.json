@@ -24,7 +24,7 @@
       },
       "fcn_registration_0": {
         "id": "fcn_registration_0",
-        "content": "@registration",
+        "content": "@userdetails",
         "nodeType": "action",
         "branches": [
           "fcn_registeruser_1"
@@ -32,7 +32,7 @@
       },
       "fcn_registeruser_1": {
         "id": "fcn_registeruser_1",
-        "content": "Register $user",
+        "content": "Register $users",
         "nodeType": "action",
         "branches": [
           "fcn_verifyuserregistered_0"
@@ -40,7 +40,7 @@
       },
       "fcn_verifyuserregistered_0": {
         "id": "fcn_verifyuserregistered_0",
-        "content": "Verify $user registered",
+        "content": "Verify $users details",
         "nodeType": "state",
         "branches": [
           "fcn_userexiststrue_0"
@@ -48,7 +48,7 @@
       },
       "fcn_userexiststrue_0": {
         "id": "fcn_userexiststrue_0",
-        "content": "$user.exists\u003dtrue",
+        "content": "$users.exists\u003dtrue",
         "nodeType": "state",
         "branches": [
           "fcn_userloggedintrue_0"
@@ -56,7 +56,7 @@
       },
       "fcn_userloggedintrue_0": {
         "id": "fcn_userloggedintrue_0",
-        "content": "$user.loggedIn\u003dtrue",
+        "content": "$users.signed\u003dtrue",
         "nodeType": "state",
         "branches": []
       },
@@ -70,7 +70,7 @@
       },
       "fcn_userexists_0": {
         "id": "fcn_userexists_0",
-        "content": "$user.exists?",
+        "content": "$users.exists?",
         "nodeType": "decision",
         "branches": [
           null,
@@ -79,7 +79,7 @@
       },
       "fcn_user_correctpassword_0": {
         "id": "fcn_user_correctpassword_0",
-        "content": "$user._correctPassword?",
+        "content": "$users._worngPassword?",
         "nodeType": "decision",
         "branches": [
           "fcn_loginuserpasswordwrong_0",
@@ -88,7 +88,7 @@
       },
       "fcn_loginuser_1": {
         "id": "fcn_loginuser_1",
-        "content": "Login $user",
+        "content": "Login $users",
         "nodeType": "action",
         "branches": [
           "fcn_verifyuserloginsuccessful_0"
@@ -96,7 +96,7 @@
       },
       "fcn_verifyuserloginsuccessful_0": {
         "id": "fcn_verifyuserloginsuccessful_0",
-        "content": "Verify $user login successful",
+        "content": "Verify $users login successful",
         "nodeType": "state",
         "branches": [
           "fcn_userloggedintrue_1"
@@ -104,13 +104,13 @@
       },
       "fcn_userloggedintrue_1": {
         "id": "fcn_userloggedintrue_1",
-        "content": "$user.loggedIn\u003dtrue",
+        "content": "$users.signed\u003dtrue",
         "nodeType": "state",
         "branches": []
       },
       "fcn_loginuserpasswordwrong_0": {
         "id": "fcn_loginuserpasswordwrong_0",
-        "content": "Login $user (password\u003d\"wrong\")",
+        "content": "Login $users (password\u003d\"wrong\")",
         "nodeType": "action",
         "branches": [
           "fcn_verifyuserloginfailed_0"
@@ -118,7 +118,7 @@
       },
       "fcn_verifyuserloginfailed_0": {
         "id": "fcn_verifyuserloginfailed_0",
-        "content": "Verify $user login failed",
+        "content": "Verify $users login failed",
         "nodeType": "state",
         "branches": []
       },
@@ -148,7 +148,7 @@
       },
       "fcn_createuser_1": {
         "id": "fcn_createuser_1",
-        "content": "Create $user",
+        "content": "Create $users",
         "nodeType": "action",
         "branches": [
           "fcn_userexists_1"
@@ -156,7 +156,7 @@
       },
       "fcn_userexists_1": {
         "id": "fcn_userexists_1",
-        "content": "$user.exists?",
+        "content": "$users.exists?",
         "nodeType": "decision",
         "branches": [
           "fcn_userexiststrueusercreated_by_admintrue_0",
@@ -165,7 +165,7 @@
       },
       "fcn_usercreated_by_admin_0": {
         "id": "fcn_usercreated_by_admin_0",
-        "content": "$user.created_by_admin?",
+        "content": "$users.admin_created?",
         "nodeType": "decision",
         "branches": [
           "fcn_connector_0",
@@ -174,7 +174,7 @@
       },
       "fcn_assertuseralreadyexistsmessage_0": {
         "id": "fcn_assertuseralreadyexistsmessage_0",
-        "content": "Assert $user already exists message",
+        "content": "Assert $users already exists message",
         "nodeType": "state",
         "branches": []
       },
@@ -188,7 +188,7 @@
       },
       "fcn_userexiststrueusercreated_by_admintrue_0": {
         "id": "fcn_userexiststrueusercreated_by_admintrue_0",
-        "content": "$user.exists\u003dtrue\n$user.created_by_admin\u003dtrue",
+        "content": "$users.exists\u003dtrue\n$users.admin_created\u003dtrue",
         "nodeType": "state",
         "branches": [
           "fcn_verifyusercreatedbyadmin_0"
@@ -196,7 +196,7 @@
       },
       "fcn_verifyusercreatedbyadmin_0": {
         "id": "fcn_verifyusercreatedbyadmin_0",
-        "content": "Verify $user created by admin",
+        "content": "Verify $users created by admin",
         "nodeType": "state",
         "branches": [
           "fcn_verifyuserdetails_0"
@@ -204,7 +204,7 @@
       },
       "fcn_verifyuserdetails_0": {
         "id": "fcn_verifyuserdetails_0",
-        "content": "Verify $user details",
+        "content": "Verify $users details",
         "nodeType": "state",
         "branches": []
       }
@@ -295,7 +295,7 @@
         "left": 1588.0
       },
       "fcn_assertuseralreadyexistsmessage_0": {
-        "top": 580.421875,
+        "top": 658.421875,
         "left": 1588.0
       },
       "fcn_connector_0": {
@@ -335,90 +335,8 @@
           "fcn_userexiststrue_0",
           "fcn_userloggedintrue_0"
         ],
-        "dependsPathUID": "17316517881210",
-        "pathTags": "mac",
-        "isValidationsEnabled": false
-      },
-      {
-        "pathKey": [
-          "fcn_loginuser_0",
-          "fcn_userexists_0",
-          "fcn_user_correctpassword_0",
-          "fcn_loginuserpasswordwrong_0",
-          "fcn_verifyuserloginfailed_0"
-        ],
-        "dependsPathUID": "17316517890401",
-        "isValidationsEnabled": false
-      },
-      {
-        "pathKey": [
-          "fcn_loginuser_0",
-          "fcn_userexists_0",
-          "fcn_user_correctpassword_0",
-          "fcn_loginuser_1",
-          "fcn_verifyuserloginsuccessful_0",
-          "fcn_userloggedintrue_1"
-        ],
-        "dependsPathUID": "17316517898962",
-        "pathDependsOn": {
-          "fcUID_registeruser_0": [
-            "17316517881210"
-          ]
-        },
-        "pathTags": "mac",
-        "isValidationsEnabled": false
-      },
-      {
-        "pathKey": [
-          "fcn_createuser_0",
-          "fcn_login_admin_0",
-          "fcn_users_0",
-          "fcn_createuser_1",
-          "fcn_userexists_1",
-          "fcn_userexiststrueusercreated_by_admintrue_0",
-          "fcn_verifyusercreatedbyadmin_0",
-          "fcn_verifyuserdetails_0"
-        ],
-        "dependsPathUID": "17316517909843",
-        "pathDependsOn": {
-          "fcUID_registeruser_0": [
-            "17316517890401"
-          ]
-        },
-        "pathTags": "win",
-        "isValidationsEnabled": false
-      },
-      {
-        "pathKey": [
-          "fcn_createuser_0",
-          "fcn_login_admin_0",
-          "fcn_users_0",
-          "fcn_createuser_1",
-          "fcn_userexists_1",
-          "fcn_usercreated_by_admin_0",
-          "fcn_connector_0",
-          "fcn_assertuseralreadyexistsmessage_0"
-        ],
-        "dependsPathUID": "17316517917864",
-        "pathDependsOn": {
-          "fcUID_registeruser_0": [
-            "17316517898962",
-            "17316517909843"
-          ]
-        },
-        "isValidationsEnabled": false
-      },
-      {
-        "pathKey": [
-          "fcn_createuser_0",
-          "fcn_login_admin_0",
-          "fcn_users_0",
-          "fcn_createuser_1",
-          "fcn_userexists_1",
-          "fcn_usercreated_by_admin_0",
-          "fcn_assertuseralreadyexistsmessage_0"
-        ],
-        "dependsPathUID": "17316517923035",
+        "pathName": "User Registration",
+        "dependsPathUID": "17320065995160",
         "isValidationsEnabled": false
       }
     ],

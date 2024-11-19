@@ -1,42 +1,45 @@
 {
-  "name": "Confirm Registration",
+  "name": "Verify $users login successful",
   "id": "-1",
   "type": 3,
   "content": {
     "isSystemKeyword": false,
-    "title": "Confirm Registration",
+    "title": "Verify $users login successful",
     "specific": [],
-    "parameters": [],
+    "parameters": [
+      {
+        "parameterId": "users_",
+        "entityTypeId": "users",
+        "suffix": ""
+      }
+    ],
     "steps": [
       {
         "commented": false,
-        "action": "_getText",
+        "action": "_exists",
         "stepParameters": [
           {
             "paramMode": "code",
-            "customValue": "_heading1(0)"
+            "customValue": "_heading2(\"My Account\")"
           }
         ],
         "stepCategory": "inbuilt",
         "stepType": "Assert",
-        "assertType": "Equals",
-        "secondaryParam": {
-          "paramMode": "string",
-          "customValue": "Your Account Has Been Created!"
-        },
+        "assertType": "Is_True",
         "specific": []
       },
       {
         "commented": false,
-        "action": "_click",
+        "action": "_exists",
         "stepParameters": [
           {
             "paramMode": "code",
-            "customValue": "_submit(\"Continue\")"
+            "customValue": "_link(\"Logout[1]\")"
           }
         ],
         "stepCategory": "inbuilt",
-        "stepType": "Action",
+        "stepType": "Assert",
+        "assertType": "Is_True",
         "specific": []
       }
     ]
