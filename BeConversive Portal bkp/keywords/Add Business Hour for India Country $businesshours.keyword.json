@@ -1,0 +1,263 @@
+{
+  "modifiedOn": "2024-03-19T05:35:51.640Z",
+  "name": "Add Business Hour for India Country $businesshours",
+  "id": "43353",
+  "type": 3,
+  "createdOn": "2024-02-27T09:49:08.461Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Add Business Hour for India Country $businesshours",
+    "parameters": [
+      {
+        "parameterId": "businesshours_",
+        "entityTypeId": "businesshours",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_button(\"Add Business Hours\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_submit(\"/Add Business Hours/\",_in(_div(\"Business Hours Add Business Hours\")))"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "_call(_sahi.blurEnabled\u003dfalse)"
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(3, _near(_label(\"Country\")))"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "\"India\""
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_strong(\"India\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "_call(_sahi.blurEnabled\u003dtrue)"
+      },
+      {
+        "commented": false,
+        "action": "_setSelected",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_select(0,_in(_div(\"/Timezone/\")))"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "\"(GMT+05:30) Asia/Kolkata\""
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "$currentDate \u003d new Date();\n//$currentDate \u003d new Date(\"Wed Feb 28 2024 11:15:12 GMT+0530 (India Standard Time)\")\n\nvar $fromTime \u003d  $currentDate.getHours()+1;\nvar $toTime \u003d $fromTime+1;\n_log($fromTime);\n_log($toTime)\n\nfunction time($time){\n\tvar $amORpm;\n\tvar $setTime;\n\t\n\tif($time\u003e\u003d12 \u0026\u0026 $time\u003c\u003d23)\n\t{\n\t\t$time \u003d $time - 12;\n\t\t$amORpm \u003d \"PM\"\n\t}\n\telse{\n\t\tif($time\u003e\u003d24){\n\t\t\t$time \u003d $time-24;\n\t\t}\n\t\telse{\n\t\t\t$time \u003d $time\n\t\t}\n\t\t$amORpm \u003d \"AM\"\n\t}\n\n\tif($time\u003c10){\n\t\t$setTime\u003d \"0\"+$time.toString();\n\t}\n\telse{\n\t\t$setTime \u003d $time.toString();\n\t}\n\tvar $arr \u003d [];\n\t$arr.push($amORpm);\n\t$arr.push($setTime)\n\treturn $arr;\n}\n\nvar $amORpmFrom \u003d time($fromTime)[0]\n_log($amORpmFrom)\nvar $amORpmTo \u003d time($toTime)[0]\n_log($amORpmTo)\nvar $from \u003d time($fromTime)[1]\n_log($from)\nvar $to \u003d time($toTime)[1]\n_log($to)\n\n\n\nif(_getText(_button(0,_under(_div(\"From\")))) !\u003d $amORpmFrom){\n\t_click(_button(0,_under(_div(\"From\"))));\n}\nif(_getText(_button(0,_under(_div(\"To\")))) !\u003d $amORpmTo){\n\t_click(_button(0,_under(_div(\"To\"))));\n}\n"
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_textbox(0,_under(_div(\"From\")))"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "$from"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_textbox(0,_under(_div(\"To\")))"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "$to"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "if(_getText(_button(0,_under(_div(\"From\")))) !\u003d $amORpmFrom){"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_button(0,_under(_div(\"From\")))"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "}"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "if(_getText(_button(0,_under(_div(\"To\")))) !\u003d $amORpmTo){"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_button(0,_under(_div(\"To\")))"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "}"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_submit(\"Add\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_setSelected",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_select(0)"
+          },
+          {
+            "parameterId": "businesshours_",
+            "attributeId": "attr_11695357034889"
+          }
+        ],
+        "stepType": "Action",
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "_call(_sahi.blurEnabled\u003dtrue)"
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_textbox(\"form-control text-center\")"
+          },
+          {
+            "parameterId": "businesshours_",
+            "attributeId": "attr_21695801454464"
+          }
+        ],
+        "stepType": "Action",
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_textbox(\"form-control text-center[2]\")"
+          },
+          {
+            "parameterId": "businesshours_",
+            "attributeId": "attr_31695801539793"
+          }
+        ],
+        "stepType": "Action",
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_submit(\"Add\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"Office Hours set successfully\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"Office Hours set successfully\""
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

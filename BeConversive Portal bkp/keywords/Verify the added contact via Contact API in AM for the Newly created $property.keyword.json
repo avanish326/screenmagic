@@ -1,0 +1,98 @@
+{
+  "modifiedOn": "2024-08-27T06:57:50.439Z",
+  "name": "Verify the added contact via Contact API in AM for the Newly created $property",
+  "id": "58964",
+  "type": 3,
+  "createdOn": "2024-08-27T06:56:10.471Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Verify the added contact via Contact API in AM for the Newly created $property",
+    "parameters": [
+      {
+        "parameterId": "property_",
+        "entityTypeId": "property",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "10000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_cell(\"Pranita\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"Pranita\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_cell(\"Kolekar\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"Kolekar\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_cell(0, _under(_tableHeader(\"Mobile Number\")))"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Contains",
+        "secondaryParam": {
+          "parameterId": "property_",
+          "attributeId": "attr_51723814060556"
+        },
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_cell(0, _under(_tableHeader($property.propertyName)))"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Contains",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$value"
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

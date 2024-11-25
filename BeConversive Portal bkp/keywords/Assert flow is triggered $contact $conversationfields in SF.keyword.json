@@ -1,0 +1,173 @@
+{
+  "modifiedOn": "2024-02-08T06:49:57.769Z",
+  "name": "Assert flow is triggered $contact $conversationfields in SF",
+  "id": "28835",
+  "type": 3,
+  "createdOn": "2024-02-08T06:49:57.769Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Assert flow is triggered $contact $conversationfields in SF",
+    "parameters": [
+      {
+        "parameterId": "contact_",
+        "entityTypeId": "contact",
+        "suffix": ""
+      },
+      {
+        "parameterId": "conversationfields_",
+        "entityTypeId": "conversationfields",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "45000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"Bot Conversations\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_button(\"All\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"recordMessageWrap\", _near(_button(\"All\")))"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "var $phoneNumber1 \u003d $phoneNumber;\n$formattedNumber \u003d $phoneNumber1.replace(/\\D/g, \"\");\n\n_log($formattedNumber);\n"
+      },
+      {
+        "commented": false,
+        "action": "_containsText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"wrap-content\")"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "$formattedNumber"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Is_True"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "var $senderIDSF\u003d$conversationfields.senderIDSF;\n\n\n//var $inputString \u003d$senderID1;\n//var $parts \u003d $inputString.split(\u0027 \u0027);\n//var $senderID \u003d $parts[0].trim();\n//_log($senderID);\n"
+      },
+      {
+        "commented": true,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"\"+$senderIDSF+\"\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "parameterId": "conversationfields_",
+          "attributeId": "attr_51706873055077"
+        },
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"Hi there! Thank you for contacting The BrightCare Hospital secure chat. If this is an emergency, Please call 911 immediately.[1]\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"Hi there! Thank you for contacting The BrightCare Hospital secure chat. If this is an emergency, Please call 911 immediately.\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"What can we help you with?Please choose one of the following options:Type 1 for Find doctorType 2 for Book AppointmentType 3 for Health packagesType 4 for Location\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"What can we help you with?Please choose one of the following options:Type 1 for Find doctorType 2 for Book AppointmentType 3 for Health packagesType 4 for Location\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"Chatbot is active for this conversation.Click hereto disable the Bot and take over the conversation.\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"Chatbot is active for this conversation.Click hereto disable the Bot and take over the conversation.\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_button(\"close\")"
+          }
+        ],
+        "stepType": "Action"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

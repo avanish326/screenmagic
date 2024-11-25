@@ -1,0 +1,137 @@
+{
+  "modifiedOn": "2024-08-14T13:30:44.533Z",
+  "name": "Upload a csv file to execute a campaign $campaign",
+  "id": "27852",
+  "type": 3,
+  "createdOn": "2024-02-08T06:49:43.541Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Upload a csv file to execute a campaign $campaign",
+    "parameters": [
+      {
+        "parameterId": "campaign_",
+        "entityTypeId": "campaign",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": true,
+        "action": "_setFile3",
+        "stepParameters": [
+          {
+            "parameterId": "campaign_",
+            "attributeId": "attr_21690954211853",
+            "accessorId": "acc0"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "\"/Users/shweta/tfc_engine/userdata/scripts/template_Camp.csv\""
+          }
+        ],
+        "stepType": "Action",
+        "visibleCheck": false
+      },
+      {
+        "commented": true,
+        "action": "_setFile3",
+        "stepParameters": [
+          {
+            "parameterId": "campaign_",
+            "attributeId": "attr_21690954211853",
+            "accessorId": "acc0"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "\"\"+_userDataDir(\"\\\\\") + \"\\\\scripts\\\\template_Camp.csv\""
+          }
+        ],
+        "stepType": "Action",
+        "visibleCheck": false
+      },
+      {
+        "commented": true,
+        "isRawScript": true,
+        "rawScript": "var $filePath \u003d _userDataDir(\"\\\\\") + \"\\\\scripts\\\\template_Camp.csv\";\n_log($filePath);"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "var $el \u003d _div(\"/csv-reader-wrap/\",_in(_div({\"sahiText\":\"CSV FileBrowse Sample CSV\"})));\nvar $fileEl\u003d_file(0,_near($el));\nvar $path \u003d _userDataPath($campaign.csv);"
+      },
+      {
+        "commented": false,
+        "action": "_setFile3",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "$fileEl"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "$path"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "\"“temporary_upload_csv”\""
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_isVisible",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"File already exists, kindly use another name.\")"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$error"
+        }
+      },
+      {
+        "commented": false,
+        "action": "_log",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "$error"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "1000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"file-name-width\")"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$csvName"
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

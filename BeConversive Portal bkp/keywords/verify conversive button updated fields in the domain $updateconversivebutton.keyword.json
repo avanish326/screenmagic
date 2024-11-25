@@ -1,0 +1,162 @@
+{
+  "modifiedOn": "2024-02-08T06:49:39.179Z",
+  "name": "verify conversive button updated fields in the domain $updateconversivebutton",
+  "id": "27545",
+  "type": 3,
+  "createdOn": "2024-02-08T06:49:39.179Z",
+  "content": {
+    "title": "verify conversive button updated fields in the domain $updateconversivebutton",
+    "parameters": [
+      {
+        "parameterId": "updateconversivebutton_",
+        "entityTypeId": "updateconversivebutton",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_launchNewBrowser",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "$testURL"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "\"chrome\""
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$browserDomain"
+        }
+      },
+      {
+        "commented": false,
+        "action": "_selectBrowser",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "$browserDomain"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_image(\"chat-icon\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"header-container\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "parameterId": "updateconversivebutton_",
+          "attributeId": "attr_01693992273912"
+        },
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_style",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"header-container\")"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "\"background-color\""
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$BGColorInRGB"
+        }
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "\n\n$BGColor \u003d _extract($BGColorInRGB,\"/rgb[(](.*),(.*),(.*)[)]/\",true);\n_log(\" RGB Color array \"+ $BGColor);\n\n//$HexColor\u003d\"#\"+(1\u003c\u003c24 |  $BGColor[0] \u003c\u003c 16 | $BGColor[1] \u003c\u003c8 | //$BGColor[2]).toString(16).slice(1); \n//_log(\" HexColor Color array \"+ $HexColor);\n//$HexColor"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(\"Web Chat\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"chatbot_name\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"Bot @ SMS-Magic\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_selectBrowser",
+        "stepParameters": [],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_textbox(\"domain[1]\")"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "\"Tenali @ SMS-Magic\""
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_submit(\"Save[1]\")"
+          }
+        ],
+        "stepType": "Action"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

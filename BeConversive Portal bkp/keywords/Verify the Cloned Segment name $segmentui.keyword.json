@@ -1,0 +1,39 @@
+{
+  "modifiedOn": "2024-09-09T07:25:11.083671Z",
+  "name": "Verify the Cloned Segment name $segmentui",
+  "id": "0",
+  "type": 3,
+  "createdOn": "2024-09-09T07:25:11.083668Z",
+  "content": {
+    "title": "Verify the Cloned Segment name $segmentui",
+    "parameters": [
+      {
+        "parameterId": "segmentui_",
+        "entityTypeId": "segmentui",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_containsText",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_cell(0)"
+          },
+          {
+            "paramMode": "code",
+            "customValue": "\"\"+$segmentui.segmentName+\" copy 1\""
+          }
+        ],
+        "stepType": "Assert",
+        "stepCategory": "inbuilt",
+        "assertType": "Is_True"
+      }
+    ],
+    "isSystemKeyword": false
+  },
+  "enabled": false,
+  "parentId": ""
+}

@@ -1,0 +1,56 @@
+{
+  "modifiedOn": "2024-08-20T10:08:38.540Z",
+  "name": "Search the contacts using the current date in Audience Manager page and get the count",
+  "id": "58897",
+  "type": 3,
+  "createdOn": "2024-08-20T10:07:55.691Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Search the contacts using the current date in Audience Manager page and get the count",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "var $now \u003d new Date();\n\nvar $year \u003d $now.getUTCFullYear();\nvar $month \u003d String($now.getUTCMonth() + 1).padStart(2, \u00270\u0027);\nvar $day \u003d String($now.getUTCDate()).padStart(2, \u00270\u0027);\n\nvar $hours \u003d String($now.getUTCHours()).padStart(2, \u00270\u0027);\nvar $minutes \u003d String($now.getUTCMinutes()).padStart(2, \u00270\u0027);\nvar $seconds \u003d String($now.getUTCSeconds()).padStart(2, \u00270\u0027);\n\n $formattedDateTime \u003d `${$year}-${$month}-${$day}`;"
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_textbox(0)"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "$formattedDateTime"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(\"/Showing .* contacts/\")"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$numberOfContacts"
+        }
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "var $trimmedText \u003d $numberOfContacts.trim();\n$newNumberOfContacts \u003d $trimmedText.match(/\\d+/);"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

@@ -1,0 +1,68 @@
+{
+  "modifiedOn": "2024-02-08T06:49:48.731Z",
+  "name": "get $accountid in be conversive",
+  "id": "28220",
+  "type": 3,
+  "createdOn": "2024-02-08T06:49:48.731Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "get $accountid in be conversive",
+    "parameters": [
+      {
+        "parameterId": "accountid_",
+        "entityTypeId": "accountid",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "3000"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "_isVisible(_span(\"Dashboard\"))"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"header-action-item flex items-center gap-2\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"text-sm mt-4\")"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$accID"
+        }
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "var $accountID \u003d $accID;\n\n$accountID \u003d $accountID.replace(\"Account Id:\", \"\");\n"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

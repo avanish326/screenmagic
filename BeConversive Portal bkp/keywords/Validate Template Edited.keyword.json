@@ -1,0 +1,47 @@
+{
+  "modifiedOn": "2024-03-11T10:43:39.406Z",
+  "name": "Validate Template Edited",
+  "id": "44045",
+  "type": 3,
+  "createdOn": "2024-03-06T16:21:11.906Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Validate Template Edited",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_cell(0, _near(_tableHeader(\"TEMPLATE NAME\")))"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$templateFromTemplateList"
+        }
+      },
+      {
+        "commented": false,
+        "action": "_areEqual",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "$templateFromTemplateList"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "$templateNameEntered"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Is_True"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

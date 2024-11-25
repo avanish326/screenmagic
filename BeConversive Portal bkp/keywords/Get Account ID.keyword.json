@@ -1,0 +1,64 @@
+{
+  "modifiedOn": "2024-06-07T11:25:50.593Z",
+  "name": "Get Account ID",
+  "id": "52715",
+  "type": 3,
+  "createdOn": "2024-06-07T11:25:50.593Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Get Account ID",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"admin\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"Account Settings\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "2000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(0,_in(_div(\"/Account ID/\")))"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$accountID"
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

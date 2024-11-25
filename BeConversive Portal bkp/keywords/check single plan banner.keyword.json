@@ -1,0 +1,93 @@
+{
+  "modifiedOn": "2024-07-23T14:29:35.691Z",
+  "name": "check single plan banner",
+  "id": "58535",
+  "type": 3,
+  "createdOn": "2024-07-23T14:29:35.691Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "check single plan banner",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_isVisible",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(\"text-black flex items-center h-16 text-sm lg:w-full xl:w-full 2xl:w-full md:w-4/5 sm:w-4/5\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Is_True"
+      },
+      {
+        "commented": false,
+        "action": "_containsText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(\"text-black flex items-center h-16 text-sm lg:w-full xl:w-full 2xl:w-full md:w-4/5 sm:w-4/5\")"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "$planOne"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Is_True"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"Select Plan\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_heading5(0)"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"Discover the exclusive benefits awaiting you with our premium plans\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"close-btn absolute z-10 ltr:right-6 rtl:left-6\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"mr-3 cursor-pointer\")"
+          }
+        ],
+        "stepType": "Action"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

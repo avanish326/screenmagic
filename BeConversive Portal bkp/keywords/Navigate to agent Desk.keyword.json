@@ -1,0 +1,54 @@
+{
+  "modifiedOn": "2024-07-18T06:54:55.192Z",
+  "name": "Navigate to agent Desk",
+  "id": "58409",
+  "type": 3,
+  "createdOn": "2024-07-18T06:53:41.243Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Navigate to agent Desk",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_mouseOver",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(4)"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"https://qa-app.beconversive.com/app/#/converse-desk\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"Inbox\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"Inbox\""
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

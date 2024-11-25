@@ -1,0 +1,2731 @@
+{
+  "modifiedOn": "2024-08-01T12:21:51.303Z",
+  "name": "User Management",
+  "id": "52684",
+  "type": 0,
+  "createdOn": "2024-06-07T06:27:01.649Z",
+  "content": {
+    "settings": {
+      "maxProceedDepth": 100,
+      "maxProceedsForFirstDepth": 1,
+      "maxProceedsPerDepth": 1,
+      "maxPathRepititionsPerComboPath": 1,
+      "maxProceedsPerPath": 10000,
+      "maxToggles": 2,
+      "maxMatchingPaths": 3
+    },
+    "flowChartUID": "fcUID_1717741623854",
+    "nodesMap": {
+      "fcn_start_0": {
+        "dataSetId": -1,
+        "id": "fcn_start_0",
+        "nodeType": "start",
+        "branches": [
+          "fcn_usermanagement_0"
+        ],
+        "content": "Start"
+      },
+      "fcn_usermanagement_0": {
+        "dataSetId": -1,
+        "id": "fcn_usermanagement_0",
+        "nodeType": "pathlabel",
+        "branches": [
+          "fcn_logintobeconversive_1717741602621_0"
+        ],
+        "content": "User Management"
+      },
+      "fcn_logintobeconversive_1717741602621_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintobeconversive_1717741602621_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_usermanagementforalllicenses_0",
+          "fcn_checkerrorforusershavinglimits_0"
+        ],
+        "content": "login to $beconversive"
+      },
+      "fcn_usermanagementforalllicenses_0": {
+        "dataSetId": -1,
+        "id": "fcn_usermanagementforalllicenses_0",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_freetrial_0",
+          "fcn_professionalsplan_0",
+          "fcn_marketeerplan_0",
+          "fcn_contactcenterbasic_0",
+          "fcn_textchange_0"
+        ],
+        "content": "User Management for All Licenses"
+      },
+      "fcn_freetrial_0": {
+        "dataSetId": -1,
+        "id": "fcn_freetrial_0",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_gotoaccountsettingsbeconversive_1717742481228_0"
+        ],
+        "content": "Free Trial"
+      },
+      "fcn_gotoaccountsettingsbeconversive_1717742481228_0": {
+        "dataSetId": -1,
+        "id": "fcn_gotoaccountsettingsbeconversive_1717742481228_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checktheplantype_0"
+        ],
+        "content": "go to account settings $beconversive"
+      },
+      "fcn_gotousermanagement_1717742513572_0": {
+        "dataSetId": -1,
+        "id": "fcn_gotousermanagement_1717742513572_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checktheavailableandexistingusers_0"
+        ],
+        "content": "Go to User management"
+      },
+      "fcn_checktheavailableandexistingusers_0": {
+        "dataSetId": -1,
+        "id": "fcn_checktheavailableandexistingusers_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_clickinviteuser_0"
+        ],
+        "content": "check the available and existing users"
+      },
+      "fcn_clickinviteuser_0": {
+        "dataSetId": -1,
+        "id": "fcn_clickinviteuser_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_verifytheerrormessage_0"
+        ],
+        "content": "click Invite user"
+      },
+      "fcn_verifytheerrormessage_0": {
+        "dataSetId": -1,
+        "id": "fcn_verifytheerrormessage_0",
+        "nodeType": "state",
+        "branches": [],
+        "content": "verify the error message"
+      },
+      "fcn_checktheplantype_0": {
+        "dataSetId": -1,
+        "id": "fcn_checktheplantype_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_gotousermanagement_1717742513572_0"
+        ],
+        "content": "check the plan type"
+      },
+      "fcn_professionalsplan_0": {
+        "dataSetId": -1,
+        "id": "fcn_professionalsplan_0",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_professionalbasic_0",
+          "fcn_professionaladvance_0",
+          "fcn_professionalsuperior_0",
+          "fcn_professionalspayg_0"
+        ],
+        "content": "Professionals Plan"
+      },
+      "fcn_professionalbasic_0": {
+        "dataSetId": -1,
+        "id": "fcn_professionalbasic_0",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_convertyourlicensetono75_0"
+        ],
+        "content": "Professional Basic"
+      },
+      "fcn_convertyourlicensetono75_0": {
+        "dataSetId": -1,
+        "id": "fcn_convertyourlicensetono75_0",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_gotoaccountsettingsbeconversive_1717748370921_0"
+        ],
+        "content": "convert your license to no : 75"
+      },
+      "fcn_gotoaccountsettingsbeconversive_1717748370921_0": {
+        "dataSetId": -1,
+        "id": "fcn_gotoaccountsettingsbeconversive_1717748370921_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_gotousermanagement_1717748377025_0"
+        ],
+        "content": "go to account settings $beconversive"
+      },
+      "fcn_gotousermanagement_1717748377025_0": {
+        "dataSetId": -1,
+        "id": "fcn_gotousermanagement_1717748377025_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checktheexistinguserforuserhavingnolimits_0"
+        ],
+        "content": "Go to User management"
+      },
+      "fcn_checktheexistinguserforuserhavingnolimits_0": {
+        "dataSetId": -1,
+        "id": "fcn_checktheexistinguserforuserhavingnolimits_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_clickinviteuser_1717748431201_0"
+        ],
+        "content": "check the existing user for user having no limits."
+      },
+      "fcn_clickinviteuser_1717748431201_0": {
+        "dataSetId": -1,
+        "id": "fcn_clickinviteuser_1717748431201_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checkforrolesonthedropdown_0"
+        ],
+        "content": "click Invite user"
+      },
+      "fcn_checkforrolesonthedropdown_0": {
+        "dataSetId": -1,
+        "id": "fcn_checkforrolesonthedropdown_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_addusersandcheckthecounts_0"
+        ],
+        "content": "check for roles on the dropdown."
+      },
+      "fcn_addusersandcheckthecounts_0": {
+        "dataSetId": -1,
+        "id": "fcn_addusersandcheckthecounts_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_invitetheusers_1717759261566_0"
+        ],
+        "content": "add users and check the counts $beconversive"
+      },
+      "fcn_professionaladvance_0": {
+        "dataSetId": -1,
+        "id": "fcn_professionaladvance_0",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_convertyourlicensetono76_0"
+        ],
+        "content": "Professional Advance"
+      },
+      "fcn_convertyourlicensetono76_0": {
+        "dataSetId": -1,
+        "id": "fcn_convertyourlicensetono76_0",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_gotoaccountsettingsbeconversive_1717755388064_0"
+        ],
+        "content": "convert your license to NO: 76"
+      },
+      "fcn_gotoaccountsettingsbeconversive_1717755388064_0": {
+        "dataSetId": -1,
+        "id": "fcn_gotoaccountsettingsbeconversive_1717755388064_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_gotousermanagement_1717755391080_0"
+        ],
+        "content": "go to account settings $beconversive"
+      },
+      "fcn_gotousermanagement_1717755391080_0": {
+        "dataSetId": -1,
+        "id": "fcn_gotousermanagement_1717755391080_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checktheexistinguserforuserhavingnolimits_1717755405792_0"
+        ],
+        "content": "Go to User management"
+      },
+      "fcn_checktheexistinguserforuserhavingnolimits_1717755405792_0": {
+        "dataSetId": -1,
+        "id": "fcn_checktheexistinguserforuserhavingnolimits_1717755405792_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_clickinviteuser_1717755410120_0"
+        ],
+        "content": "check the existing user for user having no limits."
+      },
+      "fcn_clickinviteuser_1717755410120_0": {
+        "dataSetId": -1,
+        "id": "fcn_clickinviteuser_1717755410120_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checkforrolesonthedropdown_1717755414856_0"
+        ],
+        "content": "click Invite user"
+      },
+      "fcn_checkforrolesonthedropdown_1717755414856_0": {
+        "dataSetId": -1,
+        "id": "fcn_checkforrolesonthedropdown_1717755414856_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_addusersandcheckthecounts_1717755422201_0"
+        ],
+        "content": "check for roles on the dropdown."
+      },
+      "fcn_addusersandcheckthecounts_1717755422201_0": {
+        "dataSetId": -1,
+        "id": "fcn_addusersandcheckthecounts_1717755422201_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_inviteuserfromusermanagementbeconversivesignup_1717755427184_0"
+        ],
+        "content": "add users and check the counts $beconversive"
+      },
+      "fcn_inviteuserfromusermanagementbeconversivesignup_1717755427184_0": {
+        "dataSetId": -1,
+        "id": "fcn_inviteuserfromusermanagementbeconversivesignup_1717755427184_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logintogmailemaillogin_1717755689072_0"
+        ],
+        "content": "invite the users"
+      },
+      "fcn_logintogmailemaillogin_1717755583392_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintogmailemaillogin_1717755583392_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_confirmtheinviteuserbeconversive_0"
+        ],
+        "content": "Login to gmail $emaillogin"
+      },
+      "fcn_logintogmailemaillogin_1717755689072_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintogmailemaillogin_1717755689072_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_confirmtheinviteuserbeconversive_1718000320481_0"
+        ],
+        "content": "Login to gmail $emaillogin"
+      },
+      "fcn_professionalsuperior_0": {
+        "dataSetId": -1,
+        "id": "fcn_professionalsuperior_0",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_convertyourlicensetono77_0"
+        ],
+        "content": "Professional Superior"
+      },
+      "fcn_convertyourlicensetono77_0": {
+        "dataSetId": -1,
+        "id": "fcn_convertyourlicensetono77_0",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_gotoaccountsettingsbeconversive_1717755746952_0"
+        ],
+        "content": "convert your license to NO: 77"
+      },
+      "fcn_gotoaccountsettingsbeconversive_1717755746952_0": {
+        "dataSetId": -1,
+        "id": "fcn_gotoaccountsettingsbeconversive_1717755746952_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_gotousermanagement_1717755752617_0"
+        ],
+        "content": "go to account settings $beconversive"
+      },
+      "fcn_gotousermanagement_1717755752617_0": {
+        "dataSetId": -1,
+        "id": "fcn_gotousermanagement_1717755752617_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checktheavailableandexistingusers_1717755821408_0"
+        ],
+        "content": "Go to User management"
+      },
+      "fcn_checktheavailableandexistingusers_1717755821408_0": {
+        "dataSetId": -1,
+        "id": "fcn_checktheavailableandexistingusers_1717755821408_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_clickinviteuser_1717755828344_0"
+        ],
+        "content": "check the available and existing users for professional superior"
+      },
+      "fcn_clickinviteuser_1717755828344_0": {
+        "dataSetId": -1,
+        "id": "fcn_clickinviteuser_1717755828344_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checkforrolesonthedropdown_1717755834239_0"
+        ],
+        "content": "click Invite user"
+      },
+      "fcn_checkforrolesonthedropdown_1717755834239_0": {
+        "dataSetId": -1,
+        "id": "fcn_checkforrolesonthedropdown_1717755834239_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_addusersandcheckforlimiteduserbeconversive_0"
+        ],
+        "content": "check for roles on the dropdown."
+      },
+      "fcn_addusersandcheckforlimiteduserbeconversive_0": {
+        "dataSetId": -1,
+        "id": "fcn_addusersandcheckforlimiteduserbeconversive_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_invitetheusers_0"
+        ],
+        "content": "Add users and check for limited user $beconversive"
+      },
+      "fcn_invitetheusers_0": {
+        "dataSetId": -1,
+        "id": "fcn_invitetheusers_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logintogmailemaillogin_1717770573100_0"
+        ],
+        "content": "invite the users"
+      },
+      "fcn_professionalspayg_0": {
+        "dataSetId": -1,
+        "id": "fcn_professionalspayg_0",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_convertyourlicensetono78_0"
+        ],
+        "content": "Professionals PAYG"
+      },
+      "fcn_convertyourlicensetono78_0": {
+        "dataSetId": -1,
+        "id": "fcn_convertyourlicensetono78_0",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_gotoaccountsettingsbeconversive_1717757898446_0"
+        ],
+        "content": "convert your license to NO: 78"
+      },
+      "fcn_gotoaccountsettingsbeconversive_1717757898446_0": {
+        "dataSetId": -1,
+        "id": "fcn_gotoaccountsettingsbeconversive_1717757898446_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_gotousermanagement_1717757902014_0"
+        ],
+        "content": "go to account settings $beconversive"
+      },
+      "fcn_gotousermanagement_1717757902014_0": {
+        "dataSetId": -1,
+        "id": "fcn_gotousermanagement_1717757902014_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checktheexistinguserforuserhavingnolimits_1717771425539_0"
+        ],
+        "content": "Go to User management"
+      },
+      "fcn_clickinviteuser_1717757909694_0": {
+        "dataSetId": -1,
+        "id": "fcn_clickinviteuser_1717757909694_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checkforrolesonthedropdown_1717757935790_0"
+        ],
+        "content": "click Invite user"
+      },
+      "fcn_checkforrolesonthedropdown_1717757935790_0": {
+        "dataSetId": -1,
+        "id": "fcn_checkforrolesonthedropdown_1717757935790_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_addusersandcheckthecountsbeconversive_1717771288258_0"
+        ],
+        "content": "check for roles on the dropdown."
+      },
+      "fcn_invitetheusers_1717757959702_0": {
+        "dataSetId": -1,
+        "id": "fcn_invitetheusers_1717757959702_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logintogmailemaillogin_1717771331530_0"
+        ],
+        "content": "invite the users"
+      },
+      "fcn_invitetheusers_1717759261566_0": {
+        "dataSetId": -1,
+        "id": "fcn_invitetheusers_1717759261566_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logintogmailemaillogin_1717755583392_0"
+        ],
+        "content": "invite the users"
+      },
+      "fcn_registerinviteuserbeconversivesignup_1717766298560_0": {
+        "dataSetId": -1,
+        "id": "fcn_registerinviteuserbeconversivesignup_1717766298560_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logoutfromtheaccount_0"
+        ],
+        "content": "register invite user $beconversivesignup"
+      },
+      "fcn_logoutfromtheaccount_0": {
+        "dataSetId": -1,
+        "id": "fcn_logoutfromtheaccount_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logintobeconversive_1717766480960_0"
+        ],
+        "content": "logout from the account"
+      },
+      "fcn_logintobeconversive_1717766480960_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintobeconversive_1717766480960_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_gotoaccountsettingsbeconversive_1717766495392_0"
+        ],
+        "content": "login to $beconversive"
+      },
+      "fcn_gotoaccountsettingsbeconversive_1717766495392_0": {
+        "dataSetId": -1,
+        "id": "fcn_gotoaccountsettingsbeconversive_1717766495392_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_gotousermanagement_1717766500984_0"
+        ],
+        "content": "go to account settings $beconversive"
+      },
+      "fcn_gotousermanagement_1717766500984_0": {
+        "dataSetId": -1,
+        "id": "fcn_gotousermanagement_1717766500984_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_changetheroles_1717766512544_0"
+        ],
+        "content": "Go to User management"
+      },
+      "fcn_changetheroles_1717766512544_0": {
+        "dataSetId": -1,
+        "id": "fcn_changetheroles_1717766512544_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_changeactiveinactiveactive_1717766517296_0"
+        ],
+        "content": "change the roles"
+      },
+      "fcn_changeactiveinactiveactive_1717766517296_0": {
+        "dataSetId": -1,
+        "id": "fcn_changeactiveinactiveactive_1717766517296_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_changeusertoadmin_0"
+        ],
+        "content": "change active, inactive, active"
+      },
+      "fcn_confirmtheinviteuserbeconversive_0": {
+        "dataSetId": -1,
+        "id": "fcn_confirmtheinviteuserbeconversive_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_registerinviteuserbeconversivesignup_1717766298560_0"
+        ],
+        "content": "confirm the invite user $beconversive"
+      },
+      "fcn_logintogmailemaillogin_1717770573100_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintogmailemaillogin_1717770573100_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_confirmtheinviteuserbeconversive_1717770579771_0"
+        ],
+        "content": "Login to gmail $emaillogin"
+      },
+      "fcn_confirmtheinviteuserbeconversive_1717770579771_0": {
+        "dataSetId": -1,
+        "id": "fcn_confirmtheinviteuserbeconversive_1717770579771_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_registerinviteuserbeconversivesignup_1717770583956_0"
+        ],
+        "content": "confirm the invite user $beconversive"
+      },
+      "fcn_registerinviteuserbeconversivesignup_1717770583956_0": {
+        "dataSetId": -1,
+        "id": "fcn_registerinviteuserbeconversivesignup_1717770583956_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logoutfromtheaccount_1717770593499_0"
+        ],
+        "content": "register invite user $beconversivesignup"
+      },
+      "fcn_logoutfromtheaccount_1717770593499_0": {
+        "dataSetId": -1,
+        "id": "fcn_logoutfromtheaccount_1717770593499_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logintobeconversive_1717770632587_0"
+        ],
+        "content": "logout from the account"
+      },
+      "fcn_logintobeconversive_1717770632587_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintobeconversive_1717770632587_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_gotoaccountsettingsbeconversive_1717770637179_0"
+        ],
+        "content": "login to $beconversive"
+      },
+      "fcn_gotoaccountsettingsbeconversive_1717770637179_0": {
+        "dataSetId": -1,
+        "id": "fcn_gotoaccountsettingsbeconversive_1717770637179_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_gotousermanagement_1717770641172_0"
+        ],
+        "content": "go to account settings $beconversive"
+      },
+      "fcn_gotousermanagement_1717770641172_0": {
+        "dataSetId": -1,
+        "id": "fcn_gotousermanagement_1717770641172_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_changetheroles_1717770645372_0"
+        ],
+        "content": "Go to User management"
+      },
+      "fcn_changetheroles_1717770645372_0": {
+        "dataSetId": -1,
+        "id": "fcn_changetheroles_1717770645372_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_changeactiveinactiveactive_1717770648355_0"
+        ],
+        "content": "change the roles"
+      },
+      "fcn_changeactiveinactiveactive_1717770648355_0": {
+        "dataSetId": -1,
+        "id": "fcn_changeactiveinactiveactive_1717770648355_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_changeusertoadmin_1718000844720_0"
+        ],
+        "content": "change active, inactive, active"
+      },
+      "fcn_addusersandcheckthecountsbeconversive_1717771288258_0": {
+        "dataSetId": -1,
+        "id": "fcn_addusersandcheckthecountsbeconversive_1717771288258_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_invitetheusers_1717757959702_0"
+        ],
+        "content": "add users and check the counts $beconversive"
+      },
+      "fcn_logintogmailemaillogin_1717771331530_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintogmailemaillogin_1717771331530_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_confirmtheinviteuserbeconversive_1717771334346_0"
+        ],
+        "content": "Login to gmail $emaillogin"
+      },
+      "fcn_confirmtheinviteuserbeconversive_1717771334346_0": {
+        "dataSetId": -1,
+        "id": "fcn_confirmtheinviteuserbeconversive_1717771334346_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_registerinviteuserbeconversivesignup_1717771337818_0"
+        ],
+        "content": "confirm the invite user $beconversive"
+      },
+      "fcn_registerinviteuserbeconversivesignup_1717771337818_0": {
+        "dataSetId": -1,
+        "id": "fcn_registerinviteuserbeconversivesignup_1717771337818_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logoutfromtheaccount_1717771342074_0"
+        ],
+        "content": "register invite user $beconversivesignup"
+      },
+      "fcn_logoutfromtheaccount_1717771342074_0": {
+        "dataSetId": -1,
+        "id": "fcn_logoutfromtheaccount_1717771342074_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logintobeconversive_1717771344731_0"
+        ],
+        "content": "logout from the account"
+      },
+      "fcn_logintobeconversive_1717771344731_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintobeconversive_1717771344731_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_gotoaccountsettingsbeconversive_1717771347467_0"
+        ],
+        "content": "login to $beconversive"
+      },
+      "fcn_gotoaccountsettingsbeconversive_1717771347467_0": {
+        "dataSetId": -1,
+        "id": "fcn_gotoaccountsettingsbeconversive_1717771347467_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_gotousermanagement_1717771350107_0"
+        ],
+        "content": "go to account settings $beconversive"
+      },
+      "fcn_gotousermanagement_1717771350107_0": {
+        "dataSetId": -1,
+        "id": "fcn_gotousermanagement_1717771350107_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_changetheroles_1717771353627_0"
+        ],
+        "content": "Go to User management"
+      },
+      "fcn_changetheroles_1717771353627_0": {
+        "dataSetId": -1,
+        "id": "fcn_changetheroles_1717771353627_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_changeactiveinactiveactive_1717771356619_0"
+        ],
+        "content": "change the roles"
+      },
+      "fcn_changeactiveinactiveactive_1717771356619_0": {
+        "dataSetId": -1,
+        "id": "fcn_changeactiveinactiveactive_1717771356619_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_changeusertoadmin_1718002210526_0"
+        ],
+        "content": "change active, inactive, active"
+      },
+      "fcn_checktheexistinguserforuserhavingnolimits_1717771425539_0": {
+        "dataSetId": -1,
+        "id": "fcn_checktheexistinguserforuserhavingnolimits_1717771425539_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_clickinviteuser_1717757909694_0"
+        ],
+        "content": "check the existing user for user having no limits."
+      },
+      "fcn_marketeerplan_0": {
+        "dataSetId": -1,
+        "id": "fcn_marketeerplan_0",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_marketeerbasic_0",
+          "fcn_marketeeradvance_0"
+        ],
+        "content": "Marketeer Plan"
+      },
+      "fcn_marketeerbasic_0": {
+        "dataSetId": -1,
+        "id": "fcn_marketeerbasic_0",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_convertyourlicensetono79_0"
+        ],
+        "content": "Marketeer - Basic"
+      },
+      "fcn_convertyourlicensetono79_0": {
+        "dataSetId": -1,
+        "id": "fcn_convertyourlicensetono79_0",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_gotoaccountsettingsbeconversive_1717771677154_0"
+        ],
+        "content": "convert your license to NO: 79"
+      },
+      "fcn_gotoaccountsettingsbeconversive_1717771677154_0": {
+        "dataSetId": -1,
+        "id": "fcn_gotoaccountsettingsbeconversive_1717771677154_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_gotousermanagement_1717771690722_0"
+        ],
+        "content": "go to account settings $beconversive"
+      },
+      "fcn_gotousermanagement_1717771690722_0": {
+        "dataSetId": -1,
+        "id": "fcn_gotousermanagement_1717771690722_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checktheexistinguserforuserhavingnolimits_1717771694162_0"
+        ],
+        "content": "Go to User management"
+      },
+      "fcn_checktheexistinguserforuserhavingnolimits_1717771694162_0": {
+        "dataSetId": -1,
+        "id": "fcn_checktheexistinguserforuserhavingnolimits_1717771694162_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_clickinviteuser_1717771697258_0"
+        ],
+        "content": "check the existing user for user having no limits."
+      },
+      "fcn_clickinviteuser_1717771697258_0": {
+        "dataSetId": -1,
+        "id": "fcn_clickinviteuser_1717771697258_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checkforrolesonthedropdown_1717771701843_0"
+        ],
+        "content": "click Invite user"
+      },
+      "fcn_checkforrolesonthedropdown_1717771701843_0": {
+        "dataSetId": -1,
+        "id": "fcn_checkforrolesonthedropdown_1717771701843_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_addusersandcheckthecountsbeconversive_1717771704370_0"
+        ],
+        "content": "check for roles on the dropdown."
+      },
+      "fcn_addusersandcheckthecountsbeconversive_1717771704370_0": {
+        "dataSetId": -1,
+        "id": "fcn_addusersandcheckthecountsbeconversive_1717771704370_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_invitetheusers_1717771707218_0"
+        ],
+        "content": "add users and check the counts $beconversive"
+      },
+      "fcn_invitetheusers_1717771707218_0": {
+        "dataSetId": -1,
+        "id": "fcn_invitetheusers_1717771707218_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logintogmailemaillogin_1717771710227_0"
+        ],
+        "content": "invite the users"
+      },
+      "fcn_logintogmailemaillogin_1717771710227_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintogmailemaillogin_1717771710227_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_confirmtheinviteuserbeconversive_1717771713994_0"
+        ],
+        "content": "Login to gmail $emaillogin"
+      },
+      "fcn_confirmtheinviteuserbeconversive_1717771713994_0": {
+        "dataSetId": -1,
+        "id": "fcn_confirmtheinviteuserbeconversive_1717771713994_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_registerinviteuserbeconversivesignup_1717771716595_0"
+        ],
+        "content": "confirm the invite user $beconversive"
+      },
+      "fcn_registerinviteuserbeconversivesignup_1717771716595_0": {
+        "dataSetId": -1,
+        "id": "fcn_registerinviteuserbeconversivesignup_1717771716595_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logoutfromtheaccount_1717771719691_0"
+        ],
+        "content": "register invite user $beconversivesignup"
+      },
+      "fcn_logoutfromtheaccount_1717771719691_0": {
+        "dataSetId": -1,
+        "id": "fcn_logoutfromtheaccount_1717771719691_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logintobeconversive_1717771722962_0"
+        ],
+        "content": "logout from the account"
+      },
+      "fcn_logintobeconversive_1717771722962_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintobeconversive_1717771722962_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_gotoaccountsettingsbeconversive_1717771726179_0"
+        ],
+        "content": "login to $beconversive"
+      },
+      "fcn_gotoaccountsettingsbeconversive_1717771726179_0": {
+        "dataSetId": -1,
+        "id": "fcn_gotoaccountsettingsbeconversive_1717771726179_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_gotousermanagement_1717771732267_0"
+        ],
+        "content": "go to account settings $beconversive"
+      },
+      "fcn_gotousermanagement_1717771732267_0": {
+        "dataSetId": -1,
+        "id": "fcn_gotousermanagement_1717771732267_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_changetheroles_1717771735386_0"
+        ],
+        "content": "Go to User management"
+      },
+      "fcn_changetheroles_1717771735386_0": {
+        "dataSetId": -1,
+        "id": "fcn_changetheroles_1717771735386_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_changeactiveinactiveactive_1717771738770_0"
+        ],
+        "content": "change the roles"
+      },
+      "fcn_changeactiveinactiveactive_1717771738770_0": {
+        "dataSetId": -1,
+        "id": "fcn_changeactiveinactiveactive_1717771738770_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_changeusertoadmin_1718002683271_0"
+        ],
+        "content": "change active, inactive, active"
+      },
+      "fcn_marketeeradvance_0": {
+        "dataSetId": -1,
+        "id": "fcn_marketeeradvance_0",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_convertyourlicensetono80_0"
+        ],
+        "content": "Marketeer - Advance"
+      },
+      "fcn_convertyourlicensetono80_0": {
+        "dataSetId": -1,
+        "id": "fcn_convertyourlicensetono80_0",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_gotoaccountsettingsbeconversive_1717771977450_0"
+        ],
+        "content": "convert your license to NO: 80"
+      },
+      "fcn_gotoaccountsettingsbeconversive_1717771977450_0": {
+        "dataSetId": -1,
+        "id": "fcn_gotoaccountsettingsbeconversive_1717771977450_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_gotousermanagement_1717771981459_0"
+        ],
+        "content": "go to account settings $beconversive"
+      },
+      "fcn_gotousermanagement_1717771981459_0": {
+        "dataSetId": -1,
+        "id": "fcn_gotousermanagement_1717771981459_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checktheexistinguserforuserhavingnolimits_1717771985674_0"
+        ],
+        "content": "Go to User management"
+      },
+      "fcn_checktheexistinguserforuserhavingnolimits_1717771985674_0": {
+        "dataSetId": -1,
+        "id": "fcn_checktheexistinguserforuserhavingnolimits_1717771985674_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_clickinviteuser_1717771988634_0"
+        ],
+        "content": "check the existing user for user having no limits."
+      },
+      "fcn_clickinviteuser_1717771988634_0": {
+        "dataSetId": -1,
+        "id": "fcn_clickinviteuser_1717771988634_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checkforrolesonthedropdown_1717771991866_0"
+        ],
+        "content": "click Invite user"
+      },
+      "fcn_checkforrolesonthedropdown_1717771991866_0": {
+        "dataSetId": -1,
+        "id": "fcn_checkforrolesonthedropdown_1717771991866_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_addusersandcheckthecountsbeconversive_1717771994882_0"
+        ],
+        "content": "check for roles on the dropdown."
+      },
+      "fcn_addusersandcheckthecountsbeconversive_1717771994882_0": {
+        "dataSetId": -1,
+        "id": "fcn_addusersandcheckthecountsbeconversive_1717771994882_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_invitetheusers_1717771998098_0"
+        ],
+        "content": "add users and check the counts $beconversive"
+      },
+      "fcn_invitetheusers_1717771998098_0": {
+        "dataSetId": -1,
+        "id": "fcn_invitetheusers_1717771998098_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logintogmailemaillogin_1717772001122_0"
+        ],
+        "content": "invite the users"
+      },
+      "fcn_logintogmailemaillogin_1717772001122_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintogmailemaillogin_1717772001122_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_confirmtheinviteuserbeconversive_1717772004146_0"
+        ],
+        "content": "Login to gmail $emaillogin"
+      },
+      "fcn_confirmtheinviteuserbeconversive_1717772004146_0": {
+        "dataSetId": -1,
+        "id": "fcn_confirmtheinviteuserbeconversive_1717772004146_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_registerinviteuserbeconversivesignup_1717772007162_0"
+        ],
+        "content": "confirm the invite user $beconversive"
+      },
+      "fcn_registerinviteuserbeconversivesignup_1717772007162_0": {
+        "dataSetId": -1,
+        "id": "fcn_registerinviteuserbeconversivesignup_1717772007162_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logoutfromtheaccount_1717772010162_0"
+        ],
+        "content": "register invite user $beconversivesignup"
+      },
+      "fcn_logoutfromtheaccount_1717772010162_0": {
+        "dataSetId": -1,
+        "id": "fcn_logoutfromtheaccount_1717772010162_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logintobeconversive_1717772013410_0"
+        ],
+        "content": "logout from the account"
+      },
+      "fcn_logintobeconversive_1717772013410_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintobeconversive_1717772013410_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_gotoaccountsettingsbeconversive_1717772016898_0"
+        ],
+        "content": "login to $beconversive"
+      },
+      "fcn_gotoaccountsettingsbeconversive_1717772016898_0": {
+        "dataSetId": -1,
+        "id": "fcn_gotoaccountsettingsbeconversive_1717772016898_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_gotousermanagement_1717772020698_0"
+        ],
+        "content": "go to account settings $beconversive"
+      },
+      "fcn_gotousermanagement_1717772020698_0": {
+        "dataSetId": -1,
+        "id": "fcn_gotousermanagement_1717772020698_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_changetheroles_1717772023322_0"
+        ],
+        "content": "Go to User management"
+      },
+      "fcn_changetheroles_1717772023322_0": {
+        "dataSetId": -1,
+        "id": "fcn_changetheroles_1717772023322_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_changeactiveinactiveactive_1717772026130_0"
+        ],
+        "content": "change the roles"
+      },
+      "fcn_changeactiveinactiveactive_1717772026130_0": {
+        "dataSetId": -1,
+        "id": "fcn_changeactiveinactiveactive_1717772026130_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_changeusertoadmin_1718003144534_0"
+        ],
+        "content": "change active, inactive, active"
+      },
+      "fcn_contactcenterbasic_0": {
+        "dataSetId": -1,
+        "id": "fcn_contactcenterbasic_0",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_contactcenterbasic_1",
+          "fcn_contactcenteradvance_0",
+          "fcn_contactcenterpayg_0"
+        ],
+        "content": "Contact center plan"
+      },
+      "fcn_contactcenterbasic_1": {
+        "dataSetId": -1,
+        "id": "fcn_contactcenterbasic_1",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_convertyourlicensetono81_0"
+        ],
+        "content": "Contact center - Basic"
+      },
+      "fcn_convertyourlicensetono81_0": {
+        "dataSetId": -1,
+        "id": "fcn_convertyourlicensetono81_0",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_gotoaccountsettingsbeconversive_1717772379178_0"
+        ],
+        "content": "convert your license to NO: 81"
+      },
+      "fcn_gotoaccountsettingsbeconversive_1717772379178_0": {
+        "dataSetId": -1,
+        "id": "fcn_gotoaccountsettingsbeconversive_1717772379178_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_gotousermanagement_1717772383930_0"
+        ],
+        "content": "go to account settings $beconversive"
+      },
+      "fcn_gotousermanagement_1717772383930_0": {
+        "dataSetId": -1,
+        "id": "fcn_gotousermanagement_1717772383930_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checktotalandexistingusersforcontactcenterbasic_0"
+        ],
+        "content": "Go to User management"
+      },
+      "fcn_checktotalandexistingusersforcontactcenterbasic_0": {
+        "dataSetId": -1,
+        "id": "fcn_checktotalandexistingusersforcontactcenterbasic_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_clickinviteuser_1717772512522_0"
+        ],
+        "content": "check total and existing users for contact center basic"
+      },
+      "fcn_clickinviteuser_1717772512522_0": {
+        "dataSetId": -1,
+        "id": "fcn_clickinviteuser_1717772512522_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checktherolesondropdownforcontactcenter_0"
+        ],
+        "content": "click Invite user"
+      },
+      "fcn_checktherolesondropdownforcontactcenter_0": {
+        "dataSetId": -1,
+        "id": "fcn_checktherolesondropdownforcontactcenter_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_addusersandcheckforlimiteduserbeconversive_1717772673106_0"
+        ],
+        "content": "check the roles on dropdown for contact center"
+      },
+      "fcn_addusersandcheckforlimiteduserbeconversive_1717772673106_0": {
+        "dataSetId": -1,
+        "id": "fcn_addusersandcheckforlimiteduserbeconversive_1717772673106_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_invitetheusers_1717772678626_0"
+        ],
+        "content": "Add users and check for limited user $beconversive"
+      },
+      "fcn_invitetheusers_1717772678626_0": {
+        "dataSetId": -1,
+        "id": "fcn_invitetheusers_1717772678626_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logintogmailemaillogin_1717772682026_0"
+        ],
+        "content": "invite the users"
+      },
+      "fcn_logintogmailemaillogin_1717772682026_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintogmailemaillogin_1717772682026_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_confirmtheinviteuserbeconversive_1717772687602_0"
+        ],
+        "content": "Login to gmail $emaillogin"
+      },
+      "fcn_confirmtheinviteuserbeconversive_1717772687602_0": {
+        "dataSetId": -1,
+        "id": "fcn_confirmtheinviteuserbeconversive_1717772687602_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_registerinviteuserbeconversivesignup_1717772692082_0"
+        ],
+        "content": "confirm the invite user $beconversive"
+      },
+      "fcn_registerinviteuserbeconversivesignup_1717772692082_0": {
+        "dataSetId": -1,
+        "id": "fcn_registerinviteuserbeconversivesignup_1717772692082_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logoutfromtheaccount_1717772696242_0"
+        ],
+        "content": "register invite user $beconversivesignup"
+      },
+      "fcn_logoutfromtheaccount_1717772696242_0": {
+        "dataSetId": -1,
+        "id": "fcn_logoutfromtheaccount_1717772696242_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logintobeconversive_1717772700602_0"
+        ],
+        "content": "logout from the account"
+      },
+      "fcn_logintobeconversive_1717772700602_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintobeconversive_1717772700602_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_gotoaccountsettingsbeconversive_1717772703634_0"
+        ],
+        "content": "login to $beconversive"
+      },
+      "fcn_gotoaccountsettingsbeconversive_1717772703634_0": {
+        "dataSetId": -1,
+        "id": "fcn_gotoaccountsettingsbeconversive_1717772703634_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_gotousermanagement_1717772708234_0"
+        ],
+        "content": "go to account settings $beconversive"
+      },
+      "fcn_gotousermanagement_1717772708234_0": {
+        "dataSetId": -1,
+        "id": "fcn_gotousermanagement_1717772708234_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_changetheroles_1717772711162_0"
+        ],
+        "content": "Go to User management"
+      },
+      "fcn_changetheroles_1717772711162_0": {
+        "dataSetId": -1,
+        "id": "fcn_changetheroles_1717772711162_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_changeactiveinactiveactive_1717772714170_0"
+        ],
+        "content": "change the roles"
+      },
+      "fcn_changeactiveinactiveactive_1717772714170_0": {
+        "dataSetId": -1,
+        "id": "fcn_changeactiveinactiveactive_1717772714170_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_changeusertoadmin_1718003697238_0"
+        ],
+        "content": "change active, inactive, active"
+      },
+      "fcn_contactcenteradvance_0": {
+        "dataSetId": -1,
+        "id": "fcn_contactcenteradvance_0",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_convertyourlicensetono82_0"
+        ],
+        "content": "Contact center - Advance"
+      },
+      "fcn_convertyourlicensetono82_0": {
+        "dataSetId": -1,
+        "id": "fcn_convertyourlicensetono82_0",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_gotoaccountsettingsbeconversive_1717773008602_0"
+        ],
+        "content": "convert your license to NO: 82"
+      },
+      "fcn_gotoaccountsettingsbeconversive_1717773008602_0": {
+        "dataSetId": -1,
+        "id": "fcn_gotoaccountsettingsbeconversive_1717773008602_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_gotousermanagement_1717773015930_0"
+        ],
+        "content": "go to account settings $beconversive"
+      },
+      "fcn_gotousermanagement_1717773015930_0": {
+        "dataSetId": -1,
+        "id": "fcn_gotousermanagement_1717773015930_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checktotalandexistingusersforcontactcenteradvance_0"
+        ],
+        "content": "Go to User management"
+      },
+      "fcn_checktotalandexistingusersforcontactcenteradvance_0": {
+        "dataSetId": -1,
+        "id": "fcn_checktotalandexistingusersforcontactcenteradvance_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_clickinviteuser_1717773078642_0"
+        ],
+        "content": "check total and existing users for contact center Advance"
+      },
+      "fcn_clickinviteuser_1717773078642_0": {
+        "dataSetId": -1,
+        "id": "fcn_clickinviteuser_1717773078642_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checktherolesondropdownforcontactcenter_1717773477785_0"
+        ],
+        "content": "click Invite user"
+      },
+      "fcn_addusersandcheckforlimiteduserbeconversive_1717773085809_0": {
+        "dataSetId": -1,
+        "id": "fcn_addusersandcheckforlimiteduserbeconversive_1717773085809_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_invitetheusers_1717773089313_0"
+        ],
+        "content": "Add users and check for limited user $beconversive"
+      },
+      "fcn_invitetheusers_1717773089313_0": {
+        "dataSetId": -1,
+        "id": "fcn_invitetheusers_1717773089313_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logintogmailemaillogin_1717773093185_0"
+        ],
+        "content": "invite the users"
+      },
+      "fcn_logintogmailemaillogin_1717773093185_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintogmailemaillogin_1717773093185_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_confirmtheinviteuserbeconversive_1717773096976_0"
+        ],
+        "content": "Login to gmail $emaillogin"
+      },
+      "fcn_confirmtheinviteuserbeconversive_1717773096976_0": {
+        "dataSetId": -1,
+        "id": "fcn_confirmtheinviteuserbeconversive_1717773096976_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_registerinviteuserbeconversivesignup_1717773100768_0"
+        ],
+        "content": "confirm the invite user $beconversive"
+      },
+      "fcn_registerinviteuserbeconversivesignup_1717773100768_0": {
+        "dataSetId": -1,
+        "id": "fcn_registerinviteuserbeconversivesignup_1717773100768_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logoutfromtheaccount_1717773103713_0"
+        ],
+        "content": "register invite user $beconversivesignup"
+      },
+      "fcn_logoutfromtheaccount_1717773103713_0": {
+        "dataSetId": -1,
+        "id": "fcn_logoutfromtheaccount_1717773103713_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logintobeconversive_1717773106432_0"
+        ],
+        "content": "logout from the account"
+      },
+      "fcn_logintobeconversive_1717773106432_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintobeconversive_1717773106432_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_gotoaccountsettingsbeconversive_1717773109273_0"
+        ],
+        "content": "login to $beconversive"
+      },
+      "fcn_gotoaccountsettingsbeconversive_1717773109273_0": {
+        "dataSetId": -1,
+        "id": "fcn_gotoaccountsettingsbeconversive_1717773109273_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_gotousermanagement_1717773115521_0"
+        ],
+        "content": "go to account settings $beconversive"
+      },
+      "fcn_gotousermanagement_1717773115521_0": {
+        "dataSetId": -1,
+        "id": "fcn_gotousermanagement_1717773115521_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_changetheroles_1717773120193_0"
+        ],
+        "content": "Go to User management"
+      },
+      "fcn_changetheroles_1717773120193_0": {
+        "dataSetId": -1,
+        "id": "fcn_changetheroles_1717773120193_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_changeactiveinactiveactive_1717773124864_0"
+        ],
+        "content": "change the roles"
+      },
+      "fcn_changeactiveinactiveactive_1717773124864_0": {
+        "dataSetId": -1,
+        "id": "fcn_changeactiveinactiveactive_1717773124864_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_changeusertoadmin_1718005094773_0"
+        ],
+        "content": "change active, inactive, active"
+      },
+      "fcn_contactcenterpayg_0": {
+        "dataSetId": -1,
+        "id": "fcn_contactcenterpayg_0",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_convertyourlicensetono83_0"
+        ],
+        "content": "Contact Center - PAYG"
+      },
+      "fcn_convertyourlicensetono83_0": {
+        "dataSetId": -1,
+        "id": "fcn_convertyourlicensetono83_0",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_gotoaccountsettingsbeconversive_1717773409018_0"
+        ],
+        "content": "convert your license to NO: 83"
+      },
+      "fcn_gotoaccountsettingsbeconversive_1717773409018_0": {
+        "dataSetId": -1,
+        "id": "fcn_gotoaccountsettingsbeconversive_1717773409018_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_gotousermanagement_1717773412793_0"
+        ],
+        "content": "go to account settings $beconversive"
+      },
+      "fcn_gotousermanagement_1717773412793_0": {
+        "dataSetId": -1,
+        "id": "fcn_gotousermanagement_1717773412793_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checktotalandexistingusersforcontactcenterpayg_0"
+        ],
+        "content": "Go to User management"
+      },
+      "fcn_checktotalandexistingusersforcontactcenterpayg_0": {
+        "dataSetId": -1,
+        "id": "fcn_checktotalandexistingusersforcontactcenterpayg_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_clickinviteuser_1717773467577_0"
+        ],
+        "content": "check total and existing users for contact center payg"
+      },
+      "fcn_clickinviteuser_1717773467577_0": {
+        "dataSetId": -1,
+        "id": "fcn_clickinviteuser_1717773467577_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checktherolesondropdownforcontactcenter_1717773489761_0"
+        ],
+        "content": "click Invite user"
+      },
+      "fcn_checktherolesondropdownforcontactcenter_1717773477785_0": {
+        "dataSetId": -1,
+        "id": "fcn_checktherolesondropdownforcontactcenter_1717773477785_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_addusersandcheckforlimiteduserbeconversive_1717773085809_0"
+        ],
+        "content": "check the roles on dropdown for contact center"
+      },
+      "fcn_checktherolesondropdownforcontactcenter_1717773489761_0": {
+        "dataSetId": -1,
+        "id": "fcn_checktherolesondropdownforcontactcenter_1717773489761_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_addusersandcheckforlimiteduserbeconversive_1717773494752_0"
+        ],
+        "content": "check the roles on dropdown for contact center"
+      },
+      "fcn_addusersandcheckforlimiteduserbeconversive_1717773494752_0": {
+        "dataSetId": -1,
+        "id": "fcn_addusersandcheckforlimiteduserbeconversive_1717773494752_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_invitetheusers_1717773498241_0"
+        ],
+        "content": "Add users and check for limited user $beconversive"
+      },
+      "fcn_invitetheusers_1717773498241_0": {
+        "dataSetId": -1,
+        "id": "fcn_invitetheusers_1717773498241_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logintogmailemaillogin_1717773501833_0"
+        ],
+        "content": "invite the users"
+      },
+      "fcn_logintogmailemaillogin_1717773501833_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintogmailemaillogin_1717773501833_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_confirmtheinviteuserbeconversive_1717773506081_0"
+        ],
+        "content": "Login to gmail $emaillogin"
+      },
+      "fcn_confirmtheinviteuserbeconversive_1717773506081_0": {
+        "dataSetId": -1,
+        "id": "fcn_confirmtheinviteuserbeconversive_1717773506081_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_registerinviteuserbeconversivesignup_1717773509761_0"
+        ],
+        "content": "confirm the invite user $beconversive"
+      },
+      "fcn_registerinviteuserbeconversivesignup_1717773509761_0": {
+        "dataSetId": -1,
+        "id": "fcn_registerinviteuserbeconversivesignup_1717773509761_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logoutfromtheaccount_1717773512328_0"
+        ],
+        "content": "register invite user $beconversivesignup"
+      },
+      "fcn_logoutfromtheaccount_1717773512328_0": {
+        "dataSetId": -1,
+        "id": "fcn_logoutfromtheaccount_1717773512328_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logintobeconversive_1717773515481_0"
+        ],
+        "content": "logout from the account"
+      },
+      "fcn_logintobeconversive_1717773515481_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintobeconversive_1717773515481_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_gotoaccountsettingsbeconversive_1717773518241_0"
+        ],
+        "content": "login to $beconversive"
+      },
+      "fcn_gotoaccountsettingsbeconversive_1717773518241_0": {
+        "dataSetId": -1,
+        "id": "fcn_gotoaccountsettingsbeconversive_1717773518241_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_gotousermanagement_1717773521449_0"
+        ],
+        "content": "go to account settings $beconversive"
+      },
+      "fcn_gotousermanagement_1717773521449_0": {
+        "dataSetId": -1,
+        "id": "fcn_gotousermanagement_1717773521449_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_changetheroles_1717773524489_0"
+        ],
+        "content": "Go to User management"
+      },
+      "fcn_changetheroles_1717773524489_0": {
+        "dataSetId": -1,
+        "id": "fcn_changetheroles_1717773524489_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_changeactiveinactiveactive_1717773527681_0"
+        ],
+        "content": "change the roles"
+      },
+      "fcn_changeactiveinactiveactive_1717773527681_0": {
+        "dataSetId": -1,
+        "id": "fcn_changeactiveinactiveactive_1717773527681_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_changeusertoadmin_1718005118285_0"
+        ],
+        "content": "change active, inactive, active"
+      },
+      "fcn_registerinviteuserbeconversivesignup_1717773965353_0": {
+        "dataSetId": -1,
+        "id": "fcn_registerinviteuserbeconversivesignup_1717773965353_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logoutfromtheaccount_1717773969016_0"
+        ],
+        "content": "register invite user $beconversivesignup"
+      },
+      "fcn_logoutfromtheaccount_1717773969016_0": {
+        "dataSetId": -1,
+        "id": "fcn_logoutfromtheaccount_1717773969016_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logintobeconversive_1717773971945_0"
+        ],
+        "content": "logout from the account"
+      },
+      "fcn_logintobeconversive_1717773971945_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintobeconversive_1717773971945_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_gotoaccountsettingsbeconversive_1717773975145_0"
+        ],
+        "content": "login to $beconversive"
+      },
+      "fcn_gotoaccountsettingsbeconversive_1717773975145_0": {
+        "dataSetId": -1,
+        "id": "fcn_gotoaccountsettingsbeconversive_1717773975145_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_gotousermanagement_1717773978452_0"
+        ],
+        "content": "go to account settings $beconversive"
+      },
+      "fcn_gotousermanagement_1717773978452_0": {
+        "dataSetId": -1,
+        "id": "fcn_gotousermanagement_1717773978452_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_changetheroles_1717773982065_0"
+        ],
+        "content": "Go to User management"
+      },
+      "fcn_changetheroles_1717773982065_0": {
+        "dataSetId": -1,
+        "id": "fcn_changetheroles_1717773982065_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_changeactiveinactiveactive_1717773985105_0"
+        ],
+        "content": "change the roles"
+      },
+      "fcn_changeactiveinactiveactive_1717773985105_0": {
+        "dataSetId": -1,
+        "id": "fcn_changeactiveinactiveactive_1717773985105_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_changeusertoadmin_1718000358840_0"
+        ],
+        "content": "change active, inactive, active"
+      },
+      "fcn_changeusertoadmin_0": {
+        "dataSetId": -1,
+        "id": "fcn_changeusertoadmin_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checkthemainaccount_0"
+        ],
+        "content": "change user to Admin"
+      },
+      "fcn_checkthemainaccount_0": {
+        "dataSetId": -1,
+        "id": "fcn_checkthemainaccount_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "check the main account"
+      },
+      "fcn_confirmtheinviteuserbeconversive_1718000320481_0": {
+        "dataSetId": -1,
+        "id": "fcn_confirmtheinviteuserbeconversive_1718000320481_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_registerinviteuserbeconversivesignup_1717773965353_0"
+        ],
+        "content": "confirm the invite user $beconversive"
+      },
+      "fcn_changeusertoadmin_1718000358840_0": {
+        "dataSetId": -1,
+        "id": "fcn_changeusertoadmin_1718000358840_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checkthemainaccount_1718000363160_0"
+        ],
+        "content": "change user to Admin"
+      },
+      "fcn_checkthemainaccount_1718000363160_0": {
+        "dataSetId": -1,
+        "id": "fcn_checkthemainaccount_1718000363160_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "check the main account"
+      },
+      "fcn_changeusertoadmin_1718000844720_0": {
+        "dataSetId": -1,
+        "id": "fcn_changeusertoadmin_1718000844720_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checkthemainaccount_1718000847842_0"
+        ],
+        "content": "change user to Admin"
+      },
+      "fcn_checkthemainaccount_1718000847842_0": {
+        "dataSetId": -1,
+        "id": "fcn_checkthemainaccount_1718000847842_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "check the main account"
+      },
+      "fcn_changeusertoadmin_1718002210526_0": {
+        "dataSetId": -1,
+        "id": "fcn_changeusertoadmin_1718002210526_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checkthemainaccount_1718002213399_0"
+        ],
+        "content": "change user to Admin"
+      },
+      "fcn_checkthemainaccount_1718002213399_0": {
+        "dataSetId": -1,
+        "id": "fcn_checkthemainaccount_1718002213399_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "check the main account"
+      },
+      "fcn_changeusertoadmin_1718002683271_0": {
+        "dataSetId": -1,
+        "id": "fcn_changeusertoadmin_1718002683271_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checkthemainaccount_1718002686591_0"
+        ],
+        "content": "change user to Admin"
+      },
+      "fcn_checkthemainaccount_1718002686591_0": {
+        "dataSetId": -1,
+        "id": "fcn_checkthemainaccount_1718002686591_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "check the main account"
+      },
+      "fcn_changeusertoadmin_1718003144534_0": {
+        "dataSetId": -1,
+        "id": "fcn_changeusertoadmin_1718003144534_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checkthemainaccount_1718003147750_0"
+        ],
+        "content": "change user to Admin"
+      },
+      "fcn_checkthemainaccount_1718003147750_0": {
+        "dataSetId": -1,
+        "id": "fcn_checkthemainaccount_1718003147750_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "check the main account"
+      },
+      "fcn_changeusertoadmin_1718003697238_0": {
+        "dataSetId": -1,
+        "id": "fcn_changeusertoadmin_1718003697238_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checkthemainaccount_1718003700311_0"
+        ],
+        "content": "change user to Admin"
+      },
+      "fcn_checkthemainaccount_1718003700311_0": {
+        "dataSetId": -1,
+        "id": "fcn_checkthemainaccount_1718003700311_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "check the main account"
+      },
+      "fcn_changeusertoadmin_1718005094773_0": {
+        "dataSetId": -1,
+        "id": "fcn_changeusertoadmin_1718005094773_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checkthemainaccount_1718005098541_0"
+        ],
+        "content": "change user to Admin"
+      },
+      "fcn_checkthemainaccount_1718005098541_0": {
+        "dataSetId": -1,
+        "id": "fcn_checkthemainaccount_1718005098541_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "check the main account"
+      },
+      "fcn_changeusertoadmin_1718005118285_0": {
+        "dataSetId": -1,
+        "id": "fcn_changeusertoadmin_1718005118285_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checkthemainaccount_1718005121005_0"
+        ],
+        "content": "change user to Admin"
+      },
+      "fcn_checkthemainaccount_1718005121005_0": {
+        "dataSetId": -1,
+        "id": "fcn_checkthemainaccount_1718005121005_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "check the main account"
+      },
+      "fcn_checkerrorforusershavinglimits_0": {
+        "dataSetId": -1,
+        "id": "fcn_checkerrorforusershavinglimits_0",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_changethelicensesasperfortheaccount_0"
+        ],
+        "content": "Check Error for users having limits"
+      },
+      "fcn_changethelicensesasperfortheaccount_0": {
+        "dataSetId": -1,
+        "id": "fcn_changethelicensesasperfortheaccount_0",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_gotoaccountsettingsbeconversive_1718007577483_0"
+        ],
+        "content": "Change the licenses as per for the account."
+      },
+      "fcn_gotoaccountsettingsbeconversive_1718007577483_0": {
+        "dataSetId": -1,
+        "id": "fcn_gotoaccountsettingsbeconversive_1718007577483_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_gotousermanagement_1718007582163_0"
+        ],
+        "content": "go to account settings $beconversive"
+      },
+      "fcn_gotousermanagement_1718007582163_0": {
+        "dataSetId": -1,
+        "id": "fcn_gotousermanagement_1718007582163_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checktheavailableandexistingusers_1718007643795_0"
+        ],
+        "content": "Go to User management"
+      },
+      "fcn_checktheavailableandexistingusers_1718007643795_0": {
+        "dataSetId": -1,
+        "id": "fcn_checktheavailableandexistingusers_1718007643795_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_clickinviteuser_1718007651171_0"
+        ],
+        "content": "check the available and existing users"
+      },
+      "fcn_clickinviteuser_1718007651171_0": {
+        "dataSetId": -1,
+        "id": "fcn_clickinviteuser_1718007651171_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_adduserstothefullestandchecktheerrorbeconversive_0"
+        ],
+        "content": "click Invite user"
+      },
+      "fcn_adduserstothefullestandchecktheerrorbeconversive_0": {
+        "dataSetId": -1,
+        "id": "fcn_adduserstothefullestandchecktheerrorbeconversive_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_invitetheusers_1718018480934_0"
+        ],
+        "content": "add users to the fullest and check the error $beconversive"
+      },
+      "fcn_invitetheusers_1718018480934_0": {
+        "dataSetId": -1,
+        "id": "fcn_invitetheusers_1718018480934_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_clickinviteuser_1718018484862_0"
+        ],
+        "content": "invite the users"
+      },
+      "fcn_clickinviteuser_1718018484862_0": {
+        "dataSetId": -1,
+        "id": "fcn_clickinviteuser_1718018484862_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checktheerrorwhenthereisnoavailableusers_0"
+        ],
+        "content": "click Invite user"
+      },
+      "fcn_checktheerrorwhenthereisnoavailableusers_0": {
+        "dataSetId": -1,
+        "id": "fcn_checktheerrorwhenthereisnoavailableusers_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "check the Error when there is no available users"
+      },
+      "fcn_textchange_0": {
+        "dataSetId": -1,
+        "id": "fcn_textchange_0",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_gotoaccountsettingsbeconversive_1719582966151_0"
+        ],
+        "content": "Text Change"
+      },
+      "fcn_gotoaccountsettingsbeconversive_1719582966151_0": {
+        "dataSetId": -1,
+        "id": "fcn_gotoaccountsettingsbeconversive_1719582966151_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_gotousermanagement_1719582976013_0"
+        ],
+        "content": "go to account settings $beconversive"
+      },
+      "fcn_gotousermanagement_1719582976013_0": {
+        "dataSetId": -1,
+        "id": "fcn_gotousermanagement_1719582976013_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_validatetextchange_0",
+          "fcn_validatetextchangeforlimitedusers_0"
+        ],
+        "content": "Go to User management"
+      },
+      "fcn_validatetextchange_0": {
+        "dataSetId": -1,
+        "id": "fcn_validatetextchange_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Validate Text Change for Unlimited Users"
+      },
+      "fcn_validatetextchangeforlimitedusers_0": {
+        "dataSetId": -1,
+        "id": "fcn_validatetextchangeforlimitedusers_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Validate Text Change for Limited Users"
+      }
+    },
+    "pathNames": {},
+    "isPrimary": false,
+    "positions": {
+      "fcn_start_0": {
+        "top": 149.875,
+        "left": 499.9375
+      },
+      "fcn_usermanagement_0": {
+        "top": 234.68756103515625,
+        "left": 588.9375
+      },
+      "fcn_logintobeconversive_1717741602621_0": {
+        "top": 309.31256103515625,
+        "left": 588.9375
+      },
+      "fcn_usermanagementforalllicenses_0": {
+        "top": 453.53753662109375,
+        "left": 588.9375
+      },
+      "fcn_freetrial_0": {
+        "top": 525.1250610351562,
+        "left": 114.00000762939453
+      },
+      "fcn_gotoaccountsettingsbeconversive_1717742481228_0": {
+        "top": 583.7500610351562,
+        "left": 114.00000762939453
+      },
+      "fcn_checktheplantype_0": {
+        "top": 644.8750610351562,
+        "left": 116.93750762939453
+      },
+      "fcn_gotousermanagement_1717742513572_0": {
+        "top": 699.8750610351562,
+        "left": 115.93750762939453
+      },
+      "fcn_checktheavailableandexistingusers_0": {
+        "top": 758.5000610351562,
+        "left": 115.93750762939453
+      },
+      "fcn_clickinviteuser_0": {
+        "top": 817.0875549316406,
+        "left": 115.93750762939453
+      },
+      "fcn_verifytheerrormessage_0": {
+        "top": 877.6875610351562,
+        "left": 116.93750762939453
+      },
+      "fcn_professionalsplan_0": {
+        "top": 518.1250610351562,
+        "left": 613.9375
+      },
+      "fcn_professionalbasic_0": {
+        "top": 583.7500610351562,
+        "left": 455.95001220703125
+      },
+      "fcn_convertyourlicensetono75_0": {
+        "top": 642.3125610351562,
+        "left": 455.95001220703125
+      },
+      "fcn_gotoaccountsettingsbeconversive_1717748370921_0": {
+        "top": 700.9375610351562,
+        "left": 455.95001220703125
+      },
+      "fcn_gotousermanagement_1717748377025_0": {
+        "top": 766.0750732421875,
+        "left": 455.95001220703125
+      },
+      "fcn_checktheexistinguserforuserhavingnolimits_0": {
+        "top": 824.6875610351562,
+        "left": 455.95001220703125
+      },
+      "fcn_clickinviteuser_1717748431201_0": {
+        "top": 896.8875732421875,
+        "left": 455.95001220703125
+      },
+      "fcn_checkforrolesonthedropdown_0": {
+        "top": 955.5000762939453,
+        "left": 455.95001220703125
+      },
+      "fcn_addusersandcheckthecounts_0": {
+        "top": 1014.0875701904297,
+        "left": 455.95001220703125
+      },
+      "fcn_invitetheusers_1717759261566_0": {
+        "top": 1091.4375686645508,
+        "left": 454.95001220703125
+      },
+      "fcn_logintogmailemaillogin_1717755583392_0": {
+        "top": 1147.0375709533691,
+        "left": 455.95001220703125
+      },
+      "fcn_confirmtheinviteuserbeconversive_0": {
+        "top": 1215.1875734329224,
+        "left": 456.95001220703125
+      },
+      "fcn_registerinviteuserbeconversivesignup_1717766298560_0": {
+        "top": 1291.9375762939453,
+        "left": 451.95001220703125
+      },
+      "fcn_logoutfromtheaccount_0": {
+        "top": 1375.6875762939453,
+        "left": 448.95001220703125
+      },
+      "fcn_logintobeconversive_1717766480960_0": {
+        "top": 1443.287582397461,
+        "left": 449.95001220703125
+      },
+      "fcn_gotoaccountsettingsbeconversive_1717766495392_0": {
+        "top": 1515.4375915527344,
+        "left": 446.95001220703125
+      },
+      "fcn_gotousermanagement_1717766500984_0": {
+        "top": 1584.5875854492188,
+        "left": 450.95001220703125
+      },
+      "fcn_changetheroles_1717766512544_0": {
+        "top": 1653.1875915527344,
+        "left": 449.95001220703125
+      },
+      "fcn_changeactiveinactiveactive_1717766517296_0": {
+        "top": 1725.78759765625,
+        "left": 451.95001220703125
+      },
+      "fcn_changeusertoadmin_0": {
+        "top": 1784.3875732421875,
+        "left": 451.95001220703125
+      },
+      "fcn_checkthemainaccount_0": {
+        "top": 1843.0000610351562,
+        "left": 451.95001220703125
+      },
+      "fcn_professionaladvance_0": {
+        "top": 583.7500610351562,
+        "left": 743.9375305175781
+      },
+      "fcn_convertyourlicensetono76_0": {
+        "top": 642.3125610351562,
+        "left": 743.9375305175781
+      },
+      "fcn_gotoaccountsettingsbeconversive_1717755388064_0": {
+        "top": 700.9375610351562,
+        "left": 743.9375305175781
+      },
+      "fcn_gotousermanagement_1717755391080_0": {
+        "top": 766.0750732421875,
+        "left": 743.9375305175781
+      },
+      "fcn_checktheexistinguserforuserhavingnolimits_1717755405792_0": {
+        "top": 824.6875610351562,
+        "left": 743.9375305175781
+      },
+      "fcn_clickinviteuser_1717755410120_0": {
+        "top": 896.8875732421875,
+        "left": 743.9375305175781
+      },
+      "fcn_checkforrolesonthedropdown_1717755414856_0": {
+        "top": 955.5000762939453,
+        "left": 743.9375305175781
+      },
+      "fcn_addusersandcheckthecounts_1717755422201_0": {
+        "top": 1011.0875701904297,
+        "left": 741.9375305175781
+      },
+      "fcn_inviteuserfromusermanagementbeconversivesignup_1717755427184_0": {
+        "top": 1093.6875686645508,
+        "left": 739.9375305175781
+      },
+      "fcn_logintogmailemaillogin_1717755689072_0": {
+        "top": 1154.0375709533691,
+        "left": 744.9375305175781
+      },
+      "fcn_confirmtheinviteuserbeconversive_1718000320481_0": {
+        "top": 1222.1875743865967,
+        "left": 741.9375305175781
+      },
+      "fcn_registerinviteuserbeconversivesignup_1717773965353_0": {
+        "top": 1296.9375762939453,
+        "left": 744.9375305175781
+      },
+      "fcn_logoutfromtheaccount_1717773969016_0": {
+        "top": 1375.6875762939453,
+        "left": 744.9375305175781
+      },
+      "fcn_logintobeconversive_1717773971945_0": {
+        "top": 1434.287582397461,
+        "left": 744.9375305175781
+      },
+      "fcn_gotoaccountsettingsbeconversive_1717773975145_0": {
+        "top": 1499.4375915527344,
+        "left": 744.9375305175781
+      },
+      "fcn_gotousermanagement_1717773978452_0": {
+        "top": 1564.5875854492188,
+        "left": 744.9375305175781
+      },
+      "fcn_changetheroles_1717773982065_0": {
+        "top": 1623.1875915527344,
+        "left": 744.9375305175781
+      },
+      "fcn_changeactiveinactiveactive_1717773985105_0": {
+        "top": 1681.7875671386719,
+        "left": 745.9375305175781
+      },
+      "fcn_changeusertoadmin_1718000358840_0": {
+        "top": 1740.3875732421875,
+        "left": 745.9375305175781
+      },
+      "fcn_checkthemainaccount_1718000363160_0": {
+        "top": 1799.0000610351562,
+        "left": 745.9375305175781
+      },
+      "fcn_professionalsuperior_0": {
+        "top": 583.7500610351562,
+        "left": 1023.9624938964844
+      },
+      "fcn_convertyourlicensetono77_0": {
+        "top": 642.3125610351562,
+        "left": 1023.9624938964844
+      },
+      "fcn_gotoaccountsettingsbeconversive_1717755746952_0": {
+        "top": 700.9375610351562,
+        "left": 1023.9624938964844
+      },
+      "fcn_gotousermanagement_1717755752617_0": {
+        "top": 766.0750732421875,
+        "left": 1023.9624938964844
+      },
+      "fcn_checktheavailableandexistingusers_1717755821408_0": {
+        "top": 821.6875610351562,
+        "left": 1021.9624938964844
+      },
+      "fcn_clickinviteuser_1717755828344_0": {
+        "top": 883.2875671386719,
+        "left": 1023.9624938964844
+      },
+      "fcn_checkforrolesonthedropdown_1717755834239_0": {
+        "top": 941.8875732421875,
+        "left": 1023.9624938964844
+      },
+      "fcn_addusersandcheckforlimiteduserbeconversive_0": {
+        "top": 1000.5000762939453,
+        "left": 1023.9624938964844
+      },
+      "fcn_invitetheusers_0": {
+        "top": 1079.2500686645508,
+        "left": 1023.9624938964844
+      },
+      "fcn_logintogmailemaillogin_1717770573100_0": {
+        "top": 1137.837574005127,
+        "left": 1023.9624938964844
+      },
+      "fcn_confirmtheinviteuserbeconversive_1717770579771_0": {
+        "top": 1203.0000731945038,
+        "left": 1023.9624938964844
+      },
+      "fcn_registerinviteuserbeconversivesignup_1717770583956_0": {
+        "top": 1268.1375732421875,
+        "left": 1023.9624938964844
+      },
+      "fcn_logoutfromtheaccount_1717770593499_0": {
+        "top": 1345.8875732421875,
+        "left": 1023.9624938964844
+      },
+      "fcn_logintobeconversive_1717770632587_0": {
+        "top": 1405.5000762939453,
+        "left": 1023.9624938964844
+      },
+      "fcn_gotoaccountsettingsbeconversive_1717770637179_0": {
+        "top": 1470.6375732421875,
+        "left": 1023.9624938964844
+      },
+      "fcn_gotousermanagement_1717770641172_0": {
+        "top": 1535.7875671386719,
+        "left": 1023.9624938964844
+      },
+      "fcn_changetheroles_1717770645372_0": {
+        "top": 1594.3875732421875,
+        "left": 1023.9624938964844
+      },
+      "fcn_changeactiveinactiveactive_1717770648355_0": {
+        "top": 1653.0000915527344,
+        "left": 1023.9624938964844
+      },
+      "fcn_changeusertoadmin_1718000844720_0": {
+        "top": 1711.5875854492188,
+        "left": 1023.9624938964844
+      },
+      "fcn_checkthemainaccount_1718000847842_0": {
+        "top": 1771.1875610351562,
+        "left": 1024.9624938964844
+      },
+      "fcn_professionalspayg_0": {
+        "top": 583.7500610351562,
+        "left": 1303.9499816894531
+      },
+      "fcn_convertyourlicensetono78_0": {
+        "top": 642.3125610351562,
+        "left": 1303.9499816894531
+      },
+      "fcn_gotoaccountsettingsbeconversive_1717757898446_0": {
+        "top": 700.9375610351562,
+        "left": 1303.9499816894531
+      },
+      "fcn_gotousermanagement_1717757902014_0": {
+        "top": 766.0750732421875,
+        "left": 1301.9499816894531
+      },
+      "fcn_checktheexistinguserforuserhavingnolimits_1717771425539_0": {
+        "top": 818.6875610351562,
+        "left": 1302.9499816894531
+      },
+      "fcn_clickinviteuser_1717757909694_0": {
+        "top": 883.2875671386719,
+        "left": 1301.9499816894531
+      },
+      "fcn_checkforrolesonthedropdown_1717757935790_0": {
+        "top": 941.8875732421875,
+        "left": 1301.9499816894531
+      },
+      "fcn_addusersandcheckthecountsbeconversive_1717771288258_0": {
+        "top": 997.5000762939453,
+        "left": 1306.9499816894531
+      },
+      "fcn_invitetheusers_1717757959702_0": {
+        "top": 1079.2500686645508,
+        "left": 1301.9499816894531
+      },
+      "fcn_logintogmailemaillogin_1717771331530_0": {
+        "top": 1137.837574005127,
+        "left": 1301.9499816894531
+      },
+      "fcn_confirmtheinviteuserbeconversive_1717771334346_0": {
+        "top": 1203.0000731945038,
+        "left": 1301.9499816894531
+      },
+      "fcn_registerinviteuserbeconversivesignup_1717771337818_0": {
+        "top": 1268.1375732421875,
+        "left": 1301.9499816894531
+      },
+      "fcn_logoutfromtheaccount_1717771342074_0": {
+        "top": 1346.8875732421875,
+        "left": 1301.9499816894531
+      },
+      "fcn_logintobeconversive_1717771344731_0": {
+        "top": 1405.5000762939453,
+        "left": 1301.9499816894531
+      },
+      "fcn_gotoaccountsettingsbeconversive_1717771347467_0": {
+        "top": 1470.6375732421875,
+        "left": 1301.9499816894531
+      },
+      "fcn_gotousermanagement_1717771350107_0": {
+        "top": 1535.7875671386719,
+        "left": 1301.9499816894531
+      },
+      "fcn_changetheroles_1717771353627_0": {
+        "top": 1594.3875732421875,
+        "left": 1301.9499816894531
+      },
+      "fcn_changeactiveinactiveactive_1717771356619_0": {
+        "top": 1653.0000915527344,
+        "left": 1301.9499816894531
+      },
+      "fcn_changeusertoadmin_1718002210526_0": {
+        "top": 1711.5875854492188,
+        "left": 1301.9499816894531
+      },
+      "fcn_checkthemainaccount_1718002213399_0": {
+        "top": 1770.1875610351562,
+        "left": 1301.9499816894531
+      },
+      "fcn_marketeerplan_0": {
+        "top": 522.1250610351562,
+        "left": 1815.9875793457031
+      },
+      "fcn_marketeerbasic_0": {
+        "top": 582.7500610351562,
+        "left": 1638.9875793457031
+      },
+      "fcn_convertyourlicensetono79_0": {
+        "top": 641.3125610351562,
+        "left": 1638.9875793457031
+      },
+      "fcn_gotoaccountsettingsbeconversive_1717771677154_0": {
+        "top": 699.9375610351562,
+        "left": 1638.9875793457031
+      },
+      "fcn_gotousermanagement_1717771690722_0": {
+        "top": 765.0750732421875,
+        "left": 1638.9875793457031
+      },
+      "fcn_checktheexistinguserforuserhavingnolimits_1717771694162_0": {
+        "top": 823.6875610351562,
+        "left": 1638.9875793457031
+      },
+      "fcn_clickinviteuser_1717771697258_0": {
+        "top": 895.8875732421875,
+        "left": 1638.9875793457031
+      },
+      "fcn_checkforrolesonthedropdown_1717771701843_0": {
+        "top": 954.5000762939453,
+        "left": 1638.9875793457031
+      },
+      "fcn_addusersandcheckthecountsbeconversive_1717771704370_0": {
+        "top": 1013.0875701904297,
+        "left": 1638.9875793457031
+      },
+      "fcn_invitetheusers_1717771707218_0": {
+        "top": 1091.8375701904297,
+        "left": 1638.9875793457031
+      },
+      "fcn_logintogmailemaillogin_1717771710227_0": {
+        "top": 1150.437572479248,
+        "left": 1638.9875793457031
+      },
+      "fcn_confirmtheinviteuserbeconversive_1717771713994_0": {
+        "top": 1215.587574005127,
+        "left": 1638.9875793457031
+      },
+      "fcn_registerinviteuserbeconversivesignup_1717771716595_0": {
+        "top": 1280.7500762939453,
+        "left": 1638.9875793457031
+      },
+      "fcn_logoutfromtheaccount_1717771719691_0": {
+        "top": 1359.5000762939453,
+        "left": 1638.9875793457031
+      },
+      "fcn_logintobeconversive_1717771722962_0": {
+        "top": 1418.0875701904297,
+        "left": 1638.9875793457031
+      },
+      "fcn_gotoaccountsettingsbeconversive_1717771726179_0": {
+        "top": 1483.2500915527344,
+        "left": 1639.9875793457031
+      },
+      "fcn_gotousermanagement_1717771732267_0": {
+        "top": 1548.3875732421875,
+        "left": 1638.9875793457031
+      },
+      "fcn_changetheroles_1717771735386_0": {
+        "top": 1607.0000915527344,
+        "left": 1638.9875793457031
+      },
+      "fcn_changeactiveinactiveactive_1717771738770_0": {
+        "top": 1667.5875854492188,
+        "left": 1636.9875793457031
+      },
+      "fcn_changeusertoadmin_1718002683271_0": {
+        "top": 1726.1875610351562,
+        "left": 1636.9875793457031
+      },
+      "fcn_checkthemainaccount_1718002686591_0": {
+        "top": 1784.78759765625,
+        "left": 1636.9875793457031
+      },
+      "fcn_marketeeradvance_0": {
+        "top": 583.7500610351562,
+        "left": 1990.9875793457031
+      },
+      "fcn_convertyourlicensetono80_0": {
+        "top": 642.3125610351562,
+        "left": 1990.9875793457031
+      },
+      "fcn_gotoaccountsettingsbeconversive_1717771977450_0": {
+        "top": 700.9375610351562,
+        "left": 1990.9875793457031
+      },
+      "fcn_gotousermanagement_1717771981459_0": {
+        "top": 766.0750732421875,
+        "left": 1990.9875793457031
+      },
+      "fcn_checktheexistinguserforuserhavingnolimits_1717771985674_0": {
+        "top": 824.6875610351562,
+        "left": 1990.9875793457031
+      },
+      "fcn_clickinviteuser_1717771988634_0": {
+        "top": 896.8875732421875,
+        "left": 1990.9875793457031
+      },
+      "fcn_checkforrolesonthedropdown_1717771991866_0": {
+        "top": 955.5000762939453,
+        "left": 1990.9875793457031
+      },
+      "fcn_addusersandcheckthecountsbeconversive_1717771994882_0": {
+        "top": 1014.0875701904297,
+        "left": 1990.9875793457031
+      },
+      "fcn_invitetheusers_1717771998098_0": {
+        "top": 1092.8375701904297,
+        "left": 1990.9875793457031
+      },
+      "fcn_logintogmailemaillogin_1717772001122_0": {
+        "top": 1151.437572479248,
+        "left": 1990.9875793457031
+      },
+      "fcn_confirmtheinviteuserbeconversive_1717772004146_0": {
+        "top": 1216.587574005127,
+        "left": 1990.9875793457031
+      },
+      "fcn_registerinviteuserbeconversivesignup_1717772007162_0": {
+        "top": 1281.7500762939453,
+        "left": 1990.9875793457031
+      },
+      "fcn_logoutfromtheaccount_1717772010162_0": {
+        "top": 1360.5000762939453,
+        "left": 1990.9875793457031
+      },
+      "fcn_logintobeconversive_1717772013410_0": {
+        "top": 1419.0875701904297,
+        "left": 1991.9875793457031
+      },
+      "fcn_gotoaccountsettingsbeconversive_1717772016898_0": {
+        "top": 1484.2500915527344,
+        "left": 1990.9875793457031
+      },
+      "fcn_gotousermanagement_1717772020698_0": {
+        "top": 1551.3875732421875,
+        "left": 1989.9875793457031
+      },
+      "fcn_changetheroles_1717772023322_0": {
+        "top": 1608.0000915527344,
+        "left": 1990.9875793457031
+      },
+      "fcn_changeactiveinactiveactive_1717772026130_0": {
+        "top": 1666.5875854492188,
+        "left": 1990.9875793457031
+      },
+      "fcn_changeusertoadmin_1718003144534_0": {
+        "top": 1725.1875610351562,
+        "left": 1990.9875793457031
+      },
+      "fcn_checkthemainaccount_1718003147750_0": {
+        "top": 1784.78759765625,
+        "left": 1990.9875793457031
+      },
+      "fcn_contactcenterbasic_0": {
+        "top": 520.1250610351562,
+        "left": 2640.0001525878906
+      },
+      "fcn_contactcenterbasic_1": {
+        "top": 587.7500610351562,
+        "left": 2342.0001525878906
+      },
+      "fcn_convertyourlicensetono81_0": {
+        "top": 646.3125610351562,
+        "left": 2342.0001525878906
+      },
+      "fcn_gotoaccountsettingsbeconversive_1717772379178_0": {
+        "top": 704.9375610351562,
+        "left": 2343.0001525878906
+      },
+      "fcn_gotousermanagement_1717772383930_0": {
+        "top": 770.0750732421875,
+        "left": 2343.0001525878906
+      },
+      "fcn_checktotalandexistingusersforcontactcenterbasic_0": {
+        "top": 828.6875610351562,
+        "left": 2343.0001525878906
+      },
+      "fcn_clickinviteuser_1717772512522_0": {
+        "top": 900.8875732421875,
+        "left": 2343.0001525878906
+      },
+      "fcn_checktherolesondropdownforcontactcenter_0": {
+        "top": 959.5000762939453,
+        "left": 2343.0001525878906
+      },
+      "fcn_addusersandcheckforlimiteduserbeconversive_1717772673106_0": {
+        "top": 1031.6875762939453,
+        "left": 2343.0001525878906
+      },
+      "fcn_invitetheusers_1717772678626_0": {
+        "top": 1110.4375686645508,
+        "left": 2343.0001525878906
+      },
+      "fcn_logintogmailemaillogin_1717772682026_0": {
+        "top": 1168.0375728607178,
+        "left": 2343.0001525878906
+      },
+      "fcn_confirmtheinviteuserbeconversive_1717772687602_0": {
+        "top": 1233.187572479248,
+        "left": 2343.0001525878906
+      },
+      "fcn_registerinviteuserbeconversivesignup_1717772692082_0": {
+        "top": 1298.3375778198242,
+        "left": 2343.0001525878906
+      },
+      "fcn_logoutfromtheaccount_1717772696242_0": {
+        "top": 1377.0875701904297,
+        "left": 2343.0001525878906
+      },
+      "fcn_logintobeconversive_1717772700602_0": {
+        "top": 1435.6875762939453,
+        "left": 2343.0001525878906
+      },
+      "fcn_gotoaccountsettingsbeconversive_1717772703634_0": {
+        "top": 1500.8375854492188,
+        "left": 2343.0001525878906
+      },
+      "fcn_gotousermanagement_1717772708234_0": {
+        "top": 1566.0000915527344,
+        "left": 2343.0001525878906
+      },
+      "fcn_changetheroles_1717772711162_0": {
+        "top": 1624.5875854492188,
+        "left": 2343.0001525878906
+      },
+      "fcn_changeactiveinactiveactive_1717772714170_0": {
+        "top": 1683.1875915527344,
+        "left": 2343.0001525878906
+      },
+      "fcn_changeusertoadmin_1718003697238_0": {
+        "top": 1741.78759765625,
+        "left": 2343.0001525878906
+      },
+      "fcn_checkthemainaccount_1718003700311_0": {
+        "top": 1800.3875732421875,
+        "left": 2343.0001525878906
+      },
+      "fcn_contactcenteradvance_0": {
+        "top": 587.7500610351562,
+        "left": 2651.0001525878906
+      },
+      "fcn_convertyourlicensetono82_0": {
+        "top": 646.3125610351562,
+        "left": 2651.0001525878906
+      },
+      "fcn_gotoaccountsettingsbeconversive_1717773008602_0": {
+        "top": 705.9375610351562,
+        "left": 2651.0001525878906
+      },
+      "fcn_gotousermanagement_1717773015930_0": {
+        "top": 771.0750732421875,
+        "left": 2651.0001525878906
+      },
+      "fcn_checktotalandexistingusersforcontactcenteradvance_0": {
+        "top": 829.6875610351562,
+        "left": 2651.0001525878906
+      },
+      "fcn_clickinviteuser_1717773078642_0": {
+        "top": 901.8875732421875,
+        "left": 2651.0001525878906
+      },
+      "fcn_checktherolesondropdownforcontactcenter_1717773477785_0": {
+        "top": 962.6875762939453,
+        "left": 2651.0001525878906
+      },
+      "fcn_addusersandcheckforlimiteduserbeconversive_1717773085809_0": {
+        "top": 1032.6875762939453,
+        "left": 2651.0001525878906
+      },
+      "fcn_invitetheusers_1717773089313_0": {
+        "top": 1111.4375686645508,
+        "left": 2652.0001525878906
+      },
+      "fcn_logintogmailemaillogin_1717773093185_0": {
+        "top": 1170.0375728607178,
+        "left": 2652.0001525878906
+      },
+      "fcn_confirmtheinviteuserbeconversive_1717773096976_0": {
+        "top": 1235.187572479248,
+        "left": 2652.0001525878906
+      },
+      "fcn_registerinviteuserbeconversivesignup_1717773100768_0": {
+        "top": 1300.3375778198242,
+        "left": 2652.0001525878906
+      },
+      "fcn_logoutfromtheaccount_1717773103713_0": {
+        "top": 1379.0875701904297,
+        "left": 2652.0001525878906
+      },
+      "fcn_logintobeconversive_1717773106432_0": {
+        "top": 1437.6875762939453,
+        "left": 2652.0001525878906
+      },
+      "fcn_gotoaccountsettingsbeconversive_1717773109273_0": {
+        "top": 1499.8375854492188,
+        "left": 2648.0001525878906
+      },
+      "fcn_gotousermanagement_1717773115521_0": {
+        "top": 1565.0000915527344,
+        "left": 2648.0001525878906
+      },
+      "fcn_changetheroles_1717773120193_0": {
+        "top": 1623.5875854492188,
+        "left": 2648.0001525878906
+      },
+      "fcn_changeactiveinactiveactive_1717773124864_0": {
+        "top": 1682.1875915527344,
+        "left": 2648.0001525878906
+      },
+      "fcn_changeusertoadmin_1718005094773_0": {
+        "top": 1740.78759765625,
+        "left": 2649.0001525878906
+      },
+      "fcn_checkthemainaccount_1718005098541_0": {
+        "top": 1799.3875732421875,
+        "left": 2649.0001525878906
+      },
+      "fcn_contactcenterpayg_0": {
+        "top": 588.7500610351562,
+        "left": 2958.0001525878906
+      },
+      "fcn_convertyourlicensetono83_0": {
+        "top": 647.3125610351562,
+        "left": 2958.0001525878906
+      },
+      "fcn_gotoaccountsettingsbeconversive_1717773409018_0": {
+        "top": 705.9375610351562,
+        "left": 2958.0001525878906
+      },
+      "fcn_gotousermanagement_1717773412793_0": {
+        "top": 771.0750732421875,
+        "left": 2958.0001525878906
+      },
+      "fcn_checktotalandexistingusersforcontactcenterpayg_0": {
+        "top": 829.6875610351562,
+        "left": 2958.0001525878906
+      },
+      "fcn_clickinviteuser_1717773467577_0": {
+        "top": 901.8875732421875,
+        "left": 2958.0001525878906
+      },
+      "fcn_checktherolesondropdownforcontactcenter_1717773489761_0": {
+        "top": 960.5000762939453,
+        "left": 2958.0001525878906
+      },
+      "fcn_addusersandcheckforlimiteduserbeconversive_1717773494752_0": {
+        "top": 1032.6875762939453,
+        "left": 2958.0001525878906
+      },
+      "fcn_invitetheusers_1717773498241_0": {
+        "top": 1111.4375686645508,
+        "left": 2958.0001525878906
+      },
+      "fcn_logintogmailemaillogin_1717773501833_0": {
+        "top": 1170.0375728607178,
+        "left": 2958.0001525878906
+      },
+      "fcn_confirmtheinviteuserbeconversive_1717773506081_0": {
+        "top": 1235.187572479248,
+        "left": 2958.0001525878906
+      },
+      "fcn_registerinviteuserbeconversivesignup_1717773509761_0": {
+        "top": 1300.3375778198242,
+        "left": 2958.0001525878906
+      },
+      "fcn_logoutfromtheaccount_1717773512328_0": {
+        "top": 1379.0875701904297,
+        "left": 2958.0001525878906
+      },
+      "fcn_logintobeconversive_1717773515481_0": {
+        "top": 1437.6875762939453,
+        "left": 2958.0001525878906
+      },
+      "fcn_gotoaccountsettingsbeconversive_1717773518241_0": {
+        "top": 1502.8375854492188,
+        "left": 2958.0001525878906
+      },
+      "fcn_gotousermanagement_1717773521449_0": {
+        "top": 1568.0000915527344,
+        "left": 2958.0001525878906
+      },
+      "fcn_changetheroles_1717773524489_0": {
+        "top": 1626.5875854492188,
+        "left": 2958.0001525878906
+      },
+      "fcn_changeactiveinactiveactive_1717773527681_0": {
+        "top": 1685.1875915527344,
+        "left": 2958.0001525878906
+      },
+      "fcn_changeusertoadmin_1718005118285_0": {
+        "top": 1743.78759765625,
+        "left": 2958.0001525878906
+      },
+      "fcn_checkthemainaccount_1718005121005_0": {
+        "top": 1802.3875732421875,
+        "left": 2958.0001525878906
+      },
+      "fcn_textchange_0": {
+        "top": 953.1250762939453,
+        "left": 120.00000762939453
+      },
+      "fcn_gotoaccountsettingsbeconversive_1719582966151_0": {
+        "top": 1012.1250762939453,
+        "left": 120.00000762939453
+      },
+      "fcn_gotousermanagement_1719582976013_0": {
+        "top": 1077.2875747680664,
+        "left": 120.00000762939453
+      },
+      "fcn_validatetextchange_0": {
+        "top": 1136.2875709533691,
+        "left": 120.00000762939453
+      },
+      "fcn_validatetextchangeforlimitedusers_0": {
+        "top": 1189.2875728607178,
+        "left": 119.00000762939453
+      },
+      "fcn_checkerrorforusershavinglimits_0": {
+        "top": 523.5375366210938,
+        "left": 3394.9376525878906
+      },
+      "fcn_changethelicensesasperfortheaccount_0": {
+        "top": 582.1375732421875,
+        "left": 3394.9376525878906
+      },
+      "fcn_gotoaccountsettingsbeconversive_1718007577483_0": {
+        "top": 654.3375854492188,
+        "left": 3394.9376525878906
+      },
+      "fcn_gotousermanagement_1718007582163_0": {
+        "top": 719.5000610351562,
+        "left": 3394.9376525878906
+      },
+      "fcn_checktheavailableandexistingusers_1718007643795_0": {
+        "top": 778.0875549316406,
+        "left": 3394.9376525878906
+      },
+      "fcn_clickinviteuser_1718007651171_0": {
+        "top": 836.6875610351562,
+        "left": 3394.9376525878906
+      },
+      "fcn_adduserstothefullestandchecktheerrorbeconversive_0": {
+        "top": 895.2875671386719,
+        "left": 3394.9376525878906
+      },
+      "fcn_invitetheusers_1718018480934_0": {
+        "top": 974.0375671386719,
+        "left": 3394.9376525878906
+      },
+      "fcn_clickinviteuser_1718018484862_0": {
+        "top": 1032.6375732421875,
+        "left": 3394.9376525878906
+      },
+      "fcn_checktheerrorwhenthereisnoavailableusers_0": {
+        "top": 1091.2500686645508,
+        "left": 3394.9376525878906
+      }
+    },
+    "tags": ""
+  },
+  "enabled": true,
+  "parentId": ""
+}

@@ -1,0 +1,63 @@
+{
+  "name": "Verify the source for the Lead captured through web form $source $newconversivebutton",
+  "id": "-1",
+  "type": 3,
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Verify the source for the Lead captured through web form $source $newconversivebutton",
+    "specific": [],
+    "parameters": [
+      {
+        "parameterId": "source_",
+        "entityTypeId": "source",
+        "suffix": ""
+      },
+      {
+        "parameterId": "newconversivebutton_",
+        "entityTypeId": "newconversivebutton",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "$btnName\u003d$newconversivebutton.conversiveButtonName;",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_span(0, _under(_tableHeader(\"Source\")))"
+          }
+        ],
+        "stepType": "Action",
+        "stepCategory": "inbuilt",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_span(\"conversive-button-\"+$btnName+\"-web\")"
+          }
+        ],
+        "stepType": "Assert",
+        "stepCategory": "inbuilt",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "paramMode": "code",
+          "customValue": "\"conversive-button-\"+$btnName+\"-web\""
+        },
+        "specific": []
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

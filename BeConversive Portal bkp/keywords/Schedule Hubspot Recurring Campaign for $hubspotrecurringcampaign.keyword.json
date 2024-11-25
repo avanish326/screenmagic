@@ -1,0 +1,316 @@
+{
+  "modifiedOn": "2024-09-09T07:20:49.884771390Z",
+  "name": "Schedule Hubspot Recurring Campaign for $hubspotrecurringcampaign",
+  "id": "-1",
+  "type": 3,
+  "createdOn": "2024-05-22T13:41:59Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Schedule Hubspot Recurring Campaign for $hubspotrecurringcampaign",
+    "parameters": [
+      {
+        "parameterId": "hubspotrecurringcampaign_",
+        "entityTypeId": "hubspotrecurringcampaign",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_getValue",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_span(0, _near(_label(\"Total Recipients\")))"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Store",
+        "secondaryParam": {
+          "paramMode": "code",
+          "customValue": "$recipientsCount"
+        }
+      },
+      {
+        "commented": false,
+        "action": "_log",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "$recipientsCount"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_span(\"Send to all\")"
+          },
+          {
+            "paramMode": "default"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_span(\"Schedule in future\")"
+          },
+          {
+            "paramMode": "default"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "2000"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_button(\"Recurring Schedule\")"
+          },
+          {
+            "paramMode": "default"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_call",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_sahi.blurEnabled\u003dfalse"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Store",
+        "secondaryParam": {
+          "paramMode": "default"
+        }
+      },
+      {
+        "commented": true,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_textbox(0)"
+          },
+          {
+            "paramMode": "default"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "paramMode": "default",
+            "parameterId": "hubspotrecurringcampaign_",
+            "attributeId": "attr_01716807591480",
+            "accessorId": "acc0"
+          },
+          {
+            "paramMode": "default",
+            "parameterId": "hubspotrecurringcampaign_",
+            "attributeId": "attr_01716807591480"
+          },
+          {
+            "paramMode": "default"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "visibleCheck": false
+      },
+      {
+        "commented": true,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "3000"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_textbox(1)"
+          },
+          {
+            "paramMode": "default"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_listItem($hubspotrecurringcampaign.hubspotCampaignTime)"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "paramMode": "default",
+            "parameterId": "null_",
+            "attributeId": "attr_11712924071971",
+            "accessorId": "acc0"
+          },
+          {
+            "paramMode": "default",
+            "parameterId": "null_",
+            "attributeId": "attr_11712924071971"
+          },
+          {
+            "paramMode": "default"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "visibleCheck": false
+      },
+      {
+        "commented": true,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_checkbox(0)"
+          },
+          {
+            "paramMode": "default"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_textbox(2)"
+          },
+          {
+            "paramMode": "default"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "paramMode": "default",
+            "parameterId": "hubspotrecurringcampaign_",
+            "attributeId": "attr_21716807650165",
+            "accessorId": "acc0"
+          },
+          {
+            "paramMode": "default",
+            "parameterId": "hubspotrecurringcampaign_",
+            "attributeId": "attr_21716807650165"
+          },
+          {
+            "paramMode": "default"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "visibleCheck": false
+      },
+      {
+        "commented": true,
+        "action": "_call",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_sahi.blurEnabled\u003dfalse"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Store",
+        "secondaryParam": {
+          "paramMode": "default"
+        }
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_div(\"select__indicators css-1wy0on6\")"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "blurDisableCheck": true
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_div($hubspotrecurringcampaign.hubspotRecurringFreqency)"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "blurDisableCheck": true
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

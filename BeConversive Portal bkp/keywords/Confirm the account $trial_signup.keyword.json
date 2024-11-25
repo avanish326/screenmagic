@@ -1,0 +1,86 @@
+{
+  "modifiedOn": "2024-02-08T06:49:37.552Z",
+  "name": "Confirm the account $trial_signup",
+  "id": "27426",
+  "type": 3,
+  "createdOn": "2024-02-08T06:49:37.552Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Confirm the account $trial_signup",
+    "parameters": [
+      {
+        "parameterId": "trial_signup_",
+        "entityTypeId": "trial_signup",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": true,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"/Verify Your Account Now/\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_setStrictVisibilityCheck",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "true"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_textbox(\"Search in mail\")"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "$trial_signup.emailAddress"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "_click(_submit(0, _near(_div(\"/Search in mail/\"))))"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"Welcome test! Verify Your Account Now.\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"Confirm and Login\")"
+          }
+        ],
+        "stepType": "Action"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

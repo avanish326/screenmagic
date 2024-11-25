@@ -1,0 +1,84 @@
+{
+  "modifiedOn": "2024-07-18T04:19:45.032Z",
+  "name": "Select CTA for Is there anything else I can help you with today for Whats App $studentnonweb $basicinfo",
+  "id": "58400",
+  "type": 3,
+  "createdOn": "2024-07-18T04:19:45.032Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Select CTA for Is there anything else I can help you with today for Whats App $studentnonweb $basicinfo",
+    "parameters": [
+      {
+        "parameterId": "studentnonweb_",
+        "entityTypeId": "studentnonweb",
+        "suffix": ""
+      },
+      {
+        "parameterId": "basicinfo_",
+        "entityTypeId": "basicinfo",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "POST"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "$incomingWAURL"
+          }
+        ],
+        "stepType": "REST",
+        "isRawScript": true,
+        "rawScript": "var $request_J3zk5gXyrl \u003d new RESTRequest();\r\n$request_J3zk5gXyrl.setURL($incomingWAURL);\r\n$request_J3zk5gXyrl.setHeader(\"Content-Type\", \"application/json\");\r\nvar sanitizedBody \u003d eval(\"(\"+\"{\" + \"   \\\"SmsMessageSid\\\":\\\"SM91805a30f08ed4a44c8fe7b1264deb14\\\",\" + \"   \\\"ProfileName\\\":\\\"abc\\\",\" + \"   \\\"SmsSid\\\":\\\"SM91805a30f08ed4a44c8fe7b1264deb14\\\",\" + \"   \\\"WaId\\\":\\\"91750878281\\\",\" + \"   \\\"SmsStatus\\\":\\\"received\\\",\" + \"   \\\"Body\\\":\\\"\\\"+\\\"\" + escapeString($studentnonweb.ctaYesNo) + \"\\\"+\\\"\\\",\" + \"   \\\"To\\\":\\\"whatsapp:+\\\"+\\\"\" + escapeString($waDestination) + \"\\\"+\\\"\\\",\" + \"   \\\"NumSegments\\\":\\\"919088772221\\\",\" + \"   \\\"ReferralNumMedia\\\":\\\"0\\\",\" + \"   \\\"MessageSid\\\":\\\"SM91805a30f08ed4a44c8fe7b1264deb14\\\",\" + \"   \\\"AccountSid\\\":\\\"AC00a7b3b1c35de688eb9696b3119e0388\\\",\" + \"   \\\"From\\\":\\\"whatsapp:+\\\"+\\\"\" + escapeString($basicinfo.source) + \"\\\"+\\\"\\\",\" + \"   \\\"ApiVersion\\\":\\\"2010-04-01\\\",   \" + \"   \\\"message_uuid\\\":\\\"SM91805a30f08ed4a44c8fe7b1264deb14\\\",       \" + \"   \\\"num_media\\\":\\\"1\\\"\" + \"}\"+\")\");\n$request_J3zk5gXyrl.setBody(JSON.stringify(sanitizedBody));\r\nvar $response_J3zk5gXyrl \u003d $request_J3zk5gXyrl.submit(\"POST\");\r\n\t var $responseBodyObj_J3zk5gXyrl \u003d $response_J3zk5gXyrl.getBodyAsString();\r\n\tvar responseType \u003d $response_J3zk5gXyrl.getHeader(\"Content-Type\");\r\n\tif (responseType.indexOf(\"json\")!\u003d-1) {\r\n\t\t$responseBodyObj_J3zk5gXyrl \u003d JSON.parse($responseBodyObj_J3zk5gXyrl);\r\n\t}\r\n\telse if (responseType.indexOf(\"xml\")!\u003d-1) {\r\n\t\t$responseBodyObj_J3zk5gXyrl \u003d $responseBodyObj_J3zk5gXyrl.replace(/\u003c\\xml.*?\u003e/g, \u0027\u0027).replace(/\\n/g, \u0027\u0027).replace(/\\r/g, \u0027\u0027);\r\n\t\t$responseBodyObj_J3zk5gXyrl \u003d new XML(undefined);\r\n\t}\r\n\r\n\t//assertions\r\n\r\n",
+        "state": {
+          "contentType": "html",
+          "request": {
+            "method": "POST",
+            "url": "$incomingWAURL",
+            "parameters": [],
+            "headers": [
+              [
+                "Content-Type",
+                "application/json"
+              ]
+            ],
+            "authType": "none",
+            "body": "{\n   \"SmsMessageSid\":\"SM91805a30f08ed4a44c8fe7b1264deb14\",\n   \"ProfileName\":\"abc\",\n   \"SmsSid\":\"SM91805a30f08ed4a44c8fe7b1264deb14\",\n   \"WaId\":\"91750878281\",\n   \"SmsStatus\":\"received\",\n   \"Body\":\"\"+$studentnonweb.ctaYesNo+\"\",\n   \"To\":\"whatsapp:+\"+$waDestination+\"\",\n   \"NumSegments\":\"919088772221\",\n   \"ReferralNumMedia\":\"0\",\n   \"MessageSid\":\"SM91805a30f08ed4a44c8fe7b1264deb14\",\n   \"AccountSid\":\"AC00a7b3b1c35de688eb9696b3119e0388\",\n   \"From\":\"whatsapp:+\"+$basicinfo.source+\"\",\n   \"ApiVersion\":\"2010-04-01\",   \n   \"message_uuid\":\"SM91805a30f08ed4a44c8fe7b1264deb14\",       \n   \"num_media\":\"1\"\n}",
+            "bodyParams": [],
+            "isParametrizedBody": false,
+            "resetCookies": false
+          },
+          "assertions": {
+            "status": [],
+            "header": [],
+            "body": []
+          },
+          "variables": {
+            "status": [],
+            "header": [],
+            "body": []
+          },
+          "authInfo": {}
+        }
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "7000"
+          }
+        ],
+        "stepType": "Action"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

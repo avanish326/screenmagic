@@ -1,0 +1,75 @@
+{
+  "modifiedOn": "2024-02-08T06:49:37.858Z",
+  "name": "Assert bot Enabbled using $con_btn",
+  "id": "27449",
+  "type": 3,
+  "createdOn": "2024-02-08T06:49:37.858Z",
+  "content": {
+    "title": "Assert bot Enabbled using $con_btn",
+    "parameters": [
+      {
+        "parameterId": "con_btn_",
+        "entityTypeId": "con_btn",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"Bot Conversations\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"Sure, I am connecting you with a live agent. Please wait\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"cccc01@gmail.com\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"cccc01@gmail.com\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"Radhe\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"Radhe\""
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

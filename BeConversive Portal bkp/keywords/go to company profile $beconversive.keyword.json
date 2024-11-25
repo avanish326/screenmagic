@@ -1,0 +1,571 @@
+{
+  "modifiedOn": "2024-05-23T08:23:11.036Z",
+  "name": "go to company profile $beconversive",
+  "id": "28668",
+  "type": 3,
+  "createdOn": "2024-02-08T06:49:55.201Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "go to company profile $beconversive",
+    "parameters": [
+      {
+        "parameterId": "beconversive_",
+        "entityTypeId": "beconversive",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"Company Profile\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_submit(\"Edit\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_isVisible",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_submit(\"Cancel\", _leftOf(_button(\"Save\")))"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Is_True"
+      },
+      {
+        "commented": false,
+        "action": "_isVisible",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"Replace Image\", _leftOf(_div(\"Delete\")))"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Is_True"
+      },
+      {
+        "commented": false,
+        "action": "_isVisible",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"Delete\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Is_True"
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_textbox(\"companyName\")"
+          },
+          {
+            "parameterId": "beconversive_",
+            "attributeId": "attr_161705477751352"
+          }
+        ],
+        "stepType": "Action",
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_textbox(\"website\")"
+          },
+          {
+            "parameterId": "beconversive_",
+            "attributeId": "attr_271716382921380"
+          }
+        ],
+        "stepType": "Action",
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_textbox(\"/react-select-(.*)-input/\",_near(_label(\"Industry Type*\")))"
+          },
+          {
+            "parameterId": "beconversive_",
+            "attributeId": "attr_181705478105236"
+          }
+        ],
+        "stepType": "Action",
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_textbox(\"/react-select-(.*)-input/\",_near(_label(\"Country*\")))"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "$beconversive.country"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_textbox(\"company_address\")"
+          },
+          {
+            "parameterId": "beconversive_",
+            "attributeId": "attr_191705478297841"
+          }
+        ],
+        "stepType": "Action",
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_numberbox(\"postal_code\")"
+          },
+          {
+            "parameterId": "beconversive_",
+            "attributeId": "attr_201705478529161"
+          }
+        ],
+        "stepType": "Action",
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_textbox(\"/react-select-(.*)-input/\",_near(_label(\"Number of Employees*\")))"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "$beconversive.emps"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"avatar-icon avatar-icon-32\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "$mailCheck  \u003d  _getText(_div(\"text-xs\"));\n\n$userName \u003d  _getText(_div(\"font-bold text-gray-900 dark:text-gray-100\"));"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_textbox(\"email\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$mailCheck"
+        }
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_textbox(\"/react-select-(.)-input/\",_near(_label(\"Timezone\")))"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "$beconversive.timeZone"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_textbox(\"fullName\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$userName"
+        }
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"select-dropdown-indicator\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_call",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_sahi.blurEnabled\u003dfalse"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {}
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_textbox(\"/react-select-(.*)-input/\",_near(_label(\"Phone Number*\")))"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"(US) +1\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_numberbox(\"phoneNumber\")"
+          },
+          {
+            "parameterId": "beconversive_",
+            "attributeId": "attr_151705477463978"
+          }
+        ],
+        "stepType": "Action",
+        "visibleCheck": false
+      },
+      {
+        "commented": true,
+        "action": "_call",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_sahi.blurEnabled\u003dfalse"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {}
+      },
+      {
+        "commented": true,
+        "action": "_doubleClick",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"select__input-container css-136ehom[1]\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "2000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(121)"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"select__input-container css-136ehom[2]\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(132)"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"select-dropdown-indicator[3]\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(149)"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"select__value-container select__value-container--has-value css-hlgwow[3]\")"
+          },
+          {
+            "parameterId": "beconversive_",
+            "attributeId": "attr_101704900301208"
+          }
+        ],
+        "stepType": "Action",
+        "visibleCheck": false
+      },
+      {
+        "commented": true,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"select__value-container select__value-container--has-value css-hlgwow[4]\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(167)"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"(GMT+05:30) Asia/Kolkata\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_isEnabled",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_button(\"Save\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Is_True",
+        "visibleCheck": true
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_button(\"Save\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_isVisible",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"notification-content no-child\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Is_True"
+      },
+      {
+        "commented": true,
+        "isRawScript": true,
+        "rawScript": "var $el \u003d _span(\"/avatar-icon avatar-icon/\",_in(_div({\"sahiText\":\"Company logo\"})))\nvar $fileEl\u003d_file(0,_near($el));\nvar $path \u003d _userDataPath(\"scripts/pexels-frank-cone-2629372.jpg\")\n"
+      },
+      {
+        "commented": true,
+        "action": "_setFile3",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "$fileEl"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "$path"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_windowAction",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "\"refresh\""
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"select-dropdown-indicator\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_textbox(\"react-select-2-input\")"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "\"us\""
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_svg_path(21)"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_textbox(\"react-select-2-input\")"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "\"us\""
+          }
+        ],
+        "stepType": "Action"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

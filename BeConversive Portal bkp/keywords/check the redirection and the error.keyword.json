@@ -1,0 +1,48 @@
+{
+  "modifiedOn": "2024-03-05T07:40:01.541Z",
+  "name": "check the redirection and the error",
+  "id": "43918",
+  "type": 3,
+  "createdOn": "2024-03-05T06:06:59.346Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "check the redirection and the error",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_heading3(\"Reset Password\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"Reset Password\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"Invalid password reset link. Please get a new link below.\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"Invalid password reset link. Please get a new link below.\""
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

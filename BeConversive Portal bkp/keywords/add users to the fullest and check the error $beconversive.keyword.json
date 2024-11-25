@@ -1,0 +1,44 @@
+{
+  "modifiedOn": "2024-06-14T05:34:28.957Z",
+  "name": "add users to the fullest and check the error $beconversive",
+  "id": "52743",
+  "type": 3,
+  "createdOn": "2024-06-10T08:22:05.051Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "add users to the fullest and check the error $beconversive",
+    "parameters": [
+      {
+        "parameterId": "beconversive_",
+        "entityTypeId": "beconversive",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "$prefix \u003d $beconversive.randomWords;\n$suffix \u003d \"@screen-magic.com\";\n\n$userNum\u003d +$totalUser;\n$tUser \u003d $userNum - 1;\n$numText\u003d\"\";\n\nfor($i\u003d0; $i\u003c$tUser; $i++){\n$mail \u003d $prefix + $i+ $suffix;\n$num \u003d $i + 1;\n$numText \u003d $numText + $num\n_setValue(_textbox(\"Email Address\"), $mail);\n_click(_button(\"button-addon2\"));\n$userNo \u003d _getText(_paragraph(\"mt-6\"));\n//_assertContainsText($numText, $userNo);\n//$numText \u003d \"\";\n}\n\n//$mail;"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "$noUsers \u003d _collectAttributes(\"_div\", \"/.*/\", \"sahiText\", _in(_div(\"users-wrapper my-5 max-h-[145px] overflow-auto\")));\n\n$no \u003d $noUsers.length;\n$existing \u003d +$existingUser;\n$noOfUsers \u003d ($no/4)+$existing;"
+      },
+      {
+        "commented": false,
+        "action": "_isVisible",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(\"error-text text-red-500 text-sm\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Is_True"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

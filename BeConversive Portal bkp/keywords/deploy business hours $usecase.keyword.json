@@ -1,0 +1,76 @@
+{
+  "modifiedOn": "2024-02-08T06:49:48.010Z",
+  "name": "deploy business hours $usecase",
+  "id": "28169",
+  "type": 3,
+  "createdOn": "2024-02-08T06:49:48.010Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "deploy business hours $usecase",
+    "parameters": [
+      {
+        "parameterId": "usecase_",
+        "entityTypeId": "usecase",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_submit(\"Deploy\", _near(_heading4(\"Business hour\")))"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(\"Deployment in process\", _near(_heading4(\"Business hour\")))"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"Deployment in process\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "60000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"Deployed\", _near(_heading4(\"Business hour\")))"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"Deployed\""
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

@@ -1,0 +1,104 @@
+{
+  "modifiedOn": "2024-07-17T05:52:12.701Z",
+  "name": "Verify CTAs for Is there anything else we can assist you with in Student inquiry flow $studentinquiry",
+  "id": "58374",
+  "type": 3,
+  "createdOn": "2024-07-17T05:52:01.277Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Verify CTAs for Is there anything else we can assist you with in Student inquiry flow $studentinquiry",
+    "parameters": [
+      {
+        "parameterId": "studentinquiry_",
+        "entityTypeId": "studentinquiry",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"chatbot_name[2]\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$botName"
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div($studentinquiry.question1CTAYesNo)"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "parameterId": "studentinquiry_",
+          "attributeId": "attr_61721195430234"
+        },
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div($studentinquiry.question2CTAYesNo)"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "parameterId": "studentinquiry_",
+          "attributeId": "attr_71721195437116"
+        },
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_submit(\"No\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"No\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_submit(\"Yes\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"Yes\""
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

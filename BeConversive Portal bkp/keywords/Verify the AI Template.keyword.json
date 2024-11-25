@@ -1,0 +1,76 @@
+{
+  "modifiedOn": "2024-08-06T08:10:08.127Z",
+  "name": "Verify the AI Template",
+  "id": "58733",
+  "type": 3,
+  "createdOn": "2024-08-06T08:09:07.432Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Verify the AI Template",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"Appointment Booking (AI Powered)Autorespond to patient inquiries such as finding doctors, scheduling appointments, exploring health packages, and locating facilities.\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"Appointment Booking (AI Powered)Autorespond to patient inquiries such as finding doctors, scheduling appointments, exploring health packages, and locating facilities.\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"AI\", _near(_div(\"Conversive\", _in(_div(\"grid-items\")))))"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"AI\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"Conversive\", _in(_div(\"grid-items\")))"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"Conversive\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_isVisible",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"channeltype-wrap\", _in(_div(\"grid-items\")))"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Is_True"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

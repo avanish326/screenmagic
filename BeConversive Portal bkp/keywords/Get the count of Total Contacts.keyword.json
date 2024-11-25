@@ -1,0 +1,42 @@
+{
+  "modifiedOn": "2024-06-14T06:41:11.464Z",
+  "name": "Get the count of Total Contacts",
+  "id": "52746",
+  "type": 3,
+  "createdOn": "2024-06-10T09:29:20.664Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Get the count of Total Contacts",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "5000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(0, _under(_span(\"Total Contacts\")))"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$totalCount"
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

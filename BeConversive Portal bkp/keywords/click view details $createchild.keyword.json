@@ -1,0 +1,71 @@
+{
+  "name": "click view details $createchild",
+  "id": "-1",
+  "type": 3,
+  "content": {
+    "isSystemKeyword": false,
+    "title": "click view details $createchild",
+    "specific": [],
+    "parameters": [
+      {
+        "parameterId": "createchild_",
+        "entityTypeId": "createchild",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "$pages \u003d _collectAttributes(\"_listItem\", \"/.*/\", \"sahiText\", _in(_div(\"pagination\")));\nif($pages.length \u003e 1){\n\t$page \u003d $pages[($pages.length)-1];\n}\nelse{\n\t$page \u003d $pages[0];\n}\n_click(_listItem($page));\n",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_submit(0, _near(_cell($childAccount)))"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_listItem(\"View Details\")"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_containsText",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_heading3(\"text-xl font-bold text-black-600\")"
+          },
+          {
+            "paramMode": "code",
+            "customValue": "$createchild.accountName"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Assert",
+        "assertType": "Is_True",
+        "specific": []
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

@@ -1,0 +1,32 @@
+{
+  "modifiedOn": "2024-02-08T06:49:51.036Z",
+  "name": "Database validation after activating whatsapp flow $webfaqauto",
+  "id": "28384",
+  "type": 3,
+  "createdOn": "2024-02-08T06:49:51.036Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Database validation after activating whatsapp flow $webfaqauto",
+    "parameters": [
+      {
+        "parameterId": "webfaqauto_",
+        "entityTypeId": "webfaqauto",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": true,
+        "isRawScript": true,
+        "rawScript": "var $webSenderID\u003d$webfaqauto.webSenderID;"
+      },
+      {
+        "commented": true,
+        "isRawScript": true,
+        "rawScript": "var $db \u003d _getDB(\"com.mysql.jdbc.Driver\", \"jdbc:mysql://127.0.0.1/smsmagic\", \"admin_portal\",\"Smd3v$Au321\");\nvar $rs \u003d $db.select(\"select bot_status from incoming_config where accountId \u003d\u0027\"+$account+\"\u0027 and shortCode \u003d \u0027\"+$webSenderID+\"\u0027 \");\nvar $bot_status\u003d $rs[0][0];\n_assertEqual($bot_status, 1)\n\nvar $rs1 \u003d $db.select(\"select start_bot from chatbot_config where account_id \u003d\u0027\"+$account+\"\u0027 and sender_id \u003d \u0027\"+$webSenderID+\"\u0027 \");\nvar $start_bot\u003d $rs1[0][0];\n_assertEqual($start_bot, 2)"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

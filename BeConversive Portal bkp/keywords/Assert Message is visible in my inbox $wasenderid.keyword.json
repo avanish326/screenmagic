@@ -1,0 +1,121 @@
+{
+  "modifiedOn": "2024-02-08T06:49:52.223Z",
+  "name": "Assert Message is visible in my inbox $wasenderid",
+  "id": "28466",
+  "type": 3,
+  "createdOn": "2024-02-08T06:49:52.223Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Assert Message is visible in my inbox $wasenderid",
+    "parameters": [
+      {
+        "parameterId": "wasenderid_",
+        "entityTypeId": "wasenderid",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(\"My Inbox\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "var $waSource\u003d$wasenderid.source;"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"\"+$waSource+\"\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "parameterId": "wasenderid_",
+          "attributeId": "attr_11702450604964"
+        },
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"mail-content\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "var $message\u003d$wasenderid.textKeyword;"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"\"+$message+\"\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "parameterId": "wasenderid_",
+          "attributeId": "attr_21702450709112"
+        },
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "var $sourceCheck\u003d$wasenderid.source;"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_heading1(\"\"+$sourceCheck+\"\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "parameterId": "wasenderid_",
+          "attributeId": "attr_11702450604964"
+        },
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_italic(\"close\")"
+          }
+        ],
+        "stepType": "Action"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

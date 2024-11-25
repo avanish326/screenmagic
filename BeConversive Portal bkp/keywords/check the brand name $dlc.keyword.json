@@ -1,0 +1,60 @@
+{
+  "modifiedOn": "2024-07-30T08:21:15.593Z",
+  "name": "check the brand name $dlc",
+  "id": "58569",
+  "type": 3,
+  "createdOn": "2024-07-30T06:36:35.157Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "check the brand name $dlc",
+    "parameters": [
+      {
+        "parameterId": "dlc_",
+        "entityTypeId": "dlc",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(0, _near(_heading3(\"A2P 10DLC Registration\")))"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"The Campaign Registry (TCR) and carriers require verification to ensure that your bulk messages from 10-digit phone numbers comply with anti-spam regulations and customer opt-out options. Learn more about A2P 10DLC.\""
+        }
+      },
+      {
+        "commented": true,
+        "isRawScript": true,
+        "rawScript": "$thisBrand \u003d $options[1].split(\u0027(\u0027)[0].trim();\n\n"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(\"brand_title\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "parameterId": "dlc_",
+          "attributeId": "attr_21715250055196"
+        },
+        "visibleCheck": false
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

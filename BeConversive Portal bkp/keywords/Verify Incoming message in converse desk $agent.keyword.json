@@ -1,0 +1,61 @@
+{
+  "modifiedOn": "2024-04-26T13:31:25.069Z",
+  "name": "Verify Incoming message in converse desk $agent",
+  "id": "45467",
+  "type": 3,
+  "createdOn": "2024-04-26T13:31:25.069Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Verify Incoming message in converse desk $agent",
+    "parameters": [
+      {
+        "parameterId": "agent_",
+        "entityTypeId": "agent",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"mail-content\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span($agent.visitorMessage)"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "parameterId": "agent_",
+          "attributeId": "attr_11693224177770"
+        },
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_italic(\"close\")"
+          }
+        ],
+        "stepType": "Action"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

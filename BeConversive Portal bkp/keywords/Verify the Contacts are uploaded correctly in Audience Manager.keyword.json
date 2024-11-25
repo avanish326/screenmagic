@@ -1,0 +1,106 @@
+{
+  "modifiedOn": "2024-09-13T11:30:00.468318Z",
+  "name": "Verify the Contacts are uploaded correctly in Audience Manager",
+  "id": "-1",
+  "type": 3,
+  "createdOn": "2024-05-22T01:46:20Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Verify the Contacts are uploaded correctly in Audience Manager",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "5000"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_call",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "location.reload()"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Store",
+        "secondaryParam": {
+          "paramMode": "default"
+        }
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "10000"
+          },
+          {
+            "paramMode": "code",
+            "customValue": "_isVisible(_heading3(\"Contacts\"))"
+          }
+        ],
+        "stepType": "Action",
+        "stepCategory": "inbuilt"
+      },
+      {
+        "commented": true,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_paragraph(0, _rightOf(_heading3(\"Contacts\")))"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "paramMode": "code",
+          "customValue": "\"Contacts uploaded successfully\""
+        }
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "\nvar $userinfo \u003d _readCSVFile($path, {includeHeader: true});\n\n\nvar $headers \u003d $userinfo[0];\n\n\nvar $firstNameIndex \u003d $headers.indexOf($headers[0]);\nvar $lastNameIndex \u003d $headers.indexOf($headers[1]);\nvar $phoneIndex \u003d $headers.indexOf($headers[2]);\nvar $addressIndex \u003d $headers.indexOf($headers[3]);\nvar $emailIndex \u003d $headers.indexOf($headers[4]);\n\n\nvar $firstNameUI \u003d _collectAttributes(\"_cell\", \"/.*/\", \"sahiText\", _under(_tableHeader(\"First Name\"))).slice(0, $userinfo.length - 1).reverse();\nvar $lastNameUI \u003d _collectAttributes(\"_cell\", \"/.*/\", \"sahiText\", _under(_tableHeader(\"Last Name\"))).slice(0, $userinfo.length - 1).reverse();\nvar $phoneUI \u003d _collectAttributes(\"_cell\", \"/.*/\", \"sahiText\", _under(_tableHeader(\"Mobile Number\"))).slice(0, $userinfo.length - 1).reverse();\nvar $addressUI \u003d _collectAttributes(\"_cell\", \"/.*/\", \"sahiText\", _under(_tableHeader(\"Address\"))).slice(0, $userinfo.length - 1).reverse();\nvar $emailUI \u003d _collectAttributes(\"_cell\", \"/.*/\", \"sahiText\", _under(_tableHeader(\"Email\"))).slice(0, $userinfo.length - 1).reverse();\n\n\nvar $userinfo1 \u003d _readCSVFile($path, {includeHeader: false});\n\n\nfor (var $i \u003d 0; $i \u003c $userinfo1.length; $i++) {\n    _assertEqual($userinfo1[$i][$firstNameIndex], $firstNameUI[$i]);\n    _log( $firstNameUI[$i])\n    _assertEqual()\n    _assertEqual($userinfo1[$i][$lastNameIndex], $lastNameUI[$i]);\n    _log($lastNameUI[$i])\n    _assertEqual($userinfo1[$i][$phoneIndex], $phoneUI[$i]);\n    _log($phoneUI[$i])\n    _assertEqual($userinfo1[$i][$addressIndex], $addressUI[$i]);\n    _log($addressUI[$i])\n    _assertEqual($userinfo1[$i][$emailIndex], $emailUI[$i]);\n    _log($emailUI[$i])\n    _isVisible(_cell(\"csv-upload\", _leftOf(_cell($phoneUI[$i]))))\n}"
+      },
+      {
+        "commented": true,
+        "isRawScript": true,
+        "rawScript": "$path \u003d \"/Users/pranitakolekar/tfc_engine_new/userdata/scripts/AudienceContact_10.csv\"\n\nvar $userinfo \u003d _readCSVFile($path, {includeHeader: true});\n\nvar $headers \u003d $userinfo[0];\n\nvar $output\u003d []\n$output.push($userinfo[0])\n\nvar $firstNameIndex \u003d $headers.indexOf($headers[0]);\nvar $lastNameIndex \u003d $headers.indexOf($headers[1]);\nvar $phoneIndex \u003d $headers.indexOf($headers[2]);\nvar $addressIndex \u003d $headers.indexOf($headers[3]);\nvar $emailIndex \u003d $headers.indexOf($headers[4]);\n\n//_writeCSVFile($output,\"test.csv\",true)\n//var $csv \u003d _readCSVFile(\"test.csv\", {includeHeader: true});\n$rows \u003d 10\nfor(var $i\u003d0;$i\u003c$row;$i++){\nvar $rowContent \u003d[];\n$firstname \u003d _random(10)\n\n$row.push($firstname)\n$output.push($rowContent)\n\n}\n_writeCSVFile($output,\"test.csv\",true)"
+      },
+      {
+        "commented": true,
+        "isRawScript": true,
+        "rawScript": "$path \u003d \"/Users/pranitakolekar/tfc_engine_new/userdata/scripts/AudienceContact.csv\"\nvar $userinfo\u003d _readCSVFile($path, {includeHeader:true});\nvar $userinfo1\u003d _readCSVFile($path);\n\n$headers\u003d$userinfo[0];\n\nvar $firstNameIndex \u003d $headers.indexOf($headers[0]);\nvar $lastNameIndex \u003d $headers.indexOf($headers[1]);\n\nvar $len \u003d $userinfo.length-1\n\n\nif($len\u003e10){\n_selectWindow();\n_focusWindow()\n_click(_div(\"select-dropdown-indicator\"))\n_click(_div(\"50 / page\"))\n}\n\nvar $pagesNum \u003d Math.ceil($len/50);\n\nvar $firstNameUI \u003d[];\nvar $lastNameUI\u003d[];\n\nfor(var $i \u003d 0; $i\u003c$pagesNum; $i++){\nvar $firstName \u003d _collectAttributes(\"_cell\",\"/.*/\",\"sahiText\",_under(_tableHeader(\"First Name\")));\n\nfor(var $j\u003d0;$j\u003c$firstName.length;$j++){\nif($firstName[$j] \u003d\u003d \"-\"){\n$firstNameUI.push(\"\");\n}\n\nelse{\n$firstNameUI.push($firstName[$j]);\n}\n}\n\nvar $lastName \u003d _collectAttributes(\"_cell\",\"/.*/\",\"sahiText\",_under(_tableHeader(\"Last Name\")))\nfor(var $j\u003d0;$j\u003c$lastName.length;$j++){\nif($lastName[$j] \u003d\u003d \"-\"){\n$lastNameUI.push(\"\");\n}\n\nelse{\n$lastNameUI.push($lastName[$j]);\n}\n}\n_click(_span(\"/next/\"));\n}\n\n$firstNameUIupdate \u003d $firstNameUI.slice(0,$userinfo.length-1).reverse();\n$lastNameUIupdate \u003d $lastNameUI.slice(0,$userinfo.length-1).reverse();\n_log($lastNameUIupdate);\n\n\nfor(var $i \u003d0; $i\u003c$userinfo1.length;$i++){\n_assertEqual($userinfo1[$i][$firstNameIndex],$firstNameUIupdate[$i]);\n_assertEqual($userinfo1[$i][$lastNameIndex],$lastNameUIupdate[$i]);\n}\n"
+      },
+      {
+        "commented": true,
+        "isRawScript": true,
+        "rawScript": "var $userinfo \u003d _readCSVFile(\"/Users/pranitakolekar/tfc_engine_new/userdata/scripts/AudienceContact.csv\", { includeHeader: true });\nvar $userinfo1 \u003d _readCSVFile(\"/Users/pranitakolekar/tfc_engine_new/userdata/scripts/AudienceContact.csv\");\n\n$headers \u003d $userinfo[0];\n\nvar $firstNameIndex \u003d $headers.indexOf($headers[0]);\nvar $lastNameIndex \u003d $headers.indexOf($headers[1]);\n\nvar $len \u003d $userinfo1.length;\n\nif ($len \u003e 10) {\n    _focusWindow();\n    _click(_div(\"select-dropdown-indicator\"));\n    _click(_div(\"50 / page\"));\n}\n\nvar $pageSize \u003d 50;\nvar $pagesNum \u003d Math.ceil($len / $pageSize);\n\nvar $firstNameUI \u003d [];\nvar $lastNameUI \u003d [];\n\nfor (var $page \u003d 1; $page \u003c\u003d $pagesNum; $page++) {\n    var $firstName \u003d _collectAttributes(\"_cell\", \"/.*/\", \"sahiText\", _under(_tableHeader(\"First Name\")));\n    var $lastName \u003d _collectAttributes(\"_cell\", \"/.*/\", \"sahiText\", _under(_tableHeader(\"Last Name\")));\n\n    for (var $j \u003d 0; $j \u003c $firstName.length; $j++) {\n        if ($firstName[$j] \u003d\u003d \"-\") {\n            $firstNameUI.push(\"\");\n        } else {\n            $firstNameUI.push($firstName[$j]);\n        }\n    }\n\n    for (var $j \u003d 0; $j \u003c $lastName.length; $j++) {\n        if ($lastName[$j] \u003d\u003d \"-\") {\n            $lastNameUI.push(\"\");\n        } else {\n            $lastNameUI.push($lastName[$j]);\n        }\n    }\n\n    if ($page \u003c $pagesNum) {\n        _click(_span(\"/next/\"));\n    }\n}\n\nvar $startIndex \u003d ($page - 1) * $pageSize;\nvar $endIndex \u003d Math.min($len, $page * $pageSize);\nvar $firstNameUIupdate \u003d $firstNameUI.slice($startIndex, $endIndex - 1).sort();\nvar $lastNameUIupdate \u003d $lastNameUI.slice($startIndex, $endIndex - 1).sort();\n\nfor (var $i \u003d $startIndex; $i \u003c $endIndex; $i++) {\n    _assertEqual($userinfo1[$i][$firstNameIndex], $firstNameUIupdate[$i - $startIndex]);\n    _assertEqual($userinfo1[$i][$lastNameIndex], $lastNameUIupdate[$i - $startIndex]);\n}"
+      },
+      {
+        "commented": true,
+        "isRawScript": true,
+        "rawScript": "var $userinfo \u003d _readCSVFile(\"/Users/pranitakolekar/tfc_engine_new/userdata/scripts/AudienceContact.csv\", { includeHeader: true });\nvar $userinfo1 \u003d _readCSVFile(\"/Users/pranitakolekar/tfc_engine_new/userdata/scripts/AudienceContact.csv\");\n\n$headers \u003d $userinfo[0];\n\nvar $firstNameIndex \u003d $headers.indexOf(\"First Name\");\nvar $lastNameIndex \u003d $headers.indexOf(\"Last Name\");\n\nvar $len \u003d $userinfo1.length;\n\n// Adjusting page size and number of pages for large data sets\nif ($len \u003e 10) {\n    _focusWindow();\n    _click(_div(\"select-dropdown-indicator\"));\n    _click(_div(\"50 / page\"));\n}\n\nvar $pageSize \u003d 50;\nvar $pagesNum \u003d Math.ceil($len / $pageSize);\n\n// Collect UI data\nvar $firstNameUI \u003d [];\nvar $lastNameUI \u003d [];\n\nfor (var $page \u003d 1; $page \u003c\u003d $pagesNum; $page++) {\n    var $firstName \u003d _collectAttributes(\"_cell\", \"/.*/\", \"sahiText\", _under(_tableHeader(\"First Name\")));\n    var $lastName \u003d _collectAttributes(\"_cell\", \"/.*/\", \"sahiText\", _under(_tableHeader(\"Last Name\")));\n\n    for (var $j \u003d 0; $j \u003c $firstName.length; $j++) {\n        if ($firstName[$j] \u003d\u003d \"-\") {\n            $firstNameUI.push(\"\");\n        } else {\n            $firstNameUI.push($firstName[$j]);\n        }\n    }\n\n    for (var $j \u003d 0; $j \u003c $lastName.length; $j++) {\n        if ($lastName[$j] \u003d\u003d \"-\") {\n            $lastNameUI.push(\"\");\n        } else {\n            $lastNameUI.push($lastName[$j]);\n        }\n    }\n\n    // Calculate indices for the current page\n    var $startIndex \u003d ($page - 1) * $pageSize;\n    var $endIndex \u003d Math.min($len, $page * $pageSize);\n\n    // Compare the collected names from UI with CSV data\n    var $firstNameUIPage \u003d $firstNameUI.slice($startIndex, $endIndex);\n    var $lastNameUIPage \u003d $lastNameUI.slice($startIndex, $endIndex);\n\n    for (var $i \u003d $startIndex; $i \u003c $endIndex; $i++) {\n        var $csvFirstName \u003d $userinfo1[$i][$firstNameIndex] || \"\";\n        var $csvLastName \u003d $userinfo1[$i][$lastNameIndex] || \"\";\n        \n        _assertEqual($csvFirstName, $firstNameUIPage[$i - $startIndex]);\n        _assertEqual($csvLastName, $lastNameUIPage[$i - $startIndex]);\n    }\n\n    // Click the next button if not on the last page\n    if ($page \u003c $pagesNum) {\n        _click(_span(\"/next/\"));\n    }\n}\n"
+      },
+      {
+        "commented": true,
+        "isRawScript": true,
+        "rawScript": "$len \u003d 1020;\n_wait(2000)\nif($len\u003e10){\n_focusWindow()\n_click(_div(\"select-dropdown-indicator\"))\n_click(_div(\"50 / page\"))\n}\n\nvar $pagesNum \u003d Math.ceil($len/50);\n\nvar $firstNameUI \u003d[];\nvar $lastNameUI\u003d[];\n\nfor(var $i \u003d 0; $i\u003c$pagesNum; $i++){\nvar $firstName \u003d _collectAttributes(\"_cell\",\"/.*/\",\"sahiText\",_under(_tableHeader(\"First Name\")));\n\nfor(var $j\u003d0;$j\u003c$firstName.length;$j++){\nif($firstName[$j] \u003d\u003d \"-\"){\n$firstNameUI.push(\"\");\n}\n\nelse{\n$firstNameUI.push($firstName[$j]);\n}\n}\n\nvar $lastName \u003d _collectAttributes(\"_cell\",\"/.*/\",\"sahiText\",_under(_tableHeader(\"Last Name\")))\nfor(var $j\u003d0;$j\u003c$lastName.length;$j++){\nif($lastName[$j] \u003d\u003d \"-\"){\n$lastNameUI.push(\"\");\n}\n\nelse{\n$lastNameUI.push($lastName[$j]);\n}\n}\n_click(_span(\"/next/\"));\n}\n\n$firstNameUIupdate \u003d $firstNameUI.slice(0,$userinfo.length-1).reverse();\n$lastNameUIupdate \u003d $lastNameUI.slice(0,$userinfo.length-1).reverse();\n\n$lastNameUIupdate.length"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

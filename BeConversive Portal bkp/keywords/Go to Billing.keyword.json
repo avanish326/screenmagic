@@ -1,0 +1,107 @@
+{
+  "modifiedOn": "2024-06-21T13:40:32.252Z",
+  "name": "Go to Billing",
+  "id": "57910",
+  "type": 3,
+  "createdOn": "2024-06-21T12:56:48.085Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Go to Billing",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_selectWindow",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "\"SMS Magic\""
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"Billing\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_selectWindow",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "\"SMS Magic\""
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"remainingSMSBalance\")"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$current"
+        }
+      },
+      {
+        "commented": false,
+        "action": "_selectWindow",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "\"SMS Magic\""
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "$original \u003d \"\";\n$currentCredit \u003d +$current;\n//$oldCredit \u003d +$olderCredit;\n\n$sub \u003d $currentCredit - 7000;\n\n$original \u003d +$sub;\n$original;\n\n"
+      },
+      {
+        "commented": false,
+        "action": "_selectWindow",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "\"SMS Magic\""
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span($original)"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$olderCredit"
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

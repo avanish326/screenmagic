@@ -1,0 +1,96 @@
+{
+  "modifiedOn": "2024-08-08T07:55:15.219Z",
+  "name": "Verify the pop up confirmation message",
+  "id": "46241",
+  "type": 3,
+  "createdOn": "2024-05-22T07:08:52.587Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Verify the pop up confirmation message",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_isVisible",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_svg_rect(4)"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Is_True"
+      },
+      {
+        "commented": false,
+        "action": "_isVisible",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"/close-btn/\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Is_True"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_heading3(\"Confirm contacts import\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"Confirm contacts import\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(\"Please review your column mapping selections. Once confirmed, we will begin importing your contacts. This process cannot be reversed. Do you want to proceed with the import?\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"Please review your column mapping selections. Once confirmed, we will begin importing your contacts. This process cannot be reversed. Do you want to proceed with the import?\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_isEnabled",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_submit(\"Cancel\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Is_True"
+      },
+      {
+        "commented": false,
+        "action": "_isEnabled",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_submit(\"Import\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Is_True"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

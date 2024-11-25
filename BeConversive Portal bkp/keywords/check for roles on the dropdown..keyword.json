@@ -1,0 +1,80 @@
+{
+  "modifiedOn": "2024-06-10T04:11:34.256Z",
+  "name": "check for roles on the dropdown.",
+  "id": "52699",
+  "type": 3,
+  "createdOn": "2024-06-07T08:40:44.913Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "check for roles on the dropdown.",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"select select-md mt-2 css-b62m3t-container[2]\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"Content Creator\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"select-dropdown-indicator[3]\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"Monitoring User\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"Monitoring User\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"Content Creator\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"Content Creator\""
+        }
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "$users \u003d _collectAttributes(\"_span\", \"/.*/\", \"sahiText\", _in(_div(\"react-select-5-listbox\")));\n$users"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

@@ -1,0 +1,81 @@
+{
+  "modifiedOn": "2024-02-25T03:16:31.449Z",
+  "name": "Verify Shorten URL",
+  "id": "43259",
+  "type": 3,
+  "createdOn": "2024-02-23T17:00:29.473Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Verify Shorten URL",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"Conversive Assets\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"URL Shortening\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"Shortened Links\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"truncate text-blue-600 w-full\", _near(_tableHeader(\"Long URL\")))"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$longURLSent"
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"truncate text-blue-600 w-full[1]\", _near(_tableHeader(\"Short URL\")))"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$shortenURL"
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

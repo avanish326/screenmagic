@@ -1,0 +1,277 @@
+{
+  "modifiedOn": "2024-03-20T06:24:22.026Z",
+  "name": "Add Business Hour for Inside Hour $businesshours",
+  "id": "44725",
+  "type": 3,
+  "createdOn": "2024-03-20T04:40:09.465Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Add Business Hour for Inside Hour $businesshours",
+    "parameters": [
+      {
+        "parameterId": "businesshours_",
+        "entityTypeId": "businesshours",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_button(\"Add Business Hours\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"/select__input-container/\",_under(_label(\"Country\")))"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "1000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_setStrictVisibilityCheck",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "true"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_call",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_sahi.blurEnabled\u003dfalse"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {}
+      },
+      {
+        "commented": true,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"/select__input-container/\",_under(_label(\"Country\")))"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "\"India\""
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"India\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"/select__input-container/\",_under(_label(\"Timezone\")))"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"GMT+05:30 Asia/Kolkata\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_call",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_sahi.blurEnabled\u003dtrue"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {}
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "$currentDate \u003d new Date();\n//$currentDate \u003d new Date(\"Wed Feb 28 2024 11:15:12 GMT+0530 (India Standard Time)\")\n\nvar $fromTime \u003d  $currentDate.getHours();\nvar $toTime \u003d $fromTime+1;\n_log($fromTime);\n_log($toTime)\n\nfunction time($time){\n\tvar $amORpm;\n\tvar $setTime;\n\t\n\tif($time\u003e\u003d12 \u0026\u0026 $time\u003c\u003d23)\n\t{\n\t\t$time \u003d $time - 12;\n\t\t$amORpm \u003d \"pm\"\n\t}\n\telse{\n\t\tif($time\u003e\u003d24){\n\t\t\t$time \u003d $time-24;\n\t\t}\n\t\telse{\n\t\t\t$time \u003d $time\n\t\t}\n\t\t$amORpm \u003d \"am\"\n\t}\n\n\tif($time\u003c10){\n\t\t$setTime\u003d \"0\"+$time.toString();\n\t}\n\telse{\n\t\t$setTime \u003d $time.toString();\n\t}\n\tvar $arr \u003d [];\n\t$arr.push($amORpm);\n\t$arr.push($setTime)\n\treturn $arr;\n}\n\nvar $amORpmFrom \u003d time($fromTime)[0]\n_log($amORpmFrom)\nvar $amORpmTo \u003d time($toTime)[0]\n_log($amORpmTo)\nvar $from \u003d time($fromTime)[1]\n_log($from)\nvar $to \u003d time($toTime)[1]\n_log($to)"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_textbox(\"hours\", _in(_div(\"From :\")))"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_call",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_textbox(\"hours\", _in(_div(\"From :\"))).value \u003d$from"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {}
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_textbox(\"hours\", _in(_div(\"To :\")))"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_call",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_textbox(\"hours\", _in(_div(\"To :\"))).value \u003d$to"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {}
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "if(_getText(_textbox(\"/am-pm-input/\",_in(_div(\"From :\")))) !\u003d $amORpmFrom){\n\n"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_textbox(\"/am-pm-input/\",_in(_div(\"From :\")))"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_call",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_textbox(\"/am-pm-input/\",_in(_div(\"From :\"))).value \u003d $amORpmFrom"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {}
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "}\nif(_getText(_textbox(\"/am-pm-input/\",_in(_div(\"To :\")))) !\u003d $amORpmTo){\n\t\n"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_textbox(\"/am-pm-input/\",_in(_div(\"To :\")))"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_call",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_textbox(\"/am-pm-input/\",_in(_div(\"To :\"))).value\u003d$amORpmTo"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {}
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "\n}"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "_focus(_submit(\"Add\"))"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_submit(\"Add\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "10000"
+          }
+        ],
+        "stepType": "Action"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

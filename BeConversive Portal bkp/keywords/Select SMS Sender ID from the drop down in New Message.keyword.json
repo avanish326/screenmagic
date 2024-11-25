@@ -1,0 +1,51 @@
+{
+  "modifiedOn": "2024-08-26T11:01:26.207Z",
+  "name": "Select SMS Sender ID from the drop down in New Message",
+  "id": "58958",
+  "type": 3,
+  "createdOn": "2024-08-26T11:00:50.178Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Select SMS Sender ID from the drop down in New Message",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_button(\"Select Sender Id\")"
+          },
+          {}
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_button(\"\"+$senderID+\" (SMS)\")"
+          },
+          {}
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "2000"
+          }
+        ],
+        "stepType": "Action"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

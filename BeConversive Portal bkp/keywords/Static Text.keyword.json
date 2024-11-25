@@ -1,0 +1,118 @@
+{
+  "modifiedOn": "2024-06-05T10:47:53.980Z",
+  "name": "Static Text",
+  "id": "43343",
+  "type": 3,
+  "createdOn": "2024-02-27T06:32:26.957Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Static Text",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"Available Message Balance\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"Available Message Balance\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"tooltip-wrapper\", _in(_div(\"Available Message Balance\")))"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"These can be consumed while sending messages (the quantity depends on the message length).\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"These can be consumed while sending messages (the quantity depends on the message length).\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"Available Number Credit\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"Available Number Credit\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"tooltip-wrapper\", _in(_div(\"Available Number Credit\")))"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"These can be used when you set up a new Incoming Number in Conversive.\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"These can be used when you set up a new Incoming Number in Conversive.\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"Contact care@beconversive.com to buy more number credits.\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Contains",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"care@beconversive.com\""
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

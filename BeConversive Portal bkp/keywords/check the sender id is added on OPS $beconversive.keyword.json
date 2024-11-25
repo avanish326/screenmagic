@@ -1,0 +1,66 @@
+{
+  "modifiedOn": "2024-04-11T10:31:04.201Z",
+  "name": "check the sender id is added on OPS $beconversive",
+  "id": "44127",
+  "type": 3,
+  "createdOn": "2024-03-07T12:27:10.914Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "check the sender id is added on OPS $beconversive",
+    "parameters": [
+      {
+        "parameterId": "beconversive_",
+        "entityTypeId": "beconversive",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_table(\"table table-bordered\", _near(_div(\"Configure Incoming Number\")))"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Contains",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$senderId"
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_table(\"senderIdsTable\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Contains",
+        "secondaryParam": {
+          "parameterId": "beconversive_",
+          "attributeId": "attr_241712829371634"
+        },
+        "visibleCheck": false
+      },
+      {
+        "commented": true,
+        "action": "_selectWindow",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "\"SMS Magic\""
+          }
+        ],
+        "stepType": "Action"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

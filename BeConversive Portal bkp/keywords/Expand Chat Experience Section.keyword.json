@@ -1,0 +1,45 @@
+{
+  "modifiedOn": "2024-09-11T11:19:16.280838Z",
+  "name": "Expand Chat Experience Section",
+  "id": "-1",
+  "type": 3,
+  "createdOn": "2024-06-12T00:48:08Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Expand Chat Experience Section",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_div(\"accordion-header\")"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_span(\"Live Chatinfo\")"
+          }
+        ],
+        "stepType": "Assert",
+        "stepCategory": "inbuilt",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "paramMode": "string",
+          "customValue": "Live Chatinfo"
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

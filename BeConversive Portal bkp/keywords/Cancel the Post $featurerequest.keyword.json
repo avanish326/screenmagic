@@ -1,0 +1,177 @@
+{
+  "modifiedOn": "2024-03-04T12:31:41.427Z",
+  "name": "Cancel the Post $featurerequest",
+  "id": "43826",
+  "type": 3,
+  "createdOn": "2024-03-04T06:23:35.635Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Cancel the Post $featurerequest",
+    "parameters": [
+      {
+        "parameterId": "featurerequest_",
+        "entityTypeId": "featurerequest",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_selectWindow",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "\"\""
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_selectDomain",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "\"widget.canny.io\""
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_textbox(\"Title\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "2000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "parameterId": "featurerequest_",
+            "attributeId": "attr_11709532432246",
+            "accessorId": "acc0"
+          },
+          {
+            "parameterId": "featurerequest_",
+            "attributeId": "attr_11709532432246"
+          }
+        ],
+        "stepType": "Action",
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_textarea(0)"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "parameterId": "featurerequest_",
+            "attributeId": "attr_01709531793185",
+            "accessorId": "acc0"
+          },
+          {
+            "parameterId": "featurerequest_",
+            "attributeId": "attr_01709531793185"
+          }
+        ],
+        "stepType": "Action",
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_button(\"Cancel\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_isVisible",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"Share your feedback...\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Is_True"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_button(0)"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_textbox(\"Short, descriptive title\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_textarea(0)"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"\""
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

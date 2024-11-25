@@ -1,0 +1,77 @@
+{
+  "modifiedOn": "2024-05-23T10:48:40.859Z",
+  "name": "Get the number rows present in csv $audiencecsv and Verify on UI when upload csv of 1000 records",
+  "id": "46283",
+  "type": 3,
+  "createdOn": "2024-05-23T10:38:34.589Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Get the number rows present in csv $audiencecsv and Verify on UI when upload csv of 1000 records",
+    "parameters": [
+      {
+        "parameterId": "audiencecsv_",
+        "entityTypeId": "audiencecsv",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "var $CSVRead \u003d _readCSVFile($path);\n\nvar $csvLength \u003d $CSVRead.length\n\n_log($csvLength)\n"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(0,_in(_div(\"/upload/\")))"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$fileName"
+        }
+      },
+      {
+        "commented": true,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(1,_in(_div(\"/upload/\")))"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$percentUpload"
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_heading4(0,_in(_div(\"/upload upload/\")))"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$records"
+        }
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "//_assertEqual($audiencecsv.csvFileThousandRecords, $fileName)\n//_assertEqual(\"100% uploaded\", $percentUpload)\n_assertEqual(\"Total Records found :\"+$csvLength+\"\", $records)"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

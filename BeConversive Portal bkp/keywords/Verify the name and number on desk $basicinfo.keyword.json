@@ -1,0 +1,76 @@
+{
+  "modifiedOn": "2024-08-27T09:41:03.155Z",
+  "name": "Verify the name and number on desk $basicinfo",
+  "id": "52622",
+  "type": 3,
+  "createdOn": "2024-06-04T08:09:12.165Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Verify the name and number on desk $basicinfo",
+    "parameters": [
+      {
+        "parameterId": "basicinfo_",
+        "entityTypeId": "basicinfo",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "5000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(\"My Inbox\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"mail-content\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "var $firstName\u003d$basicinfo.firstName;\nvar $lastName\u003d$basicinfo.lastName;\nvar $phone\u003d$basicinfo.source;\n\n$heading\u003d$firstName+\" \"+$lastName+\" \"+\"(\"+$phone+\")\";"
+      },
+      {
+        "commented": false,
+        "action": "_containsText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(\"known-username\")"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "$heading"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Is_True"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

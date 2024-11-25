@@ -1,0 +1,102 @@
+{
+  "modifiedOn": "2024-09-09T10:47:09.386621Z",
+  "name": "Verify the message is being triggered after lead capture $webform $template $nurtureflow",
+  "id": "-1",
+  "type": 3,
+  "createdOn": "2024-07-09T04:23:17Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Verify the message is being triggered after lead capture $webform $template $nurtureflow",
+    "parameters": [
+      {
+        "parameterId": "webform_",
+        "entityTypeId": "webform",
+        "suffix": ""
+      },
+      {
+        "parameterId": "template_",
+        "entityTypeId": "template",
+        "suffix": ""
+      },
+      {
+        "parameterId": "nurtureflow_",
+        "entityTypeId": "nurtureflow",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "60000"
+          }
+        ],
+        "stepType": "Action",
+        "stepCategory": "inbuilt"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_link(\"/Outgoing Messages/\")"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "\nvar $fName\u003d$webform.firstNameWebForm;\nvar $lName\u003d$webform.lastNameWebForm;\n\nvar $countryCodeVar1\u003d$webform.countryCode;\nvar $countryCodeVar\u003d$countryCodeVar1.split(\"+\")[1].trim()\n_log($countryCodeVar);\nvar $phoneNumberNew\u003d$webform.phoneWebForm;\n\n$phoneNumberVar\u003d$countryCodeVar+$phoneNumberNew;\n"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "var $inputString \u003d $nurtureflow.senderID;\n$senderId \u003d $inputString.split(\u0027 \u0027)[0];\n"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_cell(1, _leftOf(_cell($phoneNumberVar)))"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "paramMode": "code",
+          "customValue": "$senderId"
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_cell(0, _rightOf(_cell($phoneNumberVar)))"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "paramMode": "default",
+          "parameterId": "template_",
+          "attributeId": "attr_21695961090879"
+        },
+        "visibleCheck": false
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

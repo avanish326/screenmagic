@@ -1,0 +1,45 @@
+{
+  "name": "check child license",
+  "id": "-1",
+  "type": 3,
+  "content": {
+    "isSystemKeyword": false,
+    "title": "check child license",
+    "specific": [],
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "$planError \u003d _getText(_paragraph(0, _near(_label(\"Subscription Plan\"))));\n\nif($planError\u003d\u003d\"Centralized LicenseExpired\"){\n\t_log(\"The Plan Custom plan is expired\");\n}\nelse{",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_paragraph(0, _near(_label(\"Subscription Plan\")))"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "paramMode": "code",
+          "customValue": "\"Centralized License\""
+        },
+        "specific": []
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "}",
+        "specific": []
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

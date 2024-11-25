@@ -1,0 +1,61 @@
+{
+  "modifiedOn": "2024-07-17T05:52:34.363Z",
+  "name": "Select CTAs for Is there anything else we can assist you with $studentinquiry",
+  "id": "58375",
+  "type": 3,
+  "createdOn": "2024-07-17T05:52:25.039Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Select CTAs for Is there anything else we can assist you with $studentinquiry",
+    "parameters": [
+      {
+        "parameterId": "studentinquiry_",
+        "entityTypeId": "studentinquiry",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_submit($studentinquiry.ctaYesNo)"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "1500"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div($studentinquiry.ctaYesNo)"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "parameterId": "studentinquiry_",
+          "attributeId": "attr_21721190656995"
+        },
+        "visibleCheck": false
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

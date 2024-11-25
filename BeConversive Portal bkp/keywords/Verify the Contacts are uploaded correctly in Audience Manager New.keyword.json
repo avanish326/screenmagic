@@ -1,0 +1,207 @@
+{
+  "modifiedOn": "2024-08-08T12:21:17.868Z",
+  "name": "Verify the Contacts are uploaded correctly in Audience Manager New",
+  "id": "46302",
+  "type": 3,
+  "createdOn": "2024-05-24T16:36:24.370Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Verify the Contacts are uploaded correctly in Audience Manager New",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "5000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"Contacts are uploading...\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"Contacts are uploading...\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_isVisible",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(0, _near(_paragraph(\"Contacts are uploading...\")))"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Is_True"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(1, _near(_span(\"Total Contacts\")))"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$tCountsWithoutRefresh"
+        }
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "5000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(0, _near(_paragraph(\"Contacts are uploading...\")))"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "10000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_isVisible",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"Contacts are uploading...\")"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$uploadingStatus"
+        }
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "_log($uploadingStatus)"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "while($uploadingStatus\u003d\u003dtrue)\n{\n_wait(20000)\n_click(_image(\"Refresh Page\"))\n_wait(7000)\n$uploadingStatus\u003d_isVisible(_div(\"Contacts are uploading...\"))\n_log(\"Test Condition\")\n}\n"
+      },
+      {
+        "commented": true,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "1000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"Contacts uploaded successfully\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"Contacts uploaded successfully\""
+        }
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "$tCountsAtferUpload\u003dNumber($totalContacts)+Number($csvLength);\n//$tCountsAtferUpload\n_log($tCountsAtferUpload)\n\n\n"
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "6000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(1, _near(_span(\"Total Contacts\")))"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$totalContactsAfterUploadWithComa"
+        }
+      },
+      {
+        "commented": true,
+        "action": "_areEqual",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(1, _near(_span(\"Total Contacts\")))"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "$tCountsAtferUpload"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Is_True"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "_log($totalContactsAfterUploadWithComa)\n_log($tCountsAtferUpload)\nlet cleanStr \u003d $totalContactsAfterUploadWithComa.replace(/,/g, \"\");\nlet $totalContactsAfterUpload \u003d parseInt(cleanStr, 10);\n_assertEqual($totalContactsAfterUpload,$tCountsAtferUpload)"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

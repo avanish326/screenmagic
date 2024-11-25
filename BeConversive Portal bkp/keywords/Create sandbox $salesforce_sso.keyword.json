@@ -1,0 +1,112 @@
+{
+  "modifiedOn": "2024-02-08T06:49:52.614Z",
+  "name": "Create sandbox $salesforce_sso",
+  "id": "28494",
+  "type": 3,
+  "createdOn": "2024-02-08T06:49:52.614Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Create sandbox $salesforce_sso",
+    "parameters": [
+      {
+        "parameterId": "salesforce_sso_",
+        "entityTypeId": "salesforce_sso",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "_setXHRReadyStatesToWaitFor(\"2,3\");"
+      },
+      {
+        "commented": false,
+        "action": "_navigateTo",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "$Url"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_button(\"Salesforce\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"Sandbox\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_emailbox(\"username\")"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "$sandboxUserName"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_password(\"pw\")"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "$sandboxPassword"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_submit(\"Login\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_submit(\" Allow \")"
+          }
+        ],
+        "stepType": "Action"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

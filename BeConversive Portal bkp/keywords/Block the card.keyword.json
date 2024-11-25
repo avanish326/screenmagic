@@ -1,0 +1,88 @@
+{
+  "modifiedOn": "2024-02-08T06:49:54.987Z",
+  "name": "Block the card",
+  "id": "28657",
+  "type": 3,
+  "createdOn": "2024-02-08T06:49:54.987Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Block the card",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_selectWindow",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "\"/https://qa-ops.txtbox.in/\""
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_windowAction",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "\"refresh\""
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_isVisible",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_submit(\"Active[1]\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Is_True"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"slider round[1]\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_check",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_checkbox(\"verify_switch107\")"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "false"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_isVisible",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_cell(\"Blocked\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Is_True"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

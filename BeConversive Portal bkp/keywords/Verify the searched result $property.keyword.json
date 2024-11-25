@@ -1,0 +1,66 @@
+{
+  "modifiedOn": "2024-08-20T05:46:30.196Z",
+  "name": "Verify the searched result $property",
+  "id": "58884",
+  "type": 3,
+  "createdOn": "2024-08-20T05:33:31.378Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Verify the searched result $property",
+    "parameters": [
+      {
+        "parameterId": "property_",
+        "entityTypeId": "property",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "3000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(1)"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"Showing 1 contact properties\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph($property.propertyName)"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "parameterId": "property_",
+          "attributeId": "attr_01723806477739"
+        },
+        "visibleCheck": false
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

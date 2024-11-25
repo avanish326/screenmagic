@@ -1,0 +1,70 @@
+{
+  "modifiedOn": "2024-02-08T06:49:39.584Z",
+  "name": "accept the hand off",
+  "id": "27574",
+  "type": 3,
+  "createdOn": "2024-02-08T06:49:39.584Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "accept the hand off",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"HANDOFF REQUESTED\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"HANDOFF REQUESTED\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"mail-content\", _near(_listItem(\"All My Messages\")))"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"Click here\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"The chatbot is successfully disabled\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"The chatbot is successfully disabled\""
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

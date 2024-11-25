@@ -1,0 +1,57 @@
+{
+  "modifiedOn": "2024-05-09T12:18:57.510Z",
+  "name": "Select SMS Sender ID from the drop down $senderidbeconv",
+  "id": "45938",
+  "type": 3,
+  "createdOn": "2024-05-09T12:16:49.206Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Select SMS Sender ID from the drop down $senderidbeconv",
+    "parameters": [
+      {
+        "parameterId": "senderidbeconv_",
+        "entityTypeId": "senderidbeconv",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_button(\"Select Sender Id\")"
+          },
+          {}
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_button(\"\"+$senderidbeconv.senderID+\" (SMS)\")"
+          },
+          {}
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "2000"
+          }
+        ],
+        "stepType": "Action"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

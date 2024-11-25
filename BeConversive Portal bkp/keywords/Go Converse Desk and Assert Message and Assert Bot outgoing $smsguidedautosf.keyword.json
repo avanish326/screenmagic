@@ -1,0 +1,197 @@
+{
+  "modifiedOn": "2024-02-08T06:49:53.076Z",
+  "name": "Go Converse Desk and Assert Message and Assert Bot outgoing $smsguidedautosf",
+  "id": "28528",
+  "type": 3,
+  "createdOn": "2024-02-08T06:49:53.076Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Go Converse Desk and Assert Message and Assert Bot outgoing $smsguidedautosf",
+    "parameters": [
+      {
+        "parameterId": "smsguidedautosf_",
+        "entityTypeId": "smsguidedautosf",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_selectBrowser",
+        "stepParameters": [],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "9000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"Bot Conversations\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_button(\"All\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"slds-checkbox_faux[1]\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "var $source\u003d$smsguidedautosf.source;"
+      },
+      {
+        "commented": true,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"/+$source+/\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"slds-float_left senderName\", _near(_button(\"All\")))"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "3000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"slds-float_left senderName\", _near(_button(\"All\")))"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "isRawScript": true,
+        "rawScript": "_set($textbotmsg,_div(\"slds-float_left messageData\").innerText)\n_log($textbotmsg)"
+      },
+      {
+        "commented": false,
+        "action": "_areEqual",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"Hi there! Thank you for contacting The BrightCare Hospital secure chat. If this is an emergency, Please call 911 immediately.\")"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "\"Hi there! Thank you for contacting The BrightCare Hospital secure chat. If this is an emergency, Please call 911 immediately.\""
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Is_True"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"What can we help you with?Please choose one of the following options:Type 1 for Find doctorType 2 for Book AppointmentType 3 for Health packagesType 4 for Location\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"What can we help you with?Please choose one of the following options:Type 1 for Find doctorType 2 for Book AppointmentType 3 for Health packagesType 4 for Location\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_isEnabled",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_button(\"Click here\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Is_True"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(\"\"+$source+\" (Unknown)\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"\"+$source+\" (Unknown)\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_selectBrowser",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "$browserPortal"
+          }
+        ],
+        "stepType": "Action"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

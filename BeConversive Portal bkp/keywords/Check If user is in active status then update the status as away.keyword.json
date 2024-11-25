@@ -1,0 +1,42 @@
+{
+  "modifiedOn": "2024-02-08T06:49:55.367Z",
+  "name": "Check If user is in active status then update the status as away",
+  "id": "28680",
+  "type": 3,
+  "createdOn": "2024-02-08T06:49:55.367Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Check If user is in active status then update the status as away",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "var $availabilityOfUser\u003d _isChecked(_checkbox(0,_near(_span(\"labels\"))))\n_log($availabilityOfUser)"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "if ($availabilityOfUser){"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"slider\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "}"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

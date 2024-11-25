@@ -1,0 +1,104 @@
+{
+  "modifiedOn": "2024-05-21T07:04:55.606Z",
+  "name": "Verify Send media visible in the conversation when send template with merge fields $senderidbeconv",
+  "id": "46188",
+  "type": 3,
+  "createdOn": "2024-05-21T07:04:39.518Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Verify Send media visible in the conversation when send template with merge fields $senderidbeconv",
+    "parameters": [
+      {
+        "parameterId": "senderidbeconv_",
+        "entityTypeId": "senderidbeconv",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "$Name \u003d $firstname+\" \"+$lastname+\" (\"+$phoneNumber+\")\" \n\nif($Name.includes(\"-\")){\n$Name \u003d $Name.replace(\"- \",\"\")\n}\n\n_log($Name)\n\n"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_heading1(0)"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$Name"
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(0, _under(_heading1(0)))"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"contacts\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_label($senderidbeconv.senderID)"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "parameterId": "senderidbeconv_",
+          "attributeId": "attr_01715257073383"
+        },
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div($templateTextNew)"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$templateTextNew"
+        }
+      },
+      {
+        "commented": false,
+        "action": "_isVisible",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_image(\"getmedia\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Is_True"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

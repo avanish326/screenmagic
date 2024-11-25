@@ -1,0 +1,425 @@
+{
+  "modifiedOn": "2024-02-08T06:49:41.064Z",
+  "name": "start conversation with $sfagent for $whatsapp assigned conversation in SF",
+  "id": "27677",
+  "type": 3,
+  "createdOn": "2024-02-08T06:49:41.064Z",
+  "content": {
+    "title": "start conversation with $sfagent for $whatsapp assigned conversation in SF",
+    "parameters": [
+      {
+        "parameterId": "sfagent_",
+        "entityTypeId": "sfagent",
+        "suffix": ""
+      },
+      {
+        "parameterId": "whatsapp_",
+        "entityTypeId": "whatsapp",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "$request \u003d new RESTRequest();\n$request.setURL($incomingWAURL);\n$request.setHeader(\"Content-Type\", \"application/json\");\n//var $file \u003d _readFile(\"D:/jsonfile.txt\");\n//$request.setBody($file);\n\n\n\nvar $x \u003d \"{\" +\n\"   \\\"SmsMessageSid\\\":\\\"SM91805a30f08ed4a44c8fe7b1264deb14\\\",\" +\n\"   \\\"ProfileName\\\":\\\"abc\\\",\" +\n\"   \\\"SmsSid\\\":\\\"SM91805a30f08ed4a44c8fe7b1264deb14\\\",\" +\n\"   \\\"WaId\\\":\\\"91750878289\\\",\" +\n\"   \\\"SmsStatus\\\":\\\"received\\\",\" +\n\"  \\\"Body\\\":\\\"\"+$whatsapp.visitorMsgWA1+\"\\\",\" +\n\"   \\\"To\\\":\\\"whatsapp:+\"+$destination2+\"\\\",\" +\n\"   \\\"NumSegments\\\":\\\"1\\\",\" +\n\"   \\\"ReferralNumMedia\\\":\\\"0\\\",\" +\n\"   \\\"MessageSid\\\":\\\"SM91805a30f08ed4a44c8fe7b1264deb14\\\",\" +\n\"   \\\"AccountSid\\\":\\\"AC00a7b3b1c35de688eb9696b3119e0388\\\",\" +\n\"   \\\"From\\\":\\\"whatsapp:+\"+$whatsapp.sourceWA+\"\\\",\" +\n\"   \\\"ApiVersion\\\":\\\"2010-04-01\\\",   \" +\n\"   \\\"message_uuid\\\":\\\"SM91805a30f08ed4a44c8fe7b1264deb14\\\",       \" +\n\"   \\\"num_media\\\":\\\"1\\\"\" +\n\"}\";\n\n_log($x);\n$request.setBody($x);\n\n$response \u003d $request.submit(\"POST\");\nvar $responseBody \u003d $response.getBodyAsString();\n_assertEqual(\"200\", $response.getResponseCode());\n_log($response.getHeader(\u0027Content-Length\u0027));\n_log($responseBody);"
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "5000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_image(\"smagicinteract__globalNavConverseDeskB\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_button(\"conversationListView\", _near(_span(\"Search Record\")))"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"My Inbox\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_button(\"All\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "2000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"slds-float_left senderName\", _near(_button(\"All\")))"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"slds-float_left messageData[29]\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "parameterId": "whatsapp_",
+          "attributeId": "attr_41694435048522"
+        },
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "2000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_textarea(\"messageBody\")"
+          },
+          {
+            "parameterId": "sfagent_",
+            "attributeId": "attr_11693489423730"
+          }
+        ],
+        "stepType": "Action",
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "3000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_button(\"Send\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "3000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_button(\"close\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "$request \u003d new RESTRequest();\n$request.setURL($incomingWAURL);\n$request.setHeader(\"Content-Type\", \"application/json\");\n//var $file \u003d _readFile(\"D:/jsonfile.txt\");\n//$request.setBody($file);\n\n\n\nvar $x \u003d \"{\" +\n\"   \\\"SmsMessageSid\\\":\\\"SM91805a30f08ed4a44c8fe7b1264deb14\\\",\" +\n\"   \\\"ProfileName\\\":\\\"abc\\\",\" +\n\"   \\\"SmsSid\\\":\\\"SM91805a30f08ed4a44c8fe7b1264deb14\\\",\" +\n\"   \\\"WaId\\\":\\\"91750878289\\\",\" +\n\"   \\\"SmsStatus\\\":\\\"received\\\",\" +\n\"  \\\"Body\\\":\\\"\"+$whatsapp.visitorMsgWA2+\"\\\",\" +\n\"   \\\"To\\\":\\\"whatsapp:+\"+$destination2+\"\\\",\" +\n\"   \\\"NumSegments\\\":\\\"1\\\",\" +\n\"   \\\"ReferralNumMedia\\\":\\\"0\\\",\" +\n\"   \\\"MessageSid\\\":\\\"SM91805a30f08ed4a44c8fe7b1264deb14\\\",\" +\n\"   \\\"AccountSid\\\":\\\"AC00a7b3b1c35de688eb9696b3119e0388\\\",\" +\n\"   \\\"From\\\":\\\"whatsapp:+\"+$whatsapp.sourceWA+\"\\\",\" +\n\"   \\\"ApiVersion\\\":\\\"2010-04-01\\\",   \" +\n\"   \\\"message_uuid\\\":\\\"SM91805a30f08ed4a44c8fe7b1264deb14\\\",       \" +\n\"   \\\"num_media\\\":\\\"1\\\"\" +\n\"}\";\n\n_log($x);\n$request.setBody($x);\n\n$response \u003d $request.submit(\"POST\");\nvar $responseBody \u003d $response.getBodyAsString();\n_assertEqual(\"200\", $response.getResponseCode());\n_log($response.getHeader(\u0027Content-Length\u0027));\n_log($responseBody);"
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "5000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"slds-float_left senderName\", _near(_button(\"All\")))"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"slds-float_left messageData[31]\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "parameterId": "whatsapp_",
+          "attributeId": "attr_51694435285797"
+        },
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "2000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_textarea(\"messageBody\")"
+          },
+          {
+            "parameterId": "sfagent_",
+            "attributeId": "attr_21693566069261"
+          }
+        ],
+        "stepType": "Action",
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "3000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_button(\"Send\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "3000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_button(\"close\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "$request \u003d new RESTRequest();\n$request.setURL($incomingWAURL);\n$request.setHeader(\"Content-Type\", \"application/json\");\n//var $file \u003d _readFile(\"D:/jsonfile.txt\");\n//$request.setBody($file);\n\n\n\nvar $x \u003d \"{\" +\n\"   \\\"SmsMessageSid\\\":\\\"SM91805a30f08ed4a44c8fe7b1264deb14\\\",\" +\n\"   \\\"ProfileName\\\":\\\"abc\\\",\" +\n\"   \\\"SmsSid\\\":\\\"SM91805a30f08ed4a44c8fe7b1264deb14\\\",\" +\n\"   \\\"WaId\\\":\\\"91750878289\\\",\" +\n\"   \\\"SmsStatus\\\":\\\"received\\\",\" +\n\"  \\\"Body\\\":\\\"\"+$whatsapp.visitorMsgWA3+\"\\\",\" +\n\"   \\\"To\\\":\\\"whatsapp:+\"+$destination2+\"\\\",\" +\n\"   \\\"NumSegments\\\":\\\"1\\\",\" +\n\"   \\\"ReferralNumMedia\\\":\\\"0\\\",\" +\n\"   \\\"MessageSid\\\":\\\"SM91805a30f08ed4a44c8fe7b1264deb14\\\",\" +\n\"   \\\"AccountSid\\\":\\\"AC00a7b3b1c35de688eb9696b3119e0388\\\",\" +\n\"   \\\"From\\\":\\\"whatsapp:+\"+$whatsapp.sourceWA+\"\\\",\" +\n\"   \\\"ApiVersion\\\":\\\"2010-04-01\\\",   \" +\n\"   \\\"message_uuid\\\":\\\"SM91805a30f08ed4a44c8fe7b1264deb14\\\",       \" +\n\"   \\\"num_media\\\":\\\"1\\\"\" +\n\"}\";\n\n_log($x);\n$request.setBody($x);\n\n$response \u003d $request.submit(\"POST\");\nvar $responseBody \u003d $response.getBodyAsString();\n_assertEqual(\"200\", $response.getResponseCode());\n_log($response.getHeader(\u0027Content-Length\u0027));\n_log($responseBody);"
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "5000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"slds-float_left senderName\", _near(_button(\"All\")))"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"slds-float_left messageData[33]\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "parameterId": "whatsapp_",
+          "attributeId": "attr_61694435505852"
+        },
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "2000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_textarea(\"messageBody\")"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "\"Thank You\""
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "3000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_button(\"Send\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "3000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_button(\"close\")"
+          }
+        ],
+        "stepType": "Action"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

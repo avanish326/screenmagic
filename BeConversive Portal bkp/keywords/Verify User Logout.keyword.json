@@ -1,0 +1,81 @@
+{
+  "modifiedOn": "2024-09-18T12:39:32.969492781Z",
+  "name": "Verify User Logout",
+  "id": "-1",
+  "type": 3,
+  "createdOn": "2024-09-17T08:04:43Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Verify User Logout",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_selectBrowser",
+        "stepParameters": [],
+        "stepCategory": "inbuilt",
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "2000"
+          }
+        ],
+        "stepType": "Action",
+        "stepCategory": "inbuilt"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_span(\"Account Settings\")"
+          }
+        ],
+        "stepType": "Action",
+        "stepCategory": "inbuilt"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_heading3(\"Sign in\")"
+          }
+        ],
+        "stepType": "Assert",
+        "stepCategory": "inbuilt",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "paramMode": "string",
+          "customValue": "Sign in"
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_link(\"Forgot?\")"
+          }
+        ],
+        "stepType": "Assert",
+        "stepCategory": "inbuilt",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "paramMode": "string",
+          "customValue": "Forgot?"
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

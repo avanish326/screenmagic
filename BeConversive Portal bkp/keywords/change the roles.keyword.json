@@ -1,0 +1,87 @@
+{
+  "modifiedOn": "2024-06-13T06:18:39.412Z",
+  "name": "change the roles",
+  "id": "52723",
+  "type": 3,
+  "createdOn": "2024-06-07T13:33:02.445Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "change the roles",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_submit(0, _near(_cell($invitedMail)))"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_listItem(\"Change User Details\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"select__input-container css-136ehom[2]\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "3000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "$users2 \u003d _collectAttributes(\"_span\", \"/.*/\", \"sahiText\", _in(_div(\"select__menu-list css-qr46ko\")));\n$users3\u003d [];\n\nfor($i\u003d1; $i\u003c$users2.length; $i++){\n$users3.push($users2[$i]);\n}\n\n_assertEqualArrays($users, $users3);"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"Monitoring User\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_submit(\"Save Changes\")"
+          }
+        ],
+        "stepType": "Action"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

@@ -1,0 +1,47 @@
+{
+  "modifiedOn": "2024-02-08T06:49:52.937Z",
+  "name": "Assert Availability status as away",
+  "id": "28518",
+  "type": 3,
+  "createdOn": "2024-02-08T06:49:52.937Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Assert Availability status as away",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "var $availabilityOfUser\u003d _isChecked(_checkbox(0,_near(_span(\"labels\"))))\n_log($availabilityOfUser)"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "if ($availabilityOfUser){"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"My Availability\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"My Availability\""
+        }
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "}"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

@@ -1,0 +1,43 @@
+{
+  "modifiedOn": "2024-06-05T09:46:58.612Z",
+  "name": "Checking the Care mail for provision",
+  "id": "52649",
+  "type": 3,
+  "createdOn": "2024-06-05T09:46:58.612Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Checking the Care mail for provision",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_checkbox(\"on\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"notification-content no-child\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Contains",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"care@beconversive.com \""
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

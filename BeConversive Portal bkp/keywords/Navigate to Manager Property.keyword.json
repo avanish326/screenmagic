@@ -1,0 +1,53 @@
+{
+  "modifiedOn": "2024-08-30T11:42:39.109Z",
+  "name": "Navigate to Manager Property",
+  "id": "58847",
+  "type": 3,
+  "createdOn": "2024-08-16T08:57:23.359Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Navigate to Manager Property",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_submit(\"Manage property\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_navigateTo",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "\"https://eu-app.beconversive.com/app/#/audience-manager/manage-property\""
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "20000"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "_isVisible(_tableHeader(\"Name\"))"
+          }
+        ],
+        "stepType": "Action"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

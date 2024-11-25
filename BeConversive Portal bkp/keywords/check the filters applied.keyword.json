@@ -1,0 +1,32 @@
+{
+  "modifiedOn": "2024-05-28T15:46:42.478Z",
+  "name": "check the filters applied",
+  "id": "52567",
+  "type": 3,
+  "createdOn": "2024-05-28T15:46:42.478Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "check the filters applied",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "2000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "$filters \u003d _collectAttributes(\"_span\",\"/.*/\",\"sahiText\", _in(_div(\"filter-result\")));\n\n_log($filters)"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

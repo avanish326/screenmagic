@@ -1,0 +1,146 @@
+{
+  "modifiedOn": "2024-06-03T08:04:07.121Z",
+  "name": "check lead capture $webform",
+  "id": "27546",
+  "type": 3,
+  "createdOn": "2024-02-08T06:49:39.195Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "check lead capture $webform",
+    "parameters": [
+      {
+        "parameterId": "webform_",
+        "entityTypeId": "webform",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_selectBrowser",
+        "stepParameters": [],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"Contact Manager\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"Contacts\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "15000"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "_isVisible(_submit(\"New Contact\"))"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "var $name \u003d $webform.firstNameWebForm + \" \" + $webform.lastNameWebForm"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div($name)"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$name"
+        }
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "var $countryCodeVar1\u003d$webform.countryCode;\nvar $countryCodeVar\u003d$countryCodeVar1.split(\"+\")[1].trim()\n_log($countryCodeVar);\n\nvar $phoneNumberNew\u003d$webform.phoneWebForm;\n\nvar $phoneNumberVar\u003d$countryCodeVar+$phoneNumberNew;\n\n"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_cell($phoneNumberVar)"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$phoneNumberVar"
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_cell($webform.emailWebForm)"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "parameterId": "webform_",
+          "attributeId": "attr_21693985570947"
+        },
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"Converse desk\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_selectBrowser",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "$browserDomain"
+          }
+        ],
+        "stepType": "Action"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

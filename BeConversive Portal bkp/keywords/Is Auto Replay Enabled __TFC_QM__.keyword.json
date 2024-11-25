@@ -1,0 +1,41 @@
+{
+  "modifiedOn": "2024-02-08T06:49:44.376Z",
+  "name": "Is Auto Replay Enabled ?",
+  "id": "27914",
+  "type": 3,
+  "createdOn": "2024-02-08T06:49:44.376Z",
+  "content": {
+    "title": "Is Auto Replay Enabled ?",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_isVisible",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"Enabled\", _near(_button(\"Edit Auto Reply\")))"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$autoReplayCheck"
+        }
+      },
+      {
+        "commented": false,
+        "action": "return",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "$autoReplayCheck"
+          }
+        ],
+        "stepType": "Action"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

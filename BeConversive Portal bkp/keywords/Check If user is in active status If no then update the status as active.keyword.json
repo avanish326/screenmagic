@@ -1,0 +1,57 @@
+{
+  "modifiedOn": "2024-02-08T06:49:55.517Z",
+  "name": "Check If user is in active status If no then update the status as active",
+  "id": "28692",
+  "type": 3,
+  "createdOn": "2024-02-08T06:49:55.517Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Check If user is in active status If no then update the status as active",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "var $availabilityOfUser\u003d _isChecked(_checkbox(0,_near(_span(\"labels\"))))\n_log($availabilityOfUser)"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "if ($availabilityOfUser){"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "_log(\"User is away\")"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "} else"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "{"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"slider\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "}"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

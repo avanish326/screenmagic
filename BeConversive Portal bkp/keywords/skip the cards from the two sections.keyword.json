@@ -1,0 +1,65 @@
+{
+  "modifiedOn": "2024-06-19T12:47:17.685Z",
+  "name": "skip the cards from the two sections",
+  "id": "57845",
+  "type": 3,
+  "createdOn": "2024-06-19T08:11:18.311Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "skip the cards from the two sections",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": true,
+        "action": "_windowAction",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "\"refresh\""
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "2000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "isRawScript": true,
+        "rawScript": "while(_isVisible(_span(\"Skip\"))){\n_click(_span(\"Skip\"));\n}"
+      },
+      {
+        "commented": true,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "2000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_windowAction",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "\"refresh\""
+          }
+        ],
+        "stepType": "Action"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

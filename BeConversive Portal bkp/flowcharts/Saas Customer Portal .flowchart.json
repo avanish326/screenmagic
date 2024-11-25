@@ -1,0 +1,1128 @@
+{
+  "modifiedOn": "2024-02-08T06:49:36.184Z",
+  "name": "Saas Customer Portal ",
+  "id": "27350",
+  "type": 0,
+  "createdOn": "2024-02-08T06:49:36.184Z",
+  "content": {
+    "settings": {
+      "maxProceedDepth": 100,
+      "maxProceedsForFirstDepth": 1,
+      "maxProceedsPerDepth": 1,
+      "maxPathRepititionsPerComboPath": 1,
+      "maxProceedsPerPath": 10000,
+      "maxToggles": 2,
+      "maxMatchingPaths": 3
+    },
+    "nodesMap": {
+      "fcn_start_0": {
+        "dataSetId": -1,
+        "id": "fcn_start_0",
+        "nodeType": "start",
+        "branches": [
+          "fcn_createsaas_portal_login_1695368513304_0",
+          "fcn_createsalesforce_sso_1696589058749_0",
+          "fcn_createsalesforce_sso_1696590231100_0"
+        ],
+        "content": "Start"
+      },
+      "fcn_navigatetousermanagmentforvalidation_1695367941522_0": {
+        "dataSetId": -1,
+        "id": "fcn_navigatetousermanagmentforvalidation_1695367941522_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_editinusermanagment_1695367941522_0"
+        ],
+        "content": "navigate to $usermanagment for validation"
+      },
+      "fcn_editinusermanagment_1695367941522_0": {
+        "dataSetId": -1,
+        "id": "fcn_editinusermanagment_1695367941522_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checkcancelbuttoninusermanagment_1695367941522_0",
+          "fcn_validatetextfieldinusermanagment_1695367941522_0"
+        ],
+        "content": "edit in $usermanagment "
+      },
+      "fcn_checkcancelbuttoninusermanagment_1695367941522_0": {
+        "dataSetId": -1,
+        "id": "fcn_checkcancelbuttoninusermanagment_1695367941522_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "check cancel button  in $usermanagment"
+      },
+      "fcn_validatetextfieldinusermanagment_1695367941522_0": {
+        "dataSetId": -1,
+        "id": "fcn_validatetextfieldinusermanagment_1695367941522_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_getaccountid_1695367941522_0"
+        ],
+        "content": "validate text field in $usermanagment"
+      },
+      "fcn_getaccountid_1695367941522_0": {
+        "dataSetId": -1,
+        "id": "fcn_getaccountid_1695367941522_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logintoopsportallogintrial_signupaccountid_1695367941522_0"
+        ],
+        "content": "Get $accountid"
+      },
+      "fcn_logintoopsportallogintrial_signupaccountid_1695367941522_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintoopsportallogintrial_signupaccountid_1695367941522_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_addmessagecreditusermanagment_1695367941522_0"
+        ],
+        "content": "Login to $opsportallogin $trial_signup $accountid"
+      },
+      "fcn_addmessagecreditusermanagment_1695367941522_0": {
+        "dataSetId": -1,
+        "id": "fcn_addmessagecreditusermanagment_1695367941522_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertmessagecreditusermanagment_1695367941522_0"
+        ],
+        "content": "add message credit $usermanagment"
+      },
+      "fcn_assertmessagecreditusermanagment_1695367941522_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertmessagecreditusermanagment_1695367941522_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_userinviteusermanagment_1695367941522_0"
+        ],
+        "content": "assert message credit $usermanagment"
+      },
+      "fcn_userinviteusermanagment_1695367941522_0": {
+        "dataSetId": -1,
+        "id": "fcn_userinviteusermanagment_1695367941522_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_uncheckboxforaccessinusermanagment_0"
+        ],
+        "content": "user invite $usermanagment"
+      },
+      "fcn_logintogmailemaillogin_1695367941522_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintogmailemaillogin_1695367941522_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_confirmaccountusermanagment_1695367941522_0"
+        ],
+        "content": "Login to gmail $emaillogin"
+      },
+      "fcn_confirmaccountusermanagment_1695367941522_0": {
+        "dataSetId": -1,
+        "id": "fcn_confirmaccountusermanagment_1695367941522_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logintostandarduserusermanagment_1695367941522_0"
+        ],
+        "content": "confirm account $usermanagment"
+      },
+      "fcn_logintostandarduserusermanagment_1695367941522_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintostandarduserusermanagment_1695367941522_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checkforaccessusermanagment_0"
+        ],
+        "content": "login to standardUser $usermanagment"
+      },
+      "fcn_logintosaasportal_1695367941522_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintosaasportal_1695367941522_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_unassignanddeleteuserusermanagment_1695367941522_0",
+          "fcn_assignsenderidusermanagment_1695367941522_0"
+        ],
+        "content": "login to $saasportal"
+      },
+      "fcn_unassignanddeleteuserusermanagment_1695367941522_0": {
+        "dataSetId": -1,
+        "id": "fcn_unassignanddeleteuserusermanagment_1695367941522_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_manageaccessusermanagment_1695367941522_0"
+        ],
+        "content": "unassign and delete user $usermanagment"
+      },
+      "fcn_manageaccessusermanagment_1695367941522_0": {
+        "dataSetId": -1,
+        "id": "fcn_manageaccessusermanagment_1695367941522_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_sampledatadisabledusermanagment_0"
+        ],
+        "content": "manage Access $usermanagment"
+      },
+      "fcn_assignsenderidusermanagment_1695367941522_0": {
+        "dataSetId": -1,
+        "id": "fcn_assignsenderidusermanagment_1695367941522_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logintostandarduserusermanagment_1695367941522_1",
+          "fcn_checkalltheboxesusermanagment_0"
+        ],
+        "content": "assign sender id $usermanagment"
+      },
+      "fcn_logintostandarduserusermanagment_1695367941522_1": {
+        "dataSetId": -1,
+        "id": "fcn_logintostandarduserusermanagment_1695367941522_1",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checkaccessgivenusermanagment_0"
+        ],
+        "content": "login to standardUser $usermanagment"
+      },
+      "fcn_assertsenderidusermanagment_1695367941522_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertsenderidusermanagment_1695367941522_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logouttostandarduserusermanagment_1695378785619_0"
+        ],
+        "content": "assert sender id $usermanagment"
+      },
+      "fcn_unassignanddeleteuserusermanagment_1695367941522_1": {
+        "dataSetId": -1,
+        "id": "fcn_unassignanddeleteuserusermanagment_1695367941522_1",
+        "nodeType": "action",
+        "branches": [],
+        "content": "unassign and delete user $usermanagment"
+      },
+      "fcn_uncheckboxforaccessinusermanagment_0": {
+        "dataSetId": -1,
+        "id": "fcn_uncheckboxforaccessinusermanagment_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logintogmailemaillogin_1695367941522_0"
+        ],
+        "content": "uncheck box for access in $usermanagment"
+      },
+      "fcn_logintosaasportal_1695368397166_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintosaasportal_1695368397166_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_navigatetousermanagmentforvalidation_1695367941522_0",
+          "fcn_tempaltecreation_0",
+          "fcn_getaccountid_1696584419021_0",
+          "fcn_aircall_integration_0"
+        ],
+        "content": "login to $saasportal"
+      },
+      "fcn_createsaas_portal_login_1695368513304_0": {
+        "dataSetId": -1,
+        "id": "fcn_createsaas_portal_login_1695368513304_0",
+        "nodeType": "pathlabel",
+        "branches": [
+          "fcn_logintosaasportal_1695368397166_0"
+        ],
+        "content": "Create saas_portal_login"
+      },
+      "fcn_checkforaccessusermanagment_0": {
+        "dataSetId": -1,
+        "id": "fcn_checkforaccessusermanagment_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logouttostandarduserusermanagment_0"
+        ],
+        "content": "check for access $usermanagment"
+      },
+      "fcn_logouttostandarduserusermanagment_0": {
+        "dataSetId": -1,
+        "id": "fcn_logouttostandarduserusermanagment_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logintosaasportal_1695367941522_0"
+        ],
+        "content": "logout to standarduser $usermanagment"
+      },
+      "fcn_checkalltheboxesusermanagment_0": {
+        "dataSetId": -1,
+        "id": "fcn_checkalltheboxesusermanagment_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "check all the boxes $usermanagment"
+      },
+      "fcn_checkaccessgivenusermanagment_0": {
+        "dataSetId": -1,
+        "id": "fcn_checkaccessgivenusermanagment_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertsenderidusermanagment_1695367941522_0"
+        ],
+        "content": "check access given $usermanagment"
+      },
+      "fcn_sampledatadisabledusermanagment_0": {
+        "dataSetId": -1,
+        "id": "fcn_sampledatadisabledusermanagment_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "sample data disabled $usermanagment"
+      },
+      "fcn_logintosaasportal_1695378750444_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintosaasportal_1695378750444_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_unassignanddeleteuserusermanagment_1695367941522_1"
+        ],
+        "content": "login to $saasportal"
+      },
+      "fcn_logouttostandarduserusermanagment_1695378785619_0": {
+        "dataSetId": -1,
+        "id": "fcn_logouttostandarduserusermanagment_1695378785619_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logintosaasportal_1695378750444_0"
+        ],
+        "content": "logout to standarduser $usermanagment"
+      },
+      "fcn_tempaltecreation_0": {
+        "dataSetId": -1,
+        "id": "fcn_tempaltecreation_0",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_navigatetotemplatecreation_0"
+        ],
+        "content": "Tempalte Creation"
+      },
+      "fcn_navigatetotemplatecreation_0": {
+        "dataSetId": -1,
+        "id": "fcn_navigatetotemplatecreation_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_enterdetailstocreatetempaltetemplate_0",
+          "fcn_edittemplate_0",
+          "fcn_createsalesforce_login_1697464495955_0",
+          "fcn_createsalesforce_login_1697464502476_0",
+          "fcn_createatemplate_0"
+        ],
+        "content": "Navigate to Template creation"
+      },
+      "fcn_enterdetailstocreatetempaltetemplate_0": {
+        "dataSetId": -1,
+        "id": "fcn_enterdetailstocreatetempaltetemplate_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Enter Details to create tempalte $template"
+      },
+      "fcn_tempaltewithsmschanneltypecamaign_0": {
+        "dataSetId": -1,
+        "id": "fcn_tempaltewithsmschanneltypecamaign_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_validatedtemplateiscreated_0"
+        ],
+        "content": "Tempalte with sms channel type camaign $template"
+      },
+      "fcn__0": {
+        "dataSetId": -1,
+        "id": "fcn__0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Tempalte with whatsapp channel type camaign $template"
+      },
+      "fcn_tempaltewithsmschanneltypeautomationtemplate_0": {
+        "dataSetId": -1,
+        "id": "fcn_tempaltewithsmschanneltypeautomationtemplate_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_validatedtemplateiscreated_0"
+        ],
+        "content": "Tempalte with sms channel type automation $template"
+      },
+      "fcn_tempaltewithsmschanneltypeconversationtemplate_0": {
+        "dataSetId": -1,
+        "id": "fcn_tempaltewithsmschanneltypeconversationtemplate_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_validatedtemplateiscreated_0"
+        ],
+        "content": "Tempalte with sms channel type conversation $template"
+      },
+      "fcn_validatedtemplateiscreated_0": {
+        "dataSetId": -1,
+        "id": "fcn_validatedtemplateiscreated_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Validated template is created $template"
+      },
+      "fcn_tempaltewithmmschanneltypecamaigntemplate_0": {
+        "dataSetId": -1,
+        "id": "fcn_tempaltewithmmschanneltypecamaigntemplate_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Tempalte with mms channel type camaign $template $campaign"
+      },
+      "fcn_buynowflow_0": {
+        "dataSetId": -1,
+        "id": "fcn_buynowflow_0",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_navigatetobuynow_0"
+        ],
+        "content": "Buy Now Flow"
+      },
+      "fcn_navigatetobuynow_0": {
+        "dataSetId": -1,
+        "id": "fcn_navigatetobuynow_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_validatenameandcrmaccountid_0",
+          "fcn_validatenameandcrmassalesforce_0",
+          "fcn_validatenameandcrmaszohoaccountid_0"
+        ],
+        "content": "Navigate to Buy Now "
+      },
+      "fcn_buymultichannelplan_0": {
+        "dataSetId": -1,
+        "id": "fcn_buymultichannelplan_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_validateorderplacedsuccessfully_0"
+        ],
+        "content": "Buy Multichannel Plan"
+      },
+      "fcn_tempaltewithmmschanneltypeconversationtemplatecampaign_0": {
+        "dataSetId": -1,
+        "id": "fcn_tempaltewithmmschanneltypeconversationtemplatecampaign_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Tempalte with mms channel type conversation $template $campaign"
+      },
+      "fcn_tempaltewithmmschanneltypeautomationtemplatecampaign_0": {
+        "dataSetId": -1,
+        "id": "fcn_tempaltewithmmschanneltypeautomationtemplatecampaign_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Tempalte with mms channel type automation $template $campaign"
+      },
+      "fcn_tempaltewithwhatsappchanneltypeconversationtemplate_0": {
+        "dataSetId": -1,
+        "id": "fcn_tempaltewithwhatsappchanneltypeconversationtemplate_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Tempalte with whatsapp channel type conversation $template"
+      },
+      "fcn_tempaltewithwhatsappchanneltypeautomationtemplate_0": {
+        "dataSetId": -1,
+        "id": "fcn_tempaltewithwhatsappchanneltypeautomationtemplate_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Tempalte with whatsapp channel type automation $template"
+      },
+      "fcn_validateorderplacedsuccessfully_0": {
+        "dataSetId": -1,
+        "id": "fcn_validateorderplacedsuccessfully_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Validate order placed successfully"
+      },
+      "fcn_getaccountid_1696584419021_0": {
+        "dataSetId": -1,
+        "id": "fcn_getaccountid_1696584419021_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_buynowflow_0",
+          "fcn_logintoopsportallogintrial_signupaccountid_0"
+        ],
+        "content": "Get $accountid"
+      },
+      "fcn_validatenameandcrmaccountid_0": {
+        "dataSetId": -1,
+        "id": "fcn_validatenameandcrmaccountid_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_buymultichannelplan_0"
+        ],
+        "content": "Validate name and crm $accountid"
+      },
+      "fcn_createsalesforce_sso_1696589058749_0": {
+        "dataSetId": -1,
+        "id": "fcn_createsalesforce_sso_1696589058749_0",
+        "nodeType": "pathlabel",
+        "branches": [
+          "fcn_createsalesforce_sso_3",
+          "fcn_getaccountid_1696584419021_0",
+          "fcn_createsandboxsalesforce_sso_0"
+        ],
+        "content": "Create salesforce_sso"
+      },
+      "fcn_validatenameandcrmassalesforce_0": {
+        "dataSetId": -1,
+        "id": "fcn_validatenameandcrmassalesforce_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_buymultichannelplan_0"
+        ],
+        "content": "Validate name and crm as salesforce $accountid"
+      },
+      "fcn_createsalesforce_sso_1696590231100_0": {
+        "dataSetId": -1,
+        "id": "fcn_createsalesforce_sso_1696590231100_0",
+        "nodeType": "pathlabel",
+        "branches": [
+          "fcn_signintozohocrm_1696590368866_0"
+        ],
+        "content": "Create Zoho_sso"
+      },
+      "fcn_signintozohocrm_1696590368866_0": {
+        "dataSetId": -1,
+        "id": "fcn_signintozohocrm_1696590368866_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_getaccountid_1696584419021_0"
+        ],
+        "content": "Sign-in to $zohocrm"
+      },
+      "fcn_validatenameandcrmaszohoaccountid_0": {
+        "dataSetId": -1,
+        "id": "fcn_validatenameandcrmaszohoaccountid_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_buymultichannelplan_0"
+        ],
+        "content": "validate name and crm as zoho $accountid"
+      },
+      "fcn_edittemplate_0": {
+        "dataSetId": -1,
+        "id": "fcn_edittemplate_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_tempaltewithsmschanneltypecamaign_0"
+        ],
+        "content": "Edit campaign template"
+      },
+      "fcn_createsalesforce_login_1697464495955_0": {
+        "dataSetId": -1,
+        "id": "fcn_createsalesforce_login_1697464495955_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Edit Conversation template"
+      },
+      "fcn_createsalesforce_login_1697464502476_0": {
+        "dataSetId": -1,
+        "id": "fcn_createsalesforce_login_1697464502476_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Edit Automation template"
+      },
+      "fcn_createatemplate_0": {
+        "dataSetId": -1,
+        "id": "fcn_createatemplate_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_tempaltewithsmschanneltypeconversationtemplate_0",
+          "fcn_tempaltewithsmschanneltypeautomationtemplate_0",
+          "fcn_tempaltewithmmschanneltypecamaigntemplate_0",
+          "fcn_tempaltewithmmschanneltypeconversationtemplatecampaign_0",
+          "fcn_tempaltewithmmschanneltypeautomationtemplatecampaign_0",
+          "fcn__0",
+          "fcn_tempaltewithwhatsappchanneltypeconversationtemplate_0",
+          "fcn_tempaltewithwhatsappchanneltypeautomationtemplate_0",
+          "fcn_tempaltewithsmschanneltypecamaign_0"
+        ],
+        "content": "Create a template"
+      },
+      "fcn_aircall_integration_0": {
+        "dataSetId": -1,
+        "id": "fcn_aircall_integration_0",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_clickonintegration_0"
+        ],
+        "content": "Aircall_Integration"
+      },
+      "fcn_clickonintegration_0": {
+        "dataSetId": -1,
+        "id": "fcn_clickonintegration_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_isconsentenabled_1698656287649_0"
+        ],
+        "content": "click on integration"
+      },
+      "fcn_isconsentenabled_1698656287649_0": {
+        "dataSetId": -1,
+        "id": "fcn_isconsentenabled_1698656287649_0",
+        "nodeType": "dynamic-decision",
+        "branches": [
+          "fcn_connectaircall_0",
+          "fcn_sendsmsthroughaircall_1"
+        ],
+        "content": "is aircall integration enabled?"
+      },
+      "fcn_connectaircall_0": {
+        "dataSetId": -1,
+        "id": "fcn_connectaircall_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_addnumbersaircall_0"
+        ],
+        "content": "connect aircall"
+      },
+      "fcn_addnumbersaircall_0": {
+        "dataSetId": -1,
+        "id": "fcn_addnumbersaircall_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_verifynumberisaddedaircall_0"
+        ],
+        "content": "add numbers $aircall"
+      },
+      "fcn_verifynumberisaddedaircall_0": {
+        "dataSetId": "-1",
+        "dataSetName": "Aircall number.csv",
+        "id": "fcn_verifynumberisaddedaircall_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_verifymessagesendthroughaircallisinsmshistory_0"
+        ],
+        "content": "verify number is added $aircall"
+      },
+      "fcn_sendsmsthroughaircall_0": {
+        "dataSetId": -1,
+        "id": "fcn_sendsmsthroughaircall_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "send sms through $aircall"
+      },
+      "fcn_sendsmsthroughaircall_1": {
+        "dataSetId": -1,
+        "id": "fcn_sendsmsthroughaircall_1",
+        "nodeType": "action",
+        "branches": [
+          "fcn_verifynumberisaddedaircall_0"
+        ],
+        "content": "send sms through $aircall"
+      },
+      "fcn_verifymessagesendthroughaircallisinsmshistory_0": {
+        "dataSetId": -1,
+        "id": "fcn_verifymessagesendthroughaircallisinsmshistory_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "verify message send through $aircall is in sms history"
+      },
+      "fcn_logintoopsportallogintrial_signupaccountid_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintoopsportallogintrial_signupaccountid_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_checkonebill_0",
+          "fcn_checknon_onebill_0",
+          "fcn_checkpayeeonebill_0"
+        ],
+        "content": "Login to $opsportallogin $trial_signup $accountid"
+      },
+      "fcn_checkonebill_0": {
+        "dataSetId": -1,
+        "id": "fcn_checkonebill_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_gotoworkspace_0"
+        ],
+        "content": "check trial onebill"
+      },
+      "fcn_checknon_onebill_0": {
+        "dataSetId": -1,
+        "id": "fcn_checknon_onebill_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_changetheonebillstatus_0"
+        ],
+        "content": "check payee for non-onebill"
+      },
+      "fcn_checkpayeeonebill_0": {
+        "dataSetId": -1,
+        "id": "fcn_checkpayeeonebill_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_gotoworkspacesalesforce_sso_0"
+        ],
+        "content": "check payee onebill"
+      },
+      "fcn_clickonthebuynow_1": {
+        "dataSetId": -1,
+        "id": "fcn_clickonthebuynow_1",
+        "nodeType": "action",
+        "branches": [],
+        "content": "click on the buy now"
+      },
+      "fcn_clickonthebuynow_2": {
+        "dataSetId": -1,
+        "id": "fcn_clickonthebuynow_2",
+        "nodeType": "action",
+        "branches": [],
+        "content": "click on the buy now"
+      },
+      "fcn_createsalesforce_sso_3": {
+        "dataSetId": -1,
+        "id": "fcn_createsalesforce_sso_3",
+        "nodeType": "action",
+        "branches": [
+          "fcn_getaccountid_1696584419021_0"
+        ],
+        "content": "Create $salesforce_sso"
+      },
+      "fcn_createsandboxsalesforce_sso_0": {
+        "dataSetId": -1,
+        "id": "fcn_createsandboxsalesforce_sso_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_getaccountid_1696584419021_0"
+        ],
+        "content": "Create sandbox $salesforce_sso"
+      },
+      "fcn_gotoworkspace_0": {
+        "dataSetId": -1,
+        "id": "fcn_gotoworkspace_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_clickonthebuynow_1"
+        ],
+        "content": "go to workspace $salesforce_sso"
+      },
+      "fcn_gotoworkspacesalesforce_sso_0": {
+        "dataSetId": -1,
+        "id": "fcn_gotoworkspacesalesforce_sso_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_clickonthebuynow_2"
+        ],
+        "content": "go to workspace $salesforce_sso"
+      },
+      "fcn_changetheonebillstatus_0": {
+        "dataSetId": -1,
+        "id": "fcn_changetheonebillstatus_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_gotoworkspacesalesforce_sso_1"
+        ],
+        "content": "change the $onebill status"
+      },
+      "fcn_gotoworkspacesalesforce_sso_1": {
+        "dataSetId": -1,
+        "id": "fcn_gotoworkspacesalesforce_sso_1",
+        "nodeType": "action",
+        "branches": [
+          "fcn_clickonthebuynow_3"
+        ],
+        "content": "go to workspace $salesforce_sso"
+      },
+      "fcn_clickonthebuynow_3": {
+        "dataSetId": -1,
+        "id": "fcn_clickonthebuynow_3",
+        "nodeType": "action",
+        "branches": [
+          "fcn_gotoopsagain_0"
+        ],
+        "content": "click on the buy now"
+      },
+      "fcn_changetoonebill_0": {
+        "dataSetId": -1,
+        "id": "fcn_changetoonebill_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "change to $onebill"
+      },
+      "fcn_gotoopsagain_0": {
+        "dataSetId": -1,
+        "id": "fcn_gotoopsagain_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_changetoonebill_0"
+        ],
+        "content": "go to $opsportallogin again $trial_signup $accountid"
+      }
+    },
+    "pathNames": {
+      "[\"fcn_createsaas_portal_login_1695368513304_0\",\"fcn_logintosaasportal_1695368397166_0\",\"fcn_aircall_integration_0\",\"fcn_clickonintegration_0\",\"fcn_tempaltecreation_0\",\"fcn_navigatetotemplatecreation_0\",\"fcn_createatemplate_0\",\"fcn_edittemplate_0\",\"fcn_tempaltewithwhatsappchanneltypeconversationtemplate_0\"]": {
+        "pathTags": "Templates",
+        "pathDependsOn": "{}"
+      },
+      "[\"fcn_createsaas_portal_login_1695368513304_0\",\"fcn_logintosaasportal_1695368397166_0\",\"fcn_aircall_integration_0\",\"fcn_clickonintegration_0\",\"fcn_tempaltecreation_0\",\"fcn_navigatetotemplatecreation_0\",\"fcn_createatemplate_0\",\"fcn_edittemplate_0\",\"fcn_tempaltewithmmschanneltypeautomationtemplatecampaign_0\"]": {
+        "pathTags": "Templates",
+        "pathDependsOn": "{}"
+      },
+      "[\"fcn_createsaas_portal_login_1695368513304_0\",\"fcn_logintosaasportal_1695368397166_0\",\"fcn_aircall_integration_0\",\"fcn_clickonintegration_0\",\"fcn_tempaltecreation_0\",\"fcn_navigatetotemplatecreation_0\",\"fcn_createatemplate_0\",\"fcn_edittemplate_0\",\"fcn_tempaltewithwhatsappchanneltypeautomationtemplate_0\"]": {
+        "pathTags": "Templates",
+        "pathDependsOn": "{}"
+      },
+      "[\"fcn_createsaas_portal_login_1695368513304_0\",\"fcn_logintosaasportal_1695368397166_0\",\"fcn_aircall_integration_0\",\"fcn_clickonintegration_0\",\"fcn_tempaltecreation_0\",\"fcn_navigatetotemplatecreation_0\",\"fcn_createatemplate_0\",\"fcn_edittemplate_0\",\"fcn_tempaltewithmmschanneltypecamaigntemplate_0\"]": {
+        "pathTags": "Templates",
+        "pathDependsOn": "{}"
+      },
+      "[\"fcn_createsaas_portal_login_1695368513304_0\",\"fcn_logintosaasportal_1695368397166_0\",\"fcn_aircall_integration_0\",\"fcn_clickonintegration_0\",\"fcn_tempaltecreation_0\",\"fcn_navigatetotemplatecreation_0\",\"fcn_createatemplate_0\",\"fcn_edittemplate_0\",\"fcn_tempaltewithsmschanneltypeconversationtemplate_0\",\"fcn_validatedtemplateiscreated_0\"]": {
+        "pathTags": "Templates",
+        "pathDependsOn": "{}"
+      },
+      "[\"fcn_createsaas_portal_login_1695368513304_0\",\"fcn_logintosaasportal_1695368397166_0\",\"fcn_aircall_integration_0\",\"fcn_clickonintegration_0\",\"fcn_tempaltecreation_0\",\"fcn_navigatetotemplatecreation_0\",\"fcn_createatemplate_0\",\"fcn_edittemplate_0\",\"fcn_enterdetailstocreatetempaltetemplate_0\"]": {
+        "pathTags": "Templates",
+        "pathDependsOn": "{}"
+      },
+      "[\"fcn_createsalesforce_sso_1696590231100_0\",\"fcn_signintozohocrm_1696590368866_0\",\"fcn_getaccountid_1696584419021_0\",\"fcn_buynowflow_0\",\"fcn_navigatetobuynow_0\",\"fcn_validatenameandcrmaccountid_0\",\"fcn_buymultichannelplan_0\",\"fcn_validateorderplacedsuccessfully_0\"]": {
+        "pathTags": "",
+        "pathDependsOn": "{}"
+      },
+      "[\"fcn_createsaas_portal_login_1695368513304_0\",\"fcn_logintosaasportal_1695368397166_0\",\"fcn_aircall_integration_0\",\"fcn_clickonintegration_0\",\"fcn_tempaltecreation_0\",\"fcn_navigatetotemplatecreation_0\",\"fcn_createatemplate_0\",\"fcn_edittemplate_0\",\"fcn_tempaltewithsmschanneltypecamaign_0\",\"fcn_validatedtemplateiscreated_0\"]": {
+        "pathTags": "Templates",
+        "pathDependsOn": "{}"
+      },
+      "[\"fcn_createsaas_portal_login_1695368513304_0\",\"fcn_logintosaasportal_1695368397166_0\",\"fcn_aircall_integration_0\",\"fcn_clickonintegration_0\",\"fcn_isconsentenabled_1698656287649_0\",\"fcn_sendsmsthroughaircall_1\",\"fcn_sendsmsthroughaircall_0\",\"fcn_connectaircall_0\",\"fcn_addnumbersaircall_0\",\"fcn_verifynumberisaddedaircall_0\",\"fcn_verifymessagesendthroughaircallisinsmshistory_0\"]": {
+        "pathName": "Path 20",
+        "dataSetName": "-1.csv",
+        "pathDependsOn": "{}"
+      },
+      "[\"fcn_createsaas_portal_login_1695368513304_0\",\"fcn_logintosaasportal_1695368397166_0\",\"fcn_aircall_integration_0\",\"fcn_clickonintegration_0\",\"fcn_tempaltecreation_0\",\"fcn_navigatetotemplatecreation_0\",\"fcn_createatemplate_0\",\"fcn_edittemplate_0\",\"fcn_tempaltewithmmschanneltypeconversationtemplatecampaign_0\"]": {
+        "pathTags": "Templates",
+        "pathDependsOn": "{}"
+      },
+      "[\"fcn_createsaas_portal_login_1695368513304_0\",\"fcn_logintosaasportal_1695368397166_0\",\"fcn_aircall_integration_0\",\"fcn_clickonintegration_0\",\"fcn_tempaltecreation_0\",\"fcn_navigatetotemplatecreation_0\",\"fcn_createatemplate_0\",\"fcn_edittemplate_0\",\"fcn_tempaltewithsmschanneltypeautomationtemplate_0\",\"fcn_validatedtemplateiscreated_0\"]": {
+        "pathTags": "Templates",
+        "pathDependsOn": "{}"
+      },
+      "[\"fcn_createsaas_portal_login_1695368513304_0\",\"fcn_logintosaasportal_1695368397166_0\",\"fcn_aircall_integration_0\",\"fcn_clickonintegration_0\",\"fcn_tempaltecreation_0\",\"fcn_navigatetotemplatecreation_0\",\"fcn_createatemplate_0\",\"fcn_edittemplate_0\",\"fcn__0\"]": {
+        "pathTags": "Templates",
+        "pathDependsOn": "{}"
+      }
+    },
+    "isPrimary": false,
+    "positions": {
+      "fcn_start_0": {
+        "top": 142.9375,
+        "left": 1337.9625244140625
+      },
+      "fcn_createsaas_portal_login_1695368513304_0": {
+        "top": 241.9375,
+        "left": 1746.9749755859375
+      },
+      "fcn_logintosaasportal_1695368397166_0": {
+        "top": 404.9624938964844,
+        "left": 1521.9625244140625
+      },
+      "fcn_navigatetousermanagmentforvalidation_1695367941522_0": {
+        "top": 511.1125030517578,
+        "left": 1141.9625244140625
+      },
+      "fcn_editinusermanagment_1695367941522_0": {
+        "top": 608.2624969482422,
+        "left": 1151.9625244140625
+      },
+      "fcn_checkcancelbuttoninusermanagment_1695367941522_0": {
+        "top": 673.5625,
+        "left": 1462.9625244140625
+      },
+      "fcn_validatetextfieldinusermanagment_1695367941522_0": {
+        "top": 680.7124977111816,
+        "left": 1151.9625244140625
+      },
+      "fcn_getaccountid_1695367941522_0": {
+        "top": 753.875,
+        "left": 1152.9625244140625
+      },
+      "fcn_logintoopsportallogintrial_signupaccountid_1695367941522_0": {
+        "top": 826.0,
+        "left": 1149.9625244140625
+      },
+      "fcn_addmessagecreditusermanagment_1695367941522_0": {
+        "top": 912.3125,
+        "left": 1146.9625244140625
+      },
+      "fcn_assertmessagecreditusermanagment_1695367941522_0": {
+        "top": 993.4624938964844,
+        "left": 1150.9625244140625
+      },
+      "fcn_userinviteusermanagment_1695367941522_0": {
+        "top": 1058.625,
+        "left": 1150.9625244140625
+      },
+      "fcn_uncheckboxforaccessinusermanagment_0": {
+        "top": 1123.7625122070312,
+        "left": 1142.9625244140625
+      },
+      "fcn_logintogmailemaillogin_1695367941522_0": {
+        "top": 1212.7625122070312,
+        "left": 1150.9625244140625
+      },
+      "fcn_confirmaccountusermanagment_1695367941522_0": {
+        "top": 1277.9125366210938,
+        "left": 1150.9625244140625
+      },
+      "fcn_logintostandarduserusermanagment_1695367941522_0": {
+        "top": 1343.0625,
+        "left": 1150.9625244140625
+      },
+      "fcn_checkforaccessusermanagment_0": {
+        "top": 1419.2250366210938,
+        "left": 1132.9625244140625
+      },
+      "fcn_logouttostandarduserusermanagment_0": {
+        "top": 1529.2250366210938,
+        "left": 1148.9625244140625
+      },
+      "fcn_logintosaasportal_1695367941522_0": {
+        "top": 1592.2250366210938,
+        "left": 1144.9625244140625
+      },
+      "fcn_unassignanddeleteuserusermanagment_1695367941522_0": {
+        "top": 1712.375,
+        "left": 1138.9625244140625
+      },
+      "fcn_manageaccessusermanagment_1695367941522_0": {
+        "top": 1837.5374755859375,
+        "left": 1131.9625244140625
+      },
+      "fcn_sampledatadisabledusermanagment_0": {
+        "top": 1902.6875,
+        "left": 1131.9625244140625
+      },
+      "fcn_assignsenderidusermanagment_1695367941522_0": {
+        "top": 1592.2250366210938,
+        "left": 1428.9625244140625
+      },
+      "fcn_logintostandarduserusermanagment_1695367941522_1": {
+        "top": 1837.5374755859375,
+        "left": 1428.9625244140625
+      },
+      "fcn_checkaccessgivenusermanagment_0": {
+        "top": 1910.6875,
+        "left": 1427.9625244140625
+      },
+      "fcn_assertsenderidusermanagment_1695367941522_0": {
+        "top": 1998.6875,
+        "left": 1422.9625244140625
+      },
+      "fcn_logouttostandarduserusermanagment_1695378785619_0": {
+        "top": 2066.8499755859375,
+        "left": 1427.9625244140625
+      },
+      "fcn_logintosaasportal_1695378750444_0": {
+        "top": 2141.8499755859375,
+        "left": 1418.9625244140625
+      },
+      "fcn_unassignanddeleteuserusermanagment_1695367941522_1": {
+        "top": 2217.8499755859375,
+        "left": 1419.9625244140625
+      },
+      "fcn_checkalltheboxesusermanagment_0": {
+        "top": 1712.375,
+        "left": 1428.9625244140625
+      },
+      "fcn_tempaltecreation_0": {
+        "top": 456.11248779296875,
+        "left": 2099.9750366210938
+      },
+      "fcn_navigatetotemplatecreation_0": {
+        "top": 518.1125030517578,
+        "left": 2096.9750366210938
+      },
+      "fcn_enterdetailstocreatetempaltetemplate_0": {
+        "top": 504.1125030517578,
+        "left": 3182.000045776367
+      },
+      "fcn_edittemplate_0": {
+        "top": 632.125,
+        "left": 1819.9749755859375
+      },
+      "fcn_tempaltewithsmschanneltypecamaign_0": {
+        "top": 629.125,
+        "left": 2400.0000610351562
+      },
+      "fcn_validatedtemplateiscreated_0": {
+        "top": 897.2624969482422,
+        "left": 2695.000030517578
+      },
+      "fcn_createsalesforce_login_1697464495955_0": {
+        "top": 715.125,
+        "left": 1818.9749755859375
+      },
+      "fcn_createsalesforce_login_1697464502476_0": {
+        "top": 812.125,
+        "left": 1815.9749755859375
+      },
+      "fcn_createatemplate_0": {
+        "top": 576.1125030517578,
+        "left": 2100.9750366210938
+      },
+      "fcn_tempaltewithsmschanneltypeconversationtemplate_0": {
+        "top": 710.125,
+        "left": 2413.0000610351562
+      },
+      "fcn_tempaltewithsmschanneltypeautomationtemplate_0": {
+        "top": 791.125,
+        "left": 2416.0000610351562
+      },
+      "fcn_tempaltewithmmschanneltypecamaigntemplate_0": {
+        "top": 625.125,
+        "left": 2684.000030517578
+      },
+      "fcn_tempaltewithmmschanneltypeconversationtemplatecampaign_0": {
+        "top": 704.2624988555908,
+        "left": 2684.000030517578
+      },
+      "fcn_tempaltewithmmschanneltypeautomationtemplatecampaign_0": {
+        "top": 788.125,
+        "left": 2693.000030517578
+      },
+      "fcn__0": {
+        "top": 623.125,
+        "left": 2979.0000495910645
+      },
+      "fcn_tempaltewithwhatsappchanneltypeconversationtemplate_0": {
+        "top": 700.125,
+        "left": 2982.0000495910645
+      },
+      "fcn_tempaltewithwhatsappchanneltypeautomationtemplate_0": {
+        "top": 789.125,
+        "left": 2977.0000495910645
+      },
+      "fcn_getaccountid_1696584419021_0": {
+        "top": 479.11248779296875,
+        "left": 3659.0000610351562
+      },
+      "fcn_buynowflow_0": {
+        "top": 545.1125030517578,
+        "left": 3659.0000610351562
+      },
+      "fcn_navigatetobuynow_0": {
+        "top": 596.125,
+        "left": 3933.0000610351562
+      },
+      "fcn_validatenameandcrmaccountid_0": {
+        "top": 702.125,
+        "left": 3472.0000610351562
+      },
+      "fcn_buymultichannelplan_0": {
+        "top": 786.125,
+        "left": 3918.0000610351562
+      },
+      "fcn_validateorderplacedsuccessfully_0": {
+        "top": 842.125,
+        "left": 3919.0000610351562
+      },
+      "fcn_validatenameandcrmassalesforce_0": {
+        "top": 697.125,
+        "left": 3913.0000610351562
+      },
+      "fcn_validatenameandcrmaszohoaccountid_0": {
+        "top": 690.125,
+        "left": 4225.0001220703125
+      },
+      "fcn_logintoopsportallogintrial_signupaccountid_0": {
+        "top": 871.125,
+        "left": 3643.0000610351562
+      },
+      "fcn_checkonebill_0": {
+        "top": 953.4125061035156,
+        "left": 3454.0000610351562
+      },
+      "fcn_gotoworkspace_0": {
+        "top": 1022.0125122070312,
+        "left": 3454.0000610351562
+      },
+      "fcn_clickonthebuynow_1": {
+        "top": 1111.1625061035156,
+        "left": 3453.0000610351562
+      },
+      "fcn_checknon_onebill_0": {
+        "top": 949.4125061035156,
+        "left": 3824.0000610351562
+      },
+      "fcn_changetheonebillstatus_0": {
+        "top": 1011.0125122070312,
+        "left": 3823.0000610351562
+      },
+      "fcn_gotoworkspacesalesforce_sso_1": {
+        "top": 1070.6125183105469,
+        "left": 3822.0000610351562
+      },
+      "fcn_clickonthebuynow_3": {
+        "top": 1137.7625122070312,
+        "left": 3823.0000610351562
+      },
+      "fcn_gotoopsagain_0": {
+        "top": 1198.3625183105469,
+        "left": 3825.0000610351562
+      },
+      "fcn_changetoonebill_0": {
+        "top": 1291.6625366210938,
+        "left": 3825.0000610351562
+      },
+      "fcn_checkpayeeonebill_0": {
+        "top": 951.4125061035156,
+        "left": 3146.0000534057617
+      },
+      "fcn_gotoworkspacesalesforce_sso_0": {
+        "top": 1027.1625061035156,
+        "left": 3148.0000534057617
+      },
+      "fcn_clickonthebuynow_2": {
+        "top": 1110.1625061035156,
+        "left": 3145.0000534057617
+      },
+      "fcn_aircall_integration_0": {
+        "top": 457.11248779296875,
+        "left": 4609.0001220703125
+      },
+      "fcn_clickonintegration_0": {
+        "top": 516.1125030517578,
+        "left": 4609.0001220703125
+      },
+      "fcn_isconsentenabled_1698656287649_0": {
+        "top": 575.1125030517578,
+        "left": 4609.0001220703125
+      },
+      "fcn_connectaircall_0": {
+        "top": 634.125,
+        "left": 4889.0001220703125
+      },
+      "fcn_addnumbersaircall_0": {
+        "top": 690.125,
+        "left": 4987.0001220703125
+      },
+      "fcn_verifynumberisaddedaircall_0": {
+        "top": 807.2625045776367,
+        "left": 4721.0001220703125
+      },
+      "fcn_verifymessagesendthroughaircallisinsmshistory_0": {
+        "top": 872.4125061035156,
+        "left": 4721.0001220703125
+      },
+      "fcn_sendsmsthroughaircall_1": {
+        "top": 644.125,
+        "left": 4618.0001220703125
+      },
+      "fcn_createsalesforce_sso_1696589058749_0": {
+        "top": 241.9375,
+        "left": 2026.9750366210938
+      },
+      "fcn_createsalesforce_sso_3": {
+        "top": 364.0874938964844,
+        "left": 2067.0000610351562
+      },
+      "fcn_createsandboxsalesforce_sso_0": {
+        "top": 257.0625,
+        "left": 3653.0000610351562
+      },
+      "fcn_createsalesforce_sso_1696590231100_0": {
+        "top": 240.9375,
+        "left": 2307.0000610351562
+      },
+      "fcn_signintozohocrm_1696590368866_0": {
+        "top": 299.9375,
+        "left": 2306.0000610351562
+      }
+    },
+    "tags": ""
+  },
+  "enabled": true,
+  "parentId": ""
+}

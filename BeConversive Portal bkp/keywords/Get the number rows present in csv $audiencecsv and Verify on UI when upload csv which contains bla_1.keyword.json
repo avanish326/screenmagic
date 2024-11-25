@@ -1,0 +1,97 @@
+{
+  "modifiedOn": "2024-05-27T11:48:01.995Z",
+  "name": "Get the number rows present in csv $audiencecsv and Verify on UI when upload csv which contains blank rows or blank in mobile number",
+  "id": "46304",
+  "type": 3,
+  "createdOn": "2024-05-27T04:27:34.789Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Get the number rows present in csv $audiencecsv and Verify on UI when upload csv which contains blank rows or blank in mobile number",
+    "parameters": [
+      {
+        "parameterId": "audiencecsv_",
+        "entityTypeId": "audiencecsv",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "var $CSVRead \u003d _readCSVFile($path);\n\n $csvLength \u003d $CSVRead.length\n\n_log($csvLength)\n"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(0,_in(_paragraph(0,_in(_div(\"/upload/\")))))"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$change"
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(0,_in(_div(\"/upload/\")))"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$file"
+        }
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "$filename \u003d _extract($file,\"/(.*) \" +$change+\"/\",true)"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(1,_in(_div(\"/upload/\")))"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$percentUpload"
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_heading4(0,_in(_div(\"/upload upload/\")))"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$records"
+        }
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "//_assertEqual($audiencecsv.csvFile, $filename)\n//_assertEqual(\"100% uploaded\", $percentUpload)\n_assertEqual(\"Total Records found :\"+$csvLength+\"\", $records)"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

@@ -1,0 +1,65 @@
+{
+  "modifiedOn": "2024-04-12T04:39:09.906Z",
+  "name": "check the guidelines $beconversive",
+  "id": "45036",
+  "type": 3,
+  "createdOn": "2024-04-11T12:55:56.333Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "check the guidelines $beconversive",
+    "parameters": [
+      {
+        "parameterId": "beconversive_",
+        "entityTypeId": "beconversive",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": true,
+        "isRawScript": true,
+        "rawScript": "var $table \u003d _table(\"table-default table-hover\");\n\n// Locate the row containing \"USA\" in the \"Country\" column\nvar $usaRow \u003d _rightOf(_cell(_tableHeader(\"Country\"), \"USA\"));\n\nvar $isMessagingGuidelinesPresent \u003d _contains($usaRow, _paragraph(\"/Messaging Guidelines/\"));\n\n_assert($isMessagingGuidelinesPresent, \"Messaging Guidelines is present in the USA row\");\n"
+      },
+      {
+        "commented": true,
+        "isRawScript": true,
+        "rawScript": "$table \u003d _table(\"table-default table-hover\");\n\n$usaRow \u003d _rightOf(_cell(_tableHeader(\"Country\"), \"USA\"));\n\n_wait(2000);\n\n_click(_paragraph(\"/Messaging Guidelines/\", $usaRow));\n\n_wait(2000);\n\nvar $isUSARestrictionsPresent \u003d _isVisible(_heading4(\"mb-4 mt-0\", \"USA Restrictions And Best Practices\"));\n\nvar $isCountryRestrictionsPresent \u003d _isVisible(_heading4(\"mt-3 mb-4\", \"Country Restrictions\"));\n\n_assert($isUSARestrictionsPresent, \"USA Restrictions And Best Practices element is present\");\n_assert($isCountryRestrictionsPresent, \"Country Restrictions element is present\");\n"
+      },
+      {
+        "commented": true,
+        "isRawScript": true,
+        "rawScript": "_click(0, _rightOf(_cell(\"USA\")), _under(_tableHeader(\"Guidelines\")));"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(0, _near(_cell($beconversive.selectCountry)))"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_heading4(\"mb-4 mt-0\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Contains",
+        "secondaryParam": {
+          "parameterId": "beconversive_",
+          "attributeId": "attr_251712895238814"
+        },
+        "visibleCheck": false
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

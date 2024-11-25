@@ -1,0 +1,58 @@
+{
+  "modifiedOn": "2024-08-20T07:56:20.946Z",
+  "name": "Search using the source in Audience Manager page and get the count $segmentui",
+  "id": "58885",
+  "type": 3,
+  "createdOn": "2024-08-20T07:52:47.934Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Search using the source in Audience Manager page and get the count $segmentui",
+    "parameters": [
+      {
+        "parameterId": "segmentui_",
+        "entityTypeId": "segmentui",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_textbox(0)"
+          },
+          {
+            "parameterId": "segmentui_",
+            "attributeId": "attr_141724140328622"
+          }
+        ],
+        "stepType": "Action",
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(\"/Showing .* contacts/\")"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$numberOfContacts"
+        }
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "var $trimmedText \u003d $numberOfContacts.trim();\n$newNumberOfContacts \u003d $trimmedText.match(/\\d+/);"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

@@ -1,0 +1,134 @@
+{
+  "modifiedOn": "2024-02-08T06:49:57.467Z",
+  "name": "Navigate to SMS History and assert triggered messages $contact $conversationfields",
+  "id": "28816",
+  "type": 3,
+  "createdOn": "2024-02-08T06:49:57.467Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Navigate to SMS History and assert triggered messages $contact $conversationfields",
+    "parameters": [
+      {
+        "parameterId": "contact_",
+        "entityTypeId": "contact",
+        "suffix": ""
+      },
+      {
+        "parameterId": "conversationfields_",
+        "entityTypeId": "conversationfields",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"Campaign\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"Message History\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"/Outgoing Messages/\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "var $phoneNumber1 \u003d $phoneNumber;\n$formattedNumber \u003d $phoneNumber1.replace(/\\D/g, \"\");\n\n_log($formattedNumber);\n"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "var $senderID1\u003d$conversationfields.senderID;\n\n\nvar $inputString \u003d$senderID1;\nvar $parts \u003d $inputString.split(\u0027 \u0027);\nvar $senderID \u003d $parts[0].trim();\n_log($senderID);\n"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(0, _near(_cell(\"\"+$formattedNumber+\"[1]\")))"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"Hi there! Thank you for contacting The BrightCare Hospital secure chat. If this is an emergency, Please call 911 immediately.\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(0, _near(_cell(\"\"+$formattedNumber+\"\")))"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"What can we help you with? Please choose one of the following options: Type 1 for Find doctor Type 2 for Book Appointment Type 3 for Health packages Type 4 for Location\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_cell(1, _near(_cell(\"\"+$formattedNumber+\"[1]\")))"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$senderID"
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_cell(1, _near(_cell(\"\"+$formattedNumber+\"\")))"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$senderID"
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

@@ -1,0 +1,151 @@
+{
+  "modifiedOn": "2024-02-08T06:49:39.070Z",
+  "name": "fill the $webform along with consent",
+  "id": "27537",
+  "type": 3,
+  "createdOn": "2024-02-08T06:49:39.070Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "fill the $webform along with consent",
+    "parameters": [
+      {
+        "parameterId": "webform_",
+        "entityTypeId": "webform",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_textbox(\"firstname\")"
+          },
+          {
+            "parameterId": "webform_",
+            "attributeId": "attr_01693985318356"
+          }
+        ],
+        "stepType": "Action",
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_textbox(\"lastname\")"
+          },
+          {
+            "parameterId": "webform_",
+            "attributeId": "attr_11693985425678"
+          }
+        ],
+        "stepType": "Action",
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_textbox(\"email\")"
+          },
+          {
+            "parameterId": "webform_",
+            "attributeId": "attr_21693985570947"
+          }
+        ],
+        "stepType": "Action",
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_setSelected",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_select(\"dialCode\")"
+          },
+          {
+            "parameterId": "webform_",
+            "attributeId": "attr_81705047276192"
+          }
+        ],
+        "stepType": "Action",
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_telephonebox(\"phone\")"
+          },
+          {
+            "parameterId": "webform_",
+            "attributeId": "attr_31693986417692"
+          }
+        ],
+        "stepType": "Action",
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_submit(\"Submit\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"Please select the checkbox to agree to be contacted\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"Please select the checkbox to agree to be contacted\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_checkbox(\"consent_checkbox\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_submit(\"Submit\")"
+          }
+        ],
+        "stepType": "Action"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

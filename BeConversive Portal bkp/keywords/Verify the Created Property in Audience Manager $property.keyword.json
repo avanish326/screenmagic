@@ -1,0 +1,39 @@
+{
+  "modifiedOn": "2024-08-16T11:42:00.403Z",
+  "name": "Verify the Created Property in Audience Manager $property",
+  "id": "58860",
+  "type": 3,
+  "createdOn": "2024-08-16T11:42:00.403Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Verify the Created Property in Audience Manager $property",
+    "parameters": [
+      {
+        "parameterId": "property_",
+        "entityTypeId": "property",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_tableHeader($property.propertyName)"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "parameterId": "property_",
+          "attributeId": "attr_01723806477739"
+        },
+        "visibleCheck": false
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

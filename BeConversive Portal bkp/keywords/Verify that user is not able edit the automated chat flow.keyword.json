@@ -1,0 +1,53 @@
+{
+  "modifiedOn": "2024-09-19T04:51:14.520978Z",
+  "name": "Verify that user is not able edit the automated chat flow",
+  "id": "-1",
+  "type": 3,
+  "createdOn": "2024-09-09T17:08:29Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Verify that user is not able edit the automated chat flow",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "2000"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getAttribute",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_div(\"/custom-checkboxs/\",_rightOf(_div(\"/Automated chat flow/\")))"
+          },
+          {
+            "paramMode": "string",
+            "customValue": "class"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Store",
+        "secondaryParam": {
+          "paramMode": "code",
+          "customValue": "$isClickable"
+        }
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "_assertTrue($isClickable.includes(\"non-click\"))"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

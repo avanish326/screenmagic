@@ -1,0 +1,45 @@
+{
+  "modifiedOn": "2024-06-05T07:20:23.152Z",
+  "name": "assert download qr code option is not there $conversivebtnname",
+  "id": "27627",
+  "type": 3,
+  "createdOn": "2024-02-08T06:49:40.361Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "assert download qr code option is not there $conversivebtnname",
+    "parameters": [
+      {
+        "parameterId": "conversivebtnname_",
+        "entityTypeId": "conversivebtnname",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"Back\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_isVisible",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_button(\"download-button\", _rightOf(_div(\"\"+$conversivebuttonname+\"ACTIVE\")))"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Is_False"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

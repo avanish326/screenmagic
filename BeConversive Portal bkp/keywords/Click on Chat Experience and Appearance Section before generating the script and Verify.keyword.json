@@ -1,0 +1,62 @@
+{
+  "modifiedOn": "2024-06-11T09:27:02.299Z",
+  "name": "Click on Chat Experience and Appearance Section before generating the script and Verify",
+  "id": "52691",
+  "type": 3,
+  "createdOn": "2024-06-07T07:44:42.693Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Click on Chat Experience and Appearance Section before generating the script and Verify",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"accordion-panel\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_isVisible",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"Live Chat\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Is_False"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"accordion-panel[1]\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_isVisible",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_label(\"Brand Color\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Is_False"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

@@ -1,0 +1,82 @@
+{
+  "modifiedOn": "2024-09-20T12:53:05.805566Z",
+  "name": "Create a Contact $property",
+  "id": "-1",
+  "type": 3,
+  "createdOn": "2024-08-15T14:07:38Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Create a Contact $property",
+    "parameters": [
+      {
+        "parameterId": "property_",
+        "entityTypeId": "property",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "$propertyType\u003d$property.type;\n\nif($propertyType\u003d\u003d\u0027String\u0027)\n{\n   $value\u003d$property.valueString;\n}\n\nelse if($propertyType\u003d\u003d\u0027Integer\u0027)\n{\n    $value\u003d$property.valueInteger;\n}\nelse\n{\n   $value\u003d$property.valueDate;\n}\n$value\u003d$value;"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "var $number\u003d$property.mobileNumber;"
+      },
+      {
+        "commented": false,
+        "stepParameters": [
+          {
+            "paramMode": "string",
+            "customValue": "POST"
+          },
+          {
+            "paramMode": "string",
+            "customValue": "$contactAPI"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "REST",
+        "isRawScript": false,
+        "state": {
+          "contentType": "html",
+          "request": {
+            "method": "POST",
+            "url": "$contactAPI",
+            "parameters": [],
+            "headers": [
+              [
+                "Content-Type",
+                "application/json"
+              ],
+              [
+                "Authorization",
+                "$key"
+              ]
+            ],
+            "authType": "none",
+            "body": "{\n    \"first_name\": \"Pranita\",\n    \"last_name\": \"Kolekar\",\n    \"mobile_number\": $number,\n    $propertyID:$value\n}",
+            "bodyParams": [],
+            "isParametrizedBody": false,
+            "resetCookies": false
+          },
+          "assertions": {
+            "status": [],
+            "header": [],
+            "body": []
+          },
+          "variables": {
+            "status": [],
+            "header": [],
+            "body": []
+          },
+          "authInfo": {}
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

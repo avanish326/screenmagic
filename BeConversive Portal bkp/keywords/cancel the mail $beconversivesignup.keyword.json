@@ -1,0 +1,81 @@
+{
+  "modifiedOn": "2024-03-05T11:06:09.225Z",
+  "name": "cancel the mail $beconversivesignup",
+  "id": "43959",
+  "type": 3,
+  "createdOn": "2024-03-05T10:56:45.943Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "cancel the mail $beconversivesignup",
+    "parameters": [
+      {
+        "parameterId": "beconversivesignup_",
+        "entityTypeId": "beconversivesignup",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_textbox(\"Search in mail\")"
+          },
+          {
+            "parameterId": "beconversivesignup_",
+            "attributeId": "attr_51699344958745"
+          }
+        ],
+        "stepType": "Action",
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "_click(_submit(0, _near(_div(\"/Search in mail/\"))));"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"Welcome test! Verify Your Account Now.\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"Cancel here\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(\"Your Email ID has been removed from our system. Thank you !\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"Your Email ID has been removed from our system. Thank you !\""
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

@@ -1,0 +1,53 @@
+{
+  "modifiedOn": "2024-05-23T10:22:09.390Z",
+  "name": "Upload CSV of 1000 records in Audience Manager Page $audiencecsv",
+  "id": "46281",
+  "type": 3,
+  "createdOn": "2024-05-23T10:18:16.732Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Upload CSV of 1000 records in Audience Manager Page $audiencecsv",
+    "parameters": [
+      {
+        "parameterId": "audiencecsv_",
+        "entityTypeId": "audiencecsv",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_file(0)"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "$path \u003d _userDataDir(\"/\") + \"/scripts/\"+$audiencecsv.csvFileThousandRecords+\"\";\n_log($path);"
+      },
+      {
+        "commented": false,
+        "action": "_setFile3",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_file(0)"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "$path"
+          }
+        ],
+        "stepType": "Action"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

@@ -1,0 +1,90 @@
+{
+  "modifiedOn": "2024-09-30T12:29:16.705933855Z",
+  "name": "Validate SMS History",
+  "id": "-1",
+  "type": 3,
+  "createdOn": "2024-02-27T07:22:43Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Validate SMS History",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_div(\"Analytics\")"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_span(\"Message History\")"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "20000"
+          }
+        ],
+        "stepType": "Action",
+        "stepCategory": "inbuilt"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_cell(3, _near(_tableHeader(\"Message\")))"
+          }
+        ],
+        "stepType": "Store",
+        "stepCategory": "inbuilt",
+        "secondaryParam": {
+          "paramMode": "code",
+          "customValue": "$messageTextInHistory"
+        }
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "_log($messageTextInHistory)"
+      },
+      {
+        "commented": false,
+        "action": "_areEqual",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "$messageTextEntered"
+          },
+          {
+            "paramMode": "code",
+            "customValue": "$messageTextInHistory"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Assert",
+        "assertType": "Is_True"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

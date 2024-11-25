@@ -1,0 +1,148 @@
+{
+  "modifiedOn": "2024-08-05T11:20:40.337Z",
+  "name": "Configure Custom Inactivity Duration",
+  "id": "45296",
+  "type": 3,
+  "createdOn": "2024-04-22T14:37:33.990Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Configure Custom Inactivity Duration",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": true,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_submit(0)"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"select-dropdown-indicator\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"2 Minutes\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_submit(\"Save\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"notification-content no-child\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"Your custom inactivity logout duration has been updated.\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"header-action-item header-action-item-hoverable\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"Converse desk\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"Campaigns\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "150000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_selectWindow",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "\"Conversive[1]\""
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": true,
+        "action": "_isVisible",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(20, _near(_heading3(\"Sign in\")))"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Is_True"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "var $condtion  \u003d _isVisible(_div(20, _near(_heading3(\"Sign in\"))));\n$i\u003d0\nwhile(!$condtion){\n_wait(60000);\nvar $condtion  \u003d _isVisible(_div(20, _near(_heading3(\"Sign in\"))));\n$i++\nif($i\u003e50){\nbreak\n}\n}\n \n_assertVisible(_div(20, _near(_heading3(\"Sign in\"))));"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

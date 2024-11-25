@@ -1,0 +1,99 @@
+{
+  "modifiedOn": "2024-05-14T12:05:40.655Z",
+  "name": "Enable Full Access",
+  "id": "44151",
+  "type": 3,
+  "createdOn": "2024-03-08T05:27:12.661Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Enable Full Access",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": true,
+        "action": "_isChecked",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_checkbox(0,_rightOf(_heading5(\"Enable Login Access for Conversive support team\")))"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Is_True"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "if(_isChecked(_checkbox(0,_rightOf(_heading5(\"Enable Login Access for Conversive support team\")))) \u003d\u003d true){\n\n"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "if(_isEnabled(_svg_path(0,_above(_heading6(\"Enable full access\")))) \u003d\u003d true){\n\n\n\n}else{"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_heading6(\"Enable full access\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "}"
+      },
+      {
+        "commented": true,
+        "action": "_isEnabled",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_svg_path(0,_above(_heading6(\"Enable full access\")))"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Is_True"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "\n}else{"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(2, _near(_heading5(\"Enable Login Access for Conversive support team\")))"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "}"
+      },
+      {
+        "commented": true,
+        "action": "_isEnabled",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_svg_path(0,_above(_heading6(\"Enable limited access\")))"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Is_True"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

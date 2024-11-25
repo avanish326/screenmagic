@@ -1,0 +1,47 @@
+{
+  "modifiedOn": "2024-06-28T13:39:25.035Z",
+  "name": "check total and existing users for contact center Advance",
+  "id": "52731",
+  "type": 3,
+  "createdOn": "2024-06-07T15:11:05.507Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "check total and existing users for contact center Advance",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(0, _near(_paragraph(\"Total User Limit\")))"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"100\""
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(0, _near(_paragraph(\"Allotted Users\")))"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$existingUser"
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

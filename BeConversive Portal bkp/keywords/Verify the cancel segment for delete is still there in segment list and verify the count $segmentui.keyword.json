@@ -1,0 +1,81 @@
+{
+  "modifiedOn": "2024-08-26T14:18:03.996Z",
+  "name": "Verify the cancel segment for delete is still there in segment list and verify the count $segmentui",
+  "id": "58961",
+  "type": 3,
+  "createdOn": "2024-08-26T12:25:41.570Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Verify the cancel segment for delete is still there in segment list and verify the count $segmentui",
+    "parameters": [
+      {
+        "parameterId": "segmentui_",
+        "entityTypeId": "segmentui",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "2000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(\"/Showing .* segments/\")"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$numberOfSegmentsUI"
+        }
+      },
+      {
+        "commented": true,
+        "isRawScript": true,
+        "rawScript": "$searchCountSegmentNew \u003d _extract($numberOfSegmentsUI, \"/Showing (.*) segments/\",true);\n\n\n_assertEqual($searchCountSegmentNew, $searchCountSegment+1)"
+      },
+      {
+        "commented": false,
+        "action": "_isVisible",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_cell(\"\"+$segmentui.editedSegmentName+\" copy 1\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Is_True"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph($segmentui.count1)"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$segmentui.count1"
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

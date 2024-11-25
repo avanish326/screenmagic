@@ -1,0 +1,80 @@
+{
+  "modifiedOn": "2024-06-18T08:21:55.957Z",
+  "name": "navigate to $website and check updated welcome message",
+  "id": "27805",
+  "type": 3,
+  "createdOn": "2024-02-08T06:49:42.887Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "navigate to $website and check updated welcome message",
+    "parameters": [
+      {
+        "parameterId": "website_",
+        "entityTypeId": "website",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_selectBrowser",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "$browserDomain"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_closeBrowser",
+        "stepParameters": [],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "12000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_launchNewBrowser",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "\"https://mathhunt2019.blogspot.com/?btn\u003d\"+$buttonID+\"\u0026env\u003d\"+$envName+\"\""
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "\"chrome\""
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$browserDomain"
+        }
+      },
+      {
+        "commented": false,
+        "action": "_selectBrowser",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "$browserDomain"
+          }
+        ],
+        "stepType": "Action"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

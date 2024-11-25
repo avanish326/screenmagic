@@ -1,0 +1,81 @@
+{
+  "modifiedOn": "2024-06-28T13:22:14.121Z",
+  "name": "check the available and existing users",
+  "id": "52686",
+  "type": 3,
+  "createdOn": "2024-06-07T06:54:34.239Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "check the available and existing users",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": true,
+        "action": "_windowAction",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "\"refresh\""
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_isVisible",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(0, _near(_paragraph(\"Total User Limit\")))"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Is_True"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(0, _near(_paragraph(\"Total User Limit\")))"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$totalUser"
+        }
+      },
+      {
+        "commented": false,
+        "action": "_isVisible",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(0, _near(_paragraph(\"Allotted Users\")))"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Is_True"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_paragraph(0, _near(_paragraph(\"Allotted Users\")))"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$existingUser"
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

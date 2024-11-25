@@ -1,0 +1,74 @@
+{
+  "modifiedOn": "2024-09-10T13:27:08.464741Z",
+  "name": "Verify the Note added for Live Chat and Automated chat flow",
+  "id": "-1",
+  "type": 3,
+  "createdOn": "2024-09-10T02:25:36Z",
+  "content": {
+    "title": "Verify the Note added for Live Chat and Automated chat flow",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_italic(\"info\", _in(_span(\"Live Chatinfo\")))"
+          }
+        ],
+        "stepType": "Action",
+        "stepCategory": "inbuilt"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_div(\"Note: This option will be engaged after the automated flow if both are configured.\")"
+          }
+        ],
+        "stepType": "Assert",
+        "stepCategory": "inbuilt",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "paramMode": "string",
+          "customValue": "Note: This option will be engaged after the automated flow if both are configured."
+        }
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_italic(\"info\", _in(_span(\"Automated chat flowinfo\")))"
+          }
+        ],
+        "stepType": "Action",
+        "stepCategory": "inbuilt"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_div(\"Note: This will be the initial engagement method before transitioning to live chat.\")"
+          }
+        ],
+        "stepType": "Assert",
+        "stepCategory": "inbuilt",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "paramMode": "string",
+          "customValue": "Note: This will be the initial engagement method before transitioning to live chat."
+        }
+      }
+    ],
+    "isSystemKeyword": false
+  },
+  "enabled": false,
+  "parentId": ""
+}

@@ -1,0 +1,1504 @@
+{
+  "modifiedOn": "2024-08-01T04:26:45.089Z",
+  "name": "KT Demo",
+  "id": "27358",
+  "type": 0,
+  "createdOn": "2024-02-08T06:49:36.371Z",
+  "content": {
+    "settings": {
+      "maxProceedDepth": 100,
+      "maxProceedsForFirstDepth": 1,
+      "maxProceedsPerDepth": 1,
+      "maxPathRepititionsPerComboPath": 1,
+      "maxProceedsPerPath": 10000,
+      "maxToggles": 2,
+      "maxMatchingPaths": 3
+    },
+    "flowChartUID": "fcUID_1722328404606",
+    "nodesMap": {
+      "fcn_start_0": {
+        "dataSetId": -1,
+        "id": "fcn_start_0",
+        "nodeType": "start",
+        "branches": [
+          "fcn_guidedconversationtemplateguidedflowagaintsasenderid_1707199644563_0",
+          "fcn_createguidedflowforsmsforsalesforce_1707278759637_0"
+        ],
+        "content": "Start"
+      },
+      "fcn_guidedconversationtemplateguidedflowagaintsasenderid_1707199644563_0": {
+        "dataSetId": -1,
+        "id": "fcn_guidedconversationtemplateguidedflowagaintsasenderid_1707199644563_0",
+        "nodeType": "pathlabel",
+        "branches": [
+          "fcn_logintosaas_guidedauto_1707199709174_0"
+        ],
+        "content": "Guided Conversation Template Guided Flow Againts single SenderID"
+      },
+      "fcn_logintosaas_guidedauto_1707199709174_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintosaas_guidedauto_1707199709174_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_createguidedflowforsmschannelwithsinglesenderid_1707199721057_0",
+          "fcn_createguidedflowforwebchannel_1707208228138_0",
+          "fcn_createguidedflowforwebchannelwithsinglesenderid_1707220675426_0"
+        ],
+        "content": "login to $saas_guidedauto"
+      },
+      "fcn_createguidedflowforsmschannelwithsinglesenderid_1707199721057_0": {
+        "dataSetId": -1,
+        "id": "fcn_createguidedflowforsmschannelwithsinglesenderid_1707199721057_0",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_getaccountid_1707199730396_0"
+        ],
+        "content": "Create Guided Flow for SMS Channel With Single Sender ID"
+      },
+      "fcn_getaccountid_1707199730396_0": {
+        "dataSetId": -1,
+        "id": "fcn_getaccountid_1707199730396_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_navigateusecasespage_1707199780574_0"
+        ],
+        "content": "Get $accountid"
+      },
+      "fcn_navigateusecasespage_1707199780574_0": {
+        "dataSetId": -1,
+        "id": "fcn_navigateusecasespage_1707199780574_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_selectpatientinquiryassistanceflow_1707199788583_0"
+        ],
+        "content": "Navigate Usecases Page"
+      },
+      "fcn_selectpatientinquiryassistanceflow_1707199788583_0": {
+        "dataSetId": -1,
+        "id": "fcn_selectpatientinquiryassistanceflow_1707199788583_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_getautomationnameandautomationtype_1707199795549_0"
+        ],
+        "content": "Select Patient Inquiry Assistance Flow"
+      },
+      "fcn_getautomationnameandautomationtype_1707199795549_0": {
+        "dataSetId": -1,
+        "id": "fcn_getautomationnameandautomationtype_1707199795549_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_asserttheaddedworkflowimage_1707199805276_0"
+        ],
+        "content": "Get Automation Name and Automation Type"
+      },
+      "fcn_asserttheaddedworkflowimage_1707199805276_0": {
+        "dataSetId": -1,
+        "id": "fcn_asserttheaddedworkflowimage_1707199805276_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_clickongetthisautomation_1707199812444_0"
+        ],
+        "content": "Assert the Added Workflow Image"
+      },
+      "fcn_clickongetthisautomation_1707199812444_0": {
+        "dataSetId": -1,
+        "id": "fcn_clickongetthisautomation_1707199812444_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_selectintegrationtypecrmobjectphonefieldandsenderidconversationfieldssmsguidedauto_1707199820861_0"
+        ],
+        "content": "Click on Get this Automation"
+      },
+      "fcn_selectintegrationtypecrmobjectphonefieldandsenderidconversationfieldssmsguidedauto_1707199820861_0": {
+        "dataSetId": -1,
+        "id": "fcn_selectintegrationtypecrmobjectphonefieldandsenderidconversationfieldssmsguidedauto_1707199820861_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_saveandactivatetheflow_1707199829582_0"
+        ],
+        "content": "Select Integration Type CRM Object Phone Field and Sender Id $conversationfields $smsguidedauto"
+      },
+      "fcn_saveandactivatetheflow_1707199829582_0": {
+        "dataSetId": -1,
+        "id": "fcn_saveandactivatetheflow_1707199829582_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertselectedintegrationtypecrmobjectphonefieldandsenderidafteractivatingtheflowsmsguidedautoconversationfields_1707203007485_0"
+        ],
+        "content": "Save and activate the flow "
+      },
+      "fcn_assertselectedintegrationtypecrmobjectphonefieldandsenderidafteractivatingtheflowsmsguidedautoconversationfields_1707203007485_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertselectedintegrationtypecrmobjectphonefieldandsenderidafteractivatingtheflowsmsguidedautoconversationfields_1707203007485_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_clickonbackandgotomyautomation_1707203016625_0"
+        ],
+        "content": "Assert selected Integration Type CRM Object phone field and senderId after activating the flow $smsguidedauto $conversationfields"
+      },
+      "fcn_clickonbackandgotomyautomation_1707203016625_0": {
+        "dataSetId": -1,
+        "id": "fcn_clickonbackandgotomyautomation_1707203016625_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertnewlyclonedflowaddedinmyautomationalongwithallthedetailsconversationfields_1707203028376_0"
+        ],
+        "content": "Click on Back And Go to My Automation"
+      },
+      "fcn_assertnewlyclonedflowaddedinmyautomationalongwithallthedetailsconversationfields_1707203028376_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertnewlyclonedflowaddedinmyautomationalongwithallthedetailsconversationfields_1707203028376_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_sendincomingmessagesmsguidedauto_1707203037773_0"
+        ],
+        "content": "Assert Newly Cloned Flow added in My Automation Along with all the Details $conversationfields"
+      },
+      "fcn_sendincomingmessagesmsguidedauto_1707203037773_0": {
+        "dataSetId": -1,
+        "id": "fcn_sendincomingmessagesmsguidedauto_1707203037773_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_goconversedeskandassertmessageandassertbotoutgoingsmsguidedauto_1707203049124_0"
+        ],
+        "content": "Send Incoming Message $smsguidedauto"
+      },
+      "fcn_goconversedeskandassertmessageandassertbotoutgoingsmsguidedauto_1707203049124_0": {
+        "dataSetId": -1,
+        "id": "fcn_goconversedeskandassertmessageandassertbotoutgoingsmsguidedauto_1707203049124_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_navigateusecasespage_1707215567374_0"
+        ],
+        "content": "Go Converse Desk and Assert Message and Assert Bot outgoing $smsguidedauto"
+      },
+      "fcn_createguidedflowforwebchannel_1707208228138_0": {
+        "dataSetId": -1,
+        "id": "fcn_createguidedflowforwebchannel_1707208228138_0",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_getaccountid_1707208251251_0"
+        ],
+        "content": "Create Guided Flow for web Channel With Single Sender ID"
+      },
+      "fcn_getaccountid_1707208251251_0": {
+        "dataSetId": -1,
+        "id": "fcn_getaccountid_1707208251251_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_getagentname_1707228364404_0"
+        ],
+        "content": "Get $accountid"
+      },
+      "fcn_navigateusecasespage_1707208261165_0": {
+        "dataSetId": -1,
+        "id": "fcn_navigateusecasespage_1707208261165_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_selectpatientinquiryassistanceflow_1707208264847_0"
+        ],
+        "content": "Navigate Usecases Page"
+      },
+      "fcn_selectpatientinquiryassistanceflow_1707208264847_0": {
+        "dataSetId": -1,
+        "id": "fcn_selectpatientinquiryassistanceflow_1707208264847_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_getautomationnameandautomationtype_1707208269281_0"
+        ],
+        "content": "Select Patient Inquiry Assistance Flow"
+      },
+      "fcn_getautomationnameandautomationtype_1707208269281_0": {
+        "dataSetId": -1,
+        "id": "fcn_getautomationnameandautomationtype_1707208269281_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_asserttheaddedworkflowimage_1707208274585_0"
+        ],
+        "content": "Get Automation Name and Automation Type"
+      },
+      "fcn_asserttheaddedworkflowimage_1707208274585_0": {
+        "dataSetId": -1,
+        "id": "fcn_asserttheaddedworkflowimage_1707208274585_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_clickongetthisautomation_1707208280470_0"
+        ],
+        "content": "Assert the Added Workflow Image"
+      },
+      "fcn_clickongetthisautomation_1707208280470_0": {
+        "dataSetId": -1,
+        "id": "fcn_clickongetthisautomation_1707208280470_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_selectintegrationtypecrmobjectphonefieldandsenderidconversationfieldswebguidedauto_1707208285443_0"
+        ],
+        "content": "Click on Get this Automation"
+      },
+      "fcn_selectintegrationtypecrmobjectphonefieldandsenderidconversationfieldswebguidedauto_1707208285443_0": {
+        "dataSetId": -1,
+        "id": "fcn_selectintegrationtypecrmobjectphonefieldandsenderidconversationfieldswebguidedauto_1707208285443_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_saveandactivatetheflow_1707208289915_0"
+        ],
+        "content": "Select Integration Type CRM Object Phone Field and Sender Id $conversationfields $webguidedauto"
+      },
+      "fcn_saveandactivatetheflow_1707208289915_0": {
+        "dataSetId": -1,
+        "id": "fcn_saveandactivatetheflow_1707208289915_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertaddedwrokflowandsettingsafteractivatingflowwebguidedautoconversationfields_1707208295250_0"
+        ],
+        "content": "Save and activate the flow "
+      },
+      "fcn_assertaddedwrokflowandsettingsafteractivatingflowwebguidedautoconversationfields_1707208295250_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertaddedwrokflowandsettingsafteractivatingflowwebguidedautoconversationfields_1707208295250_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_clickonbackandgotomyautomation_1707208301684_0"
+        ],
+        "content": "Assert Added Wrokflow and Settings after activating flow $webguidedauto $conversationfields"
+      },
+      "fcn_clickonbackandgotomyautomation_1707208301684_0": {
+        "dataSetId": -1,
+        "id": "fcn_clickonbackandgotomyautomation_1707208301684_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertnewlyclonedflowinmyautomationalongwithallthedetailsforwebchatconversationfields_1707220143376_0"
+        ],
+        "content": "Click on Back And Go to My Automation"
+      },
+      "fcn_navigateusecasespage_1707215567374_0": {
+        "dataSetId": -1,
+        "id": "fcn_navigateusecasespage_1707215567374_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_selectstudentinquiriesassistanceflow_0"
+        ],
+        "content": "Navigate Usecases Page"
+      },
+      "fcn_selectstudentinquiriesassistanceflow_0": {
+        "dataSetId": -1,
+        "id": "fcn_selectstudentinquiriesassistanceflow_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_getautomationnameandautomationtype_1707216200772_0"
+        ],
+        "content": "Select Student Inquiries Assistance Flow"
+      },
+      "fcn_getautomationnameandautomationtype_1707216200772_0": {
+        "dataSetId": -1,
+        "id": "fcn_getautomationnameandautomationtype_1707216200772_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_asserttheaddedworkflowimage_1707216211289_0"
+        ],
+        "content": "Get Automation Name and Automation Type"
+      },
+      "fcn_asserttheaddedworkflowimage_1707216211289_0": {
+        "dataSetId": -1,
+        "id": "fcn_asserttheaddedworkflowimage_1707216211289_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_clickongetthisautomation_1707216219650_0"
+        ],
+        "content": "Assert the Added Workflow Image"
+      },
+      "fcn_clickongetthisautomation_1707216219650_0": {
+        "dataSetId": -1,
+        "id": "fcn_clickongetthisautomation_1707216219650_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_selectintegrationtypecrmobjectphonefieldandsenderidconversationfieldssmsguidedauto_1707216231612_0"
+        ],
+        "content": "Click on Get this Automation"
+      },
+      "fcn_selectintegrationtypecrmobjectphonefieldandsenderidconversationfieldssmsguidedauto_1707216231612_0": {
+        "dataSetId": -1,
+        "id": "fcn_selectintegrationtypecrmobjectphonefieldandsenderidconversationfieldssmsguidedauto_1707216231612_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_saveandactivatetheflow_1707216244676_0"
+        ],
+        "content": "Select Integration Type CRM Object Phone Field and Sender Id $conversationfields $smsguidedauto"
+      },
+      "fcn_saveandactivatetheflow_1707216244676_0": {
+        "dataSetId": -1,
+        "id": "fcn_saveandactivatetheflow_1707216244676_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertselectedintegrationtypecrmobjectphonefieldandsenderidafteractivatingtheflowsmsguidedautoconversationfields_1707216253951_0"
+        ],
+        "content": "Save and activate the flow "
+      },
+      "fcn_assertselectedintegrationtypecrmobjectphonefieldandsenderidafteractivatingtheflowsmsguidedautoconversationfields_1707216253951_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertselectedintegrationtypecrmobjectphonefieldandsenderidafteractivatingtheflowsmsguidedautoconversationfields_1707216253951_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_clickonbackandgotomyautomation_1707216260382_0"
+        ],
+        "content": "Assert selected Integration Type CRM Object phone field and senderId after activating the flow $smsguidedauto $conversationfields"
+      },
+      "fcn_clickonbackandgotomyautomation_1707216260382_0": {
+        "dataSetId": -1,
+        "id": "fcn_clickonbackandgotomyautomation_1707216260382_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertnewlyclonedflowaddedinmyautomationalongwithallthedetailsconversationfields_1707216269688_0"
+        ],
+        "content": "Click on Back And Go to My Automation"
+      },
+      "fcn_assertnewlyclonedflowaddedinmyautomationalongwithallthedetailsconversationfields_1707216269688_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertnewlyclonedflowaddedinmyautomationalongwithallthedetailsconversationfields_1707216269688_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_sendincomingmessagesmsguidedauto_1707216280665_0"
+        ],
+        "content": "Assert Newly Cloned Flow added in My Automation Along with all the Details $conversationfields"
+      },
+      "fcn_sendincomingmessagesmsguidedauto_1707216280665_0": {
+        "dataSetId": -1,
+        "id": "fcn_sendincomingmessagesmsguidedauto_1707216280665_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_goconversedeskandassertmessageandassertbotoutgoingsmsguidedauto_1707216289398_0"
+        ],
+        "content": "Send Incoming Message $smsguidedauto"
+      },
+      "fcn_goconversedeskandassertmessageandassertbotoutgoingsmsguidedauto_1707216289398_0": {
+        "dataSetId": -1,
+        "id": "fcn_goconversedeskandassertmessageandassertbotoutgoingsmsguidedauto_1707216289398_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Go Converse Desk and Assert Message and Assert Bot outgoing $smsguidedauto"
+      },
+      "fcn_assertnewlyclonedflowinmyautomationalongwithallthedetailsforwebchatconversationfields_1707220143376_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertnewlyclonedflowinmyautomationalongwithallthedetailsforwebchatconversationfields_1707220143376_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_navigatetoconversivebuttonsettingspage_1707220154641_0"
+        ],
+        "content": "Assert Newly Cloned Flow in My Automation Along with all the Details for WebChat $conversationfields"
+      },
+      "fcn_navigatetoconversivebuttonsettingspage_1707220154641_0": {
+        "dataSetId": -1,
+        "id": "fcn_navigatetoconversivebuttonsettingspage_1707220154641_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_openconversivebutton_1707220162703_0"
+        ],
+        "content": "Navigate to Conversive Button Page"
+      },
+      "fcn_openconversivebutton_1707220162703_0": {
+        "dataSetId": -1,
+        "id": "fcn_openconversivebutton_1707220162703_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_getscript_1707220169438_0"
+        ],
+        "content": "Open Conversive Button"
+      },
+      "fcn_getscript_1707220169438_0": {
+        "dataSetId": -1,
+        "id": "fcn_getscript_1707220169438_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_navigatetoconversedesk_1707220178000_0"
+        ],
+        "content": "get $script"
+      },
+      "fcn_navigatetoconversedesk_1707220178000_0": {
+        "dataSetId": -1,
+        "id": "fcn_navigatetoconversedesk_1707220178000_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_embedscriptintowebsiteandnavigatetowebsite_1707220185572_0"
+        ],
+        "content": "Navigate to Converse Desk"
+      },
+      "fcn_embedscriptintowebsiteandnavigatetowebsite_1707220185572_0": {
+        "dataSetId": -1,
+        "id": "fcn_embedscriptintowebsiteandnavigatetowebsite_1707220185572_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_fillthewebform_1707220193151_0"
+        ],
+        "content": "embed script into $website and navigate to website"
+      },
+      "fcn_fillthewebform_1707220193151_0": {
+        "dataSetId": -1,
+        "id": "fcn_fillthewebform_1707220193151_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_starttheconversationwithbotforguided_1707273280479_0"
+        ],
+        "content": "fill the $webform "
+      },
+      "fcn_starttheconversationwithbotforguided_1707273280479_0": {
+        "dataSetId": -1,
+        "id": "fcn_starttheconversationwithbotforguided_1707273280479_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_closethebrowser_1707220211940_0"
+        ],
+        "content": "start the conversation with $bot for guided"
+      },
+      "fcn_closethebrowser_1707220211940_0": {
+        "dataSetId": -1,
+        "id": "fcn_closethebrowser_1707220211940_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_validatethebotconversationmessagesbotforguidedpatientenquiryflowwebforminsaas_1707220220721_0"
+        ],
+        "content": "Close the Browser"
+      },
+      "fcn_validatethebotconversationmessagesbotforguidedpatientenquiryflowwebforminsaas_1707220220721_0": {
+        "dataSetId": -1,
+        "id": "fcn_validatethebotconversationmessagesbotforguidedpatientenquiryflowwebforminsaas_1707220220721_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_navigateusecasespage_1707220245069_0"
+        ],
+        "content": "validate the bot conversation messages $bot for guided patient enquiry flow $webform in SaaS"
+      },
+      "fcn_navigateusecasespage_1707220245069_0": {
+        "dataSetId": -1,
+        "id": "fcn_navigateusecasespage_1707220245069_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_selectstudentinquiriesassistanceflow_1707220269783_0"
+        ],
+        "content": "Navigate Usecases Page"
+      },
+      "fcn_selectstudentinquiriesassistanceflow_1707220269783_0": {
+        "dataSetId": -1,
+        "id": "fcn_selectstudentinquiriesassistanceflow_1707220269783_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_getautomationnameandautomationtype_1707220269783_0"
+        ],
+        "content": "Select Student Inquiries Assistance Flow"
+      },
+      "fcn_getautomationnameandautomationtype_1707220269783_0": {
+        "dataSetId": -1,
+        "id": "fcn_getautomationnameandautomationtype_1707220269783_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_asserttheaddedworkflowimage_1707220269783_0"
+        ],
+        "content": "Get Automation Name and Automation Type"
+      },
+      "fcn_asserttheaddedworkflowimage_1707220269783_0": {
+        "dataSetId": -1,
+        "id": "fcn_asserttheaddedworkflowimage_1707220269783_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_clickongetthisautomation_1707220269783_0"
+        ],
+        "content": "Assert the Added Workflow Image"
+      },
+      "fcn_clickongetthisautomation_1707220269783_0": {
+        "dataSetId": -1,
+        "id": "fcn_clickongetthisautomation_1707220269783_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_selectintegrationtypecrmobjectphonefieldandsenderidconversationfieldswebguidedauto_1707220303297_0"
+        ],
+        "content": "Click on Get this Automation"
+      },
+      "fcn_selectintegrationtypecrmobjectphonefieldandsenderidconversationfieldswebguidedauto_1707220303297_0": {
+        "dataSetId": -1,
+        "id": "fcn_selectintegrationtypecrmobjectphonefieldandsenderidconversationfieldswebguidedauto_1707220303297_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_saveandactivatetheflow_1707220303297_0"
+        ],
+        "content": "Select Integration Type CRM Object Phone Field and Sender Id $conversationfields $webguidedauto"
+      },
+      "fcn_saveandactivatetheflow_1707220303297_0": {
+        "dataSetId": -1,
+        "id": "fcn_saveandactivatetheflow_1707220303297_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertaddedwrokflowandsettingsafteractivatingflowwebguidedautoconversationfields_1707220303297_0"
+        ],
+        "content": "Save and activate the flow "
+      },
+      "fcn_assertaddedwrokflowandsettingsafteractivatingflowwebguidedautoconversationfields_1707220303297_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertaddedwrokflowandsettingsafteractivatingflowwebguidedautoconversationfields_1707220303297_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_clickonbackandgotomyautomation_1707220303297_0"
+        ],
+        "content": "Assert Added Wrokflow and Settings after activating flow $webguidedauto $conversationfields"
+      },
+      "fcn_clickonbackandgotomyautomation_1707220303297_0": {
+        "dataSetId": -1,
+        "id": "fcn_clickonbackandgotomyautomation_1707220303297_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertnewlyclonedflowinmyautomationalongwithallthedetailsforwebchatconversationfields_1707220303297_0"
+        ],
+        "content": "Click on Back And Go to My Automation"
+      },
+      "fcn_assertnewlyclonedflowinmyautomationalongwithallthedetailsforwebchatconversationfields_1707220303297_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertnewlyclonedflowinmyautomationalongwithallthedetailsforwebchatconversationfields_1707220303297_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_navigatetoconversivebuttonsettingspage_1707220377584_0"
+        ],
+        "content": "Assert Newly Cloned Flow in My Automation Along with all the Details for WebChat $conversationfields"
+      },
+      "fcn_navigatetoconversivebuttonsettingspage_1707220377584_0": {
+        "dataSetId": -1,
+        "id": "fcn_navigatetoconversivebuttonsettingspage_1707220377584_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_openconversivebutton_1707220377584_0"
+        ],
+        "content": "Navigate to Conversive Button Page"
+      },
+      "fcn_openconversivebutton_1707220377584_0": {
+        "dataSetId": -1,
+        "id": "fcn_openconversivebutton_1707220377584_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_getscript_1707220377584_0"
+        ],
+        "content": "Open Conversive Button"
+      },
+      "fcn_getscript_1707220377584_0": {
+        "dataSetId": -1,
+        "id": "fcn_getscript_1707220377584_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_navigatetoconversedesk_1707220377584_0"
+        ],
+        "content": "get $script"
+      },
+      "fcn_navigatetoconversedesk_1707220377584_0": {
+        "dataSetId": -1,
+        "id": "fcn_navigatetoconversedesk_1707220377584_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_embedscriptintowebsiteandnavigatetowebsite_1707220377584_0"
+        ],
+        "content": "Navigate to Converse Desk"
+      },
+      "fcn_embedscriptintowebsiteandnavigatetowebsite_1707220377584_0": {
+        "dataSetId": -1,
+        "id": "fcn_embedscriptintowebsiteandnavigatetowebsite_1707220377584_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_fillthewebform_1707220396155_0"
+        ],
+        "content": "embed script into $website and navigate to website"
+      },
+      "fcn_fillthewebform_1707220396155_0": {
+        "dataSetId": -1,
+        "id": "fcn_fillthewebform_1707220396155_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_starttheconversationwithbotforguided_1707220396155_0"
+        ],
+        "content": "fill the $webform "
+      },
+      "fcn_starttheconversationwithbotforguided_1707220396155_0": {
+        "dataSetId": -1,
+        "id": "fcn_starttheconversationwithbotforguided_1707220396155_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_closethebrowser_1707220396155_0"
+        ],
+        "content": "start the conversation with $bot for guided"
+      },
+      "fcn_closethebrowser_1707220396155_0": {
+        "dataSetId": -1,
+        "id": "fcn_closethebrowser_1707220396155_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_validatethebotconversationmessagesbotforguidedpatientenquiryflowwebforminsaas_1707220396155_0"
+        ],
+        "content": "Close the Browser"
+      },
+      "fcn_validatethebotconversationmessagesbotforguidedpatientenquiryflowwebforminsaas_1707220396155_0": {
+        "dataSetId": -1,
+        "id": "fcn_validatethebotconversationmessagesbotforguidedpatientenquiryflowwebforminsaas_1707220396155_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "validate the bot conversation messages $bot for guided Student Inquiries flow $webform in SaaS"
+      },
+      "fcn_createguidedflowforwebchannelwithsinglesenderid_1707220675426_0": {
+        "dataSetId": -1,
+        "id": "fcn_createguidedflowforwebchannelwithsinglesenderid_1707220675426_0",
+        "nodeType": "pathsublabel",
+        "branches": [
+          "fcn_getaccountid_1707220719552_0"
+        ],
+        "content": "Create Guided Flow for whats app Channel With Single Sender ID"
+      },
+      "fcn_getaccountid_1707220719552_0": {
+        "dataSetId": -1,
+        "id": "fcn_getaccountid_1707220719552_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_navigateusecasespage_1707220719552_0"
+        ],
+        "content": "Get $accountid"
+      },
+      "fcn_navigateusecasespage_1707220719552_0": {
+        "dataSetId": -1,
+        "id": "fcn_navigateusecasespage_1707220719552_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_selectpatientinquiryassistanceflow_1707220719552_0"
+        ],
+        "content": "Navigate Usecases Page"
+      },
+      "fcn_selectpatientinquiryassistanceflow_1707220719552_0": {
+        "dataSetId": -1,
+        "id": "fcn_selectpatientinquiryassistanceflow_1707220719552_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_getautomationnameandautomationtype_1707220719552_0"
+        ],
+        "content": "Select Patient Inquiry Assistance Flow"
+      },
+      "fcn_getautomationnameandautomationtype_1707220719552_0": {
+        "dataSetId": -1,
+        "id": "fcn_getautomationnameandautomationtype_1707220719552_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_asserttheaddedworkflowimage_1707220719552_0"
+        ],
+        "content": "Get Automation Name and Automation Type"
+      },
+      "fcn_asserttheaddedworkflowimage_1707220719552_0": {
+        "dataSetId": -1,
+        "id": "fcn_asserttheaddedworkflowimage_1707220719552_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_clickongetthisautomation_1707220719552_0"
+        ],
+        "content": "Assert the Added Workflow Image"
+      },
+      "fcn_clickongetthisautomation_1707220719552_0": {
+        "dataSetId": -1,
+        "id": "fcn_clickongetthisautomation_1707220719552_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_selectintegrationtypecrmobjectphonefieldandsenderidconversationfieldswaguidedauto_1707220737123_0"
+        ],
+        "content": "Click on Get this Automation"
+      },
+      "fcn_selectintegrationtypecrmobjectphonefieldandsenderidconversationfieldswaguidedauto_1707220737123_0": {
+        "dataSetId": -1,
+        "id": "fcn_selectintegrationtypecrmobjectphonefieldandsenderidconversationfieldswaguidedauto_1707220737123_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_saveandactivatetheflow_1707220737123_0"
+        ],
+        "content": "Select Integration Type CRM Object Phone Field and Sender Id $conversationfields $waguidedauto"
+      },
+      "fcn_saveandactivatetheflow_1707220737123_0": {
+        "dataSetId": -1,
+        "id": "fcn_saveandactivatetheflow_1707220737123_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertaddedwrokflowandsettingsforwaguidedautosenderidconversationfields_1707220737123_0"
+        ],
+        "content": "Save and activate the flow "
+      },
+      "fcn_assertaddedwrokflowandsettingsforwaguidedautosenderidconversationfields_1707220737123_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertaddedwrokflowandsettingsforwaguidedautosenderidconversationfields_1707220737123_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_clickonbackandgotomyautomation_1707220751426_0"
+        ],
+        "content": "Assert Added Wrokflow and Settings for $waguidedauto senderID $conversationfields"
+      },
+      "fcn_clickonbackandgotomyautomation_1707220751426_0": {
+        "dataSetId": -1,
+        "id": "fcn_clickonbackandgotomyautomation_1707220751426_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertnewlyclonedflowaddedinmyautomationalongwithallthedetailsconversationfields_1707220751426_0"
+        ],
+        "content": "Click on Back And Go to My Automation"
+      },
+      "fcn_assertnewlyclonedflowaddedinmyautomationalongwithallthedetailsconversationfields_1707220751426_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertnewlyclonedflowaddedinmyautomationalongwithallthedetailsconversationfields_1707220751426_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_sendincomingmessagewaguidedauto_1707220777964_0"
+        ],
+        "content": "Assert Newly Cloned Flow added in My Automation Along with all the Details $conversationfields"
+      },
+      "fcn_sendincomingmessagewaguidedauto_1707220777964_0": {
+        "dataSetId": -1,
+        "id": "fcn_sendincomingmessagewaguidedauto_1707220777964_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_goconversedeskandassertmessageandassertbotoutgoingwaguidedauto_1707220777964_0"
+        ],
+        "content": "Send Incoming Message $waguidedauto"
+      },
+      "fcn_goconversedeskandassertmessageandassertbotoutgoingwaguidedauto_1707220777964_0": {
+        "dataSetId": -1,
+        "id": "fcn_goconversedeskandassertmessageandassertbotoutgoingwaguidedauto_1707220777964_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_navigateusecasespage_1707220777964_0"
+        ],
+        "content": "Go Converse Desk and Assert Message and Assert Bot outgoing $waguidedauto"
+      },
+      "fcn_navigateusecasespage_1707220777964_0": {
+        "dataSetId": -1,
+        "id": "fcn_navigateusecasespage_1707220777964_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_selectstudentinquiriesassistanceflow_1707220864149_0"
+        ],
+        "content": "Navigate Usecases Page"
+      },
+      "fcn_selectstudentinquiriesassistanceflow_1707220864149_0": {
+        "dataSetId": -1,
+        "id": "fcn_selectstudentinquiriesassistanceflow_1707220864149_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_getautomationnameandautomationtype_1707220864149_0"
+        ],
+        "content": "Select Student Inquiries Assistance Flow"
+      },
+      "fcn_getautomationnameandautomationtype_1707220864149_0": {
+        "dataSetId": -1,
+        "id": "fcn_getautomationnameandautomationtype_1707220864149_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_asserttheaddedworkflowimage_1707220864149_0"
+        ],
+        "content": "Get Automation Name and Automation Type"
+      },
+      "fcn_asserttheaddedworkflowimage_1707220864149_0": {
+        "dataSetId": -1,
+        "id": "fcn_asserttheaddedworkflowimage_1707220864149_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_clickongetthisautomation_1707220864149_0"
+        ],
+        "content": "Assert the Added Workflow Image"
+      },
+      "fcn_clickongetthisautomation_1707220864149_0": {
+        "dataSetId": -1,
+        "id": "fcn_clickongetthisautomation_1707220864149_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_selectintegrationtypecrmobjectphonefieldandsenderidconversationfieldswaguidedauto_1707220892620_0"
+        ],
+        "content": "Click on Get this Automation"
+      },
+      "fcn_selectintegrationtypecrmobjectphonefieldandsenderidconversationfieldswaguidedauto_1707220892620_0": {
+        "dataSetId": -1,
+        "id": "fcn_selectintegrationtypecrmobjectphonefieldandsenderidconversationfieldswaguidedauto_1707220892620_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_saveandactivatetheflow_1707220892620_0"
+        ],
+        "content": "Select Integration Type CRM Object Phone Field and Sender Id $conversationfields $waguidedauto"
+      },
+      "fcn_saveandactivatetheflow_1707220892620_0": {
+        "dataSetId": -1,
+        "id": "fcn_saveandactivatetheflow_1707220892620_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertaddedwrokflowandsettingsforwaguidedautosenderidconversationfields_1707220892620_0"
+        ],
+        "content": "Save and activate the flow "
+      },
+      "fcn_assertaddedwrokflowandsettingsforwaguidedautosenderidconversationfields_1707220892620_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertaddedwrokflowandsettingsforwaguidedautosenderidconversationfields_1707220892620_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_clickonbackandgotomyautomation_1707220901290_0"
+        ],
+        "content": "Assert Added Wrokflow and Settings for $waguidedauto senderID $conversationfields"
+      },
+      "fcn_clickonbackandgotomyautomation_1707220901290_0": {
+        "dataSetId": -1,
+        "id": "fcn_clickonbackandgotomyautomation_1707220901290_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertnewlyclonedflowaddedinmyautomationalongwithallthedetailsconversationfields_1707220912345_0"
+        ],
+        "content": "Click on Back And Go to My Automation"
+      },
+      "fcn_assertnewlyclonedflowaddedinmyautomationalongwithallthedetailsconversationfields_1707220912345_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertnewlyclonedflowaddedinmyautomationalongwithallthedetailsconversationfields_1707220912345_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_sendincomingmessagewaguidedauto_1707220929585_0"
+        ],
+        "content": "Assert Newly Cloned Flow added in My Automation Along with all the Details $conversationfields"
+      },
+      "fcn_sendincomingmessagewaguidedauto_1707220929585_0": {
+        "dataSetId": -1,
+        "id": "fcn_sendincomingmessagewaguidedauto_1707220929585_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_goconversedeskandassertmessageandassertbotoutgoingwaguidedauto_1707220929585_0"
+        ],
+        "content": "Send Incoming Message $waguidedauto"
+      },
+      "fcn_goconversedeskandassertmessageandassertbotoutgoingwaguidedauto_1707220929585_0": {
+        "dataSetId": -1,
+        "id": "fcn_goconversedeskandassertmessageandassertbotoutgoingwaguidedauto_1707220929585_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Go Converse Desk and Assert Message and Assert Bot outgoing $waguidedauto"
+      },
+      "fcn_getagentname_1707228364404_0": {
+        "dataSetId": -1,
+        "id": "fcn_getagentname_1707228364404_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_navigateusecasespage_1707208261165_0"
+        ],
+        "content": "get agentname"
+      },
+      "fcn_createguidedflowforsmsforsalesforce_1707278759637_0": {
+        "dataSetId": -1,
+        "id": "fcn_createguidedflowforsmsforsalesforce_1707278759637_0",
+        "nodeType": "pathlabel",
+        "branches": [
+          "fcn_logintosf_guidedauto_1707278774049_0"
+        ],
+        "content": "Create Guided Flow for SMS for Salesforce"
+      },
+      "fcn_logintosf_guidedauto_1707278774049_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintosf_guidedauto_1707278774049_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_navigatetosmsmagicconverse_1707278794924_0"
+        ],
+        "content": "login to $sf_guidedauto"
+      },
+      "fcn_navigatetosmsmagicconverse_1707278794924_0": {
+        "dataSetId": -1,
+        "id": "fcn_navigatetosmsmagicconverse_1707278794924_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_navigatetosfconversedesk_1707278801799_0"
+        ],
+        "content": "Navigate to SMS Magic Converse"
+      },
+      "fcn_navigatetosfconversedesk_1707278801799_0": {
+        "dataSetId": -1,
+        "id": "fcn_navigatetosfconversedesk_1707278801799_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logintoportalusingsf_guidedautocred_1707278808869_0"
+        ],
+        "content": "Navigate to SF Converse Desk"
+      },
+      "fcn_logintoportalusingsf_guidedautocred_1707278808869_0": {
+        "dataSetId": -1,
+        "id": "fcn_logintoportalusingsf_guidedautocred_1707278808869_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_getaccountid_1707278815635_0"
+        ],
+        "content": "login to portal using $sf_guidedauto cred"
+      },
+      "fcn_getaccountid_1707278815635_0": {
+        "dataSetId": -1,
+        "id": "fcn_getaccountid_1707278815635_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_navigateusecasespage_1707278822636_0"
+        ],
+        "content": "Get $accountid"
+      },
+      "fcn_navigateusecasespage_1707278822636_0": {
+        "dataSetId": -1,
+        "id": "fcn_navigateusecasespage_1707278822636_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_selectpatientinquiryassistanceflow_1707278836534_0"
+        ],
+        "content": "Navigate Usecases Page"
+      },
+      "fcn_selectpatientinquiryassistanceflow_1707278836534_0": {
+        "dataSetId": -1,
+        "id": "fcn_selectpatientinquiryassistanceflow_1707278836534_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_getautomationnameandautomationtype_1707278836534_0"
+        ],
+        "content": "Select Patient Inquiry Assistance Flow"
+      },
+      "fcn_getautomationnameandautomationtype_1707278836534_0": {
+        "dataSetId": -1,
+        "id": "fcn_getautomationnameandautomationtype_1707278836534_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_asserttheaddedworkflowimage_1707278836534_0"
+        ],
+        "content": "Get Automation Name and Automation Type"
+      },
+      "fcn_asserttheaddedworkflowimage_1707278836534_0": {
+        "dataSetId": -1,
+        "id": "fcn_asserttheaddedworkflowimage_1707278836534_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_clickongetthisautomation_1707278836534_0"
+        ],
+        "content": "Assert the Added Workflow Image"
+      },
+      "fcn_clickongetthisautomation_1707278836534_0": {
+        "dataSetId": -1,
+        "id": "fcn_clickongetthisautomation_1707278836534_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_selectintegrationtypecrmobjectphonefieldandsenderidconversationfieldssmsguidedautosf_1707278853724_0"
+        ],
+        "content": "Click on Get this Automation"
+      },
+      "fcn_selectintegrationtypecrmobjectphonefieldandsenderidconversationfieldssmsguidedautosf_1707278853724_0": {
+        "dataSetId": -1,
+        "id": "fcn_selectintegrationtypecrmobjectphonefieldandsenderidconversationfieldssmsguidedautosf_1707278853724_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_saveandactivatetheflow_1707278853724_0"
+        ],
+        "content": "Select Integration Type CRM Object Phone Field and Sender Id $conversationfields $smsguidedautosf"
+      },
+      "fcn_saveandactivatetheflow_1707278853724_0": {
+        "dataSetId": -1,
+        "id": "fcn_saveandactivatetheflow_1707278853724_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertselectedintegrationtypecrmobjectphonefieldandsenderidafteractivatingtheflowsmsguidedautosfconversationfields_1707278853724_0"
+        ],
+        "content": "Save and activate the flow "
+      },
+      "fcn_assertselectedintegrationtypecrmobjectphonefieldandsenderidafteractivatingtheflowsmsguidedautosfconversationfields_1707278853724_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertselectedintegrationtypecrmobjectphonefieldandsenderidafteractivatingtheflowsmsguidedautosfconversationfields_1707278853724_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_clickonbackandgotomyautomation_1707278882245_0"
+        ],
+        "content": "Assert selected Integration Type CRM Object phone field and senderId after activating the flow $smsguidedautosf $conversationfields"
+      },
+      "fcn_clickonbackandgotomyautomation_1707278882245_0": {
+        "dataSetId": -1,
+        "id": "fcn_clickonbackandgotomyautomation_1707278882245_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertnewlyclonedflowaddedinmyautomationalongwithallthedetailsconversationfields_1707278882245_0"
+        ],
+        "content": "Click on Back And Go to My Automation"
+      },
+      "fcn_assertnewlyclonedflowaddedinmyautomationalongwithallthedetailsconversationfields_1707278882245_0": {
+        "dataSetId": -1,
+        "id": "fcn_assertnewlyclonedflowaddedinmyautomationalongwithallthedetailsconversationfields_1707278882245_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_sendincomingmessagesmsguidedautosf_1707278882245_0"
+        ],
+        "content": "Assert Newly Cloned Flow added in My Automation Along with all the Details $conversationfields"
+      },
+      "fcn_sendincomingmessagesmsguidedautosf_1707278882245_0": {
+        "dataSetId": -1,
+        "id": "fcn_sendincomingmessagesmsguidedautosf_1707278882245_0",
+        "nodeType": "action",
+        "branches": [
+          "fcn_goconversedeskandassertmessageandassertbotoutgoingsmsguidedautosf_1707278882245_0"
+        ],
+        "content": "Send Incoming Message $smsguidedautosf"
+      },
+      "fcn_goconversedeskandassertmessageandassertbotoutgoingsmsguidedautosf_1707278882245_0": {
+        "dataSetId": -1,
+        "id": "fcn_goconversedeskandassertmessageandassertbotoutgoingsmsguidedautosf_1707278882245_0",
+        "nodeType": "action",
+        "branches": [],
+        "content": "Go Converse Desk and Assert Message and Assert Bot outgoing $smsguidedautosf"
+      }
+    },
+    "pathNames": {},
+    "isPrimary": false,
+    "positions": {
+      "fcn_start_0": {
+        "top": 150.90642547607422,
+        "left": 499.89794921875
+      },
+      "fcn_guidedconversationtemplateguidedflowagaintsasenderid_1707199644563_0": {
+        "top": 223.88212633132935,
+        "left": 414.91064453125
+      },
+      "fcn_logintosaas_guidedauto_1707199709174_0": {
+        "top": 296.8963851928711,
+        "left": 414.91064453125
+      },
+      "fcn_createguidedflowforsmschannelwithsinglesenderid_1707199721057_0": {
+        "top": 361.0995788574219,
+        "left": 414.91064453125
+      },
+      "fcn_getaccountid_1707199730396_0": {
+        "top": 435.0971374511719,
+        "left": 414.91064453125
+      },
+      "fcn_navigateusecasespage_1707199780574_0": {
+        "top": 500.26434326171875,
+        "left": 414.91064453125
+      },
+      "fcn_selectpatientinquiryassistanceflow_1707199788583_0": {
+        "top": 559.1847534179688,
+        "left": 414.91064453125
+      },
+      "fcn_getautomationnameandautomationtype_1707199795549_0": {
+        "top": 618.1629943847656,
+        "left": 414.91064453125
+      },
+      "fcn_asserttheaddedworkflowimage_1707199805276_0": {
+        "top": 691.235107421875,
+        "left": 414.91064453125
+      },
+      "fcn_clickongetthisautomation_1707199812444_0": {
+        "top": 750.2133483886719,
+        "left": 414.91064453125
+      },
+      "fcn_selectintegrationtypecrmobjectphonefieldandsenderidconversationfieldssmsguidedauto_1707199820861_0": {
+        "top": 809.1916198730469,
+        "left": 414.91064453125
+      },
+      "fcn_saveandactivatetheflow_1707199829582_0": {
+        "top": 902.3537292480469,
+        "left": 414.91064453125
+      },
+      "fcn_assertselectedintegrationtypecrmobjectphonefieldandsenderidafteractivatingtheflowsmsguidedautoconversationfields_1707203007485_0": {
+        "top": 961.3319396972656,
+        "left": 414.91064453125
+      },
+      "fcn_clickonbackandgotomyautomation_1707203016625_0": {
+        "top": 1074.6611633300781,
+        "left": 414.91064453125
+      },
+      "fcn_assertnewlyclonedflowaddedinmyautomationalongwithallthedetailsconversationfields_1707203028376_0": {
+        "top": 1133.6201477050781,
+        "left": 414.91064453125
+      },
+      "fcn_sendincomingmessagesmsguidedauto_1707203037773_0": {
+        "top": 1226.7436828613281,
+        "left": 414.91064453125
+      },
+      "fcn_goconversedeskandassertmessageandassertbotoutgoingsmsguidedauto_1707203049124_0": {
+        "top": 1292.0651550292969,
+        "left": 414.91064453125
+      },
+      "fcn_navigateusecasespage_1707215567374_0": {
+        "top": 1371.2105407714844,
+        "left": 414.91064453125
+      },
+      "fcn_selectstudentinquiriesassistanceflow_0": {
+        "top": 1430.1695251464844,
+        "left": 414.91064453125
+      },
+      "fcn_getautomationnameandautomationtype_1707216200772_0": {
+        "top": 1489.1285095214844,
+        "left": 414.91064453125
+      },
+      "fcn_asserttheaddedworkflowimage_1707216211289_0": {
+        "top": 1562.1235046386719,
+        "left": 414.91064453125
+      },
+      "fcn_clickongetthisautomation_1707216219650_0": {
+        "top": 1621.2173767089844,
+        "left": 414.91064453125
+      },
+      "fcn_selectintegrationtypecrmobjectphonefieldandsenderidconversationfieldssmsguidedauto_1707216231612_0": {
+        "top": 1680.1956481933594,
+        "left": 414.91064453125
+      },
+      "fcn_saveandactivatetheflow_1707216244676_0": {
+        "top": 1773.3577575683594,
+        "left": 414.91064453125
+      },
+      "fcn_assertselectedintegrationtypecrmobjectphonefieldandsenderidafteractivatingtheflowsmsguidedautoconversationfields_1707216253951_0": {
+        "top": 1832.2781677246094,
+        "left": 414.91064453125
+      },
+      "fcn_clickonbackandgotomyautomation_1707216260382_0": {
+        "top": 1945.6459655761719,
+        "left": 414.91064453125
+      },
+      "fcn_assertnewlyclonedflowaddedinmyautomationalongwithallthedetailsconversationfields_1707216269688_0": {
+        "top": 2004.5856628417969,
+        "left": 414.91064453125
+      },
+      "fcn_sendincomingmessagesmsguidedauto_1707216280665_0": {
+        "top": 2097.767059326172,
+        "left": 414.91064453125
+      },
+      "fcn_goconversedeskandassertmessageandassertbotoutgoingsmsguidedauto_1707216289398_0": {
+        "top": 2162.915008544922,
+        "left": 414.91064453125
+      },
+      "fcn_createguidedflowforwebchannel_1707208228138_0": {
+        "top": 357.07000732421875,
+        "left": 1222.8876342773438
+      },
+      "fcn_getaccountid_1707208251251_0": {
+        "top": 418.0148468017578,
+        "left": 1225.8953247070312
+      },
+      "fcn_getagentname_1707228364404_0": {
+        "top": 480.232177734375,
+        "left": 1227.8811645507812
+      },
+      "fcn_navigateusecasespage_1707208261165_0": {
+        "top": 543.25927734375,
+        "left": 1225.8953247070312
+      },
+      "fcn_selectpatientinquiryassistanceflow_1707208264847_0": {
+        "top": 591.209228515625,
+        "left": 1226.8978881835938
+      },
+      "fcn_getautomationnameandautomationtype_1707208269281_0": {
+        "top": 643.227294921875,
+        "left": 1225.8953247070312
+      },
+      "fcn_asserttheaddedworkflowimage_1707208274585_0": {
+        "top": 700.2196960449219,
+        "left": 1225.8953247070312
+      },
+      "fcn_clickongetthisautomation_1707208280470_0": {
+        "top": 745.1811828613281,
+        "left": 1231.8914794921875
+      },
+      "fcn_selectintegrationtypecrmobjectphonefieldandsenderidconversationfieldswebguidedauto_1707208285443_0": {
+        "top": 794.2108459472656,
+        "left": 1223.8901977539062
+      },
+      "fcn_saveandactivatetheflow_1707208289915_0": {
+        "top": 881.3382263183594,
+        "left": 1226.8978881835938
+      },
+      "fcn_assertaddedwrokflowandsettingsafteractivatingflowwebguidedautoconversationfields_1707208295250_0": {
+        "top": 932.3345031738281,
+        "left": 1227.8811645507812
+      },
+      "fcn_clickonbackandgotomyautomation_1707208301684_0": {
+        "top": 1028.6585388183594,
+        "left": 1227.8811645507812
+      },
+      "fcn_assertnewlyclonedflowinmyautomationalongwithallthedetailsforwebchatconversationfields_1707220143376_0": {
+        "top": 1086.6534729003906,
+        "left": 1226.8978881835938
+      },
+      "fcn_navigatetoconversivebuttonsettingspage_1707220154641_0": {
+        "top": 1175.7667541503906,
+        "left": 1225.8953247070312
+      },
+      "fcn_openconversivebutton_1707220162703_0": {
+        "top": 1248.8196105957031,
+        "left": 1228.8837890625
+      },
+      "fcn_getscript_1707220169438_0": {
+        "top": 1298.9096374511719,
+        "left": 1228.8837890625
+      },
+      "fcn_navigatetoconversedesk_1707220178000_0": {
+        "top": 1359.9894714355469,
+        "left": 1229.8863525390625
+      },
+      "fcn_embedscriptintowebsiteandnavigatetowebsite_1707220185572_0": {
+        "top": 1416.0563659667969,
+        "left": 1228.8837890625
+      },
+      "fcn_fillthewebform_1707220193151_0": {
+        "top": 1485.1952819824219,
+        "left": 1226.8978881835938
+      },
+      "fcn_starttheconversationwithbotforguided_1707273280479_0": {
+        "top": 1542.3226013183594,
+        "left": 1225.8953247070312
+      },
+      "fcn_closethebrowser_1707220211940_0": {
+        "top": 1621.4679870605469,
+        "left": 1225.8953247070312
+      },
+      "fcn_validatethebotconversationmessagesbotforguidedpatientenquiryflowwebforminsaas_1707220220721_0": {
+        "top": 1670.5169372558594,
+        "left": 1222.8876342773438
+      },
+      "fcn_navigateusecasespage_1707220245069_0": {
+        "top": 1768.8268737792969,
+        "left": 1222.8876342773438
+      },
+      "fcn_selectstudentinquiriesassistanceflow_1707220269783_0": {
+        "top": 1824.7395935058594,
+        "left": 1219.899169921875
+      },
+      "fcn_getautomationnameandautomationtype_1707220269783_0": {
+        "top": 1878.8013610839844,
+        "left": 1217.89404296875
+      },
+      "fcn_asserttheaddedworkflowimage_1707220269783_0": {
+        "top": 1955.7487487792969,
+        "left": 1214.8670043945312
+      },
+      "fcn_clickongetthisautomation_1707220269783_0": {
+        "top": 2010.7360534667969,
+        "left": 1214.8670043945312
+      },
+      "fcn_selectintegrationtypecrmobjectphonefieldandsenderidconversationfieldswebguidedauto_1707220303297_0": {
+        "top": 2067.7090759277344,
+        "left": 1217.89404296875
+      },
+      "fcn_saveandactivatetheflow_1707220303297_0": {
+        "top": 2160.8711853027344,
+        "left": 1220.9017333984375
+      },
+      "fcn_assertaddedwrokflowandsettingsafteractivatingflowwebguidedautoconversationfields_1707220303297_0": {
+        "top": 2220.871307373047,
+        "left": 1218.8966064453125
+      },
+      "fcn_clickonbackandgotomyautomation_1707220303297_0": {
+        "top": 2314.2647399902344,
+        "left": 1219.899169921875
+      },
+      "fcn_assertnewlyclonedflowinmyautomationalongwithallthedetailsforwebchatconversationfields_1707220303297_0": {
+        "top": 2372.1827087402344,
+        "left": 1216.8914794921875
+      },
+      "fcn_navigatetoconversivebuttonsettingspage_1707220377584_0": {
+        "top": 2472.3821716308594,
+        "left": 1216.8914794921875
+      },
+      "fcn_openconversivebutton_1707220377584_0": {
+        "top": 2543.3912048339844,
+        "left": 1219.899169921875
+      },
+      "fcn_getscript_1707220377584_0": {
+        "top": 2606.3604431152344,
+        "left": 1220.9017333984375
+      },
+      "fcn_navigatetoconversedesk_1707220377584_0": {
+        "top": 2670.5635681152344,
+        "left": 1223.8901977539062
+      },
+      "fcn_embedscriptintowebsiteandnavigatetowebsite_1707220377584_0": {
+        "top": 2728.5779724121094,
+        "left": 1224.8927612304688
+      },
+      "fcn_fillthewebform_1707220396155_0": {
+        "top": 2802.7295837402344,
+        "left": 1229.8863525390625
+      },
+      "fcn_starttheconversationwithbotforguided_1707220396155_0": {
+        "top": 2862.8838806152344,
+        "left": 1227.8811645507812
+      },
+      "fcn_closethebrowser_1707220396155_0": {
+        "top": 2939.0408630371094,
+        "left": 1228.8837890625
+      },
+      "fcn_validatethebotconversationmessagesbotforguidedpatientenquiryflowwebforminsaas_1707220396155_0": {
+        "top": 3000.0242614746094,
+        "left": 1232.89404296875
+      },
+      "fcn_createguidedflowforwebchannelwithsinglesenderid_1707220675426_0": {
+        "top": 371.12530517578125,
+        "left": 812.893310546875
+      },
+      "fcn_getaccountid_1707220719552_0": {
+        "top": 451.1190185546875,
+        "left": 812.893310546875
+      },
+      "fcn_navigateusecasespage_1707220719552_0": {
+        "top": 517.1538391113281,
+        "left": 813.8958740234375
+      },
+      "fcn_selectpatientinquiryassistanceflow_1707220719552_0": {
+        "top": 577.2503356933594,
+        "left": 813.8958740234375
+      },
+      "fcn_getautomationnameandautomationtype_1707220719552_0": {
+        "top": 635.2838439941406,
+        "left": 814.8984375
+      },
+      "fcn_asserttheaddedworkflowimage_1707220719552_0": {
+        "top": 705.2325439453125,
+        "left": 812.893310546875
+      },
+      "fcn_clickongetthisautomation_1707220719552_0": {
+        "top": 760.2198181152344,
+        "left": 812.893310546875
+      },
+      "fcn_selectintegrationtypecrmobjectphonefieldandsenderidconversationfieldswaguidedauto_1707220737123_0": {
+        "top": 815.1877746582031,
+        "left": 812.893310546875
+      },
+      "fcn_saveandactivatetheflow_1707220737123_0": {
+        "top": 907.5015563964844,
+        "left": 813.8958740234375
+      },
+      "fcn_assertaddedwrokflowandsettingsforwaguidedautosenderidconversationfields_1707220737123_0": {
+        "top": 962.5273132324219,
+        "left": 812.893310546875
+      },
+      "fcn_clickonbackandgotomyautomation_1707220751426_0": {
+        "top": 1055.8243713378906,
+        "left": 812.893310546875
+      },
+      "fcn_assertnewlyclonedflowaddedinmyautomationalongwithallthedetailsconversationfields_1707220751426_0": {
+        "top": 1112.8360900878906,
+        "left": 812.893310546875
+      },
+      "fcn_sendincomingmessagewaguidedauto_1707220777964_0": {
+        "top": 1201.0238952636719,
+        "left": 812.893310546875
+      },
+      "fcn_goconversedeskandassertmessageandassertbotoutgoingwaguidedauto_1707220777964_0": {
+        "top": 1274.2309265136719,
+        "left": 813.8958740234375
+      },
+      "fcn_navigateusecasespage_1707220777964_0": {
+        "top": 1353.4341735839844,
+        "left": 813.8958740234375
+      },
+      "fcn_selectstudentinquiriesassistanceflow_1707220864149_0": {
+        "top": 1406.4548034667969,
+        "left": 812.893310546875
+      },
+      "fcn_getautomationnameandautomationtype_1707220864149_0": {
+        "top": 1472.3354187011719,
+        "left": 813.8958740234375
+      },
+      "fcn_asserttheaddedworkflowimage_1707220864149_0": {
+        "top": 1542.4576110839844,
+        "left": 810.88818359375
+      },
+      "fcn_clickongetthisautomation_1707220864149_0": {
+        "top": 1606.4486999511719,
+        "left": 812.893310546875
+      },
+      "fcn_selectintegrationtypecrmobjectphonefieldandsenderidconversationfieldswaguidedauto_1707220892620_0": {
+        "top": 1666.4488220214844,
+        "left": 813.8958740234375
+      },
+      "fcn_saveandactivatetheflow_1707220892620_0": {
+        "top": 1758.6662292480469,
+        "left": 813.8958740234375
+      },
+      "fcn_assertaddedwrokflowandsettingsforwaguidedautosenderidconversationfields_1707220892620_0": {
+        "top": 1820.6714782714844,
+        "left": 813.8958740234375
+      },
+      "fcn_clickonbackandgotomyautomation_1707220901290_0": {
+        "top": 1922.0083923339844,
+        "left": 809.8856201171875
+      },
+      "fcn_assertnewlyclonedflowaddedinmyautomationalongwithallthedetailsconversationfields_1707220912345_0": {
+        "top": 1992.9596862792969,
+        "left": 810.88818359375
+      },
+      "fcn_sendincomingmessagewaguidedauto_1707220929585_0": {
+        "top": 2090.189910888672,
+        "left": 813.8958740234375
+      },
+      "fcn_goconversedeskandassertmessageandassertbotoutgoingwaguidedauto_1707220929585_0": {
+        "top": 2165.3057556152344,
+        "left": 810.88818359375
+      },
+      "fcn_createguidedflowforsmsforsalesforce_1707278759637_0": {
+        "top": 247.86674308776855,
+        "left": 1716.8858642578125
+      },
+      "fcn_logintosf_guidedauto_1707278774049_0": {
+        "top": 315.9645462036133,
+        "left": 1720.8961486816406
+      },
+      "fcn_navigatetosmsmagicconverse_1707278794924_0": {
+        "top": 381.0931854248047,
+        "left": 1720.8961486816406
+      },
+      "fcn_navigatetosfconversedesk_1707278801799_0": {
+        "top": 440.0714416503906,
+        "left": 1720.8961486816406
+      },
+      "fcn_logintoportalusingsf_guidedautocred_1707278808869_0": {
+        "top": 499.0689697265625,
+        "left": 1720.8961486816406
+      },
+      "fcn_getaccountid_1707278815635_0": {
+        "top": 564.2361755371094,
+        "left": 1720.8961486816406
+      },
+      "fcn_navigateusecasespage_1707278822636_0": {
+        "top": 629.3262634277344,
+        "left": 1720.8961486816406
+      },
+      "fcn_selectpatientinquiryassistanceflow_1707278836534_0": {
+        "top": 688.3623352050781,
+        "left": 1720.8961486816406
+      },
+      "fcn_getautomationnameandautomationtype_1707278836534_0": {
+        "top": 744.3328552246094,
+        "left": 1720.8961486816406
+      },
+      "fcn_asserttheaddedworkflowimage_1707278836534_0": {
+        "top": 817.3664245605469,
+        "left": 1720.8961486816406
+      },
+      "fcn_clickongetthisautomation_1707278836534_0": {
+        "top": 878.3305358886719,
+        "left": 1720.8961486816406
+      },
+      "fcn_selectintegrationtypecrmobjectphonefieldandsenderidconversationfieldssmsguidedautosf_1707278853724_0": {
+        "top": 937.3473205566406,
+        "left": 1720.8961486816406
+      },
+      "fcn_saveandactivatetheflow_1707278853724_0": {
+        "top": 1025.4773254394531,
+        "left": 1720.8961486816406
+      },
+      "fcn_assertselectedintegrationtypecrmobjectphonefieldandsenderidafteractivatingtheflowsmsguidedautosfconversationfields_1707278853724_0": {
+        "top": 1079.9825134277344,
+        "left": 1720.8961486816406
+      },
+      "fcn_clickonbackandgotomyautomation_1707278882245_0": {
+        "top": 1193.2925109863281,
+        "left": 1720.8961486816406
+      },
+      "fcn_assertnewlyclonedflowaddedinmyautomationalongwithallthedetailsconversationfields_1707278882245_0": {
+        "top": 1249.6100769042969,
+        "left": 1720.8961486816406
+      },
+      "fcn_sendincomingmessagesmsguidedautosf_1707278882245_0": {
+        "top": 1346.2812194824219,
+        "left": 1720.8961486816406
+      },
+      "fcn_goconversedeskandassertmessageandassertbotoutgoingsmsguidedautosf_1707278882245_0": {
+        "top": 1426.4098815917969,
+        "left": 1720.8961486816406
+      }
+    }
+  },
+  "enabled": true,
+  "parentId": ""
+}

@@ -1,0 +1,60 @@
+{
+  "modifiedOn": "2024-07-10T08:23:02.261Z",
+  "name": "Select the third Operator $segmentui",
+  "id": "58240",
+  "type": 3,
+  "createdOn": "2024-07-10T08:00:49.619Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Select the third Operator $segmentui",
+    "parameters": [
+      {
+        "parameterId": "segmentui_",
+        "entityTypeId": "segmentui",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div(\"Select operator\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div($segmentui.operator2, _near(_div(\"Select operator\")))"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_div($segmentui.operator2)"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$segmentui.operator2"
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

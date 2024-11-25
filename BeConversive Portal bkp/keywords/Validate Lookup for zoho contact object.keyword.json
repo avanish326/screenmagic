@@ -1,0 +1,69 @@
+{
+  "modifiedOn": "2024-08-01T04:22:39.790Z",
+  "name": "Validate Lookup for zoho contact object",
+  "id": "58605",
+  "type": 3,
+  "createdOn": "2024-08-01T04:22:26.413Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Validate Lookup for zoho contact object",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"Converse Desk\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"Sent Messages\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_textbox(1)"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "$zohocontact"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"contacts\", _in(_div(\"msg-list read-list\")))"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Contains",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"contacts\""
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

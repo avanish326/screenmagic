@@ -1,0 +1,127 @@
+{
+  "modifiedOn": "2024-07-19T04:43:15.341Z",
+  "name": "Verify the deatils in Flow insights for cta Schedule an appt with my advisor and cta no $basicinfo $studentnonweb",
+  "id": "58433",
+  "type": 3,
+  "createdOn": "2024-07-19T04:07:25.623Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Verify the deatils in Flow insights for cta Schedule an appt with my advisor and cta no $basicinfo $studentnonweb",
+    "parameters": [
+      {
+        "parameterId": "basicinfo_",
+        "entityTypeId": "basicinfo",
+        "suffix": ""
+      },
+      {
+        "parameterId": "studentnonweb_",
+        "entityTypeId": "studentnonweb",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "if($studentnonweb.firstCTA\u003d\u003d2)\n{\n   $ctaTypeOfService\u003d\u0027Enrollment Questions\u0027;\n}\nelse if($studentnonweb.firstCTA\u003d\u003d1)\n{\n    $ctaTypeOfService\u003d\u0027Schedule an appt with an Advisor\u0027;\n}\nelse if($studentnonweb.firstCTA\u003d\u003d3)\n{\n    $ctaTypeOfService\u003d\u0027Explore curriculum options\u0027;\n}\nelse if($studentnonweb.firstCTA\u003d\u003d4)\n{\n    $ctaTypeOfService\u003d\u0027Campus services\u0027;\n}\nelse\n{\n     $ctaTypeOfService\u003d\u0027Other\u0027;\n}"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "if($studentnonweb.advisor\u003d\u003d1)\n{\n   $ctaAdvisor\u003d\u0027Jhon\u0027;\n}\nelse if($studentnonweb.advisor\u003d\u003d2)\n{\n     $ctaAdvisor\u003d\u0027Henry\u0027;\n}\nelse if($studentnonweb.advisor\u003d\u003d3)\n{\n     $ctaAdvisor\u003d\u0027Harry\u0027;\n}\nelse\n{\n       $ctaAdvisor\u003d\u0027Ferguson\u0027;\n}"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "if($studentnonweb.ctaYesNo\u003d\u003d1)\n{\n   $ctaFurtherHelpRequired\u003d\u0027Yes\u0027;\n}\nelse\n{\n     $ctaFurtherHelpRequired\u003d\u0027No\u0027;\n}"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_cell(0, _under(_tableHeader(\"Mobile Number\")))"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "parameterId": "basicinfo_",
+          "attributeId": "attr_31714135309373"
+        },
+        "visibleCheck": false
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_cell(0, _under(_tableHeader(\"Flow Initiation\")))"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"Start\""
+        }
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "_assertEqual($basicinfo.firstName,_getAttribute(_span(1,_under(_tableHeader(\"First Name\"))),\"aria-label\"));"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "_assertEqual($basicinfo.lastName,_getAttribute(_span(1,_under(_tableHeader(\"Last Name\"))),\"aria-label\"));"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "_assertEqual($basicinfo.email,_getAttribute(_span(1,_under(_tableHeader(\"Email Id\"))),\"aria-label\"));"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "_assertEqual($ctaTypeOfService,_getAttribute(_span(1,_under(_tableHeader(\"Type Of Service\"))),\"aria-label\"));"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_cell(0, _under(_tableHeader(\"Advisor Name\")))"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$ctaAdvisor"
+        }
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_cell(0, _under(_tableHeader(\"Further Help Required\")))"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$ctaFurtherHelpRequired"
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

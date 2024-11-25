@@ -1,0 +1,80 @@
+{
+  "modifiedOn": "2024-05-28T16:15:59.332Z",
+  "name": "Delete campaign",
+  "id": "52569",
+  "type": 3,
+  "createdOn": "2024-05-28T16:04:56.504Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Delete campaign",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_svg_path(16)"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"Campaigns\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "10000"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "_isVisible(_span(\"Filters\"))"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "$status \u003d _collectAttributes(\"_cell\", \"/.*/\", \"sahiText\", _under(_tableHeader(\"STATUS\")), _in(_div(\"overflow-x-auto\")));\n\nfor($i\u003d0; $i\u003c$status.length; $i++){\nif($status[$i]\u003d\u003d\"Draft\"){\n_click(_submit(0, _near(_div($status[$i]))));\n}\n}"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_listItem(\"Delete\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_submit(\"Delete\")"
+          }
+        ],
+        "stepType": "Action"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

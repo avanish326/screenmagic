@@ -1,0 +1,71 @@
+{
+  "modifiedOn": "2024-09-18T11:37:52.160584573Z",
+  "name": "login again to $beconversivesingup",
+  "id": "-1",
+  "type": 3,
+  "createdOn": "2024-02-06T21:49:55Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "login again to $beconversivesingup",
+    "parameters": [
+      {
+        "parameterId": "beconversivesingup_",
+        "entityTypeId": "beconversivesingup",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_launchNewBrowser",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "\"https://qa-app.beconversive.com/\""
+          },
+          {
+            "paramMode": "code",
+            "customValue": "\"edge\""
+          }
+        ],
+        "stepType": "Store",
+        "stepCategory": "inbuilt",
+        "secondaryParam": {
+          "paramMode": "code",
+          "customValue": "$newBrowser"
+        }
+      },
+      {
+        "commented": false,
+        "action": "_selectBrowser",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "$newBrowser"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "_setXHRReadyStatesToWaitFor(\"2,3\");"
+      },
+      {
+        "commented": false,
+        "action": "_navigateTo",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "$beconversiveurl"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

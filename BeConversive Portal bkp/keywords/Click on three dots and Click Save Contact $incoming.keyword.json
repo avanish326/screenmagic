@@ -1,0 +1,56 @@
+{
+  "modifiedOn": "2024-08-14T13:14:02.438Z",
+  "name": "Click on three dots and Click Save Contact $incoming",
+  "id": "58811",
+  "type": 3,
+  "createdOn": "2024-08-14T10:20:39.026Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Click on three dots and Click Save Contact $incoming",
+    "parameters": [
+      {
+        "parameterId": "incoming_",
+        "entityTypeId": "incoming",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"more_vert\", _rightOf(_span($incoming.source)))"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link(\"Save Contact\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_isVisible",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_submit(\"Add\")"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Is_True"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

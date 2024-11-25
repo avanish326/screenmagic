@@ -1,0 +1,63 @@
+{
+  "modifiedOn": "2024-03-05T07:26:33.589Z",
+  "name": "Validate Whatsapp Template",
+  "id": "43930",
+  "type": 3,
+  "createdOn": "2024-03-05T07:22:28.187Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Validate Whatsapp Template",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_cell(1, _near(_tableHeader(\"TEMPLATE TEXT\")))"
+          }
+        ],
+        "stepType": "Store",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "$templateFromTemplateList"
+        }
+      },
+      {
+        "commented": false,
+        "action": "_areEqual",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "$templateFromTemplateList"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "$enteredTemplate"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Is_True"
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_cell(3, _near(_tableHeader(\"CHANNEL\")))"
+          }
+        ],
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "isCustomParameter": true,
+          "customValue": "\"WhatsApp\""
+        }
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

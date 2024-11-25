@@ -1,0 +1,161 @@
+{
+  "modifiedOn": "2024-08-26T09:37:25.650Z",
+  "name": "Send Incoming message from SMS in SaaS $basicinfo $agent",
+  "id": "45466",
+  "type": 3,
+  "createdOn": "2024-04-26T13:30:59.678Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Send Incoming message from SMS in SaaS $basicinfo $agent",
+    "parameters": [
+      {
+        "parameterId": "basicinfo_",
+        "entityTypeId": "basicinfo",
+        "suffix": ""
+      },
+      {
+        "parameterId": "agent_",
+        "entityTypeId": "agent",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": true,
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "POST"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "$incomingSMSURLIntelli"
+          }
+        ],
+        "stepType": "REST",
+        "isRawScript": true,
+        "rawScript": "var $request_6vVgHzLaYs \u003d new RESTRequest();\r\n$request_6vVgHzLaYs.setURL($incomingSMSURLIntelli);\r\n$request_6vVgHzLaYs.addToQueryString(\"Message\", $agent.visitorMessage);\r\n$request_6vVgHzLaYs.addToQueryString(\"OriginatorAddress\", $basicinfo.source);\r\n$request_6vVgHzLaYs.addToQueryString(\"DestinationAddress\", $SmsSenderIDGPT1);\r\nvar $response_6vVgHzLaYs \u003d $request_6vVgHzLaYs.submit(\"POST\");\r\nvar responseBody \u003d JSON.parse($response_6vVgHzLaYs.getBodyAsString());\r\n\t var $responseBodyObj_6vVgHzLaYs \u003d $response_6vVgHzLaYs.getBodyAsString();\r\n\tvar responseType \u003d $response_6vVgHzLaYs.getHeader(\"Content-Type\");\r\n\tif (responseType.indexOf(\"json\")!\u003d-1) {\r\n\t\t$responseBodyObj_6vVgHzLaYs \u003d JSON.parse($responseBodyObj_6vVgHzLaYs);\r\n\t}\r\n\telse if (responseType.indexOf(\"xml\")!\u003d-1) {\r\n\t\t$responseBodyObj_6vVgHzLaYs \u003d $responseBodyObj_6vVgHzLaYs.replace(/\u003c\\xml.*?\u003e/g, \u0027\u0027).replace(/\\n/g, \u0027\u0027).replace(/\\r/g, \u0027\u0027);\r\n\t\t$responseBodyObj_6vVgHzLaYs \u003d new XML(undefined);\r\n\t}\r\n\r\n\t//assertions\r\n\r\n",
+        "state": {
+          "contentType": "json",
+          "request": {
+            "method": "POST",
+            "url": "$incomingSMSURLIntelli",
+            "parameters": [
+              [
+                "Message",
+                "$agent.visitorMessage"
+              ],
+              [
+                "OriginatorAddress",
+                "$basicinfo.source"
+              ],
+              [
+                "DestinationAddress",
+                "$SmsSenderIDGPT1"
+              ]
+            ],
+            "headers": [],
+            "authType": "none",
+            "body": "",
+            "bodyParams": [],
+            "isParametrizedBody": false,
+            "resetCookies": false
+          },
+          "assertions": {
+            "status": [],
+            "header": [],
+            "body": []
+          },
+          "variables": {
+            "status": [],
+            "header": [],
+            "body": []
+          },
+          "authInfo": {}
+        }
+      },
+      {
+        "commented": true,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "9000"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "POST"
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "$incomingSMSURLTwilio"
+          }
+        ],
+        "stepType": "REST",
+        "isRawScript": true,
+        "rawScript": "var $request_xJHON10qXj \u003d new RESTRequest();\r\n$request_xJHON10qXj.setURL($incomingSMSURLTwilio);\r\n$request_xJHON10qXj.addToQueryString(\"From\", $basicinfo.source);\r\n$request_xJHON10qXj.addToQueryString(\"To\", $SmsSenderIDGPT1);\r\n$request_xJHON10qXj.addToQueryString(\"Body\", $agent.visitorMessage);\r\n$request_xJHON10qXj.addToQueryString(\"SmsSid\", \"192989892301222\");\r\nvar $response_xJHON10qXj \u003d $request_xJHON10qXj.submit(\"POST\");\r\n\t var $responseBodyObj_xJHON10qXj \u003d $response_xJHON10qXj.getBodyAsString();\r\n\tvar responseType \u003d $response_xJHON10qXj.getHeader(\"Content-Type\");\r\n\tif (responseType.indexOf(\"json\")!\u003d-1) {\r\n\t\t$responseBodyObj_xJHON10qXj \u003d JSON.parse($responseBodyObj_xJHON10qXj);\r\n\t}\r\n\telse if (responseType.indexOf(\"xml\")!\u003d-1) {\r\n\t\t$responseBodyObj_xJHON10qXj \u003d $responseBodyObj_xJHON10qXj.replace(/\u003c\\xml.*?\u003e/g, \u0027\u0027).replace(/\\n/g, \u0027\u0027).replace(/\\r/g, \u0027\u0027);\r\n\t\t$responseBodyObj_xJHON10qXj \u003d new XML(undefined);\r\n\t}\r\n\r\n\t//assertions\r\n\r\n",
+        "state": {
+          "contentType": "html",
+          "request": {
+            "method": "POST",
+            "url": "$incomingSMSURLTwilio",
+            "parameters": [
+              [
+                "From",
+                "$basicinfo.source"
+              ],
+              [
+                "To",
+                "$SmsSenderIDGPT1"
+              ],
+              [
+                "Body",
+                "$agent.visitorMessage"
+              ],
+              [
+                "SmsSid",
+                "192989892301222"
+              ]
+            ],
+            "headers": [],
+            "authType": "none",
+            "body": "",
+            "bodyParams": [],
+            "isParametrizedBody": false,
+            "resetCookies": false
+          },
+          "assertions": {
+            "status": [],
+            "header": [],
+            "body": []
+          },
+          "variables": {
+            "status": [],
+            "header": [],
+            "body": []
+          },
+          "authInfo": {}
+        }
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "5000"
+          }
+        ],
+        "stepType": "Action"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}
