@@ -36,7 +36,8 @@
         "nodeType": "action",
         "branches": [
           "fcn_verifyuserregistered_0"
-        ]
+        ],
+        "validationBoundary": "validationstart"
       },
       "fcn_verifyuserregistered_0": {
         "id": "fcn_verifyuserregistered_0",
@@ -44,7 +45,8 @@
         "nodeType": "state",
         "branches": [
           "fcn_userexiststrue_0"
-        ]
+        ],
+        "validationBoundary": "validationend"
       },
       "fcn_userexiststrue_0": {
         "id": "fcn_userexiststrue_0",
@@ -82,8 +84,8 @@
         "content": "$user._correctPassword?",
         "nodeType": "decision",
         "branches": [
-          "fcn_loginuserpasswordwrong_0",
-          "fcn_loginuser_1"
+          "fcn_loginuser_1",
+          "fcn_loginuserpasswordwrong_0"
         ]
       },
       "fcn_loginuser_1": {
@@ -114,13 +116,19 @@
         "nodeType": "action",
         "branches": [
           "fcn_verifyuserloginfailed_0"
-        ]
+        ],
+        "dataSet": {
+          "dataSetName": "user_details.csv",
+          "dataSetGroupName": "win"
+        },
+        "dataSetBoundary": "datasetstart"
       },
       "fcn_verifyuserloginfailed_0": {
         "id": "fcn_verifyuserloginfailed_0",
         "content": "Verify $user login failed",
         "nodeType": "state",
-        "branches": []
+        "branches": [],
+        "dataSetBoundary": "datasetend"
       },
       "fcn_createuser_0": {
         "id": "fcn_createuser_0",
