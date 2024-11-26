@@ -28,7 +28,8 @@
         "nodeType": "action",
         "branches": [
           "fcn_registeruser_1"
-        ]
+        ],
+        "validationBoundary": "validationstart"
       },
       "fcn_registeruser_1": {
         "id": "fcn_registeruser_1",
@@ -44,7 +45,8 @@
         "nodeType": "state",
         "branches": [
           "fcn_userexiststrue_0"
-        ]
+        ],
+        "validationBoundary": "validationend"
       },
       "fcn_userexiststrue_0": {
         "id": "fcn_userexiststrue_0",
@@ -92,7 +94,12 @@
         "nodeType": "action",
         "branches": [
           "fcn_verifyuserloginsuccessful_0"
-        ]
+        ],
+        "dataSet": {
+          "dataSetName": "user_details.csv",
+          "dataSetGroupName": "default"
+        },
+        "dataSetBoundary": "datasetstart"
       },
       "fcn_verifyuserloginsuccessful_0": {
         "id": "fcn_verifyuserloginsuccessful_0",
@@ -100,7 +107,8 @@
         "nodeType": "state",
         "branches": [
           "fcn_userloggedintrue_1"
-        ]
+        ],
+        "dataSetBoundary": "datasetend"
       },
       "fcn_userloggedintrue_1": {
         "id": "fcn_userloggedintrue_1",
@@ -325,7 +333,23 @@
       "maxMatchingPaths": 3
     },
     "isPrimary": true,
-    "pathNames": [],
+    "pathNames": [
+      {
+        "pathKey": [
+          "fcn_loginuser_0",
+          "fcn_userexists_0",
+          "fcn_user_correctpassword_0",
+          "fcn_loginuserpasswordwrong_0",
+          "fcn_verifyuserloginfailed_0"
+        ],
+        "dependsPathUID": "17326203016771",
+        "dataSet": {
+          "dataSetName": "user_details.csv",
+          "dataSetGroupName": "default"
+        },
+        "isValidationsEnabled": false
+      }
+    ],
     "flowChartUID": "fcUID_registeruser_0",
     "pathExecutionOrder": []
   },
