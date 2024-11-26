@@ -28,8 +28,7 @@
         "nodeType": "action",
         "branches": [
           "fcn_registeruser_1"
-        ],
-        "validationBoundary": "validationstart"
+        ]
       },
       "fcn_registeruser_1": {
         "id": "fcn_registeruser_1",
@@ -37,7 +36,8 @@
         "nodeType": "action",
         "branches": [
           "fcn_verifyuserregistered_0"
-        ]
+        ],
+        "validationBoundary": "validationstart"
       },
       "fcn_verifyuserregistered_0": {
         "id": "fcn_verifyuserregistered_0",
@@ -84,8 +84,8 @@
         "content": "$user._correctPassword?",
         "nodeType": "decision",
         "branches": [
-          "fcn_loginuser_1",
-          "fcn_loginuserpasswordwrong_0"
+          "fcn_loginuserpasswordwrong_0",
+          "fcn_loginuser_1"
         ]
       },
       "fcn_loginuser_1": {
@@ -118,23 +118,17 @@
       },
       "fcn_loginuserpasswordwrong_0": {
         "id": "fcn_loginuserpasswordwrong_0",
-        "content": "Login $user (password\u003d\"wrong\") from win",
+        "content": "Login $user (password\u003d\"wrong\")",
         "nodeType": "action",
         "branches": [
           "fcn_verifyuserloginfailed_0"
-        ],
-        "dataSet": {
-          "dataSetName": "user_details.csv",
-          "dataSetGroupName": "win"
-        },
-        "dataSetBoundary": "datasetstart"
+        ]
       },
       "fcn_verifyuserloginfailed_0": {
         "id": "fcn_verifyuserloginfailed_0",
         "content": "Verify $user login failed",
         "nodeType": "state",
-        "branches": [],
-        "dataSetBoundary": "datasetend"
+        "branches": []
       },
       "fcn_createuser_0": {
         "id": "fcn_createuser_0",
@@ -339,23 +333,7 @@
       "maxMatchingPaths": 3
     },
     "isPrimary": true,
-    "pathNames": [
-      {
-        "pathKey": [
-          "fcn_loginuser_0",
-          "fcn_userexists_0",
-          "fcn_user_correctpassword_0",
-          "fcn_loginuserpasswordwrong_0",
-          "fcn_verifyuserloginfailed_0"
-        ],
-        "dependsPathUID": "17326203016771",
-        "dataSet": {
-          "dataSetName": "user_details.csv",
-          "dataSetGroupName": "default"
-        },
-        "isValidationsEnabled": false
-      }
-    ],
+    "pathNames": [],
     "flowChartUID": "fcUID_registeruser_0",
     "pathExecutionOrder": []
   },
