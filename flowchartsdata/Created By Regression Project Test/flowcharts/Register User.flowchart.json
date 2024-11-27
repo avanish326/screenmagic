@@ -13,7 +13,8 @@
           "fcn_loginuser_0",
           "fcn_createuser_0",
           "fcn_createfirst_0",
-          "fcn_createfirst_2"
+          "fcn_createfirst_2",
+          "fcn_createsecond_0"
         ]
       },
       "fcn_registeruser_0": {
@@ -228,7 +229,7 @@
       },
       "fcn_createfirst_1": {
         "id": "fcn_createfirst_1",
-        "content": "Create $first",
+        "content": "Create $first 1",
         "nodeType": "action",
         "branches": [
           "fcn_assertfirstcreated_0"
@@ -258,7 +259,7 @@
       },
       "fcn_createfirst_3": {
         "id": "fcn_createfirst_3",
-        "content": "Create $first",
+        "content": "Create $first 1",
         "nodeType": "action",
         "branches": [
           "fcn_assertfirstcreated_1"
@@ -275,6 +276,36 @@
       "fcn_firstexiststrue_1": {
         "id": "fcn_firstexiststrue_1",
         "content": "$first.exists\u003dtrue",
+        "nodeType": "state",
+        "branches": []
+      },
+      "fcn_createsecond_0": {
+        "id": "fcn_createsecond_0",
+        "content": "Create second",
+        "nodeType": "pathlabel",
+        "branches": [
+          "fcn_createsecond_1"
+        ]
+      },
+      "fcn_createsecond_1": {
+        "id": "fcn_createsecond_1",
+        "content": "Create $second",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertsecondcreated_0"
+        ]
+      },
+      "fcn_assertsecondcreated_0": {
+        "id": "fcn_assertsecondcreated_0",
+        "content": "Assert $second Created",
+        "nodeType": "state",
+        "branches": [
+          "fcn_secondexiststrue_0"
+        ]
+      },
+      "fcn_secondexiststrue_0": {
+        "id": "fcn_secondexiststrue_0",
+        "content": "$second.exists\u003dtrue",
         "nodeType": "state",
         "branches": []
       }
@@ -415,6 +446,22 @@
       "fcn_firstexiststrue_1": {
         "top": 388.0,
         "left": 2148.0
+      },
+      "fcn_createsecond_0": {
+        "top": 208.0,
+        "left": 2428.0
+      },
+      "fcn_createsecond_1": {
+        "top": 268.0,
+        "left": 2428.0
+      },
+      "fcn_assertsecondcreated_0": {
+        "top": 328.0,
+        "left": 2428.0
+      },
+      "fcn_secondexiststrue_0": {
+        "top": 388.0,
+        "left": 2428.0
       }
     },
     "settings": {
