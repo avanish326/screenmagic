@@ -11,10 +11,7 @@
         "branches": [
           "fcn_registeruser_0",
           "fcn_loginuser_0",
-          "fcn_createuser_0",
-          "fcn_createfirst_0",
-          "fcn_createfirst_2",
-          "fcn_createsecond_0"
+          "fcn_createuser_0"
         ]
       },
       "fcn_registeruser_0": {
@@ -27,7 +24,7 @@
       },
       "fcn_registration_0": {
         "id": "fcn_registration_0",
-        "content": "@registration mac",
+        "content": "@registration",
         "nodeType": "action",
         "branches": [
           "fcn_registeruser_1"
@@ -35,21 +32,19 @@
       },
       "fcn_registeruser_1": {
         "id": "fcn_registeruser_1",
-        "content": "Register $user mac",
+        "content": "Register $user",
         "nodeType": "action",
         "branches": [
           "fcn_verifyuserregistered_0"
-        ],
-        "validationBoundary": "validationstart"
+        ]
       },
       "fcn_verifyuserregistered_0": {
         "id": "fcn_verifyuserregistered_0",
-        "content": "Verify $user registered mac",
+        "content": "Verify $user registered",
         "nodeType": "state",
         "branches": [
           "fcn_userexiststrue_0"
-        ],
-        "validationBoundary": "validationend"
+        ]
       },
       "fcn_userexiststrue_0": {
         "id": "fcn_userexiststrue_0",
@@ -93,25 +88,19 @@
       },
       "fcn_loginuser_1": {
         "id": "fcn_loginuser_1",
-        "content": "Login $user mac",
+        "content": "Login $user",
         "nodeType": "action",
         "branches": [
           "fcn_verifyuserloginsuccessful_0"
-        ],
-        "dataSet": {
-          "dataSetName": "user_details.csv",
-          "dataSetGroupName": "default"
-        },
-        "dataSetBoundary": "datasetstart"
+        ]
       },
       "fcn_verifyuserloginsuccessful_0": {
         "id": "fcn_verifyuserloginsuccessful_0",
-        "content": "Verify $user login successful mac",
+        "content": "Verify $user login successful",
         "nodeType": "state",
         "branches": [
           "fcn_userloggedintrue_1"
-        ],
-        "dataSetBoundary": "datasetend"
+        ]
       },
       "fcn_userloggedintrue_1": {
         "id": "fcn_userloggedintrue_1",
@@ -218,96 +207,6 @@
         "content": "Verify $user details",
         "nodeType": "state",
         "branches": []
-      },
-      "fcn_createfirst_0": {
-        "id": "fcn_createfirst_0",
-        "content": "Create first",
-        "nodeType": "pathlabel",
-        "branches": [
-          "fcn_createfirst_1"
-        ]
-      },
-      "fcn_createfirst_1": {
-        "id": "fcn_createfirst_1",
-        "content": "Create $first 1",
-        "nodeType": "action",
-        "branches": [
-          "fcn_assertfirstcreated_0"
-        ]
-      },
-      "fcn_assertfirstcreated_0": {
-        "id": "fcn_assertfirstcreated_0",
-        "content": "Assert $first Created",
-        "nodeType": "state",
-        "branches": [
-          "fcn_firstexiststrue_0"
-        ]
-      },
-      "fcn_firstexiststrue_0": {
-        "id": "fcn_firstexiststrue_0",
-        "content": "$first.exists\u003dtrue",
-        "nodeType": "state",
-        "branches": []
-      },
-      "fcn_createfirst_2": {
-        "id": "fcn_createfirst_2",
-        "content": "Create first",
-        "nodeType": "pathlabel",
-        "branches": [
-          "fcn_createfirst_3"
-        ]
-      },
-      "fcn_createfirst_3": {
-        "id": "fcn_createfirst_3",
-        "content": "Create $first 1",
-        "nodeType": "action",
-        "branches": [
-          "fcn_assertfirstcreated_1"
-        ]
-      },
-      "fcn_assertfirstcreated_1": {
-        "id": "fcn_assertfirstcreated_1",
-        "content": "Assert $first Created",
-        "nodeType": "state",
-        "branches": [
-          "fcn_firstexiststrue_1"
-        ]
-      },
-      "fcn_firstexiststrue_1": {
-        "id": "fcn_firstexiststrue_1",
-        "content": "$first.exists\u003dtrue",
-        "nodeType": "state",
-        "branches": []
-      },
-      "fcn_createsecond_0": {
-        "id": "fcn_createsecond_0",
-        "content": "Create second",
-        "nodeType": "pathlabel",
-        "branches": [
-          "fcn_createsecond_1"
-        ]
-      },
-      "fcn_createsecond_1": {
-        "id": "fcn_createsecond_1",
-        "content": "Create $second",
-        "nodeType": "action",
-        "branches": [
-          "fcn_assertsecondcreated_0"
-        ]
-      },
-      "fcn_assertsecondcreated_0": {
-        "id": "fcn_assertsecondcreated_0",
-        "content": "Assert $second Created",
-        "nodeType": "state",
-        "branches": [
-          "fcn_secondexiststrue_0"
-        ]
-      },
-      "fcn_secondexiststrue_0": {
-        "id": "fcn_secondexiststrue_0",
-        "content": "$second.exists\u003dtrue",
-        "nodeType": "state",
-        "branches": []
       }
     },
     "positions": {
@@ -336,8 +235,8 @@
         "left": 500.0
       },
       "fcn_userloggedintrue_0": {
-        "top": 523.421875,
-        "left": 501.0
+        "top": 524.43745,
+        "left": 500.0
       },
       "fcn_loginuser_0": {
         "top": 211.0,
@@ -414,54 +313,6 @@
       "fcn_verifyuserdetails_0": {
         "top": 818.734375,
         "left": 1858.0
-      },
-      "fcn_createfirst_0": {
-        "top": 208.0,
-        "left": 1868.0
-      },
-      "fcn_createfirst_1": {
-        "top": 268.0,
-        "left": 1868.0
-      },
-      "fcn_assertfirstcreated_0": {
-        "top": 328.0,
-        "left": 1868.0
-      },
-      "fcn_firstexiststrue_0": {
-        "top": 388.0,
-        "left": 1868.0
-      },
-      "fcn_createfirst_2": {
-        "top": 208.0,
-        "left": 2148.0
-      },
-      "fcn_createfirst_3": {
-        "top": 268.0,
-        "left": 2148.0
-      },
-      "fcn_assertfirstcreated_1": {
-        "top": 328.0,
-        "left": 2148.0
-      },
-      "fcn_firstexiststrue_1": {
-        "top": 388.0,
-        "left": 2148.0
-      },
-      "fcn_createsecond_0": {
-        "top": 208.0,
-        "left": 2428.0
-      },
-      "fcn_createsecond_1": {
-        "top": 268.0,
-        "left": 2428.0
-      },
-      "fcn_assertsecondcreated_0": {
-        "top": 328.0,
-        "left": 2428.0
-      },
-      "fcn_secondexiststrue_0": {
-        "top": 388.0,
-        "left": 2428.0
       }
     },
     "settings": {
@@ -474,7 +325,24 @@
       "maxMatchingPaths": 3
     },
     "isPrimary": true,
-    "pathNames": [],
+    "pathNames": [
+      {
+        "pathKey": [
+          "fcn_registeruser_0",
+          "fcn_registration_0",
+          "fcn_registeruser_1",
+          "fcn_verifyuserregistered_0",
+          "fcn_userexiststrue_0",
+          "fcn_userloggedintrue_0"
+        ],
+        "dependsPathUID": "17327911786830",
+        "dataSet": {
+          "dataSetName": "user_details.csv",
+          "dataSetGroupName": "default"
+        },
+        "isValidationsEnabled": false
+      }
+    ],
     "flowChartUID": "fcUID_registeruser_0",
     "pathExecutionOrder": []
   },
