@@ -24,7 +24,7 @@
       },
       "fcn_registration_0": {
         "id": "fcn_registration_0",
-        "content": "@registration",
+        "content": "@registration mac",
         "nodeType": "action",
         "branches": [
           "fcn_registeruser_1"
@@ -32,19 +32,25 @@
       },
       "fcn_registeruser_1": {
         "id": "fcn_registeruser_1",
-        "content": "Register $user",
+        "content": "Register $user mac",
         "nodeType": "action",
         "branches": [
           "fcn_verifyuserregistered_0"
-        ]
+        ],
+        "dataSet": {
+          "dataSetName": "user_details.csv",
+          "dataSetGroupName": "mac"
+        },
+        "dataSetBoundary": "datasetstart"
       },
       "fcn_verifyuserregistered_0": {
         "id": "fcn_verifyuserregistered_0",
-        "content": "Verify $user registered",
+        "content": "Verify $user registered mac",
         "nodeType": "state",
         "branches": [
           "fcn_userexiststrue_0"
-        ]
+        ],
+        "dataSetBoundary": "datasetend"
       },
       "fcn_userexiststrue_0": {
         "id": "fcn_userexiststrue_0",
@@ -88,7 +94,7 @@
       },
       "fcn_loginuser_1": {
         "id": "fcn_loginuser_1",
-        "content": "Login $user",
+        "content": "Login $user mac",
         "nodeType": "action",
         "branches": [
           "fcn_verifyuserloginsuccessful_0"
@@ -96,7 +102,7 @@
       },
       "fcn_verifyuserloginsuccessful_0": {
         "id": "fcn_verifyuserloginsuccessful_0",
-        "content": "Verify $user login successful",
+        "content": "Verify $user login successful mac",
         "nodeType": "state",
         "branches": [
           "fcn_userloggedintrue_1"
@@ -110,17 +116,19 @@
       },
       "fcn_loginuserpasswordwrong_0": {
         "id": "fcn_loginuserpasswordwrong_0",
-        "content": "Login $user (password\u003d\"wrong\")",
+        "content": "Login $user (password\u003d\"wrong\") mac",
         "nodeType": "action",
         "branches": [
           "fcn_verifyuserloginfailed_0"
-        ]
+        ],
+        "validationBoundary": "validationstart"
       },
       "fcn_verifyuserloginfailed_0": {
         "id": "fcn_verifyuserloginfailed_0",
-        "content": "Verify $user login failed",
+        "content": "Verify $user login failed mac",
         "nodeType": "state",
-        "branches": []
+        "branches": [],
+        "validationBoundary": "validationend"
       },
       "fcn_createuser_0": {
         "id": "fcn_createuser_0",
@@ -267,8 +275,8 @@
         "left": 1060.0
       },
       "fcn_verifyuserloginfailed_0": {
-        "top": 465.43745,
-        "left": 1060.0
+        "top": 465.421875,
+        "left": 1059.0
       },
       "fcn_createuser_0": {
         "top": 208.0,
@@ -337,8 +345,22 @@
         ],
         "dependsPathUID": "17327911786830",
         "dataSet": {
-          "dataSetName": "user_details.csv",
-          "dataSetGroupName": "default"
+          "dataSetName": "-1"
+        },
+        "isValidationsEnabled": false
+      },
+      {
+        "pathKey": [
+          "fcn_loginuser_0",
+          "fcn_userexists_0",
+          "fcn_user_correctpassword_0",
+          "fcn_loginuser_1",
+          "fcn_verifyuserloginsuccessful_0",
+          "fcn_userloggedintrue_1"
+        ],
+        "dependsPathUID": "17327913497552",
+        "dataSet": {
+          "dataSetName": "user_details.csv"
         },
         "isValidationsEnabled": false
       }
