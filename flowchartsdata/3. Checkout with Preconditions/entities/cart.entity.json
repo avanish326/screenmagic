@@ -1,13 +1,11 @@
 {
-  "modifiedOn": "2024-06-19T11:20:33.884Z",
   "name": "cart",
   "id": "-1",
   "type": 1,
-  "createdOn": "2024-05-08T23:26:34Z",
   "content": {
     "default": {
       "attr_01679636987669": {
-        "name": "subtotal",
+        "name": "subtotal_a",
         "accessors": [
           {
             "id": "acc0",
@@ -24,7 +22,8 @@
           "add-timestamp": "false"
         },
         "invalidData": [],
-        "validData": []
+        "validData": [],
+        "specific": []
       },
       "attr_11679636987670": {
         "name": "discount",
@@ -33,6 +32,12 @@
             "id": "acc0",
             "name": "Discount Input",
             "accessor": "_cell(1, _near(_strong(\"/Coupon (.*):/\")))",
+            "messageAccessor": ""
+          },
+          {
+            "id": "acc_cell_discountInput1",
+            "name": "Total Input",
+            "accessor": "_cell(\"Discount Input\")",
             "messageAccessor": ""
           }
         ],
@@ -44,7 +49,8 @@
           "add-timestamp": "false"
         },
         "invalidData": [],
-        "validData": []
+        "validData": [],
+        "specific": []
       },
       "attr_21679636987670": {
         "name": "total",
@@ -58,13 +64,41 @@
         ],
         "type": "text",
         "props": {
-          "prefix": "$180.00",
+          "prefix": "$200.00",
           "min-length": "0",
           "max-length": "0",
+          "include-alphabet": "true",
+          "include-numeric": "false",
+          "include-special": "false",
           "add-timestamp": "false"
         },
-        "invalidData": [],
-        "validData": []
+        "invalidData": [
+          {
+            "value": "Should not be blank",
+            "message": "",
+            "comment": "Should not be blank"
+          },
+          {
+            "value": "",
+            "message": "",
+            "comment": "Should not be blank"
+          }
+        ],
+        "validData": [
+          {
+            "value": "some text",
+            "comment": "Normal text"
+          },
+          {
+            "value": "prefix_sometext",
+            "comment": "Text with prefix"
+          },
+          {
+            "value": "sometext_suffix",
+            "comment": "Text with suffix"
+          }
+        ],
+        "specific": []
       }
     }
   },

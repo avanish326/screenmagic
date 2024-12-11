@@ -1,9 +1,7 @@
 {
-  "modifiedOn": "2024-05-09T04:56:34.332Z",
   "name": "coupon",
-  "id": "45864",
+  "id": "-1",
   "type": 1,
-  "createdOn": "2024-05-09T04:56:34.332Z",
   "content": {
     "default": {
       "attr_01679636456422": {
@@ -23,7 +21,8 @@
           "max-length": "6"
         },
         "invalidData": [],
-        "validData": []
+        "validData": [],
+        "specific": []
       },
       "attr_11679636456422": {
         "name": "code",
@@ -45,7 +44,8 @@
           "include-special": "false"
         },
         "invalidData": [],
-        "validData": []
+        "validData": [],
+        "specific": []
       },
       "attr_21679636456422": {
         "name": "discount",
@@ -63,7 +63,58 @@
           "max": "10"
         },
         "invalidData": [],
-        "validData": []
+        "validData": [],
+        "specific": [
+          {
+            "filterId": "flt_avanish_true_0",
+            "overrides": {
+              "name": "discount",
+              "accessors": [
+                {
+                  "id": "acc0",
+                  "name": "Discount Input",
+                  "accessor": "_textbox(\"discount\")",
+                  "messageAccessor": ""
+                }
+              ],
+              "type": "number",
+              "props": {
+                "prefix": "Pratik"
+              },
+              "invalidData": [
+                {
+                  "value": "",
+                  "message": "",
+                  "comment": "Should not be blank"
+                },
+                {
+                  "value": "abc",
+                  "message": "",
+                  "comment": "Should be a number"
+                },
+                {
+                  "value": "1@3",
+                  "message": "",
+                  "comment": "Should be a number"
+                }
+              ],
+              "validData": [
+                {
+                  "value": "1.234",
+                  "comment": "Floating poing number"
+                },
+                {
+                  "value": "123,456,789",
+                  "comment": "International numeration"
+                },
+                {
+                  "value": "100,100,100.123\t",
+                  "comment": "International numeration floating point"
+                }
+              ]
+            }
+          }
+        ]
       },
       "attr_31679636489183": {
         "name": "status",
@@ -82,32 +133,60 @@
           "max-length": 0
         },
         "invalidData": [],
-        "validData": []
-      }
-    },
-    "specific": [
-      {
-        "combo": {
-          "_isEnabled": true,
-          "_isForProduct": true
-        },
-        "overrides": {}
+        "validData": [],
+        "specific": []
       },
-      {
-        "combo": {
-          "_isEnabled": true,
-          "_isForProduct": false
+      "attr_avanish_4": {
+        "name": "avanish",
+        "accessors": [],
+        "type": "text",
+        "props": {
+          "prefix": "Campaign ",
+          "include-alphabet": "true",
+          "include-numeric": "true",
+          "include-special": "false",
+          "add-timestamp": "false"
         },
-        "overrides": {}
-      },
-      {
-        "combo": {
-          "_isEnabled": false,
-          "_isForProduct": true
-        },
-        "overrides": {}
+        "invalidData": [
+          {
+            "value": "",
+            "message": "",
+            "comment": "Should not be blank"
+          }
+        ],
+        "validData": [
+          {
+            "value": "some text",
+            "comment": "Normal text"
+          },
+          {
+            "value": "prefix_sometext",
+            "comment": "Text with prefix"
+          },
+          {
+            "value": "sometext_suffix",
+            "comment": "Text with suffix"
+          },
+          {
+            "value": "Login to get your AI feedback.",
+            "comment": "Sentence"
+          },
+          {
+            "value": "Ein Hund beißt zwei Männer.",
+            "comment": "German Sentence"
+          },
+          {
+            "value": "Strong formatting using the \u003cstrong\u003e element.",
+            "comment": "Sentence with tag"
+          },
+          {
+            "value": "If multiple texts were received in response to a sent message,\\nonly the first valid text response was kept for analysis.",
+            "comment": "Sentence with new line"
+          }
+        ],
+        "specific": []
       }
-    ]
+    }
   },
   "enabled": false,
   "parentId": ""
