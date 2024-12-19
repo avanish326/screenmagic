@@ -25,7 +25,7 @@
         "content": "Add $product to $cart",
         "nodeType": "action",
         "branches": [
-          "fcn_viewcart_0"
+          "fcn_userexists_0"
         ]
       },
       "fcn_productexists_0": {
@@ -56,15 +56,16 @@
       },
       "fcn_searchproduct_0": {
         "id": "fcn_searchproduct_0",
-        "content": "Search $product",
+        "content": "Search $product from user",
         "nodeType": "action",
         "branches": [
-          "fcn_addproducttocart_0"
+          "fcn_addproducttocart_0",
+          "fcn_ftomremote_0"
         ]
       },
       "fcn_viewcart_0": {
         "id": "fcn_viewcart_0",
-        "content": "View $cart",
+        "content": "View $cart from remote",
         "nodeType": "action",
         "branches": [
           "fcn_path_applycoupon_0"
@@ -139,6 +140,21 @@
         "content": "Verify $cart total",
         "nodeType": "state",
         "branches": []
+      },
+      "fcn_ftomremote_0": {
+        "id": "fcn_ftomremote_0",
+        "content": "ftom remote",
+        "nodeType": "action",
+        "branches": []
+      },
+      "fcn_userexists_0": {
+        "id": "fcn_userexists_0",
+        "content": "$user.exists?",
+        "nodeType": "decision",
+        "branches": [
+          null,
+          "fcn_viewcart_0"
+        ]
       }
     },
     "positions": {
@@ -171,44 +187,52 @@
         "left": 500.0
       },
       "fcn_viewcart_0": {
-        "top": 659.1666717529297,
+        "top": 719.1666717529297,
         "left": 500.0
       },
       "fcn_path_applycoupon_0": {
-        "top": 756.3333282470703,
+        "top": 816.3333282470703,
         "left": 500.0
       },
       "fcn_verifycarttotal_0": {
-        "top": 837.1666717529297,
+        "top": 897.1666717529297,
         "left": 947.0
       },
       "fcn_applycoupon_0": {
-        "top": 861.1666717529297,
+        "top": 921.1666717529297,
         "left": 500.0
       },
       "fcn_couponexists_0": {
-        "top": 951.3333282470703,
+        "top": 1011.3333282470703,
         "left": 500.0
       },
       "fcn_verifycouponnotapplied_0": {
-        "top": 1449.5,
-        "left": 1071.0
+        "top": 1509.5,
+        "left": 1070.0
       },
       "fcn_couponisenabled_0": {
-        "top": 1016.5,
+        "top": 1076.5,
         "left": 500.0
       },
       "fcn_coupon_isbyproduct_0": {
-        "top": 1102.6666870117188,
+        "top": 1162.6666870117188,
         "left": 500.0
       },
       "fcn_verifycouponapplied_0": {
-        "top": 1441.5,
+        "top": 1501.5,
         "left": 500.0
       },
       "fcn_couponproductproduct_0": {
-        "top": 1229.8333129882812,
+        "top": 1289.8333129882812,
         "left": 795.0
+      },
+      "fcn_ftomremote_0": {
+        "top": 575.0,
+        "left": 780.0
+      },
+      "fcn_userexists_0": {
+        "top": 640.1562,
+        "left": 500.0
       }
     },
     "settings": {
@@ -230,6 +254,7 @@
           "fcn_productexists_0",
           "fcn_searchproduct_0",
           "fcn_addproducttocart_0",
+          "fcn_userexists_0",
           "fcn_viewcart_0",
           "fcn_path_applycoupon_0",
           "fcn_verifycarttotal_0",
@@ -254,6 +279,7 @@
           "fcn_productexists_0",
           "fcn_searchproduct_0",
           "fcn_addproducttocart_0",
+          "fcn_userexists_0",
           "fcn_viewcart_0",
           "fcn_path_applycoupon_0",
           "fcn_verifycarttotal_0",
@@ -278,6 +304,7 @@
           "fcn_productexists_0",
           "fcn_searchproduct_0",
           "fcn_addproducttocart_0",
+          "fcn_userexists_0",
           "fcn_viewcart_0",
           "fcn_path_applycoupon_0",
           "fcn_applycoupon_0",
@@ -288,7 +315,7 @@
         "dependsPathUID": "17339159806191",
         "dataSet": {
           "dataSetName": "Coupon Not Applied.csv",
-          "dataSetGroupName": "Avanish"
+          "dataSetGroupName": "remote"
         },
         "isValidationsEnabled": true
       },
@@ -300,6 +327,7 @@
           "fcn_productexists_0",
           "fcn_searchproduct_0",
           "fcn_addproducttocart_0",
+          "fcn_userexists_0",
           "fcn_viewcart_0",
           "fcn_path_applycoupon_0",
           "fcn_applycoupon_0",
@@ -323,6 +351,7 @@
           "fcn_productexists_0",
           "fcn_searchproduct_0",
           "fcn_addproducttocart_0",
+          "fcn_userexists_0",
           "fcn_viewcart_0",
           "fcn_path_applycoupon_0",
           "fcn_applycoupon_0",
@@ -344,6 +373,7 @@
           "fcn_productexists_0",
           "fcn_searchproduct_0",
           "fcn_addproducttocart_0",
+          "fcn_userexists_0",
           "fcn_viewcart_0",
           "fcn_path_applycoupon_0",
           "fcn_verifycarttotal_0",
@@ -365,6 +395,7 @@
           "fcn_productexists_0",
           "fcn_searchproduct_0",
           "fcn_addproducttocart_0",
+          "fcn_userexists_0",
           "fcn_viewcart_0",
           "fcn_path_applycoupon_0",
           "fcn_verifycarttotal_0",
@@ -388,6 +419,7 @@
           "fcn_productexists_0",
           "fcn_searchproduct_0",
           "fcn_addproducttocart_0",
+          "fcn_userexists_0",
           "fcn_viewcart_0",
           "fcn_path_applycoupon_0",
           "fcn_verifycarttotal_0"
@@ -406,6 +438,7 @@
           "fcn_productexists_0",
           "fcn_searchproduct_0",
           "fcn_addproducttocart_0",
+          "fcn_userexists_0",
           "fcn_viewcart_0",
           "fcn_path_applycoupon_0",
           "fcn_applycoupon_0",
@@ -429,6 +462,7 @@
           "fcn_productexists_0",
           "fcn_searchproduct_0",
           "fcn_addproducttocart_0",
+          "fcn_userexists_0",
           "fcn_viewcart_0",
           "fcn_path_applycoupon_0",
           "fcn_verifycarttotal_0",
@@ -451,6 +485,7 @@
           "fcn_productexists_0",
           "fcn_searchproduct_0",
           "fcn_addproducttocart_0",
+          "fcn_userexists_0",
           "fcn_viewcart_0",
           "fcn_path_applycoupon_0",
           "fcn_applycoupon_0",
