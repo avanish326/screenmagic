@@ -9,7 +9,8 @@
         "content": "Start",
         "nodeType": "start",
         "branches": [
-          "fcn_checkout_0"
+          "fcn_checkout_0",
+          "fcn_createactual_0"
         ]
       },
       "fcn_checkout_0": {
@@ -26,7 +27,11 @@
         "nodeType": "action",
         "branches": [
           "fcn_userexists_0"
-        ]
+        ],
+        "dataSet": {
+          "dataSetName": "Coupon Not Applied.csv",
+          "dataSetGroupName": "Data"
+        }
       },
       "fcn_productexists_0": {
         "id": "fcn_productexists_0",
@@ -43,7 +48,8 @@
         "nodeType": "action",
         "branches": [
           "fcn_couponexists_0"
-        ]
+        ],
+        "validationBoundary": "validationend"
       },
       "fcn_couponexists_0": {
         "id": "fcn_couponexists_0",
@@ -61,7 +67,12 @@
         "branches": [
           "fcn_addproducttocart_0",
           "fcn_ftomremote_0"
-        ]
+        ],
+        "dataSet": {
+          "dataSetName": "Invalid Login.csv",
+          "dataSetGroupName": "Data"
+        },
+        "dataSetBoundary": "datasetstart"
       },
       "fcn_viewcart_0": {
         "id": "fcn_viewcart_0",
@@ -155,6 +166,36 @@
           null,
           "fcn_viewcart_0"
         ]
+      },
+      "fcn_createactual_0": {
+        "id": "fcn_createactual_0",
+        "content": "Create actual",
+        "nodeType": "pathlabel",
+        "branches": [
+          "fcn_createactual_1"
+        ]
+      },
+      "fcn_createactual_1": {
+        "id": "fcn_createactual_1",
+        "content": "Create $actual",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertactualcreated_0"
+        ]
+      },
+      "fcn_assertactualcreated_0": {
+        "id": "fcn_assertactualcreated_0",
+        "content": "Assert $actual Created",
+        "nodeType": "state",
+        "branches": [
+          "fcn_actualexiststrue_0"
+        ]
+      },
+      "fcn_actualexiststrue_0": {
+        "id": "fcn_actualexiststrue_0",
+        "content": "$actual.exists\u003dtrue",
+        "nodeType": "state",
+        "branches": []
       }
     },
     "positions": {
@@ -233,6 +274,22 @@
       "fcn_userexists_0": {
         "top": 640.1562,
         "left": 500.0
+      },
+      "fcn_createactual_0": {
+        "top": 212.0,
+        "left": 780.0
+      },
+      "fcn_createactual_1": {
+        "top": 272.0,
+        "left": 780.0
+      },
+      "fcn_assertactualcreated_0": {
+        "top": 332.0,
+        "left": 780.0
+      },
+      "fcn_actualexiststrue_0": {
+        "top": 392.0,
+        "left": 780.0
       }
     },
     "settings": {
