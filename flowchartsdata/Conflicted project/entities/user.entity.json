@@ -12,6 +12,12 @@
             "name": "Firstname Input",
             "accessor": "_textbox(\"firstname\")",
             "messageAccessor": ""
+          },
+          {
+            "id": "acc_div_alertAlertDangerAlertDismissible2",
+            "name": "Alert Alert Danger Alert Dismissible Input",
+            "accessor": "_div(\"alert alert-danger alert-dismissible\")",
+            "messageAccessor": ""
           }
         ],
         "type": "text",
@@ -20,7 +26,18 @@
           "min-length": "0",
           "max-length": "0"
         },
-        "invalidData": [],
+        "invalidData": [
+          {
+            "value": "",
+            "message": "",
+            "comment": "Should not be blank"
+          },
+          {
+            "value": "thisisalongtextwithmorethan32characters",
+            "message": "",
+            "comment": "Length is too long"
+          }
+        ],
         "validData": []
       },
       "attr_lastname_1": {
@@ -60,7 +77,7 @@
           "domains": [
             "a.com"
           ],
-          "add-timestamp": "false"
+          "add-timestamp": "true"
         },
         "invalidData": [],
         "validData": []
@@ -90,6 +107,12 @@
             "id": "acc_password_password",
             "name": "Password Input",
             "accessor": "_password(\"password\")",
+            "messageAccessor": ""
+          },
+          {
+            "id": "acc_password_confirm1",
+            "name": "Confirm Input",
+            "accessor": "_password(\"confirm\")",
             "messageAccessor": ""
           }
         ],

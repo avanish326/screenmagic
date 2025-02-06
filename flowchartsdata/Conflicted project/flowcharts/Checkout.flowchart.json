@@ -9,7 +9,8 @@
         "content": "Start",
         "nodeType": "start",
         "branches": [
-          "fcn_checkout_0"
+          "fcn_checkout_0",
+          "fcn_createactual_0"
         ]
       },
       "fcn_checkout_0": {
@@ -54,8 +55,8 @@
           "fcn_ftomremote_0"
         ],
         "dataSet": {
-          "dataSetName": "Invalid Login.csv",
-          "dataSetGroupName": "Data"
+          "dataSetName": "data1.csv",
+          "dataSetGroupName": "default"
         },
         "dataSetBoundary": "datasetstart"
       },
@@ -67,8 +68,8 @@
           "fcn_userexists_0"
         ],
         "dataSet": {
-          "dataSetName": "Coupon Not Applied.csv",
-          "dataSetGroupName": "Data"
+          "dataSetName": "path.csv",
+          "dataSetGroupName": "default"
         }
       },
       "fcn_userexists_0": {
@@ -86,7 +87,11 @@
         "nodeType": "action",
         "branches": [
           "fcn_path_applycoupon_0"
-        ]
+        ],
+        "dataSet": {
+          "dataSetName": "data.csv",
+          "dataSetGroupName": "default"
+        }
       },
       "fcn_path_applycoupon_0": {
         "id": "fcn_path_applycoupon_0",
@@ -149,8 +154,8 @@
         "content": "$coupon._isForProduct?",
         "nodeType": "decision",
         "branches": [
-          "fcn_verifycoupondiscountappliedtocart_0",
-          "fcn_couponproductproduct_0"
+          "fcn_couponproductproduct_0",
+          "fcn_verifycoupondiscountappliedtocart_0"
         ]
       },
       "fcn_verifycoupondiscountappliedtocart_0": {
@@ -172,6 +177,36 @@
         "id": "fcn_ftomremote_0",
         "content": "ftom remote",
         "nodeType": "action",
+        "branches": []
+      },
+      "fcn_createactual_0": {
+        "id": "fcn_createactual_0",
+        "content": "Create actual",
+        "nodeType": "pathlabel",
+        "branches": [
+          "fcn_createactual_1"
+        ]
+      },
+      "fcn_createactual_1": {
+        "id": "fcn_createactual_1",
+        "content": "Create $actual",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertactualcreated_0"
+        ]
+      },
+      "fcn_assertactualcreated_0": {
+        "id": "fcn_assertactualcreated_0",
+        "content": "Assert $actual Created",
+        "nodeType": "state",
+        "branches": [
+          "fcn_actualexiststrue_0"
+        ]
+      },
+      "fcn_actualexiststrue_0": {
+        "id": "fcn_actualexiststrue_0",
+        "content": "$actual.exists\u003dtrue",
+        "nodeType": "state",
         "branches": []
       }
     },
@@ -254,6 +289,22 @@
       },
       "fcn_ftomremote_0": {
         "top": 574.0,
+        "left": 780.0
+      },
+      "fcn_createactual_0": {
+        "top": 211.0,
+        "left": 780.0
+      },
+      "fcn_createactual_1": {
+        "top": 271.0,
+        "left": 780.0
+      },
+      "fcn_assertactualcreated_0": {
+        "top": 331.0,
+        "left": 780.0
+      },
+      "fcn_actualexiststrue_0": {
+        "top": 391.0,
         "left": 780.0
       }
     },
@@ -387,6 +438,16 @@
           "fcn_ftomremote_0"
         ],
         "dependsPathUID": "17388303449196",
+        "isValidationsEnabled": false
+      },
+      {
+        "pathKey": [
+          "fcn_createactual_0",
+          "fcn_createactual_1",
+          "fcn_assertactualcreated_0",
+          "fcn_actualexiststrue_0"
+        ],
+        "dependsPathUID": "17388356212527",
         "isValidationsEnabled": false
       }
     ],
