@@ -1,0 +1,321 @@
+{
+  "name": "Verify Add Or Delete Row UI element for Entity",
+  "id": "-1",
+  "type": 3,
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Verify Add Or Delete Row UI element for Entity",
+    "specific": [],
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_div(\"$users.exists\u003dtrue\")"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_submit(\"Automate\")"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_div(\"Entities\")"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "5000"
+          },
+          {
+            "paramMode": "code",
+            "customValue": "_isVisible(_submit(\"Save Entity\"))"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_count",
+        "stepParameters": [
+          {
+            "paramMode": "string",
+            "customValue": "_textbox"
+          },
+          {
+            "paramMode": "string",
+            "customValue": "accessorName"
+          },
+          {
+            "paramMode": "code",
+            "customValue": "_in(_table(\"accessorTable\"))"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "paramMode": "code",
+          "customValue": "2"
+        },
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_expectConfirm",
+        "stepParameters": [
+          {
+            "paramMode": "string",
+            "customValue": "Accessor Firstname Input cannot be deleted as it is used at multiple places."
+          },
+          {
+            "paramMode": "code",
+            "customValue": "false"
+          },
+          {
+            "paramMode": "code",
+            "customValue": "true"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_image(\"trashbin_black_icon.svg\", _in(_table(\"accessorTable\")))"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_count",
+        "stepParameters": [
+          {
+            "paramMode": "string",
+            "customValue": "_textbox"
+          },
+          {
+            "paramMode": "string",
+            "customValue": "accessorName"
+          },
+          {
+            "paramMode": "code",
+            "customValue": "_in(_table(\"accessorTable\"))"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "paramMode": "code",
+          "customValue": "2"
+        },
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_submit(\"Add Row\")"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_submit(\"Add Row\")"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_submit(\"Add Row\")"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_count",
+        "stepParameters": [
+          {
+            "paramMode": "string",
+            "customValue": "_textbox"
+          },
+          {
+            "paramMode": "string",
+            "customValue": "accessorName"
+          },
+          {
+            "paramMode": "code",
+            "customValue": "_in(_table(\"accessorTable\"))"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "paramMode": "code",
+          "customValue": "5"
+        },
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_expectAlert",
+        "stepParameters": [
+          {
+            "paramMode": "string",
+            "customValue": "Are you sure you want to remove this row?"
+          },
+          {
+            "paramMode": "code",
+            "customValue": "true"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_image(\"trashbin_black_icon.svg[1]\", _in(_table(\"accessorTable\")))"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_expectAlert",
+        "stepParameters": [
+          {
+            "paramMode": "string",
+            "customValue": "Are you sure you want to remove this row?"
+          },
+          {
+            "paramMode": "code",
+            "customValue": "true"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_image(\"trashbin_black_icon.svg[1]\", _in(_table(\"accessorTable\")))"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_lastConfirm",
+        "stepParameters": [],
+        "stepCategory": "inbuilt",
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "paramMode": "string",
+          "customValue": "Are you sure you want to remove this row?"
+        },
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_count",
+        "stepParameters": [
+          {
+            "paramMode": "string",
+            "customValue": "_textbox"
+          },
+          {
+            "paramMode": "string",
+            "customValue": "accessorName"
+          },
+          {
+            "paramMode": "code",
+            "customValue": "_in(_table(\"accessorTable\"))"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "paramMode": "code",
+          "customValue": "3"
+        },
+        "specific": []
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

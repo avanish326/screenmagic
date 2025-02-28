@@ -1,0 +1,105 @@
+{
+  "modifiedOn": "2024-06-12T11:17:04.126738200Z",
+  "name": "Navigate from @implementation to @quickextract",
+  "id": "-1",
+  "type": 3,
+  "createdOn": "2024-02-18T04:00:19Z",
+  "content": {
+    "isSystemKeyword": true,
+    "title": "Navigate from @implementation to @quickextract",
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "_call(location.reload());\n\nif(!_isVisible(_div(\"$user.exists\u003dtrue\"))) {\n\t_call(location.reload());\n}"
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "5000"
+          },
+          {
+            "paramMode": "code",
+            "customValue": "_exists(_div(\"$user.exists\u003dtrue\"))"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_div(\"$user.exists\u003dtrue\")"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_submit(\"Automate\")"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_span(\"Navigate from @base to @registration\")"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "5000"
+          },
+          {
+            "paramMode": "code",
+            "customValue": "_exists(_span(\"Navigate from @base to @registration\", _in(_div(\"combopath-summary\"))))"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "5000"
+          },
+          {
+            "paramMode": "code",
+            "customValue": "_exists(_cell(\"Navigate To URL\", _in(_div(\"stepContainer\"))))"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

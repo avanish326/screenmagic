@@ -1,0 +1,60 @@
+{
+  "modifiedOn": "2024-06-12T11:28:37.236301200Z",
+  "name": "Verify $flow created",
+  "id": "-1",
+  "type": 3,
+  "createdOn": "2024-02-19T12:11:17Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Verify $flow created",
+    "parameters": [
+      {
+        "parameterId": "flow_",
+        "entityTypeId": "flow",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_exists",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_span(\"User Registration\", _in(_div(\"card  flowChartCard \")))"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Assert",
+        "assertType": "Is_True"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_div(\"OPEN\", _in(_parentNode(_span(\"User Registration\"), \"DIV\", 2)))"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_exists",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_submit(\"Run\")"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Assert",
+        "assertType": "Is_True"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

@@ -1,0 +1,275 @@
+{
+  "name": "Verify Add Or Delete Row UI element for Screen",
+  "id": "-1",
+  "type": 3,
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Verify Add Or Delete Row UI element for Screen",
+    "specific": [],
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_div(\"Screens\")"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "5000"
+          },
+          {
+            "paramMode": "code",
+            "customValue": "_isVisible(_submit(\"Save Screen\"))"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_span(\"@register\")"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_exists",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_bold(\"Screen: @register\")"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Assert",
+        "assertType": "Is_True",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_count",
+        "stepParameters": [
+          {
+            "paramMode": "string",
+            "customValue": "_textbox"
+          },
+          {
+            "paramMode": "string",
+            "customValue": "accName"
+          },
+          {
+            "paramMode": "code",
+            "customValue": "_in(_table(\"accessorsTable\"))"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "paramMode": "code",
+          "customValue": "7"
+        },
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_expectConfirm",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "\"/Are you sure you want to delete accessor/\""
+          },
+          {
+            "paramMode": "code",
+            "customValue": "false"
+          },
+          {
+            "paramMode": "code",
+            "customValue": "true"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_image(\"trashbin_black_icon.svg[1]\", _in(_table(\"accessorsTable\")))"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_count",
+        "stepParameters": [
+          {
+            "paramMode": "string",
+            "customValue": "_textbox"
+          },
+          {
+            "paramMode": "string",
+            "customValue": "accName"
+          },
+          {
+            "paramMode": "code",
+            "customValue": "_in(_table(\"accessorsTable\"))"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "paramMode": "code",
+          "customValue": "7"
+        },
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_submit(\"Add Row\")"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_submit(\"Add Row\")"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_submit(\"Add Row\")"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_count",
+        "stepParameters": [
+          {
+            "paramMode": "string",
+            "customValue": "_textbox"
+          },
+          {
+            "paramMode": "string",
+            "customValue": "accName"
+          },
+          {
+            "paramMode": "code",
+            "customValue": "_in(_table(\"accessorsTable\"))"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "paramMode": "code",
+          "customValue": "10"
+        },
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_image(\"trashbin_black_icon.svg[6]\", _in(_table(\"accessorsTable\")))"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_image(\"trashbin_black_icon.svg[6]\", _in(_table(\"accessorsTable\")))"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_count",
+        "stepParameters": [
+          {
+            "paramMode": "string",
+            "customValue": "_textbox"
+          },
+          {
+            "paramMode": "string",
+            "customValue": "accName"
+          },
+          {
+            "paramMode": "code",
+            "customValue": "_in(_table(\"accessorsTable\"))"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "paramMode": "code",
+          "customValue": "8"
+        },
+        "specific": []
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

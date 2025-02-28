@@ -1,0 +1,693 @@
+{
+  "name": "Verify Action Field Add Step Dialog",
+  "id": "-1",
+  "type": 3,
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Verify Action Field Add Step Dialog",
+    "specific": [],
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_div(\"Keywords\")"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_span(\"Register $users\", _in(_div(\"combopath-summary\")))"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_exists",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_bold(\"Keyword: Register $users\", _in(_div(\"combopath-summary\")))"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Assert",
+        "assertType": "Is_True",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_submit(\"Add Step\")"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_textbox(\"add-step-combobox\")"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "paramMode": "string",
+          "customValue": "Set Value"
+        },
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_exists",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_textbox(\"/autocomplete-input error_border/\")"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Assert",
+        "assertType": "Is_False",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_textbox(\"add-step-combobox\")"
+          },
+          {
+            "paramMode": "code",
+            "customValue": "\"\""
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_div(\"Action\")"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_getAttribute",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_textbox(\"add-step-combobox\")"
+          },
+          {
+            "paramMode": "string",
+            "customValue": "title"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "paramMode": "string",
+          "customValue": "Please select a valid Action from the list."
+        },
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_exists",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_textbox(\"/autocomplete-input error_border/\")"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Assert",
+        "assertType": "Is_True",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_style",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_textbox(\"add-step-combobox\")"
+          },
+          {
+            "paramMode": "string",
+            "customValue": "border"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "paramMode": "string",
+          "customValue": "1px solid rgb(255, 0, 0)"
+        },
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_expectAlert",
+        "stepParameters": [
+          {
+            "paramMode": "string",
+            "customValue": "Please select a valid Action from the list."
+          },
+          {
+            "paramMode": "code",
+            "customValue": "true"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_submit(\"Update\")"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_isVisible",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_div(\"addStepWindow\")"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Assert",
+        "assertType": "Is_True",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_textbox(\"add-step-combobox\")"
+          },
+          {
+            "paramMode": "string",
+            "customValue": "Cli"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_textbox(\"add-step-combobox\")"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "paramMode": "string",
+          "customValue": "Cli"
+        },
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_getAttribute",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_textbox(\"add-step-combobox\")"
+          },
+          {
+            "paramMode": "string",
+            "customValue": "title"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "paramMode": "string",
+          "customValue": "Please select a valid Action from the list."
+        },
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_style",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_textbox(\"add-step-combobox\")"
+          },
+          {
+            "paramMode": "string",
+            "customValue": "border"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "paramMode": "string",
+          "customValue": "1px solid rgb(255, 0, 0)"
+        },
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_expectAlert",
+        "stepParameters": [
+          {
+            "paramMode": "string",
+            "customValue": "Please select a valid Action from the list."
+          },
+          {
+            "paramMode": "code",
+            "customValue": "true"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_submit(\"Update\")"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_isVisible",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_div(\"addStepWindow\")"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Assert",
+        "assertType": "Is_True",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_textbox(\"add-step-combobox\")"
+          },
+          {
+            "paramMode": "string",
+            "customValue": "Set Language"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_getAttribute",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_textbox(\"add-step-combobox\")"
+          },
+          {
+            "paramMode": "string",
+            "customValue": "title"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "paramMode": "code",
+          "customValue": "\"\""
+        },
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_style",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_textbox(\"add-step-combobox\")"
+          },
+          {
+            "paramMode": "string",
+            "customValue": "border"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "paramMode": "string",
+          "customValue": "1px solid rgb(238, 238, 238)"
+        },
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_submit(\"Update\")"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_isVisible",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_div(\"addStepWindow\")"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Assert",
+        "assertType": "Is_False",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_exists",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_row(\"10Set Language\")"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Assert",
+        "assertType": "Is_True",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_check",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_checkbox(\"9\", _in(_row(\"stepTr9\")))"
+          },
+          {
+            "paramMode": "code",
+            "customValue": "true"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_expectConfirm",
+        "stepParameters": [
+          {
+            "paramMode": "string",
+            "customValue": "Are you sure you want to remove these steps?"
+          },
+          {
+            "paramMode": "code",
+            "customValue": "true"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_submit(\"deleteSteps\")"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_doubleClick",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_row(\"stepTr5\")"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_isVisible",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_div(\"addStepWindow\")"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Assert",
+        "assertType": "Is_True",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_textbox(\"add-step-combobox\")"
+          },
+          {
+            "paramMode": "string",
+            "customValue": "Sett"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_getAttribute",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_textbox(\"add-step-combobox\")"
+          },
+          {
+            "paramMode": "string",
+            "customValue": "title"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "paramMode": "string",
+          "customValue": "Please select a valid Action from the list."
+        },
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_style",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_textbox(\"add-step-combobox\")"
+          },
+          {
+            "paramMode": "string",
+            "customValue": "border"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "paramMode": "string",
+          "customValue": "1px solid rgb(255, 0, 0)"
+        },
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_expectAlert",
+        "stepParameters": [
+          {
+            "paramMode": "string",
+            "customValue": "Please select a valid Action from the list."
+          },
+          {
+            "paramMode": "code",
+            "customValue": "true"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_submit(\"Update\")"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_isVisible",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_div(\"addStepWindow\")"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Assert",
+        "assertType": "Is_True",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_textbox(\"add-step-combobox\")"
+          },
+          {
+            "paramMode": "string",
+            "customValue": "Set Password"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_submit(\"Update\")"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_isVisible",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_div(\"addStepWindow\")"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Assert",
+        "assertType": "Is_False",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_submit(\"Save Keyword\")"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

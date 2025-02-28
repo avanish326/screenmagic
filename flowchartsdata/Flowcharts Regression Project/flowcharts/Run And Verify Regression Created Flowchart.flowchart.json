@@ -1,0 +1,110 @@
+{
+  "name": "Run And Verify Regression Created Flowchart",
+  "id": "-1",
+  "type": 0,
+  "content": {
+    "nodesMap": {
+      "fcn_start_0": {
+        "id": "fcn_start_0",
+        "content": "Start",
+        "nodeType": "start",
+        "branches": [
+          "fcn_run_0"
+        ]
+      },
+      "fcn_run_0": {
+        "id": "fcn_run_0",
+        "content": "Run and Verify Regression Project",
+        "nodeType": "pathlabel",
+        "branches": [
+          "fcn_regression_flowchartsexists_0"
+        ]
+      },
+      "fcn_applyrunsetting_1708499163812_0": {
+        "id": "fcn_applyrunsetting_1708499163812_0",
+        "content": "Apply Run Setting",
+        "nodeType": "skip",
+        "branches": [
+          "fcn_runalltypesofplaybackforpath_1708499163812_0"
+        ]
+      },
+      "fcn_runalltypesofplaybackforpath_1708499163812_0": {
+        "id": "fcn_runalltypesofplaybackforpath_1708499163812_0",
+        "content": "Run All Types Of Playback for $path",
+        "nodeType": "action",
+        "branches": [
+          "fcn_logs_1708499286791_0"
+        ]
+      },
+      "fcn_regression_flowchartsexists_0": {
+        "id": "fcn_regression_flowchartsexists_0",
+        "content": "$regression_flowcharts.exists?",
+        "nodeType": "decision",
+        "branches": [
+          null,
+          "fcn_applyrunsetting_1708499163812_0"
+        ]
+      },
+      "fcn_logs_1708499286791_0": {
+        "id": "fcn_logs_1708499286791_0",
+        "content": "@logs",
+        "nodeType": "action",
+        "branches": [
+          "fcn_verifyallplaybackslogsforpath_1708499286791_0"
+        ]
+      },
+      "fcn_verifyallplaybackslogsforpath_1708499286791_0": {
+        "id": "fcn_verifyallplaybackslogsforpath_1708499286791_0",
+        "content": "Verify All Playbacks logs for path run",
+        "nodeType": "action",
+        "branches": []
+      }
+    },
+    "positions": {
+      "fcn_start_0": {
+        "top": 150.0,
+        "left": 500.0
+      },
+      "fcn_run_0": {
+        "top": 211.0,
+        "left": 500.0
+      },
+      "fcn_regression_flowchartsexists_0": {
+        "top": 279.0,
+        "left": 500.0
+      },
+      "fcn_applyrunsetting_1708499163812_0": {
+        "top": 360.0,
+        "left": 500.0
+      },
+      "fcn_runalltypesofplaybackforpath_1708499163812_0": {
+        "top": 447.0,
+        "left": 500.0
+      },
+      "fcn_logs_1708499286791_0": {
+        "top": 526.140625,
+        "left": 498.0
+      },
+      "fcn_verifyallplaybackslogsforpath_1708499286791_0": {
+        "top": 603.140625,
+        "left": 498.0
+      }
+    },
+    "settings": {
+      "maxProceedDepth": 100,
+      "maxProceedsForFirstDepth": 1,
+      "maxProceedsPerDepth": 1,
+      "maxPathRepititionsPerComboPath": 1,
+      "maxProceedsPerPath": 10000,
+      "maxToggles": 2,
+      "maxMatchingPaths": 3
+    },
+    "isPrimary": true,
+    "pathNames": [],
+    "tags": "run,all",
+    "flowChartUID": "fcUID_1708498785867",
+    "pathExecutionOrder": []
+  },
+  "enabled": true,
+  "parentId": ""
+}

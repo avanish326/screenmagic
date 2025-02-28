@@ -1,0 +1,276 @@
+{
+  "name": "Rename Keyword and Path",
+  "id": "-1",
+  "type": 3,
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Rename Keyword and Path",
+    "specific": [],
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_div(\"Keywords\")"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "10000"
+          },
+          {
+            "paramMode": "code",
+            "customValue": "_isVisible(_span(\"Verify $users registered\", _in(_div(\"cbsummary cpath path-exists\"))))"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_span(\"Verify $users registered\", _in(_div(\"treeSection\")))"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_submit(\"renameKeyword\", _in(_div(\"Keyword: Verify $users registered\")))"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_textbox(\"current-artifact-name\", _in(_div(\"editArtifactDialog\")))"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "paramMode": "string",
+          "customValue": "Verify $users registered"
+        },
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_textbox(\"new-artifact-name\", _in(_div(\"editArtifactDialog\")))"
+          },
+          {
+            "paramMode": "string",
+            "customValue": "Verify $users registered successfully"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_collect",
+        "stepParameters": [
+          {
+            "paramMode": "string",
+            "customValue": "_checkbox"
+          },
+          {
+            "paramMode": "string",
+            "customValue": "on"
+          },
+          {
+            "paramMode": "code",
+            "customValue": "_in(_div(\"editArtifactDialog\"))"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Store",
+        "secondaryParam": {
+          "paramMode": "code",
+          "customValue": "$checkboxes"
+        },
+        "specific": []
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "for(var $i\u003d0; $i\u003c$checkboxes.length; $i++) {",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_isChecked",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "$checkboxes[$i]"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Assert",
+        "assertType": "Is_True",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "isRawScript": true,
+        "rawScript": "}",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_isChecked",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_checkbox(\"on\", _in(_row(\"Verify $users registered[1]\")))"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Assert",
+        "assertType": "Is_True",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_isEnabled",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_checkbox(\"on\", _in(_row(\"Verify $users registered[1]\")))"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Assert",
+        "assertType": "Is_False",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_submit(\"Rename\", _in(_div(\"editArtifactDialog\")))"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_exists",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_div(\"editArtifactDialog\")"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Assert",
+        "assertType": "Is_False",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_div(\"Path\")"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_wait",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "10000"
+          },
+          {
+            "paramMode": "code",
+            "customValue": "_isVisible(_div(\"Pre \u0026 Post Conditions\"))"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_expectPrompt",
+        "stepParameters": [
+          {
+            "paramMode": "string",
+            "customValue": "Enter new path name"
+          },
+          {
+            "paramMode": "string",
+            "customValue": "User Registration Renamed"
+          },
+          {
+            "paramMode": "code",
+            "customValue": "true"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_submit(\"/btnEditPathName/\", _rightOf(_cell(\"Path Name\")))"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

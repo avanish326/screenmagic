@@ -1,0 +1,86 @@
+{
+  "modifiedOn": "2024-03-22T07:32:05.019Z",
+  "name": "Create $flow in $project",
+  "id": "-1",
+  "type": 3,
+  "createdOn": "2024-02-19T01:09:22Z",
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Create $flow in $project",
+    "parameters": [
+      {
+        "parameterId": "flow_",
+        "entityTypeId": "flow",
+        "suffix": ""
+      },
+      {
+        "parameterId": "project_",
+        "entityTypeId": "project",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_span(\"Create New\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_expectPrompt",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "\"Enter a name for this flowchart:\""
+          },
+          {
+            "isCustomParameter": true,
+            "customValue": "\"User Registration\""
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_submit(\"Save\")"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_log",
+        "stepParameters": [
+          {
+            "parameterId": "project_",
+            "attributeId": "attr_01711092373156"
+          }
+        ],
+        "stepType": "Action"
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "isCustomParameter": true,
+            "customValue": "_link($project.name)"
+          }
+        ],
+        "stepType": "Action"
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

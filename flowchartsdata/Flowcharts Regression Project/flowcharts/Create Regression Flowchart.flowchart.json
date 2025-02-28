@@ -1,0 +1,1272 @@
+{
+  "name": "Create Regression Flowchart",
+  "id": "-1",
+  "type": 0,
+  "content": {
+    "nodesMap": {
+      "fcn_start_0": {
+        "id": "fcn_start_0",
+        "content": "Start",
+        "nodeType": "start",
+        "branches": [
+          "fcn_createproject_1708423040007_0",
+          "fcn_createflow_1708423215898_0",
+          "fcn_createimplementation_1708424039616_0",
+          "fcn_createquickextract_1708426359698_0",
+          "fcn_createdatagenerator_1708429357693_0",
+          "fcn_createvalidations_1708430428498_0",
+          "fcn_createpath_name_and_value_0",
+          "fcn_verifyactionfield_0",
+          "fcn_renameandverify_0",
+          "fcn_deleterow_0"
+        ]
+      },
+      "fcn_createproject_1708423040007_0": {
+        "id": "fcn_createproject_1708423040007_0",
+        "content": "Create Project",
+        "nodeType": "pathlabel",
+        "branches": [
+          "fcn_flowcharts_1708423040007_0"
+        ]
+      },
+      "fcn_flowcharts_1708423040007_0": {
+        "id": "fcn_flowcharts_1708423040007_0",
+        "content": "@flowcharts",
+        "nodeType": "action",
+        "branches": [
+          "fcn_createproject_1708423040007_1"
+        ]
+      },
+      "fcn_createproject_1708423040007_1": {
+        "id": "fcn_createproject_1708423040007_1",
+        "content": "Create $project",
+        "nodeType": "action",
+        "branches": [
+          "fcn_verifyprojectcreated_1708423040007_0"
+        ]
+      },
+      "fcn_verifyprojectcreated_1708423040007_0": {
+        "id": "fcn_verifyprojectcreated_1708423040007_0",
+        "content": "Verify $project created",
+        "nodeType": "state",
+        "branches": [
+          "fcn_projectexiststrue_1708423040007_0"
+        ]
+      },
+      "fcn_projectexiststrue_1708423040007_0": {
+        "id": "fcn_projectexiststrue_1708423040007_0",
+        "content": "$project.exists\u003dtrue",
+        "nodeType": "state",
+        "branches": []
+      },
+      "fcn_createflow_1708423215898_0": {
+        "id": "fcn_createflow_1708423215898_0",
+        "content": "Create Flowchart",
+        "nodeType": "pathlabel",
+        "branches": [
+          "fcn_projectexists_1708423215898_0"
+        ]
+      },
+      "fcn_flows_1708423215898_0": {
+        "id": "fcn_flows_1708423215898_0",
+        "content": "@flows",
+        "nodeType": "action",
+        "branches": [
+          "fcn_createflow_1708423215898_1"
+        ]
+      },
+      "fcn_projectexists_1708423215898_0": {
+        "id": "fcn_projectexists_1708423215898_0",
+        "content": "$project.exists?",
+        "nodeType": "decision",
+        "branches": [
+          null,
+          "fcn_flows_1708423215898_0"
+        ]
+      },
+      "fcn_createflow_1708423215898_1": {
+        "id": "fcn_createflow_1708423215898_1",
+        "content": "Create $flow in $project",
+        "nodeType": "action",
+        "branches": [
+          "fcn_verifyflowcreated_1708423215898_0"
+        ]
+      },
+      "fcn_verifyflowcreated_1708423215898_0": {
+        "id": "fcn_verifyflowcreated_1708423215898_0",
+        "content": "Verify $flow created",
+        "nodeType": "state",
+        "branches": [
+          "fcn_createuserregistrationflowchart_0"
+        ]
+      },
+      "fcn_flowexiststrue_1708423215898_0": {
+        "id": "fcn_flowexiststrue_1708423215898_0",
+        "content": "$flow.exists\u003dtrue",
+        "nodeType": "state",
+        "branches": []
+      },
+      "fcn_createimplementation_1708424039616_0": {
+        "id": "fcn_createimplementation_1708424039616_0",
+        "content": "Implement Flowchart",
+        "nodeType": "pathlabel",
+        "branches": [
+          "fcn_flowexists_1708424039616_0"
+        ]
+      },
+      "fcn_implementation_list_1708424039616_0": {
+        "id": "fcn_implementation_list_1708424039616_0",
+        "content": "@implementation",
+        "nodeType": "action",
+        "branches": [
+          "fcn_registeruserimplementation_1708424039616_0"
+        ]
+      },
+      "fcn_flowexists_1708424039616_0": {
+        "id": "fcn_flowexists_1708424039616_0",
+        "content": "$pathdata.exists?",
+        "nodeType": "decision",
+        "branches": [
+          null,
+          "fcn_implementation_list_1708424039616_0"
+        ]
+      },
+      "fcn_registeruserimplementation_1708424039616_0": {
+        "id": "fcn_registeruserimplementation_1708424039616_0",
+        "content": "Implement Register User",
+        "nodeType": "action",
+        "branches": [
+          "fcn_verifyregisteruserimplementationdetails_1708424039616_0"
+        ]
+      },
+      "fcn_verifyregisteruserimplementationdetails_1708424039616_0": {
+        "id": "fcn_verifyregisteruserimplementationdetails_1708424039616_0",
+        "content": "Verify Register User Implementation details",
+        "nodeType": "state",
+        "branches": [
+          "fcn_implementationexiststrue_1708424039616_0"
+        ]
+      },
+      "fcn_implementationexiststrue_1708424039616_0": {
+        "id": "fcn_implementationexiststrue_1708424039616_0",
+        "content": "$implementation.exists\u003dtrue",
+        "nodeType": "state",
+        "branches": []
+      },
+      "fcn_createuserregistrationflowchart_0": {
+        "id": "fcn_createuserregistrationflowchart_0",
+        "content": "Create User Registration Flowchart",
+        "nodeType": "action",
+        "branches": [
+          "fcn_verifyuserregistrationflowchartcreated_0"
+        ]
+      },
+      "fcn_verifyuserregistrationflowchartcreated_0": {
+        "id": "fcn_verifyuserregistrationflowchartcreated_0",
+        "content": "Verify User Registration Flowchart Created",
+        "nodeType": "state",
+        "branches": [
+          "fcn_flowexiststrue_1708423215898_0"
+        ]
+      },
+      "fcn_createquickextract_1708426359698_0": {
+        "id": "fcn_createquickextract_1708426359698_0",
+        "content": "Quick Extract Flowchart",
+        "nodeType": "pathlabel",
+        "branches": [
+          "fcn_implementationexists_1708426359698_0"
+        ]
+      },
+      "fcn_quickextract_list_1708426359698_0": {
+        "id": "fcn_quickextract_list_1708426359698_0",
+        "content": "@quickextract",
+        "nodeType": "action",
+        "branches": [
+          "fcn_doquickextract_1708426359698_0"
+        ]
+      },
+      "fcn_implementationexists_1708426359698_0": {
+        "id": "fcn_implementationexists_1708426359698_0",
+        "content": "$implementation.exists?",
+        "nodeType": "decision",
+        "branches": [
+          null,
+          "fcn_quickextract_list_1708426359698_0"
+        ]
+      },
+      "fcn_doquickextract_1708426359698_0": {
+        "id": "fcn_doquickextract_1708426359698_0",
+        "content": "Quick Extract Flowchart",
+        "nodeType": "action",
+        "branches": [
+          "fcn_verifyquickextractcreated_1708426359698_0"
+        ]
+      },
+      "fcn_verifyquickextractcreated_1708426359698_0": {
+        "id": "fcn_verifyquickextractcreated_1708426359698_0",
+        "content": "Verify Quick Extract Details",
+        "nodeType": "state",
+        "branches": [
+          "fcn_addassertcontainstepwithvariabletemplate_0"
+        ]
+      },
+      "fcn_quickextractexiststrue_1708426359698_0": {
+        "id": "fcn_quickextractexiststrue_1708426359698_0",
+        "content": "$quickextract.exists\u003dtrue",
+        "nodeType": "state",
+        "branches": []
+      },
+      "fcn_createdatagenerator_1708429357693_0": {
+        "id": "fcn_createdatagenerator_1708429357693_0",
+        "content": "Modify Data Generator",
+        "nodeType": "pathlabel",
+        "branches": [
+          "fcn_quickextractexists_1708429357693_0"
+        ]
+      },
+      "fcn_datagenerator_list_1708429357693_0": {
+        "id": "fcn_datagenerator_list_1708429357693_0",
+        "content": "@datagenerator",
+        "nodeType": "action",
+        "branches": [
+          "fcn_editdatagenerator_1708429357693_0"
+        ]
+      },
+      "fcn_quickextractexists_1708429357693_0": {
+        "id": "fcn_quickextractexists_1708429357693_0",
+        "content": "$quickextract.exists?",
+        "nodeType": "decision",
+        "branches": [
+          null,
+          "fcn_datagenerator_list_1708429357693_0"
+        ]
+      },
+      "fcn_editdatagenerator_1708429357693_0": {
+        "id": "fcn_editdatagenerator_1708429357693_0",
+        "content": "Modify Data Generator",
+        "nodeType": "action",
+        "branches": [
+          "fcn_datageneratorexiststrue_1708429357693_0"
+        ]
+      },
+      "fcn_datageneratorexiststrue_1708429357693_0": {
+        "id": "fcn_datageneratorexiststrue_1708429357693_0",
+        "content": "$datagenerator.exists\u003dtrue",
+        "nodeType": "state",
+        "branches": []
+      },
+      "fcn_createvalidations_1708430428498_0": {
+        "id": "fcn_createvalidations_1708430428498_0",
+        "content": "Add Validations Values",
+        "nodeType": "pathlabel",
+        "branches": [
+          "fcn_datageneratorexists_1708430428498_0"
+        ]
+      },
+      "fcn_validations_list_1708430428498_0": {
+        "id": "fcn_validations_list_1708430428498_0",
+        "content": "@validations",
+        "nodeType": "action",
+        "branches": [
+          "fcn_editvalidations_1708430428498_0"
+        ]
+      },
+      "fcn_datageneratorexists_1708430428498_0": {
+        "id": "fcn_datageneratorexists_1708430428498_0",
+        "content": "$datagenerator.exists?",
+        "nodeType": "decision",
+        "branches": [
+          null,
+          "fcn_validations_list_1708430428498_0"
+        ]
+      },
+      "fcn_editvalidations_1708430428498_0": {
+        "id": "fcn_editvalidations_1708430428498_0",
+        "content": "Enter Positive Validation Data",
+        "nodeType": "action",
+        "branches": [
+          "fcn_enterpositivevalidationdata_1708430491149_0"
+        ]
+      },
+      "fcn_validationsexiststrue_1708430428498_0": {
+        "id": "fcn_validationsexiststrue_1708430428498_0",
+        "content": "$validations.exists\u003dtrue",
+        "nodeType": "state",
+        "branches": []
+      },
+      "fcn_enterpositivevalidationdata_1708430491149_0": {
+        "id": "fcn_enterpositivevalidationdata_1708430491149_0",
+        "content": "Enter Negative Validation Data",
+        "nodeType": "action",
+        "branches": [
+          "fcn_adduierrorelement_0"
+        ]
+      },
+      "fcn_adduierrorelement_0": {
+        "id": "fcn_adduierrorelement_0",
+        "content": "Add UI Error Element",
+        "nodeType": "action",
+        "branches": [
+          "fcn_validationsexiststrue_1708430428498_0"
+        ]
+      },
+      "fcn_createpath_name_and_value_0": {
+        "id": "fcn_createpath_name_and_value_0",
+        "content": "Path name and its value",
+        "nodeType": "pathlabel",
+        "branches": [
+          "fcn_flowexists_1"
+        ]
+      },
+      "fcn_createpath_name_and_value_1": {
+        "id": "fcn_createpath_name_and_value_1",
+        "content": "@flows",
+        "nodeType": "action",
+        "branches": [
+          "fcn_createflowtotestpathdata_0"
+        ]
+      },
+      "fcn_path_name_and_valueexiststrue_0": {
+        "id": "fcn_path_name_and_valueexiststrue_0",
+        "content": "$pathdata.exists\u003dtrue",
+        "nodeType": "state",
+        "branches": []
+      },
+      "fcn_flowexists_1": {
+        "id": "fcn_flowexists_1",
+        "content": "$flow.exists?",
+        "nodeType": "decision",
+        "branches": [
+          null,
+          "fcn_createpath_name_and_value_1"
+        ]
+      },
+      "fcn_createflowtotestpathdata_0": {
+        "id": "fcn_createflowtotestpathdata_0",
+        "content": "Create path for testing",
+        "nodeType": "action",
+        "branches": [
+          "fcn_initialsetupofpathandtable_0"
+        ]
+      },
+      "fcn_initialsetupofpathandtable_0": {
+        "id": "fcn_initialsetupofpathandtable_0",
+        "content": "Initial setup of table",
+        "nodeType": "action",
+        "branches": [
+          "fcn_verifyinitialsetupofpathandtable_0"
+        ]
+      },
+      "fcn_verifyinitialsetupofpathandtable_0": {
+        "id": "fcn_verifyinitialsetupofpathandtable_0",
+        "content": "Verify initial setup of path and table",
+        "nodeType": "state",
+        "branches": [
+          "fcn_addinganodebetweentwonodes_0"
+        ]
+      },
+      "fcn_disablingvalidationfromtableview_0": {
+        "id": "fcn_disablingvalidationfromtableview_0",
+        "content": "Disabling Validations from Table View",
+        "nodeType": "action",
+        "branches": [
+          "fcn_path_name_and_valueexiststrue_0"
+        ]
+      },
+      "fcn_verifyactionfield_0": {
+        "id": "fcn_verifyactionfield_0",
+        "content": "Verify Action Field",
+        "nodeType": "pathlabel",
+        "branches": [
+          "fcn_validationsexists_0"
+        ]
+      },
+      "fcn_verifyactionfieldaddstepdialog_0": {
+        "id": "fcn_verifyactionfieldaddstepdialog_0",
+        "content": "Verify Action Field Add Step Dialog",
+        "nodeType": "state",
+        "branches": [
+          "fcn_attributeonaddstepdialogwithoutuielement_0"
+        ]
+      },
+      "fcn_regression_flowchartsexiststrue_2": {
+        "id": "fcn_regression_flowchartsexiststrue_2",
+        "content": "$regression_flowcharts.exists\u003dtrue",
+        "nodeType": "state",
+        "branches": []
+      },
+      "fcn_attributeonaddstepdialogwithoutuielement_0": {
+        "id": "fcn_attributeonaddstepdialogwithoutuielement_0",
+        "content": "Attribute On Add Step dialog without UI Element",
+        "nodeType": "state",
+        "branches": [
+          "fcn_regression_flowchartsexiststrue_2"
+        ]
+      },
+      "fcn_validationsexists_0": {
+        "id": "fcn_validationsexists_0",
+        "content": "$delete.exists?",
+        "nodeType": "decision",
+        "branches": [
+          null,
+          "fcn_verifyactionfieldaddstepdialog_0"
+        ]
+      },
+      "fcn_addinganodebetweentwonodes_0": {
+        "id": "fcn_addinganodebetweentwonodes_0",
+        "content": "Adding a node between two nodes",
+        "nodeType": "action",
+        "branches": [
+          "fcn_verifyinitialsetupofpathandtable_1"
+        ]
+      },
+      "fcn_verifyinitialsetupofpathandtable_1": {
+        "id": "fcn_verifyinitialsetupofpathandtable_1",
+        "content": "Verify initial setup of path and table",
+        "nodeType": "state",
+        "branches": [
+          "fcn_deleteanode_0"
+        ]
+      },
+      "fcn_deleteanode_0": {
+        "id": "fcn_deleteanode_0",
+        "content": "Delete a node",
+        "nodeType": "action",
+        "branches": [
+          "fcn_verifyinitialsetupofpathandtable_2"
+        ]
+      },
+      "fcn_verifyinitialsetupofpathandtable_2": {
+        "id": "fcn_verifyinitialsetupofpathandtable_2",
+        "content": "Verify initial setup of path and table",
+        "nodeType": "state",
+        "branches": [
+          "fcn_pastingonleafnode_0"
+        ]
+      },
+      "fcn_pastingonleafnode_0": {
+        "id": "fcn_pastingonleafnode_0",
+        "content": "Pasting on leaf node",
+        "nodeType": "action",
+        "branches": [
+          "fcn_verifyinitialsetupofpathandtable_3"
+        ]
+      },
+      "fcn_verifyinitialsetupofpathandtable_3": {
+        "id": "fcn_verifyinitialsetupofpathandtable_3",
+        "content": "Verify initial setup of path and table",
+        "nodeType": "state",
+        "branches": [
+          "fcn_creatingbranch_0"
+        ]
+      },
+      "fcn_creatingbranch_0": {
+        "id": "fcn_creatingbranch_0",
+        "content": "Creating branch",
+        "nodeType": "action",
+        "branches": [
+          "fcn_verifyaftercreatingbranch_0"
+        ]
+      },
+      "fcn_verifyaftercreatingbranch_0": {
+        "id": "fcn_verifyaftercreatingbranch_0",
+        "content": "Verify after creating branch",
+        "nodeType": "state",
+        "branches": [
+          "fcn_verifyinitialsetupofpathandtable_4"
+        ]
+      },
+      "fcn_verifyinitialsetupofpathandtable_4": {
+        "id": "fcn_verifyinitialsetupofpathandtable_4",
+        "content": "Verify initial setup of path and table",
+        "nodeType": "state",
+        "branches": [
+          "fcn_splitnode_0"
+        ]
+      },
+      "fcn_splitnode_0": {
+        "id": "fcn_splitnode_0",
+        "content": "Split node",
+        "nodeType": "action",
+        "branches": [
+          "fcn_verifyaftersplitnode_0"
+        ]
+      },
+      "fcn_verifyaftersplitnode_0": {
+        "id": "fcn_verifyaftersplitnode_0",
+        "content": "Verify after split node",
+        "nodeType": "state",
+        "branches": [
+          "fcn_verifyinitialsetupofpathandtable_5"
+        ]
+      },
+      "fcn_verifyinitialsetupofpathandtable_5": {
+        "id": "fcn_verifyinitialsetupofpathandtable_5",
+        "content": "Verify initial setup of path and table",
+        "nodeType": "state",
+        "branches": [
+          "fcn_connectingtwonodes_0"
+        ]
+      },
+      "fcn_connectingtwonodes_0": {
+        "id": "fcn_connectingtwonodes_0",
+        "content": "Connecting two nodes",
+        "nodeType": "action",
+        "branches": [
+          "fcn_verifyafterconnectingtwonodes_0"
+        ]
+      },
+      "fcn_verifyafterconnectingtwonodes_0": {
+        "id": "fcn_verifyafterconnectingtwonodes_0",
+        "content": "Verify after connecting two nodes",
+        "nodeType": "state",
+        "branches": [
+          "fcn_verifyinitialsetupofpathandtable_6"
+        ]
+      },
+      "fcn_verifyinitialsetupofpathandtable_6": {
+        "id": "fcn_verifyinitialsetupofpathandtable_6",
+        "content": "Verify initial setup of path and table",
+        "nodeType": "state",
+        "branches": [
+          "fcn_disconnectingtwonodes_0"
+        ]
+      },
+      "fcn_disconnectingtwonodes_0": {
+        "id": "fcn_disconnectingtwonodes_0",
+        "content": "Disconnecting two nodes",
+        "nodeType": "action",
+        "branches": [
+          "fcn_verifyafterdisconnectingtwonodes_0"
+        ]
+      },
+      "fcn_verifyafterdisconnectingtwonodes_0": {
+        "id": "fcn_verifyafterdisconnectingtwonodes_0",
+        "content": "Verify after disconnecting two nodes",
+        "nodeType": "state",
+        "branches": [
+          "fcn_verifyinitialsetupofpathandtable_7"
+        ]
+      },
+      "fcn_verifyinitialsetupofpathandtable_7": {
+        "id": "fcn_verifyinitialsetupofpathandtable_7",
+        "content": "Verify initial setup of path and table",
+        "nodeType": "state",
+        "branches": [
+          "fcn_pastingbetweentwonodes_0"
+        ]
+      },
+      "fcn_pastingbetweentwonodes_0": {
+        "id": "fcn_pastingbetweentwonodes_0",
+        "content": "Pasting between two nodes",
+        "nodeType": "action",
+        "branches": [
+          "fcn_verifyafterpastingbetweentwonodes_0"
+        ]
+      },
+      "fcn_verifyafterpastingbetweentwonodes_0": {
+        "id": "fcn_verifyafterpastingbetweentwonodes_0",
+        "content": "Verify after pasting between two nodes",
+        "nodeType": "state",
+        "branches": [
+          "fcn_disablingvalidationfromtableview_0"
+        ]
+      },
+      "fcn_renameandverify_0": {
+        "id": "fcn_renameandverify_0",
+        "content": "Rename and Verify",
+        "nodeType": "pathlabel",
+        "branches": [
+          "fcn_projectexists_0"
+        ]
+      },
+      "fcn_projectexists_0": {
+        "id": "fcn_projectexists_0",
+        "content": "$project.exists?",
+        "nodeType": "decision",
+        "branches": [
+          null,
+          "fcn_validationsexists_1"
+        ]
+      },
+      "fcn_validationsexists_1": {
+        "id": "fcn_validationsexists_1",
+        "content": "$validations.exists?",
+        "nodeType": "decision",
+        "branches": [
+          null,
+          "fcn_flows_0"
+        ]
+      },
+      "fcn_flows_0": {
+        "id": "fcn_flows_0",
+        "content": "@showsubcombodialog",
+        "nodeType": "action",
+        "branches": [
+          "fcn_dorenameattributefromtable_0"
+        ]
+      },
+      "fcn_dorenameattributefromtable_0": {
+        "id": "fcn_dorenameattributefromtable_0",
+        "content": "Rename Entity Filter from SubCombo Dialog Table",
+        "nodeType": "action",
+        "branches": [
+          "fcn_verifyattributerenamed_0"
+        ]
+      },
+      "fcn_verifyattributerenamed_0": {
+        "id": "fcn_verifyattributerenamed_0",
+        "content": "Verify Renamed Entity Filter",
+        "nodeType": "state",
+        "branches": [
+          "fcn_verifyonclickgotoscreenorentitytabfromtable_0"
+        ]
+      },
+      "fcn_verifyonclickgotoscreenorentitytabfromtable_0": {
+        "id": "fcn_verifyonclickgotoscreenorentitytabfromtable_0",
+        "content": "Verify Navigation to Entity Or Screen from SubCombo Dialog Table",
+        "nodeType": "state",
+        "branches": [
+          "fcn_addrawstepinkeyword_0"
+        ]
+      },
+      "fcn_dorenameentityandattribute_0": {
+        "id": "fcn_dorenameentityandattribute_0",
+        "content": "Rename Entity and Attributes",
+        "nodeType": "action",
+        "branches": [
+          "fcn_verifyrenameofentityandattributeisdone_0"
+        ]
+      },
+      "fcn_verifyrenameofentityandattributeisdone_0": {
+        "id": "fcn_verifyrenameofentityandattributeisdone_0",
+        "content": "Verify Renamed Entity and Attributes",
+        "nodeType": "state",
+        "branches": [
+          "fcn_getrenameanddeletematchstring_0"
+        ]
+      },
+      "fcn_dorenamepathandkeyword_0": {
+        "id": "fcn_dorenamepathandkeyword_0",
+        "content": "Rename Keyword and Path",
+        "nodeType": "action",
+        "branches": [
+          "fcn_verifyrenameofpathandkeywordisdone_0"
+        ]
+      },
+      "fcn_verifyrenameofpathandkeywordisdone_0": {
+        "id": "fcn_verifyrenameofpathandkeywordisdone_0",
+        "content": "Verify Renamed Keyword and Path",
+        "nodeType": "state",
+        "branches": [
+          "fcn_dorenamescreen_0"
+        ]
+      },
+      "fcn_dorenamescreen_0": {
+        "id": "fcn_dorenamescreen_0",
+        "content": "Rename Screen",
+        "nodeType": "action",
+        "branches": [
+          "fcn_verifyrenameofscreenisdone_0"
+        ]
+      },
+      "fcn_verifyrenameofscreenisdone_0": {
+        "id": "fcn_verifyrenameofscreenisdone_0",
+        "content": "Verify Renamed Screen",
+        "nodeType": "state",
+        "branches": [
+          "fcn_dorenameflowinproject_0"
+        ]
+      },
+      "fcn_dorenameflowinproject_0": {
+        "id": "fcn_dorenameflowinproject_0",
+        "content": "Rename Flowchart",
+        "nodeType": "action",
+        "branches": [
+          "fcn_verifyrenameflowinproject_0"
+        ]
+      },
+      "fcn_verifyrenameflowinproject_0": {
+        "id": "fcn_verifyrenameflowinproject_0",
+        "content": "Verify Renamed Flowchart",
+        "nodeType": "state",
+        "branches": [
+          "fcn_renameexiststrue_0"
+        ]
+      },
+      "fcn_renameexiststrue_0": {
+        "id": "fcn_renameexiststrue_0",
+        "content": "$rename.exists\u003dtrue",
+        "nodeType": "state",
+        "branches": []
+      },
+      "fcn_deleterow_0": {
+        "id": "fcn_deleterow_0",
+        "content": "Delete Row",
+        "nodeType": "pathlabel",
+        "branches": [
+          "fcn_renameexists_0"
+        ]
+      },
+      "fcn_renameexists_0": {
+        "id": "fcn_renameexists_0",
+        "content": "$rename.exists?",
+        "nodeType": "decision",
+        "branches": [
+          null,
+          "fcn_dodeleterowfromentitesandverify_0"
+        ]
+      },
+      "fcn_dodeleterowfromentitesandverify_0": {
+        "id": "fcn_dodeleterowfromentitesandverify_0",
+        "content": "Verify Add Or Delete Row UI element for Entity",
+        "nodeType": "state",
+        "branches": [
+          "fcn_dodeleterowfromscreensandverify_0"
+        ]
+      },
+      "fcn_dodeleterowfromscreensandverify_0": {
+        "id": "fcn_dodeleterowfromscreensandverify_0",
+        "content": "Verify Add Or Delete Row UI element for Screen",
+        "nodeType": "state",
+        "branches": [
+          "fcn_deleteexiststrue_0"
+        ]
+      },
+      "fcn_deleteexiststrue_0": {
+        "id": "fcn_deleteexiststrue_0",
+        "content": "$delete.exists\u003dtrue",
+        "nodeType": "state",
+        "branches": []
+      },
+      "fcn_addrawstepinkeyword_0": {
+        "id": "fcn_addrawstepinkeyword_0",
+        "content": "Add Raw Step In Keyword",
+        "nodeType": "action",
+        "branches": [
+          "fcn_dorenameentityandattribute_0"
+        ]
+      },
+      "fcn_addassertcontainstepwithvariabletemplate_0": {
+        "id": "fcn_addassertcontainstepwithvariabletemplate_0",
+        "content": "Add Assert Contain Step with Variable Template\n// Bug #4164",
+        "nodeType": "action",
+        "branches": [
+          "fcn_quickextractexiststrue_1708426359698_0"
+        ]
+      },
+      "fcn_getrenameanddeletematchstring_0": {
+        "id": "fcn_getrenameanddeletematchstring_0",
+        "content": "Get Rename and Delete Match String",
+        "nodeType": "action",
+        "branches": [
+          "fcn_verifyrenameanddeletesearchstring_0"
+        ]
+      },
+      "fcn_verifyrenameanddeletesearchstring_0": {
+        "id": "fcn_verifyrenameanddeletesearchstring_0",
+        "content": "Verify Rename and Delete Search String",
+        "nodeType": "action",
+        "branches": [
+          "fcn_dorenamepathandkeyword_0"
+        ]
+      }
+    },
+    "positions": {
+      "fcn_start_0": {
+        "top": 150.0,
+        "left": 500.0
+      },
+      "fcn_createproject_1708423040007_0": {
+        "top": 226.0,
+        "left": 228.0
+      },
+      "fcn_flowcharts_1708423040007_0": {
+        "top": 314.0,
+        "left": 228.0
+      },
+      "fcn_createproject_1708423040007_1": {
+        "top": 399.140625,
+        "left": 228.0
+      },
+      "fcn_verifyprojectcreated_1708423040007_0": {
+        "top": 494.28125,
+        "left": 228.0
+      },
+      "fcn_projectexiststrue_1708423040007_0": {
+        "top": 586.421875,
+        "left": 228.0
+      },
+      "fcn_createflow_1708423215898_0": {
+        "top": 232.0,
+        "left": 593.0
+      },
+      "fcn_projectexists_1708423215898_0": {
+        "top": 317.765625,
+        "left": 593.0
+      },
+      "fcn_flows_1708423215898_0": {
+        "top": 397.765625,
+        "left": 593.0
+      },
+      "fcn_createflow_1708423215898_1": {
+        "top": 477.921875,
+        "left": 593.0
+      },
+      "fcn_verifyflowcreated_1708423215898_0": {
+        "top": 568.0625,
+        "left": 593.0
+      },
+      "fcn_createuserregistrationflowchart_0": {
+        "top": 652.203125,
+        "left": 593.0
+      },
+      "fcn_verifyuserregistrationflowchartcreated_0": {
+        "top": 736.203125,
+        "left": 593.0
+      },
+      "fcn_flowexiststrue_1708423215898_0": {
+        "top": 806.390625,
+        "left": 593.0
+      },
+      "fcn_createimplementation_1708424039616_0": {
+        "top": 230.0,
+        "left": 1265.0
+      },
+      "fcn_flowexists_1708424039616_0": {
+        "top": 311.078125,
+        "left": 1265.0
+      },
+      "fcn_implementation_list_1708424039616_0": {
+        "top": 385.078125,
+        "left": 1265.0
+      },
+      "fcn_registeruserimplementation_1708424039616_0": {
+        "top": 465.234375,
+        "left": 1265.0
+      },
+      "fcn_verifyregisteruserimplementationdetails_1708424039616_0": {
+        "top": 545.390625,
+        "left": 1265.0
+      },
+      "fcn_implementationexiststrue_1708424039616_0": {
+        "top": 646.546875,
+        "left": 1265.0
+      },
+      "fcn_createquickextract_1708426359698_0": {
+        "top": 228.0,
+        "left": 1590.0
+      },
+      "fcn_implementationexists_1708426359698_0": {
+        "top": 303.921875,
+        "left": 1590.0
+      },
+      "fcn_quickextract_list_1708426359698_0": {
+        "top": 388.921875,
+        "left": 1588.0
+      },
+      "fcn_doquickextract_1708426359698_0": {
+        "top": 458.078125,
+        "left": 1590.0
+      },
+      "fcn_verifyquickextractcreated_1708426359698_0": {
+        "top": 538.234375,
+        "left": 1590.0
+      },
+      "fcn_quickextractexiststrue_1708426359698_0": {
+        "top": 702.390625,
+        "left": 1593.0
+      },
+      "fcn_createdatagenerator_1708429357693_0": {
+        "top": 229.0,
+        "left": 1916.0
+      },
+      "fcn_quickextractexists_1708429357693_0": {
+        "top": 319.078125,
+        "left": 1916.0
+      },
+      "fcn_datagenerator_list_1708429357693_0": {
+        "top": 393.078125,
+        "left": 1916.0
+      },
+      "fcn_editdatagenerator_1708429357693_0": {
+        "top": 473.234375,
+        "left": 1916.0
+      },
+      "fcn_datageneratorexiststrue_1708429357693_0": {
+        "top": 562.546875,
+        "left": 1916.0
+      },
+      "fcn_createvalidations_1708430428498_0": {
+        "top": 229.0,
+        "left": 2268.0
+      },
+      "fcn_datageneratorexists_1708430428498_0": {
+        "top": 298.140625,
+        "left": 2268.0
+      },
+      "fcn_validations_list_1708430428498_0": {
+        "top": 372.15625,
+        "left": 2268.0
+      },
+      "fcn_editvalidations_1708430428498_0": {
+        "top": 454.296875,
+        "left": 2268.0
+      },
+      "fcn_enterpositivevalidationdata_1708430491149_0": {
+        "top": 525.296875,
+        "left": 2268.0
+      },
+      "fcn_adduierrorelement_0": {
+        "top": 615.296875,
+        "left": 2268.0
+      },
+      "fcn_validationsexiststrue_1708430428498_0": {
+        "top": 694.765625,
+        "left": 2268.0
+      },
+      "fcn_createpath_name_and_value_0": {
+        "top": 230.0,
+        "left": 922.0
+      },
+      "fcn_createpath_name_and_value_1": {
+        "top": 360.0,
+        "left": 922.0
+      },
+      "fcn_path_name_and_valueexiststrue_0": {
+        "top": 1853.0,
+        "left": 923.0
+      },
+      "fcn_flowexists_1": {
+        "top": 289.0,
+        "left": 922.0
+      },
+      "fcn_createflowtotestpathdata_0": {
+        "top": 419.0,
+        "left": 922.0
+      },
+      "fcn_initialsetupofpathandtable_0": {
+        "top": 478.0,
+        "left": 922.0
+      },
+      "fcn_verifyinitialsetupofpathandtable_0": {
+        "top": 537.0,
+        "left": 922.0
+      },
+      "fcn_disablingvalidationfromtableview_0": {
+        "top": 1780.0,
+        "left": 923.0
+      },
+      "fcn_verifyactionfield_0": {
+        "top": 229.0,
+        "left": 3252.0
+      },
+      "fcn_verifyactionfieldaddstepdialog_0": {
+        "top": 412.0,
+        "left": 3252.0
+      },
+      "fcn_regression_flowchartsexiststrue_2": {
+        "top": 596.0,
+        "left": 3252.0
+      },
+      "fcn_attributeonaddstepdialogwithoutuielement_0": {
+        "top": 492.0,
+        "left": 3252.0
+      },
+      "fcn_validationsexists_0": {
+        "top": 329.0,
+        "left": 3252.0
+      },
+      "fcn_addinganodebetweentwonodes_0": {
+        "top": 596.0,
+        "left": 922.0
+      },
+      "fcn_verifyinitialsetupofpathandtable_1": {
+        "top": 655.0,
+        "left": 922.0
+      },
+      "fcn_deleteanode_0": {
+        "top": 714.0,
+        "left": 922.0
+      },
+      "fcn_verifyinitialsetupofpathandtable_2": {
+        "top": 773.0,
+        "left": 922.0
+      },
+      "fcn_pastingonleafnode_0": {
+        "top": 832.0,
+        "left": 922.0
+      },
+      "fcn_verifyinitialsetupofpathandtable_3": {
+        "top": 891.0,
+        "left": 922.0
+      },
+      "fcn_creatingbranch_0": {
+        "top": 950.0,
+        "left": 922.0
+      },
+      "fcn_verifyaftercreatingbranch_0": {
+        "top": 1009.0,
+        "left": 922.0
+      },
+      "fcn_verifyinitialsetupofpathandtable_4": {
+        "top": 1068.0,
+        "left": 922.0
+      },
+      "fcn_splitnode_0": {
+        "top": 1127.0,
+        "left": 922.0
+      },
+      "fcn_verifyaftersplitnode_0": {
+        "top": 1186.0,
+        "left": 922.0
+      },
+      "fcn_verifyinitialsetupofpathandtable_5": {
+        "top": 1245.0,
+        "left": 922.0
+      },
+      "fcn_connectingtwonodes_0": {
+        "top": 1304.0,
+        "left": 922.0
+      },
+      "fcn_verifyafterconnectingtwonodes_0": {
+        "top": 1363.0,
+        "left": 922.0
+      },
+      "fcn_verifyinitialsetupofpathandtable_6": {
+        "top": 1422.0,
+        "left": 922.0
+      },
+      "fcn_disconnectingtwonodes_0": {
+        "top": 1481.0,
+        "left": 922.0
+      },
+      "fcn_verifyafterdisconnectingtwonodes_0": {
+        "top": 1540.0,
+        "left": 922.0
+      },
+      "fcn_verifyinitialsetupofpathandtable_7": {
+        "top": 1599.0,
+        "left": 922.0
+      },
+      "fcn_pastingbetweentwonodes_0": {
+        "top": 1658.0,
+        "left": 922.0
+      },
+      "fcn_verifyafterpastingbetweentwonodes_0": {
+        "top": 1717.0,
+        "left": 922.0
+      },
+      "fcn_renameandverify_0": {
+        "top": 229.0,
+        "left": 2594.0
+      },
+      "fcn_projectexists_0": {
+        "top": 288.0,
+        "left": 2594.0
+      },
+      "fcn_validationsexists_1": {
+        "top": 348.0,
+        "left": 2594.0
+      },
+      "fcn_flows_0": {
+        "top": 412.140625,
+        "left": 2594.0
+      },
+      "fcn_dorenameattributefromtable_0": {
+        "top": 489.140625,
+        "left": 2594.0
+      },
+      "fcn_verifyattributerenamed_0": {
+        "top": 582.28125,
+        "left": 2594.0
+      },
+      "fcn_verifyonclickgotoscreenorentitytabfromtable_0": {
+        "top": 667.28125,
+        "left": 2594.0
+      },
+      "fcn_dorenameentityandattribute_0": {
+        "top": 821.28125,
+        "left": 2594.0
+      },
+      "fcn_verifyrenameofentityandattributeisdone_0": {
+        "top": 900.421875,
+        "left": 2594.0
+      },
+      "fcn_dorenamepathandkeyword_0": {
+        "top": 1103.5625,
+        "left": 2596.0000610351562
+      },
+      "fcn_verifyrenameofpathandkeywordisdone_0": {
+        "top": 1168.6979370117188,
+        "left": 2596.0000610351562
+      },
+      "fcn_dorenamescreen_0": {
+        "top": 1247.84375,
+        "left": 2596.0000610351562
+      },
+      "fcn_verifyrenameofscreenisdone_0": {
+        "top": 1331.9791870117188,
+        "left": 2597.0000610351562
+      },
+      "fcn_dorenameflowinproject_0": {
+        "top": 1408.9791870117188,
+        "left": 2596.0000610351562
+      },
+      "fcn_verifyrenameflowinproject_0": {
+        "top": 1500.9791870117188,
+        "left": 2596.0000610351562
+      },
+      "fcn_renameexiststrue_0": {
+        "top": 1585.1354370117188,
+        "left": 2596.0000610351562
+      },
+      "fcn_deleterow_0": {
+        "top": 229.0,
+        "left": 2933.0
+      },
+      "fcn_renameexists_0": {
+        "top": 289.0,
+        "left": 2933.0
+      },
+      "fcn_dodeleterowfromentitesandverify_0": {
+        "top": 356.140625,
+        "left": 2933.0
+      },
+      "fcn_dodeleterowfromscreensandverify_0": {
+        "top": 446.28125,
+        "left": 2933.0
+      },
+      "fcn_deleteexiststrue_0": {
+        "top": 527.28125,
+        "left": 2933.0
+      },
+      "fcn_addrawstepinkeyword_0": {
+        "top": 750.28125,
+        "left": 2596.0
+      },
+      "fcn_addassertcontainstepwithvariabletemplate_0": {
+        "top": 597.234375,
+        "left": 1590.0
+      },
+      "fcn_getrenameanddeletematchstring_0": {
+        "top": 959.4166717529297,
+        "left": 2594.0000610351562
+      },
+      "fcn_verifyrenameanddeletesearchstring_0": {
+        "top": 1032.4166870117188,
+        "left": 2595.0000610351562
+      }
+    },
+    "settings": {
+      "maxProceedDepth": 100,
+      "maxProceedsForFirstDepth": 1,
+      "maxProceedsPerDepth": 1,
+      "maxPathRepititionsPerComboPath": 1,
+      "maxProceedsPerPath": 10000,
+      "maxToggles": 2,
+      "maxMatchingPaths": 3
+    },
+    "isPrimary": true,
+    "pathNames": [
+      {
+        "pathKey": [
+          "fcn_createproject_1708423040007_0",
+          "fcn_flowcharts_1708423040007_0",
+          "fcn_createproject_1708423040007_1",
+          "fcn_verifyprojectcreated_1708423040007_0",
+          "fcn_projectexiststrue_1708423040007_0"
+        ],
+        "dependsPathUID": "17367709744650",
+        "isValidationsEnabled": false
+      },
+      {
+        "pathKey": [
+          "fcn_createpath_name_and_value_0",
+          "fcn_flowexists_1",
+          "fcn_createpath_name_and_value_1",
+          "fcn_createflowtotestpathdata_0",
+          "fcn_initialsetupofpathandtable_0",
+          "fcn_verifyinitialsetupofpathandtable_0",
+          "fcn_addinganodebetweentwonodes_0",
+          "fcn_verifyinitialsetupofpathandtable_1",
+          "fcn_deleteanode_0",
+          "fcn_verifyinitialsetupofpathandtable_2",
+          "fcn_pastingonleafnode_0",
+          "fcn_verifyinitialsetupofpathandtable_3",
+          "fcn_creatingbranch_0",
+          "fcn_verifyaftercreatingbranch_0",
+          "fcn_verifyinitialsetupofpathandtable_4",
+          "fcn_splitnode_0",
+          "fcn_verifyaftersplitnode_0",
+          "fcn_verifyinitialsetupofpathandtable_5",
+          "fcn_connectingtwonodes_0",
+          "fcn_verifyafterconnectingtwonodes_0",
+          "fcn_verifyinitialsetupofpathandtable_6",
+          "fcn_disconnectingtwonodes_0",
+          "fcn_verifyafterdisconnectingtwonodes_0",
+          "fcn_verifyinitialsetupofpathandtable_7",
+          "fcn_pastingbetweentwonodes_0",
+          "fcn_verifyafterpastingbetweentwonodes_0",
+          "fcn_disablingvalidationfromtableview_0",
+          "fcn_path_name_and_valueexiststrue_0"
+        ],
+        "dependsPathUID": "17391925461411",
+        "isValidationsEnabled": false
+      },
+      {
+        "pathKey": [
+          "fcn_renameandverify_0",
+          "fcn_projectexists_0",
+          "fcn_validationsexists_1",
+          "fcn_flows_0",
+          "fcn_dorenameattributefromtable_0",
+          "fcn_verifyattributerenamed_0",
+          "fcn_verifyonclickgotoscreenorentitytabfromtable_0",
+          "fcn_addrawstepinkeyword_0",
+          "fcn_dorenameentityandattribute_0",
+          "fcn_verifyrenameofentityandattributeisdone_0",
+          "fcn_getrenameanddeletematchstring_0",
+          "fcn_verifyrenameanddeletesearchstring_0",
+          "fcn_dorenamepathandkeyword_0",
+          "fcn_verifyrenameofpathandkeywordisdone_0",
+          "fcn_dorenamescreen_0",
+          "fcn_verifyrenameofscreenisdone_0",
+          "fcn_dorenameflowinproject_0",
+          "fcn_verifyrenameflowinproject_0",
+          "fcn_renameexiststrue_0"
+        ],
+        "dependsPathUID": "17395120105222",
+        "isValidationsEnabled": false
+      },
+      {
+        "pathKey": [
+          "fcn_deleterow_0",
+          "fcn_renameexists_0",
+          "fcn_dodeleterowfromentitesandverify_0",
+          "fcn_dodeleterowfromscreensandverify_0",
+          "fcn_deleteexiststrue_0"
+        ],
+        "dependsPathUID": "17395121130823",
+        "isValidationsEnabled": false
+      },
+      {
+        "pathKey": [
+          "fcn_createquickextract_1708426359698_0",
+          "fcn_implementationexists_1708426359698_0",
+          "fcn_quickextract_list_1708426359698_0",
+          "fcn_doquickextract_1708426359698_0",
+          "fcn_verifyquickextractcreated_1708426359698_0",
+          "fcn_addassertcontainstepwithvariabletemplate_0"
+        ],
+        "dependsPathUID": "17400413110274",
+        "isValidationsEnabled": false
+      }
+    ],
+    "tags": "create",
+    "flowChartUID": "fcUID_1708423025843",
+    "pathExecutionOrder": []
+  },
+  "enabled": true,
+  "parentId": ""
+}
