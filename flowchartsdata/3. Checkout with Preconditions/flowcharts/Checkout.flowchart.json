@@ -10,7 +10,8 @@
         "nodeType": "start",
         "branches": [
           "fcn_checkout_0",
-          "fcn_createactual_0"
+          "fcn_createactual_0",
+          "fcn_createrandon_0"
         ]
       },
       "fcn_checkout_0": {
@@ -204,6 +205,36 @@
         "content": "Call custom function from script dir",
         "nodeType": "action",
         "branches": []
+      },
+      "fcn_createrandon_0": {
+        "id": "fcn_createrandon_0",
+        "content": "Create randon",
+        "nodeType": "pathlabel",
+        "branches": [
+          "fcn_createrandon_1"
+        ]
+      },
+      "fcn_createrandon_1": {
+        "id": "fcn_createrandon_1",
+        "content": "Create $randon",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertrandoncreated_0"
+        ]
+      },
+      "fcn_assertrandoncreated_0": {
+        "id": "fcn_assertrandoncreated_0",
+        "content": "Assert $randon Created",
+        "nodeType": "state",
+        "branches": [
+          "fcn_randonexiststrue_0"
+        ]
+      },
+      "fcn_randonexiststrue_0": {
+        "id": "fcn_randonexiststrue_0",
+        "content": "$randon.exists\u003dtrue",
+        "nodeType": "state",
+        "branches": []
       }
     },
     "positions": {
@@ -302,6 +333,22 @@
       "fcn_callcustomfunctionfromscriptdir_0": {
         "top": 1594.8010864257812,
         "left": 1070.0
+      },
+      "fcn_createrandon_0": {
+        "top": 212.0,
+        "left": 1060.0
+      },
+      "fcn_createrandon_1": {
+        "top": 272.0,
+        "left": 1060.0
+      },
+      "fcn_assertrandoncreated_0": {
+        "top": 332.0,
+        "left": 1060.0
+      },
+      "fcn_randonexiststrue_0": {
+        "top": 392.0,
+        "left": 1060.0
       }
     },
     "settings": {
@@ -358,8 +405,13 @@
           "fcn_verifycouponnotapplied_0",
           "fcn_callcustomfunctionfromscriptdir_0"
         ],
-        "pathName": "coupon mismatch with product",
+        "pathName": "coupon code mismatch with product",
         "dependsPathUID": "17375254722224",
+        "pathDependsOn": {
+          "fcUID_17338998242130": [
+            "17375254722225"
+          ]
+        },
         "dataSet": {
           "dataSetName": "Coupon Not Applied.csv"
         },
@@ -384,6 +436,12 @@
         ],
         "pathName": "Coupon not enable",
         "dependsPathUID": "17375254722222",
+        "pathDependsOn": {
+          "fcUID_17338998242130": [
+            "17375254722227",
+            "17375254722226"
+          ]
+        },
         "dataSet": {
           "dataSetName": "Coupon Not Applied.csv"
         },
@@ -404,9 +462,15 @@
         ],
         "pathName": "No coupon Applied",
         "dependsPathUID": "17375254722220",
+        "pathDependsOn": {
+          "fcUID_17338998242130": [
+            "17375254722227"
+          ]
+        },
         "dataSet": {
           "dataSetName": "Coupon Not Applied.csv"
         },
+        "pathTags": "noCoupon",
         "isValidationsEnabled": false
       },
       {
@@ -427,11 +491,17 @@
           "fcn_couponproductproduct_0",
           "fcn_verifycouponapplied_0"
         ],
-        "pathName": "Coupon matched with product",
+        "pathName": "Coupon code matched with product",
         "dependsPathUID": "17375254722225",
+        "pathDependsOn": {
+          "fcUID_17338998242130": [
+            "17339159806191"
+          ]
+        },
         "dataSet": {
           "dataSetName": "Coupon Applied.csv"
         },
+        "pathTags": "matchedCoupon",
         "isValidationsEnabled": false
       },
       {
@@ -456,6 +526,7 @@
         "dataSet": {
           "dataSetName": "Coupon Not Applied.csv"
         },
+        "pathTags": "productNotExists",
         "isValidationsEnabled": false
       },
       {
@@ -469,6 +540,11 @@
         ],
         "pathName": "Path created for diff-merge",
         "dependsPathUID": "17375254722226",
+        "pathDependsOn": {
+          "fcUID_17338998242130": [
+            "17375254722223"
+          ]
+        },
         "isValidationsEnabled": false
       },
       {
@@ -481,19 +557,35 @@
         "pathName": "Create actual for diff merge",
         "dependsPathUID": "17375254722227",
         "isValidationsEnabled": false
+      },
+      {
+        "pathKey": [
+          "fcn_createrandon_0",
+          "fcn_createrandon_1",
+          "fcn_assertrandoncreated_0",
+          "fcn_randonexiststrue_0"
+        ],
+        "dependsPathUID": "17418624662218",
+        "pathDependsOn": {
+          "fcUID_17338998242130": [
+            "17375254722225"
+          ]
+        },
+        "isValidationsEnabled": false
       }
     ],
     "tags": "checkout",
     "flowChartUID": "fcUID_17338998242130",
     "pathExecutionOrder": [
+      "17375254722223",
       "17375254722220",
       "17339159806191",
+      "17375254722227",
       "17375254722222",
-      "17375254722223",
+      "17418624662218",
       "17375254722224",
-      "17375254722225",
       "17375254722226",
-      "17375254722227"
+      "17375254722225"
     ]
   },
   "enabled": true,
