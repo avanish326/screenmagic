@@ -10,7 +10,8 @@
         "nodeType": "start",
         "branches": [
           "fcn_checkout_0",
-          "fcn_createactual_0"
+          "fcn_createactual_0",
+          "fcn_createtax_0"
         ]
       },
       "fcn_checkout_0": {
@@ -204,6 +205,36 @@
         "content": "Call custom function from script dir",
         "nodeType": "action",
         "branches": []
+      },
+      "fcn_createtax_0": {
+        "id": "fcn_createtax_0",
+        "content": "Create tax",
+        "nodeType": "pathlabel",
+        "branches": [
+          "fcn_createtax_1"
+        ]
+      },
+      "fcn_createtax_1": {
+        "id": "fcn_createtax_1",
+        "content": "Create $tax",
+        "nodeType": "action",
+        "branches": [
+          "fcn_asserttaxcreated_0"
+        ]
+      },
+      "fcn_asserttaxcreated_0": {
+        "id": "fcn_asserttaxcreated_0",
+        "content": "Assert $tax Created",
+        "nodeType": "state",
+        "branches": [
+          "fcn_taxexiststrue_0"
+        ]
+      },
+      "fcn_taxexiststrue_0": {
+        "id": "fcn_taxexiststrue_0",
+        "content": "$tax.exists\u003dtrue",
+        "nodeType": "state",
+        "branches": []
       }
     },
     "positions": {
@@ -302,6 +333,22 @@
       "fcn_callcustomfunctionfromscriptdir_0": {
         "top": 1594.8010864257812,
         "left": 1070.0
+      },
+      "fcn_createtax_0": {
+        "top": 212.0,
+        "left": 1060.0
+      },
+      "fcn_createtax_1": {
+        "top": 272.0,
+        "left": 1060.0
+      },
+      "fcn_asserttaxcreated_0": {
+        "top": 332.0,
+        "left": 1060.0
+      },
+      "fcn_taxexiststrue_0": {
+        "top": 392.0,
+        "left": 1060.0
       }
     },
     "settings": {
@@ -333,10 +380,16 @@
         ],
         "pathName": "Coupon not exists",
         "dependsPathUID": "17339159806191",
+        "pathDependsOn": {
+          "fcUID_17338998242130": [
+            "17418617933178"
+          ]
+        },
         "dataSet": {
           "dataSetName": "Coupon Not Applied.csv",
           "dataSetGroupName": "Data"
         },
+        "pathTags": "notexists",
         "isValidationsEnabled": false
       },
       {
@@ -360,6 +413,12 @@
         ],
         "pathName": "coupon mismatch with product",
         "dependsPathUID": "17375254722224",
+        "pathDependsOn": {
+          "fcUID_17338998242130": [
+            "17339159806191",
+            "17375254722222"
+          ]
+        },
         "dataSet": {
           "dataSetName": "Coupon Not Applied.csv"
         },
@@ -387,6 +446,7 @@
         "dataSet": {
           "dataSetName": "Coupon Not Applied.csv"
         },
+        "pathTags": "notenable",
         "isValidationsEnabled": false
       },
       {
@@ -429,9 +489,15 @@
         ],
         "pathName": "Coupon matched with product",
         "dependsPathUID": "17375254722225",
+        "pathDependsOn": {
+          "fcUID_17338998242130": [
+            "17375254722224"
+          ]
+        },
         "dataSet": {
           "dataSetName": "Coupon Applied.csv"
         },
+        "pathTags": "product",
         "isValidationsEnabled": false
       },
       {
@@ -456,6 +522,7 @@
         "dataSet": {
           "dataSetName": "Coupon Not Applied.csv"
         },
+        "pathTags": "noCoupon",
         "isValidationsEnabled": false
       },
       {
@@ -469,6 +536,12 @@
         ],
         "pathName": "Path created for diff-merge",
         "dependsPathUID": "17375254722226",
+        "pathDependsOn": {
+          "fcUID_17338998242130": [
+            "17375254722227",
+            "17418617933178"
+          ]
+        },
         "isValidationsEnabled": false
       },
       {
@@ -481,19 +554,31 @@
         "pathName": "Create actual for diff merge",
         "dependsPathUID": "17375254722227",
         "isValidationsEnabled": false
+      },
+      {
+        "pathKey": [
+          "fcn_createtax_0",
+          "fcn_createtax_1",
+          "fcn_asserttaxcreated_0",
+          "fcn_taxexiststrue_0"
+        ],
+        "dependsPathUID": "17418617933178",
+        "pathTags": "tax",
+        "isValidationsEnabled": false
       }
     ],
     "tags": "Check",
     "flowChartUID": "fcUID_17338998242130",
     "pathExecutionOrder": [
+      "17375254722227",
+      "17375254722226",
       "17375254722220",
+      "17418617933178",
       "17339159806191",
       "17375254722222",
       "17375254722223",
       "17375254722224",
-      "17375254722225",
-      "17375254722226",
-      "17375254722227"
+      "17375254722225"
     ]
   },
   "enabled": true,
