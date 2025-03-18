@@ -32,7 +32,7 @@
       },
       "fcn_registeruser_1": {
         "id": "fcn_registeruser_1",
-        "content": "Register $users",
+        "content": "Register $user ä, ö, ü",
         "nodeType": "action",
         "branches": [
           "fcn_verifyuserregistered_0"
@@ -40,7 +40,7 @@
       },
       "fcn_verifyuserregistered_0": {
         "id": "fcn_verifyuserregistered_0",
-        "content": "Verify $users registered successfully",
+        "content": "Verify $user registered successfully",
         "nodeType": "state",
         "branches": [
           "fcn_logoutuser_0"
@@ -48,7 +48,7 @@
       },
       "fcn_logoutuser_0": {
         "id": "fcn_logoutuser_0",
-        "content": "Logout $users",
+        "content": "Logout $user",
         "nodeType": "action",
         "branches": [
           "fcn_userexiststrue_0"
@@ -56,7 +56,7 @@
       },
       "fcn_userexiststrue_0": {
         "id": "fcn_userexiststrue_0",
-        "content": "$users.exists\u003dtrue",
+        "content": "$user.exists\u003dtrue",
         "nodeType": "state",
         "branches": []
       },
@@ -70,7 +70,7 @@
       },
       "fcn_userexists_0": {
         "id": "fcn_userexists_0",
-        "content": "$users.exists?",
+        "content": "$user.exists?",
         "nodeType": "decision",
         "branches": [
           null,
@@ -79,7 +79,7 @@
       },
       "fcn_user_correctpassword_0": {
         "id": "fcn_user_correctpassword_0",
-        "content": "$users._rightPassword?",
+        "content": "$user._rightPassword?",
         "nodeType": "decision",
         "branches": [
           "fcn_loginuserwithwrongpassword_0",
@@ -88,7 +88,7 @@
       },
       "fcn_loginuser_1": {
         "id": "fcn_loginuser_1",
-        "content": "Login $users",
+        "content": "Login $user",
         "nodeType": "action",
         "branches": [
           "fcn_verifyuserloggedin_0"
@@ -96,13 +96,13 @@
       },
       "fcn_verifyuserloggedin_0": {
         "id": "fcn_verifyuserloggedin_0",
-        "content": "Verify $users loggedIn",
+        "content": "Verify $user loggedIn",
         "nodeType": "state",
         "branches": []
       },
       "fcn_loginuserwithwrongpassword_0": {
         "id": "fcn_loginuserwithwrongpassword_0",
-        "content": "Login $users with wrong password",
+        "content": "Login $user with wrong password",
         "nodeType": "action",
         "branches": [
           "fcn_verifyusernotloggedin_0"
@@ -110,7 +110,7 @@
       },
       "fcn_verifyusernotloggedin_0": {
         "id": "fcn_verifyusernotloggedin_0",
-        "content": "Verify $users not loggedIn",
+        "content": "Verify $user not loggedIn",
         "nodeType": "state",
         "branches": []
       },
@@ -133,7 +133,7 @@
       },
       "fcn_verifynewuseradded_0": {
         "id": "fcn_verifynewuseradded_0",
-        "content": "Verify new $users added",
+        "content": "Verify new $user added",
         "nodeType": "state",
         "branches": [
           "fcn_test_2"
@@ -161,7 +161,7 @@
       },
       "fcn_user_correctpassword_2": {
         "id": "fcn_user_correctpassword_2",
-        "content": "$users._rightPassword?",
+        "content": "$user._rightPassword?",
         "nodeType": "decision",
         "branches": [
           "fcn_loginuserwithwrongpassword_2",
@@ -170,7 +170,7 @@
       },
       "fcn_loginuserwithwrongpassword_2": {
         "id": "fcn_loginuserwithwrongpassword_2",
-        "content": "Login $users with wrong password",
+        "content": "Login $user with wrong password",
         "nodeType": "action",
         "branches": [
           "fcn_verifynewuseradded_0"
@@ -178,7 +178,7 @@
       },
       "fcn_loginuser_3": {
         "id": "fcn_loginuser_3",
-        "content": "Login $users",
+        "content": "Login $user",
         "nodeType": "action",
         "branches": []
       }
