@@ -25,7 +25,7 @@
         "content": "Create $login",
         "nodeType": "action",
         "branches": [
-          "fcn_assertlogincreated_0"
+          "fcn_addtocart_0"
         ],
         "dataSet": {
           "dataSetName": "avanish.csv",
@@ -45,6 +45,18 @@
         "content": "$login.exists\u003dtrue",
         "nodeType": "state",
         "branches": []
+      },
+      "fcn_addtocart_0": {
+        "id": "fcn_addtocart_0",
+        "content": "add to $cart",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertlogincreated_0"
+        ],
+        "dataSet": {
+          "dataSetName": "cart.csv",
+          "dataSetGroupName": "default"
+        }
       }
     },
     "positions": {
@@ -61,11 +73,15 @@
         "left": 500.0
       },
       "fcn_assertlogincreated_0": {
-        "top": 331.0,
+        "top": 391.0,
         "left": 500.0
       },
       "fcn_loginexiststrue_0": {
-        "top": 391.0,
+        "top": 451.0,
+        "left": 500.0
+      },
+      "fcn_addtocart_0": {
+        "top": 336.1562,
         "left": 500.0
       }
     },
@@ -75,6 +91,7 @@
         "pathKey": [
           "fcn_createlogin_0",
           "fcn_createlogin_1",
+          "fcn_addtocart_0",
           "fcn_assertlogincreated_0",
           "fcn_loginexiststrue_0"
         ],
