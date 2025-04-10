@@ -1,0 +1,160 @@
+{
+  "name": "coupon",
+  "id": "-1",
+  "type": 1,
+  "content": {
+    "default": {
+      "attr_status_0": {
+        "name": "status",
+        "accessors": [
+          {
+            "id": "acc_select_status",
+            "name": "Status Input",
+            "accessor": "_select(\"status\")",
+            "messageAccessor": ""
+          }
+        ],
+        "type": "text",
+        "props": {
+          "prefix": "status1",
+          "min-length": "0",
+          "max-length": "0"
+        },
+        "invalidData": [],
+        "validData": []
+      },
+      "attr_name_1": {
+        "name": "name",
+        "accessors": [
+          {
+            "id": "acc0",
+            "name": "Name Input",
+            "accessor": "_textbox(\"name\")",
+            "messageAccessor": ""
+          }
+        ],
+        "type": "text",
+        "props": {
+          "prefix": "Cpn",
+          "min-length": "5",
+          "max-length": "6"
+        },
+        "invalidData": [],
+        "validData": []
+      },
+      "attr_code_2": {
+        "name": "code",
+        "accessors": [
+          {
+            "id": "acc0",
+            "name": "Code Input",
+            "accessor": "_textbox(\"code\")",
+            "messageAccessor": ""
+          }
+        ],
+        "type": "text",
+        "props": {
+          "prefix": "CPN",
+          "min-length": "3",
+          "max-length": "6"
+        },
+        "invalidData": [],
+        "validData": []
+      },
+      "attr_discount_3": {
+        "name": "discount",
+        "accessors": [
+          {
+            "id": "acc0",
+            "name": "Discount Input",
+            "accessor": "_textbox(\"discount\")",
+            "messageAccessor": ""
+          }
+        ],
+        "type": "number",
+        "props": {
+          "min": "10",
+          "max": "10"
+        },
+        "invalidData": [],
+        "validData": [],
+        "specific": [
+          {
+            "filterId": "fltUID_avanish_true_0",
+            "overrides": {
+              "accessors": [
+                {
+                  "id": "acc0",
+                  "name": "Discount Input",
+                  "accessor": "_textbox(\"discount\")",
+                  "messageAccessor": ""
+                }
+              ],
+              "type": "text",
+              "props": {
+                "prefix": "Pratik",
+                "include-alphabet": "true",
+                "include-numeric": "true",
+                "include-special": "false",
+                "add-timestamp": "false"
+              },
+              "validData": [
+                {
+                  "value": "1.234",
+                  "comment": "Floating poing number"
+                },
+                {
+                  "value": "123,456,789",
+                  "comment": "International numeration"
+                },
+                {
+                  "value": "100,100,100.123",
+                  "comment": "International numeration floating point"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "attr_avanish_4": {
+        "name": "avanish",
+        "accessors": [],
+        "type": "text",
+        "props": {},
+        "invalidData": [],
+        "validData": [
+          {
+            "value": "some text",
+            "comment": "Normal text"
+          },
+          {
+            "value": "prefix_sometext",
+            "comment": "Text with prefix"
+          },
+          {
+            "value": "sometext_suffix",
+            "comment": "Text with suffix"
+          },
+          {
+            "value": "Login to get your AI feedback.",
+            "comment": "Sentence"
+          },
+          {
+            "value": "Ein Hund beißt zwei Männer.",
+            "comment": "German Sentence"
+          },
+          {
+            "value": "Strong formatting using the \u003cstrong\u003e element.",
+            "comment": "Sentence with tag"
+          },
+          {
+            "value": "If multiple texts were received in response to a sent message,\\nonly the first valid text response was kept for analysis.",
+            "comment": "Sentence with new line"
+          }
+        ]
+      }
+    }
+  },
+  "enabled": false,
+  "parentId": ""
+}

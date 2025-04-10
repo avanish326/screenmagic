@@ -1,0 +1,38 @@
+{
+  "name": "Disable $coupon",
+  "id": "0",
+  "type": 3,
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Disable $coupon",
+    "specific": [],
+    "parameters": [
+      {
+        "parameterId": "coupon_",
+        "entityTypeId": "coupon",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_setSelected",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_select(\"status\")"
+          },
+          {
+            "paramMode": "code",
+            "customValue": "\"Disabled\""
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

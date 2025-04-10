@@ -1,0 +1,99 @@
+{
+  "name": "Navigate from @registration to @logout_admin_screen",
+  "id": "-1",
+  "type": 3,
+  "content": {
+    "isSystemKeyword": true,
+    "title": "Navigate from @registration to @logout_admin_screen",
+    "specific": [],
+    "parameters": [],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_div(\"alert alert-success alert-dismissible\")"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Assert",
+        "assertType": "Contains",
+        "secondaryParam": {
+          "paramMode": "code",
+          "customValue": "\"Success: Your coupon discount has been applied!\""
+        },
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "paramMode": "default",
+            "parameterId": "cart_",
+            "attributeId": "attr_01679636987669",
+            "accessorId": "acc0"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "paramMode": "default",
+          "parameterId": "cart_",
+          "attributeId": "attr_01679636987669"
+        },
+        "visibleCheck": false,
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "paramMode": "default",
+            "parameterId": "cart_",
+            "attributeId": "attr_11679636987670",
+            "accessorId": "acc0"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "paramMode": "default",
+          "parameterId": "cart_",
+          "attributeId": "attr_11679636987670"
+        },
+        "visibleCheck": false,
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "paramMode": "default",
+            "parameterId": "cart_",
+            "attributeId": "attr_21679636987670",
+            "accessorId": "acc0"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "paramMode": "default",
+          "parameterId": "cart_",
+          "attributeId": "attr_21679636987670"
+        },
+        "visibleCheck": false,
+        "specific": []
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

@@ -1,0 +1,186 @@
+{
+  "name": "coupon",
+  "id": "-1",
+  "type": 1,
+  "content": {
+    "default": {
+      "attr_01679636456422": {
+        "name": "name",
+        "accessors": [
+          {
+            "id": "acc0",
+            "name": "Name Input",
+            "accessor": "_textbox(\"name\")",
+            "messageAccessor": ""
+          }
+        ],
+        "type": "text",
+        "props": {
+          "prefix": "Cpn",
+          "min-length": "5",
+          "max-length": "6"
+        },
+        "invalidData": [],
+        "validData": []
+      },
+      "attr_11679636456422": {
+        "name": "code",
+        "accessors": [
+          {
+            "id": "acc0",
+            "name": "Code Input",
+            "accessor": "_textbox(\"code\")",
+            "messageAccessor": ""
+          }
+        ],
+        "type": "text",
+        "props": {
+          "prefix": "CPN",
+          "min-length": "3",
+          "max-length": "6",
+          "include-alphabet": "true",
+          "include-numeric": "true",
+          "include-special": "false"
+        },
+        "invalidData": [],
+        "validData": []
+      },
+      "attr_21679636456422": {
+        "name": "discount",
+        "accessors": [
+          {
+            "id": "acc0",
+            "name": "Discount Input",
+            "accessor": "_textbox(\"discount\")",
+            "messageAccessor": ""
+          }
+        ],
+        "type": "number",
+        "props": {
+          "min": "10",
+          "max": "10"
+        },
+        "invalidData": [],
+        "validData": [],
+        "specific": [
+          {
+            "filterId": "flt_avanish_true_0",
+            "overrides": {
+              "accessors": [
+                {
+                  "id": "acc0",
+                  "name": "Discount Input",
+                  "accessor": "_textbox(\"discount\")",
+                  "messageAccessor": ""
+                }
+              ],
+              "type": "number",
+              "props": {
+                "prefix": "Pratik"
+              },
+              "invalidData": [
+                {
+                  "value": "",
+                  "message": "",
+                  "comment": "Should not be blank"
+                },
+                {
+                  "value": "abc",
+                  "message": "",
+                  "comment": "Should be a number"
+                },
+                {
+                  "value": "1@3",
+                  "message": "",
+                  "comment": "Should be a number"
+                }
+              ],
+              "validData": [
+                {
+                  "value": "1.234",
+                  "comment": "Floating poing number"
+                },
+                {
+                  "value": "123,456,789",
+                  "comment": "International numeration"
+                },
+                {
+                  "value": "100,100,100.123\t",
+                  "comment": "International numeration floating point"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "attr_31679636489183": {
+        "name": "status",
+        "accessors": [
+          {
+            "id": "acc0",
+            "name": "Status Input",
+            "accessor": "_select(\"status\")",
+            "messageAccessor": ""
+          }
+        ],
+        "type": "text",
+        "props": {
+          "prefix": "true"
+        },
+        "invalidData": [],
+        "validData": []
+      },
+      "attr_avanish_4": {
+        "name": "avanish",
+        "accessors": [],
+        "type": "text",
+        "props": {
+          "prefix": "Campaign ",
+          "include-alphabet": "true",
+          "include-numeric": "true",
+          "include-special": "false",
+          "add-timestamp": "false"
+        },
+        "invalidData": [
+          {
+            "value": "",
+            "message": "",
+            "comment": "Should not be blank"
+          }
+        ],
+        "validData": [
+          {
+            "value": "some text",
+            "comment": "Normal text"
+          },
+          {
+            "value": "prefix_sometext",
+            "comment": "Text with prefix"
+          },
+          {
+            "value": "sometext_suffix",
+            "comment": "Text with suffix"
+          },
+          {
+            "value": "Login to get your AI feedback.",
+            "comment": "Sentence"
+          },
+          {
+            "value": "Ein Hund beißt zwei Männer.",
+            "comment": "German Sentence"
+          },
+          {
+            "value": "Strong formatting using the \u003cstrong\u003e element.",
+            "comment": "Sentence with tag"
+          },
+          {
+            "value": "If multiple texts were received in response to a sent message,\\nonly the first valid text response was kept for analysis.",
+            "comment": "Sentence with new line"
+          }
+        ]
+      }
+    }
+  },
+  "enabled": false,
+  "parentId": ""
+}

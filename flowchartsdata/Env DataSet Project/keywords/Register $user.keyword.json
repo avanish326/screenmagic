@@ -1,0 +1,249 @@
+{
+  "name": "Register $user",
+  "id": "-1",
+  "type": 3,
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Register $user",
+    "specific": [],
+    "parameters": [
+      {
+        "parameterId": "user_",
+        "entityTypeId": "user",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_getSelectedText",
+        "stepParameters": [
+          {
+            "paramMode": "default",
+            "screenId": "admin",
+            "accessorId": "acc_select_customer_group_id"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "paramMode": "string",
+          "customValue": "Default"
+        },
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "paramMode": "default",
+            "parameterId": "user_",
+            "attributeId": "attr_firstname_0",
+            "accessorId": "acc_textbox_firstname"
+          },
+          {
+            "paramMode": "default",
+            "parameterId": "user_",
+            "attributeId": "attr_firstname_0"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "paramMode": "default",
+            "parameterId": "user_",
+            "attributeId": "attr_lastname_1",
+            "accessorId": "acc_textbox_lastname"
+          },
+          {
+            "paramMode": "default",
+            "parameterId": "user_",
+            "attributeId": "attr_lastname_1"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "paramMode": "default",
+            "parameterId": "user_",
+            "attributeId": "attr_email_2",
+            "accessorId": "acc_textbox_email"
+          },
+          {
+            "paramMode": "default",
+            "parameterId": "user_",
+            "attributeId": "attr_email_2"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "paramMode": "default",
+            "parameterId": "user_",
+            "attributeId": "attr_telephone_3",
+            "accessorId": "acc_textbox_telephone"
+          },
+          {
+            "paramMode": "default",
+            "parameterId": "user_",
+            "attributeId": "attr_telephone_3"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "paramMode": "default",
+            "parameterId": "user_",
+            "attributeId": "attr_password_4",
+            "accessorId": "acc_password_password"
+          },
+          {
+            "paramMode": "default",
+            "parameterId": "user_",
+            "attributeId": "attr_password_4"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_setValue",
+        "stepParameters": [
+          {
+            "paramMode": "default",
+            "parameterId": "user_",
+            "attributeId": "attr_confirm_5",
+            "accessorId": "acc_password_confirm"
+          },
+          {
+            "paramMode": "default",
+            "parameterId": "user_",
+            "attributeId": "attr_confirm_5"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_setSelected",
+        "stepParameters": [
+          {
+            "paramMode": "default",
+            "screenId": "admin",
+            "accessorId": "acc_select_status"
+          },
+          {
+            "paramMode": "string",
+            "customValue": "Disabled"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_getSelectedText",
+        "stepParameters": [
+          {
+            "paramMode": "default",
+            "screenId": "admin",
+            "accessorId": "acc_select_newsletter"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "paramMode": "string",
+          "customValue": "Disabled"
+        },
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_getSelectedText",
+        "stepParameters": [
+          {
+            "paramMode": "default",
+            "screenId": "admin",
+            "accessorId": "acc_select_status"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "paramMode": "string",
+          "customValue": "Disabled"
+        },
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_getSelectedText",
+        "stepParameters": [
+          {
+            "paramMode": "default",
+            "screenId": "admin",
+            "accessorId": "acc_select_safe"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "paramMode": "string",
+          "customValue": "No"
+        },
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "default",
+            "screenId": "admin",
+            "accessorId": "acc_submit_btnBtnPrimary_in_divpullRight"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

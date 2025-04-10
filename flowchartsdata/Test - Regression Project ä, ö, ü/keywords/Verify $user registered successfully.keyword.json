@@ -1,0 +1,101 @@
+{
+  "name": "Verify $user registered successfully",
+  "id": "-1",
+  "type": 3,
+  "content": {
+    "isSystemKeyword": false,
+    "title": "Verify $user registered successfully",
+    "specific": [],
+    "parameters": [
+      {
+        "parameterId": "user_",
+        "entityTypeId": "user",
+        "suffix": ""
+      }
+    ],
+    "steps": [
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "paramMode": "default",
+            "screenId": "register",
+            "accessorId": "acc_paragraph_"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "paramMode": "string",
+          "customValue": "Congratulations! Your new account has been successfully created!"
+        },
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_click",
+        "stepParameters": [
+          {
+            "paramMode": "code",
+            "customValue": "_sahi._link(\"Edit Account\")"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Action",
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "paramMode": "default",
+            "parameterId": "user_",
+            "attributeId": "attr_firstname_0",
+            "accessorId": "acc_textbox_firstname"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Assert",
+        "assertType": "Equals",
+        "secondaryParam": {
+          "paramMode": "default",
+          "parameterId": "user_",
+          "attributeId": "attr_firstname_0"
+        },
+        "valueCheck": false,
+        "visibleCheck": false,
+        "blurDisableCheck": false,
+        "specific": []
+      },
+      {
+        "commented": false,
+        "action": "_getText",
+        "stepParameters": [
+          {
+            "paramMode": "default",
+            "parameterId": "user_",
+            "attributeId": "attr_firstname_0",
+            "accessorId": "acc_textbox_firstname"
+          }
+        ],
+        "stepCategory": "inbuilt",
+        "stepType": "Assert",
+        "assertType": "Contains",
+        "secondaryParam": {
+          "paramMode": "default",
+          "parameterId": "user_",
+          "attributeId": "attr_firstname_0"
+        },
+        "valueCheck": false,
+        "visibleCheck": false,
+        "blurDisableCheck": false,
+        "specific": []
+      }
+    ]
+  },
+  "enabled": false,
+  "parentId": ""
+}

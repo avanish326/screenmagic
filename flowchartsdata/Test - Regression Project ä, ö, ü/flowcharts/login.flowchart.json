@@ -1,0 +1,108 @@
+{
+  "name": "login",
+  "id": "-1",
+  "type": 0,
+  "content": {
+    "nodesMap": {
+      "fcn_start_0": {
+        "id": "fcn_start_0",
+        "content": "Start",
+        "nodeType": "start",
+        "branches": [
+          "fcn_createlogin_0"
+        ]
+      },
+      "fcn_createlogin_0": {
+        "id": "fcn_createlogin_0",
+        "content": "Create login",
+        "nodeType": "pathlabel",
+        "branches": [
+          "fcn_createlogin_1"
+        ]
+      },
+      "fcn_createlogin_1": {
+        "id": "fcn_createlogin_1",
+        "content": "Create $login",
+        "nodeType": "action",
+        "branches": [
+          "fcn_addtocart_0"
+        ],
+        "dataSet": {
+          "dataSetName": "avanish.csv",
+          "dataSetGroupName": "default"
+        }
+      },
+      "fcn_assertlogincreated_0": {
+        "id": "fcn_assertlogincreated_0",
+        "content": "Assert $login Created",
+        "nodeType": "state",
+        "branches": [
+          "fcn_loginexiststrue_0"
+        ]
+      },
+      "fcn_loginexiststrue_0": {
+        "id": "fcn_loginexiststrue_0",
+        "content": "$login.exists\u003dtrue",
+        "nodeType": "state",
+        "branches": []
+      },
+      "fcn_addtocart_0": {
+        "id": "fcn_addtocart_0",
+        "content": "add to $cart",
+        "nodeType": "action",
+        "branches": [
+          "fcn_assertlogincreated_0"
+        ],
+        "dataSet": {
+          "dataSetName": "cart.csv",
+          "dataSetGroupName": "default"
+        }
+      }
+    },
+    "positions": {
+      "fcn_start_0": {
+        "top": 150.0,
+        "left": 500.0
+      },
+      "fcn_createlogin_0": {
+        "top": 211.0,
+        "left": 500.0
+      },
+      "fcn_createlogin_1": {
+        "top": 271.0,
+        "left": 500.0
+      },
+      "fcn_assertlogincreated_0": {
+        "top": 391.0,
+        "left": 500.0
+      },
+      "fcn_loginexiststrue_0": {
+        "top": 451.0,
+        "left": 500.0
+      },
+      "fcn_addtocart_0": {
+        "top": 336.1562,
+        "left": 500.0
+      }
+    },
+    "isPrimary": true,
+    "pathNames": [
+      {
+        "pathKey": [
+          "fcn_createlogin_0",
+          "fcn_createlogin_1",
+          "fcn_addtocart_0",
+          "fcn_assertlogincreated_0",
+          "fcn_loginexiststrue_0"
+        ],
+        "dependsPathUID": "17422981975830",
+        "isValidationsEnabled": false
+      }
+    ],
+    "tags": "doä,ö,üall",
+    "flowChartUID": "fcUID_login_0",
+    "pathExecutionOrder": []
+  },
+  "enabled": true,
+  "parentId": ""
+}

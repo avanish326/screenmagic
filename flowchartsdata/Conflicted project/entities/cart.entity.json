@@ -1,0 +1,158 @@
+{
+  "name": "cart",
+  "id": "-1",
+  "type": 1,
+  "content": {
+    "default": {
+      "attr_subtotal_a_0": {
+        "name": "subtotal_a",
+        "accessors": [
+          {
+            "id": "acc0",
+            "name": "Subtotal_a Input",
+            "accessor": "_cell(1, _near(_strong(\"Sub-Total:\")))",
+            "messageAccessor": ""
+          }
+        ],
+        "type": "text",
+        "props": {
+          "prefix": "$200.00",
+          "min-length": "0",
+          "max-length": "0"
+        },
+        "invalidData": [],
+        "validData": []
+      },
+      "attr_discount_1": {
+        "name": "discount",
+        "accessors": [
+          {
+            "id": "acc0",
+            "name": "Discount Input",
+            "accessor": "_cell(1, _near(_strong(\"/Coupon (.*):/\")))",
+            "messageAccessor": ""
+          },
+          {
+            "id": "acc_cell_discountInput2",
+            "name": "Total Input",
+            "accessor": "_cell(\"Discount Input\")",
+            "messageAccessor": ""
+          }
+        ],
+        "type": "text",
+        "props": {
+          "prefix": "$-40.00",
+          "min-length": "0",
+          "max-length": "0"
+        },
+        "invalidData": [],
+        "validData": [
+          {
+            "value": "Ein Hund beißt zwei Männer.",
+            "comment": "German Sentence"
+          },
+          {
+            "value": "Strong formatting using the \u003cstrong\u003e element.",
+            "comment": "Sentence with tag"
+          },
+          {
+            "value": "If multiple texts were received in response to a sent message,\\nonly the first valid text response was kept for analysis.",
+            "comment": "Sentence with new line"
+          }
+        ]
+      },
+      "attr_total_2": {
+        "name": "total",
+        "accessors": [
+          {
+            "id": "acc0",
+            "name": "Total Input",
+            "accessor": "_cell(1, _near(_strong(\"Total:\")))",
+            "messageAccessor": ""
+          }
+        ],
+        "type": "text",
+        "props": {
+          "prefix": "$200.00",
+          "min-length": "0",
+          "max-length": "0"
+        },
+        "invalidData": [],
+        "validData": [
+          {
+            "value": "some text",
+            "comment": "Normal text"
+          },
+          {
+            "value": "prefix_sometext",
+            "comment": "Text with prefix"
+          },
+          {
+            "value": "sometext_suffix",
+            "comment": "Text with suffix"
+          }
+        ]
+      },
+      "attr_remote_3": {
+        "name": "remote",
+        "accessors": [],
+        "type": "text",
+        "props": {
+          "prefix": "remote",
+          "min-length": "1",
+          "max-length": "2",
+          "suffix": "hell"
+        },
+        "invalidData": [],
+        "validData": [
+          {
+            "value": "some text",
+            "comment": "Normal text"
+          },
+          {
+            "value": "prefix_sometext",
+            "comment": "Text with prefix"
+          },
+          {
+            "value": "sometext_suffix",
+            "comment": "Text with suffix"
+          }
+        ],
+        "specific": [
+          {
+            "filterId": "fltUID_avanish_true_0",
+            "overrides": {
+              "type": "text",
+              "props": {
+                "prefix": "avanish",
+                "min-length": "0",
+                "max-length": "2",
+                "suffix": "no",
+                "include-alphabet": "true",
+                "include-numeric": "true",
+                "include-special": "false",
+                "add-timestamp": "false"
+              },
+              "validData": [
+                {
+                  "value": "01/02/2018",
+                  "comment": "Date format: MM/dd/yyyy"
+                },
+                {
+                  "value": "02-01-2018 6:07:59",
+                  "comment": "Date format: dd-MM-yyyy hh:mm:ss"
+                },
+                {
+                  "value": "02 January 2018",
+                  "comment": "Date format: dd MMMM yyyy"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  },
+  "enabled": false,
+  "parentId": ""
+}
