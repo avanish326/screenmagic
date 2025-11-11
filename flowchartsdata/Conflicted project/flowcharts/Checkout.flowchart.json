@@ -387,9 +387,9 @@
           "fcn_path_applycoupon_0",
           "fcn_verifycarttotal_0"
         ],
-        "pathName": "Checkout 1",
+        "pathName": "Checkout 1 Avanish 1",
         "dependsPathUID": "17388303449190",
-        "pathTags": "1",
+        "pathTags": "11",
         "isValidationsEnabled": true
       },
       {
@@ -408,14 +408,15 @@
           "fcn_verifycoupondiscountnotappliedtocart_0",
           "fcn_callcustomfunctionfromscriptdir_0"
         ],
-        "pathName": "Checkout 2",
+        "pathName": "Checkout 2 Avanish 2",
         "dependsPathUID": "17388303449191",
         "pathDependsOn": {
           "fcUID_checkout_0": [
-            "17388303449190"
+            "17388303449190",
+            "17388303449192"
           ]
         },
-        "pathTags": "2",
+        "pathTags": "22",
         "isValidationsEnabled": false
       },
       {
@@ -435,9 +436,14 @@
           "fcn_verifycoupondiscountnotappliedtocart_0",
           "fcn_callcustomfunctionfromscriptdir_0"
         ],
-        "pathName": "Checkout 3",
+        "pathName": "Checkout 3 Avanish 3",
         "dependsPathUID": "17388303449192",
-        "pathTags": "3",
+        "pathDependsOn": {
+          "fcUID_checkout_0": [
+            "17388303449191"
+          ]
+        },
+        "pathTags": "33",
         "isValidationsEnabled": true
       },
       {
@@ -457,14 +463,14 @@
           "fcn_coupon_isforproduct_0",
           "fcn_verifycoupondiscountappliedtocart_0"
         ],
-        "pathName": "Checkout 6",
+        "pathName": "Checkout 6 Avanish 6",
         "dependsPathUID": "17388303449193",
         "pathDependsOn": {
           "fcUID_checkout_0": [
             "17388303449194"
           ]
         },
-        "pathTags": "6",
+        "pathTags": "66",
         "isValidationsEnabled": false
       },
       {
@@ -486,14 +492,14 @@
           "fcn_verifycoupondiscountnotappliedtocart_0",
           "fcn_callcustomfunctionfromscriptdir_0"
         ],
-        "pathName": "Checkout 4",
+        "pathName": "Checkout 4 Avanish 4",
         "dependsPathUID": "17388303449194",
         "pathDependsOn": {
           "fcUID_checkout_0": [
             "17388303449192"
           ]
         },
-        "pathTags": "4",
+        "pathTags": "44",
         "isValidationsEnabled": false
       },
       {
@@ -514,9 +520,9 @@
           "fcn_couponproductproduct_0",
           "fcn_verifycoupondiscountappliedtocart_0"
         ],
-        "pathName": "Checkout 5",
+        "pathName": "Checkout 5 Avanish 5",
         "dependsPathUID": "17388303449195",
-        "pathTags": "5",
+        "pathTags": "55",
         "isValidationsEnabled": true
       },
       {
@@ -528,9 +534,14 @@
           "fcn_searchproduct_0",
           "fcn_ftomremote_0"
         ],
-        "pathName": "Checkout 7",
+        "pathName": "Checkout 7 Avanish 7",
         "dependsPathUID": "17388303449196",
-        "pathTags": "7",
+        "pathDependsOn": {
+          "fcUID_checkout_0": [
+            "17628577339819"
+          ]
+        },
+        "pathTags": "77",
         "isValidationsEnabled": true
       },
       {
@@ -540,15 +551,16 @@
           "fcn_assertactualcreated_0",
           "fcn_actualexiststrue_0"
         ],
-        "pathName": "Create actual 8",
+        "pathName": "Create actual 8 Avanish 8",
         "dependsPathUID": "17388356212527",
         "pathDependsOn": {
           "fcUID_checkout_0": [
             "17388303449196"
           ]
         },
-        "pathTags": "8",
-        "isValidationsEnabled": false
+        "pathTags": "88",
+        "isValidationsEnabled": false,
+        "pathPrerequisites": "BROWSER:2"
       },
       {
         "pathKey": [
@@ -557,7 +569,9 @@
           "fcn_verifytestpresent_0",
           "fcn_actualexiststrue_2"
         ],
+        "pathName": "New flow Avanish 9",
         "dependsPathUID": "17628575845458",
+        "pathTags": "99",
         "isValidationsEnabled": false
       },
       {
@@ -570,12 +584,25 @@
           "fcn_addproducttocart_0",
           "fcn_newnodeaddedbyavanish_0"
         ],
+        "pathName": "Checkout Avanish 8",
         "dependsPathUID": "17628577339819",
+        "pathTags": "88",
         "isValidationsEnabled": false
       }
     ],
     "flowChartUID": "fcUID_checkout_0",
-    "pathExecutionOrder": []
+    "pathExecutionOrder": [
+      "17388303449190",
+      "17388303449191",
+      "17388303449192",
+      "17388303449194",
+      "17388303449195",
+      "17388303449193",
+      "17628577339819",
+      "17388303449196",
+      "17388356212527",
+      "17628575845458"
+    ]
   },
   "enabled": true,
   "parentId": ""
