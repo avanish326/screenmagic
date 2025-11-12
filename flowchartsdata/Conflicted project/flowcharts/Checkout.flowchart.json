@@ -390,7 +390,21 @@
         "pathName": "Checkout 1 Avanish 1",
         "dependsPathUID": "17388303449190",
         "pathTags": "11",
-        "isValidationsEnabled": true
+        "isValidationsEnabled": true,
+        "callbacks": {
+          "onScriptFailure": {
+            "callbackFunction": "onScriptFailure",
+            "callbackKeyword": "fail"
+          },
+          "onScriptError": {
+            "callbackFunction": "onScriptError",
+            "callbackKeyword": "error"
+          },
+          "onScriptEnd": {
+            "callbackFunction": "onScriptEnd",
+            "callbackKeyword": "end"
+          }
+        }
       },
       {
         "pathKey": [
@@ -416,8 +430,12 @@
             "17388303449192"
           ]
         },
+        "dataSet": {
+          "dataSetName": "data1.csv",
+          "dataSetGroupName": "default"
+        },
         "pathTags": "22",
-        "isValidationsEnabled": false
+        "isValidationsEnabled": true
       },
       {
         "pathKey": [
@@ -444,7 +462,13 @@
           ]
         },
         "pathTags": "33",
-        "isValidationsEnabled": true
+        "isValidationsEnabled": true,
+        "callbacks": {
+          "onScriptEnd": {
+            "callbackFunction": "onScriptEnd",
+            "callbackKeyword": "error"
+          }
+        }
       },
       {
         "pathKey": [
@@ -499,8 +523,12 @@
             "17388303449192"
           ]
         },
+        "dataSet": {
+          "dataSetName": "data.csv",
+          "dataSetGroupName": "default"
+        },
         "pathTags": "44",
-        "isValidationsEnabled": false
+        "isValidationsEnabled": true
       },
       {
         "pathKey": [
@@ -522,8 +550,18 @@
         ],
         "pathName": "Checkout 5 Avanish 5",
         "dependsPathUID": "17388303449195",
+        "dataSet": {
+          "dataSetName": "path.csv",
+          "dataSetGroupName": "default"
+        },
         "pathTags": "55",
-        "isValidationsEnabled": true
+        "isValidationsEnabled": false,
+        "callbacks": {
+          "onScriptFailure": {
+            "callbackFunction": "onScriptFailure",
+            "callbackKeyword": "fail"
+          }
+        }
       },
       {
         "pathKey": [
@@ -542,7 +580,13 @@
           ]
         },
         "pathTags": "77",
-        "isValidationsEnabled": true
+        "isValidationsEnabled": false,
+        "callbacks": {
+          "onScriptError": {
+            "callbackFunction": "onScriptError",
+            "callbackKeyword": "error"
+          }
+        }
       },
       {
         "pathKey": [
@@ -572,7 +616,13 @@
         "pathName": "New flow Avanish 9",
         "dependsPathUID": "17628575845458",
         "pathTags": "99",
-        "isValidationsEnabled": false
+        "isValidationsEnabled": false,
+        "callbacks": {
+          "onScriptEnd": {
+            "callbackFunction": "onScriptEnd",
+            "callbackKeyword": "error"
+          }
+        }
       },
       {
         "pathKey": [
@@ -586,8 +636,12 @@
         ],
         "pathName": "Checkout Avanish 8",
         "dependsPathUID": "17628577339819",
+        "dataSet": {
+          "dataSetName": "data1.csv",
+          "dataSetGroupName": "default"
+        },
         "pathTags": "88",
-        "isValidationsEnabled": false
+        "isValidationsEnabled": true
       }
     ],
     "flowChartUID": "fcUID_checkout_0",
