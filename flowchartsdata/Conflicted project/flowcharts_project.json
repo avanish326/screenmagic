@@ -1,11 +1,11 @@
 {
-  "description": "",
+  "description": "hi this is test for conflict and diff-merge",
   "title": "Conflicted project",
   "content": {
     "executionOrder": [
+      "Create Product",
       "Checkout",
       "Create Coupon",
-      "Create Product",
       "User Registration"
     ],
     "filters": {
@@ -22,8 +22,43 @@
         "id": "fltUID_avanish_true_0"
       }
     },
-    "isCustomFunctionsFromScriptsDir": false,
+    "isCustomFunctionsFromScriptsDir": true,
     "projectSuiteInfo": [],
-    "flowchartsAndExternalDdcsvInfo": {}
+    "flowchartsAndExternalDdcsvInfo": {
+      "fcUID_createcoupon_0": {
+        "prerequisites": "WINDOWS:1,BROWSER:1",
+        "uid": "fcUID_createcoupon_0",
+        "dependsOn": [
+          "fcUID_checkout_0",
+          "fcUID_createproduct_0"
+        ]
+      },
+      "fcUID_createproduct_0": {
+        "prerequisites": "BROWSER:1",
+        "uid": "fcUID_createproduct_0",
+        "dependsOn": []
+      },
+      "fcUID_checkout_0": {
+        "prerequisites": "",
+        "uid": "fcUID_checkout_0",
+        "dependsOn": [
+          "fcUID_createproduct_0"
+        ]
+      }
+    },
+    "callbacks": {
+      "onScriptEnd": {
+        "callbackFunction": "onScriptEnd",
+        "callbackKeyword": "error"
+      },
+      "onScriptFailure": {
+        "callbackFunction": "onScriptFailure",
+        "callbackKeyword": "fail"
+      },
+      "onScriptError": {
+        "callbackFunction": "onScriptError",
+        "callbackKeyword": "end"
+      }
+    }
   }
 }
