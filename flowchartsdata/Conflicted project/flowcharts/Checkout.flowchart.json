@@ -27,7 +27,7 @@
         "content": "[login\u003dnone]",
         "nodeType": "action",
         "branches": [
-          "fcn_tc3thirdtestcase_0"
+          "fcn_createproductcreateproductproduct_0"
         ],
         "dataSet": {
           "dataSetName": "path.csv",
@@ -230,7 +230,7 @@
         "content": "flow for $test",
         "nodeType": "action",
         "branches": [
-          "fcn_verifytestpresent_0"
+          "fcn_createcouponcreatecouponcoupon_0"
         ]
       },
       "fcn_verifytestpresent_0": {
@@ -245,7 +245,9 @@
         "id": "fcn_actualexiststrue_2",
         "content": "$test.exists\u003dtrue",
         "nodeType": "state",
-        "branches": []
+        "branches": [
+          "fcn_checkoutcheckout3avanish3cartcouponpathproductuser_0"
+        ]
       },
       "fcn_newnodeaddedbyavanish_0": {
         "id": "fcn_newnodeaddedbyavanish_0",
@@ -313,6 +315,84 @@
         "testCaseInfo": {
           "isTestCaseEnd": true
         }
+      },
+      "fcn_createproductcreateproductproduct_0": {
+        "id": "fcn_createproductcreateproductproduct_0",
+        "content": "",
+        "nodeType": "callpath",
+        "branches": [
+          "fcn_tc3thirdtestcase_0"
+        ],
+        "callPathData": {
+          "flowChartUID": "fcUID_createproduct_0",
+          "pathUID": "17659541364070",
+          "pathParam": {
+            "product": "product"
+          }
+        }
+      },
+      "fcn_createcouponcreatecouponcoupon_0": {
+        "id": "fcn_createcouponcreatecouponcoupon_0",
+        "content": "",
+        "nodeType": "callpath",
+        "branches": [
+          "fcn_verifytestpresent_0"
+        ],
+        "callPathData": {
+          "flowChartUID": "fcUID_createcoupon_0",
+          "pathUID": "17659541436150",
+          "pathParam": {
+            "coupon": "coupon"
+          },
+          "dataSetParam": {
+            "fcn_fillcoupondetails_0": {
+              "callDataSet": {
+                "dataSetName": "data.csv",
+                "dataSetGroupName": "default"
+              }
+            }
+          }
+        }
+      },
+      "fcn_checkoutcheckout3avanish3cartcouponpathproductuser_0": {
+        "id": "fcn_checkoutcheckout3avanish3cartcouponpathproductuser_0",
+        "content": "",
+        "nodeType": "callpath",
+        "branches": [
+          "fcn_createproductcreateproductproduct_1"
+        ],
+        "callPathData": {
+          "flowChartUID": "fcUID_checkout_0",
+          "pathUID": "17388303449192",
+          "pathParam": {
+            "cart": "cart",
+            "coupon": "coupon",
+            "path": "path",
+            "product": "product",
+            "user": "user"
+          },
+          "dataSetParam": {
+            "fcn_addproducttocart_0": {
+              "callDataSet": {
+                "dataSetName": "data.csv",
+                "dataSetGroupName": "default"
+              }
+            }
+          }
+        }
+      },
+      "fcn_createproductcreateproductproduct_1": {
+        "id": "fcn_createproductcreateproductproduct_1",
+        "content": "",
+        "nodeType": "callpath",
+        "branches": [],
+        "callPathData": {
+          "flowChartUID": "fcUID_createproduct_0",
+          "pathUID": "17659541364070",
+          "pathParam": {
+            "product": "product"
+          }
+        }
       }
     },
     "positions": {
@@ -329,71 +409,71 @@
         "left": 500.0
       },
       "fcn_shopping_cart_0": {
-        "top": 397.0,
+        "top": 487.0,
         "left": 500.0
       },
       "fcn_productexists_0": {
-        "top": 486.0,
+        "top": 576.0,
         "left": 500.0
       },
       "fcn_searchproduct_0": {
-        "top": 564.1666870117188,
+        "top": 654.1666870117188,
         "left": 500.0
       },
       "fcn_addproducttocart_0": {
-        "top": 640.0,
+        "top": 730.0,
         "left": 500.0
       },
       "fcn_userexists_0": {
-        "top": 705.1562,
+        "top": 795.1562,
         "left": 500.0
       },
       "fcn_viewcartfromremote_0": {
-        "top": 784.1666717529297,
+        "top": 874.1666717529297,
         "left": 500.0
       },
       "fcn_path_applycoupon_0": {
-        "top": 881.3333282470703,
+        "top": 971.3333282470703,
         "left": 500.0
       },
       "fcn_verifycarttotal_0": {
-        "top": 1028.1666717529297,
+        "top": 1118.1666717529297,
         "left": 947.0
       },
       "fcn_applycoupon_0": {
-        "top": 986.1666717529297,
+        "top": 1076.1666717529297,
         "left": 500.0
       },
       "fcn_couponexists_0": {
-        "top": 1076.3333282470703,
+        "top": 1166.3333282470703,
         "left": 500.0
       },
       "fcn_verifycoupondiscountnotappliedtocart_0": {
-        "top": 1574.5,
+        "top": 1664.5,
         "left": 1070.0
       },
       "fcn_callcustomfunctionfromscriptdir_0": {
-        "top": 1659.8010864257812,
+        "top": 1749.8010864257812,
         "left": 1070.0
       },
       "fcn_coupon_isenabled_0": {
-        "top": 1141.5,
+        "top": 1231.5,
         "left": 500.0
       },
       "fcn_coupon_isforproduct_0": {
-        "top": 1227.6666870117188,
+        "top": 1317.6666870117188,
         "left": 500.0
       },
       "fcn_verifycoupondiscountappliedtocart_0": {
-        "top": 1566.5,
+        "top": 1656.5,
         "left": 500.0
       },
       "fcn_couponproductproduct_0": {
-        "top": 1354.8333129882812,
+        "top": 1444.8333129882812,
         "left": 795.0
       },
       "fcn_ftomremote_0": {
-        "top": 602.0,
+        "top": 692.0,
         "left": 838.0
       },
       "fcn_createactual_0": {
@@ -421,15 +501,15 @@
         "left": 1060.0
       },
       "fcn_verifytestpresent_0": {
-        "top": 349.1562,
+        "top": 439.1562,
         "left": 1060.0
       },
       "fcn_actualexiststrue_2": {
-        "top": 421.296825,
+        "top": 511.296825,
         "left": 1060.0
       },
       "fcn_newnodeaddedbyavanish_0": {
-        "top": 743.140625,
+        "top": 833.140625,
         "left": 1146.0
       },
       "fcn_tc1_0": {
@@ -445,12 +525,28 @@
         "left": 1409.0
       },
       "fcn_tc3thirdtestcase_0": {
-        "top": 337.0,
+        "top": 427.0,
         "left": 500.0
       },
       "fcn_testcase_end_1": {
-        "top": 953.484325,
+        "top": 1043.484325,
         "left": 947.0
+      },
+      "fcn_createproductcreateproductproduct_0": {
+        "top": 337.0,
+        "left": 500.0
+      },
+      "fcn_createcouponcreatecouponcoupon_0": {
+        "top": 349.1562,
+        "left": 1060.0
+      },
+      "fcn_checkoutcheckout3avanish3cartcouponpathproductuser_0": {
+        "top": 583.43745,
+        "left": 1060.0
+      },
+      "fcn_createproductcreateproductproduct_1": {
+        "top": 673.421875,
+        "left": 1060.0
       }
     },
     "isPrimary": true,
@@ -459,6 +555,7 @@
         "pathKey": [
           "fcn_checkout_0",
           "fcn_loginnone_0",
+          "fcn_createproductcreateproductproduct_0",
           "fcn_tc3thirdtestcase_0",
           "fcn_shopping_cart_0",
           "fcn_productexists_0",
@@ -499,6 +596,7 @@
         "pathKey": [
           "fcn_checkout_0",
           "fcn_loginnone_0",
+          "fcn_createproductcreateproductproduct_0",
           "fcn_tc3thirdtestcase_0",
           "fcn_shopping_cart_0",
           "fcn_productexists_0",
@@ -531,6 +629,7 @@
         "pathKey": [
           "fcn_checkout_0",
           "fcn_loginnone_0",
+          "fcn_createproductcreateproductproduct_0",
           "fcn_tc3thirdtestcase_0",
           "fcn_shopping_cart_0",
           "fcn_productexists_0",
@@ -565,6 +664,7 @@
         "pathKey": [
           "fcn_checkout_0",
           "fcn_loginnone_0",
+          "fcn_createproductcreateproductproduct_0",
           "fcn_tc3thirdtestcase_0",
           "fcn_shopping_cart_0",
           "fcn_productexists_0",
@@ -593,6 +693,7 @@
         "pathKey": [
           "fcn_checkout_0",
           "fcn_loginnone_0",
+          "fcn_createproductcreateproductproduct_0",
           "fcn_tc3thirdtestcase_0",
           "fcn_shopping_cart_0",
           "fcn_productexists_0",
@@ -627,6 +728,7 @@
         "pathKey": [
           "fcn_checkout_0",
           "fcn_loginnone_0",
+          "fcn_createproductcreateproductproduct_0",
           "fcn_tc3thirdtestcase_0",
           "fcn_shopping_cart_0",
           "fcn_productexists_0",
@@ -661,6 +763,7 @@
         "pathKey": [
           "fcn_checkout_0",
           "fcn_loginnone_0",
+          "fcn_createproductcreateproductproduct_0",
           "fcn_tc3thirdtestcase_0",
           "fcn_shopping_cart_0",
           "fcn_productexists_0",
@@ -708,8 +811,11 @@
         "pathKey": [
           "fcn_newflow_0",
           "fcn_flowfortest_0",
+          "fcn_createcouponcreatecouponcoupon_0",
           "fcn_verifytestpresent_0",
-          "fcn_actualexiststrue_2"
+          "fcn_actualexiststrue_2",
+          "fcn_checkoutcheckout3avanish3cartcouponpathproductuser_0",
+          "fcn_createproductcreateproductproduct_1"
         ],
         "pathName": "New flow Avanish 9",
         "dependsPathUID": "17628575845458",
@@ -726,6 +832,7 @@
         "pathKey": [
           "fcn_checkout_0",
           "fcn_loginnone_0",
+          "fcn_createproductcreateproductproduct_0",
           "fcn_tc3thirdtestcase_0",
           "fcn_shopping_cart_0",
           "fcn_productexists_0",
