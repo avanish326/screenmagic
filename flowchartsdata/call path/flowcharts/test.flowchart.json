@@ -12,7 +12,8 @@
           "fcn_registration_0",
           "fcn_registration_1",
           "fcn_registration_2",
-          "fcn_registration_3"
+          "fcn_registration_3",
+          "fcn_registrationfour_1"
         ]
       },
       "fcn_registration_0": {
@@ -41,7 +42,7 @@
         "content": "Go To Registration Page conflict",
         "nodeType": "action",
         "branches": [
-          "fcn_testregistration2user_0"
+          "fcn_enteruserdetailsavanish_0"
         ]
       },
       "fcn_enteruserdetailsavanish_0": {
@@ -108,7 +109,7 @@
         "content": "Enter $user details two",
         "nodeType": "action",
         "branches": [
-          "fcn_testingagainregistration2user_0"
+          "fcn_confirmregistrationavanish_1"
         ]
       },
       "fcn_confirmregistrationavanish_1": {
@@ -168,18 +169,14 @@
         "nodeType": "action",
         "branches": [
           "fcn_confirmregistrationavanish_2"
-        ],
-        "dataSet": {
-          "dataSetName": "data_two.csv",
-          "dataSetGroupName": "default"
-        }
+        ]
       },
       "fcn_confirmregistrationavanish_2": {
         "id": "fcn_confirmregistrationavanish_2",
         "content": "Confirm Registration avanish three",
         "nodeType": "state",
         "branches": [
-          "fcn_testregistrationfouruser_0"
+          "fcn_logout_2"
         ]
       },
       "fcn_logout_2": {
@@ -230,12 +227,8 @@
         "content": "Enter $user details avanish four",
         "nodeType": "action",
         "branches": [
-          "fcn_testregistration2user_1"
-        ],
-        "dataSet": {
-          "dataSetName": "data_two.csv",
-          "dataSetGroupName": "default"
-        }
+          "fcn_confirmregistrationavanish_3"
+        ]
       },
       "fcn_confirmregistrationavanish_3": {
         "id": "fcn_confirmregistrationavanish_3",
@@ -259,73 +252,64 @@
         "nodeType": "action",
         "branches": []
       },
-      "fcn_testregistration2user_0": {
-        "id": "fcn_testregistration2user_0",
-        "content": "",
-        "nodeType": "callpath",
+      "fcn_registrationfour_1": {
+        "id": "fcn_registrationfour_1",
+        "content": "Registration five",
+        "nodeType": "pathlabel",
         "branches": [
-          "fcn_enteruserdetailsavanish_0"
+          "fcn__6"
+        ]
+      },
+      "fcn__6": {
+        "id": "fcn__6",
+        "content": "",
+        "nodeType": "testcase",
+        "branches": [
+          "fcn_gotoregistrationpageconflictfour_1"
         ],
-        "callPathData": {
-          "flowChartUID": "fcUID_test_0",
-          "pathUID": "17659630402311",
-          "pathParam": {
-            "user": "user"
-          }
+        "testCaseInfo": {
+          "name": "TC-5",
+          "description": "",
+          "isTestCaseEnd": false
         }
       },
-      "fcn_testregistrationfouruser_0": {
-        "id": "fcn_testregistrationfouruser_0",
-        "content": "",
-        "nodeType": "callpath",
+      "fcn_gotoregistrationpageconflictfour_1": {
+        "id": "fcn_gotoregistrationpageconflictfour_1",
+        "content": "Go To Registration Page conflict five",
+        "nodeType": "action",
         "branches": [
-          "fcn_logout_2"
-        ],
-        "callPathData": {
-          "flowChartUID": "fcUID_test_0",
-          "pathUID": "17659632951043",
-          "pathParam": {
-            "user": "user"
-          },
-          "dataSetParam": {
-            "fcn_enteruserdetailsavanish_3": {
-              "callDataSet": {
-                "dataSetName": "data_two.csv",
-                "dataSetGroupName": "default"
-              }
-            }
-          }
-        }
+          "fcn_enteruserdetailsavanishfour_1"
+        ]
       },
-      "fcn_testregistration2user_1": {
-        "id": "fcn_testregistration2user_1",
-        "content": "",
-        "nodeType": "callpath",
+      "fcn_enteruserdetailsavanishfour_1": {
+        "id": "fcn_enteruserdetailsavanishfour_1",
+        "content": "Enter $user details avanish five",
+        "nodeType": "action",
         "branches": [
-          "fcn_confirmregistrationavanish_3"
-        ],
-        "callPathData": {
-          "flowChartUID": "fcUID_test_0",
-          "pathUID": "17659630402311",
-          "pathParam": {
-            "user": "user"
-          }
-        }
+          "fcn_confirmregistrationavanishfour_1"
+        ]
       },
-      "fcn_testingagainregistration2user_0": {
-        "id": "fcn_testingagainregistration2user_0",
-        "content": "",
-        "nodeType": "callpath",
+      "fcn_confirmregistrationavanishfour_1": {
+        "id": "fcn_confirmregistrationavanishfour_1",
+        "content": "Confirm Registration avanish five",
+        "nodeType": "state",
         "branches": [
-          "fcn_confirmregistrationavanish_1"
-        ],
-        "callPathData": {
-          "flowChartUID": "fcUID_testingagain_0",
-          "pathUID": "17659671990570",
-          "pathParam": {
-            "user": "user"
-          }
-        }
+          "fcn_logoutfour_1"
+        ]
+      },
+      "fcn_logoutfour_1": {
+        "id": "fcn_logoutfour_1",
+        "content": "Logout five",
+        "nodeType": "action",
+        "branches": [
+          "fcn_newnodefour_1"
+        ]
+      },
+      "fcn_newnodefour_1": {
+        "id": "fcn_newnodefour_1",
+        "content": "New Node five",
+        "nodeType": "action",
+        "branches": []
       }
     },
     "positions": {
@@ -445,21 +429,33 @@
         "top": 687.28125,
         "left": 1341.0
       },
-      "fcn_testregistration2user_0": {
-        "top": 409.0,
-        "left": 500.0
+      "fcn_registrationfour_1": {
+        "top": 218.0,
+        "left": 1620.0
       },
-      "fcn_testregistrationfouruser_0": {
-        "top": 532.125,
-        "left": 1060.0
+      "fcn__6": {
+        "top": 284.0,
+        "left": 1620.0
       },
-      "fcn_testregistration2user_1": {
-        "top": 474.1562,
-        "left": 1342.0
+      "fcn_gotoregistrationpageconflictfour_1": {
+        "top": 343.0,
+        "left": 1620.0
       },
-      "fcn_testingagainregistration2user_0": {
-        "top": 474.1562,
-        "left": 782.0
+      "fcn_enteruserdetailsavanishfour_1": {
+        "top": 402.0,
+        "left": 1622.0
+      },
+      "fcn_confirmregistrationavanishfour_1": {
+        "top": 645.125,
+        "left": 1620.0
+      },
+      "fcn_logoutfour_1": {
+        "top": 711.2916870117188,
+        "left": 1621.0
+      },
+      "fcn_newnodefour_1": {
+        "top": 777.28125,
+        "left": 1621.0
       }
     },
     "isPrimary": true,
@@ -469,7 +465,6 @@
           "fcn_registration_0",
           "fcn__0",
           "fcn_gotoregistrationpageconflict_0",
-          "fcn_testregistration2user_0",
           "fcn_enteruserdetailsavanish_0",
           "fcn_confirmregistrationavanish_0",
           "fcn_logout_0",
@@ -484,7 +479,6 @@
           "fcn__1",
           "fcn_gotoregistrationpageconflict_1",
           "fcn_enteruserdetailsavanish_1",
-          "fcn_testingagainregistration2user_0",
           "fcn_confirmregistrationavanish_1",
           "fcn_logout_1",
           "fcn_newnode_1"
@@ -499,7 +493,6 @@
           "fcn_gotoregistrationpageconflict_2",
           "fcn_enteruserdetailsavanish_2",
           "fcn_confirmregistrationavanish_2",
-          "fcn_testregistrationfouruser_0",
           "fcn_logout_2",
           "fcn_newnode_2"
         ],
@@ -512,12 +505,24 @@
           "fcn__3",
           "fcn_gotoregistrationpageconflict_3",
           "fcn_enteruserdetailsavanish_3",
-          "fcn_testregistration2user_1",
           "fcn_confirmregistrationavanish_3",
           "fcn_logout_3",
           "fcn_newnode_3"
         ],
         "dependsPathUID": "17659632951043",
+        "isValidationsEnabled": false
+      },
+      {
+        "pathKey": [
+          "fcn_registrationfour_1",
+          "fcn__6",
+          "fcn_gotoregistrationpageconflictfour_1",
+          "fcn_enteruserdetailsavanishfour_1",
+          "fcn_confirmregistrationavanishfour_1",
+          "fcn_logoutfour_1",
+          "fcn_newnodefour_1"
+        ],
+        "dependsPathUID": "17664079920474",
         "isValidationsEnabled": false
       }
     ],
