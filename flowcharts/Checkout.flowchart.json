@@ -9,7 +9,8 @@
         "content": "Start",
         "nodeType": "start",
         "branches": [
-          "fcn_checkout_0"
+          "fcn_checkout_0",
+          "fcn_shoppingcart_0"
         ]
       },
       "fcn_checkout_0": {
@@ -139,6 +140,36 @@
         "content": "Verify $cart total",
         "nodeType": "state",
         "branches": []
+      },
+      "fcn_shoppingcart_0": {
+        "id": "fcn_shoppingcart_0",
+        "content": "Shopping Cart",
+        "nodeType": "pathlabel",
+        "branches": [
+          "fcn_gotoproductpage_0"
+        ]
+      },
+      "fcn_gotoproductpage_0": {
+        "id": "fcn_gotoproductpage_0",
+        "content": "Go to product page",
+        "nodeType": "action",
+        "branches": [
+          "fcn_additemtocart_0"
+        ]
+      },
+      "fcn_additemtocart_0": {
+        "id": "fcn_additemtocart_0",
+        "content": "Add item to cart",
+        "nodeType": "action",
+        "branches": [
+          "fcn_verifyitemaddedtocart_0"
+        ]
+      },
+      "fcn_verifyitemaddedtocart_0": {
+        "id": "fcn_verifyitemaddedtocart_0",
+        "content": "Verify item added to cart",
+        "nodeType": "state",
+        "branches": []
       }
     },
     "positions": {
@@ -209,6 +240,22 @@
       "fcn_couponproductproduct_0": {
         "top": 1229.8333129882812,
         "left": 795.0
+      },
+      "fcn_shoppingcart_0": {
+        "top": 212.0,
+        "left": 780.0
+      },
+      "fcn_gotoproductpage_0": {
+        "top": 294.0,
+        "left": 780.0
+      },
+      "fcn_additemtocart_0": {
+        "top": 376.0,
+        "left": 780.0
+      },
+      "fcn_verifyitemaddedtocart_0": {
+        "top": 450.0,
+        "left": 780.0
       }
     },
     "settings": {
@@ -359,6 +406,16 @@
           "dataSetName": "Coupon Applied.csv",
           "dataSetGroupName": "Data"
         },
+        "isValidationsEnabled": false
+      },
+      {
+        "pathKey": [
+          "fcn_shoppingcart_0",
+          "fcn_gotoproductpage_0",
+          "fcn_additemtocart_0",
+          "fcn_verifyitemaddedtocart_0"
+        ],
+        "dependsPathUID": "17676116870256",
         "isValidationsEnabled": false
       }
     ],
